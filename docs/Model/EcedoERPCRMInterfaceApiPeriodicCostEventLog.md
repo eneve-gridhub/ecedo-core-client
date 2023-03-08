@@ -1,0 +1,51 @@
+# EcedoERPCRMInterfaceApiPeriodicCostEventLog
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**organization_id** | **string** |  | [optional] 
+**cluster_reference** | **string** |  | [optional] 
+**connection_id** | **string** |  | [optional] 
+**ean** | **string** |  | [optional] 
+**start_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**start_meter_reading_id** | **string** |  | [optional] 
+**end_meter_reading_id** | **string** |  | [optional] 
+**start_p4_reading_id** | **string** |  | [optional] 
+**end_p4_reading_id** | **string** |  | [optional] 
+**document_id** | **string** |  | [optional] 
+**usage_high_ldn** | **int** |  | [optional] 
+**usage_low_ldn** | **int** |  | [optional] 
+**usage_single_ldn** | **int** |  | [optional] 
+**usage_high_odn** | **int** |  | [optional] 
+**usage_low_odn** | **int** |  | [optional] 
+**usage_single_odn** | **int** |  | [optional] 
+**usage_gas** | **int** |  | [optional] 
+**price_high_ldn** | **double** |  | [optional] 
+**price_low_ldn** | **double** |  | [optional] 
+**price_single_ldn** | **double** |  | [optional] 
+**price_high_odn** | **double** |  | [optional] 
+**price_low_odn** | **double** |  | [optional] 
+**price_single_odn** | **double** |  | [optional] 
+**price_gas** | **double** |  | [optional] 
+**price_fixed_fee_electricity** | **double** |  | [optional] 
+**price_fixed_fee_gas** | **double** |  | [optional] 
+**price_network_costs_electricity** | **double** |  | [optional] 
+**price_network_costs_gas** | **double** |  | [optional] 
+**price_tax_credit** | **double** |  | [optional] 
+**price_high_ldn_taxed** | **double** |  | [optional] 
+**price_low_ldn_taxed** | **double** |  | [optional] 
+**price_single_ldn_taxed** | **double** |  | [optional] 
+**price_high_odn_taxed** | **double** |  | [optional] 
+**price_low_odn_taxed** | **double** |  | [optional] 
+**price_single_odn_taxed** | **double** |  | [optional] 
+**price_gas_taxed** | **double** |  | [optional] 
+**price_fixed_fee_electricity_taxed** | **double** |  | [optional] 
+**price_fixed_fee_gas_taxed** | **double** |  | [optional] 
+**price_network_costs_electricity_taxed** | **double** |  | [optional] 
+**price_network_costs_gas_taxed** | **double** |  | [optional] 
+**price_tax_credit_taxed** | **double** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -1,0 +1,50 @@
+# EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoInvoiceRow
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**row_billing_item_sub_type** | **string** |  | [optional] 
+**row_total_odn_usage** | **double** |  | [optional] 
+**row_total_ldn_usage** | **double** |  | [optional] 
+**row_meter_reading_id** | **string** |  | [optional] 
+**row_id** | **string** |  | [optional] 
+**invoice_id** | **string** |  | [optional] 
+**organization_id** | **string** |  | [optional] 
+**row_contract_id** | **string** |  | [optional] 
+**row_meelift_contract_id** | **string** |  | [optional] 
+**row_is_electricity** | **bool** |  | [optional] 
+**row_is_gas** | **bool** |  | [optional] 
+**row_is_no_product** | **bool** |  | [optional] 
+**row_is_externe_opwek** | **bool** |  | [optional] 
+**row_is_small_consumer** | **bool** |  | [optional] 
+**row_is_large_consumer** | **bool** |  | [optional] 
+**row_is_ldn** | **bool** |  | [optional] 
+**row_is_odn** | **bool** |  | [optional] 
+**row_period_start_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**row_period_end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**row_period_description** | **string** |  | [optional] 
+**row_price_component_type** | **string** |  | [optional] 
+**row_price_component_type_internal** | **string** |  | [optional] 
+**row_description** | **string** |  | [optional] 
+**row_usage** | **double** |  | [optional] 
+**row_price** | **double** |  | [optional] 
+**row_total_price** | **double** |  | [optional] 
+**row_amount** | **double** |  | [optional] 
+**row_vat_amount** | **double** |  | [optional] 
+**row_total_amount** | **double** |  | [optional] 
+**row_vat_percentage** | **double** |  | [optional] 
+**row_vat_country** | **string** |  | [optional] 
+**row_vat_inclusive** | **bool** |  | [optional] 
+**row_price_unit** | **string** |  | [optional] 
+**row_price_unit_singular** | **string** |  | [optional] 
+**has_range** | **bool** |  | [optional] 
+**row_range_begin** | **int** |  | [optional] 
+**row_range_end** | **int** |  | [optional] 
+**row_range_description** | **string** |  | [optional] 
+**row_has_factor** | **bool** |  | [optional] 
+**row_factor** | **double** |  | [optional] 
+**row_classification** | **string** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
