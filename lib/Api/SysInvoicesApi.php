@@ -1664,7 +1664,7 @@ class SysInvoicesApi
      */
     public function sysInvoicesDownloadSingleInvoiceWithHttpInfo($invoice_id, $organization_id, $document_type = null)
     {
-        $returnType = 'object';
+        $returnType = '\SplFileObject';
         $request = $this->sysInvoicesDownloadSingleInvoiceRequest($invoice_id, $organization_id, $document_type);
 
         try {
