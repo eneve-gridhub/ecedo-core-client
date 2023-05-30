@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **organization_invoice_is_final** | **bool** |  | [optional] 
 **organization_invoice_is_credit** | **bool** |  | [optional] 
 **organization_invoice_is_olev** | **bool** |  | [optional] 
+**organization_invoice_has_estimated_readings_in_calculation_rows** | **bool** |  | [optional] 
 **organization_invoice_credited_number** | **string** |  | [optional] 
 **organization_invoice_parent_invoice_number** | **string** |  | [optional] 
 **organization_invoice_financial_description** | **string** |  | [optional] 
@@ -111,6 +112,7 @@ Name | Type | Description | Notes
 **organization_representative_correspondence_website** | **string** |  | [optional] 
 **organization_productiemiddel_proposition_description** | **string** |  | [optional] 
 **organization_organization_property_preferred_contact_method** | **string** |  | [optional] 
+**company_label** | [**\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto**](EcedoERPCRMInterfaceReportModelCompanyLabelDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

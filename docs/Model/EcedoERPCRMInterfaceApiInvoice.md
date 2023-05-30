@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 **is_olev** | **bool** |  | [optional] 
 **settlement_invoice_frequency** | **string** |  | [optional] 
 **settlement_invoice_frequency_localized** | **string** |  | [optional] 
+**final_settlement_reason** | **string** |  | [optional] 
+**final_settlement_reason_localized** | **string** |  | [optional] 
 **parent_invoice_id** | **string** |  | [optional] 
 **collective_invoice_type** | **string** |  | [optional] 
 **collective_invoice_type_localized** | **string** |  | [optional] 

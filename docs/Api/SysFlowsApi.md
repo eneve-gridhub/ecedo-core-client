@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**sysFlowsAcceptProposedAdvancePayment**](SysFlowsApi.md#sysFlowsAcceptProposedAdvancePayment) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/accept | 
 [**sysFlowsAdvancePaymentInvoiceFlowModificationFinished**](SysFlowsApi.md#sysFlowsAdvancePaymentInvoiceFlowModificationFinished) | **POST** /sysapi/v1.0/flows/advancepaymentinvoiceflow/modificationfinished | AdvancePayment factuur stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
-[**sysFlowsCancelApplicationFlow**](SysFlowsApi.md#sysFlowsCancelApplicationFlow) | **POST** /sysapi/v1.0/flows/application/cancel | Aanmeldflow beëindigen
+[**sysFlowsCancelApplicationFlow**](SysFlowsApi.md#sysFlowsCancelApplicationFlow) | **POST** /sysapi/v1.0/flows/application/cancel | Aanmeldflow beëindigen
 [**sysFlowsCancelCoolingDownPeriodApplicationFlow**](SysFlowsApi.md#sysFlowsCancelCoolingDownPeriodApplicationFlow) | **POST** /sysapi/v1.0/flows/application/cancelcoolingdownperiod | 
 [**sysFlowsCancelMoveFlow**](SysFlowsApi.md#sysFlowsCancelMoveFlow) | **POST** /sysapi/v1.0/flows/move/cancel | Verhuisflow afbreken
 [**sysFlowsCancelPurchaseFlow**](SysFlowsApi.md#sysFlowsCancelPurchaseFlow) | **POST** /sysapi/v1.0/flows/productpurchase/cancel | Productaanschafflow afbreken
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**sysFlowsSendSwitchOut**](SysFlowsApi.md#sysFlowsSendSwitchOut) | **POST** /sysapi/v1.0/flows/switchout/sendswitchout | Uitswitch flow starten
 [**sysFlowsSettlementInvoiceFlowModificationFinished**](SysFlowsApi.md#sysFlowsSettlementInvoiceFlowModificationFinished) | **POST** /sysapi/v1.0/flows/settlementinvoiceflow/modificationfinished | Settlement factuur stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
 [**sysFlowsStartAdvancePaymentCalculationFlow**](SysFlowsApi.md#sysFlowsStartAdvancePaymentCalculationFlow) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/start | 
-[**sysFlowsStartApplicationFlow**](SysFlowsApi.md#sysFlowsStartApplicationFlow) | **POST** /sysapi/v1.0/flows/application/start | Aanmeldflow starten
+[**sysFlowsStartApplicationFlow**](SysFlowsApi.md#sysFlowsStartApplicationFlow) | **POST** /sysapi/v1.0/flows/application/start | Aanmeldflow starten
 [**sysFlowsStartEnergyPVSwitchFlow**](SysFlowsApi.md#sysFlowsStartEnergyPVSwitchFlow) | **POST** /sysapi/v1.0/flows/pvswitch/start | Start PV switchflow
 [**sysFlowsStartProductPurchaseFlow**](SysFlowsApi.md#sysFlowsStartProductPurchaseFlow) | **POST** /sysapi/v1.0/flows/productpurchase/start | Product purchase event starten voor organizationId en clusterReference  toegestane waarde voor eventType: DepositSettlement
 [**sysFlowsStartSettlementFlowForProduct**](SysFlowsApi.md#sysFlowsStartSettlementFlowForProduct) | **POST** /sysapi/v1.0/flows/product/startsettlement | Starten van de afrekening flow voor een product
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 # **sysFlowsCancelApplicationFlow**
 > object sysFlowsCancelApplicationFlow($organization_id, $cancel_flow_post_data, $cluster_reference)
 
-Aanmeldflow beëindigen
+Aanmeldflow beëindigen
 
 Met behulp van deze API kunnen aanmeldflows worden afgebroken, mits de aanmeldflows zich in een af te breken staat bevinden.
 
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 # **sysFlowsStartApplicationFlow**
 > object sysFlowsStartApplicationFlow($organization_id, $cluster_reference, $reset_status, $cer_pre_notified, $skip_cooling_down_period, $send_welcome_letter, $cooling_down_period_start_date)
 
-Aanmeldflow starten
+Aanmeldflow starten
 
 Met behulp van deze API kunnen aanmeldflows gestart worden.<br />  De aanmeldflow wordt gestart voor alle aansluitingen van de klant met status \"Aangemaakt\" (`Created`). Als er meerdere clusters zijn met aansluitingen met deze status, dan wordt er per cluster een een aanmeldflow gestart.<br /><br />  Door gebruik te maken van de query parameter `clusterReference` kan afgedwongen worden dat er alleen een aanmeldflow wordt gestart voor één specifiek cluster<br />
 

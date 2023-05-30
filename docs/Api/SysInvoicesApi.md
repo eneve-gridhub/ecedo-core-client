@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 Haal verbruiksregels van een factuur op
 
-Opvragen verbruiksregels
+Sommige factuursoorten worden gebaseerd op verbruiksregels. Bijvoorbeeld spot- of marktrijsfacturen op basis van P4-intervalstanden of telemetriedata<br />  De factuurregels van de factuur bevatten gesommeerde volumes en kosten. De detailregels waarin de verbruiken en prijzen per uur of kwartier staan kunnen via deze API worden opgevraagd<br /><br />  De responses van factuur-API's (bijvoorbeeld `/sysapi/v1.0/organizations/{organizationId}/invoices`) bevatten informatie waaraan gezien kan worden of een factuur gebaseerd is op verbruiksregels. Dit gegeven is vastgelegd in het object `Ecedo.ERP.CRM.Interface.Api.Invoice` en het veld `HasInvoiceUsageCalculationRows`.<br /><br />  Deze API zal een fout (400) teruggegeven wanneer de API wordt aangeroepen met een niet bestaande `InvoiceId` of het `InvoiceId` niet hoort bij het meegegeven `OrganizationId`.<br /><br /><br />  Tags: `InvoiceUsageCalculationRow`
 
 ### Example
 ```php

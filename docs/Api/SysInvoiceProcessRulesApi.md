@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Verwijdert een factuurblokkade.
 
-Deze API verwijdert een factuurblokkade die bij de organisatie hoort.
+Deze API verwijdert een factuurblokkade die bij de organisatie hoort. <br />  Facturen die al zijn uitgevallen vanwege de verwijderde blokkade zullen niet automatisch verder gaan. Deze validatieuitval moet eerst goedgekeurd worden door een gebruiker.<br />
 
 ### Example
 ```php
@@ -33,8 +33,8 @@ $apiInstance = new Swagger\Client\Api\SysInvoiceProcessRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = "organization_id_example"; // string | Het id van de organisatie bij wie de factuurblokkade hoort
-$invoice_process_rule_id = "invoice_process_rule_id_example"; // string | 
+$organization_id = "organization_id_example"; // string | Guid van de klant (Organization)
+$invoice_process_rule_id = "invoice_process_rule_id_example"; // string | Guid van de factuurblokkade (InvoiceProcessRule)
 
 try {
     $apiInstance->sysInvoiceProcessRulesDeleteInvoiceProcessRule($organization_id, $invoice_process_rule_id);
@@ -48,8 +48,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **string**| Het id van de organisatie bij wie de factuurblokkade hoort |
- **invoice_process_rule_id** | **string**|  |
+ **organization_id** | **string**| Guid van de klant (Organization) |
+ **invoice_process_rule_id** | **string**| Guid van de factuurblokkade (InvoiceProcessRule) |
 
 ### Return type
 

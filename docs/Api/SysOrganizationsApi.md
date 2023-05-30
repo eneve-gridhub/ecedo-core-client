@@ -73,6 +73,8 @@ void (empty response body)
 
 Verkrijg klantgegevens op basis van een klantreferentie
 
+Opvragen klantgegevens op basis van een klantreferentie<br /><br />
+
 ### Example
 ```php
 <?php
@@ -127,6 +129,8 @@ Name | Type | Description  | Notes
 
 Haal specifieke klant op (op basis van OrganizationId)
 
+Opvragen van een specifieke klant (op basis van OrganizationId)<br /><br />
+
 ### Example
 ```php
 <?php
@@ -180,6 +184,8 @@ Name | Type | Description  | Notes
 > \Swagger\Client\Model\EcedoERPCRMInterfaceApiOrganization sysOrganizationsGetByReferenceNew($reference)
 
 Verkrijg klantgegevens op basis van een klantnummer
+
+Opvragen klantgegevens op basis van een klantnummer<br /><br />
 
 ### Example
 ```php

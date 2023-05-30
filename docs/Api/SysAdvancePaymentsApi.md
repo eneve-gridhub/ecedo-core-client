@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Voorschot verwijderen
 
-De API geeft een lege 400 Bad Request terug wanneer organizationId en/of advancePaymentId niet bestaat of wanneer het voorschot niet de status IsProposed heeft.
+De API geeft een lege 400 Bad Request terug wanneer organizationId en/of advancePaymentId niet bestaat.
 
 ### Example
 ```php
@@ -38,7 +38,7 @@ $apiInstance = new Swagger\Client\Api\SysAdvancePaymentsApi(
 );
 $organization_id = "organization_id_example"; // string | Guid van de klant (Organization)
 $advance_payment_id = "advance_payment_id_example"; // string | Guid van het voorschot (AdvancePayment)
-$reactivate_previous_advance_payment = true; // bool | Geeft aan of het voorgaande voorschot opnieuw geactiveerd moet worden
+$reactivate_previous_advance_payment = true; // bool | Geeft aan of het voorgaande voorschot opnieuw geactiveerd moet worden (alleen voorgesteld voorschot)
 
 try {
     $result = $apiInstance->sysAdvancePaymentsDelete($organization_id, $advance_payment_id, $reactivate_previous_advance_payment);
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| Guid van de klant (Organization) |
  **advance_payment_id** | **string**| Guid van het voorschot (AdvancePayment) |
- **reactivate_previous_advance_payment** | **bool**| Geeft aan of het voorgaande voorschot opnieuw geactiveerd moet worden | [optional]
+ **reactivate_previous_advance_payment** | **bool**| Geeft aan of het voorgaande voorschot opnieuw geactiveerd moet worden (alleen voorgesteld voorschot) | [optional]
 
 ### Return type
 

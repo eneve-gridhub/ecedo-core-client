@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**sysContractsGetMeeliftContracts**](SysContractsApi.md#sysContractsGetMeeliftContracts) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/meeliftcontracts | Meeliftcontracten ophalen van een aansluiting
 [**sysContractsGetOnbalansFlexContract**](SysContractsApi.md#sysContractsGetOnbalansFlexContract) | **GET** /sysapi/v1.0/organizations/{organizationId}/onbalansflexcontracts/{contractId} | Ophalen van een onbalansflex contract
 [**sysContractsInvoiceContracts**](SysContractsApi.md#sysContractsInvoiceContracts) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/contracts | Verkrijg de energielevering contracten die in een factuur zijn gefactureerd.  Een niet energielevering factuur zal een lege lijst retourneren.  Eventuele Meeliftcontracten worden niet geretourneerd
-[**sysContractsPostContractProperties**](SysContractsApi.md#sysContractsPostContractProperties) | **POST** /sysapi/v1.0/organizations/{organizationId}/contracts/{contractId}/contractproperties | Pas een contract property aan
+[**sysContractsPostContractProperties**](SysContractsApi.md#sysContractsPostContractProperties) | **POST** /sysapi/v1.0/organizations/{organizationId}/contracts/{contractId}/contractproperties | Pas een contract property aan of voeg een contract property toe
 [**sysContractsPostContracts**](SysContractsApi.md#sysContractsPostContracts) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/contracts | Energieleveringcontract aanmaken
 [**sysContractsPostSwitchProducer**](SysContractsApi.md#sysContractsPostSwitchProducer) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/switchproducer | Veranderen van producent op een aansluiting
 [**sysContractsPutContracts**](SysContractsApi.md#sysContractsPutContracts) | **PUT** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/contracts/{contractId} | Energieleveringcontract wijzigen
@@ -886,9 +886,9 @@ Name | Type | Description  | Notes
 # **sysContractsPostContractProperties**
 > object sysContractsPostContractProperties($organization_id, $contract_id, $contract_property)
 
-Pas een contract property aan
+Pas een contract property aan of voeg een contract property toe
 
-De volgende properties kunnen gewijzigd worden via de API en de volgende values hebben:  Channel: string  SalesReference: string  HasTerminationFee: boolean (true, false)  SettlementInvoiceFrequency: Monthly, Yearly  HasAdvancePaymentCalculation: boolean (true, false)  Reseller: Guid  CreditLimit: decimal  Campaign: string  HasAdvancePaymentInvoiceDocumentPrintFee: boolean (true, false)  HasCollectionFees: boolean (true, false)  CreditInsuranceIdentifier: string  ElectricityPowerType: Groen, LokaalGroen, Grijs  MaxODNLimitTariff: int  ElectricityGreeningOption: Guid  GasGreeningOption: Guid  HasRollingDeposit: boolean (true, false)  HasTariffChangeMeterReadings: boolean (true, false)  NoticePeriod: int  AdvancePaymentScheme: Fixed, SettleUsageFirstMonthProfiled
+De volgende properties kunnen gewijzigd of toegevoegd worden via de API en de volgende values hebben:<br />  * Channel: string<br />  * SalesReference: string<br />  * HasTerminationFee: boolean (true, false)<br />  * SettlementInvoiceFrequency: Monthly, Yearly<br />  * HasAdvancePaymentCalculation: boolean (true, false)<br />  * Reseller: Guid<br />  * CreditLimit: decimal<br />  * Campaign: string<br />  * HasAdvancePaymentInvoiceDocumentPrintFee: boolean (true, false)<br />  * HasCollectionFees: boolean (true, false)<br />  * CreditInsuranceIdentifier: string<br />  * ElectricityPowerType: Groen, LokaalGroen, Grijs<br />  * MaxODNLimitTariff: int<br />  * ElectricityGreeningOption: Guid<br />  * GasGreeningOption: Guid<br />  * HasRollingDeposit: boolean (true, false)<br />  * HasTariffChangeMeterReadings: boolean (true, false)<br />  * NoticePeriod: int<br />  * AdvancePaymentScheme: Fixed, SettleUsageFirstMonthProfiled<br />
 
 ### Example
 ```php

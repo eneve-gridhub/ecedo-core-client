@@ -56,6 +56,7 @@ Name | Type | Description | Notes
 **organization_representative_correspondence_website** | **string** |  | [optional] 
 **organization_productiemiddel_proposition_description** | **string** |  | [optional] 
 **organization_organization_property_preferred_contact_method** | **string** |  | [optional] 
+**company_label** | [**\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto**](EcedoERPCRMInterfaceReportModelCompanyLabelDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

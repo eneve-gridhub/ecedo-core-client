@@ -4,16 +4,16 @@ All URIs are relative to *https://test.ecedo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**sysMarketPricesGet**](SysMarketPricesApi.md#sysMarketPricesGet) | **GET** /sysapi/v1.0/marketprices/{startDate}/{endDate}/{marketPriceType} | Haal marktprijzen op voor periode en marktprijstype
+[**sysMarketPricesGet**](SysMarketPricesApi.md#sysMarketPricesGet) | **GET** /sysapi/v1.0/marketprices/{startDate}/{endDate}/{marketPriceType} | Haal marktprijzen (excl. btw) op voor periode en marktprijstype
 [**sysMarketPricesPostMarketPrices**](SysMarketPricesApi.md#sysMarketPricesPostMarketPrices) | **POST** /sysapi/v1.0/marketprices/{marketPriceType} | Marktprijzen toevoegen voor marktprijstype
 
 
 # **sysMarketPricesGet**
 > \Swagger\Client\Model\EcedoERPCRMInterfaceApiMarketPrice[] sysMarketPricesGet($start_date, $end_date, $market_price_type)
 
-Haal marktprijzen op voor periode en marktprijstype
+Haal marktprijzen (excl. btw) op voor periode en marktprijstype
 
-__Let op!__ Als prijzen van het type `TtfDayAheadDay` worden opgevraagd dan worden de `startDate` en `endDate` geïnterpreteerd als gasdagen.<br />  Als `startDate` \"2022-01-01\" is en `endDate` is \"2022-01-02\", dan wordt dit geïnterpreteerd als \"2022-01-01 06:00\" (lokale tijd) en \"2022-01-02 06:00\" (lokale tijd). Hierdoor bevat de response één prijs (de prijs voor de gasdag) in plaats van de twee prijzen (de prijzen voor de kalenderdag).
+__Let op!__ Als prijzen van het type `TtfDayAheadDay` worden opgevraagd dan worden de `startDate` en `endDate` geïnterpreteerd als gasdagen.<br />  Als `startDate` \"2022-01-01\" is en `endDate` is \"2022-01-02\", dan wordt dit geïnterpreteerd als \"2022-01-01 06:00\" (lokale tijd) en \"2022-01-02 06:00\" (lokale tijd). Hierdoor bevat de response één prijs (de prijs voor de gasdag) in plaats van de twee prijzen (de prijzen voor de kalenderdag).  Periode voor opvragen data mag maximaal 370 dagen bedragen.
 
 ### Example
 ```php
