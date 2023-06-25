@@ -303,6 +303,7 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         return [
             self::PREFERRED_ADVANCE_PAYMENT_INVOICE_CONTACT_METHOD_EMAIL,
             self::PREFERRED_ADVANCE_PAYMENT_INVOICE_CONTACT_METHOD_MAIL,
+            false
         ];
     }
     
