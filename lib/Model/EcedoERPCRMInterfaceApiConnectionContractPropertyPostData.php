@@ -168,8 +168,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
         return self::$swaggerModelName;
     }
 
-    const CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE = 'ElectricityPowerType';
     const CONTRACT_PROPERTY_TYPE_ACTION_DISCOUNT_MOMENT = 'ActionDiscountMoment';
+    const CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE = 'ElectricityPowerType';
     const CONTRACT_PROPERTY_TYPE_DEPOSIT_SETTLE_MOMENT = 'DepositSettleMoment';
     const CONTRACT_PROPERTY_TYPE_CHANNEL = 'Channel';
     const CONTRACT_PROPERTY_TYPE_SALES_REFERENCE = 'SalesReference';
@@ -210,8 +210,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
     public function getContractPropertyTypeAllowableValues()
     {
         return [
-            self::CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE,
             self::CONTRACT_PROPERTY_TYPE_ACTION_DISCOUNT_MOMENT,
+            self::CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE,
             self::CONTRACT_PROPERTY_TYPE_DEPOSIT_SETTLE_MOMENT,
             self::CONTRACT_PROPERTY_TYPE_CHANNEL,
             self::CONTRACT_PROPERTY_TYPE_SALES_REFERENCE,

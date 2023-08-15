@@ -1,6 +1,6 @@
 # Swagger\Client\SysMeteringPointsApi
 
-All URIs are relative to *https://test.ecedo.com*
+All URIs are relative to *https://innova.ecedo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,11 +23,14 @@ Dit is een passthough-API naar het Contract Einde Register (CER) van EDSN<br /> 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysMeteringPointsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -60,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 
@@ -81,11 +84,14 @@ Met behulp van deze API kunnen de klantsleutels in het C-AR bijgewerkt worden, b
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysMeteringPointsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -118,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 
@@ -132,18 +138,21 @@ Name | Type | Description  | Notes
 
 Opvragen van aansluitingdetails uit het C-AR
 
-Dit is een passthough-API naar het Centraal Aansluitingen Register (C-AR) van EDSN<br />  Met behulp van deze API kunnen aansluitingdetails uit het C-AR opgevraagd worden<br /><br />  **Let op!** Deze API kan alleen gebruikt worden voor grootverbruikaansluitingen of kleinverbruikaansluitingen waarvoor een vooraanmelding (fase III) is verstuurd (zie API POST /sysapi/v1.0/meteringpoints/{ean}/cerprenotifycontract)<br />  **Let op!** Het Contract Einde Register (CER) is tot onbekende datum offline. Daardoor is het niet mogelijk om contract einde datums op te vragen en dus zal de `FirstAllowedSwitchDate` uit de Response` altijd de eerstvolgende switchdatum (rekening houdend met afkoelperiode, EDSN werkdagen, etc.)
+Dit is een passthough-API naar het Centraal Aansluitingen Register (C-AR) van EDSN<br />  Met behulp van deze API kunnen aansluitingdetails uit het C-AR opgevraagd worden<br /><br />  **Let op!** Deze API kan alleen gebruikt worden voor grootverbruikaansluitingen of kleinverbruikaansluitingen waarvoor een vooraanmelding (fase III) is verstuurd (zie API POST /sysapi/v1.0/meteringpoints/{ean}/cerprenotifycontract)<br />  **Let op!** Het Contract Einde Register (CER) is tot onbekende datum offline. Daardoor is het niet mogelijk om contract einde datums op te vragen en dus zal de `FirstAllowedSwitchDate` uit de `Response` altijd de eerstvolgende switchdatum (rekening houdend met afkoelperiode, EDSN werkdagen, etc.)<br />  **Let op!** Op testomgevingen wordt mock-data teruggegeven. Deze data komt niet precies overeen met productiedata. Zie de <a href=\"https://ecedo.atlassian.net/wiki/spaces/KNOWLEDGE/pages/2244902913/C-AR+mockdata+op+testomgevingen\" target=\"_blank\">developer documentatie</a> voor meer uitleg en een overzicht van aansluitingen per use case.<br />
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysMeteringPointsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -180,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 
@@ -201,11 +210,14 @@ Dit is een passthough-API naar het Centraal Aansluitingen Register (C-AR) van ED
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysMeteringPointsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -245,7 +257,7 @@ void (empty response body)
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 
@@ -259,18 +271,21 @@ void (empty response body)
 
 Zoeken van aansluitingen in het C-AR
 
-Dit is een passthough-API naar het Centraal Aansluitingen Register (C-AR) van EDSN<br />  Met behulp van deze API kunnen aansluitingen in het C-AR gezocht worden op basis van EAN of adres<br /><br />  Let op! Ecedo kent alleen de verbruikssegmenten (UsageTypes) \"Grootverbruik\" en \"Kleinverbruik\" en dus niet \"Artikel 1 lid 2 of 3\". Als gezocht wordt op een artikel-aansluiting, dan geeft Ecedo dit terug als verbruikssegment \"Grootverbruik\" waarbij de variabele `IsART` op `true` staat.<br />  Wanneer op EAN wordt gezocht is het niet toegestaan om marktsegment, postcode, huisnummer of huisnummertoevoeging te gebruiken<br /><br />  Wanneer gezocht wordt op EAN code is het niet toegestaan om marktsegment, postcode, huisnummer of huisnummertoevoeging mee te geven<br />
+Dit is een passthough-API naar het Centraal Aansluitingen Register (C-AR) van EDSN<br />  Met behulp van deze API kunnen aansluitingen in het C-AR gezocht worden op basis van EAN of adres<br /><br />  Let op! Ecedo kent alleen de verbruikssegmenten (UsageTypes) \"Grootverbruik\" en \"Kleinverbruik\" en dus niet \"Artikel 1 lid 2 of 3\". Als gezocht wordt op een artikel-aansluiting, dan geeft Ecedo dit terug als verbruikssegment \"Grootverbruik\" waarbij de variabele `IsART` op `true` staat.<br />  Wanneer op EAN wordt gezocht is het niet toegestaan om marktsegment, postcode, huisnummer of huisnummertoevoeging te gebruiken<br /><br />  Wanneer gezocht wordt op EAN code is het niet toegestaan om marktsegment, postcode, huisnummer of huisnummertoevoeging mee te geven<br /><br />  **Let op!** Op testomgevingen wordt mock-data teruggegeven. Deze data komt niet precies overeen met productiedata. Zie de <a href=\"https://ecedo.atlassian.net/wiki/spaces/KNOWLEDGE/pages/2244902913/C-AR+mockdata+op+testomgevingen\" target=\"_blank\">developer documentatie</a> voor meer uitleg en een overzicht van aansluitingen per use case.<br />
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysMeteringPointsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -309,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 

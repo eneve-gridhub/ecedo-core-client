@@ -3,12 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ean** | **string** |  | [optional] 
 **product_id** | **string** |  | [optional] 
 **product_description_localized** | **string** |  | [optional] 
 **product_group** | **string** |  | [optional] 
+**product_group_localized** | **string** |  | [optional] 
 **price_component_type** | **string** |  | [optional] 
 **price_component_type_localized** | **string** |  | [optional] 
-**ean** | **string** |  | [optional] 
 **vat_percentage** | **double** |  | [optional] 
 **range_start** | **int** |  | [optional] 
 **range_end** | **int** |  | [optional] 

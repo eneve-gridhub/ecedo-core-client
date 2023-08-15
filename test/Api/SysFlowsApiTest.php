@@ -94,7 +94,7 @@ class SysFlowsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysFlowsCancelApplicationFlow
      *
-     * Aanmeldflow beëindigen.
+     * Aanmeldflow beëindigen.
      *
      */
     public function testSysFlowsCancelApplicationFlow()
@@ -224,7 +224,7 @@ class SysFlowsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysFlowsStartApplicationFlow
      *
-     * Aanmeldflow starten.
+     * Aanmeldflow starten.
      *
      */
     public function testSysFlowsStartApplicationFlow()

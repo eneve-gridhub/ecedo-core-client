@@ -77,6 +77,13 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRowTest extends \PHPUnit_Framework_Te
     }
 
     /**
+     * Test attribute "ean"
+     */
+    public function testPropertyEan()
+    {
+    }
+
+    /**
      * Test attribute "product_id"
      */
     public function testPropertyProductId()
@@ -98,6 +105,13 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRowTest extends \PHPUnit_Framework_Te
     }
 
     /**
+     * Test attribute "product_group_localized"
+     */
+    public function testPropertyProductGroupLocalized()
+    {
+    }
+
+    /**
      * Test attribute "price_component_type"
      */
     public function testPropertyPriceComponentType()
@@ -108,13 +122,6 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRowTest extends \PHPUnit_Framework_Te
      * Test attribute "price_component_type_localized"
      */
     public function testPropertyPriceComponentTypeLocalized()
-    {
-    }
-
-    /**
-     * Test attribute "ean"
-     */
-    public function testPropertyEan()
     {
     }
 

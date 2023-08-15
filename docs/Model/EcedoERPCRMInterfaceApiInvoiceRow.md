@@ -1,0 +1,38 @@
+# EcedoERPCRMInterfaceApiInvoiceRow
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**is_manual** | **bool** |  | [optional] 
+**billing_item_group_id** | **string** |  | [optional] 
+**meter_reading_id** | **string** |  | [optional] 
+**factor** | **double** |  | [optional] 
+**custom_price_component_id** | **string** |  | [optional] 
+**custom_price_component_type** | **string** |  | [optional] 
+**custom_price_component_type_localized** | **string** |  | [optional] 
+**row_classification** | **string** |  | [optional] 
+**row_classification_localized** | **string** |  | [optional] 
+**contract_id** | **string** |  | [optional] 
+**meelift_contract_id** | **string** |  | [optional] 
+**product_id** | **string** |  | [optional] 
+**product_description_localized** | **string** |  | [optional] 
+**product_group** | **string** |  | [optional] 
+**product_group_localized** | **string** |  | [optional] 
+**price_component_type** | **string** |  | [optional] 
+**price_component_type_localized** | **string** |  | [optional] 
+**vat_percentage** | **double** |  | [optional] 
+**range_start** | **int** |  | [optional] 
+**range_end** | **int** |  | [optional] 
+**start_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**usage** | **double** |  | [optional] 
+**price_unit** | **string** |  | [optional] 
+**price_unit_localized** | **string** |  | [optional] 
+**price** | **double** |  | [optional] 
+**amount** | **double** |  | [optional] 
+**vat_amount** | **double** |  | [optional] 
+**total_amount** | **double** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

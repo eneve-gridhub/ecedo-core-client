@@ -97,7 +97,9 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         'has_invoice_usage_calculation_rows' => 'bool',
         'client_reference' => 'string',
         'financial_description' => 'string',
-        'purchase_order_number' => 'string'
+        'purchase_order_number' => 'string',
+        'invoice_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceRow[]',
+        'combined_invoice_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceRow[]'
     ];
 
     /**
@@ -146,7 +148,9 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         'has_invoice_usage_calculation_rows' => null,
         'client_reference' => null,
         'financial_description' => null,
-        'purchase_order_number' => null
+        'purchase_order_number' => null,
+        'invoice_rows' => null,
+        'combined_invoice_rows' => null
     ];
 
     /**
@@ -216,7 +220,9 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         'has_invoice_usage_calculation_rows' => 'HasInvoiceUsageCalculationRows',
         'client_reference' => 'ClientReference',
         'financial_description' => 'FinancialDescription',
-        'purchase_order_number' => 'PurchaseOrderNumber'
+        'purchase_order_number' => 'PurchaseOrderNumber',
+        'invoice_rows' => 'InvoiceRows',
+        'combined_invoice_rows' => 'CombinedInvoiceRows'
     ];
 
     /**
@@ -265,7 +271,9 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         'has_invoice_usage_calculation_rows' => 'setHasInvoiceUsageCalculationRows',
         'client_reference' => 'setClientReference',
         'financial_description' => 'setFinancialDescription',
-        'purchase_order_number' => 'setPurchaseOrderNumber'
+        'purchase_order_number' => 'setPurchaseOrderNumber',
+        'invoice_rows' => 'setInvoiceRows',
+        'combined_invoice_rows' => 'setCombinedInvoiceRows'
     ];
 
     /**
@@ -314,7 +322,9 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         'has_invoice_usage_calculation_rows' => 'getHasInvoiceUsageCalculationRows',
         'client_reference' => 'getClientReference',
         'financial_description' => 'getFinancialDescription',
-        'purchase_order_number' => 'getPurchaseOrderNumber'
+        'purchase_order_number' => 'getPurchaseOrderNumber',
+        'invoice_rows' => 'getInvoiceRows',
+        'combined_invoice_rows' => 'getCombinedInvoiceRows'
     ];
 
     /**
@@ -585,6 +595,8 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         $this->container['client_reference'] = isset($data['client_reference']) ? $data['client_reference'] : null;
         $this->container['financial_description'] = isset($data['financial_description']) ? $data['financial_description'] : null;
         $this->container['purchase_order_number'] = isset($data['purchase_order_number']) ? $data['purchase_order_number'] : null;
+        $this->container['invoice_rows'] = isset($data['invoice_rows']) ? $data['invoice_rows'] : null;
+        $this->container['combined_invoice_rows'] = isset($data['combined_invoice_rows']) ? $data['combined_invoice_rows'] : null;
     }
 
     /**
@@ -1710,6 +1722,54 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
     public function setPurchaseOrderNumber($purchase_order_number)
     {
         $this->container['purchase_order_number'] = $purchase_order_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_rows
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceRow[]
+     */
+    public function getInvoiceRows()
+    {
+        return $this->container['invoice_rows'];
+    }
+
+    /**
+     * Sets invoice_rows
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceRow[] $invoice_rows invoice_rows
+     *
+     * @return $this
+     */
+    public function setInvoiceRows($invoice_rows)
+    {
+        $this->container['invoice_rows'] = $invoice_rows;
+
+        return $this;
+    }
+
+    /**
+     * Gets combined_invoice_rows
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceRow[]
+     */
+    public function getCombinedInvoiceRows()
+    {
+        return $this->container['combined_invoice_rows'];
+    }
+
+    /**
+     * Sets combined_invoice_rows
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceRow[] $combined_invoice_rows combined_invoice_rows
+     *
+     * @return $this
+     */
+    public function setCombinedInvoiceRows($combined_invoice_rows)
+    {
+        $this->container['combined_invoice_rows'] = $combined_invoice_rows;
 
         return $this;
     }

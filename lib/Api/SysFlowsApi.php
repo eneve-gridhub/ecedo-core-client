@@ -343,9 +343,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -628,9 +634,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -656,7 +668,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlow
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -675,7 +687,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlowWithHttpInfo
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -768,7 +780,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlowAsync
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -790,7 +802,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlowAsyncWithHttpInfo
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -936,9 +948,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1226,9 +1244,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1535,9 +1559,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1835,9 +1865,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2135,9 +2171,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2420,9 +2462,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2734,9 +2782,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3032,9 +3086,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3330,9 +3390,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3644,9 +3710,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3959,9 +4031,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4244,9 +4322,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4561,9 +4645,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4589,7 +4679,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlow
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)
@@ -4612,7 +4702,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlowWithHttpInfo
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)
@@ -4709,7 +4799,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlowAsync
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)
@@ -4735,7 +4825,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlowAsyncWithHttpInfo
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)
@@ -4900,9 +4990,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5215,9 +5311,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5545,9 +5647,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5875,9 +5983,15 @@ class SysFlowsApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];

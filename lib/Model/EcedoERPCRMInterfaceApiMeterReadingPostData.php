@@ -256,7 +256,6 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
     const EVENT_ALLOCATION_METHOD_CHANGE = 'AllocationMethodChange';
     const EVENT_MONTH = 'Month';
     const EVENT_TARIFF_CHANGE = 'TariffChange';
-    const REASON_MDMD = 'MDMD';
     const REASON_MTRINST = 'MTRINST';
     const REASON_MTREND = 'MTREND';
     const REASON_MOVEIN = 'MOVEIN';
@@ -265,6 +264,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
     const REASON_SWITCHLV = 'SWITCHLV';
     const REASON_CONSMTR = 'CONSMTR';
     const REASON_HISTMTR = 'HISTMTR';
+    const REASON_MDMD = 'MDMD';
     const REASON_MDPPMD = 'MDPPMD';
     const REASON_DSTRCONN = 'DSTRCONN';
     const REASON_CONNACT = 'CONNACT';
@@ -349,7 +349,6 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
     public function getReasonAllowableValues()
     {
         return [
-            self::REASON_MDMD,
             self::REASON_MTRINST,
             self::REASON_MTREND,
             self::REASON_MOVEIN,
@@ -358,6 +357,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
             self::REASON_SWITCHLV,
             self::REASON_CONSMTR,
             self::REASON_HISTMTR,
+            self::REASON_MDMD,
             self::REASON_MDPPMD,
             self::REASON_DSTRCONN,
             self::REASON_CONNACT,

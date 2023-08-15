@@ -56,10 +56,14 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-    ->setUsername('YOUR_USERNAME')
-    ->setPassword('YOUR_PASSWORD');
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysAPIProcessLogsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -81,7 +85,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://test.ecedo.com*
+All URIs are relative to *https://innova.ecedo.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -167,7 +171,7 @@ Class | Method | HTTP request | Description
 *SysEntityRevisionApi* | [**sysEntityRevisionGetEntityRevisions**](docs/Api/SysEntityRevisionApi.md#sysentityrevisiongetentityrevisions) | **GET** /sysapi/v1.0/entityrevisions | Verkrijg Entiteiten die gewijzigd zijn na opgegeven datum
 *SysFlowsApi* | [**sysFlowsAcceptProposedAdvancePayment**](docs/Api/SysFlowsApi.md#sysflowsacceptproposedadvancepayment) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/accept | 
 *SysFlowsApi* | [**sysFlowsAdvancePaymentInvoiceFlowModificationFinished**](docs/Api/SysFlowsApi.md#sysflowsadvancepaymentinvoiceflowmodificationfinished) | **POST** /sysapi/v1.0/flows/advancepaymentinvoiceflow/modificationfinished | AdvancePayment factuur stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
-*SysFlowsApi* | [**sysFlowsCancelApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowscancelapplicationflow) | **POST** /sysapi/v1.0/flows/application/cancel | Aanmeldflow beëindigen
+*SysFlowsApi* | [**sysFlowsCancelApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowscancelapplicationflow) | **POST** /sysapi/v1.0/flows/application/cancel | Aanmeldflow beëindigen
 *SysFlowsApi* | [**sysFlowsCancelCoolingDownPeriodApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowscancelcoolingdownperiodapplicationflow) | **POST** /sysapi/v1.0/flows/application/cancelcoolingdownperiod | 
 *SysFlowsApi* | [**sysFlowsCancelMoveFlow**](docs/Api/SysFlowsApi.md#sysflowscancelmoveflow) | **POST** /sysapi/v1.0/flows/move/cancel | Verhuisflow afbreken
 *SysFlowsApi* | [**sysFlowsCancelPurchaseFlow**](docs/Api/SysFlowsApi.md#sysflowscancelpurchaseflow) | **POST** /sysapi/v1.0/flows/productpurchase/cancel | Productaanschafflow afbreken
@@ -180,7 +184,7 @@ Class | Method | HTTP request | Description
 *SysFlowsApi* | [**sysFlowsSendSwitchOut**](docs/Api/SysFlowsApi.md#sysflowssendswitchout) | **POST** /sysapi/v1.0/flows/switchout/sendswitchout | Uitswitch flow starten
 *SysFlowsApi* | [**sysFlowsSettlementInvoiceFlowModificationFinished**](docs/Api/SysFlowsApi.md#sysflowssettlementinvoiceflowmodificationfinished) | **POST** /sysapi/v1.0/flows/settlementinvoiceflow/modificationfinished | Settlement factuur stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
 *SysFlowsApi* | [**sysFlowsStartAdvancePaymentCalculationFlow**](docs/Api/SysFlowsApi.md#sysflowsstartadvancepaymentcalculationflow) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/start | 
-*SysFlowsApi* | [**sysFlowsStartApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowsstartapplicationflow) | **POST** /sysapi/v1.0/flows/application/start | Aanmeldflow starten
+*SysFlowsApi* | [**sysFlowsStartApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowsstartapplicationflow) | **POST** /sysapi/v1.0/flows/application/start | Aanmeldflow starten
 *SysFlowsApi* | [**sysFlowsStartEnergyPVSwitchFlow**](docs/Api/SysFlowsApi.md#sysflowsstartenergypvswitchflow) | **POST** /sysapi/v1.0/flows/pvswitch/start | Start PV switchflow
 *SysFlowsApi* | [**sysFlowsStartProductPurchaseFlow**](docs/Api/SysFlowsApi.md#sysflowsstartproductpurchaseflow) | **POST** /sysapi/v1.0/flows/productpurchase/start | Product purchase event starten voor organizationId en clusterReference  toegestane waarde voor eventType: DepositSettlement
 *SysFlowsApi* | [**sysFlowsStartSettlementFlowForProduct**](docs/Api/SysFlowsApi.md#sysflowsstartsettlementflowforproduct) | **POST** /sysapi/v1.0/flows/product/startsettlement | Starten van de afrekening flow voor een product
@@ -306,13 +310,13 @@ Class | Method | HTTP request | Description
 *SysTelemetryApi* | [**sysTelemetryGetMeansOfProductionTelemetryById**](docs/Api/SysTelemetryApi.md#systelemetrygetmeansofproductiontelemetrybyid) | **GET** /sysapi/v1.0/telemetryreadings/meansofproductionconnection/{id} | Opvragen telemetrie van productiemiddel door middel van het ID van de aansluiting
 *SysTelemetryApi* | [**sysTelemetryGetTelemetry**](docs/Api/SysTelemetryApi.md#systelemetrygettelemetry) | **GET** /sysapi/v1.0/telemetryreadings/{ean} | Opvragen telemetrie aan de hand van een EAN
 *SysTelemetryApi* | [**sysTelemetryPostTelemetryReadings**](docs/Api/SysTelemetryApi.md#systelemetryposttelemetryreadings) | **POST** /sysapi/v1.0/telemetryreadings/{ean} | Inladen telemetrie voor een EAN
-*SysTerminationFeesApi* | [**sysTerminationFeesCalculateTerminationFeeForContract**](docs/Api/SysTerminationFeesApi.md#systerminationfeescalculateterminationfeeforcontract) | **GET** /sysapi/v1.0/terminationfees/calculateForContract/{contractId} | Berekent de opzegvergoeding voor een contract op de opzegdatum
-*SysTerminationFeesApi* | [**sysTerminationFeesCalculateTerminationFeesForConnection**](docs/Api/SysTerminationFeesApi.md#systerminationfeescalculateterminationfeesforconnection) | **GET** /sysapi/v1.0/terminationfees/calculateForConnection/{connectionId} | Berekent de opzegvergoedingen voor een aansluiting op de opzegdatum
-*SysTerminationFeesApi* | [**sysTerminationFeesGetCalculationTypeForContract**](docs/Api/SysTerminationFeesApi.md#systerminationfeesgetcalculationtypeforcontract) | **GET** /sysapi/v1.0/terminationfees/calculationTypeByContract/{contractId} | Haalt het type TerminationFee berekening op voor een energielevering- of meeliftcontract.
-*SysTerminationFeesApi* | [**sysTerminationFeesGetCalculationTypesForConnection**](docs/Api/SysTerminationFeesApi.md#systerminationfeesgetcalculationtypesforconnection) | **GET** /sysapi/v1.0/terminationfees/calculationTypesByConnection/{connectionId} | Haalt de type TerminationFee berekeningen op voor een aansluiting.
+*SysTerminationFeesApi* | [**sysTerminationFeesCalculateTerminationFeeForContract**](docs/Api/SysTerminationFeesApi.md#systerminationfeescalculateterminationfeeforcontract) | **GET** /sysapi/v1.0/terminationfees/calculateForContract/{contractId} | Berekent een indicatieve opzegvergoeding voor een contract
+*SysTerminationFeesApi* | [**sysTerminationFeesCalculateTerminationFeesForConnection**](docs/Api/SysTerminationFeesApi.md#systerminationfeescalculateterminationfeesforconnection) | **GET** /sysapi/v1.0/terminationfees/calculateForConnection/{connectionId} | Berekent een indicatieve opzegvergoeding voor een aansluiting
+*SysTerminationFeesApi* | [**sysTerminationFeesGetCalculationTypeForContract**](docs/Api/SysTerminationFeesApi.md#systerminationfeesgetcalculationtypeforcontract) | **GET** /sysapi/v1.0/terminationfees/calculationTypeByContract/{contractId} | Geeft het type opzegvergoeding terug voor een energielevering- of meeliftcontract
+*SysTerminationFeesApi* | [**sysTerminationFeesGetCalculationTypesForConnection**](docs/Api/SysTerminationFeesApi.md#systerminationfeesgetcalculationtypesforconnection) | **GET** /sysapi/v1.0/terminationfees/calculationTypesByConnection/{connectionId} | Geeft het type opzegvergoeding terug voor een aansluiting
 *SysTerminationFeesApi* | [**sysTerminationFeesGetReferenceProposition**](docs/Api/SysTerminationFeesApi.md#systerminationfeesgetreferenceproposition) | **GET** /sysapi/v1.0/terminationfees/referencePropositionsByContract/{contractId} | Haalt de referentiepropositie voor een energieleveringcontract op en een eventuele referentiepropositie voor een bijbehorende meeliftpropositie.
 *SysTerminationFeesApi* | [**sysTerminationFeesGetTerminationFeesByConnection**](docs/Api/SysTerminationFeesApi.md#systerminationfeesgetterminationfeesbyconnection) | **GET** /sysapi/v1.0/terminationfees/byConnection/{connectionId} | Haalt de opzegvergoedingen op die bij een aansluiting horen
-*SysTerminationFeesApi* | [**sysTerminationFeesGetTerminationFeesByInvoice**](docs/Api/SysTerminationFeesApi.md#systerminationfeesgetterminationfeesbyinvoice) | **GET** /sysapi/v1.0/terminationfees/byInvoice/{invoiceId} | Haalt de opzegvergoedingen op die bij een factuur horen
+*SysTerminationFeesApi* | [**sysTerminationFeesGetTerminationFeesByInvoice**](docs/Api/SysTerminationFeesApi.md#systerminationfeesgetterminationfeesbyinvoice) | **GET** /sysapi/v1.0/terminationfees/byInvoice/{invoiceId} | Haalt de gefactureerde opzegvergoedingen op voor een specifieke factuur
 *SysValidateMeterReadingApi* | [**sysValidateMeterReadingPost**](docs/Api/SysValidateMeterReadingApi.md#sysvalidatemeterreadingpost) | **POST** /sysapi/v1.0/validatemeterreading | 
 
 
@@ -440,6 +444,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiInvoiceProcessRule](docs/Model/EcedoERPCRMInterfaceApiInvoiceProcessRule.md)
  - [EcedoERPCRMInterfaceApiInvoiceProcessRulePostData](docs/Model/EcedoERPCRMInterfaceApiInvoiceProcessRulePostData.md)
  - [EcedoERPCRMInterfaceApiInvoiceReasonResult](docs/Model/EcedoERPCRMInterfaceApiInvoiceReasonResult.md)
+ - [EcedoERPCRMInterfaceApiInvoiceRow](docs/Model/EcedoERPCRMInterfaceApiInvoiceRow.md)
  - [EcedoERPCRMInterfaceApiInvoiceRowPostData](docs/Model/EcedoERPCRMInterfaceApiInvoiceRowPostData.md)
  - [EcedoERPCRMInterfaceApiInvoiceRowSummaryDto](docs/Model/EcedoERPCRMInterfaceApiInvoiceRowSummaryDto.md)
  - [EcedoERPCRMInterfaceApiInvoiceRowTotalsDto](docs/Model/EcedoERPCRMInterfaceApiInvoiceRowTotalsDto.md)
@@ -598,9 +603,17 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
-## basic
+## Authorization
 
-- **Type**: HTTP basic authentication
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
+
+## Ocp-Apim-Subscription-Key
+
+- **Type**: API key
+- **API key parameter name**: Ocp-Apim-Subscription-Key
+- **Location**: HTTP header
 
 
 ## Author

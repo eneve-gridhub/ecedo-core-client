@@ -1,33 +1,38 @@
 # Swagger\Client\SysTerminationFeesApi
 
-All URIs are relative to *https://test.ecedo.com*
+All URIs are relative to *https://innova.ecedo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**sysTerminationFeesCalculateTerminationFeeForContract**](SysTerminationFeesApi.md#sysTerminationFeesCalculateTerminationFeeForContract) | **GET** /sysapi/v1.0/terminationfees/calculateForContract/{contractId} | Berekent de opzegvergoeding voor een contract op de opzegdatum
-[**sysTerminationFeesCalculateTerminationFeesForConnection**](SysTerminationFeesApi.md#sysTerminationFeesCalculateTerminationFeesForConnection) | **GET** /sysapi/v1.0/terminationfees/calculateForConnection/{connectionId} | Berekent de opzegvergoedingen voor een aansluiting op de opzegdatum
-[**sysTerminationFeesGetCalculationTypeForContract**](SysTerminationFeesApi.md#sysTerminationFeesGetCalculationTypeForContract) | **GET** /sysapi/v1.0/terminationfees/calculationTypeByContract/{contractId} | Haalt het type TerminationFee berekening op voor een energielevering- of meeliftcontract.
-[**sysTerminationFeesGetCalculationTypesForConnection**](SysTerminationFeesApi.md#sysTerminationFeesGetCalculationTypesForConnection) | **GET** /sysapi/v1.0/terminationfees/calculationTypesByConnection/{connectionId} | Haalt de type TerminationFee berekeningen op voor een aansluiting.
+[**sysTerminationFeesCalculateTerminationFeeForContract**](SysTerminationFeesApi.md#sysTerminationFeesCalculateTerminationFeeForContract) | **GET** /sysapi/v1.0/terminationfees/calculateForContract/{contractId} | Berekent een indicatieve opzegvergoeding voor een contract
+[**sysTerminationFeesCalculateTerminationFeesForConnection**](SysTerminationFeesApi.md#sysTerminationFeesCalculateTerminationFeesForConnection) | **GET** /sysapi/v1.0/terminationfees/calculateForConnection/{connectionId} | Berekent een indicatieve opzegvergoeding voor een aansluiting
+[**sysTerminationFeesGetCalculationTypeForContract**](SysTerminationFeesApi.md#sysTerminationFeesGetCalculationTypeForContract) | **GET** /sysapi/v1.0/terminationfees/calculationTypeByContract/{contractId} | Geeft het type opzegvergoeding terug voor een energielevering- of meeliftcontract
+[**sysTerminationFeesGetCalculationTypesForConnection**](SysTerminationFeesApi.md#sysTerminationFeesGetCalculationTypesForConnection) | **GET** /sysapi/v1.0/terminationfees/calculationTypesByConnection/{connectionId} | Geeft het type opzegvergoeding terug voor een aansluiting
 [**sysTerminationFeesGetReferenceProposition**](SysTerminationFeesApi.md#sysTerminationFeesGetReferenceProposition) | **GET** /sysapi/v1.0/terminationfees/referencePropositionsByContract/{contractId} | Haalt de referentiepropositie voor een energieleveringcontract op en een eventuele referentiepropositie voor een bijbehorende meeliftpropositie.
 [**sysTerminationFeesGetTerminationFeesByConnection**](SysTerminationFeesApi.md#sysTerminationFeesGetTerminationFeesByConnection) | **GET** /sysapi/v1.0/terminationfees/byConnection/{connectionId} | Haalt de opzegvergoedingen op die bij een aansluiting horen
-[**sysTerminationFeesGetTerminationFeesByInvoice**](SysTerminationFeesApi.md#sysTerminationFeesGetTerminationFeesByInvoice) | **GET** /sysapi/v1.0/terminationfees/byInvoice/{invoiceId} | Haalt de opzegvergoedingen op die bij een factuur horen
+[**sysTerminationFeesGetTerminationFeesByInvoice**](SysTerminationFeesApi.md#sysTerminationFeesGetTerminationFeesByInvoice) | **GET** /sysapi/v1.0/terminationfees/byInvoice/{invoiceId} | Haalt de gefactureerde opzegvergoedingen op voor een specifieke factuur
 
 
 # **sysTerminationFeesCalculateTerminationFeeForContract**
 > \Swagger\Client\Model\EcedoERPCRMInterfaceApiCalculatedTerminationFee sysTerminationFeesCalculateTerminationFeeForContract($contract_id, $termination_date)
 
-Berekent de opzegvergoeding voor een contract op de opzegdatum
+Berekent een indicatieve opzegvergoeding voor een contract
+
+Met behulp van deze API kan een indicatieve opzegvergoeding berekend worden voor een specifiek contract en een specifieke opzegdatum.<br /><br />  De opzegvergoeding die met deze API wordt berekend is vluchtig en indicatief. Hier kan de klant geen rechten aan ontlenen, maar is bedoeld om een indicatie te geven van de hoogte van de opzegvergoeding wanneer de klant daadwerkelijk zijn of haar contract op zou zeggen.<br />
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysTerminationFeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -60,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 
@@ -72,18 +77,23 @@ Name | Type | Description  | Notes
 # **sysTerminationFeesCalculateTerminationFeesForConnection**
 > \Swagger\Client\Model\EcedoERPCRMInterfaceApiTerminationFeeConnectionCalculations sysTerminationFeesCalculateTerminationFeesForConnection($connection_id, $termination_date)
 
-Berekent de opzegvergoedingen voor een aansluiting op de opzegdatum
+Berekent een indicatieve opzegvergoeding voor een aansluiting
+
+Met behulp van deze API kan een indicatieve opzegvergoeding berekend worden voor een specifieke aansluiting en een specifieke opzegdatum.<br /><br />  De opzegvergoeding die met deze API wordt berekend is vluchtig en indicatief. Hier kan de klant geen rechten aan ontlenen, maar is bedoeld om een indicatie te geven van de hoogte van de opzegvergoeding wanneer de klant daadwerkelijk zijn of haar contract op zou zeggen.<br />
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysTerminationFeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -116,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 
@@ -128,18 +138,23 @@ Name | Type | Description  | Notes
 # **sysTerminationFeesGetCalculationTypeForContract**
 > \Swagger\Client\Model\EcedoERPCRMInterfaceApiTerminationFeeCalculationTypeResponse sysTerminationFeesGetCalculationTypeForContract($contract_id)
 
-Haalt het type TerminationFee berekening op voor een energielevering- of meeliftcontract.
+Geeft het type opzegvergoeding terug voor een energielevering- of meeliftcontract
+
+Er zijn verschillende manieren waarop een opzegvergoeding berekend kan worden. Bijvoorbeeld Rover2023 voor kleinverbruikaansluitingen met een tekendatum op of na 1-6-2023 of Rover2013 van oudere contracten. Daarnaast kan een opzegvergoeding ook gebaseerd worden op zakelijke afspraken of kan er geen opzegvergoeding van toepassing zijn.<br /><br />  Met behulp van deze API kan per contract opgevraagd worden welk type opzegvergoeding van toepassing is.<br />  Zie het model van de response voor de mogelijke waarden.<br />
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysTerminationFeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -170,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 
@@ -182,18 +197,23 @@ Name | Type | Description  | Notes
 # **sysTerminationFeesGetCalculationTypesForConnection**
 > \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionTerminationFeeTypes sysTerminationFeesGetCalculationTypesForConnection($connection_id, $termination_date)
 
-Haalt de type TerminationFee berekeningen op voor een aansluiting.
+Geeft het type opzegvergoeding terug voor een aansluiting
+
+Er zijn verschillende manieren waarop een opzegvergoeding berekend kan worden. Bijvoorbeeld Rover2023 voor kleinverbruikaansluitingen met een tekendatum op of na 1-6-2023 of Rover2013 van oudere contracten. Daarnaast kan een opzegvergoeding ook gebaseerd worden op zakelijke afspraken of kan er geen opzegvergoeding van toepassing zijn.<br /><br />  Met behulp van deze API kan per aansluiting opgevraagd worden welk types opzegvergoedingen van toepassing zijn op de contracten van deze aansluiting en afhankelijk van de meegegeven opzegdatum (`terminationDate`).<br />  Zie het model van de response voor de mogelijke waarden.<br />
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysTerminationFeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -226,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 
@@ -247,11 +267,14 @@ Deze API-call haalt een referentiepropositie voor een energieleveringcontract op
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysTerminationFeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -282,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 
@@ -301,11 +324,14 @@ Haalt de opzegvergoedingen op die bij een aansluiting horen
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysTerminationFeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -338,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 
@@ -350,20 +376,23 @@ Name | Type | Description  | Notes
 # **sysTerminationFeesGetTerminationFeesByInvoice**
 > \Swagger\Client\Model\EcedoERPCRMInterfaceApiContractTerminationFeeBase[] sysTerminationFeesGetTerminationFeesByInvoice($invoice_id)
 
-Haalt de opzegvergoedingen op die bij een factuur horen
+Haalt de gefactureerde opzegvergoedingen op voor een specifieke factuur
 
-De factuur waarvoor de opzegvergoedingen moeten worden opgehaald moet een eindafrekening (final settlement) of een aankoop factuur zijn (purchase).
+Deze API geeft de opzegvergoedingen terug die in een specifieke factuur in rekening zijn gebracht bij een klant.<br /><br />  Deze API kan gebruikt worden door leveranciers die zelf e-mails of pdf's genereren en daarin willen tonen welke opzegvergoedingen in rekening zijn gebracht.<br />  Deze API kan ook gebruikt worden om in een MijnPortaal te tonen welke opzegvergoedingen in een factuur in rekening zijn gebracht en op basis van welke gegevens deze opzegvergoedingen zijn berekend<br /><br />  De factuur waarvoor de opzegvergoedingen moeten worden opgehaald moet een eindafrekening (`final settlement`) of een aankoop factuur (`purchase`) van het subtype \"Opzegvergoeding\" (`TerminationFee`) zijn.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure HTTP basic authorization: basic
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
 $apiInstance = new Swagger\Client\Api\SysTerminationFeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -394,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic](../../README.md#basic)
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
 
 ### HTTP request headers
 

@@ -74,7 +74,7 @@ class SysTerminationFeesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysTerminationFeesCalculateTerminationFeeForContract
      *
-     * Berekent de opzegvergoeding voor een contract op de opzegdatum.
+     * Berekent een indicatieve opzegvergoeding voor een contract.
      *
      */
     public function testSysTerminationFeesCalculateTerminationFeeForContract()
@@ -84,7 +84,7 @@ class SysTerminationFeesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysTerminationFeesCalculateTerminationFeesForConnection
      *
-     * Berekent de opzegvergoedingen voor een aansluiting op de opzegdatum.
+     * Berekent een indicatieve opzegvergoeding voor een aansluiting.
      *
      */
     public function testSysTerminationFeesCalculateTerminationFeesForConnection()
@@ -94,7 +94,7 @@ class SysTerminationFeesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysTerminationFeesGetCalculationTypeForContract
      *
-     * Haalt het type TerminationFee berekening op voor een energielevering- of meeliftcontract..
+     * Geeft het type opzegvergoeding terug voor een energielevering- of meeliftcontract.
      *
      */
     public function testSysTerminationFeesGetCalculationTypeForContract()
@@ -104,7 +104,7 @@ class SysTerminationFeesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysTerminationFeesGetCalculationTypesForConnection
      *
-     * Haalt de type TerminationFee berekeningen op voor een aansluiting..
+     * Geeft het type opzegvergoeding terug voor een aansluiting.
      *
      */
     public function testSysTerminationFeesGetCalculationTypesForConnection()
@@ -134,7 +134,7 @@ class SysTerminationFeesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysTerminationFeesGetTerminationFeesByInvoice
      *
-     * Haalt de opzegvergoedingen op die bij een factuur horen.
+     * Haalt de gefactureerde opzegvergoedingen op voor een specifieke factuur.
      *
      */
     public function testSysTerminationFeesGetTerminationFeesByInvoice()

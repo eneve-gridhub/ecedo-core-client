@@ -193,8 +193,8 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
         return self::$swaggerModelName;
     }
 
-    const INVOICE_TYPE_SETTLEMENT = 'Settlement';
     const INVOICE_TYPE_ADVANCE_PAYMENT = 'AdvancePayment';
+    const INVOICE_TYPE_SETTLEMENT = 'Settlement';
     const INVOICE_TYPE_PURCHASE = 'Purchase';
     const INVOICE_TYPE_CHARGE_SESSION = 'ChargeSession';
     const INVOICE_TYPE_CUSTOM = 'Custom';
@@ -232,8 +232,8 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
     public function getInvoiceTypeAllowableValues()
     {
         return [
-            self::INVOICE_TYPE_SETTLEMENT,
             self::INVOICE_TYPE_ADVANCE_PAYMENT,
+            self::INVOICE_TYPE_SETTLEMENT,
             self::INVOICE_TYPE_PURCHASE,
             self::INVOICE_TYPE_CHARGE_SESSION,
             self::INVOICE_TYPE_CUSTOM,

@@ -57,12 +57,13 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'ean' => 'string',
         'product_id' => 'string',
         'product_description_localized' => 'string',
         'product_group' => 'string',
+        'product_group_localized' => 'string',
         'price_component_type' => 'string',
         'price_component_type_localized' => 'string',
-        'ean' => 'string',
         'vat_percentage' => 'double',
         'range_start' => 'int',
         'range_end' => 'int',
@@ -83,12 +84,13 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'ean' => null,
         'product_id' => 'uuid',
         'product_description_localized' => null,
         'product_group' => null,
+        'product_group_localized' => null,
         'price_component_type' => null,
         'price_component_type_localized' => null,
-        'ean' => null,
         'vat_percentage' => 'double',
         'range_start' => 'int32',
         'range_end' => 'int32',
@@ -130,12 +132,13 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
+        'ean' => 'EAN',
         'product_id' => 'ProductId',
         'product_description_localized' => 'ProductDescriptionLocalized',
         'product_group' => 'ProductGroup',
+        'product_group_localized' => 'ProductGroupLocalized',
         'price_component_type' => 'PriceComponentType',
         'price_component_type_localized' => 'PriceComponentTypeLocalized',
-        'ean' => 'EAN',
         'vat_percentage' => 'VatPercentage',
         'range_start' => 'RangeStart',
         'range_end' => 'RangeEnd',
@@ -156,12 +159,13 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
+        'ean' => 'setEan',
         'product_id' => 'setProductId',
         'product_description_localized' => 'setProductDescriptionLocalized',
         'product_group' => 'setProductGroup',
+        'product_group_localized' => 'setProductGroupLocalized',
         'price_component_type' => 'setPriceComponentType',
         'price_component_type_localized' => 'setPriceComponentTypeLocalized',
-        'ean' => 'setEan',
         'vat_percentage' => 'setVatPercentage',
         'range_start' => 'setRangeStart',
         'range_end' => 'setRangeEnd',
@@ -182,12 +186,13 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
+        'ean' => 'getEan',
         'product_id' => 'getProductId',
         'product_description_localized' => 'getProductDescriptionLocalized',
         'product_group' => 'getProductGroup',
+        'product_group_localized' => 'getProductGroupLocalized',
         'price_component_type' => 'getPriceComponentType',
         'price_component_type_localized' => 'getPriceComponentTypeLocalized',
-        'ean' => 'getEan',
         'vat_percentage' => 'getVatPercentage',
         'range_start' => 'getRangeStart',
         'range_end' => 'getRangeEnd',
@@ -243,10 +248,24 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
         return self::$swaggerModelName;
     }
 
-    const PRICE_UNIT_M3 = 'M3';
-    const PRICE_UNIT_KWH = 'KWh';
+    const PRODUCT_GROUP_ENERGIELEVERING = 'Energielevering';
+    const PRODUCT_GROUP_ZON = 'Zon';
+    const PRODUCT_GROUP_WIND = 'Wind';
+    const PRODUCT_GROUP_OBLIGATIE = 'Obligatie';
+    const PRODUCT_GROUP_PRODUCTIEMIDDEL = 'Productiemiddel';
+    const PRODUCT_GROUP_MEELIFT = 'Meelift';
+    const PRODUCT_GROUP_EXTERNE_OPWEK = 'ExterneOpwek';
+    const PRODUCT_GROUP_TANKKAART = 'Tankkaart';
+    const PRODUCT_GROUP_OPLAAD_PUNT_LOCATIE_EIGENAAR = 'OplaadPuntLocatieEigenaar';
+    const PRODUCT_GROUP_ONBALANS_FLEX = 'OnbalansFlex';
+    const PRODUCT_GROUP_LAADPAAL = 'Laadpaal';
+    const PRODUCT_GROUP_MSP = 'Msp';
+    const PRODUCT_GROUP_CPO = 'Cpo';
+    const PRODUCT_GROUP_RESELLER = 'Reseller';
     const PRICE_UNIT_YEAR = 'Year';
     const PRICE_UNIT_DAY = 'Day';
+    const PRICE_UNIT_KWH = 'KWh';
+    const PRICE_UNIT_M3 = 'M3';
     const PRICE_UNIT_ONE_OFF = 'OneOff';
     const PRICE_UNIT_MONTH = 'Month';
     const PRICE_UNIT_MWH = 'MWh';
@@ -265,13 +284,38 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
      *
      * @return string[]
      */
+    public function getProductGroupAllowableValues()
+    {
+        return [
+            self::PRODUCT_GROUP_ENERGIELEVERING,
+            self::PRODUCT_GROUP_ZON,
+            self::PRODUCT_GROUP_WIND,
+            self::PRODUCT_GROUP_OBLIGATIE,
+            self::PRODUCT_GROUP_PRODUCTIEMIDDEL,
+            self::PRODUCT_GROUP_MEELIFT,
+            self::PRODUCT_GROUP_EXTERNE_OPWEK,
+            self::PRODUCT_GROUP_TANKKAART,
+            self::PRODUCT_GROUP_OPLAAD_PUNT_LOCATIE_EIGENAAR,
+            self::PRODUCT_GROUP_ONBALANS_FLEX,
+            self::PRODUCT_GROUP_LAADPAAL,
+            self::PRODUCT_GROUP_MSP,
+            self::PRODUCT_GROUP_CPO,
+            self::PRODUCT_GROUP_RESELLER,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
     public function getPriceUnitAllowableValues()
     {
         return [
-            self::PRICE_UNIT_M3,
-            self::PRICE_UNIT_KWH,
             self::PRICE_UNIT_YEAR,
             self::PRICE_UNIT_DAY,
+            self::PRICE_UNIT_KWH,
+            self::PRICE_UNIT_M3,
             self::PRICE_UNIT_ONE_OFF,
             self::PRICE_UNIT_MONTH,
             self::PRICE_UNIT_MWH,
@@ -301,12 +345,13 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
+        $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['product_description_localized'] = isset($data['product_description_localized']) ? $data['product_description_localized'] : null;
         $this->container['product_group'] = isset($data['product_group']) ? $data['product_group'] : null;
+        $this->container['product_group_localized'] = isset($data['product_group_localized']) ? $data['product_group_localized'] : null;
         $this->container['price_component_type'] = isset($data['price_component_type']) ? $data['price_component_type'] : null;
         $this->container['price_component_type_localized'] = isset($data['price_component_type_localized']) ? $data['price_component_type_localized'] : null;
-        $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
         $this->container['vat_percentage'] = isset($data['vat_percentage']) ? $data['vat_percentage'] : null;
         $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
         $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
@@ -330,6 +375,14 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getProductGroupAllowableValues();
+        if (!is_null($this->container['product_group']) && !in_array($this->container['product_group'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'product_group', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getPriceUnitAllowableValues();
         if (!is_null($this->container['price_unit']) && !in_array($this->container['price_unit'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -352,6 +405,30 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets ean
+     *
+     * @return string
+     */
+    public function getEan()
+    {
+        return $this->container['ean'];
+    }
+
+    /**
+     * Sets ean
+     *
+     * @param string $ean ean
+     *
+     * @return $this
+     */
+    public function setEan($ean)
+    {
+        $this->container['ean'] = $ean;
+
+        return $this;
+    }
 
     /**
      * Gets product_id
@@ -420,7 +497,40 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
      */
     public function setProductGroup($product_group)
     {
+        $allowedValues = $this->getProductGroupAllowableValues();
+        if (!is_null($product_group) && !in_array($product_group, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'product_group', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['product_group'] = $product_group;
+
+        return $this;
+    }
+
+    /**
+     * Gets product_group_localized
+     *
+     * @return string
+     */
+    public function getProductGroupLocalized()
+    {
+        return $this->container['product_group_localized'];
+    }
+
+    /**
+     * Sets product_group_localized
+     *
+     * @param string $product_group_localized product_group_localized
+     *
+     * @return $this
+     */
+    public function setProductGroupLocalized($product_group_localized)
+    {
+        $this->container['product_group_localized'] = $product_group_localized;
 
         return $this;
     }
@@ -469,30 +579,6 @@ class EcedoERPCRMInterfaceApiAdvancePaymentRow implements ModelInterface, ArrayA
     public function setPriceComponentTypeLocalized($price_component_type_localized)
     {
         $this->container['price_component_type_localized'] = $price_component_type_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets ean
-     *
-     * @return string
-     */
-    public function getEan()
-    {
-        return $this->container['ean'];
-    }
-
-    /**
-     * Sets ean
-     *
-     * @param string $ean ean
-     *
-     * @return $this
-     */
-    public function setEan($ean)
-    {
-        $this->container['ean'] = $ean;
 
         return $this;
     }

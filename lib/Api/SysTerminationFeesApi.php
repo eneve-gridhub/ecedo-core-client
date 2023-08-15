@@ -90,7 +90,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesCalculateTerminationFeeForContract
      *
-     * Berekent de opzegvergoeding voor een contract op de opzegdatum
+     * Berekent een indicatieve opzegvergoeding voor een contract
      *
      * @param  string $contract_id Het contract waarvoor de opzegvergoeding voor berekend moet worden (required)
      * @param  \DateTime $termination_date De datum waarop het opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -108,7 +108,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesCalculateTerminationFeeForContractWithHttpInfo
      *
-     * Berekent de opzegvergoeding voor een contract op de opzegdatum
+     * Berekent een indicatieve opzegvergoeding voor een contract
      *
      * @param  string $contract_id Het contract waarvoor de opzegvergoeding voor berekend moet worden (required)
      * @param  \DateTime $termination_date De datum waarop het opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -200,7 +200,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesCalculateTerminationFeeForContractAsync
      *
-     * Berekent de opzegvergoeding voor een contract op de opzegdatum
+     * Berekent een indicatieve opzegvergoeding voor een contract
      *
      * @param  string $contract_id Het contract waarvoor de opzegvergoeding voor berekend moet worden (required)
      * @param  \DateTime $termination_date De datum waarop het opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -221,7 +221,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesCalculateTerminationFeeForContractAsyncWithHttpInfo
      *
-     * Berekent de opzegvergoeding voor een contract op de opzegdatum
+     * Berekent een indicatieve opzegvergoeding voor een contract
      *
      * @param  string $contract_id Het contract waarvoor de opzegvergoeding voor berekend moet worden (required)
      * @param  \DateTime $termination_date De datum waarop het opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -360,9 +360,15 @@ class SysTerminationFeesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -388,7 +394,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesCalculateTerminationFeesForConnection
      *
-     * Berekent de opzegvergoedingen voor een aansluiting op de opzegdatum
+     * Berekent een indicatieve opzegvergoeding voor een aansluiting
      *
      * @param  string $connection_id De aansluiting waar de opzegvergoedingen voor berekend moeten worden (required)
      * @param  \DateTime $termination_date De datum waarop het contract opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -406,7 +412,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesCalculateTerminationFeesForConnectionWithHttpInfo
      *
-     * Berekent de opzegvergoedingen voor een aansluiting op de opzegdatum
+     * Berekent een indicatieve opzegvergoeding voor een aansluiting
      *
      * @param  string $connection_id De aansluiting waar de opzegvergoedingen voor berekend moeten worden (required)
      * @param  \DateTime $termination_date De datum waarop het contract opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -498,7 +504,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesCalculateTerminationFeesForConnectionAsync
      *
-     * Berekent de opzegvergoedingen voor een aansluiting op de opzegdatum
+     * Berekent een indicatieve opzegvergoeding voor een aansluiting
      *
      * @param  string $connection_id De aansluiting waar de opzegvergoedingen voor berekend moeten worden (required)
      * @param  \DateTime $termination_date De datum waarop het contract opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -519,7 +525,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesCalculateTerminationFeesForConnectionAsyncWithHttpInfo
      *
-     * Berekent de opzegvergoedingen voor een aansluiting op de opzegdatum
+     * Berekent een indicatieve opzegvergoeding voor een aansluiting
      *
      * @param  string $connection_id De aansluiting waar de opzegvergoedingen voor berekend moeten worden (required)
      * @param  \DateTime $termination_date De datum waarop het contract opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -658,9 +664,15 @@ class SysTerminationFeesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -686,7 +698,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetCalculationTypeForContract
      *
-     * Haalt het type TerminationFee berekening op voor een energielevering- of meeliftcontract.
+     * Geeft het type opzegvergoeding terug voor een energielevering- of meeliftcontract
      *
      * @param  string $contract_id Het contract waar het type TerminationFee berekening voor moet worden opgehaald (required)
      *
@@ -703,7 +715,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetCalculationTypeForContractWithHttpInfo
      *
-     * Haalt het type TerminationFee berekening op voor een energielevering- of meeliftcontract.
+     * Geeft het type opzegvergoeding terug voor een energielevering- of meeliftcontract
      *
      * @param  string $contract_id Het contract waar het type TerminationFee berekening voor moet worden opgehaald (required)
      *
@@ -794,7 +806,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetCalculationTypeForContractAsync
      *
-     * Haalt het type TerminationFee berekening op voor een energielevering- of meeliftcontract.
+     * Geeft het type opzegvergoeding terug voor een energielevering- of meeliftcontract
      *
      * @param  string $contract_id Het contract waar het type TerminationFee berekening voor moet worden opgehaald (required)
      *
@@ -814,7 +826,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetCalculationTypeForContractAsyncWithHttpInfo
      *
-     * Haalt het type TerminationFee berekening op voor een energielevering- of meeliftcontract.
+     * Geeft het type opzegvergoeding terug voor een energielevering- of meeliftcontract
      *
      * @param  string $contract_id Het contract waar het type TerminationFee berekening voor moet worden opgehaald (required)
      *
@@ -947,9 +959,15 @@ class SysTerminationFeesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -975,7 +993,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetCalculationTypesForConnection
      *
-     * Haalt de type TerminationFee berekeningen op voor een aansluiting.
+     * Geeft het type opzegvergoeding terug voor een aansluiting
      *
      * @param  string $connection_id De aansluiting waar de type TerminationFee berekeningen voor moet worden opgehaald (required)
      * @param  \DateTime $termination_date De datum waarop het contract opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -993,7 +1011,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetCalculationTypesForConnectionWithHttpInfo
      *
-     * Haalt de type TerminationFee berekeningen op voor een aansluiting.
+     * Geeft het type opzegvergoeding terug voor een aansluiting
      *
      * @param  string $connection_id De aansluiting waar de type TerminationFee berekeningen voor moet worden opgehaald (required)
      * @param  \DateTime $termination_date De datum waarop het contract opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -1085,7 +1103,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetCalculationTypesForConnectionAsync
      *
-     * Haalt de type TerminationFee berekeningen op voor een aansluiting.
+     * Geeft het type opzegvergoeding terug voor een aansluiting
      *
      * @param  string $connection_id De aansluiting waar de type TerminationFee berekeningen voor moet worden opgehaald (required)
      * @param  \DateTime $termination_date De datum waarop het contract opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -1106,7 +1124,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetCalculationTypesForConnectionAsyncWithHttpInfo
      *
-     * Haalt de type TerminationFee berekeningen op voor een aansluiting.
+     * Geeft het type opzegvergoeding terug voor een aansluiting
      *
      * @param  string $connection_id De aansluiting waar de type TerminationFee berekeningen voor moet worden opgehaald (required)
      * @param  \DateTime $termination_date De datum waarop het contract opgezegd wordt. Als dit leeg gelaten is dan wordt de huidige datum gepakt (optional)
@@ -1245,9 +1263,15 @@ class SysTerminationFeesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1534,9 +1558,15 @@ class SysTerminationFeesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1832,9 +1862,15 @@ class SysTerminationFeesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1860,7 +1896,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetTerminationFeesByInvoice
      *
-     * Haalt de opzegvergoedingen op die bij een factuur horen
+     * Haalt de gefactureerde opzegvergoedingen op voor een specifieke factuur
      *
      * @param  string $invoice_id De factuur waarvoor de opzegvergoedingen opgehaald moeten worden (required)
      *
@@ -1877,7 +1913,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetTerminationFeesByInvoiceWithHttpInfo
      *
-     * Haalt de opzegvergoedingen op die bij een factuur horen
+     * Haalt de gefactureerde opzegvergoedingen op voor een specifieke factuur
      *
      * @param  string $invoice_id De factuur waarvoor de opzegvergoedingen opgehaald moeten worden (required)
      *
@@ -1968,7 +2004,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetTerminationFeesByInvoiceAsync
      *
-     * Haalt de opzegvergoedingen op die bij een factuur horen
+     * Haalt de gefactureerde opzegvergoedingen op voor een specifieke factuur
      *
      * @param  string $invoice_id De factuur waarvoor de opzegvergoedingen opgehaald moeten worden (required)
      *
@@ -1988,7 +2024,7 @@ class SysTerminationFeesApi
     /**
      * Operation sysTerminationFeesGetTerminationFeesByInvoiceAsyncWithHttpInfo
      *
-     * Haalt de opzegvergoedingen op die bij een factuur horen
+     * Haalt de gefactureerde opzegvergoedingen op voor een specifieke factuur
      *
      * @param  string $invoice_id De factuur waarvoor de opzegvergoedingen opgehaald moeten worden (required)
      *
@@ -2121,9 +2157,15 @@ class SysTerminationFeesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];

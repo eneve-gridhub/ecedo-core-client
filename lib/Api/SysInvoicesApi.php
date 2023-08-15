@@ -347,9 +347,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -672,9 +678,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -975,9 +987,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1297,9 +1315,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1605,9 +1629,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1664,7 +1694,7 @@ class SysInvoicesApi
      */
     public function sysInvoicesDownloadSingleInvoiceWithHttpInfo($invoice_id, $organization_id, $document_type = null)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'object';
         $request = $this->sysInvoicesDownloadSingleInvoiceRequest($invoice_id, $organization_id, $document_type);
 
         try {
@@ -1922,9 +1952,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2229,9 +2265,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2264,14 +2306,16 @@ class SysInvoicesApi
      * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;InvoiceDocuments&#x60; (optional)
      * @param  bool $include_child_invoice_ids Optionele parameter (default false) waardoor het response-object van verzamelfacturen voorzien kan worden van &#x60;ChildInvoiceIds&#x60; (optional)
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
+     * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
+     * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice
      */
-    public function sysInvoicesGetInvoice($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null)
+    public function sysInvoicesGetInvoice($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null)
     {
-        list($response) = $this->sysInvoicesGetInvoiceWithHttpInfo($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids);
+        list($response) = $this->sysInvoicesGetInvoiceWithHttpInfo($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows);
         return $response;
     }
 
@@ -2285,15 +2329,17 @@ class SysInvoicesApi
      * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;InvoiceDocuments&#x60; (optional)
      * @param  bool $include_child_invoice_ids Optionele parameter (default false) waardoor het response-object van verzamelfacturen voorzien kan worden van &#x60;ChildInvoiceIds&#x60; (optional)
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
+     * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
+     * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysInvoicesGetInvoiceWithHttpInfo($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null)
+    public function sysInvoicesGetInvoiceWithHttpInfo($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice';
-        $request = $this->sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids);
+        $request = $this->sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2380,13 +2426,15 @@ class SysInvoicesApi
      * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;InvoiceDocuments&#x60; (optional)
      * @param  bool $include_child_invoice_ids Optionele parameter (default false) waardoor het response-object van verzamelfacturen voorzien kan worden van &#x60;ChildInvoiceIds&#x60; (optional)
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
+     * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
+     * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysInvoicesGetInvoiceAsync($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null)
+    public function sysInvoicesGetInvoiceAsync($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null)
     {
-        return $this->sysInvoicesGetInvoiceAsyncWithHttpInfo($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids)
+        return $this->sysInvoicesGetInvoiceAsyncWithHttpInfo($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2404,14 +2452,16 @@ class SysInvoicesApi
      * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;InvoiceDocuments&#x60; (optional)
      * @param  bool $include_child_invoice_ids Optionele parameter (default false) waardoor het response-object van verzamelfacturen voorzien kan worden van &#x60;ChildInvoiceIds&#x60; (optional)
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
+     * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
+     * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysInvoicesGetInvoiceAsyncWithHttpInfo($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null)
+    public function sysInvoicesGetInvoiceAsyncWithHttpInfo($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice';
-        $request = $this->sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids);
+        $request = $this->sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2458,11 +2508,13 @@ class SysInvoicesApi
      * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;InvoiceDocuments&#x60; (optional)
      * @param  bool $include_child_invoice_ids Optionele parameter (default false) waardoor het response-object van verzamelfacturen voorzien kan worden van &#x60;ChildInvoiceIds&#x60; (optional)
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
+     * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
+     * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null)
+    protected function sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null)
     {
         // verify the required parameter 'invoice_id' is set
         if ($invoice_id === null || (is_array($invoice_id) && count($invoice_id) === 0)) {
@@ -2495,6 +2547,14 @@ class SysInvoicesApi
         // query params
         if ($include_corrected_invoice_ids !== null) {
             $queryParams['includeCorrectedInvoiceIds'] = ObjectSerializer::toQueryValue($include_corrected_invoice_ids);
+        }
+        // query params
+        if ($include_invoice_rows !== null) {
+            $queryParams['includeInvoiceRows'] = ObjectSerializer::toQueryValue($include_invoice_rows);
+        }
+        // query params
+        if ($include_combined_invoice_rows !== null) {
+            $queryParams['includeCombinedInvoiceRows'] = ObjectSerializer::toQueryValue($include_combined_invoice_rows);
         }
 
         // path params
@@ -2564,9 +2624,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2853,9 +2919,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3151,9 +3223,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3459,9 +3537,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3767,9 +3851,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4075,9 +4165,15 @@ class SysInvoicesApi
             }
         }
 
-        // this endpoint requires HTTP basic authentication
-        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
         }
 
         $defaultHeaders = [];

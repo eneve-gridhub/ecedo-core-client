@@ -362,4 +362,18 @@ class EcedoERPCRMInterfaceApiInvoiceTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPurchaseOrderNumber()
     {
     }
+
+    /**
+     * Test attribute "invoice_rows"
+     */
+    public function testPropertyInvoiceRows()
+    {
+    }
+
+    /**
+     * Test attribute "combined_invoice_rows"
+     */
+    public function testPropertyCombinedInvoiceRows()
+    {
+    }
 }

@@ -44,6 +44,8 @@ Name | Type | Description | Notes
 **client_reference** | **string** | klant referentie naar een custom factuur indien opgegeven. Kan enkel gevuld zijn bij custom facturen | [optional] 
 **financial_description** | **string** |  | [optional] 
 **purchase_order_number** | **string** |  | [optional] 
+**invoice_rows** | [**\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceRow[]**](EcedoERPCRMInterfaceApiInvoiceRow.md) |  | [optional] 
+**combined_invoice_rows** | [**\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceRow[]**](EcedoERPCRMInterfaceApiInvoiceRow.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
