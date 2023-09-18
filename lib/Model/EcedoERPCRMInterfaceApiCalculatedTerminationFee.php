@@ -66,7 +66,7 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_end_date' => '\DateTime',
         'contract_termination_date' => '\DateTime',
         'termination_fee_type' => 'string',
-        'calculation_data' => 'array',
+        'calculation_data' => 'object',
     ];
 
     /**
