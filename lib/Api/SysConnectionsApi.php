@@ -1542,14 +1542,15 @@ class SysConnectionsApi
      * @param  string $ean EAN van de aansluiting (required)
      * @param  \DateTime $start_date StartDatum van de te controleren periode (required)
      * @param  \DateTime $end_date EindDatum van de te controleren periode (required)
+     * @param  string $company_label_id Optioneel CompanyLabelId (default null). Indien meegegeven wordt de functionaliteit van deze API alleen op dit label toegepast. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiHasContractInPeriodResponse
      */
-    public function sysConnectionsHasContractInPeriod($ean, $start_date, $end_date)
+    public function sysConnectionsHasContractInPeriod($ean, $start_date, $end_date, $company_label_id = null)
     {
-        list($response) = $this->sysConnectionsHasContractInPeriodWithHttpInfo($ean, $start_date, $end_date);
+        list($response) = $this->sysConnectionsHasContractInPeriodWithHttpInfo($ean, $start_date, $end_date, $company_label_id);
         return $response;
     }
 
@@ -1561,15 +1562,16 @@ class SysConnectionsApi
      * @param  string $ean EAN van de aansluiting (required)
      * @param  \DateTime $start_date StartDatum van de te controleren periode (required)
      * @param  \DateTime $end_date EindDatum van de te controleren periode (required)
+     * @param  string $company_label_id Optioneel CompanyLabelId (default null). Indien meegegeven wordt de functionaliteit van deze API alleen op dit label toegepast. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiHasContractInPeriodResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysConnectionsHasContractInPeriodWithHttpInfo($ean, $start_date, $end_date)
+    public function sysConnectionsHasContractInPeriodWithHttpInfo($ean, $start_date, $end_date, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiHasContractInPeriodResponse';
-        $request = $this->sysConnectionsHasContractInPeriodRequest($ean, $start_date, $end_date);
+        $request = $this->sysConnectionsHasContractInPeriodRequest($ean, $start_date, $end_date, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1654,13 +1656,14 @@ class SysConnectionsApi
      * @param  string $ean EAN van de aansluiting (required)
      * @param  \DateTime $start_date StartDatum van de te controleren periode (required)
      * @param  \DateTime $end_date EindDatum van de te controleren periode (required)
+     * @param  string $company_label_id Optioneel CompanyLabelId (default null). Indien meegegeven wordt de functionaliteit van deze API alleen op dit label toegepast. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysConnectionsHasContractInPeriodAsync($ean, $start_date, $end_date)
+    public function sysConnectionsHasContractInPeriodAsync($ean, $start_date, $end_date, $company_label_id = null)
     {
-        return $this->sysConnectionsHasContractInPeriodAsyncWithHttpInfo($ean, $start_date, $end_date)
+        return $this->sysConnectionsHasContractInPeriodAsyncWithHttpInfo($ean, $start_date, $end_date, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1676,14 +1679,15 @@ class SysConnectionsApi
      * @param  string $ean EAN van de aansluiting (required)
      * @param  \DateTime $start_date StartDatum van de te controleren periode (required)
      * @param  \DateTime $end_date EindDatum van de te controleren periode (required)
+     * @param  string $company_label_id Optioneel CompanyLabelId (default null). Indien meegegeven wordt de functionaliteit van deze API alleen op dit label toegepast. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysConnectionsHasContractInPeriodAsyncWithHttpInfo($ean, $start_date, $end_date)
+    public function sysConnectionsHasContractInPeriodAsyncWithHttpInfo($ean, $start_date, $end_date, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiHasContractInPeriodResponse';
-        $request = $this->sysConnectionsHasContractInPeriodRequest($ean, $start_date, $end_date);
+        $request = $this->sysConnectionsHasContractInPeriodRequest($ean, $start_date, $end_date, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1728,11 +1732,12 @@ class SysConnectionsApi
      * @param  string $ean EAN van de aansluiting (required)
      * @param  \DateTime $start_date StartDatum van de te controleren periode (required)
      * @param  \DateTime $end_date EindDatum van de te controleren periode (required)
+     * @param  string $company_label_id Optioneel CompanyLabelId (default null). Indien meegegeven wordt de functionaliteit van deze API alleen op dit label toegepast. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysConnectionsHasContractInPeriodRequest($ean, $start_date, $end_date)
+    protected function sysConnectionsHasContractInPeriodRequest($ean, $start_date, $end_date, $company_label_id = null)
     {
         // verify the required parameter 'ean' is set
         if ($ean === null || (is_array($ean) && count($ean) === 0)) {
@@ -1767,6 +1772,10 @@ class SysConnectionsApi
         // query params
         if ($end_date !== null) {
             $queryParams['endDate'] = ObjectSerializer::toQueryValue($end_date);
+        }
+        // query params
+        if ($company_label_id !== null) {
+            $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
         }
 
         // path params
