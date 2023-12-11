@@ -57,14 +57,14 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'organization_type' => 'string',
-        'agreement_date' => '\DateTime',
-        'month' => '\DateTime',
-        'connections' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData[]',
         'do_combine_rows' => 'bool',
         'mandate_id' => 'string',
         'iban_key' => 'string',
-        'birth_day_key' => 'string'
+        'birth_day_key' => 'string',
+        'organization_type' => 'string',
+        'agreement_date' => '\DateTime',
+        'month' => '\DateTime',
+        'connections' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData[]'
     ];
 
     /**
@@ -73,14 +73,14 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'organization_type' => null,
-        'agreement_date' => 'date',
-        'month' => 'date',
-        'connections' => null,
         'do_combine_rows' => null,
         'mandate_id' => null,
         'iban_key' => null,
-        'birth_day_key' => null
+        'birth_day_key' => null,
+        'organization_type' => null,
+        'agreement_date' => 'date',
+        'month' => 'date',
+        'connections' => null
     ];
 
     /**
@@ -110,14 +110,14 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      * @var string[]
      */
     protected static $attributeMap = [
-        'organization_type' => 'OrganizationType',
-        'agreement_date' => 'AgreementDate',
-        'month' => 'Month',
-        'connections' => 'Connections',
         'do_combine_rows' => 'DoCombineRows',
         'mandate_id' => 'MandateId',
         'iban_key' => 'IBANKey',
-        'birth_day_key' => 'BirthDayKey'
+        'birth_day_key' => 'BirthDayKey',
+        'organization_type' => 'OrganizationType',
+        'agreement_date' => 'AgreementDate',
+        'month' => 'Month',
+        'connections' => 'Connections'
     ];
 
     /**
@@ -126,14 +126,14 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      * @var string[]
      */
     protected static $setters = [
-        'organization_type' => 'setOrganizationType',
-        'agreement_date' => 'setAgreementDate',
-        'month' => 'setMonth',
-        'connections' => 'setConnections',
         'do_combine_rows' => 'setDoCombineRows',
         'mandate_id' => 'setMandateId',
         'iban_key' => 'setIbanKey',
-        'birth_day_key' => 'setBirthDayKey'
+        'birth_day_key' => 'setBirthDayKey',
+        'organization_type' => 'setOrganizationType',
+        'agreement_date' => 'setAgreementDate',
+        'month' => 'setMonth',
+        'connections' => 'setConnections'
     ];
 
     /**
@@ -142,14 +142,14 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      * @var string[]
      */
     protected static $getters = [
-        'organization_type' => 'getOrganizationType',
-        'agreement_date' => 'getAgreementDate',
-        'month' => 'getMonth',
-        'connections' => 'getConnections',
         'do_combine_rows' => 'getDoCombineRows',
         'mandate_id' => 'getMandateId',
         'iban_key' => 'getIbanKey',
-        'birth_day_key' => 'getBirthDayKey'
+        'birth_day_key' => 'getBirthDayKey',
+        'organization_type' => 'getOrganizationType',
+        'agreement_date' => 'getAgreementDate',
+        'month' => 'getMonth',
+        'connections' => 'getConnections'
     ];
 
     /**
@@ -227,14 +227,14 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     public function __construct(array $data = null)
     {
-        $this->container['organization_type'] = isset($data['organization_type']) ? $data['organization_type'] : null;
-        $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
-        $this->container['month'] = isset($data['month']) ? $data['month'] : null;
-        $this->container['connections'] = isset($data['connections']) ? $data['connections'] : null;
         $this->container['do_combine_rows'] = isset($data['do_combine_rows']) ? $data['do_combine_rows'] : null;
         $this->container['mandate_id'] = isset($data['mandate_id']) ? $data['mandate_id'] : null;
         $this->container['iban_key'] = isset($data['iban_key']) ? $data['iban_key'] : null;
         $this->container['birth_day_key'] = isset($data['birth_day_key']) ? $data['birth_day_key'] : null;
+        $this->container['organization_type'] = isset($data['organization_type']) ? $data['organization_type'] : null;
+        $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
+        $this->container['month'] = isset($data['month']) ? $data['month'] : null;
+        $this->container['connections'] = isset($data['connections']) ? $data['connections'] : null;
     }
 
     /**
@@ -268,6 +268,102 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets do_combine_rows
+     *
+     * @return bool
+     */
+    public function getDoCombineRows()
+    {
+        return $this->container['do_combine_rows'];
+    }
+
+    /**
+     * Sets do_combine_rows
+     *
+     * @param bool $do_combine_rows Optionele parameter (default `false`) waarmee aangegeven kan worden dat de `CombinedAdvancePaymentRows`-lijst in de response gevuld moet worden. Deze lijst bevat de resultaten uit de `AdvancePaymentRows`-lijst, maar gecombineerd tot verkoopprijzen zoals dat ook voor facturen wordt gedaan.
+     *
+     * @return $this
+     */
+    public function setDoCombineRows($do_combine_rows)
+    {
+        $this->container['do_combine_rows'] = $do_combine_rows;
+
+        return $this;
+    }
+
+    /**
+     * Gets mandate_id
+     *
+     * @return string
+     */
+    public function getMandateId()
+    {
+        return $this->container['mandate_id'];
+    }
+
+    /**
+     * Sets mandate_id
+     *
+     * @param string $mandate_id Onderdeel van fase II functionaliteit die sinds januari 2020 \"tijdelijk\" niet meer beschikbaar is
+     *
+     * @return $this
+     */
+    public function setMandateId($mandate_id)
+    {
+        $this->container['mandate_id'] = $mandate_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets iban_key
+     *
+     * @return string
+     */
+    public function getIbanKey()
+    {
+        return $this->container['iban_key'];
+    }
+
+    /**
+     * Sets iban_key
+     *
+     * @param string $iban_key Onderdeel van fase II functionaliteit die sinds januari 2020 \"tijdelijk\" niet meer beschikbaar is
+     *
+     * @return $this
+     */
+    public function setIbanKey($iban_key)
+    {
+        $this->container['iban_key'] = $iban_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_day_key
+     *
+     * @return string
+     */
+    public function getBirthDayKey()
+    {
+        return $this->container['birth_day_key'];
+    }
+
+    /**
+     * Sets birth_day_key
+     *
+     * @param string $birth_day_key Onderdeel van fase II functionaliteit die sinds januari 2020 \"tijdelijk\" niet meer beschikbaar is
+     *
+     * @return $this
+     */
+    public function setBirthDayKey($birth_day_key)
+    {
+        $this->container['birth_day_key'] = $birth_day_key;
+
+        return $this;
+    }
 
     /**
      * Gets organization_type
@@ -370,102 +466,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
     public function setConnections($connections)
     {
         $this->container['connections'] = $connections;
-
-        return $this;
-    }
-
-    /**
-     * Gets do_combine_rows
-     *
-     * @return bool
-     */
-    public function getDoCombineRows()
-    {
-        return $this->container['do_combine_rows'];
-    }
-
-    /**
-     * Sets do_combine_rows
-     *
-     * @param bool $do_combine_rows Optionele parameter (default `false`) waarmee aangegeven kan worden dat de `CombinedAdvancePaymentRows`-lijst in de response gevuld moet worden. Deze lijst bevat de resultaten uit de `AdvancePaymentRows`-lijst, maar gecombineerd tot verkoopprijzen zoals dat ook voor facturen wordt gedaan.
-     *
-     * @return $this
-     */
-    public function setDoCombineRows($do_combine_rows)
-    {
-        $this->container['do_combine_rows'] = $do_combine_rows;
-
-        return $this;
-    }
-
-    /**
-     * Gets mandate_id
-     *
-     * @return string
-     */
-    public function getMandateId()
-    {
-        return $this->container['mandate_id'];
-    }
-
-    /**
-     * Sets mandate_id
-     *
-     * @param string $mandate_id Onderdeel van fase II functionaliteit die sinds januari 2020 \"tijdelijk\" niet meer beschikbaar is
-     *
-     * @return $this
-     */
-    public function setMandateId($mandate_id)
-    {
-        $this->container['mandate_id'] = $mandate_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets iban_key
-     *
-     * @return string
-     */
-    public function getIbanKey()
-    {
-        return $this->container['iban_key'];
-    }
-
-    /**
-     * Sets iban_key
-     *
-     * @param string $iban_key Onderdeel van fase II functionaliteit die sinds januari 2020 \"tijdelijk\" niet meer beschikbaar is
-     *
-     * @return $this
-     */
-    public function setIbanKey($iban_key)
-    {
-        $this->container['iban_key'] = $iban_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets birth_day_key
-     *
-     * @return string
-     */
-    public function getBirthDayKey()
-    {
-        return $this->container['birth_day_key'];
-    }
-
-    /**
-     * Sets birth_day_key
-     *
-     * @param string $birth_day_key Onderdeel van fase II functionaliteit die sinds januari 2020 \"tijdelijk\" niet meer beschikbaar is
-     *
-     * @return $this
-     */
-    public function setBirthDayKey($birth_day_key)
-    {
-        $this->container['birth_day_key'] = $birth_day_key;
 
         return $this;
     }

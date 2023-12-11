@@ -208,8 +208,8 @@ class EcedoERPCRMInterfaceApiPropositionPostData implements ModelInterface, Arra
         return self::$swaggerModelName;
     }
 
-    const PRICING_TYPE_FIXED = 'Fixed';
     const PRICING_TYPE_VARIABLE = 'Variable';
+    const PRICING_TYPE_FIXED = 'Fixed';
     const PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
     const PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE = 'MeanDayMarketPriceVariable';
     const PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE = 'MeanMonthMarketPriceVariable';
@@ -228,8 +228,8 @@ class EcedoERPCRMInterfaceApiPropositionPostData implements ModelInterface, Arra
     public function getPricingTypeAllowableValues()
     {
         return [
-            self::PRICING_TYPE_FIXED,
             self::PRICING_TYPE_VARIABLE,
+            self::PRICING_TYPE_FIXED,
             self::PRICING_TYPE_MARKET_PRICE_VARIABLE,
             self::PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE,
             self::PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE,

@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **row_range_begin** | **int** |  | [optional] 
 **row_range_end** | **int** |  | [optional] 
 **row_range_description** | **string** |  | [optional] 
+**row_range_type** | **string** |  | [optional] 
 **row_has_factor** | **bool** |  | [optional] 
 **row_factor** | **double** |  | [optional] 
 **row_classification** | **string** |  | [optional] 

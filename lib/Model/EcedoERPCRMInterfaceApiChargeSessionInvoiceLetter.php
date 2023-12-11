@@ -62,6 +62,8 @@ class EcedoERPCRMInterfaceApiChargeSessionInvoiceLetter implements ModelInterfac
         'ev_charge_card_numbers' => 'string',
         'charge_session_sessions_count' => 'int',
         'organization_has_reversed_vat' => 'bool',
+        'organization_invoice_country_code' => 'string',
+        'organization_invoice_country' => 'string',
         'organization_invoice_type' => 'string',
         'organization_invoice_sub_type' => 'string',
         'organization_invoice_collective_invoice_type' => 'string',
@@ -182,6 +184,8 @@ class EcedoERPCRMInterfaceApiChargeSessionInvoiceLetter implements ModelInterfac
         'ev_charge_card_numbers' => null,
         'charge_session_sessions_count' => 'int32',
         'organization_has_reversed_vat' => null,
+        'organization_invoice_country_code' => null,
+        'organization_invoice_country' => null,
         'organization_invoice_type' => null,
         'organization_invoice_sub_type' => null,
         'organization_invoice_collective_invoice_type' => null,
@@ -323,6 +327,8 @@ class EcedoERPCRMInterfaceApiChargeSessionInvoiceLetter implements ModelInterfac
         'ev_charge_card_numbers' => 'EvChargeCard_Numbers',
         'charge_session_sessions_count' => 'ChargeSession_Sessions_Count',
         'organization_has_reversed_vat' => 'Organization_HasReversedVat',
+        'organization_invoice_country_code' => 'Organization_Invoice_CountryCode',
+        'organization_invoice_country' => 'Organization_Invoice_Country',
         'organization_invoice_type' => 'Organization_Invoice_Type',
         'organization_invoice_sub_type' => 'Organization_Invoice_SubType',
         'organization_invoice_collective_invoice_type' => 'Organization_Invoice_CollectiveInvoiceType',
@@ -443,6 +449,8 @@ class EcedoERPCRMInterfaceApiChargeSessionInvoiceLetter implements ModelInterfac
         'ev_charge_card_numbers' => 'setEvChargeCardNumbers',
         'charge_session_sessions_count' => 'setChargeSessionSessionsCount',
         'organization_has_reversed_vat' => 'setOrganizationHasReversedVat',
+        'organization_invoice_country_code' => 'setOrganizationInvoiceCountryCode',
+        'organization_invoice_country' => 'setOrganizationInvoiceCountry',
         'organization_invoice_type' => 'setOrganizationInvoiceType',
         'organization_invoice_sub_type' => 'setOrganizationInvoiceSubType',
         'organization_invoice_collective_invoice_type' => 'setOrganizationInvoiceCollectiveInvoiceType',
@@ -563,6 +571,8 @@ class EcedoERPCRMInterfaceApiChargeSessionInvoiceLetter implements ModelInterfac
         'ev_charge_card_numbers' => 'getEvChargeCardNumbers',
         'charge_session_sessions_count' => 'getChargeSessionSessionsCount',
         'organization_has_reversed_vat' => 'getOrganizationHasReversedVat',
+        'organization_invoice_country_code' => 'getOrganizationInvoiceCountryCode',
+        'organization_invoice_country' => 'getOrganizationInvoiceCountry',
         'organization_invoice_type' => 'getOrganizationInvoiceType',
         'organization_invoice_sub_type' => 'getOrganizationInvoiceSubType',
         'organization_invoice_collective_invoice_type' => 'getOrganizationInvoiceCollectiveInvoiceType',
@@ -737,6 +747,8 @@ class EcedoERPCRMInterfaceApiChargeSessionInvoiceLetter implements ModelInterfac
         $this->container['ev_charge_card_numbers'] = isset($data['ev_charge_card_numbers']) ? $data['ev_charge_card_numbers'] : null;
         $this->container['charge_session_sessions_count'] = isset($data['charge_session_sessions_count']) ? $data['charge_session_sessions_count'] : null;
         $this->container['organization_has_reversed_vat'] = isset($data['organization_has_reversed_vat']) ? $data['organization_has_reversed_vat'] : null;
+        $this->container['organization_invoice_country_code'] = isset($data['organization_invoice_country_code']) ? $data['organization_invoice_country_code'] : null;
+        $this->container['organization_invoice_country'] = isset($data['organization_invoice_country']) ? $data['organization_invoice_country'] : null;
         $this->container['organization_invoice_type'] = isset($data['organization_invoice_type']) ? $data['organization_invoice_type'] : null;
         $this->container['organization_invoice_sub_type'] = isset($data['organization_invoice_sub_type']) ? $data['organization_invoice_sub_type'] : null;
         $this->container['organization_invoice_collective_invoice_type'] = isset($data['organization_invoice_collective_invoice_type']) ? $data['organization_invoice_collective_invoice_type'] : null;
@@ -986,6 +998,54 @@ class EcedoERPCRMInterfaceApiChargeSessionInvoiceLetter implements ModelInterfac
     public function setOrganizationHasReversedVat($organization_has_reversed_vat)
     {
         $this->container['organization_has_reversed_vat'] = $organization_has_reversed_vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_invoice_country_code
+     *
+     * @return string
+     */
+    public function getOrganizationInvoiceCountryCode()
+    {
+        return $this->container['organization_invoice_country_code'];
+    }
+
+    /**
+     * Sets organization_invoice_country_code
+     *
+     * @param string $organization_invoice_country_code organization_invoice_country_code
+     *
+     * @return $this
+     */
+    public function setOrganizationInvoiceCountryCode($organization_invoice_country_code)
+    {
+        $this->container['organization_invoice_country_code'] = $organization_invoice_country_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_invoice_country
+     *
+     * @return string
+     */
+    public function getOrganizationInvoiceCountry()
+    {
+        return $this->container['organization_invoice_country'];
+    }
+
+    /**
+     * Sets organization_invoice_country
+     *
+     * @param string $organization_invoice_country organization_invoice_country
+     *
+     * @return $this
+     */
+    public function setOrganizationInvoiceCountry($organization_invoice_country)
+    {
+        $this->container['organization_invoice_country'] = $organization_invoice_country;
 
         return $this;
     }

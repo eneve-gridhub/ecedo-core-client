@@ -95,6 +95,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'row_range_begin' => 'int',
         'row_range_end' => 'int',
         'row_range_description' => 'string',
+        'row_range_type' => 'string',
         'row_has_factor' => 'bool',
         'row_factor' => 'double',
         'row_classification' => 'string'
@@ -144,6 +145,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'row_range_begin' => 'int32',
         'row_range_end' => 'int32',
         'row_range_description' => null,
+        'row_range_type' => null,
         'row_has_factor' => null,
         'row_factor' => 'double',
         'row_classification' => null
@@ -214,6 +216,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'row_range_begin' => 'Row_Range_Begin',
         'row_range_end' => 'Row_Range_End',
         'row_range_description' => 'Row_Range_Description',
+        'row_range_type' => 'Row_Range_Type',
         'row_has_factor' => 'Row_HasFactor',
         'row_factor' => 'Row_Factor',
         'row_classification' => 'Row_Classification'
@@ -263,6 +266,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'row_range_begin' => 'setRowRangeBegin',
         'row_range_end' => 'setRowRangeEnd',
         'row_range_description' => 'setRowRangeDescription',
+        'row_range_type' => 'setRowRangeType',
         'row_has_factor' => 'setRowHasFactor',
         'row_factor' => 'setRowFactor',
         'row_classification' => 'setRowClassification'
@@ -312,6 +316,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'row_range_begin' => 'getRowRangeBegin',
         'row_range_end' => 'getRowRangeEnd',
         'row_range_description' => 'getRowRangeDescription',
+        'row_range_type' => 'getRowRangeType',
         'row_has_factor' => 'getRowHasFactor',
         'row_factor' => 'getRowFactor',
         'row_classification' => 'getRowClassification'
@@ -415,6 +420,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         $this->container['row_range_begin'] = isset($data['row_range_begin']) ? $data['row_range_begin'] : null;
         $this->container['row_range_end'] = isset($data['row_range_end']) ? $data['row_range_end'] : null;
         $this->container['row_range_description'] = isset($data['row_range_description']) ? $data['row_range_description'] : null;
+        $this->container['row_range_type'] = isset($data['row_range_type']) ? $data['row_range_type'] : null;
         $this->container['row_has_factor'] = isset($data['row_has_factor']) ? $data['row_has_factor'] : null;
         $this->container['row_factor'] = isset($data['row_factor']) ? $data['row_factor'] : null;
         $this->container['row_classification'] = isset($data['row_classification']) ? $data['row_classification'] : null;
@@ -1352,6 +1358,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setRowRangeDescription($row_range_description)
     {
         $this->container['row_range_description'] = $row_range_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets row_range_type
+     *
+     * @return string
+     */
+    public function getRowRangeType()
+    {
+        return $this->container['row_range_type'];
+    }
+
+    /**
+     * Sets row_range_type
+     *
+     * @param string $row_range_type row_range_type
+     *
+     * @return $this
+     */
+    public function setRowRangeType($row_range_type)
+    {
+        $this->container['row_range_type'] = $row_range_type;
 
         return $this;
     }

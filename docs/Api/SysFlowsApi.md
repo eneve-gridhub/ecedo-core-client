@@ -1,12 +1,13 @@
 # Swagger\Client\SysFlowsApi
 
-All URIs are relative to *https://innova.ecedo.com*
+All URIs are relative to *https://innova-test.ecedo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**sysFlowsAcceptProposedAdvancePayment**](SysFlowsApi.md#sysFlowsAcceptProposedAdvancePayment) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/accept | 
 [**sysFlowsAdvancePaymentInvoiceFlowModificationFinished**](SysFlowsApi.md#sysFlowsAdvancePaymentInvoiceFlowModificationFinished) | **POST** /sysapi/v1.0/flows/advancepaymentinvoiceflow/modificationfinished | AdvancePayment factuur stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
-[**sysFlowsCancelApplicationFlow**](SysFlowsApi.md#sysFlowsCancelApplicationFlow) | **POST** /sysapi/v1.0/flows/application/cancel | Aanmeldflow beëindigen
+[**sysFlowsCancelAdvancePaymentInvoiceFlow**](SysFlowsApi.md#sysFlowsCancelAdvancePaymentInvoiceFlow) | **POST** /sysapi/v1.0/flows/advancepaymentinvoiceflow/cancel | Annuleren van voorschotfactuurflows
+[**sysFlowsCancelApplicationFlow**](SysFlowsApi.md#sysFlowsCancelApplicationFlow) | **POST** /sysapi/v1.0/flows/application/cancel | Aanmeldflow beëindigen
 [**sysFlowsCancelCoolingDownPeriodApplicationFlow**](SysFlowsApi.md#sysFlowsCancelCoolingDownPeriodApplicationFlow) | **POST** /sysapi/v1.0/flows/application/cancelcoolingdownperiod | 
 [**sysFlowsCancelMoveFlow**](SysFlowsApi.md#sysFlowsCancelMoveFlow) | **POST** /sysapi/v1.0/flows/move/cancel | Verhuisflow afbreken
 [**sysFlowsCancelPurchaseFlow**](SysFlowsApi.md#sysFlowsCancelPurchaseFlow) | **POST** /sysapi/v1.0/flows/productpurchase/cancel | Productaanschafflow afbreken
@@ -14,12 +15,14 @@ Method | HTTP request | Description
 [**sysFlowsCancelSwitchOutFlow**](SysFlowsApi.md#sysFlowsCancelSwitchOutFlow) | **POST** /sysapi/v1.0/flows/switchout/cancel | Uithuizingsflow afbreken
 [**sysFlowsEditMoveFlow**](SysFlowsApi.md#sysFlowsEditMoveFlow) | **PUT** /sysapi/v1.0/flows/move/edit | Aanpassen van verhuisflow datums
 [**sysFlowsGetAdvancePaymentInvoicesByStep**](SysFlowsApi.md#sysFlowsGetAdvancePaymentInvoicesByStep) | **GET** /sysapi/v1.0/flows/advancepaymentinvoiceflow/invoices/getByStep/{stepType} | Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn &#39;WaitForModification&#39;
+[**sysFlowsGetProductPurchaseInvoicesByStep**](SysFlowsApi.md#sysFlowsGetProductPurchaseInvoicesByStep) | **GET** /sysapi/v1.0/flows/productpurchaseflow/invoices/getByStep/{stepType} | Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn &#39;WaitForModification&#39;
 [**sysFlowsGetSettlementInvoicesByStep**](SysFlowsApi.md#sysFlowsGetSettlementInvoicesByStep) | **GET** /sysapi/v1.0/flows/settlementinvoiceflow/invoices/getByStep/{stepType} | Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn &#39;WaitForModification&#39;
+[**sysFlowsProductPurchaseInvoiceFlowModificationFinished**](SysFlowsApi.md#sysFlowsProductPurchaseInvoiceFlowModificationFinished) | **POST** /sysapi/v1.0/flows/productpurchaseflow/modificationfinished | Product aanschaf stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
 [**sysFlowsPushThroughApplicationFlow**](SysFlowsApi.md#sysFlowsPushThroughApplicationFlow) | **POST** /sysapi/v1.0/flows/application/pushthrough | 
 [**sysFlowsSendSwitchOut**](SysFlowsApi.md#sysFlowsSendSwitchOut) | **POST** /sysapi/v1.0/flows/switchout/sendswitchout | Uitswitch flow starten
 [**sysFlowsSettlementInvoiceFlowModificationFinished**](SysFlowsApi.md#sysFlowsSettlementInvoiceFlowModificationFinished) | **POST** /sysapi/v1.0/flows/settlementinvoiceflow/modificationfinished | Settlement factuur stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
 [**sysFlowsStartAdvancePaymentCalculationFlow**](SysFlowsApi.md#sysFlowsStartAdvancePaymentCalculationFlow) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/start | 
-[**sysFlowsStartApplicationFlow**](SysFlowsApi.md#sysFlowsStartApplicationFlow) | **POST** /sysapi/v1.0/flows/application/start | Aanmeldflow starten
+[**sysFlowsStartApplicationFlow**](SysFlowsApi.md#sysFlowsStartApplicationFlow) | **POST** /sysapi/v1.0/flows/application/start | Aanmeldflow starten
 [**sysFlowsStartEnergyPVSwitchFlow**](SysFlowsApi.md#sysFlowsStartEnergyPVSwitchFlow) | **POST** /sysapi/v1.0/flows/pvswitch/start | Start PV switchflow
 [**sysFlowsStartProductPurchaseFlow**](SysFlowsApi.md#sysFlowsStartProductPurchaseFlow) | **POST** /sysapi/v1.0/flows/productpurchase/start | Product purchase event starten voor organizationId en clusterReference  toegestane waarde voor eventType: DepositSettlement
 [**sysFlowsStartSettlementFlowForProduct**](SysFlowsApi.md#sysFlowsStartSettlementFlowForProduct) | **POST** /sysapi/v1.0/flows/product/startsettlement | Starten van de afrekening flow voor een product
@@ -139,10 +142,73 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **sysFlowsCancelAdvancePaymentInvoiceFlow**
+> \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult sysFlowsCancelAdvancePaymentInvoiceFlow($organization_id, $cluster_reference, $invoice_month)
+
+Annuleren van voorschotfactuurflows
+
+Annuleren van voorschotfactuurflows voor niet-credit facturen die nog niet te ver in de flow zijn. Mogelijkheid tot filteren op voorschotfactuurmaand.  ####Request  De voorschotfactuurflows worden opgehaald op basis van organizatie, cluster referentie en eventueel kan er gefilterd worden op voorschotfactuurmaand.  ####Response  Het response object bestaat uit het totale aantal te annuleren flows ('FlowCount') en het aantal gecancelde flows ('CancelledFlowCount'). Wanneer de organizatie of  het cluster niet gevonden wordt, of wanneer niet de eerste van de maand wordt opgegeven, wordt een 400 foutmelding teruggegeven met een duidelijke foutmelding.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SysFlowsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization_id = "organization_id_example"; // string | Guid van de klant (Organization)
+$cluster_reference = "cluster_reference_example"; // string | Het cluster waarvoor de flows geannuleerd moeten worden
+$invoice_month = new \DateTime("2013-10-20"); // \DateTime | Optioneel filter voor de voorschotfactuurmaand, wanneer gevuld moet dit de eerste van de maand zijn
+
+try {
+    $result = $apiInstance->sysFlowsCancelAdvancePaymentInvoiceFlow($organization_id, $cluster_reference, $invoice_month);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SysFlowsApi->sysFlowsCancelAdvancePaymentInvoiceFlow: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **string**| Guid van de klant (Organization) |
+ **cluster_reference** | **string**| Het cluster waarvoor de flows geannuleerd moeten worden |
+ **invoice_month** | **\DateTime**| Optioneel filter voor de voorschotfactuurmaand, wanneer gevuld moet dit de eerste van de maand zijn | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult**](../Model/EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **sysFlowsCancelApplicationFlow**
 > object sysFlowsCancelApplicationFlow($organization_id, $cancel_flow_post_data, $cluster_reference)
 
-Aanmeldflow beëindigen
+Aanmeldflow beëindigen
 
 Met behulp van deze API kunnen aanmeldflows worden afgebroken, mits de aanmeldflows zich in een af te breken staat bevinden.
 
@@ -561,9 +627,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sysFlowsGetAdvancePaymentInvoicesByStep**
-> \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[] sysFlowsGetAdvancePaymentInvoicesByStep($step_type, $company_label_id)
+> \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[] sysFlowsGetAdvancePaymentInvoicesByStep($step_type, $take_count, $company_label_id)
 
 Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+
+De takeCount waarde heeft een toegestane waarde van tussen de 0 en 250. De default waarde (als niks is ingevuld) is 250.
 
 ### Example
 ```php
@@ -586,10 +654,11 @@ $apiInstance = new Swagger\Client\Api\SysFlowsApi(
     $config
 );
 $step_type = "step_type_example"; // string | 
+$take_count = 56; // int | 
 $company_label_id = "company_label_id_example"; // string | 
 
 try {
-    $result = $apiInstance->sysFlowsGetAdvancePaymentInvoicesByStep($step_type, $company_label_id);
+    $result = $apiInstance->sysFlowsGetAdvancePaymentInvoicesByStep($step_type, $take_count, $company_label_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SysFlowsApi->sysFlowsGetAdvancePaymentInvoicesByStep: ', $e->getMessage(), PHP_EOL;
@@ -602,6 +671,70 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **step_type** | **string**|  |
+ **take_count** | **int**|  | [optional]
+ **company_label_id** | [**string**](../Model/.md)|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]**](../Model/EcedoERPCRMInterfaceApiInvoice.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sysFlowsGetProductPurchaseInvoicesByStep**
+> \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[] sysFlowsGetProductPurchaseInvoicesByStep($step_type, $take_count, $company_label_id)
+
+Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+
+De takeCount waarde heeft een toegestane waarde van tussen de 0 en 250. De default waarde (als niks is ingevuld) is 250.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SysFlowsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$step_type = "step_type_example"; // string | 
+$take_count = 56; // int | 
+$company_label_id = "company_label_id_example"; // string | 
+
+try {
+    $result = $apiInstance->sysFlowsGetProductPurchaseInvoicesByStep($step_type, $take_count, $company_label_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SysFlowsApi->sysFlowsGetProductPurchaseInvoicesByStep: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **step_type** | **string**|  |
+ **take_count** | **int**|  | [optional]
  **company_label_id** | [**string**](../Model/.md)|  | [optional]
 
 ### Return type
@@ -620,9 +753,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sysFlowsGetSettlementInvoicesByStep**
-> \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[] sysFlowsGetSettlementInvoicesByStep($step_type, $company_label_id)
+> \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[] sysFlowsGetSettlementInvoicesByStep($step_type, $take_count, $company_label_id)
 
 Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+
+De takeCount waarde heeft een toegestane waarde van tussen de 0 en 250. De default waarde (als niks is ingevuld) is 250.
 
 ### Example
 ```php
@@ -645,10 +780,11 @@ $apiInstance = new Swagger\Client\Api\SysFlowsApi(
     $config
 );
 $step_type = "step_type_example"; // string | 
+$take_count = 56; // int | 
 $company_label_id = "company_label_id_example"; // string | 
 
 try {
-    $result = $apiInstance->sysFlowsGetSettlementInvoicesByStep($step_type, $company_label_id);
+    $result = $apiInstance->sysFlowsGetSettlementInvoicesByStep($step_type, $take_count, $company_label_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SysFlowsApi->sysFlowsGetSettlementInvoicesByStep: ', $e->getMessage(), PHP_EOL;
@@ -661,11 +797,69 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **step_type** | **string**|  |
+ **take_count** | **int**|  | [optional]
  **company_label_id** | [**string**](../Model/.md)|  | [optional]
 
 ### Return type
 
 [**\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]**](../Model/EcedoERPCRMInterfaceApiInvoice.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sysFlowsProductPurchaseInvoiceFlowModificationFinished**
+> object sysFlowsProductPurchaseInvoiceFlowModificationFinished($invoice_id)
+
+Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SysFlowsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$invoice_id = "invoice_id_example"; // string | 
+
+try {
+    $result = $apiInstance->sysFlowsProductPurchaseInvoiceFlowModificationFinished($invoice_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SysFlowsApi->sysFlowsProductPurchaseInvoiceFlowModificationFinished: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invoice_id** | **string**|  |
+
+### Return type
+
+**object**
 
 ### Authorization
 
@@ -929,7 +1123,7 @@ Name | Type | Description  | Notes
 # **sysFlowsStartApplicationFlow**
 > object sysFlowsStartApplicationFlow($organization_id, $cluster_reference, $reset_status, $cer_pre_notified, $skip_cooling_down_period, $send_welcome_letter, $cooling_down_period_start_date)
 
-Aanmeldflow starten
+Aanmeldflow starten
 
 Met behulp van deze API kunnen aanmeldflows gestart worden.<br />  De aanmeldflow wordt gestart voor alle aansluitingen van de klant met status \"Aangemaakt\" (`Created`). Als er meerdere clusters zijn met aansluitingen met deze status, dan wordt er per cluster een een aanmeldflow gestart.<br /><br />  Door gebruik te maken van de query parameter `clusterReference` kan afgedwongen worden dat er alleen een aanmeldflow wordt gestart voor één specifiek cluster<br />
 

@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **price_component_type_localized** | **string** |  | [optional] 
 **price_unit** | **string** |  | [optional] 
 **price_unit_localized** | **string** |  | [optional] 
+**range_begin** | **int** |  | [optional] 
+**range_end** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

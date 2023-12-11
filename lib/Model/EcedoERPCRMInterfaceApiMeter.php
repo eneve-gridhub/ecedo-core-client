@@ -65,7 +65,8 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         'meter_registers_direction_type' => 'string',
         'meter_registers_direction_type_localized' => 'string',
         'meter_dial_position_order_type' => 'string',
-        'meter_dial_position_order_type_localized' => 'string'
+        'meter_dial_position_order_type_localized' => 'string',
+        'factor' => 'double'
     ];
 
     /**
@@ -82,7 +83,8 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         'meter_registers_direction_type' => null,
         'meter_registers_direction_type_localized' => null,
         'meter_dial_position_order_type' => null,
-        'meter_dial_position_order_type_localized' => null
+        'meter_dial_position_order_type_localized' => null,
+        'factor' => 'double'
     ];
 
     /**
@@ -120,7 +122,8 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         'meter_registers_direction_type' => 'MeterRegistersDirectionType',
         'meter_registers_direction_type_localized' => 'MeterRegistersDirectionTypeLocalized',
         'meter_dial_position_order_type' => 'MeterDialPositionOrderType',
-        'meter_dial_position_order_type_localized' => 'MeterDialPositionOrderTypeLocalized'
+        'meter_dial_position_order_type_localized' => 'MeterDialPositionOrderTypeLocalized',
+        'factor' => 'Factor'
     ];
 
     /**
@@ -137,7 +140,8 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         'meter_registers_direction_type' => 'setMeterRegistersDirectionType',
         'meter_registers_direction_type_localized' => 'setMeterRegistersDirectionTypeLocalized',
         'meter_dial_position_order_type' => 'setMeterDialPositionOrderType',
-        'meter_dial_position_order_type_localized' => 'setMeterDialPositionOrderTypeLocalized'
+        'meter_dial_position_order_type_localized' => 'setMeterDialPositionOrderTypeLocalized',
+        'factor' => 'setFactor'
     ];
 
     /**
@@ -154,7 +158,8 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         'meter_registers_direction_type' => 'getMeterRegistersDirectionType',
         'meter_registers_direction_type_localized' => 'getMeterRegistersDirectionTypeLocalized',
         'meter_dial_position_order_type' => 'getMeterDialPositionOrderType',
-        'meter_dial_position_order_type_localized' => 'getMeterDialPositionOrderTypeLocalized'
+        'meter_dial_position_order_type_localized' => 'getMeterDialPositionOrderTypeLocalized',
+        'factor' => 'getFactor'
     ];
 
     /**
@@ -287,6 +292,7 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         $this->container['meter_registers_direction_type_localized'] = isset($data['meter_registers_direction_type_localized']) ? $data['meter_registers_direction_type_localized'] : null;
         $this->container['meter_dial_position_order_type'] = isset($data['meter_dial_position_order_type']) ? $data['meter_dial_position_order_type'] : null;
         $this->container['meter_dial_position_order_type_localized'] = isset($data['meter_dial_position_order_type_localized']) ? $data['meter_dial_position_order_type_localized'] : null;
+        $this->container['factor'] = isset($data['factor']) ? $data['factor'] : null;
     }
 
     /**
@@ -576,6 +582,30 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
     public function setMeterDialPositionOrderTypeLocalized($meter_dial_position_order_type_localized)
     {
         $this->container['meter_dial_position_order_type_localized'] = $meter_dial_position_order_type_localized;
+
+        return $this;
+    }
+
+    /**
+     * Gets factor
+     *
+     * @return double
+     */
+    public function getFactor()
+    {
+        return $this->container['factor'];
+    }
+
+    /**
+     * Sets factor
+     *
+     * @param double $factor Geeft de MultiplicationFactor van de meter weer
+     *
+     * @return $this
+     */
+    public function setFactor($factor)
+    {
+        $this->container['factor'] = $factor;
 
         return $this;
     }

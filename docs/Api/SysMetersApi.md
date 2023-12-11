@@ -1,6 +1,6 @@
 # Swagger\Client\SysMetersApi
 
-All URIs are relative to *https://innova.ecedo.com*
+All URIs are relative to *https://innova-test.ecedo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Haal alle meters op van een aansluiting
 
-Opvragen alle meters voor een aansluiting<br /><br />  __Let op!__ De response-objecten van gasmeters en elektriciteitsmeters zijn niet gelijk aan elkaar. Zie de response-voorbeelden voor de inhoudelijke verschillen.<br />  __Let op!__ Deze API is alleen van toepassing op kleinverbruikaansluitingen. Voor grootverbruikaansluitingen zal Ecedo geen nuttige resultaten teruggeven.
+Opvragen alle meters voor een aansluiting<br /><br />  __Let op!__ De response-objecten van gasmeters en elektriciteitsmeters zijn niet gelijk aan elkaar. Zie de response-voorbeelden voor de inhoudelijke verschillen.<br />  __Let op!__ Deze API is alleen van toepassing op kleinverbruikaansluitingen. Voor grootverbruikaansluitingen zal Ecedo geen nuttige resultaten teruggeven.  __Let op!__ Bij gasmeters is het veld TemperatureCorrection aanwezig. Deze wordt gevuld met de huidige waarde en kan afwijken van de daadwerkelijk gebruikte waarde in berekeningen
 
 ### Example
 ```php

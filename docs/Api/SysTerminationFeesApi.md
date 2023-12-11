@@ -1,6 +1,6 @@
 # Swagger\Client\SysTerminationFeesApi
 
-All URIs are relative to *https://innova.ecedo.com*
+All URIs are relative to *https://innova-test.ecedo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Berekent een indicatieve opzegvergoeding voor een contract
 
-Met behulp van deze API kan een indicatieve opzegvergoeding berekend worden voor een specifiek contract en een specifieke opzegdatum.<br /><br />  De opzegvergoeding die met deze API wordt berekend is vluchtig en indicatief. Hier kan de klant geen rechten aan ontlenen, maar is bedoeld om een indicatie te geven van de hoogte van de opzegvergoeding wanneer de klant daadwerkelijk zijn of haar contract op zou zeggen.<br />
+Met behulp van deze API kan een indicatieve opzegvergoeding berekend worden voor een specifiek contract en een specifieke opzegdatum.<br /><br />  De opzegvergoeding die met deze API wordt berekend is vluchtig en indicatief. Hier kan de klant geen rechten aan ontlenen, maar is bedoeld om een indicatie te geven van de hoogte van de opzegvergoeding wanneer de klant daadwerkelijk zijn of haar contract op zou zeggen.<br /><br />  Wanneer een Rover2023-opzegvergoeding is berekend zal het responseobject het veld `CalculationData` bevatten waarin de detailberekeningen worden weergegeven.<br />
 
 ### Example
 ```php
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 Berekent een indicatieve opzegvergoeding voor een aansluiting
 
-Met behulp van deze API kan een indicatieve opzegvergoeding berekend worden voor een specifieke aansluiting en een specifieke opzegdatum.<br /><br />  De opzegvergoeding die met deze API wordt berekend is vluchtig en indicatief. Hier kan de klant geen rechten aan ontlenen, maar is bedoeld om een indicatie te geven van de hoogte van de opzegvergoeding wanneer de klant daadwerkelijk zijn of haar contract op zou zeggen.<br />
+Met behulp van deze API kan een indicatieve opzegvergoeding berekend worden voor een specifieke aansluiting en een specifieke opzegdatum.<br /><br />  De opzegvergoeding die met deze API wordt berekend is vluchtig en indicatief. Hier kan de klant geen rechten aan ontlenen, maar is bedoeld om een indicatie te geven van de hoogte van de opzegvergoeding wanneer de klant daadwerkelijk zijn of haar contract op zou zeggen.<br /><br />  Wanneer een Rover2023-opzegvergoeding is berekend zal het responseobject het veld `CalculationData` bevatten waarin de detailberekeningen worden weergegeven.<br />
 
 ### Example
 ```php

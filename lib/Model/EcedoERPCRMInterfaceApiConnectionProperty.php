@@ -60,7 +60,11 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         'connection_property_type' => 'string',
         'connection_property_type_localized' => 'string',
         'connection_property_value' => 'string',
-        'connection_property_value_localized' => 'string'
+        'connection_property_value_localized' => 'string',
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime',
+        'connection_property_source' => 'string',
+        'connection_property_source_localized' => 'string'
     ];
 
     /**
@@ -72,7 +76,11 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         'connection_property_type' => null,
         'connection_property_type_localized' => null,
         'connection_property_value' => null,
-        'connection_property_value_localized' => null
+        'connection_property_value_localized' => null,
+        'start_date' => 'date',
+        'end_date' => 'date',
+        'connection_property_source' => null,
+        'connection_property_source_localized' => null
     ];
 
     /**
@@ -105,7 +113,11 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         'connection_property_type' => 'ConnectionPropertyType',
         'connection_property_type_localized' => 'ConnectionPropertyTypeLocalized',
         'connection_property_value' => 'ConnectionPropertyValue',
-        'connection_property_value_localized' => 'ConnectionPropertyValueLocalized'
+        'connection_property_value_localized' => 'ConnectionPropertyValueLocalized',
+        'start_date' => 'StartDate',
+        'end_date' => 'EndDate',
+        'connection_property_source' => 'ConnectionPropertySource',
+        'connection_property_source_localized' => 'ConnectionPropertySourceLocalized'
     ];
 
     /**
@@ -117,7 +129,11 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         'connection_property_type' => 'setConnectionPropertyType',
         'connection_property_type_localized' => 'setConnectionPropertyTypeLocalized',
         'connection_property_value' => 'setConnectionPropertyValue',
-        'connection_property_value_localized' => 'setConnectionPropertyValueLocalized'
+        'connection_property_value_localized' => 'setConnectionPropertyValueLocalized',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'connection_property_source' => 'setConnectionPropertySource',
+        'connection_property_source_localized' => 'setConnectionPropertySourceLocalized'
     ];
 
     /**
@@ -129,7 +145,11 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         'connection_property_type' => 'getConnectionPropertyType',
         'connection_property_type_localized' => 'getConnectionPropertyTypeLocalized',
         'connection_property_value' => 'getConnectionPropertyValue',
-        'connection_property_value_localized' => 'getConnectionPropertyValueLocalized'
+        'connection_property_value_localized' => 'getConnectionPropertyValueLocalized',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'connection_property_source' => 'getConnectionPropertySource',
+        'connection_property_source_localized' => 'getConnectionPropertySourceLocalized'
     ];
 
     /**
@@ -173,8 +193,29 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         return self::$swaggerModelName;
     }
 
+    const CONNECTION_PROPERTY_SOURCE_USER = 'User';
+    const CONNECTION_PROPERTY_SOURCE_CUSTOMER = 'Customer';
+    const CONNECTION_PROPERTY_SOURCE_EAN_CODEBOOK = 'EANCodebook';
+    const CONNECTION_PROPERTY_SOURCE_EDSN_MESSAGE = 'EDSNMessage';
+    const CONNECTION_PROPERTY_SOURCE_SYSTEM = 'System';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getConnectionPropertySourceAllowableValues()
+    {
+        return [
+            self::CONNECTION_PROPERTY_SOURCE_USER,
+            self::CONNECTION_PROPERTY_SOURCE_CUSTOMER,
+            self::CONNECTION_PROPERTY_SOURCE_EAN_CODEBOOK,
+            self::CONNECTION_PROPERTY_SOURCE_EDSN_MESSAGE,
+            self::CONNECTION_PROPERTY_SOURCE_SYSTEM,
+        ];
+    }
     
 
     /**
@@ -196,6 +237,10 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         $this->container['connection_property_type_localized'] = isset($data['connection_property_type_localized']) ? $data['connection_property_type_localized'] : null;
         $this->container['connection_property_value'] = isset($data['connection_property_value']) ? $data['connection_property_value'] : null;
         $this->container['connection_property_value_localized'] = isset($data['connection_property_value_localized']) ? $data['connection_property_value_localized'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['connection_property_source'] = isset($data['connection_property_source']) ? $data['connection_property_source'] : null;
+        $this->container['connection_property_source_localized'] = isset($data['connection_property_source_localized']) ? $data['connection_property_source_localized'] : null;
     }
 
     /**
@@ -206,6 +251,14 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getConnectionPropertySourceAllowableValues();
+        if (!is_null($this->container['connection_property_source']) && !in_array($this->container['connection_property_source'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'connection_property_source', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -314,6 +367,111 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
     public function setConnectionPropertyValueLocalized($connection_property_value_localized)
     {
         $this->container['connection_property_value_localized'] = $connection_property_value_localized;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime $start_date start_date
+     *
+     * @return $this
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     *
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     *
+     * @param \DateTime $end_date end_date
+     *
+     * @return $this
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_property_source
+     *
+     * @return string
+     */
+    public function getConnectionPropertySource()
+    {
+        return $this->container['connection_property_source'];
+    }
+
+    /**
+     * Sets connection_property_source
+     *
+     * @param string $connection_property_source connection_property_source
+     *
+     * @return $this
+     */
+    public function setConnectionPropertySource($connection_property_source)
+    {
+        $allowedValues = $this->getConnectionPropertySourceAllowableValues();
+        if (!is_null($connection_property_source) && !in_array($connection_property_source, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'connection_property_source', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['connection_property_source'] = $connection_property_source;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_property_source_localized
+     *
+     * @return string
+     */
+    public function getConnectionPropertySourceLocalized()
+    {
+        return $this->container['connection_property_source_localized'];
+    }
+
+    /**
+     * Sets connection_property_source_localized
+     *
+     * @param string $connection_property_source_localized connection_property_source_localized
+     *
+     * @return $this
+     */
+    public function setConnectionPropertySourceLocalized($connection_property_source_localized)
+    {
+        $this->container['connection_property_source_localized'] = $connection_property_source_localized;
 
         return $this;
     }

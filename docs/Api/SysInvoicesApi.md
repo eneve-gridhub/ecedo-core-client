@@ -1,16 +1,17 @@
 # Swagger\Client\SysInvoicesApi
 
-All URIs are relative to *https://innova.ecedo.com*
+All URIs are relative to *https://innova-test.ecedo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**sysInvoicesAddInvoiceRows**](SysInvoicesApi.md#sysInvoicesAddInvoiceRows) | **POST** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/invoicerows | Toevoegen factuurregels aan een factuur
 [**sysInvoicesByNumber**](SysInvoicesApi.md#sysInvoicesByNumber) | **GET** /sysapi/v1.0/invoices/bynumber/{invoiceNumber} | Haal een specifieke factuur op (op basis van factuurnummer)
 [**sysInvoicesCalculateExpectedSettlementInvoice**](SysInvoicesApi.md#sysInvoicesCalculateExpectedSettlementInvoice) | **POST** /sysapi/v1.0/organizations/{organizationId}/invoices/calculateexpectedsettlement | Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op
-[**sysInvoicesCredit**](SysInvoicesApi.md#sysInvoicesCredit) | **POST** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/credit | Voorschot-, borg- of afrekenfactuur crediteren
+[**sysInvoicesCredit**](SysInvoicesApi.md#sysInvoicesCredit) | **POST** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/credit | Opzegvergoedingen, algemene facturen, voorschot-, borg- of afrekenfactuur crediteren
 [**sysInvoicesDownloadRemitReport**](SysInvoicesApi.md#sysInvoicesDownloadRemitReport) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/downloadremitreport | Download Remit Report voor een factuur
 [**sysInvoicesDownloadSingleInvoice**](SysInvoicesApi.md#sysInvoicesDownloadSingleInvoice) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/download | Download factuurdocument van een specifieke factuur
 [**sysInvoicesGet**](SysInvoicesApi.md#sysInvoicesGet) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices | Haal facturen van een specifieke klant op (op basis van InvoiceId)
+[**sysInvoicesGetFinancialDetails**](SysInvoicesApi.md#sysInvoicesGetFinancialDetails) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/financialdetails | Haal betaalstatus van een factuur op bij extern financieel systeem.  Niet elk financieel systeem ondersteunt dit.
 [**sysInvoicesGetInvoice**](SysInvoicesApi.md#sysInvoicesGetInvoice) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId} | Haal een specifieke factuur op
 [**sysInvoicesGetInvoiceReason**](SysInvoicesApi.md#sysInvoicesGetInvoiceReason) | **GET** /sysapi/v1.0/invoices/{invoiceId}/invoicereason | Vraag de reden op waarom de factuur is aangemaakt
 [**sysInvoicesGetInvoicesByCompany**](SysInvoicesApi.md#sysInvoicesGetInvoicesByCompany) | **GET** /sysapi/v1.0/invoices/afternumber/{invoiceNumber} | Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer&lt;br&gt;&lt;/br&gt;  Fetch invoices with invoice number greater than \&quot;invoiceNumber\&quot; for a company label: \&quot;companyLabelId\&quot;&lt;br&gt;&lt;/br&gt;      Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
@@ -212,9 +213,9 @@ Name | Type | Description  | Notes
 # **sysInvoicesCredit**
 > object sysInvoicesCredit($invoice_id, $organization_id, $invoice_post_data)
 
-Voorschot-, borg- of afrekenfactuur crediteren
+Opzegvergoedingen, algemene facturen, voorschot-, borg- of afrekenfactuur crediteren
 
-Crediteer voorschot-, afreken- of borgfactuur. De velden 'DoComplete', 'CreateNewAdvancePayment' en 'NewAdvancePayment' zijn alleen van toepassing bij het crediteren van een voorschotfactuur
+Crediteer opzegvergoeding, algemene factuur, voorschot-, afreken- of borgfactuur. De velden 'CreateNewAdvancePayment' en 'NewAdvancePayment' zijn alleen van toepassing bij het crediteren van een voorschotfactuur.   Het veld 'DoComplete' is niet van toepassing op borgfacturen.
 
 ### Example
 ```php
@@ -445,6 +446,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]**](../Model/EcedoERPCRMInterfaceApiInvoice.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sysInvoicesGetFinancialDetails**
+> \Swagger\Client\Model\EcedoERPCRMInterfaceApiFinancialDetails sysInvoicesGetFinancialDetails($organization_id, $invoice_id)
+
+Haal betaalstatus van een factuur op bij extern financieel systeem.  Niet elk financieel systeem ondersteunt dit.
+
+Opvragen betaalstatus factuur. De werking van deze API call is afhankelijk van de ondersteuning van het geconfigureerde financiële systeem.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SysInvoicesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization_id = "organization_id_example"; // string | Guid van de klant (Organization)
+$invoice_id = "invoice_id_example"; // string | Guid van de factuur (Invoice)
+
+try {
+    $result = $apiInstance->sysInvoicesGetFinancialDetails($organization_id, $invoice_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SysInvoicesApi->sysInvoicesGetFinancialDetails: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **string**| Guid van de klant (Organization) |
+ **invoice_id** | **string**| Guid van de factuur (Invoice) |
+
+### Return type
+
+[**\Swagger\Client\Model\EcedoERPCRMInterfaceApiFinancialDetails**](../Model/EcedoERPCRMInterfaceApiFinancialDetails.md)
 
 ### Authorization
 

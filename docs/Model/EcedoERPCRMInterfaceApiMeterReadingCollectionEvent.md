@@ -5,6 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **collection_status** | **string** |  | [optional] 
 **collection_status_localized** | **string** |  | [optional] 
+**meter_reading_event_type** | **string** |  | [optional] 
+**meter_reading_event_type_localized** | **string** |  | [optional] 
 **organization_event_id** | **string** |  | [optional] 
 **organization_id** | **string** |  | [optional] 
 **cluster_id** | **string** |  | [optional] 

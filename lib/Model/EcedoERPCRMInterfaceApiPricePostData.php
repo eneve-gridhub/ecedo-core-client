@@ -63,7 +63,9 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'end_date' => '\DateTime',
         'status' => 'string',
         'vat_inclusive' => 'bool',
-        'gos_region' => 'string'
+        'gos_region' => 'string',
+        'range_begin' => 'int',
+        'range_end' => 'int'
     ];
 
     /**
@@ -78,7 +80,9 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'end_date' => 'date',
         'status' => null,
         'vat_inclusive' => null,
-        'gos_region' => null
+        'gos_region' => null,
+        'range_begin' => 'int32',
+        'range_end' => 'int32'
     ];
 
     /**
@@ -114,7 +118,9 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'end_date' => 'EndDate',
         'status' => 'Status',
         'vat_inclusive' => 'VatInclusive',
-        'gos_region' => 'GosRegion'
+        'gos_region' => 'GosRegion',
+        'range_begin' => 'RangeBegin',
+        'range_end' => 'RangeEnd'
     ];
 
     /**
@@ -129,7 +135,9 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'end_date' => 'setEndDate',
         'status' => 'setStatus',
         'vat_inclusive' => 'setVatInclusive',
-        'gos_region' => 'setGosRegion'
+        'gos_region' => 'setGosRegion',
+        'range_begin' => 'setRangeBegin',
+        'range_end' => 'setRangeEnd'
     ];
 
     /**
@@ -144,7 +152,9 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'end_date' => 'getEndDate',
         'status' => 'getStatus',
         'vat_inclusive' => 'getVatInclusive',
-        'gos_region' => 'getGosRegion'
+        'gos_region' => 'getGosRegion',
+        'range_begin' => 'getRangeBegin',
+        'range_end' => 'getRangeEnd'
     ];
 
     /**
@@ -260,6 +270,8 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['vat_inclusive'] = isset($data['vat_inclusive']) ? $data['vat_inclusive'] : null;
         $this->container['gos_region'] = isset($data['gos_region']) ? $data['gos_region'] : null;
+        $this->container['range_begin'] = isset($data['range_begin']) ? $data['range_begin'] : null;
+        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
     }
 
     /**
@@ -490,6 +502,54 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
             );
         }
         $this->container['gos_region'] = $gos_region;
+
+        return $this;
+    }
+
+    /**
+     * Gets range_begin
+     *
+     * @return int
+     */
+    public function getRangeBegin()
+    {
+        return $this->container['range_begin'];
+    }
+
+    /**
+     * Sets range_begin
+     *
+     * @param int $range_begin range_begin
+     *
+     * @return $this
+     */
+    public function setRangeBegin($range_begin)
+    {
+        $this->container['range_begin'] = $range_begin;
+
+        return $this;
+    }
+
+    /**
+     * Gets range_end
+     *
+     * @return int
+     */
+    public function getRangeEnd()
+    {
+        return $this->container['range_end'];
+    }
+
+    /**
+     * Sets range_end
+     *
+     * @param int $range_end range_end
+     *
+     * @return $this
+     */
+    public function setRangeEnd($range_end)
+    {
+        $this->container['range_end'] = $range_end;
 
         return $this;
     }

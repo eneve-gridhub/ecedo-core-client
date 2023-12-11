@@ -1,6 +1,6 @@
 # Swagger\Client\SysPropositionsApi
 
-All URIs are relative to *https://innova.ecedo.com*
+All URIs are relative to *https://innova-test.ecedo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 Aanmaken van de prijzen behorend bij een propositie
 
-Prijzen zijn in EUR  Prijzen standaard excl. BTW tenzij anders aangegeven  Voor elektricteit is de unit kWh; voor Gas prijzen is de unit m3  <br />  __Technische details:__  * Alle startdata en einddata van de ingestuurde prijscomponenten moeten gelijk zijn.  * Er mag per API-call maar één soort status ingestuurd worden. Alle prijscomponenten zijn dus of Finalized of Provisional.  * Als er al prijscomponenten voor een bepaalde status aanwezig zijn en er worden prijscomponenten voor deze status ingestuurd. Dan moeten alle prijscomponenten die op de propositie aanwezig zijn met deze status ook ingestuurd worden. Er mogen niet meer of minder prijscomponenten ingestuurd worden.  * Er mag maar 1 tijdsperiode per call ingestuurd worden (alle startdata en einddata zijn dus gelijk).
+Prijzen zijn in EUR  Prijzen standaard excl. BTW tenzij anders aangegeven  Voor elektricteit is de unit kWh; voor Gas prijzen is de unit m3  <br />  __Technische details:__  * Alle startdata en einddata van de ingestuurde prijscomponenten moeten gelijk zijn.  * Er mag per API-call maar één soort status ingestuurd worden. Alle prijscomponenten zijn dus of Finalized of Provisional.  * Als er al prijscomponenten voor een bepaalde status aanwezig zijn en er worden prijscomponenten voor deze status ingestuurd. Dan moeten alle prijscomponenten die op de propositie aanwezig zijn met deze status ook ingestuurd worden. Er mogen niet meer of minder prijscomponenten ingestuurd worden.  * Er mag maar 1 tijdsperiode per call ingestuurd worden (alle startdata en einddata zijn dus gelijk).  * Bij een prijscomponent met staffels moeten de staffels en bijbehorende prijzen compleet zijn.
 
 ### Example
 ```php

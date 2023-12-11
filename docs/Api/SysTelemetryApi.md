@@ -1,6 +1,6 @@
 # Swagger\Client\SysTelemetryApi
 
-All URIs are relative to *https://innova.ecedo.com*
+All URIs are relative to *https://innova-test.ecedo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -75,6 +75,8 @@ Name | Type | Description  | Notes
 
 Opvragen telemetrie aan de hand van een EAN
 
+Met behulp van deze API kan de telemetriedata van een specifieke aansluiting worden opgehaald op basis van de EAN-code van de aansluiting<br /><br />  De maximale toegestane periode tussen `StartDate` en `EndDate` is 31 dagen.<br /><br />  **Let op!** In de huidige versie kunnen dubbele records worden teruggegeven.<br />
+
 ### Example
 ```php
 <?php
@@ -96,8 +98,8 @@ $apiInstance = new Swagger\Client\Api\SysTelemetryApi(
     $config
 );
 $ean = "ean_example"; // string | EAN als referentie van de telemetrie
-$start_date = new \DateTime("2013-10-20"); // \DateTime | Vanaf datum (dag)
-$end_date = new \DateTime("2013-10-20"); // \DateTime | Tot datum (dag)
+$start_date = new \DateTime("2013-10-20"); // \DateTime | Vanaf datum (dag, bijvoorbeeld 2023-01-31)
+$end_date = new \DateTime("2013-10-20"); // \DateTime | Tot datum (dag, bijvoorbeeld 2023-02-28)
 
 try {
     $result = $apiInstance->sysTelemetryGetTelemetry($ean, $start_date, $end_date);
@@ -113,8 +115,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ean** | **string**| EAN als referentie van de telemetrie |
- **start_date** | **\DateTime**| Vanaf datum (dag) |
- **end_date** | **\DateTime**| Tot datum (dag) |
+ **start_date** | **\DateTime**| Vanaf datum (dag, bijvoorbeeld 2023-01-31) |
+ **end_date** | **\DateTime**| Tot datum (dag, bijvoorbeeld 2023-02-28) |
 
 ### Return type
 

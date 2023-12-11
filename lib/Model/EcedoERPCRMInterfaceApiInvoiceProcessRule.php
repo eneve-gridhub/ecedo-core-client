@@ -64,6 +64,8 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
         'invoice_sub_type_localized' => 'string',
         'do_block' => 'bool',
         'block_reason' => 'string',
+        'block_type' => 'string',
+        'block_type_localized' => 'string',
         'cluster_reference' => 'string'
     ];
 
@@ -80,6 +82,8 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
         'invoice_sub_type_localized' => null,
         'do_block' => null,
         'block_reason' => null,
+        'block_type' => null,
+        'block_type_localized' => null,
         'cluster_reference' => null
     ];
 
@@ -117,6 +121,8 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
         'invoice_sub_type_localized' => 'InvoiceSubTypeLocalized',
         'do_block' => 'DoBlock',
         'block_reason' => 'BlockReason',
+        'block_type' => 'BlockType',
+        'block_type_localized' => 'BlockTypeLocalized',
         'cluster_reference' => 'ClusterReference'
     ];
 
@@ -133,6 +139,8 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
         'invoice_sub_type_localized' => 'setInvoiceSubTypeLocalized',
         'do_block' => 'setDoBlock',
         'block_reason' => 'setBlockReason',
+        'block_type' => 'setBlockType',
+        'block_type_localized' => 'setBlockTypeLocalized',
         'cluster_reference' => 'setClusterReference'
     ];
 
@@ -149,6 +157,8 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
         'invoice_sub_type_localized' => 'getInvoiceSubTypeLocalized',
         'do_block' => 'getDoBlock',
         'block_reason' => 'getBlockReason',
+        'block_type' => 'getBlockType',
+        'block_type_localized' => 'getBlockTypeLocalized',
         'cluster_reference' => 'getClusterReference'
     ];
 
@@ -221,6 +231,8 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
     const INVOICE_SUB_TYPE_CUSTOM_GENERAL = 'Custom_General';
     const INVOICE_SUB_TYPE_CUSTOM_CHARGING_STATION = 'Custom_ChargingStation';
     const INVOICE_SUB_TYPE_CUSTOM_CHARGE_CARD = 'Custom_ChargeCard';
+    const BLOCK_TYPE_VALIDATION = 'Validation';
+    const BLOCK_TYPE_MODIFICATION = 'Modification';
     
 
     
@@ -274,6 +286,19 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
         ];
     }
     
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBlockTypeAllowableValues()
+    {
+        return [
+            self::BLOCK_TYPE_VALIDATION,
+            self::BLOCK_TYPE_MODIFICATION,
+        ];
+    }
+    
 
     /**
      * Associative array for storing property values
@@ -297,6 +322,8 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
         $this->container['invoice_sub_type_localized'] = isset($data['invoice_sub_type_localized']) ? $data['invoice_sub_type_localized'] : null;
         $this->container['do_block'] = isset($data['do_block']) ? $data['do_block'] : null;
         $this->container['block_reason'] = isset($data['block_reason']) ? $data['block_reason'] : null;
+        $this->container['block_type'] = isset($data['block_type']) ? $data['block_type'] : null;
+        $this->container['block_type_localized'] = isset($data['block_type_localized']) ? $data['block_type_localized'] : null;
         $this->container['cluster_reference'] = isset($data['cluster_reference']) ? $data['cluster_reference'] : null;
     }
 
@@ -321,6 +348,14 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
         if (!is_null($this->container['invoice_sub_type']) && !in_array($this->container['invoice_sub_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'invoice_sub_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getBlockTypeAllowableValues();
+        if (!is_null($this->container['block_type']) && !in_array($this->container['block_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'block_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -522,6 +557,63 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
     public function setBlockReason($block_reason)
     {
         $this->container['block_reason'] = $block_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets block_type
+     *
+     * @return string
+     */
+    public function getBlockType()
+    {
+        return $this->container['block_type'];
+    }
+
+    /**
+     * Sets block_type
+     *
+     * @param string $block_type block_type
+     *
+     * @return $this
+     */
+    public function setBlockType($block_type)
+    {
+        $allowedValues = $this->getBlockTypeAllowableValues();
+        if (!is_null($block_type) && !in_array($block_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'block_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['block_type'] = $block_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets block_type_localized
+     *
+     * @return string
+     */
+    public function getBlockTypeLocalized()
+    {
+        return $this->container['block_type_localized'];
+    }
+
+    /**
+     * Sets block_type_localized
+     *
+     * @param string $block_type_localized block_type_localized
+     *
+     * @return $this
+     */
+    public function setBlockTypeLocalized($block_type_localized)
+    {
+        $this->container['block_type_localized'] = $block_type_localized;
 
         return $this;
     }

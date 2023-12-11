@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **ev_charge_card_numbers** | **string** |  | [optional] 
 **charge_session_sessions_count** | **int** |  | [optional] 
 **organization_has_reversed_vat** | **bool** |  | [optional] 
+**organization_invoice_country_code** | **string** |  | [optional] 
+**organization_invoice_country** | **string** |  | [optional] 
 **organization_invoice_type** | **string** |  | [optional] 
 **organization_invoice_sub_type** | **string** |  | [optional] 
 **organization_invoice_collective_invoice_type** | **string** |  | [optional] 

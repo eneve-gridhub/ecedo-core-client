@@ -81,7 +81,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowPostData implements ModelInterface, Array
         'contract_id' => 'uuid',
         'start_date' => 'date',
         'end_date' => 'date',
-        'product_id' => null,
+        'product_id' => 'uuid',
         'usage' => 'int32',
         'price' => 'double',
         'price_unit' => null,

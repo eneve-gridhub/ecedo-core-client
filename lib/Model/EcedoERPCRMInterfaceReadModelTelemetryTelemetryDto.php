@@ -64,7 +64,8 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         'start_date_localized' => 'string',
         'end_date' => '\DateTime',
         'end_date_localized' => 'string',
-        'value' => 'double',
+        'value_ldn' => 'double',
+        'value_odn' => 'double',
         'raw_unit' => 'int',
         'unit' => 'string',
         'unit_localized' => 'string',
@@ -86,7 +87,8 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         'start_date_localized' => null,
         'end_date' => 'date-time',
         'end_date_localized' => null,
-        'value' => 'double',
+        'value_ldn' => 'double',
+        'value_odn' => 'double',
         'raw_unit' => 'int32',
         'unit' => null,
         'unit_localized' => null,
@@ -129,7 +131,8 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         'start_date_localized' => 'StartDateLocalized',
         'end_date' => 'EndDate',
         'end_date_localized' => 'EndDateLocalized',
-        'value' => 'Value',
+        'value_ldn' => 'ValueLDN',
+        'value_odn' => 'ValueODN',
         'raw_unit' => 'RawUnit',
         'unit' => 'Unit',
         'unit_localized' => 'UnitLocalized',
@@ -151,7 +154,8 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         'start_date_localized' => 'setStartDateLocalized',
         'end_date' => 'setEndDate',
         'end_date_localized' => 'setEndDateLocalized',
-        'value' => 'setValue',
+        'value_ldn' => 'setValueLdn',
+        'value_odn' => 'setValueOdn',
         'raw_unit' => 'setRawUnit',
         'unit' => 'setUnit',
         'unit_localized' => 'setUnitLocalized',
@@ -173,7 +177,8 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         'start_date_localized' => 'getStartDateLocalized',
         'end_date' => 'getEndDate',
         'end_date_localized' => 'getEndDateLocalized',
-        'value' => 'getValue',
+        'value_ldn' => 'getValueLdn',
+        'value_odn' => 'getValueOdn',
         'raw_unit' => 'getRawUnit',
         'unit' => 'getUnit',
         'unit_localized' => 'getUnitLocalized',
@@ -270,7 +275,8 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         $this->container['start_date_localized'] = isset($data['start_date_localized']) ? $data['start_date_localized'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['end_date_localized'] = isset($data['end_date_localized']) ? $data['end_date_localized'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['value_ldn'] = isset($data['value_ldn']) ? $data['value_ldn'] : null;
+        $this->container['value_odn'] = isset($data['value_odn']) ? $data['value_odn'] : null;
         $this->container['raw_unit'] = isset($data['raw_unit']) ? $data['raw_unit'] : null;
         $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
         $this->container['unit_localized'] = isset($data['unit_localized']) ? $data['unit_localized'] : null;
@@ -480,25 +486,49 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
     }
 
     /**
-     * Gets value
+     * Gets value_ldn
      *
      * @return double
      */
-    public function getValue()
+    public function getValueLdn()
     {
-        return $this->container['value'];
+        return $this->container['value_ldn'];
     }
 
     /**
-     * Sets value
+     * Sets value_ldn
      *
-     * @param double $value value
+     * @param double $value_ldn value_ldn
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setValueLdn($value_ldn)
     {
-        $this->container['value'] = $value;
+        $this->container['value_ldn'] = $value_ldn;
+
+        return $this;
+    }
+
+    /**
+     * Gets value_odn
+     *
+     * @return double
+     */
+    public function getValueOdn()
+    {
+        return $this->container['value_odn'];
+    }
+
+    /**
+     * Sets value_odn
+     *
+     * @param double $value_odn value_odn
+     *
+     * @return $this
+     */
+    public function setValueOdn($value_odn)
+    {
+        $this->container['value_odn'] = $value_odn;
 
         return $this;
     }

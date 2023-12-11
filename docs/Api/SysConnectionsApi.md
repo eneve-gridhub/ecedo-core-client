@@ -1,6 +1,6 @@
 # Swagger\Client\SysConnectionsApi
 
-All URIs are relative to *https://innova.ecedo.com*
+All URIs are relative to *https://innova-test.ecedo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sysConnectionsHasContractInPeriod**
-> \Swagger\Client\Model\EcedoERPCRMInterfaceApiHasContractInPeriodResponse sysConnectionsHasContractInPeriod($ean, $start_date, $end_date)
+> \Swagger\Client\Model\EcedoERPCRMInterfaceApiHasContractInPeriodResponse sysConnectionsHasContractInPeriod($ean, $start_date, $end_date, $company_label_id)
 
 Controleer of EAN in gevraagde periode reeds een contract heeft
 
@@ -352,9 +352,10 @@ $apiInstance = new Swagger\Client\Api\SysConnectionsApi(
 $ean = "ean_example"; // string | EAN van de aansluiting
 $start_date = new \DateTime("2013-10-20"); // \DateTime | StartDatum van de te controleren periode
 $end_date = new \DateTime("2013-10-20"); // \DateTime | EindDatum van de te controleren periode
+$company_label_id = "company_label_id_example"; // string | Optioneel CompanyLabelId (default null). Indien meegegeven wordt de functionaliteit van deze API alleen op dit label toegepast.
 
 try {
-    $result = $apiInstance->sysConnectionsHasContractInPeriod($ean, $start_date, $end_date);
+    $result = $apiInstance->sysConnectionsHasContractInPeriod($ean, $start_date, $end_date, $company_label_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SysConnectionsApi->sysConnectionsHasContractInPeriod: ', $e->getMessage(), PHP_EOL;
@@ -369,6 +370,7 @@ Name | Type | Description  | Notes
  **ean** | **string**| EAN van de aansluiting |
  **start_date** | **\DateTime**| StartDatum van de te controleren periode |
  **end_date** | **\DateTime**| EindDatum van de te controleren periode |
+ **company_label_id** | [**string**](../Model/.md)| Optioneel CompanyLabelId (default null). Indien meegegeven wordt de functionaliteit van deze API alleen op dit label toegepast. | [optional]
 
 ### Return type
 

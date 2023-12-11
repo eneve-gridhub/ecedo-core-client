@@ -168,8 +168,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
         return self::$swaggerModelName;
     }
 
-    const CONTRACT_PROPERTY_TYPE_ACTION_DISCOUNT_MOMENT = 'ActionDiscountMoment';
     const CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE = 'ElectricityPowerType';
+    const CONTRACT_PROPERTY_TYPE_ACTION_DISCOUNT_MOMENT = 'ActionDiscountMoment';
     const CONTRACT_PROPERTY_TYPE_DEPOSIT_SETTLE_MOMENT = 'DepositSettleMoment';
     const CONTRACT_PROPERTY_TYPE_CHANNEL = 'Channel';
     const CONTRACT_PROPERTY_TYPE_SALES_REFERENCE = 'SalesReference';
@@ -199,6 +199,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
     const CONTRACT_PROPERTY_TYPE_HAS_ROLLING_DEPOSIT = 'HasRollingDeposit';
     const CONTRACT_PROPERTY_TYPE_HAS_TARIFF_CHANGE_METER_READINGS = 'HasTariffChangeMeterReadings';
     const CONTRACT_PROPERTY_TYPE_MIN_IMBALANCE_COMPENSATION_TARIFF = 'MinImbalanceCompensationTariff';
+    const CONTRACT_PROPERTY_TYPE_LOSS_DATE = 'LossDate';
+    const CONTRACT_PROPERTY_TYPE_WAIT_FOR_MODIFICATION = 'WaitForModification';
     
 
     
@@ -210,8 +212,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
     public function getContractPropertyTypeAllowableValues()
     {
         return [
-            self::CONTRACT_PROPERTY_TYPE_ACTION_DISCOUNT_MOMENT,
             self::CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE,
+            self::CONTRACT_PROPERTY_TYPE_ACTION_DISCOUNT_MOMENT,
             self::CONTRACT_PROPERTY_TYPE_DEPOSIT_SETTLE_MOMENT,
             self::CONTRACT_PROPERTY_TYPE_CHANNEL,
             self::CONTRACT_PROPERTY_TYPE_SALES_REFERENCE,
@@ -241,6 +243,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
             self::CONTRACT_PROPERTY_TYPE_HAS_ROLLING_DEPOSIT,
             self::CONTRACT_PROPERTY_TYPE_HAS_TARIFF_CHANGE_METER_READINGS,
             self::CONTRACT_PROPERTY_TYPE_MIN_IMBALANCE_COMPENSATION_TARIFF,
+            self::CONTRACT_PROPERTY_TYPE_LOSS_DATE,
+            self::CONTRACT_PROPERTY_TYPE_WAIT_FOR_MODIFICATION,
         ];
     }
     

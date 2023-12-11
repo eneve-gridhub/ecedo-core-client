@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **meter_registers_direction_type_localized** | **string** | Leesbare omschrijving van MeterRegistersDirectionType | [optional] 
 **meter_dial_position_order_type** | **string** | Geeft aan welke telweken volume van het normaaltarief registreren en welke telwerken het volume van het daltarief | [optional] 
 **meter_dial_position_order_type_localized** | **string** | Leesbare omschrijving van MeterDialPositionOrderType | [optional] 
+**factor** | **double** | Geeft de MultiplicationFactor van de meter weer | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

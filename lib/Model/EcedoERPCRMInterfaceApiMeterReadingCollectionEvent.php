@@ -59,6 +59,8 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEvent implements ModelInterfa
     protected static $swaggerTypes = [
         'collection_status' => 'string',
         'collection_status_localized' => 'string',
+        'meter_reading_event_type' => 'string',
+        'meter_reading_event_type_localized' => 'string',
         'organization_event_id' => 'string',
         'organization_id' => 'string',
         'cluster_id' => 'string',
@@ -86,6 +88,8 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEvent implements ModelInterfa
     protected static $swaggerFormats = [
         'collection_status' => null,
         'collection_status_localized' => null,
+        'meter_reading_event_type' => null,
+        'meter_reading_event_type_localized' => null,
         'organization_event_id' => null,
         'organization_id' => null,
         'cluster_id' => 'uuid',
@@ -134,6 +138,8 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEvent implements ModelInterfa
     protected static $attributeMap = [
         'collection_status' => 'CollectionStatus',
         'collection_status_localized' => 'CollectionStatusLocalized',
+        'meter_reading_event_type' => 'MeterReadingEventType',
+        'meter_reading_event_type_localized' => 'MeterReadingEventTypeLocalized',
         'organization_event_id' => 'OrganizationEventId',
         'organization_id' => 'OrganizationId',
         'cluster_id' => 'ClusterId',
@@ -161,6 +167,8 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEvent implements ModelInterfa
     protected static $setters = [
         'collection_status' => 'setCollectionStatus',
         'collection_status_localized' => 'setCollectionStatusLocalized',
+        'meter_reading_event_type' => 'setMeterReadingEventType',
+        'meter_reading_event_type_localized' => 'setMeterReadingEventTypeLocalized',
         'organization_event_id' => 'setOrganizationEventId',
         'organization_id' => 'setOrganizationId',
         'cluster_id' => 'setClusterId',
@@ -188,6 +196,8 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEvent implements ModelInterfa
     protected static $getters = [
         'collection_status' => 'getCollectionStatus',
         'collection_status_localized' => 'getCollectionStatusLocalized',
+        'meter_reading_event_type' => 'getMeterReadingEventType',
+        'meter_reading_event_type_localized' => 'getMeterReadingEventTypeLocalized',
         'organization_event_id' => 'getOrganizationEventId',
         'organization_id' => 'getOrganizationId',
         'cluster_id' => 'getClusterId',
@@ -254,6 +264,14 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEvent implements ModelInterfa
     const COLLECTION_STATUS_CALCULATE_METER_READING = 'CalculateMeterReading';
     const COLLECTION_STATUS_FLOW_FINISHED = 'FlowFinished';
     const COLLECTION_STATUS_OTHER = 'Other';
+    const METER_READING_EVENT_TYPE_MOVE_IN = 'MoveIn';
+    const METER_READING_EVENT_TYPE_MOVE_OUT = 'MoveOut';
+    const METER_READING_EVENT_TYPE_END_OF_SUPPLY = 'EndOfSupply';
+    const METER_READING_EVENT_TYPE__SWITCH = 'Switch';
+    const METER_READING_EVENT_TYPE_PERIODIC = 'Periodic';
+    const METER_READING_EVENT_TYPE_ALLOCATION_METHOD_CHANGE = 'AllocationMethodChange';
+    const METER_READING_EVENT_TYPE_MONTH = 'Month';
+    const METER_READING_EVENT_TYPE_TARIFF_CHANGE = 'TariffChange';
     const EVENT_TYPE_SETTLEMENT = 'Settlement';
     const EVENT_TYPE_FINAL_SETTLEMENT = 'FinalSettlement';
     const EVENT_TYPE_COLLECTIVE_ADVANCE_PAYMENT = 'CollectiveAdvancePayment';
@@ -317,6 +335,25 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEvent implements ModelInterfa
             self::COLLECTION_STATUS_CALCULATE_METER_READING,
             self::COLLECTION_STATUS_FLOW_FINISHED,
             self::COLLECTION_STATUS_OTHER,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getMeterReadingEventTypeAllowableValues()
+    {
+        return [
+            self::METER_READING_EVENT_TYPE_MOVE_IN,
+            self::METER_READING_EVENT_TYPE_MOVE_OUT,
+            self::METER_READING_EVENT_TYPE_END_OF_SUPPLY,
+            self::METER_READING_EVENT_TYPE__SWITCH,
+            self::METER_READING_EVENT_TYPE_PERIODIC,
+            self::METER_READING_EVENT_TYPE_ALLOCATION_METHOD_CHANGE,
+            self::METER_READING_EVENT_TYPE_MONTH,
+            self::METER_READING_EVENT_TYPE_TARIFF_CHANGE,
         ];
     }
     
@@ -406,6 +443,8 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEvent implements ModelInterfa
     {
         $this->container['collection_status'] = isset($data['collection_status']) ? $data['collection_status'] : null;
         $this->container['collection_status_localized'] = isset($data['collection_status_localized']) ? $data['collection_status_localized'] : null;
+        $this->container['meter_reading_event_type'] = isset($data['meter_reading_event_type']) ? $data['meter_reading_event_type'] : null;
+        $this->container['meter_reading_event_type_localized'] = isset($data['meter_reading_event_type_localized']) ? $data['meter_reading_event_type_localized'] : null;
         $this->container['organization_event_id'] = isset($data['organization_event_id']) ? $data['organization_event_id'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['cluster_id'] = isset($data['cluster_id']) ? $data['cluster_id'] : null;
@@ -438,6 +477,14 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEvent implements ModelInterfa
         if (!is_null($this->container['collection_status']) && !in_array($this->container['collection_status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'collection_status', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getMeterReadingEventTypeAllowableValues();
+        if (!is_null($this->container['meter_reading_event_type']) && !in_array($this->container['meter_reading_event_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'meter_reading_event_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -526,6 +573,63 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEvent implements ModelInterfa
     public function setCollectionStatusLocalized($collection_status_localized)
     {
         $this->container['collection_status_localized'] = $collection_status_localized;
+
+        return $this;
+    }
+
+    /**
+     * Gets meter_reading_event_type
+     *
+     * @return string
+     */
+    public function getMeterReadingEventType()
+    {
+        return $this->container['meter_reading_event_type'];
+    }
+
+    /**
+     * Sets meter_reading_event_type
+     *
+     * @param string $meter_reading_event_type meter_reading_event_type
+     *
+     * @return $this
+     */
+    public function setMeterReadingEventType($meter_reading_event_type)
+    {
+        $allowedValues = $this->getMeterReadingEventTypeAllowableValues();
+        if (!is_null($meter_reading_event_type) && !in_array($meter_reading_event_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'meter_reading_event_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['meter_reading_event_type'] = $meter_reading_event_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets meter_reading_event_type_localized
+     *
+     * @return string
+     */
+    public function getMeterReadingEventTypeLocalized()
+    {
+        return $this->container['meter_reading_event_type_localized'];
+    }
+
+    /**
+     * Sets meter_reading_event_type_localized
+     *
+     * @param string $meter_reading_event_type_localized meter_reading_event_type_localized
+     *
+     * @return $this
+     */
+    public function setMeterReadingEventTypeLocalized($meter_reading_event_type_localized)
+    {
+        $this->container['meter_reading_event_type_localized'] = $meter_reading_event_type_localized;
 
         return $this;
     }

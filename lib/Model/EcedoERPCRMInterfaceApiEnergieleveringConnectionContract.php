@@ -327,6 +327,13 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
     const PROPOSITION_PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
     const PROPOSITION_PRICING_TYPE_FULL_ENDEX = 'FullEndex';
     const PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
+    const STATUS_PROVISIONAL = 'Provisional';
+    const STATUS_ACTIVE = 'Active';
+    const STATUS_CANCELLED = 'Cancelled';
+    const STATUS_ENDED = 'Ended';
+    const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
+    const STATUS_PROPOSED = 'Proposed';
+    const STATUS_FINALIZED = 'Finalized';
     
 
     
@@ -368,6 +375,24 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
             self::PROPOSITION_PRICING_TYPE_HYBRID_ENDEX,
             self::PROPOSITION_PRICING_TYPE_FULL_ENDEX,
             self::PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_PROVISIONAL,
+            self::STATUS_ACTIVE,
+            self::STATUS_CANCELLED,
+            self::STATUS_ENDED,
+            self::STATUS_WAIT_FOR_APPROVAL,
+            self::STATUS_PROPOSED,
+            self::STATUS_FINALIZED,
         ];
     }
     
@@ -441,6 +466,14 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
         if (!is_null($this->container['proposition_pricing_type']) && !in_array($this->container['proposition_pricing_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'proposition_pricing_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -1097,6 +1130,15 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
      */
     public function setStatus($status)
     {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['status'] = $status;
 
         return $this;

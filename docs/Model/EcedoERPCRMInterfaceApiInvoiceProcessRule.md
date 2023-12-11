@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **invoice_sub_type_localized** | **string** |  | [optional] 
 **do_block** | **bool** |  | [optional] 
 **block_reason** | **string** |  | [optional] 
+**block_type** | **string** |  | [optional] 
+**block_type_localized** | **string** |  | [optional] 
 **cluster_reference** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

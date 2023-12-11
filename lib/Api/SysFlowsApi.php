@@ -666,9 +666,324 @@ class SysFlowsApi
     }
 
     /**
+     * Operation sysFlowsCancelAdvancePaymentInvoiceFlow
+     *
+     * Annuleren van voorschotfactuurflows
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  string $cluster_reference Het cluster waarvoor de flows geannuleerd moeten worden (required)
+     * @param  \DateTime $invoice_month Optioneel filter voor de voorschotfactuurmaand, wanneer gevuld moet dit de eerste van de maand zijn (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult
+     */
+    public function sysFlowsCancelAdvancePaymentInvoiceFlow($organization_id, $cluster_reference, $invoice_month = null)
+    {
+        list($response) = $this->sysFlowsCancelAdvancePaymentInvoiceFlowWithHttpInfo($organization_id, $cluster_reference, $invoice_month);
+        return $response;
+    }
+
+    /**
+     * Operation sysFlowsCancelAdvancePaymentInvoiceFlowWithHttpInfo
+     *
+     * Annuleren van voorschotfactuurflows
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  string $cluster_reference Het cluster waarvoor de flows geannuleerd moeten worden (required)
+     * @param  \DateTime $invoice_month Optioneel filter voor de voorschotfactuurmaand, wanneer gevuld moet dit de eerste van de maand zijn (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysFlowsCancelAdvancePaymentInvoiceFlowWithHttpInfo($organization_id, $cluster_reference, $invoice_month = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult';
+        $request = $this->sysFlowsCancelAdvancePaymentInvoiceFlowRequest($organization_id, $cluster_reference, $invoice_month);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysFlowsCancelAdvancePaymentInvoiceFlowAsync
+     *
+     * Annuleren van voorschotfactuurflows
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  string $cluster_reference Het cluster waarvoor de flows geannuleerd moeten worden (required)
+     * @param  \DateTime $invoice_month Optioneel filter voor de voorschotfactuurmaand, wanneer gevuld moet dit de eerste van de maand zijn (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsCancelAdvancePaymentInvoiceFlowAsync($organization_id, $cluster_reference, $invoice_month = null)
+    {
+        return $this->sysFlowsCancelAdvancePaymentInvoiceFlowAsyncWithHttpInfo($organization_id, $cluster_reference, $invoice_month)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysFlowsCancelAdvancePaymentInvoiceFlowAsyncWithHttpInfo
+     *
+     * Annuleren van voorschotfactuurflows
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  string $cluster_reference Het cluster waarvoor de flows geannuleerd moeten worden (required)
+     * @param  \DateTime $invoice_month Optioneel filter voor de voorschotfactuurmaand, wanneer gevuld moet dit de eerste van de maand zijn (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsCancelAdvancePaymentInvoiceFlowAsyncWithHttpInfo($organization_id, $cluster_reference, $invoice_month = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult';
+        $request = $this->sysFlowsCancelAdvancePaymentInvoiceFlowRequest($organization_id, $cluster_reference, $invoice_month);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysFlowsCancelAdvancePaymentInvoiceFlow'
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  string $cluster_reference Het cluster waarvoor de flows geannuleerd moeten worden (required)
+     * @param  \DateTime $invoice_month Optioneel filter voor de voorschotfactuurmaand, wanneer gevuld moet dit de eerste van de maand zijn (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysFlowsCancelAdvancePaymentInvoiceFlowRequest($organization_id, $cluster_reference, $invoice_month = null)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling sysFlowsCancelAdvancePaymentInvoiceFlow'
+            );
+        }
+        // verify the required parameter 'cluster_reference' is set
+        if ($cluster_reference === null || (is_array($cluster_reference) && count($cluster_reference) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $cluster_reference when calling sysFlowsCancelAdvancePaymentInvoiceFlow'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/flows/advancepaymentinvoiceflow/cancel';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($organization_id !== null) {
+            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
+        }
+        // query params
+        if ($cluster_reference !== null) {
+            $queryParams['clusterReference'] = ObjectSerializer::toQueryValue($cluster_reference);
+        }
+        // query params
+        if ($invoice_month !== null) {
+            $queryParams['invoiceMonth'] = ObjectSerializer::toQueryValue($invoice_month);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation sysFlowsCancelApplicationFlow
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -687,7 +1002,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlowWithHttpInfo
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -780,7 +1095,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlowAsync
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -802,7 +1117,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlowAsyncWithHttpInfo
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -2819,15 +3134,16 @@ class SysFlowsApi
      * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
      *
      * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
      * @param  string $company_label_id  (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]
      */
-    public function sysFlowsGetAdvancePaymentInvoicesByStep($step_type, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStep($step_type, $take_count = null, $company_label_id = null)
     {
-        list($response) = $this->sysFlowsGetAdvancePaymentInvoicesByStepWithHttpInfo($step_type, $company_label_id);
+        list($response) = $this->sysFlowsGetAdvancePaymentInvoicesByStepWithHttpInfo($step_type, $take_count, $company_label_id);
         return $response;
     }
 
@@ -2837,16 +3153,17 @@ class SysFlowsApi
      * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
      *
      * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
      * @param  string $company_label_id  (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysFlowsGetAdvancePaymentInvoicesByStepWithHttpInfo($step_type, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
-        $request = $this->sysFlowsGetAdvancePaymentInvoicesByStepRequest($step_type, $company_label_id);
+        $request = $this->sysFlowsGetAdvancePaymentInvoicesByStepRequest($step_type, $take_count, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2929,14 +3246,15 @@ class SysFlowsApi
      * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
      *
      * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
      * @param  string $company_label_id  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsGetAdvancePaymentInvoicesByStepAsync($step_type, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepAsync($step_type, $take_count = null, $company_label_id = null)
     {
-        return $this->sysFlowsGetAdvancePaymentInvoicesByStepAsyncWithHttpInfo($step_type, $company_label_id)
+        return $this->sysFlowsGetAdvancePaymentInvoicesByStepAsyncWithHttpInfo($step_type, $take_count, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2950,15 +3268,16 @@ class SysFlowsApi
      * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
      *
      * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
      * @param  string $company_label_id  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsGetAdvancePaymentInvoicesByStepAsyncWithHttpInfo($step_type, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepAsyncWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
-        $request = $this->sysFlowsGetAdvancePaymentInvoicesByStepRequest($step_type, $company_label_id);
+        $request = $this->sysFlowsGetAdvancePaymentInvoicesByStepRequest($step_type, $take_count, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3001,12 +3320,13 @@ class SysFlowsApi
      * Create request for operation 'sysFlowsGetAdvancePaymentInvoicesByStep'
      *
      * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
      * @param  string $company_label_id  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysFlowsGetAdvancePaymentInvoicesByStepRequest($step_type, $company_label_id = null)
+    protected function sysFlowsGetAdvancePaymentInvoicesByStepRequest($step_type, $take_count = null, $company_label_id = null)
     {
         // verify the required parameter 'step_type' is set
         if ($step_type === null || (is_array($step_type) && count($step_type) === 0)) {
@@ -3022,6 +3342,323 @@ class SysFlowsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($take_count !== null) {
+            $queryParams['takeCount'] = ObjectSerializer::toQueryValue($take_count);
+        }
+        // query params
+        if ($company_label_id !== null) {
+            $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
+        }
+
+        // path params
+        if ($step_type !== null) {
+            $resourcePath = str_replace(
+                '{' . 'stepType' . '}',
+                ObjectSerializer::toPathValue($step_type),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysFlowsGetProductPurchaseInvoicesByStep
+     *
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     *
+     * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
+     * @param  string $company_label_id  (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]
+     */
+    public function sysFlowsGetProductPurchaseInvoicesByStep($step_type, $take_count = null, $company_label_id = null)
+    {
+        list($response) = $this->sysFlowsGetProductPurchaseInvoicesByStepWithHttpInfo($step_type, $take_count, $company_label_id);
+        return $response;
+    }
+
+    /**
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepWithHttpInfo
+     *
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     *
+     * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
+     * @param  string $company_label_id  (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysFlowsGetProductPurchaseInvoicesByStepWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
+        $request = $this->sysFlowsGetProductPurchaseInvoicesByStepRequest($step_type, $take_count, $company_label_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepAsync
+     *
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     *
+     * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
+     * @param  string $company_label_id  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsGetProductPurchaseInvoicesByStepAsync($step_type, $take_count = null, $company_label_id = null)
+    {
+        return $this->sysFlowsGetProductPurchaseInvoicesByStepAsyncWithHttpInfo($step_type, $take_count, $company_label_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepAsyncWithHttpInfo
+     *
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     *
+     * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
+     * @param  string $company_label_id  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsGetProductPurchaseInvoicesByStepAsyncWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
+        $request = $this->sysFlowsGetProductPurchaseInvoicesByStepRequest($step_type, $take_count, $company_label_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysFlowsGetProductPurchaseInvoicesByStep'
+     *
+     * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
+     * @param  string $company_label_id  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysFlowsGetProductPurchaseInvoicesByStepRequest($step_type, $take_count = null, $company_label_id = null)
+    {
+        // verify the required parameter 'step_type' is set
+        if ($step_type === null || (is_array($step_type) && count($step_type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $step_type when calling sysFlowsGetProductPurchaseInvoicesByStep'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/flows/productpurchaseflow/invoices/getByStep/{stepType}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($take_count !== null) {
+            $queryParams['takeCount'] = ObjectSerializer::toQueryValue($take_count);
+        }
         // query params
         if ($company_label_id !== null) {
             $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
@@ -3123,15 +3760,16 @@ class SysFlowsApi
      * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
      *
      * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
      * @param  string $company_label_id  (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]
      */
-    public function sysFlowsGetSettlementInvoicesByStep($step_type, $company_label_id = null)
+    public function sysFlowsGetSettlementInvoicesByStep($step_type, $take_count = null, $company_label_id = null)
     {
-        list($response) = $this->sysFlowsGetSettlementInvoicesByStepWithHttpInfo($step_type, $company_label_id);
+        list($response) = $this->sysFlowsGetSettlementInvoicesByStepWithHttpInfo($step_type, $take_count, $company_label_id);
         return $response;
     }
 
@@ -3141,16 +3779,17 @@ class SysFlowsApi
      * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
      *
      * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
      * @param  string $company_label_id  (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysFlowsGetSettlementInvoicesByStepWithHttpInfo($step_type, $company_label_id = null)
+    public function sysFlowsGetSettlementInvoicesByStepWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
-        $request = $this->sysFlowsGetSettlementInvoicesByStepRequest($step_type, $company_label_id);
+        $request = $this->sysFlowsGetSettlementInvoicesByStepRequest($step_type, $take_count, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3233,14 +3872,15 @@ class SysFlowsApi
      * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
      *
      * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
      * @param  string $company_label_id  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsGetSettlementInvoicesByStepAsync($step_type, $company_label_id = null)
+    public function sysFlowsGetSettlementInvoicesByStepAsync($step_type, $take_count = null, $company_label_id = null)
     {
-        return $this->sysFlowsGetSettlementInvoicesByStepAsyncWithHttpInfo($step_type, $company_label_id)
+        return $this->sysFlowsGetSettlementInvoicesByStepAsyncWithHttpInfo($step_type, $take_count, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3254,15 +3894,16 @@ class SysFlowsApi
      * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
      *
      * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
      * @param  string $company_label_id  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsGetSettlementInvoicesByStepAsyncWithHttpInfo($step_type, $company_label_id = null)
+    public function sysFlowsGetSettlementInvoicesByStepAsyncWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
-        $request = $this->sysFlowsGetSettlementInvoicesByStepRequest($step_type, $company_label_id);
+        $request = $this->sysFlowsGetSettlementInvoicesByStepRequest($step_type, $take_count, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3305,12 +3946,13 @@ class SysFlowsApi
      * Create request for operation 'sysFlowsGetSettlementInvoicesByStep'
      *
      * @param  string $step_type  (required)
+     * @param  int $take_count  (optional)
      * @param  string $company_label_id  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysFlowsGetSettlementInvoicesByStepRequest($step_type, $company_label_id = null)
+    protected function sysFlowsGetSettlementInvoicesByStepRequest($step_type, $take_count = null, $company_label_id = null)
     {
         // verify the required parameter 'step_type' is set
         if ($step_type === null || (is_array($step_type) && count($step_type) === 0)) {
@@ -3326,6 +3968,10 @@ class SysFlowsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($take_count !== null) {
+            $queryParams['takeCount'] = ObjectSerializer::toQueryValue($take_count);
+        }
         // query params
         if ($company_label_id !== null) {
             $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
@@ -3415,6 +4061,297 @@ class SysFlowsApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysFlowsProductPurchaseInvoiceFlowModificationFinished
+     *
+     * Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
+     *
+     * @param  string $invoice_id  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return object
+     */
+    public function sysFlowsProductPurchaseInvoiceFlowModificationFinished($invoice_id)
+    {
+        list($response) = $this->sysFlowsProductPurchaseInvoiceFlowModificationFinishedWithHttpInfo($invoice_id);
+        return $response;
+    }
+
+    /**
+     * Operation sysFlowsProductPurchaseInvoiceFlowModificationFinishedWithHttpInfo
+     *
+     * Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
+     *
+     * @param  string $invoice_id  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysFlowsProductPurchaseInvoiceFlowModificationFinishedWithHttpInfo($invoice_id)
+    {
+        $returnType = 'object';
+        $request = $this->sysFlowsProductPurchaseInvoiceFlowModificationFinishedRequest($invoice_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysFlowsProductPurchaseInvoiceFlowModificationFinishedAsync
+     *
+     * Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
+     *
+     * @param  string $invoice_id  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsProductPurchaseInvoiceFlowModificationFinishedAsync($invoice_id)
+    {
+        return $this->sysFlowsProductPurchaseInvoiceFlowModificationFinishedAsyncWithHttpInfo($invoice_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysFlowsProductPurchaseInvoiceFlowModificationFinishedAsyncWithHttpInfo
+     *
+     * Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
+     *
+     * @param  string $invoice_id  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsProductPurchaseInvoiceFlowModificationFinishedAsyncWithHttpInfo($invoice_id)
+    {
+        $returnType = 'object';
+        $request = $this->sysFlowsProductPurchaseInvoiceFlowModificationFinishedRequest($invoice_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysFlowsProductPurchaseInvoiceFlowModificationFinished'
+     *
+     * @param  string $invoice_id  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysFlowsProductPurchaseInvoiceFlowModificationFinishedRequest($invoice_id)
+    {
+        // verify the required parameter 'invoice_id' is set
+        if ($invoice_id === null || (is_array($invoice_id) && count($invoice_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $invoice_id when calling sysFlowsProductPurchaseInvoiceFlowModificationFinished'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/flows/productpurchaseflow/modificationfinished';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($invoice_id !== null) {
+            $queryParams['invoiceId'] = ObjectSerializer::toQueryValue($invoice_id);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -4679,7 +5616,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlow
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)
@@ -4702,7 +5639,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlowWithHttpInfo
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)
@@ -4799,7 +5736,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlowAsync
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)
@@ -4825,7 +5762,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlowAsyncWithHttpInfo
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)

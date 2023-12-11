@@ -57,12 +57,14 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto implements ModelInte
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'value' => 'double',
+        'value_ldn' => 'double',
+        'value_odn' => 'double',
         'telemetry_id' => 'string',
         'connection_id' => 'string',
         'ean' => 'string',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
-        'value' => 'double',
         'unit' => 'string',
         'unit_localized' => 'string'
     ];
@@ -73,12 +75,14 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto implements ModelInte
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'value' => 'double',
+        'value_ldn' => 'double',
+        'value_odn' => 'double',
         'telemetry_id' => null,
         'connection_id' => 'uuid',
         'ean' => null,
         'start_date' => 'date-time',
         'end_date' => 'date-time',
-        'value' => 'double',
         'unit' => null,
         'unit_localized' => null
     ];
@@ -110,12 +114,14 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto implements ModelInte
      * @var string[]
      */
     protected static $attributeMap = [
+        'value' => 'Value',
+        'value_ldn' => 'ValueLDN',
+        'value_odn' => 'ValueODN',
         'telemetry_id' => 'TelemetryId',
         'connection_id' => 'ConnectionId',
         'ean' => 'EAN',
         'start_date' => 'StartDate',
         'end_date' => 'EndDate',
-        'value' => 'Value',
         'unit' => 'Unit',
         'unit_localized' => 'UnitLocalized'
     ];
@@ -126,12 +132,14 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto implements ModelInte
      * @var string[]
      */
     protected static $setters = [
+        'value' => 'setValue',
+        'value_ldn' => 'setValueLdn',
+        'value_odn' => 'setValueOdn',
         'telemetry_id' => 'setTelemetryId',
         'connection_id' => 'setConnectionId',
         'ean' => 'setEan',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'value' => 'setValue',
         'unit' => 'setUnit',
         'unit_localized' => 'setUnitLocalized'
     ];
@@ -142,12 +150,14 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto implements ModelInte
      * @var string[]
      */
     protected static $getters = [
+        'value' => 'getValue',
+        'value_ldn' => 'getValueLdn',
+        'value_odn' => 'getValueOdn',
         'telemetry_id' => 'getTelemetryId',
         'connection_id' => 'getConnectionId',
         'ean' => 'getEan',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'value' => 'getValue',
         'unit' => 'getUnit',
         'unit_localized' => 'getUnitLocalized'
     ];
@@ -233,12 +243,14 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto implements ModelInte
      */
     public function __construct(array $data = null)
     {
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['value_ldn'] = isset($data['value_ldn']) ? $data['value_ldn'] : null;
+        $this->container['value_odn'] = isset($data['value_odn']) ? $data['value_odn'] : null;
         $this->container['telemetry_id'] = isset($data['telemetry_id']) ? $data['telemetry_id'] : null;
         $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
         $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
         $this->container['unit_localized'] = isset($data['unit_localized']) ? $data['unit_localized'] : null;
     }
@@ -274,6 +286,78 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto implements ModelInte
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets value
+     *
+     * @return double
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param double $value Tot 01-04-2023 werden verbruiken voor elektriciteit-aansluitingen gesaldeerd in alle marktprocessen. Er waren geen losse waarden voor LDN en ODN, maar alleen deze Value. Om backwards compatible te blijven is dit value-veld behouden en bevat deze een on-the-fly gesaldeerd volume van ValueLDN en ValueODN. Deze waarde is negatief bij teruglevering (ODN) en positief bij verbruik (LDN).
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets value_ldn
+     *
+     * @return double
+     */
+    public function getValueLdn()
+    {
+        return $this->container['value_ldn'];
+    }
+
+    /**
+     * Sets value_ldn
+     *
+     * @param double $value_ldn Het volume dat geleverd is door de netbeheerder (dus verbruik vanuit het perspectief van een aansluiting). Deze is 0 wanneer er geen verbruik is bij zowel gas- als elektriciteit-aansluitingen
+     *
+     * @return $this
+     */
+    public function setValueLdn($value_ldn)
+    {
+        $this->container['value_ldn'] = $value_ldn;
+
+        return $this;
+    }
+
+    /**
+     * Gets value_odn
+     *
+     * @return double
+     */
+    public function getValueOdn()
+    {
+        return $this->container['value_odn'];
+    }
+
+    /**
+     * Sets value_odn
+     *
+     * @param double $value_odn Het volume dat ontvangen is door de netbeheerder (dus teruglevering vanuit het perspectief van een aansluiting). Deze is 0 wanneer er geen teruglevering is bij een elektriciteit-aansluiting en `null` bij gas-aansluitingen.
+     *
+     * @return $this
+     */
+    public function setValueOdn($value_odn)
+    {
+        $this->container['value_odn'] = $value_odn;
+
+        return $this;
+    }
 
     /**
      * Gets telemetry_id
@@ -391,30 +475,6 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto implements ModelInte
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets value
-     *
-     * @return double
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param double $value value
-     *
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
 
         return $this;
     }

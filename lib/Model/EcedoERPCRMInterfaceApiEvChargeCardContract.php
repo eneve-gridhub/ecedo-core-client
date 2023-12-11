@@ -258,6 +258,11 @@ class EcedoERPCRMInterfaceApiEvChargeCardContract implements ModelInterface, Arr
         return self::$swaggerModelName;
     }
 
+    const CHARGE_CONTRACT_USER_TYPE_ALLEGO_MSP = 'Allego_MSP';
+    const CHARGE_CONTRACT_USER_TYPE_CHARGE_CARD_OWNER = 'ChargeCardOwner';
+    const CHARGE_CONTRACT_USER_TYPE_APP_USER = 'AppUser';
+    const CHARGE_CONTRACT_USER_TYPE_MSP = 'MSP';
+    const CHARGE_CONTRACT_USER_TYPE_EV_BUSINESS_PARTNER = 'EvBusinessPartner';
     const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
     const PROPOSITION_PRICING_TYPE_FIXED = 'Fixed';
     const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
@@ -267,8 +272,31 @@ class EcedoERPCRMInterfaceApiEvChargeCardContract implements ModelInterface, Arr
     const PROPOSITION_PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
     const PROPOSITION_PRICING_TYPE_FULL_ENDEX = 'FullEndex';
     const PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
+    const STATUS_PROVISIONAL = 'Provisional';
+    const STATUS_ACTIVE = 'Active';
+    const STATUS_CANCELLED = 'Cancelled';
+    const STATUS_ENDED = 'Ended';
+    const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
+    const STATUS_PROPOSED = 'Proposed';
+    const STATUS_FINALIZED = 'Finalized';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getChargeContractUserTypeAllowableValues()
+    {
+        return [
+            self::CHARGE_CONTRACT_USER_TYPE_ALLEGO_MSP,
+            self::CHARGE_CONTRACT_USER_TYPE_CHARGE_CARD_OWNER,
+            self::CHARGE_CONTRACT_USER_TYPE_APP_USER,
+            self::CHARGE_CONTRACT_USER_TYPE_MSP,
+            self::CHARGE_CONTRACT_USER_TYPE_EV_BUSINESS_PARTNER,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -287,6 +315,24 @@ class EcedoERPCRMInterfaceApiEvChargeCardContract implements ModelInterface, Arr
             self::PROPOSITION_PRICING_TYPE_HYBRID_ENDEX,
             self::PROPOSITION_PRICING_TYPE_FULL_ENDEX,
             self::PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_PROVISIONAL,
+            self::STATUS_ACTIVE,
+            self::STATUS_CANCELLED,
+            self::STATUS_ENDED,
+            self::STATUS_WAIT_FOR_APPROVAL,
+            self::STATUS_PROPOSED,
+            self::STATUS_FINALIZED,
         ];
     }
     
@@ -338,10 +384,26 @@ class EcedoERPCRMInterfaceApiEvChargeCardContract implements ModelInterface, Arr
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getChargeContractUserTypeAllowableValues();
+        if (!is_null($this->container['charge_contract_user_type']) && !in_array($this->container['charge_contract_user_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'charge_contract_user_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getPropositionPricingTypeAllowableValues();
         if (!is_null($this->container['proposition_pricing_type']) && !in_array($this->container['proposition_pricing_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'proposition_pricing_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -380,6 +442,15 @@ class EcedoERPCRMInterfaceApiEvChargeCardContract implements ModelInterface, Arr
      */
     public function setChargeContractUserType($charge_contract_user_type)
     {
+        $allowedValues = $this->getChargeContractUserTypeAllowableValues();
+        if (!is_null($charge_contract_user_type) && !in_array($charge_contract_user_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'charge_contract_user_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['charge_contract_user_type'] = $charge_contract_user_type;
 
         return $this;
@@ -749,6 +820,15 @@ class EcedoERPCRMInterfaceApiEvChargeCardContract implements ModelInterface, Arr
      */
     public function setStatus($status)
     {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['status'] = $status;
 
         return $this;

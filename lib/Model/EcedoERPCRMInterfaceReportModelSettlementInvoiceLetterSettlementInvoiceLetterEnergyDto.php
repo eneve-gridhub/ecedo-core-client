@@ -63,6 +63,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'organization_invoice_advance_payments' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoAdvancePayment[]',
         'organization_invoice_grid_operators' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoGridOperator[]',
         'organization_invoice_period_prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoPeriodPrice[]',
+        'organization_invoice_termination_fees' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoTerminationFee[]',
         'organization_invoice_settlement_invoice_frequency' => 'string',
         'organization_invoice_meter_readings' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoMeterReading[]',
         'organization_debtor_balance' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoDebtorBalance',
@@ -187,6 +188,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'organization_invoice_advance_payments' => null,
         'organization_invoice_grid_operators' => null,
         'organization_invoice_period_prices' => null,
+        'organization_invoice_termination_fees' => null,
         'organization_invoice_settlement_invoice_frequency' => null,
         'organization_invoice_meter_readings' => null,
         'organization_debtor_balance' => null,
@@ -332,6 +334,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'organization_invoice_advance_payments' => 'Organization_Invoice_AdvancePayments',
         'organization_invoice_grid_operators' => 'Organization_Invoice_GridOperators',
         'organization_invoice_period_prices' => 'Organization_Invoice_PeriodPrices',
+        'organization_invoice_termination_fees' => 'Organization_Invoice_TerminationFees',
         'organization_invoice_settlement_invoice_frequency' => 'Organization_Invoice_SettlementInvoiceFrequency',
         'organization_invoice_meter_readings' => 'Organization_Invoice_MeterReadings',
         'organization_debtor_balance' => 'Organization_DebtorBalance',
@@ -456,6 +459,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'organization_invoice_advance_payments' => 'setOrganizationInvoiceAdvancePayments',
         'organization_invoice_grid_operators' => 'setOrganizationInvoiceGridOperators',
         'organization_invoice_period_prices' => 'setOrganizationInvoicePeriodPrices',
+        'organization_invoice_termination_fees' => 'setOrganizationInvoiceTerminationFees',
         'organization_invoice_settlement_invoice_frequency' => 'setOrganizationInvoiceSettlementInvoiceFrequency',
         'organization_invoice_meter_readings' => 'setOrganizationInvoiceMeterReadings',
         'organization_debtor_balance' => 'setOrganizationDebtorBalance',
@@ -580,6 +584,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'organization_invoice_advance_payments' => 'getOrganizationInvoiceAdvancePayments',
         'organization_invoice_grid_operators' => 'getOrganizationInvoiceGridOperators',
         'organization_invoice_period_prices' => 'getOrganizationInvoicePeriodPrices',
+        'organization_invoice_termination_fees' => 'getOrganizationInvoiceTerminationFees',
         'organization_invoice_settlement_invoice_frequency' => 'getOrganizationInvoiceSettlementInvoiceFrequency',
         'organization_invoice_meter_readings' => 'getOrganizationInvoiceMeterReadings',
         'organization_debtor_balance' => 'getOrganizationDebtorBalance',
@@ -758,6 +763,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         $this->container['organization_invoice_advance_payments'] = isset($data['organization_invoice_advance_payments']) ? $data['organization_invoice_advance_payments'] : null;
         $this->container['organization_invoice_grid_operators'] = isset($data['organization_invoice_grid_operators']) ? $data['organization_invoice_grid_operators'] : null;
         $this->container['organization_invoice_period_prices'] = isset($data['organization_invoice_period_prices']) ? $data['organization_invoice_period_prices'] : null;
+        $this->container['organization_invoice_termination_fees'] = isset($data['organization_invoice_termination_fees']) ? $data['organization_invoice_termination_fees'] : null;
         $this->container['organization_invoice_settlement_invoice_frequency'] = isset($data['organization_invoice_settlement_invoice_frequency']) ? $data['organization_invoice_settlement_invoice_frequency'] : null;
         $this->container['organization_invoice_meter_readings'] = isset($data['organization_invoice_meter_readings']) ? $data['organization_invoice_meter_readings'] : null;
         $this->container['organization_debtor_balance'] = isset($data['organization_debtor_balance']) ? $data['organization_debtor_balance'] : null;
@@ -1034,6 +1040,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setOrganizationInvoicePeriodPrices($organization_invoice_period_prices)
     {
         $this->container['organization_invoice_period_prices'] = $organization_invoice_period_prices;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_invoice_termination_fees
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoTerminationFee[]
+     */
+    public function getOrganizationInvoiceTerminationFees()
+    {
+        return $this->container['organization_invoice_termination_fees'];
+    }
+
+    /**
+     * Sets organization_invoice_termination_fees
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoTerminationFee[] $organization_invoice_termination_fees organization_invoice_termination_fees
+     *
+     * @return $this
+     */
+    public function setOrganizationInvoiceTerminationFees($organization_invoice_termination_fees)
+    {
+        $this->container['organization_invoice_termination_fees'] = $organization_invoice_termination_fees;
 
         return $this;
     }

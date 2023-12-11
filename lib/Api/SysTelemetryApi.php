@@ -418,8 +418,8 @@ class SysTelemetryApi
      * Opvragen telemetrie aan de hand van een EAN
      *
      * @param  string $ean EAN als referentie van de telemetrie (required)
-     * @param  \DateTime $start_date Vanaf datum (dag) (required)
-     * @param  \DateTime $end_date Tot datum (dag) (required)
+     * @param  \DateTime $start_date Vanaf datum (dag, bijvoorbeeld 2023-01-31) (required)
+     * @param  \DateTime $end_date Tot datum (dag, bijvoorbeeld 2023-02-28) (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -437,8 +437,8 @@ class SysTelemetryApi
      * Opvragen telemetrie aan de hand van een EAN
      *
      * @param  string $ean EAN als referentie van de telemetrie (required)
-     * @param  \DateTime $start_date Vanaf datum (dag) (required)
-     * @param  \DateTime $end_date Tot datum (dag) (required)
+     * @param  \DateTime $start_date Vanaf datum (dag, bijvoorbeeld 2023-01-31) (required)
+     * @param  \DateTime $end_date Tot datum (dag, bijvoorbeeld 2023-02-28) (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -530,8 +530,8 @@ class SysTelemetryApi
      * Opvragen telemetrie aan de hand van een EAN
      *
      * @param  string $ean EAN als referentie van de telemetrie (required)
-     * @param  \DateTime $start_date Vanaf datum (dag) (required)
-     * @param  \DateTime $end_date Tot datum (dag) (required)
+     * @param  \DateTime $start_date Vanaf datum (dag, bijvoorbeeld 2023-01-31) (required)
+     * @param  \DateTime $end_date Tot datum (dag, bijvoorbeeld 2023-02-28) (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -552,8 +552,8 @@ class SysTelemetryApi
      * Opvragen telemetrie aan de hand van een EAN
      *
      * @param  string $ean EAN als referentie van de telemetrie (required)
-     * @param  \DateTime $start_date Vanaf datum (dag) (required)
-     * @param  \DateTime $end_date Tot datum (dag) (required)
+     * @param  \DateTime $start_date Vanaf datum (dag, bijvoorbeeld 2023-01-31) (required)
+     * @param  \DateTime $end_date Tot datum (dag, bijvoorbeeld 2023-02-28) (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -604,8 +604,8 @@ class SysTelemetryApi
      * Create request for operation 'sysTelemetryGetTelemetry'
      *
      * @param  string $ean EAN als referentie van de telemetrie (required)
-     * @param  \DateTime $start_date Vanaf datum (dag) (required)
-     * @param  \DateTime $end_date Tot datum (dag) (required)
+     * @param  \DateTime $start_date Vanaf datum (dag, bijvoorbeeld 2023-01-31) (required)
+     * @param  \DateTime $end_date Tot datum (dag, bijvoorbeeld 2023-02-28) (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

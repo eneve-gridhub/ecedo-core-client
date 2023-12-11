@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **annual_standard_usage** | [**\Swagger\Client\Model\EcedoERPCRMInterfaceApiAnnualStandardUsage**](EcedoERPCRMInterfaceApiAnnualStandardUsage.md) |  | [optional] 
 **expected_annual_standard_usage** | [**\Swagger\Client\Model\EcedoERPCRMInterfaceApiExpectedAnnualStandardUsage**](EcedoERPCRMInterfaceApiExpectedAnnualStandardUsage.md) |  | [optional] 
 **active_annual_standard_usage_type** | **string** |  | [optional] 
+**active_annual_standard_usage_type_localized** | **string** |  | [optional] 
 **contract** | [**\Swagger\Client\Model\EcedoERPCRMInterfaceApiContract**](EcedoERPCRMInterfaceApiContract.md) | Dit veld bevat het actieve of het eerstvolgende toekomstige contract. Als de aansluiting alleen historische contracten heeft is de waarde van dit veld &#x60;null&#x60; | [optional] 
 **meelift_contract** | [**\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeeliftContract**](EcedoERPCRMInterfaceApiMeeliftContract.md) | Als de meelift-functionaliteit is ingeschakeld bevat dit veld het actieve of het eerstvolgende toekomstige contract. Als de meelift-functionaliteit niet is ingeschakeld is deze waarde altijd &#x60;null&#x60; | [optional] 
 **advance_payment** | [**\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePayment**](EcedoERPCRMInterfaceApiAdvancePayment.md) |  | [optional] 

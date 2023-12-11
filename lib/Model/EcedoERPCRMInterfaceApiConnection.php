@@ -87,6 +87,7 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'annual_standard_usage' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAnnualStandardUsage',
         'expected_annual_standard_usage' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiExpectedAnnualStandardUsage',
         'active_annual_standard_usage_type' => 'string',
+        'active_annual_standard_usage_type_localized' => 'string',
         'contract' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContract',
         'meelift_contract' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeeliftContract',
         'advance_payment' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePayment',
@@ -138,6 +139,7 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'annual_standard_usage' => null,
         'expected_annual_standard_usage' => null,
         'active_annual_standard_usage_type' => null,
+        'active_annual_standard_usage_type_localized' => null,
         'contract' => null,
         'meelift_contract' => null,
         'advance_payment' => null,
@@ -210,6 +212,7 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'annual_standard_usage' => 'AnnualStandardUsage',
         'expected_annual_standard_usage' => 'ExpectedAnnualStandardUsage',
         'active_annual_standard_usage_type' => 'ActiveAnnualStandardUsageType',
+        'active_annual_standard_usage_type_localized' => 'ActiveAnnualStandardUsageTypeLocalized',
         'contract' => 'Contract',
         'meelift_contract' => 'MeeliftContract',
         'advance_payment' => 'AdvancePayment',
@@ -261,6 +264,7 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'annual_standard_usage' => 'setAnnualStandardUsage',
         'expected_annual_standard_usage' => 'setExpectedAnnualStandardUsage',
         'active_annual_standard_usage_type' => 'setActiveAnnualStandardUsageType',
+        'active_annual_standard_usage_type_localized' => 'setActiveAnnualStandardUsageTypeLocalized',
         'contract' => 'setContract',
         'meelift_contract' => 'setMeeliftContract',
         'advance_payment' => 'setAdvancePayment',
@@ -312,6 +316,7 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'annual_standard_usage' => 'getAnnualStandardUsage',
         'expected_annual_standard_usage' => 'getExpectedAnnualStandardUsage',
         'active_annual_standard_usage_type' => 'getActiveAnnualStandardUsageType',
+        'active_annual_standard_usage_type_localized' => 'getActiveAnnualStandardUsageTypeLocalized',
         'contract' => 'getContract',
         'meelift_contract' => 'getMeeliftContract',
         'advance_payment' => 'getAdvancePayment',
@@ -368,8 +373,123 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const STATUS_CREATED = 'Created';
+    const STATUS_IN_FLOW = 'InFlow';
+    const STATUS_SWITCHED = 'Switched';
+    const STATUS_APPLICATION_CANCELLED = 'ApplicationCancelled';
+    const STATUS_LOSS = 'Loss';
+    const STATUS_MOVE = 'Move';
+    const MARKET_SEGMENT_ELECTRICITY = 'Electricity';
+    const MARKET_SEGMENT_GAS = 'Gas';
+    const USAGE_TYPE_SMALL_CONSUMER = 'SmallConsumer';
+    const USAGE_TYPE_LARGE_CONSUMER = 'LargeConsumer';
+    const TYPE_OF_SUPPLY_LEVERING = 'Levering';
+    const TYPE_OF_SUPPLY_TERUGLEVERING = 'Teruglevering';
+    const TYPE_OF_SUPPLY_COMBI = 'Combi';
+    const ACTIVE_ANNUAL_STANDARD_USAGE_TYPE_SAU = 'SAU';
+    const ACTIVE_ANNUAL_STANDARD_USAGE_TYPE_EXPECTED_SAU = 'ExpectedSAU';
+    const SWITCH_TYPE__SWITCH = 'Switch';
+    const SWITCH_TYPE_MOVE_IN = 'MoveIn';
+    const ADMINISTRATIVE_STATUS_SMART_METER_ON = 'On';
+    const ADMINISTRATIVE_STATUS_SMART_METER_OFF = 'Off';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_CREATED,
+            self::STATUS_IN_FLOW,
+            self::STATUS_SWITCHED,
+            self::STATUS_APPLICATION_CANCELLED,
+            self::STATUS_LOSS,
+            self::STATUS_MOVE,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getMarketSegmentAllowableValues()
+    {
+        return [
+            self::MARKET_SEGMENT_ELECTRICITY,
+            self::MARKET_SEGMENT_GAS,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getUsageTypeAllowableValues()
+    {
+        return [
+            self::USAGE_TYPE_SMALL_CONSUMER,
+            self::USAGE_TYPE_LARGE_CONSUMER,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeOfSupplyAllowableValues()
+    {
+        return [
+            self::TYPE_OF_SUPPLY_LEVERING,
+            self::TYPE_OF_SUPPLY_TERUGLEVERING,
+            self::TYPE_OF_SUPPLY_COMBI,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getActiveAnnualStandardUsageTypeAllowableValues()
+    {
+        return [
+            self::ACTIVE_ANNUAL_STANDARD_USAGE_TYPE_SAU,
+            self::ACTIVE_ANNUAL_STANDARD_USAGE_TYPE_EXPECTED_SAU,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSwitchTypeAllowableValues()
+    {
+        return [
+            self::SWITCH_TYPE__SWITCH,
+            self::SWITCH_TYPE_MOVE_IN,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAdministrativeStatusSmartMeterAllowableValues()
+    {
+        return [
+            self::ADMINISTRATIVE_STATUS_SMART_METER_ON,
+            self::ADMINISTRATIVE_STATUS_SMART_METER_OFF,
+        ];
+    }
     
 
     /**
@@ -417,6 +537,7 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         $this->container['annual_standard_usage'] = isset($data['annual_standard_usage']) ? $data['annual_standard_usage'] : null;
         $this->container['expected_annual_standard_usage'] = isset($data['expected_annual_standard_usage']) ? $data['expected_annual_standard_usage'] : null;
         $this->container['active_annual_standard_usage_type'] = isset($data['active_annual_standard_usage_type']) ? $data['active_annual_standard_usage_type'] : null;
+        $this->container['active_annual_standard_usage_type_localized'] = isset($data['active_annual_standard_usage_type_localized']) ? $data['active_annual_standard_usage_type_localized'] : null;
         $this->container['contract'] = isset($data['contract']) ? $data['contract'] : null;
         $this->container['meelift_contract'] = isset($data['meelift_contract']) ? $data['meelift_contract'] : null;
         $this->container['advance_payment'] = isset($data['advance_payment']) ? $data['advance_payment'] : null;
@@ -440,6 +561,62 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getMarketSegmentAllowableValues();
+        if (!is_null($this->container['market_segment']) && !in_array($this->container['market_segment'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'market_segment', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getUsageTypeAllowableValues();
+        if (!is_null($this->container['usage_type']) && !in_array($this->container['usage_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'usage_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTypeOfSupplyAllowableValues();
+        if (!is_null($this->container['type_of_supply']) && !in_array($this->container['type_of_supply'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'type_of_supply', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getActiveAnnualStandardUsageTypeAllowableValues();
+        if (!is_null($this->container['active_annual_standard_usage_type']) && !in_array($this->container['active_annual_standard_usage_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'active_annual_standard_usage_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getSwitchTypeAllowableValues();
+        if (!is_null($this->container['switch_type']) && !in_array($this->container['switch_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'switch_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getAdministrativeStatusSmartMeterAllowableValues();
+        if (!is_null($this->container['administrative_status_smart_meter']) && !in_array($this->container['administrative_status_smart_meter'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'administrative_status_smart_meter', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -619,6 +796,15 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
      */
     public function setStatus($status)
     {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['status'] = $status;
 
         return $this;
@@ -691,6 +877,15 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
      */
     public function setMarketSegment($market_segment)
     {
+        $allowedValues = $this->getMarketSegmentAllowableValues();
+        if (!is_null($market_segment) && !in_array($market_segment, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'market_segment', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['market_segment'] = $market_segment;
 
         return $this;
@@ -739,6 +934,15 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
      */
     public function setUsageType($usage_type)
     {
+        $allowedValues = $this->getUsageTypeAllowableValues();
+        if (!is_null($usage_type) && !in_array($usage_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'usage_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['usage_type'] = $usage_type;
 
         return $this;
@@ -787,6 +991,15 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
      */
     public function setTypeOfSupply($type_of_supply)
     {
+        $allowedValues = $this->getTypeOfSupplyAllowableValues();
+        if (!is_null($type_of_supply) && !in_array($type_of_supply, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type_of_supply', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['type_of_supply'] = $type_of_supply;
 
         return $this;
@@ -1171,7 +1384,40 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
      */
     public function setActiveAnnualStandardUsageType($active_annual_standard_usage_type)
     {
+        $allowedValues = $this->getActiveAnnualStandardUsageTypeAllowableValues();
+        if (!is_null($active_annual_standard_usage_type) && !in_array($active_annual_standard_usage_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'active_annual_standard_usage_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['active_annual_standard_usage_type'] = $active_annual_standard_usage_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets active_annual_standard_usage_type_localized
+     *
+     * @return string
+     */
+    public function getActiveAnnualStandardUsageTypeLocalized()
+    {
+        return $this->container['active_annual_standard_usage_type_localized'];
+    }
+
+    /**
+     * Sets active_annual_standard_usage_type_localized
+     *
+     * @param string $active_annual_standard_usage_type_localized active_annual_standard_usage_type_localized
+     *
+     * @return $this
+     */
+    public function setActiveAnnualStandardUsageTypeLocalized($active_annual_standard_usage_type_localized)
+    {
+        $this->container['active_annual_standard_usage_type_localized'] = $active_annual_standard_usage_type_localized;
 
         return $this;
     }
@@ -1291,6 +1537,15 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
      */
     public function setSwitchType($switch_type)
     {
+        $allowedValues = $this->getSwitchTypeAllowableValues();
+        if (!is_null($switch_type) && !in_array($switch_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'switch_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['switch_type'] = $switch_type;
 
         return $this;
@@ -1435,6 +1690,15 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
      */
     public function setAdministrativeStatusSmartMeter($administrative_status_smart_meter)
     {
+        $allowedValues = $this->getAdministrativeStatusSmartMeterAllowableValues();
+        if (!is_null($administrative_status_smart_meter) && !in_array($administrative_status_smart_meter, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'administrative_status_smart_meter', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['administrative_status_smart_meter'] = $administrative_status_smart_meter;
 
         return $this;

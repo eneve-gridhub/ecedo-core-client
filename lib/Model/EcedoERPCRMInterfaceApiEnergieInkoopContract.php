@@ -283,6 +283,17 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
         return self::$swaggerModelName;
     }
 
+    const START_REASON__NEW = 'New';
+    const START_REASON_CUSTOMER_RENEWAL = 'CustomerRenewal';
+    const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
+    const START_REASON_TAKEOVER = 'Takeover';
+    const END_REASON_PRODUCER_TERMINATION = 'ProducerTermination';
+    const END_REASON_SUPPLIER_TERMINATION = 'SupplierTermination';
+    const END_REASON_PRODUCER_PROVISIONAL_TERMINATION = 'ProducerProvisionalTermination';
+    const END_REASON_SUPPLIER_PROVISIONAL_TERMINATION = 'SupplierProvisionalTermination';
+    const END_REASON_CUSTOMER_RENEWAL = 'CustomerRenewal';
+    const END_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
+    const END_REASON_CANCELLED = 'Cancelled';
     const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
     const PROPOSITION_PRICING_TYPE_FIXED = 'Fixed';
     const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
@@ -292,8 +303,48 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
     const PROPOSITION_PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
     const PROPOSITION_PRICING_TYPE_FULL_ENDEX = 'FullEndex';
     const PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
+    const STATUS_PROVISIONAL = 'Provisional';
+    const STATUS_ACTIVE = 'Active';
+    const STATUS_CANCELLED = 'Cancelled';
+    const STATUS_ENDED = 'Ended';
+    const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
+    const STATUS_PROPOSED = 'Proposed';
+    const STATUS_FINALIZED = 'Finalized';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStartReasonAllowableValues()
+    {
+        return [
+            self::START_REASON__NEW,
+            self::START_REASON_CUSTOMER_RENEWAL,
+            self::START_REASON_AUTOMATIC_RENEWAL,
+            self::START_REASON_TAKEOVER,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEndReasonAllowableValues()
+    {
+        return [
+            self::END_REASON_PRODUCER_TERMINATION,
+            self::END_REASON_SUPPLIER_TERMINATION,
+            self::END_REASON_PRODUCER_PROVISIONAL_TERMINATION,
+            self::END_REASON_SUPPLIER_PROVISIONAL_TERMINATION,
+            self::END_REASON_CUSTOMER_RENEWAL,
+            self::END_REASON_AUTOMATIC_RENEWAL,
+            self::END_REASON_CANCELLED,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -312,6 +363,24 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
             self::PROPOSITION_PRICING_TYPE_HYBRID_ENDEX,
             self::PROPOSITION_PRICING_TYPE_FULL_ENDEX,
             self::PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_PROVISIONAL,
+            self::STATUS_ACTIVE,
+            self::STATUS_CANCELLED,
+            self::STATUS_ENDED,
+            self::STATUS_WAIT_FOR_APPROVAL,
+            self::STATUS_PROPOSED,
+            self::STATUS_FINALIZED,
         ];
     }
     
@@ -368,10 +437,34 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getStartReasonAllowableValues();
+        if (!is_null($this->container['start_reason']) && !in_array($this->container['start_reason'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'start_reason', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getEndReasonAllowableValues();
+        if (!is_null($this->container['end_reason']) && !in_array($this->container['end_reason'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'end_reason', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getPropositionPricingTypeAllowableValues();
         if (!is_null($this->container['proposition_pricing_type']) && !in_array($this->container['proposition_pricing_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'proposition_pricing_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -482,6 +575,15 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
      */
     public function setStartReason($start_reason)
     {
+        $allowedValues = $this->getStartReasonAllowableValues();
+        if (!is_null($start_reason) && !in_array($start_reason, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'start_reason', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['start_reason'] = $start_reason;
 
         return $this;
@@ -530,6 +632,15 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
      */
     public function setEndReason($end_reason)
     {
+        $allowedValues = $this->getEndReasonAllowableValues();
+        if (!is_null($end_reason) && !in_array($end_reason, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'end_reason', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['end_reason'] = $end_reason;
 
         return $this;
@@ -899,6 +1010,15 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
      */
     public function setStatus($status)
     {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['status'] = $status;
 
         return $this;

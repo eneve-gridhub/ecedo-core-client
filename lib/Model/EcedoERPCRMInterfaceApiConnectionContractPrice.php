@@ -65,7 +65,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_component_type' => 'string',
         'price_component_type_localized' => 'string',
         'price_unit' => 'string',
-        'price_unit_localized' => 'string'
+        'price_unit_localized' => 'string',
+        'range_begin' => 'int',
+        'range_end' => 'int'
     ];
 
     /**
@@ -82,7 +84,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_component_type' => null,
         'price_component_type_localized' => null,
         'price_unit' => null,
-        'price_unit_localized' => null
+        'price_unit_localized' => null,
+        'range_begin' => 'int32',
+        'range_end' => 'int32'
     ];
 
     /**
@@ -120,7 +124,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_component_type' => 'PriceComponentType',
         'price_component_type_localized' => 'PriceComponentTypeLocalized',
         'price_unit' => 'PriceUnit',
-        'price_unit_localized' => 'PriceUnitLocalized'
+        'price_unit_localized' => 'PriceUnitLocalized',
+        'range_begin' => 'RangeBegin',
+        'range_end' => 'RangeEnd'
     ];
 
     /**
@@ -137,7 +143,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_component_type' => 'setPriceComponentType',
         'price_component_type_localized' => 'setPriceComponentTypeLocalized',
         'price_unit' => 'setPriceUnit',
-        'price_unit_localized' => 'setPriceUnitLocalized'
+        'price_unit_localized' => 'setPriceUnitLocalized',
+        'range_begin' => 'setRangeBegin',
+        'range_end' => 'setRangeEnd'
     ];
 
     /**
@@ -154,7 +162,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_component_type' => 'getPriceComponentType',
         'price_component_type_localized' => 'getPriceComponentTypeLocalized',
         'price_unit' => 'getPriceUnit',
-        'price_unit_localized' => 'getPriceUnitLocalized'
+        'price_unit_localized' => 'getPriceUnitLocalized',
+        'range_begin' => 'getRangeBegin',
+        'range_end' => 'getRangeEnd'
     ];
 
     /**
@@ -226,6 +236,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         $this->container['price_component_type_localized'] = isset($data['price_component_type_localized']) ? $data['price_component_type_localized'] : null;
         $this->container['price_unit'] = isset($data['price_unit']) ? $data['price_unit'] : null;
         $this->container['price_unit_localized'] = isset($data['price_unit_localized']) ? $data['price_unit_localized'] : null;
+        $this->container['range_begin'] = isset($data['range_begin']) ? $data['range_begin'] : null;
+        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
     }
 
     /**
@@ -464,6 +476,54 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
     public function setPriceUnitLocalized($price_unit_localized)
     {
         $this->container['price_unit_localized'] = $price_unit_localized;
+
+        return $this;
+    }
+
+    /**
+     * Gets range_begin
+     *
+     * @return int
+     */
+    public function getRangeBegin()
+    {
+        return $this->container['range_begin'];
+    }
+
+    /**
+     * Sets range_begin
+     *
+     * @param int $range_begin range_begin
+     *
+     * @return $this
+     */
+    public function setRangeBegin($range_begin)
+    {
+        $this->container['range_begin'] = $range_begin;
+
+        return $this;
+    }
+
+    /**
+     * Gets range_end
+     *
+     * @return int
+     */
+    public function getRangeEnd()
+    {
+        return $this->container['range_end'];
+    }
+
+    /**
+     * Sets range_end
+     *
+     * @param int $range_end range_end
+     *
+     * @return $this
+     */
+    public function setRangeEnd($range_end)
+    {
+        $this->container['range_end'] = $range_end;
 
         return $this;
     }
