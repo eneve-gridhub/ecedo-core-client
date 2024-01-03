@@ -231,6 +231,7 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
     const INVOICE_SUB_TYPE_CUSTOM_GENERAL = 'Custom_General';
     const INVOICE_SUB_TYPE_CUSTOM_CHARGING_STATION = 'Custom_ChargingStation';
     const INVOICE_SUB_TYPE_CUSTOM_CHARGE_CARD = 'Custom_ChargeCard';
+    const INVOICE_SUB_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT = 'Custom_EnergyPurchaseSettlement';
     const BLOCK_TYPE_VALIDATION = 'Validation';
     const BLOCK_TYPE_MODIFICATION = 'Modification';
     
@@ -283,6 +284,7 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
             self::INVOICE_SUB_TYPE_CUSTOM_GENERAL,
             self::INVOICE_SUB_TYPE_CUSTOM_CHARGING_STATION,
             self::INVOICE_SUB_TYPE_CUSTOM_CHARGE_CARD,
+            self::INVOICE_SUB_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT,
         ];
     }
     

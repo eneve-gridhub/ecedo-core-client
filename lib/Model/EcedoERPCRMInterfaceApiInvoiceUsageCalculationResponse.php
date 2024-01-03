@@ -59,6 +59,8 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
     protected static $swaggerTypes = [
         'contract_id' => 'string',
         'ean' => 'string',
+        'settle_energy_method' => 'string',
+        'settle_energy_method_localized' => 'string',
         'invoice_usage_calculation_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow[]'
     ];
 
@@ -70,6 +72,8 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
     protected static $swaggerFormats = [
         'contract_id' => null,
         'ean' => null,
+        'settle_energy_method' => null,
+        'settle_energy_method_localized' => null,
         'invoice_usage_calculation_rows' => null
     ];
 
@@ -102,6 +106,8 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
     protected static $attributeMap = [
         'contract_id' => 'ContractId',
         'ean' => 'EAN',
+        'settle_energy_method' => 'SettleEnergyMethod',
+        'settle_energy_method_localized' => 'SettleEnergyMethodLocalized',
         'invoice_usage_calculation_rows' => 'InvoiceUsageCalculationRows'
     ];
 
@@ -113,6 +119,8 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
     protected static $setters = [
         'contract_id' => 'setContractId',
         'ean' => 'setEan',
+        'settle_energy_method' => 'setSettleEnergyMethod',
+        'settle_energy_method_localized' => 'setSettleEnergyMethodLocalized',
         'invoice_usage_calculation_rows' => 'setInvoiceUsageCalculationRows'
     ];
 
@@ -124,6 +132,8 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
     protected static $getters = [
         'contract_id' => 'getContractId',
         'ean' => 'getEan',
+        'settle_energy_method' => 'getSettleEnergyMethod',
+        'settle_energy_method_localized' => 'getSettleEnergyMethodLocalized',
         'invoice_usage_calculation_rows' => 'getInvoiceUsageCalculationRows'
     ];
 
@@ -168,8 +178,23 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
         return self::$swaggerModelName;
     }
 
+    const SETTLE_ENERGY_METHOD_NONE = 'None';
+    const SETTLE_ENERGY_METHOD_ONE_HOUR = 'OneHour';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSettleEnergyMethodAllowableValues()
+    {
+        return [
+            self::SETTLE_ENERGY_METHOD_NONE,
+            self::SETTLE_ENERGY_METHOD_ONE_HOUR,
+        ];
+    }
     
 
     /**
@@ -189,6 +214,8 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
     {
         $this->container['contract_id'] = isset($data['contract_id']) ? $data['contract_id'] : null;
         $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
+        $this->container['settle_energy_method'] = isset($data['settle_energy_method']) ? $data['settle_energy_method'] : null;
+        $this->container['settle_energy_method_localized'] = isset($data['settle_energy_method_localized']) ? $data['settle_energy_method_localized'] : null;
         $this->container['invoice_usage_calculation_rows'] = isset($data['invoice_usage_calculation_rows']) ? $data['invoice_usage_calculation_rows'] : null;
     }
 
@@ -200,6 +227,14 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getSettleEnergyMethodAllowableValues();
+        if (!is_null($this->container['settle_energy_method']) && !in_array($this->container['settle_energy_method'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'settle_energy_method', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -260,6 +295,63 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
     public function setEan($ean)
     {
         $this->container['ean'] = $ean;
+
+        return $this;
+    }
+
+    /**
+     * Gets settle_energy_method
+     *
+     * @return string
+     */
+    public function getSettleEnergyMethod()
+    {
+        return $this->container['settle_energy_method'];
+    }
+
+    /**
+     * Sets settle_energy_method
+     *
+     * @param string $settle_energy_method settle_energy_method
+     *
+     * @return $this
+     */
+    public function setSettleEnergyMethod($settle_energy_method)
+    {
+        $allowedValues = $this->getSettleEnergyMethodAllowableValues();
+        if (!is_null($settle_energy_method) && !in_array($settle_energy_method, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'settle_energy_method', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['settle_energy_method'] = $settle_energy_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets settle_energy_method_localized
+     *
+     * @return string
+     */
+    public function getSettleEnergyMethodLocalized()
+    {
+        return $this->container['settle_energy_method_localized'];
+    }
+
+    /**
+     * Sets settle_energy_method_localized
+     *
+     * @param string $settle_energy_method_localized settle_energy_method_localized
+     *
+     * @return $this
+     */
+    public function setSettleEnergyMethodLocalized($settle_energy_method_localized)
+    {
+        $this->container['settle_energy_method_localized'] = $settle_energy_method_localized;
 
         return $this;
     }

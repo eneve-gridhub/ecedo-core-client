@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiUsageCalculationRow
+ * EcedoERPCRMInterfaceApiContractStartDateResult
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * EcedoERPCRMInterfaceApiUsageCalculationRow Class Doc Comment
+ * EcedoERPCRMInterfaceApiContractStartDateResult Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiContractStartDateResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.UsageCalculationRow';
+    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.ContractStartDateResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+        'first_possible_start_date' => '\DateTime'
     ];
 
     /**
@@ -66,7 +66,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
+        'first_possible_start_date' => 'date'
     ];
 
     /**
@@ -96,7 +96,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'first_possible_start_date' => 'FirstPossibleStartDate'
     ];
 
     /**
@@ -105,7 +105,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        
+        'first_possible_start_date' => 'setFirstPossibleStartDate'
     ];
 
     /**
@@ -114,7 +114,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        
+        'first_possible_start_date' => 'getFirstPossibleStartDate'
     ];
 
     /**
@@ -177,6 +177,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
+        $this->container['first_possible_start_date'] = isset($data['first_possible_start_date']) ? $data['first_possible_start_date'] : null;
     }
 
     /**
@@ -202,6 +203,30 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets first_possible_start_date
+     *
+     * @return \DateTime
+     */
+    public function getFirstPossibleStartDate()
+    {
+        return $this->container['first_possible_start_date'];
+    }
+
+    /**
+     * Sets first_possible_start_date
+     *
+     * @param \DateTime $first_possible_start_date first_possible_start_date
+     *
+     * @return $this
+     */
+    public function setFirstPossibleStartDate($first_possible_start_date)
+    {
+        $this->container['first_possible_start_date'] = $first_possible_start_date;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

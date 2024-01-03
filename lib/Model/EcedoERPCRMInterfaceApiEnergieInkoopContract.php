@@ -294,8 +294,8 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
     const END_REASON_CUSTOMER_RENEWAL = 'CustomerRenewal';
     const END_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const END_REASON_CANCELLED = 'Cancelled';
-    const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
     const PROPOSITION_PRICING_TYPE_FIXED = 'Fixed';
+    const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
     const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE = 'MeanDayMarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE = 'MeanMonthMarketPriceVariable';
@@ -354,8 +354,8 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
     public function getPropositionPricingTypeAllowableValues()
     {
         return [
-            self::PROPOSITION_PRICING_TYPE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_FIXED,
+            self::PROPOSITION_PRICING_TYPE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE,

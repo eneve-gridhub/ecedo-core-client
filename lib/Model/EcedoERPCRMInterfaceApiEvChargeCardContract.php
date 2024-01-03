@@ -263,8 +263,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardContract implements ModelInterface, Arr
     const CHARGE_CONTRACT_USER_TYPE_APP_USER = 'AppUser';
     const CHARGE_CONTRACT_USER_TYPE_MSP = 'MSP';
     const CHARGE_CONTRACT_USER_TYPE_EV_BUSINESS_PARTNER = 'EvBusinessPartner';
-    const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
     const PROPOSITION_PRICING_TYPE_FIXED = 'Fixed';
+    const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
     const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE = 'MeanDayMarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE = 'MeanMonthMarketPriceVariable';
@@ -306,8 +306,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardContract implements ModelInterface, Arr
     public function getPropositionPricingTypeAllowableValues()
     {
         return [
-            self::PROPOSITION_PRICING_TYPE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_FIXED,
+            self::PROPOSITION_PRICING_TYPE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE,

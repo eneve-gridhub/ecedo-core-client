@@ -262,6 +262,7 @@ class EcedoERPCRMInterfaceApiDocument implements ModelInterface, ArrayAccess
     const DOCUMENT_TYPE_MEANS_OF_PRODUCTION_CONTRACT_PROPOSAL_DOCUMENT = 'MeansOfProductionContractProposalDocument';
     const DOCUMENT_TYPE_APX_DAY_AHEAD_HOUR_IMPORT_PRICES_DOCUMENT = 'ApxDayAheadHourImportPricesDocument';
     const DOCUMENT_TYPE_APX_DAY_AHEAD_HOUR_IMPORT_ERROR_DOCUMENT = 'ApxDayAheadHourImportErrorDocument';
+    const DOCUMENT_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT_LETTER = 'CustomEnergyPurchaseSettlementLetter';
     const FILE_TYPE_UNKNOWN = 'Unknown';
     const FILE_TYPE_PDF = 'PDF';
     const FILE_TYPE_CSV = 'CSV';
@@ -348,6 +349,7 @@ class EcedoERPCRMInterfaceApiDocument implements ModelInterface, ArrayAccess
             self::DOCUMENT_TYPE_MEANS_OF_PRODUCTION_CONTRACT_PROPOSAL_DOCUMENT,
             self::DOCUMENT_TYPE_APX_DAY_AHEAD_HOUR_IMPORT_PRICES_DOCUMENT,
             self::DOCUMENT_TYPE_APX_DAY_AHEAD_HOUR_IMPORT_ERROR_DOCUMENT,
+            self::DOCUMENT_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT_LETTER,
         ];
     }
     

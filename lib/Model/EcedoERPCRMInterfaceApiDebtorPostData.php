@@ -57,6 +57,11 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'print_advance_payment_invoice' => 'bool',
+        'preferred_advance_payment_invoice_contact_method' => 'string',
+        'preferred_settlement_invoice_contact_method' => 'string',
+        'advance_payment_schedule_type' => 'string',
+        'generate_e_invoice' => 'bool',
         'payment_method' => 'string',
         'payment_term' => 'int',
         'debtor_name' => 'string',
@@ -65,15 +70,10 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         'mandate_date' => '\DateTime',
         'mandate_reference' => 'string',
         'bic' => 'string',
-        'print_advance_payment_invoice' => 'bool',
         'preferred_automatic_collection_day' => 'int',
         'payment_reference' => 'string',
         'preferred_invoice_day' => 'int',
-        'preferred_advance_payment_invoice_contact_method' => 'string',
-        'preferred_settlement_invoice_contact_method' => 'string',
-        'advance_payment_schedule_type' => 'string',
         'mandate_type' => 'string',
-        'generate_e_invoice' => 'bool',
         'client_reference' => 'string'
     ];
 
@@ -83,6 +83,11 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'print_advance_payment_invoice' => null,
+        'preferred_advance_payment_invoice_contact_method' => null,
+        'preferred_settlement_invoice_contact_method' => null,
+        'advance_payment_schedule_type' => null,
+        'generate_e_invoice' => null,
         'payment_method' => null,
         'payment_term' => 'int32',
         'debtor_name' => null,
@@ -91,15 +96,10 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         'mandate_date' => 'date',
         'mandate_reference' => null,
         'bic' => null,
-        'print_advance_payment_invoice' => null,
         'preferred_automatic_collection_day' => 'int32',
         'payment_reference' => null,
         'preferred_invoice_day' => 'int32',
-        'preferred_advance_payment_invoice_contact_method' => null,
-        'preferred_settlement_invoice_contact_method' => null,
-        'advance_payment_schedule_type' => null,
         'mandate_type' => null,
-        'generate_e_invoice' => null,
         'client_reference' => null
     ];
 
@@ -130,6 +130,11 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
+        'print_advance_payment_invoice' => 'PrintAdvancePaymentInvoice',
+        'preferred_advance_payment_invoice_contact_method' => 'PreferredAdvancePaymentInvoiceContactMethod',
+        'preferred_settlement_invoice_contact_method' => 'PreferredSettlementInvoiceContactMethod',
+        'advance_payment_schedule_type' => 'AdvancePaymentScheduleType',
+        'generate_e_invoice' => 'GenerateEInvoice',
         'payment_method' => 'PaymentMethod',
         'payment_term' => 'PaymentTerm',
         'debtor_name' => 'DebtorName',
@@ -138,15 +143,10 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         'mandate_date' => 'MandateDate',
         'mandate_reference' => 'MandateReference',
         'bic' => 'BIC',
-        'print_advance_payment_invoice' => 'PrintAdvancePaymentInvoice',
         'preferred_automatic_collection_day' => 'PreferredAutomaticCollectionDay',
         'payment_reference' => 'PaymentReference',
         'preferred_invoice_day' => 'PreferredInvoiceDay',
-        'preferred_advance_payment_invoice_contact_method' => 'PreferredAdvancePaymentInvoiceContactMethod',
-        'preferred_settlement_invoice_contact_method' => 'PreferredSettlementInvoiceContactMethod',
-        'advance_payment_schedule_type' => 'AdvancePaymentScheduleType',
         'mandate_type' => 'MandateType',
-        'generate_e_invoice' => 'GenerateEInvoice',
         'client_reference' => 'ClientReference'
     ];
 
@@ -156,6 +156,11 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
+        'print_advance_payment_invoice' => 'setPrintAdvancePaymentInvoice',
+        'preferred_advance_payment_invoice_contact_method' => 'setPreferredAdvancePaymentInvoiceContactMethod',
+        'preferred_settlement_invoice_contact_method' => 'setPreferredSettlementInvoiceContactMethod',
+        'advance_payment_schedule_type' => 'setAdvancePaymentScheduleType',
+        'generate_e_invoice' => 'setGenerateEInvoice',
         'payment_method' => 'setPaymentMethod',
         'payment_term' => 'setPaymentTerm',
         'debtor_name' => 'setDebtorName',
@@ -164,15 +169,10 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         'mandate_date' => 'setMandateDate',
         'mandate_reference' => 'setMandateReference',
         'bic' => 'setBic',
-        'print_advance_payment_invoice' => 'setPrintAdvancePaymentInvoice',
         'preferred_automatic_collection_day' => 'setPreferredAutomaticCollectionDay',
         'payment_reference' => 'setPaymentReference',
         'preferred_invoice_day' => 'setPreferredInvoiceDay',
-        'preferred_advance_payment_invoice_contact_method' => 'setPreferredAdvancePaymentInvoiceContactMethod',
-        'preferred_settlement_invoice_contact_method' => 'setPreferredSettlementInvoiceContactMethod',
-        'advance_payment_schedule_type' => 'setAdvancePaymentScheduleType',
         'mandate_type' => 'setMandateType',
-        'generate_e_invoice' => 'setGenerateEInvoice',
         'client_reference' => 'setClientReference'
     ];
 
@@ -182,6 +182,11 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
+        'print_advance_payment_invoice' => 'getPrintAdvancePaymentInvoice',
+        'preferred_advance_payment_invoice_contact_method' => 'getPreferredAdvancePaymentInvoiceContactMethod',
+        'preferred_settlement_invoice_contact_method' => 'getPreferredSettlementInvoiceContactMethod',
+        'advance_payment_schedule_type' => 'getAdvancePaymentScheduleType',
+        'generate_e_invoice' => 'getGenerateEInvoice',
         'payment_method' => 'getPaymentMethod',
         'payment_term' => 'getPaymentTerm',
         'debtor_name' => 'getDebtorName',
@@ -190,15 +195,10 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         'mandate_date' => 'getMandateDate',
         'mandate_reference' => 'getMandateReference',
         'bic' => 'getBic',
-        'print_advance_payment_invoice' => 'getPrintAdvancePaymentInvoice',
         'preferred_automatic_collection_day' => 'getPreferredAutomaticCollectionDay',
         'payment_reference' => 'getPaymentReference',
         'preferred_invoice_day' => 'getPreferredInvoiceDay',
-        'preferred_advance_payment_invoice_contact_method' => 'getPreferredAdvancePaymentInvoiceContactMethod',
-        'preferred_settlement_invoice_contact_method' => 'getPreferredSettlementInvoiceContactMethod',
-        'advance_payment_schedule_type' => 'getAdvancePaymentScheduleType',
         'mandate_type' => 'getMandateType',
-        'generate_e_invoice' => 'getGenerateEInvoice',
         'client_reference' => 'getClientReference'
     ];
 
@@ -243,13 +243,6 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         return self::$swaggerModelName;
     }
 
-    const PAYMENT_METHOD_AUTOMATIC_COLLECTION = 'AutomaticCollection';
-    const PAYMENT_METHOD_INVOICE = 'Invoice';
-    const PAYMENT_METHOD_VIA_PARENT_ORGANIZATION = 'ViaParentOrganization';
-    const PAYMENT_METHOD_DIRECT_PAY = 'DirectPay';
-    const BANK_ACCOUNT_TYPE_BANK = 'Bank';
-    const BANK_ACCOUNT_TYPE_GIRO = 'Giro';
-    const BANK_ACCOUNT_TYPE_IBAN = 'IBAN';
     const PREFERRED_ADVANCE_PAYMENT_INVOICE_CONTACT_METHOD_EMAIL = 'Email';
     const PREFERRED_ADVANCE_PAYMENT_INVOICE_CONTACT_METHOD_MAIL = 'Mail';
     const PREFERRED_SETTLEMENT_INVOICE_CONTACT_METHOD_EMAIL = 'Email';
@@ -259,39 +252,17 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
     const ADVANCE_PAYMENT_SCHEDULE_TYPE_FLEXIBLE = 'Flexible';
     const ADVANCE_PAYMENT_SCHEDULE_TYPE_IN_MONTH = 'InMonth';
     const ADVANCE_PAYMENT_SCHEDULE_TYPE_BEFORE_MONTH = 'BeforeMonth';
+    const PAYMENT_METHOD_AUTOMATIC_COLLECTION = 'AutomaticCollection';
+    const PAYMENT_METHOD_INVOICE = 'Invoice';
+    const PAYMENT_METHOD_VIA_PARENT_ORGANIZATION = 'ViaParentOrganization';
+    const PAYMENT_METHOD_DIRECT_PAY = 'DirectPay';
+    const BANK_ACCOUNT_TYPE_BANK = 'Bank';
+    const BANK_ACCOUNT_TYPE_GIRO = 'Giro';
+    const BANK_ACCOUNT_TYPE_IBAN = 'IBAN';
     const MANDATE_TYPE_CORE = 'CORE';
     const MANDATE_TYPE_B2_B = 'B2B';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getPaymentMethodAllowableValues()
-    {
-        return [
-            self::PAYMENT_METHOD_AUTOMATIC_COLLECTION,
-            self::PAYMENT_METHOD_INVOICE,
-            self::PAYMENT_METHOD_VIA_PARENT_ORGANIZATION,
-            self::PAYMENT_METHOD_DIRECT_PAY,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getBankAccountTypeAllowableValues()
-    {
-        return [
-            self::BANK_ACCOUNT_TYPE_BANK,
-            self::BANK_ACCOUNT_TYPE_GIRO,
-            self::BANK_ACCOUNT_TYPE_IBAN,
-        ];
-    }
     
     /**
      * Gets allowable values of the enum
@@ -303,7 +274,6 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         return [
             self::PREFERRED_ADVANCE_PAYMENT_INVOICE_CONTACT_METHOD_EMAIL,
             self::PREFERRED_ADVANCE_PAYMENT_INVOICE_CONTACT_METHOD_MAIL,
-            false
         ];
     }
     
@@ -341,6 +311,35 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
      *
      * @return string[]
      */
+    public function getPaymentMethodAllowableValues()
+    {
+        return [
+            self::PAYMENT_METHOD_AUTOMATIC_COLLECTION,
+            self::PAYMENT_METHOD_INVOICE,
+            self::PAYMENT_METHOD_VIA_PARENT_ORGANIZATION,
+            self::PAYMENT_METHOD_DIRECT_PAY,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBankAccountTypeAllowableValues()
+    {
+        return [
+            self::BANK_ACCOUNT_TYPE_BANK,
+            self::BANK_ACCOUNT_TYPE_GIRO,
+            self::BANK_ACCOUNT_TYPE_IBAN,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
     public function getMandateTypeAllowableValues()
     {
         return [
@@ -365,6 +364,11 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
+        $this->container['print_advance_payment_invoice'] = isset($data['print_advance_payment_invoice']) ? $data['print_advance_payment_invoice'] : null;
+        $this->container['preferred_advance_payment_invoice_contact_method'] = isset($data['preferred_advance_payment_invoice_contact_method']) ? $data['preferred_advance_payment_invoice_contact_method'] : null;
+        $this->container['preferred_settlement_invoice_contact_method'] = isset($data['preferred_settlement_invoice_contact_method']) ? $data['preferred_settlement_invoice_contact_method'] : null;
+        $this->container['advance_payment_schedule_type'] = isset($data['advance_payment_schedule_type']) ? $data['advance_payment_schedule_type'] : null;
+        $this->container['generate_e_invoice'] = isset($data['generate_e_invoice']) ? $data['generate_e_invoice'] : null;
         $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
         $this->container['payment_term'] = isset($data['payment_term']) ? $data['payment_term'] : null;
         $this->container['debtor_name'] = isset($data['debtor_name']) ? $data['debtor_name'] : null;
@@ -373,15 +377,10 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         $this->container['mandate_date'] = isset($data['mandate_date']) ? $data['mandate_date'] : null;
         $this->container['mandate_reference'] = isset($data['mandate_reference']) ? $data['mandate_reference'] : null;
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
-        $this->container['print_advance_payment_invoice'] = isset($data['print_advance_payment_invoice']) ? $data['print_advance_payment_invoice'] : null;
         $this->container['preferred_automatic_collection_day'] = isset($data['preferred_automatic_collection_day']) ? $data['preferred_automatic_collection_day'] : null;
         $this->container['payment_reference'] = isset($data['payment_reference']) ? $data['payment_reference'] : null;
         $this->container['preferred_invoice_day'] = isset($data['preferred_invoice_day']) ? $data['preferred_invoice_day'] : null;
-        $this->container['preferred_advance_payment_invoice_contact_method'] = isset($data['preferred_advance_payment_invoice_contact_method']) ? $data['preferred_advance_payment_invoice_contact_method'] : null;
-        $this->container['preferred_settlement_invoice_contact_method'] = isset($data['preferred_settlement_invoice_contact_method']) ? $data['preferred_settlement_invoice_contact_method'] : null;
-        $this->container['advance_payment_schedule_type'] = isset($data['advance_payment_schedule_type']) ? $data['advance_payment_schedule_type'] : null;
         $this->container['mandate_type'] = isset($data['mandate_type']) ? $data['mandate_type'] : null;
-        $this->container['generate_e_invoice'] = isset($data['generate_e_invoice']) ? $data['generate_e_invoice'] : null;
         $this->container['client_reference'] = isset($data['client_reference']) ? $data['client_reference'] : null;
     }
 
@@ -393,22 +392,6 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getPaymentMethodAllowableValues();
-        if (!is_null($this->container['payment_method']) && !in_array($this->container['payment_method'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'payment_method', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getBankAccountTypeAllowableValues();
-        if (!is_null($this->container['bank_account_type']) && !in_array($this->container['bank_account_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'bank_account_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
 
         $allowedValues = $this->getPreferredAdvancePaymentInvoiceContactMethodAllowableValues();
         if (!is_null($this->container['preferred_advance_payment_invoice_contact_method']) && !in_array($this->container['preferred_advance_payment_invoice_contact_method'], $allowedValues, true)) {
@@ -430,6 +413,22 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         if (!is_null($this->container['advance_payment_schedule_type']) && !in_array($this->container['advance_payment_schedule_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'advance_payment_schedule_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getPaymentMethodAllowableValues();
+        if (!is_null($this->container['payment_method']) && !in_array($this->container['payment_method'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'payment_method', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getBankAccountTypeAllowableValues();
+        if (!is_null($this->container['bank_account_type']) && !in_array($this->container['bank_account_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'bank_account_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -456,6 +455,153 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets print_advance_payment_invoice
+     *
+     * @return bool
+     */
+    public function getPrintAdvancePaymentInvoice()
+    {
+        return $this->container['print_advance_payment_invoice'];
+    }
+
+    /**
+     * Sets print_advance_payment_invoice
+     *
+     * @param bool $print_advance_payment_invoice print_advance_payment_invoice
+     *
+     * @return $this
+     */
+    public function setPrintAdvancePaymentInvoice($print_advance_payment_invoice)
+    {
+        $this->container['print_advance_payment_invoice'] = $print_advance_payment_invoice;
+
+        return $this;
+    }
+
+    /**
+     * Gets preferred_advance_payment_invoice_contact_method
+     *
+     * @return string
+     */
+    public function getPreferredAdvancePaymentInvoiceContactMethod()
+    {
+        return $this->container['preferred_advance_payment_invoice_contact_method'];
+    }
+
+    /**
+     * Sets preferred_advance_payment_invoice_contact_method
+     *
+     * @param string $preferred_advance_payment_invoice_contact_method preferred_advance_payment_invoice_contact_method
+     *
+     * @return $this
+     */
+    public function setPreferredAdvancePaymentInvoiceContactMethod($preferred_advance_payment_invoice_contact_method)
+    {
+        $allowedValues = $this->getPreferredAdvancePaymentInvoiceContactMethodAllowableValues();
+        if (!is_null($preferred_advance_payment_invoice_contact_method) && !in_array($preferred_advance_payment_invoice_contact_method, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'preferred_advance_payment_invoice_contact_method', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['preferred_advance_payment_invoice_contact_method'] = $preferred_advance_payment_invoice_contact_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets preferred_settlement_invoice_contact_method
+     *
+     * @return string
+     */
+    public function getPreferredSettlementInvoiceContactMethod()
+    {
+        return $this->container['preferred_settlement_invoice_contact_method'];
+    }
+
+    /**
+     * Sets preferred_settlement_invoice_contact_method
+     *
+     * @param string $preferred_settlement_invoice_contact_method preferred_settlement_invoice_contact_method
+     *
+     * @return $this
+     */
+    public function setPreferredSettlementInvoiceContactMethod($preferred_settlement_invoice_contact_method)
+    {
+        $allowedValues = $this->getPreferredSettlementInvoiceContactMethodAllowableValues();
+        if (!is_null($preferred_settlement_invoice_contact_method) && !in_array($preferred_settlement_invoice_contact_method, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'preferred_settlement_invoice_contact_method', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['preferred_settlement_invoice_contact_method'] = $preferred_settlement_invoice_contact_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets advance_payment_schedule_type
+     *
+     * @return string
+     */
+    public function getAdvancePaymentScheduleType()
+    {
+        return $this->container['advance_payment_schedule_type'];
+    }
+
+    /**
+     * Sets advance_payment_schedule_type
+     *
+     * @param string $advance_payment_schedule_type advance_payment_schedule_type
+     *
+     * @return $this
+     */
+    public function setAdvancePaymentScheduleType($advance_payment_schedule_type)
+    {
+        $allowedValues = $this->getAdvancePaymentScheduleTypeAllowableValues();
+        if (!is_null($advance_payment_schedule_type) && !in_array($advance_payment_schedule_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'advance_payment_schedule_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['advance_payment_schedule_type'] = $advance_payment_schedule_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets generate_e_invoice
+     *
+     * @return bool
+     */
+    public function getGenerateEInvoice()
+    {
+        return $this->container['generate_e_invoice'];
+    }
+
+    /**
+     * Sets generate_e_invoice
+     *
+     * @param bool $generate_e_invoice generate_e_invoice
+     *
+     * @return $this
+     */
+    public function setGenerateEInvoice($generate_e_invoice)
+    {
+        $this->container['generate_e_invoice'] = $generate_e_invoice;
+
+        return $this;
+    }
 
     /**
      * Gets payment_method
@@ -668,30 +814,6 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets print_advance_payment_invoice
-     *
-     * @return bool
-     */
-    public function getPrintAdvancePaymentInvoice()
-    {
-        return $this->container['print_advance_payment_invoice'];
-    }
-
-    /**
-     * Sets print_advance_payment_invoice
-     *
-     * @param bool $print_advance_payment_invoice print_advance_payment_invoice
-     *
-     * @return $this
-     */
-    public function setPrintAdvancePaymentInvoice($print_advance_payment_invoice)
-    {
-        $this->container['print_advance_payment_invoice'] = $print_advance_payment_invoice;
-
-        return $this;
-    }
-
-    /**
      * Gets preferred_automatic_collection_day
      *
      * @return int
@@ -764,105 +886,6 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets preferred_advance_payment_invoice_contact_method
-     *
-     * @return string
-     */
-    public function getPreferredAdvancePaymentInvoiceContactMethod()
-    {
-        return $this->container['preferred_advance_payment_invoice_contact_method'];
-    }
-
-    /**
-     * Sets preferred_advance_payment_invoice_contact_method
-     *
-     * @param string $preferred_advance_payment_invoice_contact_method preferred_advance_payment_invoice_contact_method
-     *
-     * @return $this
-     */
-    public function setPreferredAdvancePaymentInvoiceContactMethod($preferred_advance_payment_invoice_contact_method)
-    {
-        $allowedValues = $this->getPreferredAdvancePaymentInvoiceContactMethodAllowableValues();
-        if (!is_null($preferred_advance_payment_invoice_contact_method) && !in_array($preferred_advance_payment_invoice_contact_method, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'preferred_advance_payment_invoice_contact_method', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['preferred_advance_payment_invoice_contact_method'] = $preferred_advance_payment_invoice_contact_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets preferred_settlement_invoice_contact_method
-     *
-     * @return string
-     */
-    public function getPreferredSettlementInvoiceContactMethod()
-    {
-        return $this->container['preferred_settlement_invoice_contact_method'];
-    }
-
-    /**
-     * Sets preferred_settlement_invoice_contact_method
-     *
-     * @param string $preferred_settlement_invoice_contact_method preferred_settlement_invoice_contact_method
-     *
-     * @return $this
-     */
-    public function setPreferredSettlementInvoiceContactMethod($preferred_settlement_invoice_contact_method)
-    {
-        $allowedValues = $this->getPreferredSettlementInvoiceContactMethodAllowableValues();
-        if (!is_null($preferred_settlement_invoice_contact_method) && !in_array($preferred_settlement_invoice_contact_method, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'preferred_settlement_invoice_contact_method', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['preferred_settlement_invoice_contact_method'] = $preferred_settlement_invoice_contact_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets advance_payment_schedule_type
-     *
-     * @return string
-     */
-    public function getAdvancePaymentScheduleType()
-    {
-        return $this->container['advance_payment_schedule_type'];
-    }
-
-    /**
-     * Sets advance_payment_schedule_type
-     *
-     * @param string $advance_payment_schedule_type advance_payment_schedule_type
-     *
-     * @return $this
-     */
-    public function setAdvancePaymentScheduleType($advance_payment_schedule_type)
-    {
-        $allowedValues = $this->getAdvancePaymentScheduleTypeAllowableValues();
-        if (!is_null($advance_payment_schedule_type) && !in_array($advance_payment_schedule_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'advance_payment_schedule_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['advance_payment_schedule_type'] = $advance_payment_schedule_type;
-
-        return $this;
-    }
-
-    /**
      * Gets mandate_type
      *
      * @return string
@@ -891,30 +914,6 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
             );
         }
         $this->container['mandate_type'] = $mandate_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets generate_e_invoice
-     *
-     * @return bool
-     */
-    public function getGenerateEInvoice()
-    {
-        return $this->container['generate_e_invoice'];
-    }
-
-    /**
-     * Sets generate_e_invoice
-     *
-     * @param bool $generate_e_invoice generate_e_invoice
-     *
-     * @return $this
-     */
-    public function setGenerateEInvoice($generate_e_invoice)
-    {
-        $this->container['generate_e_invoice'] = $generate_e_invoice;
 
         return $this;
     }
