@@ -92,9 +92,19 @@ class SysFlowsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysFlowsCancelAdvancePaymentInvoiceFlow
+     *
+     * Annuleren van voorschotfactuurflows.
+     *
+     */
+    public function testSysFlowsCancelAdvancePaymentInvoiceFlow()
+    {
+    }
+
+    /**
      * Test case for sysFlowsCancelApplicationFlow
      *
-     * Aanmeldflow beëindigen.
+     * Aanmeldflow beëindigen.
      *
      */
     public function testSysFlowsCancelApplicationFlow()
@@ -172,12 +182,32 @@ class SysFlowsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysFlowsGetProductPurchaseInvoicesByStep
+     *
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'.
+     *
+     */
+    public function testSysFlowsGetProductPurchaseInvoicesByStep()
+    {
+    }
+
+    /**
      * Test case for sysFlowsGetSettlementInvoicesByStep
      *
      * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'.
      *
      */
     public function testSysFlowsGetSettlementInvoicesByStep()
+    {
+    }
+
+    /**
+     * Test case for sysFlowsProductPurchaseInvoiceFlowModificationFinished
+     *
+     * Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}.
+     *
+     */
+    public function testSysFlowsProductPurchaseInvoiceFlowModificationFinished()
     {
     }
 
@@ -224,7 +254,7 @@ class SysFlowsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysFlowsStartApplicationFlow
      *
-     * Aanmeldflow starten.
+     * Aanmeldflow starten.
      *
      */
     public function testSysFlowsStartApplicationFlow()

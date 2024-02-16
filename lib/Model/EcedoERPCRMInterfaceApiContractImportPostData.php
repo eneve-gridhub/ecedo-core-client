@@ -57,17 +57,18 @@ class EcedoERPCRMInterfaceApiContractImportPostData implements ModelInterface, A
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'agreement_date' => '\DateTime',
-        'reference' => 'string',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'proposition_reference' => 'string',
         'meelift_proposition_reference' => 'string',
         'deposit' => 'double',
         'channel' => 'string',
         'sales_reference' => 'string',
         'purchase_order_number' => 'string',
-        'billing_items' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiBillingItemPostData[]'
+        'billing_items' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiBillingItemPostData[]',
+        'agreement_date' => '\DateTime',
+        'reference' => 'string',
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime',
+        'proposition_reference' => 'string',
+        'comment' => 'string'
     ];
 
     /**
@@ -76,17 +77,18 @@ class EcedoERPCRMInterfaceApiContractImportPostData implements ModelInterface, A
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'agreement_date' => 'date',
-        'reference' => null,
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'proposition_reference' => null,
         'meelift_proposition_reference' => null,
         'deposit' => 'double',
         'channel' => null,
         'sales_reference' => null,
         'purchase_order_number' => null,
-        'billing_items' => null
+        'billing_items' => null,
+        'agreement_date' => 'date',
+        'reference' => null,
+        'start_date' => 'date',
+        'end_date' => 'date',
+        'proposition_reference' => null,
+        'comment' => null
     ];
 
     /**
@@ -116,17 +118,18 @@ class EcedoERPCRMInterfaceApiContractImportPostData implements ModelInterface, A
      * @var string[]
      */
     protected static $attributeMap = [
-        'agreement_date' => 'AgreementDate',
-        'reference' => 'Reference',
-        'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'proposition_reference' => 'PropositionReference',
         'meelift_proposition_reference' => 'MeeliftPropositionReference',
         'deposit' => 'Deposit',
         'channel' => 'Channel',
         'sales_reference' => 'SalesReference',
         'purchase_order_number' => 'PurchaseOrderNumber',
-        'billing_items' => 'BillingItems'
+        'billing_items' => 'BillingItems',
+        'agreement_date' => 'AgreementDate',
+        'reference' => 'Reference',
+        'start_date' => 'StartDate',
+        'end_date' => 'EndDate',
+        'proposition_reference' => 'PropositionReference',
+        'comment' => 'Comment'
     ];
 
     /**
@@ -135,17 +138,18 @@ class EcedoERPCRMInterfaceApiContractImportPostData implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-        'agreement_date' => 'setAgreementDate',
-        'reference' => 'setReference',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'proposition_reference' => 'setPropositionReference',
         'meelift_proposition_reference' => 'setMeeliftPropositionReference',
         'deposit' => 'setDeposit',
         'channel' => 'setChannel',
         'sales_reference' => 'setSalesReference',
         'purchase_order_number' => 'setPurchaseOrderNumber',
-        'billing_items' => 'setBillingItems'
+        'billing_items' => 'setBillingItems',
+        'agreement_date' => 'setAgreementDate',
+        'reference' => 'setReference',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'proposition_reference' => 'setPropositionReference',
+        'comment' => 'setComment'
     ];
 
     /**
@@ -154,17 +158,18 @@ class EcedoERPCRMInterfaceApiContractImportPostData implements ModelInterface, A
      * @var string[]
      */
     protected static $getters = [
-        'agreement_date' => 'getAgreementDate',
-        'reference' => 'getReference',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'proposition_reference' => 'getPropositionReference',
         'meelift_proposition_reference' => 'getMeeliftPropositionReference',
         'deposit' => 'getDeposit',
         'channel' => 'getChannel',
         'sales_reference' => 'getSalesReference',
         'purchase_order_number' => 'getPurchaseOrderNumber',
-        'billing_items' => 'getBillingItems'
+        'billing_items' => 'getBillingItems',
+        'agreement_date' => 'getAgreementDate',
+        'reference' => 'getReference',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'proposition_reference' => 'getPropositionReference',
+        'comment' => 'getComment'
     ];
 
     /**
@@ -227,17 +232,18 @@ class EcedoERPCRMInterfaceApiContractImportPostData implements ModelInterface, A
      */
     public function __construct(array $data = null)
     {
-        $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
-        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
         $this->container['meelift_proposition_reference'] = isset($data['meelift_proposition_reference']) ? $data['meelift_proposition_reference'] : null;
         $this->container['deposit'] = isset($data['deposit']) ? $data['deposit'] : null;
         $this->container['channel'] = isset($data['channel']) ? $data['channel'] : null;
         $this->container['sales_reference'] = isset($data['sales_reference']) ? $data['sales_reference'] : null;
         $this->container['purchase_order_number'] = isset($data['purchase_order_number']) ? $data['purchase_order_number'] : null;
         $this->container['billing_items'] = isset($data['billing_items']) ? $data['billing_items'] : null;
+        $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
+        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
+        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
     }
 
     /**
@@ -263,126 +269,6 @@ class EcedoERPCRMInterfaceApiContractImportPostData implements ModelInterface, A
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets agreement_date
-     *
-     * @return \DateTime
-     */
-    public function getAgreementDate()
-    {
-        return $this->container['agreement_date'];
-    }
-
-    /**
-     * Sets agreement_date
-     *
-     * @param \DateTime $agreement_date agreement_date
-     *
-     * @return $this
-     */
-    public function setAgreementDate($agreement_date)
-    {
-        $this->container['agreement_date'] = $agreement_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
-     *
-     * @return string
-     */
-    public function getReference()
-    {
-        return $this->container['reference'];
-    }
-
-    /**
-     * Sets reference
-     *
-     * @param string $reference reference
-     *
-     * @return $this
-     */
-    public function setReference($reference)
-    {
-        $this->container['reference'] = $reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date start_date
-     *
-     * @return $this
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date end_date
-     *
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_reference
-     *
-     * @return string
-     */
-    public function getPropositionReference()
-    {
-        return $this->container['proposition_reference'];
-    }
-
-    /**
-     * Sets proposition_reference
-     *
-     * @param string $proposition_reference proposition_reference
-     *
-     * @return $this
-     */
-    public function setPropositionReference($proposition_reference)
-    {
-        $this->container['proposition_reference'] = $proposition_reference;
-
-        return $this;
-    }
 
     /**
      * Gets meelift_proposition_reference
@@ -524,6 +410,150 @@ class EcedoERPCRMInterfaceApiContractImportPostData implements ModelInterface, A
     public function setBillingItems($billing_items)
     {
         $this->container['billing_items'] = $billing_items;
+
+        return $this;
+    }
+
+    /**
+     * Gets agreement_date
+     *
+     * @return \DateTime
+     */
+    public function getAgreementDate()
+    {
+        return $this->container['agreement_date'];
+    }
+
+    /**
+     * Sets agreement_date
+     *
+     * @param \DateTime $agreement_date agreement_date
+     *
+     * @return $this
+     */
+    public function setAgreementDate($agreement_date)
+    {
+        $this->container['agreement_date'] = $agreement_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets reference
+     *
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->container['reference'];
+    }
+
+    /**
+     * Sets reference
+     *
+     * @param string $reference reference
+     *
+     * @return $this
+     */
+    public function setReference($reference)
+    {
+        $this->container['reference'] = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime $start_date start_date
+     *
+     * @return $this
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     *
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     *
+     * @param \DateTime $end_date end_date
+     *
+     * @return $this
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets proposition_reference
+     *
+     * @return string
+     */
+    public function getPropositionReference()
+    {
+        return $this->container['proposition_reference'];
+    }
+
+    /**
+     * Sets proposition_reference
+     *
+     * @param string $proposition_reference proposition_reference
+     *
+     * @return $this
+     */
+    public function setPropositionReference($proposition_reference)
+    {
+        $this->container['proposition_reference'] = $proposition_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets comment
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->container['comment'];
+    }
+
+    /**
+     * Sets comment
+     *
+     * @param string $comment comment
+     *
+     * @return $this
+     */
+    public function setComment($comment)
+    {
+        $this->container['comment'] = $comment;
 
         return $this;
     }

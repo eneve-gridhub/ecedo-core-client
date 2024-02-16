@@ -103,4 +103,11 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRulePostDataTest extends \PHPUnit_Fra
     public function testPropertyClusterReference()
     {
     }
+
+    /**
+     * Test attribute "block_type"
+     */
+    public function testPropertyBlockType()
+    {
+    }
 }

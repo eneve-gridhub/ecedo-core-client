@@ -85,7 +85,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://innova.ecedo.com*
+All URIs are relative to *https://innova-test.ecedo.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -94,9 +94,11 @@ Class | Method | HTTP request | Description
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsGetAgreedAmountSupported**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsgetagreedamountsupported) | **GET** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{clusterReference}/agreedamountsupported | Opvragen of het is toegestaan om een afgesproken voorschot bedrag in te stellen
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsGetByAdvancePaymentId**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsgetbyadvancepaymentid) | **GET** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{advancePaymentId} | Haal specifiek voorschot op
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsGetByOrganizationId**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsgetbyorganizationid) | **GET** /sysapi/v1.0/organizations/{organizationId}/advancepayments | Haal voorschotten van een specifieke klant op
+*SysAdvancePaymentsApi* | [**sysAdvancePaymentsGetMostRecent**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsgetmostrecent) | **GET** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{clusterReference}/mostrecent | Haal het meest recente voorschot op
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsPost**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentspost) | **POST** /sysapi/v1.0/organizations/{organizationId}/advancepayments | Nieuw voorschot aanmaken
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsPut**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsput) | **PUT** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{advancePaymentId} | Voorschot wijzigen
 *SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesDeleteExpectedAnnualStandardUsage**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagesdeleteexpectedannualstandardusage) | **DELETE** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/expectedannualstandardusages | Verwijderen verwacht jaarverbruik
+*SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesGetAnnualStandardUsages**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagesgetannualstandardusages) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/annualstandardusages | Opvragen standaard jaarverbruiken.
 *SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesPostExpectedAnnualStandardUsage**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagespostexpectedannualstandardusage) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/expectedannualstandardusages | Aanpassen verwacht jaarverbruik
 *SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesSetActiveAnnualStandardUsageType**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagessetactiveannualstandardusagetype) | **PUT** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/annualstandardusages/setactiveannualstandardusagetype | Aanpassen actief verbruikstype
 *SysBillingItemsApi* | [**sysBillingItemsActivate**](docs/Api/SysBillingItemsApi.md#sysbillingitemsactivate) | **POST** /sysapi/v1.0/organizations/{organizationId}/billingitems/{billingItemId}/activate | Markeer factuuritem als geactiveerd
@@ -120,6 +122,7 @@ Class | Method | HTTP request | Description
 *SysConnectionsApi* | [**sysConnectionsConnectionProperties**](docs/Api/SysConnectionsApi.md#sysconnectionsconnectionproperties) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionproperties | Wijzig aansluitinggegevens
 *SysConnectionsApi* | [**sysConnectionsGetByConnectionId**](docs/Api/SysConnectionsApi.md#sysconnectionsgetbyconnectionid) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId} | Haal specifieke aansluiting op
 *SysConnectionsApi* | [**sysConnectionsGetByOrganizationId**](docs/Api/SysConnectionsApi.md#sysconnectionsgetbyorganizationid) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections | Haal aansluitingen van een specifieke klant op
+*SysConnectionsApi* | [**sysConnectionsGetSwitchPeriodsForConnection**](docs/Api/SysConnectionsApi.md#sysconnectionsgetswitchperiodsforconnection) | **GET** /sysapi/v1.0/connections/{connectionId}/switchperiods | Haal switchperiodes op voor specifieke aansluiting
 *SysConnectionsApi* | [**sysConnectionsHasContractInPeriod**](docs/Api/SysConnectionsApi.md#sysconnectionshascontractinperiod) | **GET** /sysapi/v1.0/connections/{ean}/hascontractinperiod | Controleer of EAN in gevraagde periode reeds een contract heeft
 *SysConnectionsApi* | [**sysConnectionsPost**](docs/Api/SysConnectionsApi.md#sysconnectionspost) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections | Nieuwe aansluiting(en) aanmaken
 *SysConnectionsApi* | [**sysConnectionsPut**](docs/Api/SysConnectionsApi.md#sysconnectionsput) | **PUT** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId} | Wijzig een specifiek aansluiting
@@ -138,6 +141,8 @@ Class | Method | HTTP request | Description
 *SysContractsApi* | [**sysContractsGetEnergieInkoopContract**](docs/Api/SysContractsApi.md#syscontractsgetenergieinkoopcontract) | **GET** /sysapi/v1.0/organizations/{organizationId}/energieinkoopcontracts/{contractId} | Ophalen van een energieinkoopcontract op basis van contractId
 *SysContractsApi* | [**sysContractsGetEnergieleveringConnectionContractForContract**](docs/Api/SysContractsApi.md#syscontractsgetenergieleveringconnectioncontractforcontract) | **GET** /sysapi/v1.0/organizations/{organizationId}/energieleveringconnectioncontracts/{contractId} | Ophalen van energieleveringconnectioncontract op basis van contractId
 *SysContractsApi* | [**sysContractsGetEnergieleveringConnectionContracts**](docs/Api/SysContractsApi.md#syscontractsgetenergieleveringconnectioncontracts) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/energieleveringconnectioncontracts | Energieleveringaansluitingcontracten ophalen van een aansluiting
+*SysContractsApi* | [**sysContractsGetFirstPossibleContractStartDate**](docs/Api/SysContractsApi.md#syscontractsgetfirstpossiblecontractstartdate) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/firstpossiblecontractstartdate | Bepaalt de eerstmogelijke contract startdatum voor een aansluiting.
+*SysContractsApi* | [**sysContractsGetMeansOfProductionConnectionContracts**](docs/Api/SysContractsApi.md#syscontractsgetmeansofproductionconnectioncontracts) | **GET** /sysapi/v1.0/organizations/{organizationId}/meansofproductionconnections/{meansOfProductionConnectionId}/contracts | Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
 *SysContractsApi* | [**sysContractsGetMeeliftConnectionContractForContract**](docs/Api/SysContractsApi.md#syscontractsgetmeeliftconnectioncontractforcontract) | **GET** /sysapi/v1.0/organizations/{organizationId}/meeliftconnectioncontracts/{contractId} | Ophalen van meeliftconnectioncontract op basis van contractId
 *SysContractsApi* | [**sysContractsGetMeeliftConnectionContracts**](docs/Api/SysContractsApi.md#syscontractsgetmeeliftconnectioncontracts) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/meeliftconnectioncontracts | Meeliftaansluitingcontracten ophalen van een aansluiting
 *SysContractsApi* | [**sysContractsGetMeeliftContracts**](docs/Api/SysContractsApi.md#syscontractsgetmeeliftcontracts) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/meeliftcontracts | Meeliftcontracten ophalen van een aansluiting
@@ -163,6 +168,7 @@ Class | Method | HTTP request | Description
 *SysDocumentsApi* | [**sysDocumentsStoreNexusBallNotification**](docs/Api/SysDocumentsApi.md#sysdocumentsstorenexusballnotification) | **POST** /sysapi/v1.0/documents/nexus/allocation | Uploaden van BALLNotificationEnvelopes (Nexus)
 *SysDocumentsApi* | [**sysDocumentsStorePVNEDTimeSeriesDocument**](docs/Api/SysDocumentsApi.md#sysdocumentsstorepvnedtimeseriesdocument) | **POST** /sysapi/v1.0/documents/pvned/timeseriesdocument | Upload and process PVNED&#39;s Time Series Document
 *SysDocumentsApi* | [**sysDocumentsUploadUserDocument**](docs/Api/SysDocumentsApi.md#sysdocumentsuploaduserdocument) | **POST** /sysapi/v1.0/documents/UploadUserDocument/{organizationId}/{userDocumentType} | Upload document
+*SysDraftAdvancePaymentsApi* | [**sysDraftAdvancePaymentsCalculateAnnualPriceBreakdownForNonOrganization**](docs/Api/SysDraftAdvancePaymentsApi.md#sysdraftadvancepaymentscalculateannualpricebreakdownfornonorganization) | **POST** /sysapi/v1.0/annualpricebreakdown | Berekenen van de jaarlijkse kosten obv aangegeven verbruik
 *SysDraftAdvancePaymentsApi* | [**sysDraftAdvancePaymentsCalculateDraftAdvancePayment**](docs/Api/SysDraftAdvancePaymentsApi.md#sysdraftadvancepaymentscalculatedraftadvancepayment) | **POST** /sysapi/v1.0/organizations/{organizationId}/draftadvancepayments | Aanmaken proefvoorschot
 *SysDraftAdvancePaymentsApi* | [**sysDraftAdvancePaymentsCalculateDraftAdvancePaymentForNonOrganization**](docs/Api/SysDraftAdvancePaymentsApi.md#sysdraftadvancepaymentscalculatedraftadvancepaymentfornonorganization) | **POST** /sysapi/v1.0/draftadvancepayments | Aanmaken proefvoorschot
 *SysEmailsApi* | [**sysEmailsGet**](docs/Api/SysEmailsApi.md#sysemailsget) | **GET** /sysapi/v1.0/organizations/{organizationId}/emails | Retourneert een lijst van e-mails die bij een organisatie horen aan de hand van de meegegeven parameters
@@ -171,7 +177,8 @@ Class | Method | HTTP request | Description
 *SysEntityRevisionApi* | [**sysEntityRevisionGetEntityRevisions**](docs/Api/SysEntityRevisionApi.md#sysentityrevisiongetentityrevisions) | **GET** /sysapi/v1.0/entityrevisions | Verkrijg Entiteiten die gewijzigd zijn na opgegeven datum
 *SysFlowsApi* | [**sysFlowsAcceptProposedAdvancePayment**](docs/Api/SysFlowsApi.md#sysflowsacceptproposedadvancepayment) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/accept | 
 *SysFlowsApi* | [**sysFlowsAdvancePaymentInvoiceFlowModificationFinished**](docs/Api/SysFlowsApi.md#sysflowsadvancepaymentinvoiceflowmodificationfinished) | **POST** /sysapi/v1.0/flows/advancepaymentinvoiceflow/modificationfinished | AdvancePayment factuur stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
-*SysFlowsApi* | [**sysFlowsCancelApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowscancelapplicationflow) | **POST** /sysapi/v1.0/flows/application/cancel | Aanmeldflow beëindigen
+*SysFlowsApi* | [**sysFlowsCancelAdvancePaymentInvoiceFlow**](docs/Api/SysFlowsApi.md#sysflowscanceladvancepaymentinvoiceflow) | **POST** /sysapi/v1.0/flows/advancepaymentinvoiceflow/cancel | Annuleren van voorschotfactuurflows
+*SysFlowsApi* | [**sysFlowsCancelApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowscancelapplicationflow) | **POST** /sysapi/v1.0/flows/application/cancel | Aanmeldflow beëindigen
 *SysFlowsApi* | [**sysFlowsCancelCoolingDownPeriodApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowscancelcoolingdownperiodapplicationflow) | **POST** /sysapi/v1.0/flows/application/cancelcoolingdownperiod | 
 *SysFlowsApi* | [**sysFlowsCancelMoveFlow**](docs/Api/SysFlowsApi.md#sysflowscancelmoveflow) | **POST** /sysapi/v1.0/flows/move/cancel | Verhuisflow afbreken
 *SysFlowsApi* | [**sysFlowsCancelPurchaseFlow**](docs/Api/SysFlowsApi.md#sysflowscancelpurchaseflow) | **POST** /sysapi/v1.0/flows/productpurchase/cancel | Productaanschafflow afbreken
@@ -179,12 +186,14 @@ Class | Method | HTTP request | Description
 *SysFlowsApi* | [**sysFlowsCancelSwitchOutFlow**](docs/Api/SysFlowsApi.md#sysflowscancelswitchoutflow) | **POST** /sysapi/v1.0/flows/switchout/cancel | Uithuizingsflow afbreken
 *SysFlowsApi* | [**sysFlowsEditMoveFlow**](docs/Api/SysFlowsApi.md#sysflowseditmoveflow) | **PUT** /sysapi/v1.0/flows/move/edit | Aanpassen van verhuisflow datums
 *SysFlowsApi* | [**sysFlowsGetAdvancePaymentInvoicesByStep**](docs/Api/SysFlowsApi.md#sysflowsgetadvancepaymentinvoicesbystep) | **GET** /sysapi/v1.0/flows/advancepaymentinvoiceflow/invoices/getByStep/{stepType} | Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn &#39;WaitForModification&#39;
+*SysFlowsApi* | [**sysFlowsGetProductPurchaseInvoicesByStep**](docs/Api/SysFlowsApi.md#sysflowsgetproductpurchaseinvoicesbystep) | **GET** /sysapi/v1.0/flows/productpurchaseflow/invoices/getByStep/{stepType} | Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn &#39;WaitForModification&#39;
 *SysFlowsApi* | [**sysFlowsGetSettlementInvoicesByStep**](docs/Api/SysFlowsApi.md#sysflowsgetsettlementinvoicesbystep) | **GET** /sysapi/v1.0/flows/settlementinvoiceflow/invoices/getByStep/{stepType} | Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn &#39;WaitForModification&#39;
+*SysFlowsApi* | [**sysFlowsProductPurchaseInvoiceFlowModificationFinished**](docs/Api/SysFlowsApi.md#sysflowsproductpurchaseinvoiceflowmodificationfinished) | **POST** /sysapi/v1.0/flows/productpurchaseflow/modificationfinished | Product aanschaf stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
 *SysFlowsApi* | [**sysFlowsPushThroughApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowspushthroughapplicationflow) | **POST** /sysapi/v1.0/flows/application/pushthrough | 
 *SysFlowsApi* | [**sysFlowsSendSwitchOut**](docs/Api/SysFlowsApi.md#sysflowssendswitchout) | **POST** /sysapi/v1.0/flows/switchout/sendswitchout | Uitswitch flow starten
 *SysFlowsApi* | [**sysFlowsSettlementInvoiceFlowModificationFinished**](docs/Api/SysFlowsApi.md#sysflowssettlementinvoiceflowmodificationfinished) | **POST** /sysapi/v1.0/flows/settlementinvoiceflow/modificationfinished | Settlement factuur stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
 *SysFlowsApi* | [**sysFlowsStartAdvancePaymentCalculationFlow**](docs/Api/SysFlowsApi.md#sysflowsstartadvancepaymentcalculationflow) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/start | 
-*SysFlowsApi* | [**sysFlowsStartApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowsstartapplicationflow) | **POST** /sysapi/v1.0/flows/application/start | Aanmeldflow starten
+*SysFlowsApi* | [**sysFlowsStartApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowsstartapplicationflow) | **POST** /sysapi/v1.0/flows/application/start | Aanmeldflow starten
 *SysFlowsApi* | [**sysFlowsStartEnergyPVSwitchFlow**](docs/Api/SysFlowsApi.md#sysflowsstartenergypvswitchflow) | **POST** /sysapi/v1.0/flows/pvswitch/start | Start PV switchflow
 *SysFlowsApi* | [**sysFlowsStartProductPurchaseFlow**](docs/Api/SysFlowsApi.md#sysflowsstartproductpurchaseflow) | **POST** /sysapi/v1.0/flows/productpurchase/start | Product purchase event starten voor organizationId en clusterReference  toegestane waarde voor eventType: DepositSettlement
 *SysFlowsApi* | [**sysFlowsStartSettlementFlowForProduct**](docs/Api/SysFlowsApi.md#sysflowsstartsettlementflowforproduct) | **POST** /sysapi/v1.0/flows/product/startsettlement | Starten van de afrekening flow voor een product
@@ -203,20 +212,23 @@ Class | Method | HTTP request | Description
 *SysInvoiceDataSetsApi* | [**sysInvoiceDataSetsGetForSettlement**](docs/Api/SysInvoiceDataSetsApi.md#sysinvoicedatasetsgetforsettlement) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoicedatasets/forSettlement/{invoiceId} | Verkrijg alle data van een afrekenfactuur
 *SysInvoiceProcessRulesApi* | [**sysInvoiceProcessRulesDeleteInvoiceProcessRule**](docs/Api/SysInvoiceProcessRulesApi.md#sysinvoiceprocessrulesdeleteinvoiceprocessrule) | **DELETE** /sysapi/v1.0/organizations/{organizationId}/invoiceprocessrules/{invoiceProcessRuleId} | Verwijdert een factuurblokkade.
 *SysInvoiceProcessRulesApi* | [**sysInvoiceProcessRulesGetInvoiceProcessRules**](docs/Api/SysInvoiceProcessRulesApi.md#sysinvoiceprocessrulesgetinvoiceprocessrules) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoiceprocessrules | Vraagt alle factuurblokkades op die bij een organisatie horen.
+*SysInvoiceProcessRulesApi* | [**sysInvoiceProcessRulesGetInvoiceProcessRulesVersionOneDotOne**](docs/Api/SysInvoiceProcessRulesApi.md#sysinvoiceprocessrulesgetinvoiceprocessrulesversiononedotone) | **GET** /sysapi/v1.1/organizations/{organizationId}/invoiceprocessrules | Vraagt alle factuurblokkades op die bij een organisatie horen.
 *SysInvoiceProcessRulesApi* | [**sysInvoiceProcessRulesPostInvoiceProcessRule**](docs/Api/SysInvoiceProcessRulesApi.md#sysinvoiceprocessrulespostinvoiceprocessrule) | **POST** /sysapi/v1.0/organizations/{organizationId}/invoiceprocessrules | Voegt een nieuwe factuurblokkade toe bij een organisatie.
+*SysInvoiceProcessRulesApi* | [**sysInvoiceProcessRulesPostInvoiceProcessRuleVersionOneDotOne**](docs/Api/SysInvoiceProcessRulesApi.md#sysinvoiceprocessrulespostinvoiceprocessruleversiononedotone) | **POST** /sysapi/v1.1/organizations/{organizationId}/invoiceprocessrules | Voegt een nieuwe factuurblokkade toe bij een organisatie.
 *SysInvoicesApi* | [**sysInvoicesAddInvoiceRows**](docs/Api/SysInvoicesApi.md#sysinvoicesaddinvoicerows) | **POST** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/invoicerows | Toevoegen factuurregels aan een factuur
 *SysInvoicesApi* | [**sysInvoicesByNumber**](docs/Api/SysInvoicesApi.md#sysinvoicesbynumber) | **GET** /sysapi/v1.0/invoices/bynumber/{invoiceNumber} | Haal een specifieke factuur op (op basis van factuurnummer)
 *SysInvoicesApi* | [**sysInvoicesCalculateExpectedSettlementInvoice**](docs/Api/SysInvoicesApi.md#sysinvoicescalculateexpectedsettlementinvoice) | **POST** /sysapi/v1.0/organizations/{organizationId}/invoices/calculateexpectedsettlement | Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op
-*SysInvoicesApi* | [**sysInvoicesCredit**](docs/Api/SysInvoicesApi.md#sysinvoicescredit) | **POST** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/credit | Voorschot-, borg- of afrekenfactuur crediteren
+*SysInvoicesApi* | [**sysInvoicesCredit**](docs/Api/SysInvoicesApi.md#sysinvoicescredit) | **POST** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/credit | Opzegvergoedingen, algemene facturen, voorschot-, borg- of afrekenfactuur crediteren
 *SysInvoicesApi* | [**sysInvoicesDownloadRemitReport**](docs/Api/SysInvoicesApi.md#sysinvoicesdownloadremitreport) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/downloadremitreport | Download Remit Report voor een factuur
 *SysInvoicesApi* | [**sysInvoicesDownloadSingleInvoice**](docs/Api/SysInvoicesApi.md#sysinvoicesdownloadsingleinvoice) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/download | Download factuurdocument van een specifieke factuur
 *SysInvoicesApi* | [**sysInvoicesGet**](docs/Api/SysInvoicesApi.md#sysinvoicesget) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices | Haal facturen van een specifieke klant op (op basis van InvoiceId)
+*SysInvoicesApi* | [**sysInvoicesGetFinancialDetails**](docs/Api/SysInvoicesApi.md#sysinvoicesgetfinancialdetails) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/financialdetails | Haal betaalstatus van een factuur op bij extern financieel systeem.  Niet elk financieel systeem ondersteunt dit.
 *SysInvoicesApi* | [**sysInvoicesGetInvoice**](docs/Api/SysInvoicesApi.md#sysinvoicesgetinvoice) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId} | Haal een specifieke factuur op
 *SysInvoicesApi* | [**sysInvoicesGetInvoiceReason**](docs/Api/SysInvoicesApi.md#sysinvoicesgetinvoicereason) | **GET** /sysapi/v1.0/invoices/{invoiceId}/invoicereason | Vraag de reden op waarom de factuur is aangemaakt
 *SysInvoicesApi* | [**sysInvoicesGetInvoicesByCompany**](docs/Api/SysInvoicesApi.md#sysinvoicesgetinvoicesbycompany) | **GET** /sysapi/v1.0/invoices/afternumber/{invoiceNumber} | Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer&lt;br&gt;&lt;/br&gt;  Fetch invoices with invoice number greater than \&quot;invoiceNumber\&quot; for a company label: \&quot;companyLabelId\&quot;&lt;br&gt;&lt;/br&gt;      Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
-*SysInvoicesApi* | [**sysInvoicesGetInvoicesWithPrettySmaUsages**](docs/Api/SysInvoicesApi.md#sysinvoicesgetinvoiceswithprettysmausages) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/prettyinvoiceusages | Haal verbruiksregels van een factuur op
 *SysInvoicesApi* | [**sysInvoicesGetInvoicesWithSmaUsages**](docs/Api/SysInvoicesApi.md#sysinvoicesgetinvoiceswithsmausages) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/invoiceusages | Haal verbruiksregels van een factuur op
-*SysInvoicesApi* | [**sysInvoicesGetInvoicesWithSmaUsagesV11**](docs/Api/SysInvoicesApi.md#sysinvoicesgetinvoiceswithsmausagesv11) | **GET** /sysapi/v1.1/organizations/{organizationId}/invoices/{invoiceId}/invoiceusages | Haal verbruiksregels van een factuur op
+*SysInvoicesApi* | [**sysInvoicesGetInvoicesWithSmaUsagesV11**](docs/Api/SysInvoicesApi.md#sysinvoicesgetinvoiceswithsmausagesv11) | **GET** /sysapi/v1.1/organizations/{organizationId}/invoices/{invoiceId}/invoiceusages | Haal verbruiksregels van een factuur op. Dit zijn altijd niet-gesaldeerde regels ook al is er in de bijbehorende factuur wel gesaldeerd. Dus voor elektriciteit komen er regels per kwartier terug en voor gas per uur.
+*SysInvoicesApi* | [**sysInvoicesGetInvoicesWithSmaUsagesV12**](docs/Api/SysInvoicesApi.md#sysinvoicesgetinvoiceswithsmausagesv12) | **GET** /sysapi/v1.2/organizations/{organizationId}/invoices/{invoiceId}/invoiceusages | Haal verbruiksregels van een factuur op. De regels zijn gesaldeerd als er in de bijbehorende factuur gesaldeerd is. Als er gesaldeerd is komen er voor elektriciteit regels per uur terug en voor gas ook. Als er niet gesaldeerd is komen er voor elektriciteit regels per kwartier terug en voor gas per uur.
 *SysMarketPricesApi* | [**sysMarketPricesGet**](docs/Api/SysMarketPricesApi.md#sysmarketpricesget) | **GET** /sysapi/v1.0/marketprices/{startDate}/{endDate}/{marketPriceType} | Haal marktprijzen (excl. btw) op voor periode en marktprijstype
 *SysMarketPricesApi* | [**sysMarketPricesPostMarketPrices**](docs/Api/SysMarketPricesApi.md#sysmarketpricespostmarketprices) | **POST** /sysapi/v1.0/marketprices/{marketPriceType} | Marktprijzen toevoegen voor marktprijstype
 *SysMeansOfProductionExpectedYieldApi* | [**sysMeansOfProductionExpectedYieldGet**](docs/Api/SysMeansOfProductionExpectedYieldApi.md#sysmeansofproductionexpectedyieldget) | **GET** /sysapi/v1.0/meansofproductionexpectedyield/{meansOfProductionId} | Verkrijg verwacht af te rekenen verbruik en aantal contracten op basis van MeansOfProductionId
@@ -332,6 +344,8 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiAdvancePaymentPutData](docs/Model/EcedoERPCRMInterfaceApiAdvancePaymentPutData.md)
  - [EcedoERPCRMInterfaceApiAdvancePaymentRow](docs/Model/EcedoERPCRMInterfaceApiAdvancePaymentRow.md)
  - [EcedoERPCRMInterfaceApiAgreedAmountSupportedResult](docs/Model/EcedoERPCRMInterfaceApiAgreedAmountSupportedResult.md)
+ - [EcedoERPCRMInterfaceApiAnnualPriceBreakdown](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdown.md)
+ - [EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection.md)
  - [EcedoERPCRMInterfaceApiAnnualStandardUsage](docs/Model/EcedoERPCRMInterfaceApiAnnualStandardUsage.md)
  - [EcedoERPCRMInterfaceApiBaseContract](docs/Model/EcedoERPCRMInterfaceApiBaseContract.md)
  - [EcedoERPCRMInterfaceApiBillingItem](docs/Model/EcedoERPCRMInterfaceApiBillingItem.md)
@@ -343,6 +357,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiCalculateAnnualStandardUsagePostData](docs/Model/EcedoERPCRMInterfaceApiCalculateAnnualStandardUsagePostData.md)
  - [EcedoERPCRMInterfaceApiCalculatedMeterReading](docs/Model/EcedoERPCRMInterfaceApiCalculatedMeterReading.md)
  - [EcedoERPCRMInterfaceApiCalculatedTerminationFee](docs/Model/EcedoERPCRMInterfaceApiCalculatedTerminationFee.md)
+ - [EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult](docs/Model/EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult.md)
  - [EcedoERPCRMInterfaceApiCancelFlowPostData](docs/Model/EcedoERPCRMInterfaceApiCancelFlowPostData.md)
  - [EcedoERPCRMInterfaceApiCertiQEan](docs/Model/EcedoERPCRMInterfaceApiCertiQEan.md)
  - [EcedoERPCRMInterfaceApiCertiQReport](docs/Model/EcedoERPCRMInterfaceApiCertiQReport.md)
@@ -381,6 +396,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiContractPostResult](docs/Model/EcedoERPCRMInterfaceApiContractPostResult.md)
  - [EcedoERPCRMInterfaceApiContractProperty](docs/Model/EcedoERPCRMInterfaceApiContractProperty.md)
  - [EcedoERPCRMInterfaceApiContractPropertyPostData](docs/Model/EcedoERPCRMInterfaceApiContractPropertyPostData.md)
+ - [EcedoERPCRMInterfaceApiContractStartDateResult](docs/Model/EcedoERPCRMInterfaceApiContractStartDateResult.md)
  - [EcedoERPCRMInterfaceApiContractTerminationFeeBase](docs/Model/EcedoERPCRMInterfaceApiContractTerminationFeeBase.md)
  - [EcedoERPCRMInterfaceApiContractTerminationFeeType](docs/Model/EcedoERPCRMInterfaceApiContractTerminationFeeType.md)
  - [EcedoERPCRMInterfaceApiCreditInvoicePostData](docs/Model/EcedoERPCRMInterfaceApiCreditInvoicePostData.md)
@@ -433,6 +449,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiExpectedYield](docs/Model/EcedoERPCRMInterfaceApiExpectedYield.md)
  - [EcedoERPCRMInterfaceApiExtendedMeter](docs/Model/EcedoERPCRMInterfaceApiExtendedMeter.md)
  - [EcedoERPCRMInterfaceApiExtendedMeteringPoint](docs/Model/EcedoERPCRMInterfaceApiExtendedMeteringPoint.md)
+ - [EcedoERPCRMInterfaceApiFinancialDetails](docs/Model/EcedoERPCRMInterfaceApiFinancialDetails.md)
  - [EcedoERPCRMInterfaceApiFullPerson](docs/Model/EcedoERPCRMInterfaceApiFullPerson.md)
  - [EcedoERPCRMInterfaceApiFullPersonPostData](docs/Model/EcedoERPCRMInterfaceApiFullPersonPostData.md)
  - [EcedoERPCRMInterfaceApiFullPersonPostResult](docs/Model/EcedoERPCRMInterfaceApiFullPersonPostResult.md)
@@ -440,6 +457,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiGenerateDocumentPostData](docs/Model/EcedoERPCRMInterfaceApiGenerateDocumentPostData.md)
  - [EcedoERPCRMInterfaceApiGreeningOption](docs/Model/EcedoERPCRMInterfaceApiGreeningOption.md)
  - [EcedoERPCRMInterfaceApiHasContractInPeriodResponse](docs/Model/EcedoERPCRMInterfaceApiHasContractInPeriodResponse.md)
+ - [EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage](docs/Model/EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage.md)
  - [EcedoERPCRMInterfaceApiInvoice](docs/Model/EcedoERPCRMInterfaceApiInvoice.md)
  - [EcedoERPCRMInterfaceApiInvoiceProcessRule](docs/Model/EcedoERPCRMInterfaceApiInvoiceProcessRule.md)
  - [EcedoERPCRMInterfaceApiInvoiceProcessRulePostData](docs/Model/EcedoERPCRMInterfaceApiInvoiceProcessRulePostData.md)
@@ -472,6 +490,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiMoveConnectionsConnectionGroupPostResult](docs/Model/EcedoERPCRMInterfaceApiMoveConnectionsConnectionGroupPostResult.md)
  - [EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData](docs/Model/EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData.md)
  - [EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData](docs/Model/EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData.md)
+ - [EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase](docs/Model/EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase.md)
  - [EcedoERPCRMInterfaceApiOnbalansFlexContract](docs/Model/EcedoERPCRMInterfaceApiOnbalansFlexContract.md)
  - [EcedoERPCRMInterfaceApiOnbalansFlexContractPostData](docs/Model/EcedoERPCRMInterfaceApiOnbalansFlexContractPostData.md)
  - [EcedoERPCRMInterfaceApiOnbalansFlexContractPostResult](docs/Model/EcedoERPCRMInterfaceApiOnbalansFlexContractPostResult.md)
@@ -531,17 +550,16 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiReservationBase](docs/Model/EcedoERPCRMInterfaceApiReservationBase.md)
  - [EcedoERPCRMInterfaceApiSetAnnualStandardUsageTypePostData](docs/Model/EcedoERPCRMInterfaceApiSetAnnualStandardUsageTypePostData.md)
  - [EcedoERPCRMInterfaceApiSettlementEvent](docs/Model/EcedoERPCRMInterfaceApiSettlementEvent.md)
- - [EcedoERPCRMInterfaceApiSmaInvoiceDetails](docs/Model/EcedoERPCRMInterfaceApiSmaInvoiceDetails.md)
  - [EcedoERPCRMInterfaceApiSmartChargingSession](docs/Model/EcedoERPCRMInterfaceApiSmartChargingSession.md)
  - [EcedoERPCRMInterfaceApiSmartDevice](docs/Model/EcedoERPCRMInterfaceApiSmartDevice.md)
  - [EcedoERPCRMInterfaceApiSwitchEvent](docs/Model/EcedoERPCRMInterfaceApiSwitchEvent.md)
+ - [EcedoERPCRMInterfaceApiSwitchPeriod](docs/Model/EcedoERPCRMInterfaceApiSwitchPeriod.md)
  - [EcedoERPCRMInterfaceApiTelemetryData](docs/Model/EcedoERPCRMInterfaceApiTelemetryData.md)
  - [EcedoERPCRMInterfaceApiTelemetryPostData](docs/Model/EcedoERPCRMInterfaceApiTelemetryPostData.md)
  - [EcedoERPCRMInterfaceApiTerminationFeeCalculationTypeResponse](docs/Model/EcedoERPCRMInterfaceApiTerminationFeeCalculationTypeResponse.md)
  - [EcedoERPCRMInterfaceApiTerminationFeeConnectionCalculations](docs/Model/EcedoERPCRMInterfaceApiTerminationFeeConnectionCalculations.md)
  - [EcedoERPCRMInterfaceApiTerminationFeeReferencePropositions](docs/Model/EcedoERPCRMInterfaceApiTerminationFeeReferencePropositions.md)
  - [EcedoERPCRMInterfaceApiUpdateMeteringPointPostData](docs/Model/EcedoERPCRMInterfaceApiUpdateMeteringPointPostData.md)
- - [EcedoERPCRMInterfaceApiUsageCalculationRow](docs/Model/EcedoERPCRMInterfaceApiUsageCalculationRow.md)
  - [EcedoERPCRMInterfaceApiValidateMeterReadingPostData](docs/Model/EcedoERPCRMInterfaceApiValidateMeterReadingPostData.md)
  - [EcedoERPCRMInterfaceApiValidateMeterReadingPostResult](docs/Model/EcedoERPCRMInterfaceApiValidateMeterReadingPostResult.md)
  - [EcedoERPCRMInterfaceApiWorkflowStep](docs/Model/EcedoERPCRMInterfaceApiWorkflowStep.md)
@@ -595,6 +613,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoNewAdvancePayment](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoNewAdvancePayment.md)
  - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoPeriodPrice](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoPeriodPrice.md)
  - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoProductUnit](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoProductUnit.md)
+ - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoTerminationFee](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoTerminationFee.md)
  - [EcedoERPCRMInterfaceServicesEDSNCERCERLookupData](docs/Model/EcedoERPCRMInterfaceServicesEDSNCERCERLookupData.md)
  - [EcedoERPCRMInterfaceServicesEDSNCERCERNoticeData](docs/Model/EcedoERPCRMInterfaceServicesEDSNCERCERNoticeData.md)
  - [EcedoERPUIWebControllersSysApiSysDashboardControllerDashboardDto](docs/Model/EcedoERPUIWebControllersSysApiSysDashboardControllerDashboardDto.md)

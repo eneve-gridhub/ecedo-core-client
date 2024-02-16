@@ -238,9 +238,9 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationRow implements ModelInterfac
         return self::$swaggerModelName;
     }
 
+    const PRICE_UNIT_KWH = 'KWh';
     const PRICE_UNIT_YEAR = 'Year';
     const PRICE_UNIT_DAY = 'Day';
-    const PRICE_UNIT_KWH = 'KWh';
     const PRICE_UNIT_M3 = 'M3';
     const PRICE_UNIT_ONE_OFF = 'OneOff';
     const PRICE_UNIT_MONTH = 'Month';
@@ -273,9 +273,9 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationRow implements ModelInterfac
     public function getPriceUnitAllowableValues()
     {
         return [
+            self::PRICE_UNIT_KWH,
             self::PRICE_UNIT_YEAR,
             self::PRICE_UNIT_DAY,
-            self::PRICE_UNIT_KWH,
             self::PRICE_UNIT_M3,
             self::PRICE_UNIT_ONE_OFF,
             self::PRICE_UNIT_MONTH,

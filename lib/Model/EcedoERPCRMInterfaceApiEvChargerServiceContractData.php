@@ -224,6 +224,7 @@ class EcedoERPCRMInterfaceApiEvChargerServiceContractData implements ModelInterf
     const SERVICE_TYPE_MAINTENANCE = 'Maintenance';
     const SERVICE_TYPE_LOAD_BALANCING = 'LoadBalancing';
     const SERVICE_TYPE_EXTERNAL_SETTLEMENT = 'ExternalSettlement';
+    const SERVICE_TYPE_CURTAILMENT = 'Curtailment';
     
 
     
@@ -257,6 +258,7 @@ class EcedoERPCRMInterfaceApiEvChargerServiceContractData implements ModelInterf
             self::SERVICE_TYPE_MAINTENANCE,
             self::SERVICE_TYPE_LOAD_BALANCING,
             self::SERVICE_TYPE_EXTERNAL_SETTLEMENT,
+            self::SERVICE_TYPE_CURTAILMENT,
         ];
     }
     

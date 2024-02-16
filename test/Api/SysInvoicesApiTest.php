@@ -104,7 +104,7 @@ class SysInvoicesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysInvoicesCredit
      *
-     * Voorschot-, borg- of afrekenfactuur crediteren.
+     * Opzegvergoedingen, algemene facturen, voorschot-, borg- of afrekenfactuur crediteren.
      *
      */
     public function testSysInvoicesCredit()
@@ -142,6 +142,16 @@ class SysInvoicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysInvoicesGetFinancialDetails
+     *
+     * Haal betaalstatus van een factuur op bij extern financieel systeem.  Niet elk financieel systeem ondersteunt dit..
+     *
+     */
+    public function testSysInvoicesGetFinancialDetails()
+    {
+    }
+
+    /**
      * Test case for sysInvoicesGetInvoice
      *
      * Haal een specifieke factuur op.
@@ -172,16 +182,6 @@ class SysInvoicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for sysInvoicesGetInvoicesWithPrettySmaUsages
-     *
-     * Haal verbruiksregels van een factuur op.
-     *
-     */
-    public function testSysInvoicesGetInvoicesWithPrettySmaUsages()
-    {
-    }
-
-    /**
      * Test case for sysInvoicesGetInvoicesWithSmaUsages
      *
      * Haal verbruiksregels van een factuur op.
@@ -194,10 +194,20 @@ class SysInvoicesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysInvoicesGetInvoicesWithSmaUsagesV11
      *
-     * Haal verbruiksregels van een factuur op.
+     * Haal verbruiksregels van een factuur op. Dit zijn altijd niet-gesaldeerde regels ook al is er in de bijbehorende factuur wel gesaldeerd. Dus voor elektriciteit komen er regels per kwartier terug en voor gas per uur..
      *
      */
     public function testSysInvoicesGetInvoicesWithSmaUsagesV11()
+    {
+    }
+
+    /**
+     * Test case for sysInvoicesGetInvoicesWithSmaUsagesV12
+     *
+     * Haal verbruiksregels van een factuur op. De regels zijn gesaldeerd als er in de bijbehorende factuur gesaldeerd is. Als er gesaldeerd is komen er voor elektriciteit regels per uur terug en voor gas ook. Als er niet gesaldeerd is komen er voor elektriciteit regels per kwartier terug en voor gas per uur..
+     *
+     */
+    public function testSysInvoicesGetInvoicesWithSmaUsagesV12()
     {
     }
 }

@@ -259,6 +259,8 @@ class EcedoERPCRMInterfaceApiEmailResponse implements ModelInterface, ArrayAcces
     const EMAIL_TYPE_ENERGY_VKO_EXPIRED_EMAIL = 'EnergyVKOExpiredEmail';
     const EMAIL_TYPE_SMART_CHARGING_INVOICE_EMAIL = 'SmartChargingInvoiceEmail';
     const EMAIL_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT_INVOICE_EMAIL = 'CustomEnergyPurchaseSettlementInvoiceEmail';
+    const EMAIL_TYPE_EV_CHARGER_REIMBURSEMENT_INVOICE_EMAIL = 'EvChargerReimbursementInvoiceEmail';
+    const EMAIL_TYPE_EV_CHARGE_CARD_INVOICE_EMAIL = 'EvChargeCardInvoiceEmail';
     const STATUS_CREATED = 'Created';
     const STATUS_SENT = 'Sent';
     const STATUS_ERROR = 'Error';
@@ -305,6 +307,8 @@ class EcedoERPCRMInterfaceApiEmailResponse implements ModelInterface, ArrayAcces
             self::EMAIL_TYPE_ENERGY_VKO_EXPIRED_EMAIL,
             self::EMAIL_TYPE_SMART_CHARGING_INVOICE_EMAIL,
             self::EMAIL_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT_INVOICE_EMAIL,
+            self::EMAIL_TYPE_EV_CHARGER_REIMBURSEMENT_INVOICE_EMAIL,
+            self::EMAIL_TYPE_EV_CHARGE_CARD_INVOICE_EMAIL,
         ];
     }
     

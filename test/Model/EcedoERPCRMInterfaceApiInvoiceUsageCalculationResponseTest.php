@@ -91,6 +91,20 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponseTest extends \PHPUni
     }
 
     /**
+     * Test attribute "settle_energy_method"
+     */
+    public function testPropertySettleEnergyMethod()
+    {
+    }
+
+    /**
+     * Test attribute "settle_energy_method_localized"
+     */
+    public function testPropertySettleEnergyMethodLocalized()
+    {
+    }
+
+    /**
      * Test attribute "invoice_usage_calculation_rows"
      */
     public function testPropertyInvoiceUsageCalculationRows()

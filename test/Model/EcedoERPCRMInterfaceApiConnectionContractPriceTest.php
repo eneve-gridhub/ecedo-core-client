@@ -138,4 +138,18 @@ class EcedoERPCRMInterfaceApiConnectionContractPriceTest extends \PHPUnit_Framew
     public function testPropertyPriceUnitLocalized()
     {
     }
+
+    /**
+     * Test attribute "range_begin"
+     */
+    public function testPropertyRangeBegin()
+    {
+    }
+
+    /**
+     * Test attribute "range_end"
+     */
+    public function testPropertyRangeEnd()
+    {
+    }
 }

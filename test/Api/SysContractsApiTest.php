@@ -172,6 +172,26 @@ class SysContractsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysContractsGetFirstPossibleContractStartDate
+     *
+     * Bepaalt de eerstmogelijke contract startdatum voor een aansluiting..
+     *
+     */
+    public function testSysContractsGetFirstPossibleContractStartDate()
+    {
+    }
+
+    /**
+     * Test case for sysContractsGetMeansOfProductionConnectionContracts
+     *
+     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId.
+     *
+     */
+    public function testSysContractsGetMeansOfProductionConnectionContracts()
+    {
+    }
+
+    /**
      * Test case for sysContractsGetMeeliftConnectionContractForContract
      *
      * Ophalen van meeliftconnectioncontract op basis van contractId.

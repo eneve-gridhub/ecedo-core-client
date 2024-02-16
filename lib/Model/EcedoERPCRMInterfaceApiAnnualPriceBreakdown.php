@@ -57,6 +57,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'advance_payment_amount' => 'double',
         'calculated_year_amount' => 'double',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
@@ -70,6 +71,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'advance_payment_amount' => 'double',
         'calculated_year_amount' => 'double',
         'start_date' => 'date',
         'end_date' => 'date',
@@ -104,6 +106,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
+        'advance_payment_amount' => 'AdvancePaymentAmount',
         'calculated_year_amount' => 'CalculatedYearAmount',
         'start_date' => 'StartDate',
         'end_date' => 'EndDate',
@@ -117,6 +120,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
+        'advance_payment_amount' => 'setAdvancePaymentAmount',
         'calculated_year_amount' => 'setCalculatedYearAmount',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
@@ -130,6 +134,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
+        'advance_payment_amount' => 'getAdvancePaymentAmount',
         'calculated_year_amount' => 'getCalculatedYearAmount',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
@@ -197,6 +202,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
+        $this->container['advance_payment_amount'] = isset($data['advance_payment_amount']) ? $data['advance_payment_amount'] : null;
         $this->container['calculated_year_amount'] = isset($data['calculated_year_amount']) ? $data['calculated_year_amount'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
@@ -227,6 +233,30 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets advance_payment_amount
+     *
+     * @return double
+     */
+    public function getAdvancePaymentAmount()
+    {
+        return $this->container['advance_payment_amount'];
+    }
+
+    /**
+     * Sets advance_payment_amount
+     *
+     * @param double $advance_payment_amount Het voorschotbedrag in euro's, inclusief btw
+     *
+     * @return $this
+     */
+    public function setAdvancePaymentAmount($advance_payment_amount)
+    {
+        $this->container['advance_payment_amount'] = $advance_payment_amount;
+
+        return $this;
+    }
 
     /**
      * Gets calculated_year_amount

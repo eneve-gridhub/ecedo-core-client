@@ -92,12 +92,32 @@ class SysInvoiceProcessRulesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysInvoiceProcessRulesGetInvoiceProcessRulesVersionOneDotOne
+     *
+     * Vraagt alle factuurblokkades op die bij een organisatie horen..
+     *
+     */
+    public function testSysInvoiceProcessRulesGetInvoiceProcessRulesVersionOneDotOne()
+    {
+    }
+
+    /**
      * Test case for sysInvoiceProcessRulesPostInvoiceProcessRule
      *
      * Voegt een nieuwe factuurblokkade toe bij een organisatie..
      *
      */
     public function testSysInvoiceProcessRulesPostInvoiceProcessRule()
+    {
+    }
+
+    /**
+     * Test case for sysInvoiceProcessRulesPostInvoiceProcessRuleVersionOneDotOne
+     *
+     * Voegt een nieuwe factuurblokkade toe bij een organisatie..
+     *
+     */
+    public function testSysInvoiceProcessRulesPostInvoiceProcessRuleVersionOneDotOne()
     {
     }
 }

@@ -126,9 +126,30 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDtoTest extends \PHPUnit_Fr
     }
 
     /**
-     * Test attribute "value"
+     * Test attribute "value_ldn"
      */
-    public function testPropertyValue()
+    public function testPropertyValueLdn()
+    {
+    }
+
+    /**
+     * Test attribute "ldn_localized"
+     */
+    public function testPropertyLdnLocalized()
+    {
+    }
+
+    /**
+     * Test attribute "value_odn"
+     */
+    public function testPropertyValueOdn()
+    {
+    }
+
+    /**
+     * Test attribute "odn_localized"
+     */
+    public function testPropertyOdnLocalized()
     {
     }
 
@@ -171,6 +192,34 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDtoTest extends \PHPUnit_Fr
      * Test attribute "reference_date_time"
      */
     public function testPropertyReferenceDateTime()
+    {
+    }
+
+    /**
+     * Test attribute "reference_date_time_localized"
+     */
+    public function testPropertyReferenceDateTimeLocalized()
+    {
+    }
+
+    /**
+     * Test attribute "telemetry_document_id"
+     */
+    public function testPropertyTelemetryDocumentId()
+    {
+    }
+
+    /**
+     * Test attribute "source"
+     */
+    public function testPropertySource()
+    {
+    }
+
+    /**
+     * Test attribute "source_localized"
+     */
+    public function testPropertySourceLocalized()
     {
     }
 }

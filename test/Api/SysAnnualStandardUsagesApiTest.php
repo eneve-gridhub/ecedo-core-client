@@ -82,6 +82,16 @@ class SysAnnualStandardUsagesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysAnnualStandardUsagesGetAnnualStandardUsages
+     *
+     * Opvragen standaard jaarverbruiken..
+     *
+     */
+    public function testSysAnnualStandardUsagesGetAnnualStandardUsages()
+    {
+    }
+
+    /**
      * Test case for sysAnnualStandardUsagesPostExpectedAnnualStandardUsage
      *
      * Aanpassen verwacht jaarverbruik.

@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiSmaInvoiceDetailsTest
+ * EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResultTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * EcedoERPCRMInterfaceApiSmaInvoiceDetailsTest Class Doc Comment
+ * EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResultTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiSmaInvoiceDetails
+ * @description EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiSmaInvoiceDetailsTest extends \PHPUnit_Framework_TestCase
+class EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResultTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,37 +70,23 @@ class EcedoERPCRMInterfaceApiSmaInvoiceDetailsTest extends \PHPUnit_Framework_Te
     }
 
     /**
-     * Test "EcedoERPCRMInterfaceApiSmaInvoiceDetails"
+     * Test "EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult"
      */
-    public function testEcedoERPCRMInterfaceApiSmaInvoiceDetails()
+    public function testEcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult()
     {
     }
 
     /**
-     * Test attribute "gas"
+     * Test attribute "flow_count"
      */
-    public function testPropertyGas()
+    public function testPropertyFlowCount()
     {
     }
 
     /**
-     * Test attribute "electricity"
+     * Test attribute "cancelled_flow_count"
      */
-    public function testPropertyElectricity()
-    {
-    }
-
-    /**
-     * Test attribute "wind"
-     */
-    public function testPropertyWind()
-    {
-    }
-
-    /**
-     * Test attribute "solar"
-     */
-    public function testPropertySolar()
+    public function testPropertyCancelledFlowCount()
     {
     }
 }

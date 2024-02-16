@@ -72,6 +72,16 @@ class SysDraftAdvancePaymentsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysDraftAdvancePaymentsCalculateAnnualPriceBreakdownForNonOrganization
+     *
+     * Berekenen van de jaarlijkse kosten obv aangegeven verbruik.
+     *
+     */
+    public function testSysDraftAdvancePaymentsCalculateAnnualPriceBreakdownForNonOrganization()
+    {
+    }
+
+    /**
      * Test case for sysDraftAdvancePaymentsCalculateDraftAdvancePayment
      *
      * Aanmaken proefvoorschot.

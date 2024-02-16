@@ -103,4 +103,32 @@ class EcedoERPCRMInterfaceApiConnectionPropertyTest extends \PHPUnit_Framework_T
     public function testPropertyConnectionPropertyValueLocalized()
     {
     }
+
+    /**
+     * Test attribute "start_date"
+     */
+    public function testPropertyStartDate()
+    {
+    }
+
+    /**
+     * Test attribute "end_date"
+     */
+    public function testPropertyEndDate()
+    {
+    }
+
+    /**
+     * Test attribute "connection_property_source"
+     */
+    public function testPropertyConnectionPropertySource()
+    {
+    }
+
+    /**
+     * Test attribute "connection_property_source_localized"
+     */
+    public function testPropertyConnectionPropertySourceLocalized()
+    {
+    }
 }

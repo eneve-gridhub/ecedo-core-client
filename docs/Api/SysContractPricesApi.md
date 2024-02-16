@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Opvragen contract prijzen
 
-Enkel voor Energiecontracten en Laadpaalcontracten
+Enkel voor Energiecontracten, Laadpaalcontracten en Energie-inkoopcontracten
 
 ### Example
 ```php

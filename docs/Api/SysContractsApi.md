@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**sysContractsGetEnergieInkoopContract**](SysContractsApi.md#sysContractsGetEnergieInkoopContract) | **GET** /sysapi/v1.0/organizations/{organizationId}/energieinkoopcontracts/{contractId} | Ophalen van een energieinkoopcontract op basis van contractId
 [**sysContractsGetEnergieleveringConnectionContractForContract**](SysContractsApi.md#sysContractsGetEnergieleveringConnectionContractForContract) | **GET** /sysapi/v1.0/organizations/{organizationId}/energieleveringconnectioncontracts/{contractId} | Ophalen van energieleveringconnectioncontract op basis van contractId
 [**sysContractsGetEnergieleveringConnectionContracts**](SysContractsApi.md#sysContractsGetEnergieleveringConnectionContracts) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/energieleveringconnectioncontracts | Energieleveringaansluitingcontracten ophalen van een aansluiting
+[**sysContractsGetFirstPossibleContractStartDate**](SysContractsApi.md#sysContractsGetFirstPossibleContractStartDate) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/firstpossiblecontractstartdate | Bepaalt de eerstmogelijke contract startdatum voor een aansluiting.
+[**sysContractsGetMeansOfProductionConnectionContracts**](SysContractsApi.md#sysContractsGetMeansOfProductionConnectionContracts) | **GET** /sysapi/v1.0/organizations/{organizationId}/meansofproductionconnections/{meansOfProductionConnectionId}/contracts | Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
 [**sysContractsGetMeeliftConnectionContractForContract**](SysContractsApi.md#sysContractsGetMeeliftConnectionContractForContract) | **GET** /sysapi/v1.0/organizations/{organizationId}/meeliftconnectioncontracts/{contractId} | Ophalen van meeliftconnectioncontract op basis van contractId
 [**sysContractsGetMeeliftConnectionContracts**](SysContractsApi.md#sysContractsGetMeeliftConnectionContracts) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/meeliftconnectioncontracts | Meeliftaansluitingcontracten ophalen van een aansluiting
 [**sysContractsGetMeeliftContracts**](SysContractsApi.md#sysContractsGetMeeliftContracts) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/meeliftcontracts | Meeliftcontracten ophalen van een aansluiting
@@ -619,6 +621,130 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieleveringConnectionContract[]**](../Model/EcedoERPCRMInterfaceApiEnergieleveringConnectionContract.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sysContractsGetFirstPossibleContractStartDate**
+> \Swagger\Client\Model\EcedoERPCRMInterfaceApiContractStartDateResult sysContractsGetFirstPossibleContractStartDate($organization_id, $connection_id, $proposition_reference)
+
+Bepaalt de eerstmogelijke contract startdatum voor een aansluiting.
+
+De startdatum wordt bepaald op basis van het laatst aanwezige contract.  Bij contracten met een vaste looptijd is de startdatum gelijk aan de einddatum van het laatste contract.  Bij contracten met een variabele looptijd is de startdatum 1 dag na de startdatum van het laatste contract mits de voorschotmethodiek gelijk blijft in het nieuwe contract.  Als de voorschotmethodiek niet gelijk blijft dan wordt er ook nog gekeken naar de laatste termijnfactuur.  De startdatum is dan de dag na de startdatum van de laatste termijnfactuur als deze na de startdatum van het laatste contract ligt.  Als er nog geen bestaand contract is dan wordt de datum van vandaag teruggegeven.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SysContractsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization_id = "organization_id_example"; // string | 
+$connection_id = "connection_id_example"; // string | 
+$proposition_reference = "proposition_reference_example"; // string | De referentie van de propositie van het nieuwe contract
+
+try {
+    $result = $apiInstance->sysContractsGetFirstPossibleContractStartDate($organization_id, $connection_id, $proposition_reference);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SysContractsApi->sysContractsGetFirstPossibleContractStartDate: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **string**|  |
+ **connection_id** | **string**|  |
+ **proposition_reference** | **string**| De referentie van de propositie van het nieuwe contract |
+
+### Return type
+
+[**\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractStartDateResult**](../Model/EcedoERPCRMInterfaceApiContractStartDateResult.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sysContractsGetMeansOfProductionConnectionContracts**
+> \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[] sysContractsGetMeansOfProductionConnectionContracts($organization_id, $means_of_production_connection_id)
+
+Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
+
+Met deze api call kan een lijst van energieinkoopcontracten worden opgehaald op basis van een productie aansluiting
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SysContractsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization_id = "organization_id_example"; // string | 
+$means_of_production_connection_id = "means_of_production_connection_id_example"; // string | 
+
+try {
+    $result = $apiInstance->sysContractsGetMeansOfProductionConnectionContracts($organization_id, $means_of_production_connection_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SysContractsApi->sysContractsGetMeansOfProductionConnectionContracts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **string**|  |
+ **means_of_production_connection_id** | **string**|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[]**](../Model/EcedoERPCRMInterfaceApiEnergieInkoopContract.md)
 
 ### Authorization
 

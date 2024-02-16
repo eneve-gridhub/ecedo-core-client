@@ -62,6 +62,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
         'cap_tar_code_short' => 'string',
         'cap_tar_code_localized' => 'string',
         'market_segment' => 'string',
+        'advance_payment_amount' => 'double',
         'calculated_year_amount' => 'double'
     ];
 
@@ -76,6 +77,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
         'cap_tar_code_short' => null,
         'cap_tar_code_localized' => null,
         'market_segment' => null,
+        'advance_payment_amount' => 'double',
         'calculated_year_amount' => 'double'
     ];
 
@@ -111,6 +113,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
         'cap_tar_code_short' => 'CapTarCodeShort',
         'cap_tar_code_localized' => 'CapTarCodeLocalized',
         'market_segment' => 'MarketSegment',
+        'advance_payment_amount' => 'AdvancePaymentAmount',
         'calculated_year_amount' => 'CalculatedYearAmount'
     ];
 
@@ -125,6 +128,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
         'cap_tar_code_short' => 'setCapTarCodeShort',
         'cap_tar_code_localized' => 'setCapTarCodeLocalized',
         'market_segment' => 'setMarketSegment',
+        'advance_payment_amount' => 'setAdvancePaymentAmount',
         'calculated_year_amount' => 'setCalculatedYearAmount'
     ];
 
@@ -139,6 +143,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
         'cap_tar_code_short' => 'getCapTarCodeShort',
         'cap_tar_code_localized' => 'getCapTarCodeLocalized',
         'market_segment' => 'getMarketSegment',
+        'advance_payment_amount' => 'getAdvancePaymentAmount',
         'calculated_year_amount' => 'getCalculatedYearAmount'
     ];
 
@@ -222,6 +227,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
         $this->container['cap_tar_code_short'] = isset($data['cap_tar_code_short']) ? $data['cap_tar_code_short'] : null;
         $this->container['cap_tar_code_localized'] = isset($data['cap_tar_code_localized']) ? $data['cap_tar_code_localized'] : null;
         $this->container['market_segment'] = isset($data['market_segment']) ? $data['market_segment'] : null;
+        $this->container['advance_payment_amount'] = isset($data['advance_payment_amount']) ? $data['advance_payment_amount'] : null;
         $this->container['calculated_year_amount'] = isset($data['calculated_year_amount']) ? $data['calculated_year_amount'] : null;
     }
 
@@ -387,6 +393,30 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
     }
 
     /**
+     * Gets advance_payment_amount
+     *
+     * @return double
+     */
+    public function getAdvancePaymentAmount()
+    {
+        return $this->container['advance_payment_amount'];
+    }
+
+    /**
+     * Sets advance_payment_amount
+     *
+     * @param double $advance_payment_amount Het voorschotbedrag van deze aansluiting in euro's, inclusief btw
+     *
+     * @return $this
+     */
+    public function setAdvancePaymentAmount($advance_payment_amount)
+    {
+        $this->container['advance_payment_amount'] = $advance_payment_amount;
+
+        return $this;
+    }
+
+    /**
      * Gets calculated_year_amount
      *
      * @return double
@@ -399,7 +429,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
     /**
      * Sets calculated_year_amount
      *
-     * @param double $calculated_year_amount Het voorschotbedrag van deze aansluiting in euro's, inclusief btw
+     * @param double $calculated_year_amount calculated_year_amount
      *
      * @return $this
      */

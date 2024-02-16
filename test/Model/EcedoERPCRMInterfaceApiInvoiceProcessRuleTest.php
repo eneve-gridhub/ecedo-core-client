@@ -126,6 +126,20 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRuleTest extends \PHPUnit_Framework_T
     }
 
     /**
+     * Test attribute "block_type"
+     */
+    public function testPropertyBlockType()
+    {
+    }
+
+    /**
+     * Test attribute "block_type_localized"
+     */
+    public function testPropertyBlockTypeLocalized()
+    {
+    }
+
+    /**
      * Test attribute "cluster_reference"
      */
     public function testPropertyClusterReference()

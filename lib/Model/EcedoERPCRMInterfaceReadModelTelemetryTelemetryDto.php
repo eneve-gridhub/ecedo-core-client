@@ -65,13 +65,19 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         'end_date' => '\DateTime',
         'end_date_localized' => 'string',
         'value_ldn' => 'double',
+        'ldn_localized' => 'string',
         'value_odn' => 'double',
+        'odn_localized' => 'string',
         'raw_unit' => 'int',
         'unit' => 'string',
         'unit_localized' => 'string',
         'version' => 'int',
         'revision' => 'int',
-        'reference_date_time' => '\DateTime'
+        'reference_date_time' => '\DateTime',
+        'reference_date_time_localized' => 'string',
+        'telemetry_document_id' => 'string',
+        'source' => 'string',
+        'source_localized' => 'string'
     ];
 
     /**
@@ -88,13 +94,19 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         'end_date' => 'date-time',
         'end_date_localized' => null,
         'value_ldn' => 'double',
+        'ldn_localized' => null,
         'value_odn' => 'double',
+        'odn_localized' => null,
         'raw_unit' => 'int32',
         'unit' => null,
         'unit_localized' => null,
         'version' => 'int32',
         'revision' => 'int32',
-        'reference_date_time' => 'date-time'
+        'reference_date_time' => 'date-time',
+        'reference_date_time_localized' => null,
+        'telemetry_document_id' => 'uuid',
+        'source' => null,
+        'source_localized' => null
     ];
 
     /**
@@ -132,13 +144,19 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         'end_date' => 'EndDate',
         'end_date_localized' => 'EndDateLocalized',
         'value_ldn' => 'ValueLDN',
+        'ldn_localized' => 'LDNLocalized',
         'value_odn' => 'ValueODN',
+        'odn_localized' => 'ODNLocalized',
         'raw_unit' => 'RawUnit',
         'unit' => 'Unit',
         'unit_localized' => 'UnitLocalized',
         'version' => 'Version',
         'revision' => 'Revision',
-        'reference_date_time' => 'ReferenceDateTime'
+        'reference_date_time' => 'ReferenceDateTime',
+        'reference_date_time_localized' => 'ReferenceDateTimeLocalized',
+        'telemetry_document_id' => 'TelemetryDocumentId',
+        'source' => 'Source',
+        'source_localized' => 'SourceLocalized'
     ];
 
     /**
@@ -155,13 +173,19 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         'end_date' => 'setEndDate',
         'end_date_localized' => 'setEndDateLocalized',
         'value_ldn' => 'setValueLdn',
+        'ldn_localized' => 'setLdnLocalized',
         'value_odn' => 'setValueOdn',
+        'odn_localized' => 'setOdnLocalized',
         'raw_unit' => 'setRawUnit',
         'unit' => 'setUnit',
         'unit_localized' => 'setUnitLocalized',
         'version' => 'setVersion',
         'revision' => 'setRevision',
-        'reference_date_time' => 'setReferenceDateTime'
+        'reference_date_time' => 'setReferenceDateTime',
+        'reference_date_time_localized' => 'setReferenceDateTimeLocalized',
+        'telemetry_document_id' => 'setTelemetryDocumentId',
+        'source' => 'setSource',
+        'source_localized' => 'setSourceLocalized'
     ];
 
     /**
@@ -178,13 +202,19 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         'end_date' => 'getEndDate',
         'end_date_localized' => 'getEndDateLocalized',
         'value_ldn' => 'getValueLdn',
+        'ldn_localized' => 'getLdnLocalized',
         'value_odn' => 'getValueOdn',
+        'odn_localized' => 'getOdnLocalized',
         'raw_unit' => 'getRawUnit',
         'unit' => 'getUnit',
         'unit_localized' => 'getUnitLocalized',
         'version' => 'getVersion',
         'revision' => 'getRevision',
-        'reference_date_time' => 'getReferenceDateTime'
+        'reference_date_time' => 'getReferenceDateTime',
+        'reference_date_time_localized' => 'getReferenceDateTimeLocalized',
+        'telemetry_document_id' => 'getTelemetryDocumentId',
+        'source' => 'getSource',
+        'source_localized' => 'getSourceLocalized'
     ];
 
     /**
@@ -233,6 +263,11 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
     const UNIT_MTQ = 'MTQ';
     const UNIT_WH = 'WH';
     const UNIT_MJ = 'MJ';
+    const SOURCE_UNKNOWN = 'Unknown';
+    const SOURCE_PVNED = 'PVNED';
+    const SOURCE_EGSSIS = 'EGSSIS';
+    const SOURCE_NEXUS = 'Nexus';
+    const SOURCE_API = 'API';
     
 
     
@@ -249,6 +284,22 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
             self::UNIT_MTQ,
             self::UNIT_WH,
             self::UNIT_MJ,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSourceAllowableValues()
+    {
+        return [
+            self::SOURCE_UNKNOWN,
+            self::SOURCE_PVNED,
+            self::SOURCE_EGSSIS,
+            self::SOURCE_NEXUS,
+            self::SOURCE_API,
         ];
     }
     
@@ -276,13 +327,19 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['end_date_localized'] = isset($data['end_date_localized']) ? $data['end_date_localized'] : null;
         $this->container['value_ldn'] = isset($data['value_ldn']) ? $data['value_ldn'] : null;
+        $this->container['ldn_localized'] = isset($data['ldn_localized']) ? $data['ldn_localized'] : null;
         $this->container['value_odn'] = isset($data['value_odn']) ? $data['value_odn'] : null;
+        $this->container['odn_localized'] = isset($data['odn_localized']) ? $data['odn_localized'] : null;
         $this->container['raw_unit'] = isset($data['raw_unit']) ? $data['raw_unit'] : null;
         $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
         $this->container['unit_localized'] = isset($data['unit_localized']) ? $data['unit_localized'] : null;
         $this->container['version'] = isset($data['version']) ? $data['version'] : null;
         $this->container['revision'] = isset($data['revision']) ? $data['revision'] : null;
         $this->container['reference_date_time'] = isset($data['reference_date_time']) ? $data['reference_date_time'] : null;
+        $this->container['reference_date_time_localized'] = isset($data['reference_date_time_localized']) ? $data['reference_date_time_localized'] : null;
+        $this->container['telemetry_document_id'] = isset($data['telemetry_document_id']) ? $data['telemetry_document_id'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['source_localized'] = isset($data['source_localized']) ? $data['source_localized'] : null;
     }
 
     /**
@@ -298,6 +355,14 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
         if (!is_null($this->container['unit']) && !in_array($this->container['unit'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'unit', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getSourceAllowableValues();
+        if (!is_null($this->container['source']) && !in_array($this->container['source'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'source', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -354,7 +419,7 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
     /**
      * Sets connection_id
      *
-     * @param string $connection_id connection_id
+     * @param string $connection_id Wordt enkel binnen MeansOfProduction gebruikt/gevuld, overige gevallen blijft dit NULL
      *
      * @return $this
      */
@@ -510,6 +575,30 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
     }
 
     /**
+     * Gets ldn_localized
+     *
+     * @return string
+     */
+    public function getLdnLocalized()
+    {
+        return $this->container['ldn_localized'];
+    }
+
+    /**
+     * Sets ldn_localized
+     *
+     * @param string $ldn_localized ldn_localized
+     *
+     * @return $this
+     */
+    public function setLdnLocalized($ldn_localized)
+    {
+        $this->container['ldn_localized'] = $ldn_localized;
+
+        return $this;
+    }
+
+    /**
      * Gets value_odn
      *
      * @return double
@@ -529,6 +618,30 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
     public function setValueOdn($value_odn)
     {
         $this->container['value_odn'] = $value_odn;
+
+        return $this;
+    }
+
+    /**
+     * Gets odn_localized
+     *
+     * @return string
+     */
+    public function getOdnLocalized()
+    {
+        return $this->container['odn_localized'];
+    }
+
+    /**
+     * Sets odn_localized
+     *
+     * @param string $odn_localized odn_localized
+     *
+     * @return $this
+     */
+    public function setOdnLocalized($odn_localized)
+    {
+        $this->container['odn_localized'] = $odn_localized;
 
         return $this;
     }
@@ -682,6 +795,111 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
     public function setReferenceDateTime($reference_date_time)
     {
         $this->container['reference_date_time'] = $reference_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets reference_date_time_localized
+     *
+     * @return string
+     */
+    public function getReferenceDateTimeLocalized()
+    {
+        return $this->container['reference_date_time_localized'];
+    }
+
+    /**
+     * Sets reference_date_time_localized
+     *
+     * @param string $reference_date_time_localized reference_date_time_localized
+     *
+     * @return $this
+     */
+    public function setReferenceDateTimeLocalized($reference_date_time_localized)
+    {
+        $this->container['reference_date_time_localized'] = $reference_date_time_localized;
+
+        return $this;
+    }
+
+    /**
+     * Gets telemetry_document_id
+     *
+     * @return string
+     */
+    public function getTelemetryDocumentId()
+    {
+        return $this->container['telemetry_document_id'];
+    }
+
+    /**
+     * Sets telemetry_document_id
+     *
+     * @param string $telemetry_document_id telemetry_document_id
+     *
+     * @return $this
+     */
+    public function setTelemetryDocumentId($telemetry_document_id)
+    {
+        $this->container['telemetry_document_id'] = $telemetry_document_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     *
+     * @param string $source source
+     *
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $allowedValues = $this->getSourceAllowableValues();
+        if (!is_null($source) && !in_array($source, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'source', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_localized
+     *
+     * @return string
+     */
+    public function getSourceLocalized()
+    {
+        return $this->container['source_localized'];
+    }
+
+    /**
+     * Sets source_localized
+     *
+     * @param string $source_localized source_localized
+     *
+     * @return $this
+     */
+    public function setSourceLocalized($source_localized)
+    {
+        $this->container['source_localized'] = $source_localized;
 
         return $this;
     }

@@ -124,4 +124,18 @@ class EcedoERPCRMInterfaceApiPricePostDataTest extends \PHPUnit_Framework_TestCa
     public function testPropertyGosRegion()
     {
     }
+
+    /**
+     * Test attribute "range_begin"
+     */
+    public function testPropertyRangeBegin()
+    {
+    }
+
+    /**
+     * Test attribute "range_end"
+     */
+    public function testPropertyRangeEnd()
+    {
+    }
 }

@@ -322,6 +322,13 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
     }
 
     /**
+     * Test attribute "row_range_type"
+     */
+    public function testPropertyRowRangeType()
+    {
+    }
+
+    /**
      * Test attribute "row_has_factor"
      */
     public function testPropertyRowHasFactor()

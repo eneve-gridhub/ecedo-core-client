@@ -119,6 +119,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "organization_invoice_termination_fees"
+     */
+    public function testPropertyOrganizationInvoiceTerminationFees()
+    {
+    }
+
+    /**
      * Test attribute "organization_invoice_settlement_invoice_frequency"
      */
     public function testPropertyOrganizationInvoiceSettlementInvoiceFrequency()

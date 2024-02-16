@@ -91,6 +91,20 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEventTest extends \PHPUnit_Fr
     }
 
     /**
+     * Test attribute "meter_reading_event_type"
+     */
+    public function testPropertyMeterReadingEventType()
+    {
+    }
+
+    /**
+     * Test attribute "meter_reading_event_type_localized"
+     */
+    public function testPropertyMeterReadingEventTypeLocalized()
+    {
+    }
+
+    /**
      * Test attribute "organization_event_id"
      */
     public function testPropertyOrganizationEventId()

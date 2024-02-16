@@ -77,41 +77,6 @@ class EcedoERPCRMInterfaceApiContractImportPostDataTest extends \PHPUnit_Framewo
     }
 
     /**
-     * Test attribute "agreement_date"
-     */
-    public function testPropertyAgreementDate()
-    {
-    }
-
-    /**
-     * Test attribute "reference"
-     */
-    public function testPropertyReference()
-    {
-    }
-
-    /**
-     * Test attribute "start_date"
-     */
-    public function testPropertyStartDate()
-    {
-    }
-
-    /**
-     * Test attribute "end_date"
-     */
-    public function testPropertyEndDate()
-    {
-    }
-
-    /**
-     * Test attribute "proposition_reference"
-     */
-    public function testPropertyPropositionReference()
-    {
-    }
-
-    /**
      * Test attribute "meelift_proposition_reference"
      */
     public function testPropertyMeeliftPropositionReference()
@@ -150,6 +115,48 @@ class EcedoERPCRMInterfaceApiContractImportPostDataTest extends \PHPUnit_Framewo
      * Test attribute "billing_items"
      */
     public function testPropertyBillingItems()
+    {
+    }
+
+    /**
+     * Test attribute "agreement_date"
+     */
+    public function testPropertyAgreementDate()
+    {
+    }
+
+    /**
+     * Test attribute "reference"
+     */
+    public function testPropertyReference()
+    {
+    }
+
+    /**
+     * Test attribute "start_date"
+     */
+    public function testPropertyStartDate()
+    {
+    }
+
+    /**
+     * Test attribute "end_date"
+     */
+    public function testPropertyEndDate()
+    {
+    }
+
+    /**
+     * Test attribute "proposition_reference"
+     */
+    public function testPropertyPropositionReference()
+    {
+    }
+
+    /**
+     * Test attribute "comment"
+     */
+    public function testPropertyComment()
     {
     }
 }

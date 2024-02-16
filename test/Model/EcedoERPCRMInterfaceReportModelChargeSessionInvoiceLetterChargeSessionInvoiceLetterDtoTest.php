@@ -147,6 +147,20 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
     }
 
     /**
+     * Test attribute "organization_invoice_country_code"
+     */
+    public function testPropertyOrganizationInvoiceCountryCode()
+    {
+    }
+
+    /**
+     * Test attribute "organization_invoice_country"
+     */
+    public function testPropertyOrganizationInvoiceCountry()
+    {
+    }
+
+    /**
      * Test attribute "organization_invoice_type"
      */
     public function testPropertyOrganizationInvoiceType()

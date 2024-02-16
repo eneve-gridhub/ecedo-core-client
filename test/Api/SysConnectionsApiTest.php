@@ -122,6 +122,16 @@ class SysConnectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysConnectionsGetSwitchPeriodsForConnection
+     *
+     * Haal switchperiodes op voor specifieke aansluiting.
+     *
+     */
+    public function testSysConnectionsGetSwitchPeriodsForConnection()
+    {
+    }
+
+    /**
      * Test case for sysConnectionsHasContractInPeriod
      *
      * Controleer of EAN in gevraagde periode reeds een contract heeft.

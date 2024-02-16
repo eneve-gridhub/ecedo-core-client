@@ -287,6 +287,13 @@ class EcedoERPCRMInterfaceApiConnectionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "active_annual_standard_usage_type_localized"
+     */
+    public function testPropertyActiveAnnualStandardUsageTypeLocalized()
+    {
+    }
+
+    /**
      * Test attribute "contract"
      */
     public function testPropertyContract()

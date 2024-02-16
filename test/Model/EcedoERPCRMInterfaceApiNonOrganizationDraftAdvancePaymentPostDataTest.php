@@ -77,34 +77,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataTest exte
     }
 
     /**
-     * Test attribute "organization_type"
-     */
-    public function testPropertyOrganizationType()
-    {
-    }
-
-    /**
-     * Test attribute "agreement_date"
-     */
-    public function testPropertyAgreementDate()
-    {
-    }
-
-    /**
-     * Test attribute "month"
-     */
-    public function testPropertyMonth()
-    {
-    }
-
-    /**
-     * Test attribute "connections"
-     */
-    public function testPropertyConnections()
-    {
-    }
-
-    /**
      * Test attribute "do_combine_rows"
      */
     public function testPropertyDoCombineRows()
@@ -129,6 +101,34 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataTest exte
      * Test attribute "birth_day_key"
      */
     public function testPropertyBirthDayKey()
+    {
+    }
+
+    /**
+     * Test attribute "organization_type"
+     */
+    public function testPropertyOrganizationType()
+    {
+    }
+
+    /**
+     * Test attribute "agreement_date"
+     */
+    public function testPropertyAgreementDate()
+    {
+    }
+
+    /**
+     * Test attribute "month"
+     */
+    public function testPropertyMonth()
+    {
+    }
+
+    /**
+     * Test attribute "connections"
+     */
+    public function testPropertyConnections()
     {
     }
 }

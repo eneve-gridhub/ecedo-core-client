@@ -77,6 +77,27 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDtoTest extends \PHPUnit
     }
 
     /**
+     * Test attribute "value"
+     */
+    public function testPropertyValue()
+    {
+    }
+
+    /**
+     * Test attribute "value_ldn"
+     */
+    public function testPropertyValueLdn()
+    {
+    }
+
+    /**
+     * Test attribute "value_odn"
+     */
+    public function testPropertyValueOdn()
+    {
+    }
+
+    /**
      * Test attribute "telemetry_id"
      */
     public function testPropertyTelemetryId()
@@ -108,13 +129,6 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDtoTest extends \PHPUnit
      * Test attribute "end_date"
      */
     public function testPropertyEndDate()
-    {
-    }
-
-    /**
-     * Test attribute "value"
-     */
-    public function testPropertyValue()
     {
     }
 

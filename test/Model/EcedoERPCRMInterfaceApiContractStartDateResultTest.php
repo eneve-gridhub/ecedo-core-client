@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiUsageCalculationRowTest
+ * EcedoERPCRMInterfaceApiContractStartDateResultTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * EcedoERPCRMInterfaceApiUsageCalculationRowTest Class Doc Comment
+ * EcedoERPCRMInterfaceApiContractStartDateResultTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiUsageCalculationRow
+ * @description EcedoERPCRMInterfaceApiContractStartDateResult
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiUsageCalculationRowTest extends \PHPUnit_Framework_TestCase
+class EcedoERPCRMInterfaceApiContractStartDateResultTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,16 @@ class EcedoERPCRMInterfaceApiUsageCalculationRowTest extends \PHPUnit_Framework_
     }
 
     /**
-     * Test "EcedoERPCRMInterfaceApiUsageCalculationRow"
+     * Test "EcedoERPCRMInterfaceApiContractStartDateResult"
      */
-    public function testEcedoERPCRMInterfaceApiUsageCalculationRow()
+    public function testEcedoERPCRMInterfaceApiContractStartDateResult()
+    {
+    }
+
+    /**
+     * Test attribute "first_possible_start_date"
+     */
+    public function testPropertyFirstPossibleStartDate()
     {
     }
 }

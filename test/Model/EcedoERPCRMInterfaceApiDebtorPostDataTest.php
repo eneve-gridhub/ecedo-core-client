@@ -77,6 +77,41 @@ class EcedoERPCRMInterfaceApiDebtorPostDataTest extends \PHPUnit_Framework_TestC
     }
 
     /**
+     * Test attribute "print_advance_payment_invoice"
+     */
+    public function testPropertyPrintAdvancePaymentInvoice()
+    {
+    }
+
+    /**
+     * Test attribute "preferred_advance_payment_invoice_contact_method"
+     */
+    public function testPropertyPreferredAdvancePaymentInvoiceContactMethod()
+    {
+    }
+
+    /**
+     * Test attribute "preferred_settlement_invoice_contact_method"
+     */
+    public function testPropertyPreferredSettlementInvoiceContactMethod()
+    {
+    }
+
+    /**
+     * Test attribute "advance_payment_schedule_type"
+     */
+    public function testPropertyAdvancePaymentScheduleType()
+    {
+    }
+
+    /**
+     * Test attribute "generate_e_invoice"
+     */
+    public function testPropertyGenerateEInvoice()
+    {
+    }
+
+    /**
      * Test attribute "payment_method"
      */
     public function testPropertyPaymentMethod()
@@ -133,13 +168,6 @@ class EcedoERPCRMInterfaceApiDebtorPostDataTest extends \PHPUnit_Framework_TestC
     }
 
     /**
-     * Test attribute "print_advance_payment_invoice"
-     */
-    public function testPropertyPrintAdvancePaymentInvoice()
-    {
-    }
-
-    /**
      * Test attribute "preferred_automatic_collection_day"
      */
     public function testPropertyPreferredAutomaticCollectionDay()
@@ -161,37 +189,9 @@ class EcedoERPCRMInterfaceApiDebtorPostDataTest extends \PHPUnit_Framework_TestC
     }
 
     /**
-     * Test attribute "preferred_advance_payment_invoice_contact_method"
-     */
-    public function testPropertyPreferredAdvancePaymentInvoiceContactMethod()
-    {
-    }
-
-    /**
-     * Test attribute "preferred_settlement_invoice_contact_method"
-     */
-    public function testPropertyPreferredSettlementInvoiceContactMethod()
-    {
-    }
-
-    /**
-     * Test attribute "advance_payment_schedule_type"
-     */
-    public function testPropertyAdvancePaymentScheduleType()
-    {
-    }
-
-    /**
      * Test attribute "mandate_type"
      */
     public function testPropertyMandateType()
-    {
-    }
-
-    /**
-     * Test attribute "generate_e_invoice"
-     */
-    public function testPropertyGenerateEInvoice()
     {
     }
 

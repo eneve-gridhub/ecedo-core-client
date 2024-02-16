@@ -201,4 +201,11 @@ class EcedoERPCRMInterfaceApiExtendedMeterTest extends \PHPUnit_Framework_TestCa
     public function testPropertyMeterDialPositionOrderTypeLocalized()
     {
     }
+
+    /**
+     * Test attribute "factor"
+     */
+    public function testPropertyFactor()
+    {
+    }
 }

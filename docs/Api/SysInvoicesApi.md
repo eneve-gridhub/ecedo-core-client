@@ -15,9 +15,9 @@ Method | HTTP request | Description
 [**sysInvoicesGetInvoice**](SysInvoicesApi.md#sysInvoicesGetInvoice) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId} | Haal een specifieke factuur op
 [**sysInvoicesGetInvoiceReason**](SysInvoicesApi.md#sysInvoicesGetInvoiceReason) | **GET** /sysapi/v1.0/invoices/{invoiceId}/invoicereason | Vraag de reden op waarom de factuur is aangemaakt
 [**sysInvoicesGetInvoicesByCompany**](SysInvoicesApi.md#sysInvoicesGetInvoicesByCompany) | **GET** /sysapi/v1.0/invoices/afternumber/{invoiceNumber} | Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer&lt;br&gt;&lt;/br&gt;  Fetch invoices with invoice number greater than \&quot;invoiceNumber\&quot; for a company label: \&quot;companyLabelId\&quot;&lt;br&gt;&lt;/br&gt;      Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
-[**sysInvoicesGetInvoicesWithPrettySmaUsages**](SysInvoicesApi.md#sysInvoicesGetInvoicesWithPrettySmaUsages) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/prettyinvoiceusages | Haal verbruiksregels van een factuur op
 [**sysInvoicesGetInvoicesWithSmaUsages**](SysInvoicesApi.md#sysInvoicesGetInvoicesWithSmaUsages) | **GET** /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/invoiceusages | Haal verbruiksregels van een factuur op
-[**sysInvoicesGetInvoicesWithSmaUsagesV11**](SysInvoicesApi.md#sysInvoicesGetInvoicesWithSmaUsagesV11) | **GET** /sysapi/v1.1/organizations/{organizationId}/invoices/{invoiceId}/invoiceusages | Haal verbruiksregels van een factuur op
+[**sysInvoicesGetInvoicesWithSmaUsagesV11**](SysInvoicesApi.md#sysInvoicesGetInvoicesWithSmaUsagesV11) | **GET** /sysapi/v1.1/organizations/{organizationId}/invoices/{invoiceId}/invoiceusages | Haal verbruiksregels van een factuur op. Dit zijn altijd niet-gesaldeerde regels ook al is er in de bijbehorende factuur wel gesaldeerd. Dus voor elektriciteit komen er regels per kwartier terug en voor gas per uur.
+[**sysInvoicesGetInvoicesWithSmaUsagesV12**](SysInvoicesApi.md#sysInvoicesGetInvoicesWithSmaUsagesV12) | **GET** /sysapi/v1.2/organizations/{organizationId}/invoices/{invoiceId}/invoiceusages | Haal verbruiksregels van een factuur op. De regels zijn gesaldeerd als er in de bijbehorende factuur gesaldeerd is. Als er gesaldeerd is komen er voor elektriciteit regels per uur terug en voor gas ook. Als er niet gesaldeerd is komen er voor elektriciteit regels per kwartier terug en voor gas per uur.
 
 
 # **sysInvoicesAddInvoiceRows**
@@ -708,67 +708,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **sysInvoicesGetInvoicesWithPrettySmaUsages**
-> \Swagger\Client\Model\EcedoERPCRMInterfaceApiSmaInvoiceDetails sysInvoicesGetInvoicesWithPrettySmaUsages($invoice_id, $organization_id)
-
-Haal verbruiksregels van een factuur op
-
-Deze API wordt niet langer actief ondersteund. De API is vervangen door `GET /sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/invoiceusages`  Opvragen verbruiksregels van een SMA maand factuur. De factuur periode mag niet langer dan een maand zijn
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure API key authorization: Ocp-Apim-Subscription-Key
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\SysInvoicesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$invoice_id = "invoice_id_example"; // string | Guid van de factuur (Invoice)
-$organization_id = "organization_id_example"; // string | Guid van de klant (Organization)
-
-try {
-    $result = $apiInstance->sysInvoicesGetInvoicesWithPrettySmaUsages($invoice_id, $organization_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SysInvoicesApi->sysInvoicesGetInvoicesWithPrettySmaUsages: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **invoice_id** | **string**| Guid van de factuur (Invoice) |
- **organization_id** | **string**| Guid van de klant (Organization) |
-
-### Return type
-
-[**\Swagger\Client\Model\EcedoERPCRMInterfaceApiSmaInvoiceDetails**](../Model/EcedoERPCRMInterfaceApiSmaInvoiceDetails.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **sysInvoicesGetInvoicesWithSmaUsages**
 > \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceUsageCalculationRow[] sysInvoicesGetInvoicesWithSmaUsages($invoice_id, $organization_id)
 
@@ -833,7 +772,7 @@ Name | Type | Description  | Notes
 # **sysInvoicesGetInvoicesWithSmaUsagesV11**
 > \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse[] sysInvoicesGetInvoicesWithSmaUsagesV11($invoice_id, $organization_id)
 
-Haal verbruiksregels van een factuur op
+Haal verbruiksregels van een factuur op. Dit zijn altijd niet-gesaldeerde regels ook al is er in de bijbehorende factuur wel gesaldeerd. Dus voor elektriciteit komen er regels per kwartier terug en voor gas per uur.
 
 Sommige factuursoorten worden gebaseerd op verbruiksregels. Bijvoorbeeld spot- of marktrijsfacturen op basis van P4-intervalstanden of telemetriedata<br />  De factuurregels van de factuur bevatten gesommeerde volumes en kosten. De detailregels waarin de verbruiken en prijzen per uur of kwartier staan kunnen via deze API worden opgevraagd<br /><br />  De responses van factuur-API's (bijvoorbeeld `/sysapi/v1.0/organizations/{organizationId}/invoices`) bevatten informatie waaraan gezien kan worden of een factuur gebaseerd is op verbruiksregels. Dit gegeven is vastgelegd in het object `Ecedo.ERP.CRM.Interface.Api.Invoice` en het veld `HasInvoiceUsageCalculationRows`.<br /><br />  Deze API zal een fout (400) teruggegeven wanneer de API wordt aangeroepen met een niet bestaande `InvoiceId` of het `InvoiceId` niet hoort bij het meegegeven `OrganizationId`.<br /><br /><br />  Tags: `InvoiceUsageCalculationRow`
 
@@ -865,6 +804,67 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SysInvoicesApi->sysInvoicesGetInvoicesWithSmaUsagesV11: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invoice_id** | **string**| Guid van de factuur (Invoice) |
+ **organization_id** | **string**| Guid van de klant (Organization) |
+
+### Return type
+
+[**\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse[]**](../Model/EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization), [Ocp-Apim-Subscription-Key](../../README.md#Ocp-Apim-Subscription-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sysInvoicesGetInvoicesWithSmaUsagesV12**
+> \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse[] sysInvoicesGetInvoicesWithSmaUsagesV12($invoice_id, $organization_id)
+
+Haal verbruiksregels van een factuur op. De regels zijn gesaldeerd als er in de bijbehorende factuur gesaldeerd is. Als er gesaldeerd is komen er voor elektriciteit regels per uur terug en voor gas ook. Als er niet gesaldeerd is komen er voor elektriciteit regels per kwartier terug en voor gas per uur.
+
+Sommige factuursoorten worden gebaseerd op verbruiksregels. Bijvoorbeeld spot- of marktrijsfacturen op basis van P4-intervalstanden of telemetriedata<br />  De factuurregels van de factuur bevatten gesommeerde volumes en kosten. De detailregels waarin de verbruiken en prijzen per uur of kwartier staan kunnen via deze API worden opgevraagd<br /><br />  De responses van factuur-API's (bijvoorbeeld `/sysapi/v1.0/organizations/{organizationId}/invoices`) bevatten informatie waaraan gezien kan worden of een factuur gebaseerd is op verbruiksregels. Dit gegeven is vastgelegd in het object `Ecedo.ERP.CRM.Interface.Api.Invoice` en het veld `HasInvoiceUsageCalculationRows`.<br /><br />  Deze API zal een fout (400) teruggegeven wanneer de API wordt aangeroepen met een niet bestaande `InvoiceId` of het `InvoiceId` niet hoort bij het meegegeven `OrganizationId`.<br /><br /><br />  Tags: `InvoiceUsageCalculationRow`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// Configure API key authorization: Ocp-Apim-Subscription-Key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SysInvoicesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$invoice_id = "invoice_id_example"; // string | Guid van de factuur (Invoice)
+$organization_id = "organization_id_example"; // string | Guid van de klant (Organization)
+
+try {
+    $result = $apiInstance->sysInvoicesGetInvoicesWithSmaUsagesV12($invoice_id, $organization_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SysInvoicesApi->sysInvoicesGetInvoicesWithSmaUsagesV12: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
