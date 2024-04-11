@@ -406,14 +406,15 @@ class SysPropositionsApi
      * @param  \DateTime $valid_on Optioneel, als gevuld dan moet de propositie geldig zijn op deze datum (yyyy-mm-dd) (optional)
      * @param  string $reference_filter Optioneel, filter de proposities op (een deel van) de gegeven naam (optional)
      * @param  string $company_label_id Verplicht veld wanneer er in een omgeving meerdere labels geconfigureerd zijn. Mag weggelaten worden of null zijn in omgevingen waar maar één label geconfigureerd is (optional)
+     * @param  bool $include_provisional Optioneel; Inclusief voorlopige prijzen als true (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]
      */
-    public function sysPropositionsFilter($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null)
+    public function sysPropositionsFilter($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null, $include_provisional = null)
     {
-        list($response) = $this->sysPropositionsFilterWithHttpInfo($product_id, $valid_on, $reference_filter, $company_label_id);
+        list($response) = $this->sysPropositionsFilterWithHttpInfo($product_id, $valid_on, $reference_filter, $company_label_id, $include_provisional);
         return $response;
     }
 
@@ -426,15 +427,16 @@ class SysPropositionsApi
      * @param  \DateTime $valid_on Optioneel, als gevuld dan moet de propositie geldig zijn op deze datum (yyyy-mm-dd) (optional)
      * @param  string $reference_filter Optioneel, filter de proposities op (een deel van) de gegeven naam (optional)
      * @param  string $company_label_id Verplicht veld wanneer er in een omgeving meerdere labels geconfigureerd zijn. Mag weggelaten worden of null zijn in omgevingen waar maar één label geconfigureerd is (optional)
+     * @param  bool $include_provisional Optioneel; Inclusief voorlopige prijzen als true (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysPropositionsFilterWithHttpInfo($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null)
+    public function sysPropositionsFilterWithHttpInfo($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null, $include_provisional = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]';
-        $request = $this->sysPropositionsFilterRequest($product_id, $valid_on, $reference_filter, $company_label_id);
+        $request = $this->sysPropositionsFilterRequest($product_id, $valid_on, $reference_filter, $company_label_id, $include_provisional);
 
         try {
             $options = $this->createHttpClientOption();
@@ -520,13 +522,14 @@ class SysPropositionsApi
      * @param  \DateTime $valid_on Optioneel, als gevuld dan moet de propositie geldig zijn op deze datum (yyyy-mm-dd) (optional)
      * @param  string $reference_filter Optioneel, filter de proposities op (een deel van) de gegeven naam (optional)
      * @param  string $company_label_id Verplicht veld wanneer er in een omgeving meerdere labels geconfigureerd zijn. Mag weggelaten worden of null zijn in omgevingen waar maar één label geconfigureerd is (optional)
+     * @param  bool $include_provisional Optioneel; Inclusief voorlopige prijzen als true (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysPropositionsFilterAsync($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null)
+    public function sysPropositionsFilterAsync($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null, $include_provisional = null)
     {
-        return $this->sysPropositionsFilterAsyncWithHttpInfo($product_id, $valid_on, $reference_filter, $company_label_id)
+        return $this->sysPropositionsFilterAsyncWithHttpInfo($product_id, $valid_on, $reference_filter, $company_label_id, $include_provisional)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -543,14 +546,15 @@ class SysPropositionsApi
      * @param  \DateTime $valid_on Optioneel, als gevuld dan moet de propositie geldig zijn op deze datum (yyyy-mm-dd) (optional)
      * @param  string $reference_filter Optioneel, filter de proposities op (een deel van) de gegeven naam (optional)
      * @param  string $company_label_id Verplicht veld wanneer er in een omgeving meerdere labels geconfigureerd zijn. Mag weggelaten worden of null zijn in omgevingen waar maar één label geconfigureerd is (optional)
+     * @param  bool $include_provisional Optioneel; Inclusief voorlopige prijzen als true (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysPropositionsFilterAsyncWithHttpInfo($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null)
+    public function sysPropositionsFilterAsyncWithHttpInfo($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null, $include_provisional = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]';
-        $request = $this->sysPropositionsFilterRequest($product_id, $valid_on, $reference_filter, $company_label_id);
+        $request = $this->sysPropositionsFilterRequest($product_id, $valid_on, $reference_filter, $company_label_id, $include_provisional);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -596,11 +600,12 @@ class SysPropositionsApi
      * @param  \DateTime $valid_on Optioneel, als gevuld dan moet de propositie geldig zijn op deze datum (yyyy-mm-dd) (optional)
      * @param  string $reference_filter Optioneel, filter de proposities op (een deel van) de gegeven naam (optional)
      * @param  string $company_label_id Verplicht veld wanneer er in een omgeving meerdere labels geconfigureerd zijn. Mag weggelaten worden of null zijn in omgevingen waar maar één label geconfigureerd is (optional)
+     * @param  bool $include_provisional Optioneel; Inclusief voorlopige prijzen als true (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysPropositionsFilterRequest($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null)
+    protected function sysPropositionsFilterRequest($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null, $include_provisional = null)
     {
         // verify the required parameter 'product_id' is set
         if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
@@ -631,6 +636,10 @@ class SysPropositionsApi
         // query params
         if ($company_label_id !== null) {
             $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
+        }
+        // query params
+        if ($include_provisional !== null) {
+            $queryParams['includeProvisional'] = ObjectSerializer::toQueryValue($include_provisional);
         }
 
 
@@ -1018,7 +1027,7 @@ class SysPropositionsApi
      * @param  string $reference Client Propositie Reference (required)
      * @param  \DateTime $start_date Start prijs periode bijv. 2016-01-30 (required)
      * @param  \DateTime $end_date Eind prijs periode bijv 2016-03-01 (required)
-     * @param  bool $include_provisional Inclusief voorlopige prijzen bijv true (optional)
+     * @param  bool $include_provisional Optioneel; Inclusief voorlopige prijzen als true (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1038,7 +1047,7 @@ class SysPropositionsApi
      * @param  string $reference Client Propositie Reference (required)
      * @param  \DateTime $start_date Start prijs periode bijv. 2016-01-30 (required)
      * @param  \DateTime $end_date Eind prijs periode bijv 2016-03-01 (required)
-     * @param  bool $include_provisional Inclusief voorlopige prijzen bijv true (optional)
+     * @param  bool $include_provisional Optioneel; Inclusief voorlopige prijzen als true (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1132,7 +1141,7 @@ class SysPropositionsApi
      * @param  string $reference Client Propositie Reference (required)
      * @param  \DateTime $start_date Start prijs periode bijv. 2016-01-30 (required)
      * @param  \DateTime $end_date Eind prijs periode bijv 2016-03-01 (required)
-     * @param  bool $include_provisional Inclusief voorlopige prijzen bijv true (optional)
+     * @param  bool $include_provisional Optioneel; Inclusief voorlopige prijzen als true (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1155,7 +1164,7 @@ class SysPropositionsApi
      * @param  string $reference Client Propositie Reference (required)
      * @param  \DateTime $start_date Start prijs periode bijv. 2016-01-30 (required)
      * @param  \DateTime $end_date Eind prijs periode bijv 2016-03-01 (required)
-     * @param  bool $include_provisional Inclusief voorlopige prijzen bijv true (optional)
+     * @param  bool $include_provisional Optioneel; Inclusief voorlopige prijzen als true (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1208,7 +1217,7 @@ class SysPropositionsApi
      * @param  string $reference Client Propositie Reference (required)
      * @param  \DateTime $start_date Start prijs periode bijv. 2016-01-30 (required)
      * @param  \DateTime $end_date Eind prijs periode bijv 2016-03-01 (required)
-     * @param  bool $include_provisional Inclusief voorlopige prijzen bijv true (optional)
+     * @param  bool $include_provisional Optioneel; Inclusief voorlopige prijzen als true (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

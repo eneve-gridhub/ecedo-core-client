@@ -67,7 +67,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_unit' => 'string',
         'price_unit_localized' => 'string',
         'range_begin' => 'int',
-        'range_end' => 'int'
+        'range_end' => 'int',
+        'price_status_type' => 'string',
+        'price_status_type_localized' => 'string'
     ];
 
     /**
@@ -86,7 +88,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_unit' => null,
         'price_unit_localized' => null,
         'range_begin' => 'int32',
-        'range_end' => 'int32'
+        'range_end' => 'int32',
+        'price_status_type' => null,
+        'price_status_type_localized' => null
     ];
 
     /**
@@ -126,7 +130,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_unit' => 'PriceUnit',
         'price_unit_localized' => 'PriceUnitLocalized',
         'range_begin' => 'RangeBegin',
-        'range_end' => 'RangeEnd'
+        'range_end' => 'RangeEnd',
+        'price_status_type' => 'PriceStatusType',
+        'price_status_type_localized' => 'PriceStatusTypeLocalized'
     ];
 
     /**
@@ -145,7 +151,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_unit' => 'setPriceUnit',
         'price_unit_localized' => 'setPriceUnitLocalized',
         'range_begin' => 'setRangeBegin',
-        'range_end' => 'setRangeEnd'
+        'range_end' => 'setRangeEnd',
+        'price_status_type' => 'setPriceStatusType',
+        'price_status_type_localized' => 'setPriceStatusTypeLocalized'
     ];
 
     /**
@@ -164,7 +172,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_unit' => 'getPriceUnit',
         'price_unit_localized' => 'getPriceUnitLocalized',
         'range_begin' => 'getRangeBegin',
-        'range_end' => 'getRangeEnd'
+        'range_end' => 'getRangeEnd',
+        'price_status_type' => 'getPriceStatusType',
+        'price_status_type_localized' => 'getPriceStatusTypeLocalized'
     ];
 
     /**
@@ -208,8 +218,23 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         return self::$swaggerModelName;
     }
 
+    const PRICE_STATUS_TYPE_FINALIZED = 'Finalized';
+    const PRICE_STATUS_TYPE_PROVISIONAL = 'Provisional';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPriceStatusTypeAllowableValues()
+    {
+        return [
+            self::PRICE_STATUS_TYPE_FINALIZED,
+            self::PRICE_STATUS_TYPE_PROVISIONAL,
+        ];
+    }
     
 
     /**
@@ -238,6 +263,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         $this->container['price_unit_localized'] = isset($data['price_unit_localized']) ? $data['price_unit_localized'] : null;
         $this->container['range_begin'] = isset($data['range_begin']) ? $data['range_begin'] : null;
         $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
+        $this->container['price_status_type'] = isset($data['price_status_type']) ? $data['price_status_type'] : null;
+        $this->container['price_status_type_localized'] = isset($data['price_status_type_localized']) ? $data['price_status_type_localized'] : null;
     }
 
     /**
@@ -248,6 +275,14 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getPriceStatusTypeAllowableValues();
+        if (!is_null($this->container['price_status_type']) && !in_array($this->container['price_status_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'price_status_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -524,6 +559,63 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
     public function setRangeEnd($range_end)
     {
         $this->container['range_end'] = $range_end;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_status_type
+     *
+     * @return string
+     */
+    public function getPriceStatusType()
+    {
+        return $this->container['price_status_type'];
+    }
+
+    /**
+     * Sets price_status_type
+     *
+     * @param string $price_status_type price_status_type
+     *
+     * @return $this
+     */
+    public function setPriceStatusType($price_status_type)
+    {
+        $allowedValues = $this->getPriceStatusTypeAllowableValues();
+        if (!is_null($price_status_type) && !in_array($price_status_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'price_status_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['price_status_type'] = $price_status_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_status_type_localized
+     *
+     * @return string
+     */
+    public function getPriceStatusTypeLocalized()
+    {
+        return $this->container['price_status_type_localized'];
+    }
+
+    /**
+     * Sets price_status_type_localized
+     *
+     * @param string $price_status_type_localized price_status_type_localized
+     *
+     * @return $this
+     */
+    public function setPriceStatusTypeLocalized($price_status_type_localized)
+    {
+        $this->container['price_status_type_localized'] = $price_status_type_localized;
 
         return $this;
     }

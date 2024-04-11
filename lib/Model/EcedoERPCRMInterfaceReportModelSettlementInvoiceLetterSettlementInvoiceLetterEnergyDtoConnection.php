@@ -104,6 +104,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'connection_meter_number' => 'string',
         'connection_cluster_id' => 'string',
         'connection_cluster_reference' => 'string',
+        'connection_cluster_description' => 'string',
         'connection_cluster_comment' => 'string',
         'connection_fiscal_grid_operator' => 'string',
         'connection_treat_as_consumer' => 'bool',
@@ -172,6 +173,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'connection_meter_number' => null,
         'connection_cluster_id' => 'uuid',
         'connection_cluster_reference' => null,
+        'connection_cluster_description' => null,
         'connection_cluster_comment' => null,
         'connection_fiscal_grid_operator' => null,
         'connection_treat_as_consumer' => null,
@@ -261,6 +263,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'connection_meter_number' => 'Connection_Meter_Number',
         'connection_cluster_id' => 'Connection_Cluster_Id',
         'connection_cluster_reference' => 'Connection_Cluster_Reference',
+        'connection_cluster_description' => 'Connection_Cluster_Description',
         'connection_cluster_comment' => 'Connection_Cluster_Comment',
         'connection_fiscal_grid_operator' => 'Connection_FiscalGridOperator',
         'connection_treat_as_consumer' => 'Connection_TreatAsConsumer',
@@ -329,6 +332,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'connection_meter_number' => 'setConnectionMeterNumber',
         'connection_cluster_id' => 'setConnectionClusterId',
         'connection_cluster_reference' => 'setConnectionClusterReference',
+        'connection_cluster_description' => 'setConnectionClusterDescription',
         'connection_cluster_comment' => 'setConnectionClusterComment',
         'connection_fiscal_grid_operator' => 'setConnectionFiscalGridOperator',
         'connection_treat_as_consumer' => 'setConnectionTreatAsConsumer',
@@ -397,6 +401,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'connection_meter_number' => 'getConnectionMeterNumber',
         'connection_cluster_id' => 'getConnectionClusterId',
         'connection_cluster_reference' => 'getConnectionClusterReference',
+        'connection_cluster_description' => 'getConnectionClusterDescription',
         'connection_cluster_comment' => 'getConnectionClusterComment',
         'connection_fiscal_grid_operator' => 'getConnectionFiscalGridOperator',
         'connection_treat_as_consumer' => 'getConnectionTreatAsConsumer',
@@ -519,6 +524,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         $this->container['connection_meter_number'] = isset($data['connection_meter_number']) ? $data['connection_meter_number'] : null;
         $this->container['connection_cluster_id'] = isset($data['connection_cluster_id']) ? $data['connection_cluster_id'] : null;
         $this->container['connection_cluster_reference'] = isset($data['connection_cluster_reference']) ? $data['connection_cluster_reference'] : null;
+        $this->container['connection_cluster_description'] = isset($data['connection_cluster_description']) ? $data['connection_cluster_description'] : null;
         $this->container['connection_cluster_comment'] = isset($data['connection_cluster_comment']) ? $data['connection_cluster_comment'] : null;
         $this->container['connection_fiscal_grid_operator'] = isset($data['connection_fiscal_grid_operator']) ? $data['connection_fiscal_grid_operator'] : null;
         $this->container['connection_treat_as_consumer'] = isset($data['connection_treat_as_consumer']) ? $data['connection_treat_as_consumer'] : null;
@@ -1682,6 +1688,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setConnectionClusterReference($connection_cluster_reference)
     {
         $this->container['connection_cluster_reference'] = $connection_cluster_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_cluster_description
+     *
+     * @return string
+     */
+    public function getConnectionClusterDescription()
+    {
+        return $this->container['connection_cluster_description'];
+    }
+
+    /**
+     * Sets connection_cluster_description
+     *
+     * @param string $connection_cluster_description connection_cluster_description
+     *
+     * @return $this
+     */
+    public function setConnectionClusterDescription($connection_cluster_description)
+    {
+        $this->container['connection_cluster_description'] = $connection_cluster_description;
 
         return $this;
     }

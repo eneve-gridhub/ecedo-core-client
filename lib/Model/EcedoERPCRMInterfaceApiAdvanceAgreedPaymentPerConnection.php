@@ -283,7 +283,7 @@ class EcedoERPCRMInterfaceApiAdvanceAgreedPaymentPerConnection implements ModelI
     /**
      * Sets agreed_amount
      *
-     * @param double $agreed_amount agreed_amount
+     * @param double $agreed_amount Zie uitleg van AgreedAmount in bovenliggend object
      *
      * @return $this
      */
@@ -307,7 +307,7 @@ class EcedoERPCRMInterfaceApiAdvanceAgreedPaymentPerConnection implements ModelI
     /**
      * Sets target_amount
      *
-     * @param double $target_amount target_amount
+     * @param double $target_amount Zie uitleg van TargetAmount in bovenliggend object
      *
      * @return $this
      */

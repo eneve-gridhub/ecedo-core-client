@@ -58,6 +58,7 @@ class EcedoERPCRMInterfaceApiConnectionGroup implements ModelInterface, ArrayAcc
       */
     protected static $swaggerTypes = [
         'reference' => 'string',
+        'description' => 'string',
         'comment' => 'string',
         'connection_group_type' => 'string',
         'connection_group_type_localized' => 'string'
@@ -70,6 +71,7 @@ class EcedoERPCRMInterfaceApiConnectionGroup implements ModelInterface, ArrayAcc
       */
     protected static $swaggerFormats = [
         'reference' => null,
+        'description' => null,
         'comment' => null,
         'connection_group_type' => null,
         'connection_group_type_localized' => null
@@ -103,6 +105,7 @@ class EcedoERPCRMInterfaceApiConnectionGroup implements ModelInterface, ArrayAcc
      */
     protected static $attributeMap = [
         'reference' => 'Reference',
+        'description' => 'Description',
         'comment' => 'Comment',
         'connection_group_type' => 'ConnectionGroupType',
         'connection_group_type_localized' => 'ConnectionGroupTypeLocalized'
@@ -115,6 +118,7 @@ class EcedoERPCRMInterfaceApiConnectionGroup implements ModelInterface, ArrayAcc
      */
     protected static $setters = [
         'reference' => 'setReference',
+        'description' => 'setDescription',
         'comment' => 'setComment',
         'connection_group_type' => 'setConnectionGroupType',
         'connection_group_type_localized' => 'setConnectionGroupTypeLocalized'
@@ -127,6 +131,7 @@ class EcedoERPCRMInterfaceApiConnectionGroup implements ModelInterface, ArrayAcc
      */
     protected static $getters = [
         'reference' => 'getReference',
+        'description' => 'getDescription',
         'comment' => 'getComment',
         'connection_group_type' => 'getConnectionGroupType',
         'connection_group_type_localized' => 'getConnectionGroupTypeLocalized'
@@ -193,6 +198,7 @@ class EcedoERPCRMInterfaceApiConnectionGroup implements ModelInterface, ArrayAcc
     public function __construct(array $data = null)
     {
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
         $this->container['connection_group_type'] = isset($data['connection_group_type']) ? $data['connection_group_type'] : null;
         $this->container['connection_group_type_localized'] = isset($data['connection_group_type_localized']) ? $data['connection_group_type_localized'] : null;
@@ -247,6 +253,30 @@ class EcedoERPCRMInterfaceApiConnectionGroup implements ModelInterface, ArrayAcc
     }
 
     /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description De omschrijving van het cluster. Deze omschrijving wordt getoond in klantcommunicatie.
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
      * Gets comment
      *
      * @return string
@@ -259,7 +289,7 @@ class EcedoERPCRMInterfaceApiConnectionGroup implements ModelInterface, ArrayAcc
     /**
      * Sets comment
      *
-     * @param string $comment comment
+     * @param string $comment Dit veld is voor interne opmerkingen.
      *
      * @return $this
      */

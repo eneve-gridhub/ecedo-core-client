@@ -956,6 +956,8 @@ class SysPropositionGroupsApi
     /**
      * Operation sysPropositionGroupsPut
      *
+     * Wijzigen van een propositiegroep
+     *
      * @param  string $proposition_group_id proposition_group_id (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionGroupPutData $proposition_group_put_data proposition_group_put_data (required)
      *
@@ -971,6 +973,8 @@ class SysPropositionGroupsApi
 
     /**
      * Operation sysPropositionGroupsPutWithHttpInfo
+     *
+     * Wijzigen van een propositiegroep
      *
      * @param  string $proposition_group_id (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionGroupPutData $proposition_group_put_data (required)
@@ -1062,7 +1066,7 @@ class SysPropositionGroupsApi
     /**
      * Operation sysPropositionGroupsPutAsync
      *
-     * 
+     * Wijzigen van een propositiegroep
      *
      * @param  string $proposition_group_id (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionGroupPutData $proposition_group_put_data (required)
@@ -1083,7 +1087,7 @@ class SysPropositionGroupsApi
     /**
      * Operation sysPropositionGroupsPutAsyncWithHttpInfo
      *
-     * 
+     * Wijzigen van een propositiegroep
      *
      * @param  string $proposition_group_id (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionGroupPutData $proposition_group_put_data (required)

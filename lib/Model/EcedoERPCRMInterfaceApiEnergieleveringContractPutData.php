@@ -58,7 +58,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
       */
     protected static $swaggerTypes = [
         'meelift_proposition_reference' => 'string',
-        'original_end_date' => '\DateTime',
         'start_reason' => 'string',
         'end_reason' => 'string',
         'previous_contract_id' => 'string',
@@ -81,7 +80,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
       */
     protected static $swaggerFormats = [
         'meelift_proposition_reference' => null,
-        'original_end_date' => 'date',
         'start_reason' => null,
         'end_reason' => null,
         'previous_contract_id' => 'uuid',
@@ -125,7 +123,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
      */
     protected static $attributeMap = [
         'meelift_proposition_reference' => 'MeeliftPropositionReference',
-        'original_end_date' => 'OriginalEndDate',
         'start_reason' => 'StartReason',
         'end_reason' => 'EndReason',
         'previous_contract_id' => 'PreviousContractId',
@@ -148,7 +145,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
      */
     protected static $setters = [
         'meelift_proposition_reference' => 'setMeeliftPropositionReference',
-        'original_end_date' => 'setOriginalEndDate',
         'start_reason' => 'setStartReason',
         'end_reason' => 'setEndReason',
         'previous_contract_id' => 'setPreviousContractId',
@@ -171,7 +167,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
      */
     protected static $getters = [
         'meelift_proposition_reference' => 'getMeeliftPropositionReference',
-        'original_end_date' => 'getOriginalEndDate',
         'start_reason' => 'getStartReason',
         'end_reason' => 'getEndReason',
         'previous_contract_id' => 'getPreviousContractId',
@@ -229,18 +224,18 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     }
 
     const START_REASON_INITIAL = 'Initial';
+    const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const START_REASON_CUSTOMER_RENEWAL = 'CustomerRenewal';
     const START_REASON_CONTRACT_TYPE_CHANGE = 'ContractTypeChange';
-    const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const START_REASON_MOVE = 'Move';
     const START_REASON_PRODUCER_SWITCH = 'ProducerSwitch';
-    const STATUS_PROVISIONAL = 'Provisional';
+    const STATUS_FINALIZED = 'Finalized';
     const STATUS_ACTIVE = 'Active';
+    const STATUS_PROVISIONAL = 'Provisional';
     const STATUS_CANCELLED = 'Cancelled';
     const STATUS_ENDED = 'Ended';
     const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
     const STATUS_PROPOSED = 'Proposed';
-    const STATUS_FINALIZED = 'Finalized';
     
 
     
@@ -253,9 +248,9 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     {
         return [
             self::START_REASON_INITIAL,
+            self::START_REASON_AUTOMATIC_RENEWAL,
             self::START_REASON_CUSTOMER_RENEWAL,
             self::START_REASON_CONTRACT_TYPE_CHANGE,
-            self::START_REASON_AUTOMATIC_RENEWAL,
             self::START_REASON_MOVE,
             self::START_REASON_PRODUCER_SWITCH,
         ];
@@ -269,13 +264,13 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     public function getStatusAllowableValues()
     {
         return [
-            self::STATUS_PROVISIONAL,
+            self::STATUS_FINALIZED,
             self::STATUS_ACTIVE,
+            self::STATUS_PROVISIONAL,
             self::STATUS_CANCELLED,
             self::STATUS_ENDED,
             self::STATUS_WAIT_FOR_APPROVAL,
             self::STATUS_PROPOSED,
-            self::STATUS_FINALIZED,
         ];
     }
     
@@ -296,7 +291,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     public function __construct(array $data = null)
     {
         $this->container['meelift_proposition_reference'] = isset($data['meelift_proposition_reference']) ? $data['meelift_proposition_reference'] : null;
-        $this->container['original_end_date'] = isset($data['original_end_date']) ? $data['original_end_date'] : null;
         $this->container['start_reason'] = isset($data['start_reason']) ? $data['start_reason'] : null;
         $this->container['end_reason'] = isset($data['end_reason']) ? $data['end_reason'] : null;
         $this->container['previous_contract_id'] = isset($data['previous_contract_id']) ? $data['previous_contract_id'] : null;
@@ -372,30 +366,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     public function setMeeliftPropositionReference($meelift_proposition_reference)
     {
         $this->container['meelift_proposition_reference'] = $meelift_proposition_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets original_end_date
-     *
-     * @return \DateTime
-     */
-    public function getOriginalEndDate()
-    {
-        return $this->container['original_end_date'];
-    }
-
-    /**
-     * Sets original_end_date
-     *
-     * @param \DateTime $original_end_date Optionele parameter (default null). Hiermee kan de originele einddatum van een contract worden aangepast. Gebruik dit alleen in zeer specifieke gevallen.
-     *
-     * @return $this
-     */
-    public function setOriginalEndDate($original_end_date)
-    {
-        $this->container['original_end_date'] = $original_end_date;
 
         return $this;
     }

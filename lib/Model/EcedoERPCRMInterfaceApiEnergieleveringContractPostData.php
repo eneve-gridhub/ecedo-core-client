@@ -219,9 +219,9 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPostData implements ModelInt
     }
 
     const START_REASON_INITIAL = 'Initial';
+    const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const START_REASON_CUSTOMER_RENEWAL = 'CustomerRenewal';
     const START_REASON_CONTRACT_TYPE_CHANGE = 'ContractTypeChange';
-    const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const START_REASON_MOVE = 'Move';
     const START_REASON_PRODUCER_SWITCH = 'ProducerSwitch';
     
@@ -236,9 +236,9 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPostData implements ModelInt
     {
         return [
             self::START_REASON_INITIAL,
+            self::START_REASON_AUTOMATIC_RENEWAL,
             self::START_REASON_CUSTOMER_RENEWAL,
             self::START_REASON_CONTRACT_TYPE_CHANGE,
-            self::START_REASON_AUTOMATIC_RENEWAL,
             self::START_REASON_MOVE,
             self::START_REASON_PRODUCER_SWITCH,
         ];

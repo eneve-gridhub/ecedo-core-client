@@ -62,6 +62,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         'reason' => 'string',
         'is_used' => 'bool',
         'validate_tmr_band_width' => 'bool',
+        'has_already_been_validated' => 'bool',
         'organization_id' => 'string',
         'connection_id' => 'string',
         'ean' => 'string',
@@ -89,6 +90,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         'reason' => null,
         'is_used' => null,
         'validate_tmr_band_width' => null,
+        'has_already_been_validated' => null,
         'organization_id' => 'uuid',
         'connection_id' => 'uuid',
         'ean' => null,
@@ -137,6 +139,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         'reason' => 'Reason',
         'is_used' => 'IsUsed',
         'validate_tmr_band_width' => 'ValidateTMRBandWidth',
+        'has_already_been_validated' => 'HasAlreadyBeenValidated',
         'organization_id' => 'OrganizationId',
         'connection_id' => 'ConnectionId',
         'ean' => 'EAN',
@@ -164,6 +167,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         'reason' => 'setReason',
         'is_used' => 'setIsUsed',
         'validate_tmr_band_width' => 'setValidateTmrBandWidth',
+        'has_already_been_validated' => 'setHasAlreadyBeenValidated',
         'organization_id' => 'setOrganizationId',
         'connection_id' => 'setConnectionId',
         'ean' => 'setEan',
@@ -191,6 +195,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         'reason' => 'getReason',
         'is_used' => 'getIsUsed',
         'validate_tmr_band_width' => 'getValidateTmrBandWidth',
+        'has_already_been_validated' => 'getHasAlreadyBeenValidated',
         'organization_id' => 'getOrganizationId',
         'connection_id' => 'getConnectionId',
         'ean' => 'getEan',
@@ -480,6 +485,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['is_used'] = isset($data['is_used']) ? $data['is_used'] : null;
         $this->container['validate_tmr_band_width'] = isset($data['validate_tmr_band_width']) ? $data['validate_tmr_band_width'] : null;
+        $this->container['has_already_been_validated'] = isset($data['has_already_been_validated']) ? $data['has_already_been_validated'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
         $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
@@ -702,6 +708,30 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
     public function setValidateTmrBandWidth($validate_tmr_band_width)
     {
         $this->container['validate_tmr_band_width'] = $validate_tmr_band_width;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_already_been_validated
+     *
+     * @return bool
+     */
+    public function getHasAlreadyBeenValidated()
+    {
+        return $this->container['has_already_been_validated'];
+    }
+
+    /**
+     * Sets has_already_been_validated
+     *
+     * @param bool $has_already_been_validated De meterstand is al gevalideerd (door de energieleverancier), dus er hoeft geen validatie gedaan te worden
+     *
+     * @return $this
+     */
+    public function setHasAlreadyBeenValidated($has_already_been_validated)
+    {
+        $this->container['has_already_been_validated'] = $has_already_been_validated;
 
         return $this;
     }

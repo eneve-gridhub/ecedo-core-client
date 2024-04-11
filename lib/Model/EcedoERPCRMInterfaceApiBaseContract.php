@@ -62,7 +62,6 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         'agreement_date' => '\DateTime',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
-        'original_end_date' => '\DateTime',
         'proposition_id' => 'string',
         'proposition_reference' => 'string',
         'proposition_description' => 'string',
@@ -88,7 +87,6 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         'agreement_date' => 'date',
         'start_date' => 'date',
         'end_date' => 'date',
-        'original_end_date' => 'date',
         'proposition_id' => null,
         'proposition_reference' => null,
         'proposition_description' => null,
@@ -135,7 +133,6 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         'agreement_date' => 'AgreementDate',
         'start_date' => 'StartDate',
         'end_date' => 'EndDate',
-        'original_end_date' => 'OriginalEndDate',
         'proposition_id' => 'PropositionId',
         'proposition_reference' => 'PropositionReference',
         'proposition_description' => 'PropositionDescription',
@@ -161,7 +158,6 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         'agreement_date' => 'setAgreementDate',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'original_end_date' => 'setOriginalEndDate',
         'proposition_id' => 'setPropositionId',
         'proposition_reference' => 'setPropositionReference',
         'proposition_description' => 'setPropositionDescription',
@@ -187,7 +183,6 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         'agreement_date' => 'getAgreementDate',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'original_end_date' => 'getOriginalEndDate',
         'proposition_id' => 'getPropositionId',
         'proposition_reference' => 'getPropositionReference',
         'proposition_description' => 'getPropositionDescription',
@@ -243,8 +238,8 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const PROPOSITION_PRICING_TYPE_FIXED = 'Fixed';
     const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
+    const PROPOSITION_PRICING_TYPE_FIXED = 'Fixed';
     const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE = 'MeanDayMarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE = 'MeanMonthMarketPriceVariable';
@@ -252,13 +247,13 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
     const PROPOSITION_PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
     const PROPOSITION_PRICING_TYPE_FULL_ENDEX = 'FullEndex';
     const PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
-    const STATUS_PROVISIONAL = 'Provisional';
+    const STATUS_FINALIZED = 'Finalized';
     const STATUS_ACTIVE = 'Active';
+    const STATUS_PROVISIONAL = 'Provisional';
     const STATUS_CANCELLED = 'Cancelled';
     const STATUS_ENDED = 'Ended';
     const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
     const STATUS_PROPOSED = 'Proposed';
-    const STATUS_FINALIZED = 'Finalized';
     
 
     
@@ -270,8 +265,8 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
     public function getPropositionPricingTypeAllowableValues()
     {
         return [
-            self::PROPOSITION_PRICING_TYPE_FIXED,
             self::PROPOSITION_PRICING_TYPE_VARIABLE,
+            self::PROPOSITION_PRICING_TYPE_FIXED,
             self::PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE,
@@ -290,13 +285,13 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
     public function getStatusAllowableValues()
     {
         return [
-            self::STATUS_PROVISIONAL,
+            self::STATUS_FINALIZED,
             self::STATUS_ACTIVE,
+            self::STATUS_PROVISIONAL,
             self::STATUS_CANCELLED,
             self::STATUS_ENDED,
             self::STATUS_WAIT_FOR_APPROVAL,
             self::STATUS_PROPOSED,
-            self::STATUS_FINALIZED,
         ];
     }
     
@@ -321,7 +316,6 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['original_end_date'] = isset($data['original_end_date']) ? $data['original_end_date'] : null;
         $this->container['proposition_id'] = isset($data['proposition_id']) ? $data['proposition_id'] : null;
         $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
         $this->container['proposition_description'] = isset($data['proposition_description']) ? $data['proposition_description'] : null;
@@ -492,30 +486,6 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets original_end_date
-     *
-     * @return \DateTime
-     */
-    public function getOriginalEndDate()
-    {
-        return $this->container['original_end_date'];
-    }
-
-    /**
-     * Sets original_end_date
-     *
-     * @param \DateTime $original_end_date original_end_date
-     *
-     * @return $this
-     */
-    public function setOriginalEndDate($original_end_date)
-    {
-        $this->container['original_end_date'] = $original_end_date;
 
         return $this;
     }

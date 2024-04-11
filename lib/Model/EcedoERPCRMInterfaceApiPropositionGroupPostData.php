@@ -61,7 +61,8 @@ class EcedoERPCRMInterfaceApiPropositionGroupPostData implements ModelInterface,
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'company_label_id' => 'string',
-        'product_id' => 'string'
+        'product_id' => 'string',
+        'reference_proposition_group_id' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class EcedoERPCRMInterfaceApiPropositionGroupPostData implements ModelInterface,
         'start_date' => 'date',
         'end_date' => 'date',
         'company_label_id' => 'uuid',
-        'product_id' => 'uuid'
+        'product_id' => 'uuid',
+        'reference_proposition_group_id' => 'uuid'
     ];
 
     /**
@@ -108,7 +110,8 @@ class EcedoERPCRMInterfaceApiPropositionGroupPostData implements ModelInterface,
         'start_date' => 'StartDate',
         'end_date' => 'EndDate',
         'company_label_id' => 'CompanyLabelId',
-        'product_id' => 'ProductId'
+        'product_id' => 'ProductId',
+        'reference_proposition_group_id' => 'ReferencePropositionGroupId'
     ];
 
     /**
@@ -121,7 +124,8 @@ class EcedoERPCRMInterfaceApiPropositionGroupPostData implements ModelInterface,
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'company_label_id' => 'setCompanyLabelId',
-        'product_id' => 'setProductId'
+        'product_id' => 'setProductId',
+        'reference_proposition_group_id' => 'setReferencePropositionGroupId'
     ];
 
     /**
@@ -134,7 +138,8 @@ class EcedoERPCRMInterfaceApiPropositionGroupPostData implements ModelInterface,
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'company_label_id' => 'getCompanyLabelId',
-        'product_id' => 'getProductId'
+        'product_id' => 'getProductId',
+        'reference_proposition_group_id' => 'getReferencePropositionGroupId'
     ];
 
     /**
@@ -202,6 +207,7 @@ class EcedoERPCRMInterfaceApiPropositionGroupPostData implements ModelInterface,
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
+        $this->container['reference_proposition_group_id'] = isset($data['reference_proposition_group_id']) ? $data['reference_proposition_group_id'] : null;
     }
 
     /**
@@ -344,6 +350,30 @@ class EcedoERPCRMInterfaceApiPropositionGroupPostData implements ModelInterface,
     public function setProductId($product_id)
     {
         $this->container['product_id'] = $product_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets reference_proposition_group_id
+     *
+     * @return string
+     */
+    public function getReferencePropositionGroupId()
+    {
+        return $this->container['reference_proposition_group_id'];
+    }
+
+    /**
+     * Sets reference_proposition_group_id
+     *
+     * @param string $reference_proposition_group_id reference_proposition_group_id
+     *
+     * @return $this
+     */
+    public function setReferencePropositionGroupId($reference_proposition_group_id)
+    {
+        $this->container['reference_proposition_group_id'] = $reference_proposition_group_id;
 
         return $this;
     }

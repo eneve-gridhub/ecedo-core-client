@@ -261,6 +261,8 @@ class EcedoERPCRMInterfaceApiEmailResponse implements ModelInterface, ArrayAcces
     const EMAIL_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT_INVOICE_EMAIL = 'CustomEnergyPurchaseSettlementInvoiceEmail';
     const EMAIL_TYPE_EV_CHARGER_REIMBURSEMENT_INVOICE_EMAIL = 'EvChargerReimbursementInvoiceEmail';
     const EMAIL_TYPE_EV_CHARGE_CARD_INVOICE_EMAIL = 'EvChargeCardInvoiceEmail';
+    const EMAIL_TYPE_P4_DATA_NOT_AVAILABLE_EMAIL = 'P4DataNotAvailableEmail';
+    const EMAIL_TYPE_P4_DATA_AVAILABLE_AFTER_FAILURE_EMAIL = 'P4DataAvailableAfterFailureEmail';
     const STATUS_CREATED = 'Created';
     const STATUS_SENT = 'Sent';
     const STATUS_ERROR = 'Error';
@@ -309,6 +311,8 @@ class EcedoERPCRMInterfaceApiEmailResponse implements ModelInterface, ArrayAcces
             self::EMAIL_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT_INVOICE_EMAIL,
             self::EMAIL_TYPE_EV_CHARGER_REIMBURSEMENT_INVOICE_EMAIL,
             self::EMAIL_TYPE_EV_CHARGE_CARD_INVOICE_EMAIL,
+            self::EMAIL_TYPE_P4_DATA_NOT_AVAILABLE_EMAIL,
+            self::EMAIL_TYPE_P4_DATA_AVAILABLE_AFTER_FAILURE_EMAIL,
         ];
     }
     

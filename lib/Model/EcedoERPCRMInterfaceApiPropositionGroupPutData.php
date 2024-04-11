@@ -58,6 +58,7 @@ class EcedoERPCRMInterfaceApiPropositionGroupPutData implements ModelInterface, 
       */
     protected static $swaggerTypes = [
         'description' => 'string',
+        'reference_proposition_group_id' => 'string',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime'
     ];
@@ -69,6 +70,7 @@ class EcedoERPCRMInterfaceApiPropositionGroupPutData implements ModelInterface, 
       */
     protected static $swaggerFormats = [
         'description' => null,
+        'reference_proposition_group_id' => 'uuid',
         'start_date' => 'date',
         'end_date' => 'date'
     ];
@@ -101,6 +103,7 @@ class EcedoERPCRMInterfaceApiPropositionGroupPutData implements ModelInterface, 
      */
     protected static $attributeMap = [
         'description' => 'Description',
+        'reference_proposition_group_id' => 'ReferencePropositionGroupId',
         'start_date' => 'StartDate',
         'end_date' => 'EndDate'
     ];
@@ -112,6 +115,7 @@ class EcedoERPCRMInterfaceApiPropositionGroupPutData implements ModelInterface, 
      */
     protected static $setters = [
         'description' => 'setDescription',
+        'reference_proposition_group_id' => 'setReferencePropositionGroupId',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate'
     ];
@@ -123,6 +127,7 @@ class EcedoERPCRMInterfaceApiPropositionGroupPutData implements ModelInterface, 
      */
     protected static $getters = [
         'description' => 'getDescription',
+        'reference_proposition_group_id' => 'getReferencePropositionGroupId',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate'
     ];
@@ -188,6 +193,7 @@ class EcedoERPCRMInterfaceApiPropositionGroupPutData implements ModelInterface, 
     public function __construct(array $data = null)
     {
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['reference_proposition_group_id'] = isset($data['reference_proposition_group_id']) ? $data['reference_proposition_group_id'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
     }
@@ -236,6 +242,30 @@ class EcedoERPCRMInterfaceApiPropositionGroupPutData implements ModelInterface, 
     public function setDescription($description)
     {
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets reference_proposition_group_id
+     *
+     * @return string
+     */
+    public function getReferencePropositionGroupId()
+    {
+        return $this->container['reference_proposition_group_id'];
+    }
+
+    /**
+     * Sets reference_proposition_group_id
+     *
+     * @param string $reference_proposition_group_id reference_proposition_group_id
+     *
+     * @return $this
+     */
+    public function setReferencePropositionGroupId($reference_proposition_group_id)
+    {
+        $this->container['reference_proposition_group_id'] = $reference_proposition_group_id;
 
         return $this;
     }

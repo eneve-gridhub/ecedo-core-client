@@ -90,11 +90,11 @@ class SysEmailsApi
     /**
      * Operation sysEmailsGet
      *
-     * Retourneert een lijst van e-mails die bij een organisatie horen aan de hand van de meegegeven parameters
+     * Haal e-mails van een specifieke klant
      *
      * @param  string $organization_id De guid van de organisatie van wie de e-mails geretourneerd moeten worden (required)
-     * @param  bool $only_sent Haal alleen de e-mails op die als status verstuurd hebben (optional)
-     * @param  \DateTime $sent_after Haal alleen de e-mails op die na deze datum verstuurd zijn of de e-mails die nog niet verstuurd zijn (optional)
+     * @param  bool $only_sent Haal alleen de e-mails op die als status verstuurd hebben (default: true) (optional)
+     * @param  \DateTime $sent_after Haal alleen de e-mails op die na deze datum verstuurd zijn of de e-mails die nog niet verstuurd zijn (default: null, dus alle e-mails ophalen) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -109,11 +109,11 @@ class SysEmailsApi
     /**
      * Operation sysEmailsGetWithHttpInfo
      *
-     * Retourneert een lijst van e-mails die bij een organisatie horen aan de hand van de meegegeven parameters
+     * Haal e-mails van een specifieke klant
      *
      * @param  string $organization_id De guid van de organisatie van wie de e-mails geretourneerd moeten worden (required)
-     * @param  bool $only_sent Haal alleen de e-mails op die als status verstuurd hebben (optional)
-     * @param  \DateTime $sent_after Haal alleen de e-mails op die na deze datum verstuurd zijn of de e-mails die nog niet verstuurd zijn (optional)
+     * @param  bool $only_sent Haal alleen de e-mails op die als status verstuurd hebben (default: true) (optional)
+     * @param  \DateTime $sent_after Haal alleen de e-mails op die na deze datum verstuurd zijn of de e-mails die nog niet verstuurd zijn (default: null, dus alle e-mails ophalen) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -202,11 +202,11 @@ class SysEmailsApi
     /**
      * Operation sysEmailsGetAsync
      *
-     * Retourneert een lijst van e-mails die bij een organisatie horen aan de hand van de meegegeven parameters
+     * Haal e-mails van een specifieke klant
      *
      * @param  string $organization_id De guid van de organisatie van wie de e-mails geretourneerd moeten worden (required)
-     * @param  bool $only_sent Haal alleen de e-mails op die als status verstuurd hebben (optional)
-     * @param  \DateTime $sent_after Haal alleen de e-mails op die na deze datum verstuurd zijn of de e-mails die nog niet verstuurd zijn (optional)
+     * @param  bool $only_sent Haal alleen de e-mails op die als status verstuurd hebben (default: true) (optional)
+     * @param  \DateTime $sent_after Haal alleen de e-mails op die na deze datum verstuurd zijn of de e-mails die nog niet verstuurd zijn (default: null, dus alle e-mails ophalen) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -224,11 +224,11 @@ class SysEmailsApi
     /**
      * Operation sysEmailsGetAsyncWithHttpInfo
      *
-     * Retourneert een lijst van e-mails die bij een organisatie horen aan de hand van de meegegeven parameters
+     * Haal e-mails van een specifieke klant
      *
      * @param  string $organization_id De guid van de organisatie van wie de e-mails geretourneerd moeten worden (required)
-     * @param  bool $only_sent Haal alleen de e-mails op die als status verstuurd hebben (optional)
-     * @param  \DateTime $sent_after Haal alleen de e-mails op die na deze datum verstuurd zijn of de e-mails die nog niet verstuurd zijn (optional)
+     * @param  bool $only_sent Haal alleen de e-mails op die als status verstuurd hebben (default: true) (optional)
+     * @param  \DateTime $sent_after Haal alleen de e-mails op die na deze datum verstuurd zijn of de e-mails die nog niet verstuurd zijn (default: null, dus alle e-mails ophalen) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -279,8 +279,8 @@ class SysEmailsApi
      * Create request for operation 'sysEmailsGet'
      *
      * @param  string $organization_id De guid van de organisatie van wie de e-mails geretourneerd moeten worden (required)
-     * @param  bool $only_sent Haal alleen de e-mails op die als status verstuurd hebben (optional)
-     * @param  \DateTime $sent_after Haal alleen de e-mails op die na deze datum verstuurd zijn of de e-mails die nog niet verstuurd zijn (optional)
+     * @param  bool $only_sent Haal alleen de e-mails op die als status verstuurd hebben (default: true) (optional)
+     * @param  \DateTime $sent_after Haal alleen de e-mails op die na deze datum verstuurd zijn of de e-mails die nog niet verstuurd zijn (default: null, dus alle e-mails ophalen) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -403,7 +403,7 @@ class SysEmailsApi
     /**
      * Operation sysEmailsSendEmail
      *
-     * Een e-mail versturen
+     * Een bestaande e-mail (opnieuw) oversturen
      *
      * @param  string $organization_id Id van de organisatie (required)
      * @param  string $email_id Id van de e-mail die (opnieuw) verstuurd moet worden (required)
@@ -421,7 +421,7 @@ class SysEmailsApi
     /**
      * Operation sysEmailsSendEmailWithHttpInfo
      *
-     * Een e-mail versturen
+     * Een bestaande e-mail (opnieuw) oversturen
      *
      * @param  string $organization_id Id van de organisatie (required)
      * @param  string $email_id Id van de e-mail die (opnieuw) verstuurd moet worden (required)
@@ -513,7 +513,7 @@ class SysEmailsApi
     /**
      * Operation sysEmailsSendEmailAsync
      *
-     * Een e-mail versturen
+     * Een bestaande e-mail (opnieuw) oversturen
      *
      * @param  string $organization_id Id van de organisatie (required)
      * @param  string $email_id Id van de e-mail die (opnieuw) verstuurd moet worden (required)
@@ -534,7 +534,7 @@ class SysEmailsApi
     /**
      * Operation sysEmailsSendEmailAsyncWithHttpInfo
      *
-     * Een e-mail versturen
+     * Een bestaande e-mail (opnieuw) oversturen
      *
      * @param  string $organization_id Id van de organisatie (required)
      * @param  string $email_id Id van de e-mail die (opnieuw) verstuurd moet worden (required)

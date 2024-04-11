@@ -338,7 +338,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets cluster_reference
      *
-     * @param string $cluster_reference cluster_reference
+     * @param string $cluster_reference De referentie van het cluster waarvoor het voorschot gecalculeerd moet worden.
      *
      * @return $this
      */
@@ -362,7 +362,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date start_date
+     * @param \DateTime $start_date Optioneel veld waarmee aangegeven kan worden in welke maand het voorschot moet starten. Formaat: yyyy-MM-dd waarbij dd altijd 01 moet zijn.<br />  Als dit veld null is zal Ecedo automatisch de eerst mogelijke startmaand selecteren, gebaseerd op de aansluitingen en contracten van de klant, gefactureerde voorschotfacturen en voorschotfacturen die in het proces zitten om verstuurd te worden.
      *
      * @return $this
      */
@@ -386,7 +386,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date end_date
+     * @param \DateTime $end_date Optionele einddatum van het voorschot. Als dit veld niet wordt meegegeven dan zal het voorschot actief blijven tot een nieuw voorschot wordt berekend.
      *
      * @return $this
      */
@@ -410,7 +410,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets has_advance_payment
      *
-     * @param bool $has_advance_payment has_advance_payment
+     * @param bool $has_advance_payment Verplicht veld waarmee aangegeven kan worden of een klant een voorschot moet krijgen.
      *
      * @return $this
      */
@@ -434,7 +434,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets connection_amounts
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvanceAgreedPaymentPerConnection[] $connection_amounts connection_amounts
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvanceAgreedPaymentPerConnection[] $connection_amounts Optionele lijst waarmee Amounts per aansluiting meegestuurd kunnen worden.
      *
      * @return $this
      */
@@ -458,7 +458,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets inform_customer
      *
-     * @param bool $inform_customer inform_customer
+     * @param bool $inform_customer Default true. Met behulp van deze instelling kan aangegeven dat een klant niet vanuit Ecedo op de hoogte moet worden gesteld over het nieuwe voorschot. Als deze instelling true is wordt aan de hand van de instellingen bepaald of de klant daadwerkelijk op de hoogte moet worden gesteld. De manier waarop de klant op de hoogte wordt gesteld is ook afhankelijk van de gekozen instellingen.
      *
      * @return $this
      */
@@ -482,7 +482,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets delete_future_unused_advance_payments
      *
-     * @param bool $delete_future_unused_advance_payments delete_future_unused_advance_payments
+     * @param bool $delete_future_unused_advance_payments Optioneel veld waarmee aangegeven kan worden dat nog niet gefactureerde toekomstige voorschotten verwijderd moeten worden.
      *
      * @return $this
      */
@@ -506,7 +506,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets calculation_reason
      *
-     * @param string $calculation_reason calculation_reason
+     * @param string $calculation_reason Optioneel veld waarmee aangegeven kan worden waarom het voorschot is berekend.
      *
      * @return $this
      */
@@ -539,7 +539,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets do_combine_rows
      *
-     * @param bool $do_combine_rows do_combine_rows
+     * @param bool $do_combine_rows De response bevat het berekende voorschot, inclusief de berekende voorschot-regels. Met behulp van deze instelling kan bepaald worden of deze regels samengevoegd moeten worden via de geconfigureerde regels of op detailniveau geretourneerd moeten worden.
      *
      * @return $this
      */
@@ -563,7 +563,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets amount
      *
-     * @param double $amount Obsolete: Dit veld is vervangen door AgreedAmount, zodat het verschil met TargetAmount duidelijk zichtbaar is
+     * @param double $amount Obsolete: Dit veld is vervangen door AgreedAmount, zodat het verschil met TargetAmount duidelijk zichtbaar is.
      *
      * @return $this
      */
@@ -587,7 +587,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets agreed_amount
      *
-     * @param double $agreed_amount agreed_amount
+     * @param double $agreed_amount Met behulp van dit veld kan aangestuurd worden welk bedrag het voorschot krijgt. Het voorschot wordt nog steeds uitgerekend op basis van het SJV/VJV en de contractprijzen en het verschil tussen de berekende Amount en de AgreedAmount wordt via afronding-regels verrekend. Het AgreedAmount blijft voor lagere tijd actief, afhankelijk van de instellingen.
      *
      * @return $this
      */
@@ -611,7 +611,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets target_amount
      *
-     * @param double $target_amount target_amount
+     * @param double $target_amount Met behulp van dit veld kan aangestuurd worden welk bedrag het voorschot krijgt. Het voorschot wordt nog steeds uitgerekend op basis van het SJV/VJV en de contractprijzen en het verschil tussen de berekende Amount en de AgreedAmount wordt via afronding-regels verrekend. Het TargetAmount is alleen geldig voor dit voorschot. Als een nieuw voorschot wordt gecalculeerd zal dit bedrag niet behouden blijven.
      *
      * @return $this
      */
@@ -635,7 +635,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets comment
      *
-     * @param string $comment comment
+     * @param string $comment Optioneel veld waarmee een opmerking toegevoegd kan worden. Bijvoorbeeld om aan te geven waarom het voorschot berekend is.
      *
      * @return $this
      */
