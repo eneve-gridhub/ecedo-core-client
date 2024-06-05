@@ -105,6 +105,20 @@ class EcedoERPCRMInterfaceApiConnectionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "energy_tax_connection_group_id"
+     */
+    public function testPropertyEnergyTaxConnectionGroupId()
+    {
+    }
+
+    /**
+     * Test attribute "energy_tax_connection_group_reference"
+     */
+    public function testPropertyEnergyTaxConnectionGroupReference()
+    {
+    }
+
+    /**
      * Test attribute "description"
      */
     public function testPropertyDescription()

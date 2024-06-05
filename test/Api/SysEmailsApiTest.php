@@ -74,7 +74,7 @@ class SysEmailsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysEmailsGet
      *
-     * Retourneert een lijst van e-mails die bij een organisatie horen aan de hand van de meegegeven parameters.
+     * Haal e-mails van een specifieke klant.
      *
      */
     public function testSysEmailsGet()
@@ -84,7 +84,7 @@ class SysEmailsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysEmailsSendEmail
      *
-     * Een e-mail versturen.
+     * Een bestaande e-mail (opnieuw) oversturen.
      *
      */
     public function testSysEmailsSendEmail()

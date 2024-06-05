@@ -83,6 +83,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'parent_organization_id' => 'string',
         'organization_group_id' => 'string',
         'invoice_group_reference' => 'string',
+        'energy_tax_group_reference' => 'string',
         'mailing_address' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAddressPostData',
         'business_address' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAddressPostData',
         'person' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPersonPostData',
@@ -91,7 +92,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'authorized_signatory' => 'string',
         'representative_id' => 'string',
         'is_intercompany' => 'bool',
-        'company_label_id' => 'string'
+        'company_label_id' => 'string',
+        'reseller_organization_id' => 'string'
     ];
 
     /**
@@ -126,6 +128,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'parent_organization_id' => 'uuid',
         'organization_group_id' => 'uuid',
         'invoice_group_reference' => null,
+        'energy_tax_group_reference' => null,
         'mailing_address' => null,
         'business_address' => null,
         'person' => null,
@@ -134,7 +137,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'authorized_signatory' => null,
         'representative_id' => 'uuid',
         'is_intercompany' => null,
-        'company_label_id' => 'uuid'
+        'company_label_id' => 'uuid',
+        'reseller_organization_id' => 'uuid'
     ];
 
     /**
@@ -190,6 +194,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'parent_organization_id' => 'ParentOrganizationId',
         'organization_group_id' => 'OrganizationGroupId',
         'invoice_group_reference' => 'InvoiceGroupReference',
+        'energy_tax_group_reference' => 'EnergyTaxGroupReference',
         'mailing_address' => 'MailingAddress',
         'business_address' => 'BusinessAddress',
         'person' => 'Person',
@@ -198,7 +203,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'authorized_signatory' => 'AuthorizedSignatory',
         'representative_id' => 'RepresentativeId',
         'is_intercompany' => 'IsIntercompany',
-        'company_label_id' => 'CompanyLabelId'
+        'company_label_id' => 'CompanyLabelId',
+        'reseller_organization_id' => 'ResellerOrganizationId'
     ];
 
     /**
@@ -233,6 +239,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'parent_organization_id' => 'setParentOrganizationId',
         'organization_group_id' => 'setOrganizationGroupId',
         'invoice_group_reference' => 'setInvoiceGroupReference',
+        'energy_tax_group_reference' => 'setEnergyTaxGroupReference',
         'mailing_address' => 'setMailingAddress',
         'business_address' => 'setBusinessAddress',
         'person' => 'setPerson',
@@ -241,7 +248,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'authorized_signatory' => 'setAuthorizedSignatory',
         'representative_id' => 'setRepresentativeId',
         'is_intercompany' => 'setIsIntercompany',
-        'company_label_id' => 'setCompanyLabelId'
+        'company_label_id' => 'setCompanyLabelId',
+        'reseller_organization_id' => 'setResellerOrganizationId'
     ];
 
     /**
@@ -276,6 +284,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'parent_organization_id' => 'getParentOrganizationId',
         'organization_group_id' => 'getOrganizationGroupId',
         'invoice_group_reference' => 'getInvoiceGroupReference',
+        'energy_tax_group_reference' => 'getEnergyTaxGroupReference',
         'mailing_address' => 'getMailingAddress',
         'business_address' => 'getBusinessAddress',
         'person' => 'getPerson',
@@ -284,7 +293,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'authorized_signatory' => 'getAuthorizedSignatory',
         'representative_id' => 'getRepresentativeId',
         'is_intercompany' => 'getIsIntercompany',
-        'company_label_id' => 'getCompanyLabelId'
+        'company_label_id' => 'getCompanyLabelId',
+        'reseller_organization_id' => 'getResellerOrganizationId'
     ];
 
     /**
@@ -403,6 +413,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         $this->container['parent_organization_id'] = isset($data['parent_organization_id']) ? $data['parent_organization_id'] : null;
         $this->container['organization_group_id'] = isset($data['organization_group_id']) ? $data['organization_group_id'] : null;
         $this->container['invoice_group_reference'] = isset($data['invoice_group_reference']) ? $data['invoice_group_reference'] : null;
+        $this->container['energy_tax_group_reference'] = isset($data['energy_tax_group_reference']) ? $data['energy_tax_group_reference'] : null;
         $this->container['mailing_address'] = isset($data['mailing_address']) ? $data['mailing_address'] : null;
         $this->container['business_address'] = isset($data['business_address']) ? $data['business_address'] : null;
         $this->container['person'] = isset($data['person']) ? $data['person'] : null;
@@ -412,6 +423,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         $this->container['representative_id'] = isset($data['representative_id']) ? $data['representative_id'] : null;
         $this->container['is_intercompany'] = isset($data['is_intercompany']) ? $data['is_intercompany'] : null;
         $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
+        $this->container['reseller_organization_id'] = isset($data['reseller_organization_id']) ? $data['reseller_organization_id'] : null;
     }
 
     /**
@@ -1097,6 +1109,30 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     }
 
     /**
+     * Gets energy_tax_group_reference
+     *
+     * @return string
+     */
+    public function getEnergyTaxGroupReference()
+    {
+        return $this->container['energy_tax_group_reference'];
+    }
+
+    /**
+     * Sets energy_tax_group_reference
+     *
+     * @param string $energy_tax_group_reference Dochterorganisaties kunnen in een energiebelastinggroep geplaatst worden. De referentie van de energiebelastinggroep (die bij de moeder aangemaakt moet zijn) kan in deze variabele worden meegegeven.
+     *
+     * @return $this
+     */
+    public function setEnergyTaxGroupReference($energy_tax_group_reference)
+    {
+        $this->container['energy_tax_group_reference'] = $energy_tax_group_reference;
+
+        return $this;
+    }
+
+    /**
      * Gets mailing_address
      *
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiAddressPostData
@@ -1308,6 +1344,30 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     public function setCompanyLabelId($company_label_id)
     {
         $this->container['company_label_id'] = $company_label_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets reseller_organization_id
+     *
+     * @return string
+     */
+    public function getResellerOrganizationId()
+    {
+        return $this->container['reseller_organization_id'];
+    }
+
+    /**
+     * Sets reseller_organization_id
+     *
+     * @param string $reseller_organization_id Wederverkoper van deze organisatie
+     *
+     * @return $this
+     */
+    public function setResellerOrganizationId($reseller_organization_id)
+    {
+        $this->container['reseller_organization_id'] = $reseller_organization_id;
 
         return $this;
     }

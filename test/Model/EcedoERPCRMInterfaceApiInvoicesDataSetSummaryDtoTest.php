@@ -266,6 +266,13 @@ class EcedoERPCRMInterfaceApiInvoicesDataSetSummaryDtoTest extends \PHPUnit_Fram
     }
 
     /**
+     * Test attribute "organization_has_reseller"
+     */
+    public function testPropertyOrganizationHasReseller()
+    {
+    }
+
+    /**
      * Test attribute "organization_person_gender_type"
      */
     public function testPropertyOrganizationPersonGenderType()
@@ -521,6 +528,13 @@ class EcedoERPCRMInterfaceApiInvoicesDataSetSummaryDtoTest extends \PHPUnit_Fram
      * Test attribute "company_label"
      */
     public function testPropertyCompanyLabel()
+    {
+    }
+
+    /**
+     * Test attribute "reseller"
+     */
+    public function testPropertyReseller()
     {
     }
 }

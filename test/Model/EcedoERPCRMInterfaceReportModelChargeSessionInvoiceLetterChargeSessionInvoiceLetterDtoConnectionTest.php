@@ -406,6 +406,13 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
     }
 
     /**
+     * Test attribute "connection_cluster_description"
+     */
+    public function testPropertyConnectionClusterDescription()
+    {
+    }
+
+    /**
      * Test attribute "connection_cluster_comment"
      */
     public function testPropertyConnectionClusterComment()

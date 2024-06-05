@@ -126,6 +126,13 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
     }
 
     /**
+     * Test attribute "organization_invoice_collective_invoice_group_description"
+     */
+    public function testPropertyOrganizationInvoiceCollectiveInvoiceGroupDescription()
+    {
+    }
+
+    /**
      * Test attribute "organization_invoice_child_invoices_count"
      */
     public function testPropertyOrganizationInvoiceChildInvoicesCount()
@@ -588,6 +595,13 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
     }
 
     /**
+     * Test attribute "organization_has_reseller"
+     */
+    public function testPropertyOrganizationHasReseller()
+    {
+    }
+
+    /**
      * Test attribute "organization_person_gender_type"
      */
     public function testPropertyOrganizationPersonGenderType()
@@ -843,6 +857,13 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
      * Test attribute "company_label"
      */
     public function testPropertyCompanyLabel()
+    {
+    }
+
+    /**
+     * Test attribute "reseller"
+     */
+    public function testPropertyReseller()
     {
     }
 }

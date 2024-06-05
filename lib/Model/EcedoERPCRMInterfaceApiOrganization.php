@@ -79,6 +79,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'registered_seat' => 'string',
         'authorized_signatory' => 'string',
         'representative_id' => 'string',
+        'reseller_organization_id' => 'string',
         'product_or_service_info' => 'bool',
         'print_welcome_letter' => 'bool',
         'with_collection_agency' => 'bool',
@@ -126,6 +127,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'registered_seat' => null,
         'authorized_signatory' => null,
         'representative_id' => 'uuid',
+        'reseller_organization_id' => 'uuid',
         'product_or_service_info' => null,
         'print_welcome_letter' => null,
         'with_collection_agency' => null,
@@ -194,6 +196,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'registered_seat' => 'RegisteredSeat',
         'authorized_signatory' => 'AuthorizedSignatory',
         'representative_id' => 'RepresentativeId',
+        'reseller_organization_id' => 'ResellerOrganizationId',
         'product_or_service_info' => 'ProductOrServiceInfo',
         'print_welcome_letter' => 'PrintWelcomeLetter',
         'with_collection_agency' => 'WithCollectionAgency',
@@ -241,6 +244,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'registered_seat' => 'setRegisteredSeat',
         'authorized_signatory' => 'setAuthorizedSignatory',
         'representative_id' => 'setRepresentativeId',
+        'reseller_organization_id' => 'setResellerOrganizationId',
         'product_or_service_info' => 'setProductOrServiceInfo',
         'print_welcome_letter' => 'setPrintWelcomeLetter',
         'with_collection_agency' => 'setWithCollectionAgency',
@@ -288,6 +292,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'registered_seat' => 'getRegisteredSeat',
         'authorized_signatory' => 'getAuthorizedSignatory',
         'representative_id' => 'getRepresentativeId',
+        'reseller_organization_id' => 'getResellerOrganizationId',
         'product_or_service_info' => 'getProductOrServiceInfo',
         'print_welcome_letter' => 'getPrintWelcomeLetter',
         'with_collection_agency' => 'getWithCollectionAgency',
@@ -389,6 +394,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         $this->container['registered_seat'] = isset($data['registered_seat']) ? $data['registered_seat'] : null;
         $this->container['authorized_signatory'] = isset($data['authorized_signatory']) ? $data['authorized_signatory'] : null;
         $this->container['representative_id'] = isset($data['representative_id']) ? $data['representative_id'] : null;
+        $this->container['reseller_organization_id'] = isset($data['reseller_organization_id']) ? $data['reseller_organization_id'] : null;
         $this->container['product_or_service_info'] = isset($data['product_or_service_info']) ? $data['product_or_service_info'] : null;
         $this->container['print_welcome_letter'] = isset($data['print_welcome_letter']) ? $data['print_welcome_letter'] : null;
         $this->container['with_collection_agency'] = isset($data['with_collection_agency']) ? $data['with_collection_agency'] : null;
@@ -956,6 +962,30 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
     public function setRepresentativeId($representative_id)
     {
         $this->container['representative_id'] = $representative_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets reseller_organization_id
+     *
+     * @return string
+     */
+    public function getResellerOrganizationId()
+    {
+        return $this->container['reseller_organization_id'];
+    }
+
+    /**
+     * Sets reseller_organization_id
+     *
+     * @param string $reseller_organization_id Wederverkoper van deze organisatie
+     *
+     * @return $this
+     */
+    public function setResellerOrganizationId($reseller_organization_id)
+    {
+        $this->container['reseller_organization_id'] = $reseller_organization_id;
 
         return $this;
     }

@@ -112,13 +112,6 @@ class EcedoERPCRMInterfaceApiBaseContractTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
-     * Test attribute "original_end_date"
-     */
-    public function testPropertyOriginalEndDate()
-    {
-    }
-
-    /**
      * Test attribute "proposition_id"
      */
     public function testPropertyPropositionId()

@@ -224,18 +224,18 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     }
 
     const START_REASON_INITIAL = 'Initial';
-    const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const START_REASON_CUSTOMER_RENEWAL = 'CustomerRenewal';
     const START_REASON_CONTRACT_TYPE_CHANGE = 'ContractTypeChange';
+    const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const START_REASON_MOVE = 'Move';
     const START_REASON_PRODUCER_SWITCH = 'ProducerSwitch';
-    const STATUS_FINALIZED = 'Finalized';
-    const STATUS_ACTIVE = 'Active';
     const STATUS_PROVISIONAL = 'Provisional';
+    const STATUS_ACTIVE = 'Active';
     const STATUS_CANCELLED = 'Cancelled';
     const STATUS_ENDED = 'Ended';
     const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
     const STATUS_PROPOSED = 'Proposed';
+    const STATUS_FINALIZED = 'Finalized';
     
 
     
@@ -248,9 +248,9 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     {
         return [
             self::START_REASON_INITIAL,
-            self::START_REASON_AUTOMATIC_RENEWAL,
             self::START_REASON_CUSTOMER_RENEWAL,
             self::START_REASON_CONTRACT_TYPE_CHANGE,
+            self::START_REASON_AUTOMATIC_RENEWAL,
             self::START_REASON_MOVE,
             self::START_REASON_PRODUCER_SWITCH,
         ];
@@ -264,13 +264,13 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     public function getStatusAllowableValues()
     {
         return [
-            self::STATUS_FINALIZED,
-            self::STATUS_ACTIVE,
             self::STATUS_PROVISIONAL,
+            self::STATUS_ACTIVE,
             self::STATUS_CANCELLED,
             self::STATUS_ENDED,
             self::STATUS_WAIT_FOR_APPROVAL,
             self::STATUS_PROPOSED,
+            self::STATUS_FINALIZED,
         ];
     }
     

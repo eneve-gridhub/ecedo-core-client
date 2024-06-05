@@ -74,6 +74,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         'organization_is_parent' => 'bool',
         'organization_is_daughter' => 'bool',
         'organization_parent_reference' => 'string',
+        'organization_has_reseller' => 'bool',
         'organization_person_gender_type' => 'string',
         'organization_person_first_name' => 'string',
         'organization_person_initials' => 'string',
@@ -110,7 +111,8 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         'organization_representative_correspondence_website' => 'string',
         'organization_productiemiddel_proposition_description' => 'string',
         'organization_organization_property_preferred_contact_method' => 'string',
-        'company_label' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto'
+        'company_label' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto',
+        'reseller' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto'
     ];
 
     /**
@@ -136,6 +138,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         'organization_is_parent' => null,
         'organization_is_daughter' => null,
         'organization_parent_reference' => null,
+        'organization_has_reseller' => null,
         'organization_person_gender_type' => null,
         'organization_person_first_name' => null,
         'organization_person_initials' => null,
@@ -172,7 +175,8 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         'organization_representative_correspondence_website' => null,
         'organization_productiemiddel_proposition_description' => null,
         'organization_organization_property_preferred_contact_method' => null,
-        'company_label' => null
+        'company_label' => null,
+        'reseller' => null
     ];
 
     /**
@@ -219,6 +223,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         'organization_is_parent' => 'Organization_IsParent',
         'organization_is_daughter' => 'Organization_IsDaughter',
         'organization_parent_reference' => 'Organization_Parent_Reference',
+        'organization_has_reseller' => 'Organization_HasReseller',
         'organization_person_gender_type' => 'Organization_Person_GenderType',
         'organization_person_first_name' => 'Organization_Person_FirstName',
         'organization_person_initials' => 'Organization_Person_Initials',
@@ -255,7 +260,8 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         'organization_representative_correspondence_website' => 'Organization_Representative_Correspondence_Website',
         'organization_productiemiddel_proposition_description' => 'Organization_Productiemiddel_Proposition_Description',
         'organization_organization_property_preferred_contact_method' => 'Organization_OrganizationProperty_PreferredContactMethod',
-        'company_label' => 'CompanyLabel'
+        'company_label' => 'CompanyLabel',
+        'reseller' => 'Reseller'
     ];
 
     /**
@@ -281,6 +287,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         'organization_is_parent' => 'setOrganizationIsParent',
         'organization_is_daughter' => 'setOrganizationIsDaughter',
         'organization_parent_reference' => 'setOrganizationParentReference',
+        'organization_has_reseller' => 'setOrganizationHasReseller',
         'organization_person_gender_type' => 'setOrganizationPersonGenderType',
         'organization_person_first_name' => 'setOrganizationPersonFirstName',
         'organization_person_initials' => 'setOrganizationPersonInitials',
@@ -317,7 +324,8 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         'organization_representative_correspondence_website' => 'setOrganizationRepresentativeCorrespondenceWebsite',
         'organization_productiemiddel_proposition_description' => 'setOrganizationProductiemiddelPropositionDescription',
         'organization_organization_property_preferred_contact_method' => 'setOrganizationOrganizationPropertyPreferredContactMethod',
-        'company_label' => 'setCompanyLabel'
+        'company_label' => 'setCompanyLabel',
+        'reseller' => 'setReseller'
     ];
 
     /**
@@ -343,6 +351,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         'organization_is_parent' => 'getOrganizationIsParent',
         'organization_is_daughter' => 'getOrganizationIsDaughter',
         'organization_parent_reference' => 'getOrganizationParentReference',
+        'organization_has_reseller' => 'getOrganizationHasReseller',
         'organization_person_gender_type' => 'getOrganizationPersonGenderType',
         'organization_person_first_name' => 'getOrganizationPersonFirstName',
         'organization_person_initials' => 'getOrganizationPersonInitials',
@@ -379,7 +388,8 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         'organization_representative_correspondence_website' => 'getOrganizationRepresentativeCorrespondenceWebsite',
         'organization_productiemiddel_proposition_description' => 'getOrganizationProductiemiddelPropositionDescription',
         'organization_organization_property_preferred_contact_method' => 'getOrganizationOrganizationPropertyPreferredContactMethod',
-        'company_label' => 'getCompanyLabel'
+        'company_label' => 'getCompanyLabel',
+        'reseller' => 'getReseller'
     ];
 
     /**
@@ -459,6 +469,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         $this->container['organization_is_parent'] = isset($data['organization_is_parent']) ? $data['organization_is_parent'] : null;
         $this->container['organization_is_daughter'] = isset($data['organization_is_daughter']) ? $data['organization_is_daughter'] : null;
         $this->container['organization_parent_reference'] = isset($data['organization_parent_reference']) ? $data['organization_parent_reference'] : null;
+        $this->container['organization_has_reseller'] = isset($data['organization_has_reseller']) ? $data['organization_has_reseller'] : null;
         $this->container['organization_person_gender_type'] = isset($data['organization_person_gender_type']) ? $data['organization_person_gender_type'] : null;
         $this->container['organization_person_first_name'] = isset($data['organization_person_first_name']) ? $data['organization_person_first_name'] : null;
         $this->container['organization_person_initials'] = isset($data['organization_person_initials']) ? $data['organization_person_initials'] : null;
@@ -496,6 +507,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
         $this->container['organization_productiemiddel_proposition_description'] = isset($data['organization_productiemiddel_proposition_description']) ? $data['organization_productiemiddel_proposition_description'] : null;
         $this->container['organization_organization_property_preferred_contact_method'] = isset($data['organization_organization_property_preferred_contact_method']) ? $data['organization_organization_property_preferred_contact_method'] : null;
         $this->container['company_label'] = isset($data['company_label']) ? $data['company_label'] : null;
+        $this->container['reseller'] = isset($data['reseller']) ? $data['reseller'] : null;
     }
 
     /**
@@ -926,6 +938,30 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
     public function setOrganizationParentReference($organization_parent_reference)
     {
         $this->container['organization_parent_reference'] = $organization_parent_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_has_reseller
+     *
+     * @return bool
+     */
+    public function getOrganizationHasReseller()
+    {
+        return $this->container['organization_has_reseller'];
+    }
+
+    /**
+     * Sets organization_has_reseller
+     *
+     * @param bool $organization_has_reseller organization_has_reseller
+     *
+     * @return $this
+     */
+    public function setOrganizationHasReseller($organization_has_reseller)
+    {
+        $this->container['organization_has_reseller'] = $organization_has_reseller;
 
         return $this;
     }
@@ -1814,6 +1850,30 @@ class EcedoERPCRMInterfaceReportModelOrganizationDto implements ModelInterface, 
     public function setCompanyLabel($company_label)
     {
         $this->container['company_label'] = $company_label;
+
+        return $this;
+    }
+
+    /**
+     * Gets reseller
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto
+     */
+    public function getReseller()
+    {
+        return $this->container['reseller'];
+    }
+
+    /**
+     * Sets reseller
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto $reseller reseller
+     *
+     * @return $this
+     */
+    public function setReseller($reseller)
+    {
+        $this->container['reseller'] = $reseller;
 
         return $this;
     }

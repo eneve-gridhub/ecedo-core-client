@@ -61,6 +61,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'connection_id' => 'string',
         'cluster_id' => 'string',
         'cluster_reference' => 'string',
+        'energy_tax_connection_group_id' => 'string',
+        'energy_tax_connection_group_reference' => 'string',
         'description' => 'string',
         'comment' => 'string',
         'status' => 'string',
@@ -113,6 +115,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'connection_id' => null,
         'cluster_id' => 'uuid',
         'cluster_reference' => null,
+        'energy_tax_connection_group_id' => 'uuid',
+        'energy_tax_connection_group_reference' => null,
         'description' => null,
         'comment' => null,
         'status' => null,
@@ -186,6 +190,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'connection_id' => 'ConnectionId',
         'cluster_id' => 'ClusterId',
         'cluster_reference' => 'ClusterReference',
+        'energy_tax_connection_group_id' => 'EnergyTaxConnectionGroupId',
+        'energy_tax_connection_group_reference' => 'EnergyTaxConnectionGroupReference',
         'description' => 'Description',
         'comment' => 'Comment',
         'status' => 'Status',
@@ -238,6 +244,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'connection_id' => 'setConnectionId',
         'cluster_id' => 'setClusterId',
         'cluster_reference' => 'setClusterReference',
+        'energy_tax_connection_group_id' => 'setEnergyTaxConnectionGroupId',
+        'energy_tax_connection_group_reference' => 'setEnergyTaxConnectionGroupReference',
         'description' => 'setDescription',
         'comment' => 'setComment',
         'status' => 'setStatus',
@@ -290,6 +298,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'connection_id' => 'getConnectionId',
         'cluster_id' => 'getClusterId',
         'cluster_reference' => 'getClusterReference',
+        'energy_tax_connection_group_id' => 'getEnergyTaxConnectionGroupId',
+        'energy_tax_connection_group_reference' => 'getEnergyTaxConnectionGroupReference',
         'description' => 'getDescription',
         'comment' => 'getComment',
         'status' => 'getStatus',
@@ -511,6 +521,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
         $this->container['cluster_id'] = isset($data['cluster_id']) ? $data['cluster_id'] : null;
         $this->container['cluster_reference'] = isset($data['cluster_reference']) ? $data['cluster_reference'] : null;
+        $this->container['energy_tax_connection_group_id'] = isset($data['energy_tax_connection_group_id']) ? $data['energy_tax_connection_group_id'] : null;
+        $this->container['energy_tax_connection_group_reference'] = isset($data['energy_tax_connection_group_reference']) ? $data['energy_tax_connection_group_reference'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
@@ -725,6 +737,54 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
     public function setClusterReference($cluster_reference)
     {
         $this->container['cluster_reference'] = $cluster_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets energy_tax_connection_group_id
+     *
+     * @return string
+     */
+    public function getEnergyTaxConnectionGroupId()
+    {
+        return $this->container['energy_tax_connection_group_id'];
+    }
+
+    /**
+     * Sets energy_tax_connection_group_id
+     *
+     * @param string $energy_tax_connection_group_id energy_tax_connection_group_id
+     *
+     * @return $this
+     */
+    public function setEnergyTaxConnectionGroupId($energy_tax_connection_group_id)
+    {
+        $this->container['energy_tax_connection_group_id'] = $energy_tax_connection_group_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets energy_tax_connection_group_reference
+     *
+     * @return string
+     */
+    public function getEnergyTaxConnectionGroupReference()
+    {
+        return $this->container['energy_tax_connection_group_reference'];
+    }
+
+    /**
+     * Sets energy_tax_connection_group_reference
+     *
+     * @param string $energy_tax_connection_group_reference energy_tax_connection_group_reference
+     *
+     * @return $this
+     */
+    public function setEnergyTaxConnectionGroupReference($energy_tax_connection_group_reference)
+    {
+        $this->container['energy_tax_connection_group_reference'] = $energy_tax_connection_group_reference;
 
         return $this;
     }

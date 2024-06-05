@@ -84,6 +84,13 @@ class EcedoERPCRMInterfaceApiPropositionGroupPutDataTest extends \PHPUnit_Framew
     }
 
     /**
+     * Test attribute "reference_proposition_group_id"
+     */
+    public function testPropertyReferencePropositionGroupId()
+    {
+    }
+
+    /**
      * Test attribute "start_date"
      */
     public function testPropertyStartDate()

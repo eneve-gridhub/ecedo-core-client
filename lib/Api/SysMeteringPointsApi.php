@@ -94,14 +94,15 @@ class SysMeteringPointsApi
      *
      * @param  string $ean EAN van de aansluiting (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPreNotifyContractProcessSettings $process_settings Process instellingen, het object moet bestaan maar mag leeg zijn. Alle velden zijn optioneel. Zie het object-model voor meer details over de verschillende variabelen (required)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceServicesEDSNCERCERNoticeData
      */
-    public function sysMeteringPointsCERPreNotifyContract($ean, $process_settings)
+    public function sysMeteringPointsCERPreNotifyContract($ean, $process_settings, $company_label_id = null)
     {
-        list($response) = $this->sysMeteringPointsCERPreNotifyContractWithHttpInfo($ean, $process_settings);
+        list($response) = $this->sysMeteringPointsCERPreNotifyContractWithHttpInfo($ean, $process_settings, $company_label_id);
         return $response;
     }
 
@@ -112,15 +113,16 @@ class SysMeteringPointsApi
      *
      * @param  string $ean EAN van de aansluiting (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPreNotifyContractProcessSettings $process_settings Process instellingen, het object moet bestaan maar mag leeg zijn. Alle velden zijn optioneel. Zie het object-model voor meer details over de verschillende variabelen (required)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceServicesEDSNCERCERNoticeData, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysMeteringPointsCERPreNotifyContractWithHttpInfo($ean, $process_settings)
+    public function sysMeteringPointsCERPreNotifyContractWithHttpInfo($ean, $process_settings, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceServicesEDSNCERCERNoticeData';
-        $request = $this->sysMeteringPointsCERPreNotifyContractRequest($ean, $process_settings);
+        $request = $this->sysMeteringPointsCERPreNotifyContractRequest($ean, $process_settings, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -204,13 +206,14 @@ class SysMeteringPointsApi
      *
      * @param  string $ean EAN van de aansluiting (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPreNotifyContractProcessSettings $process_settings Process instellingen, het object moet bestaan maar mag leeg zijn. Alle velden zijn optioneel. Zie het object-model voor meer details over de verschillende variabelen (required)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysMeteringPointsCERPreNotifyContractAsync($ean, $process_settings)
+    public function sysMeteringPointsCERPreNotifyContractAsync($ean, $process_settings, $company_label_id = null)
     {
-        return $this->sysMeteringPointsCERPreNotifyContractAsyncWithHttpInfo($ean, $process_settings)
+        return $this->sysMeteringPointsCERPreNotifyContractAsyncWithHttpInfo($ean, $process_settings, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -225,14 +228,15 @@ class SysMeteringPointsApi
      *
      * @param  string $ean EAN van de aansluiting (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPreNotifyContractProcessSettings $process_settings Process instellingen, het object moet bestaan maar mag leeg zijn. Alle velden zijn optioneel. Zie het object-model voor meer details over de verschillende variabelen (required)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysMeteringPointsCERPreNotifyContractAsyncWithHttpInfo($ean, $process_settings)
+    public function sysMeteringPointsCERPreNotifyContractAsyncWithHttpInfo($ean, $process_settings, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceServicesEDSNCERCERNoticeData';
-        $request = $this->sysMeteringPointsCERPreNotifyContractRequest($ean, $process_settings);
+        $request = $this->sysMeteringPointsCERPreNotifyContractRequest($ean, $process_settings, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -276,11 +280,12 @@ class SysMeteringPointsApi
      *
      * @param  string $ean EAN van de aansluiting (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPreNotifyContractProcessSettings $process_settings Process instellingen, het object moet bestaan maar mag leeg zijn. Alle velden zijn optioneel. Zie het object-model voor meer details over de verschillende variabelen (required)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysMeteringPointsCERPreNotifyContractRequest($ean, $process_settings)
+    protected function sysMeteringPointsCERPreNotifyContractRequest($ean, $process_settings, $company_label_id = null)
     {
         // verify the required parameter 'ean' is set
         if ($ean === null || (is_array($ean) && count($ean) === 0)) {
@@ -302,6 +307,10 @@ class SysMeteringPointsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($company_label_id !== null) {
+            $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
+        }
 
         // path params
         if ($ean !== null) {
@@ -714,14 +723,15 @@ class SysMeteringPointsApi
      * @param  bool $include_cer Default: true. Met behulp van deze parameter kan aangegeven worden of het contracteinddatum uit het CER opgevraagd moet worden. Aan de hand daarvan zal de &#x60;FirstAllowedSwitchDate&#x60; in de response gevuld worden (optional)
      * @param  bool $cer_pre_notified Default: false. Met behulp van deze parameter kan aangegeven worden of de aansluiting vooraangemeld is. Dit is alleen toegestaan bij kleinverbruikaansluitingen. (optional)
      * @param  string $supplier_ean Indien er in een omgeving meerdere leverancier-EANs geconfigureerd zijn kan met behulp van deze parameter aangegeven worden welke leverancier-EAN gebruikt moet worden om de gegevens uit het C-AR op te vragen. Standaard wordt de hoofd-EAN gebruikt. (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiExtendedMeteringPoint
      */
-    public function sysMeteringPointsGet($ean, $include_cer = null, $cer_pre_notified = null, $supplier_ean = null)
+    public function sysMeteringPointsGet($ean, $include_cer = null, $cer_pre_notified = null, $supplier_ean = null, $company_label_id = null)
     {
-        list($response) = $this->sysMeteringPointsGetWithHttpInfo($ean, $include_cer, $cer_pre_notified, $supplier_ean);
+        list($response) = $this->sysMeteringPointsGetWithHttpInfo($ean, $include_cer, $cer_pre_notified, $supplier_ean, $company_label_id);
         return $response;
     }
 
@@ -734,15 +744,16 @@ class SysMeteringPointsApi
      * @param  bool $include_cer Default: true. Met behulp van deze parameter kan aangegeven worden of het contracteinddatum uit het CER opgevraagd moet worden. Aan de hand daarvan zal de &#x60;FirstAllowedSwitchDate&#x60; in de response gevuld worden (optional)
      * @param  bool $cer_pre_notified Default: false. Met behulp van deze parameter kan aangegeven worden of de aansluiting vooraangemeld is. Dit is alleen toegestaan bij kleinverbruikaansluitingen. (optional)
      * @param  string $supplier_ean Indien er in een omgeving meerdere leverancier-EANs geconfigureerd zijn kan met behulp van deze parameter aangegeven worden welke leverancier-EAN gebruikt moet worden om de gegevens uit het C-AR op te vragen. Standaard wordt de hoofd-EAN gebruikt. (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiExtendedMeteringPoint, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysMeteringPointsGetWithHttpInfo($ean, $include_cer = null, $cer_pre_notified = null, $supplier_ean = null)
+    public function sysMeteringPointsGetWithHttpInfo($ean, $include_cer = null, $cer_pre_notified = null, $supplier_ean = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiExtendedMeteringPoint';
-        $request = $this->sysMeteringPointsGetRequest($ean, $include_cer, $cer_pre_notified, $supplier_ean);
+        $request = $this->sysMeteringPointsGetRequest($ean, $include_cer, $cer_pre_notified, $supplier_ean, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -828,13 +839,14 @@ class SysMeteringPointsApi
      * @param  bool $include_cer Default: true. Met behulp van deze parameter kan aangegeven worden of het contracteinddatum uit het CER opgevraagd moet worden. Aan de hand daarvan zal de &#x60;FirstAllowedSwitchDate&#x60; in de response gevuld worden (optional)
      * @param  bool $cer_pre_notified Default: false. Met behulp van deze parameter kan aangegeven worden of de aansluiting vooraangemeld is. Dit is alleen toegestaan bij kleinverbruikaansluitingen. (optional)
      * @param  string $supplier_ean Indien er in een omgeving meerdere leverancier-EANs geconfigureerd zijn kan met behulp van deze parameter aangegeven worden welke leverancier-EAN gebruikt moet worden om de gegevens uit het C-AR op te vragen. Standaard wordt de hoofd-EAN gebruikt. (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysMeteringPointsGetAsync($ean, $include_cer = null, $cer_pre_notified = null, $supplier_ean = null)
+    public function sysMeteringPointsGetAsync($ean, $include_cer = null, $cer_pre_notified = null, $supplier_ean = null, $company_label_id = null)
     {
-        return $this->sysMeteringPointsGetAsyncWithHttpInfo($ean, $include_cer, $cer_pre_notified, $supplier_ean)
+        return $this->sysMeteringPointsGetAsyncWithHttpInfo($ean, $include_cer, $cer_pre_notified, $supplier_ean, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -851,14 +863,15 @@ class SysMeteringPointsApi
      * @param  bool $include_cer Default: true. Met behulp van deze parameter kan aangegeven worden of het contracteinddatum uit het CER opgevraagd moet worden. Aan de hand daarvan zal de &#x60;FirstAllowedSwitchDate&#x60; in de response gevuld worden (optional)
      * @param  bool $cer_pre_notified Default: false. Met behulp van deze parameter kan aangegeven worden of de aansluiting vooraangemeld is. Dit is alleen toegestaan bij kleinverbruikaansluitingen. (optional)
      * @param  string $supplier_ean Indien er in een omgeving meerdere leverancier-EANs geconfigureerd zijn kan met behulp van deze parameter aangegeven worden welke leverancier-EAN gebruikt moet worden om de gegevens uit het C-AR op te vragen. Standaard wordt de hoofd-EAN gebruikt. (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysMeteringPointsGetAsyncWithHttpInfo($ean, $include_cer = null, $cer_pre_notified = null, $supplier_ean = null)
+    public function sysMeteringPointsGetAsyncWithHttpInfo($ean, $include_cer = null, $cer_pre_notified = null, $supplier_ean = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiExtendedMeteringPoint';
-        $request = $this->sysMeteringPointsGetRequest($ean, $include_cer, $cer_pre_notified, $supplier_ean);
+        $request = $this->sysMeteringPointsGetRequest($ean, $include_cer, $cer_pre_notified, $supplier_ean, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -904,11 +917,12 @@ class SysMeteringPointsApi
      * @param  bool $include_cer Default: true. Met behulp van deze parameter kan aangegeven worden of het contracteinddatum uit het CER opgevraagd moet worden. Aan de hand daarvan zal de &#x60;FirstAllowedSwitchDate&#x60; in de response gevuld worden (optional)
      * @param  bool $cer_pre_notified Default: false. Met behulp van deze parameter kan aangegeven worden of de aansluiting vooraangemeld is. Dit is alleen toegestaan bij kleinverbruikaansluitingen. (optional)
      * @param  string $supplier_ean Indien er in een omgeving meerdere leverancier-EANs geconfigureerd zijn kan met behulp van deze parameter aangegeven worden welke leverancier-EAN gebruikt moet worden om de gegevens uit het C-AR op te vragen. Standaard wordt de hoofd-EAN gebruikt. (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysMeteringPointsGetRequest($ean, $include_cer = null, $cer_pre_notified = null, $supplier_ean = null)
+    protected function sysMeteringPointsGetRequest($ean, $include_cer = null, $cer_pre_notified = null, $supplier_ean = null, $company_label_id = null)
     {
         // verify the required parameter 'ean' is set
         if ($ean === null || (is_array($ean) && count($ean) === 0)) {
@@ -935,6 +949,10 @@ class SysMeteringPointsApi
         // query params
         if ($supplier_ean !== null) {
             $queryParams['supplierEAN'] = ObjectSerializer::toQueryValue($supplier_ean);
+        }
+        // query params
+        if ($company_label_id !== null) {
+            $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
         }
 
         // path params
@@ -1038,14 +1056,15 @@ class SysMeteringPointsApi
      * @param  string $birth_day_key Verjaardag vad klant in notatie MMDD (optional)
      * @param  bool $include_cer Opvragen CER contract data ja/nee (optional)
      * @param  string $supplier_ean Indien er in een omgeving meerdere leverancier-EANs geconfigureerd zijn kan met behulp van deze parameter aangegeven worden welke leverancier-EAN gebruikt moet worden om de gegevens uit het C-AR op te vragen. Standaard wordt de hoofd-EAN gebruikt. (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function sysMeteringPointsGetProposalMeteringPoint($ean, $mandate_id, $iban_key = null, $birth_day_key = null, $include_cer = null, $supplier_ean = null)
+    public function sysMeteringPointsGetProposalMeteringPoint($ean, $mandate_id, $iban_key = null, $birth_day_key = null, $include_cer = null, $supplier_ean = null, $company_label_id = null)
     {
-        $this->sysMeteringPointsGetProposalMeteringPointWithHttpInfo($ean, $mandate_id, $iban_key, $birth_day_key, $include_cer, $supplier_ean);
+        $this->sysMeteringPointsGetProposalMeteringPointWithHttpInfo($ean, $mandate_id, $iban_key, $birth_day_key, $include_cer, $supplier_ean, $company_label_id);
     }
 
     /**
@@ -1059,15 +1078,16 @@ class SysMeteringPointsApi
      * @param  string $birth_day_key Verjaardag vad klant in notatie MMDD (optional)
      * @param  bool $include_cer Opvragen CER contract data ja/nee (optional)
      * @param  string $supplier_ean Indien er in een omgeving meerdere leverancier-EANs geconfigureerd zijn kan met behulp van deze parameter aangegeven worden welke leverancier-EAN gebruikt moet worden om de gegevens uit het C-AR op te vragen. Standaard wordt de hoofd-EAN gebruikt. (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysMeteringPointsGetProposalMeteringPointWithHttpInfo($ean, $mandate_id, $iban_key = null, $birth_day_key = null, $include_cer = null, $supplier_ean = null)
+    public function sysMeteringPointsGetProposalMeteringPointWithHttpInfo($ean, $mandate_id, $iban_key = null, $birth_day_key = null, $include_cer = null, $supplier_ean = null, $company_label_id = null)
     {
         $returnType = '';
-        $request = $this->sysMeteringPointsGetProposalMeteringPointRequest($ean, $mandate_id, $iban_key, $birth_day_key, $include_cer, $supplier_ean);
+        $request = $this->sysMeteringPointsGetProposalMeteringPointRequest($ean, $mandate_id, $iban_key, $birth_day_key, $include_cer, $supplier_ean, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1133,13 +1153,14 @@ class SysMeteringPointsApi
      * @param  string $birth_day_key Verjaardag vad klant in notatie MMDD (optional)
      * @param  bool $include_cer Opvragen CER contract data ja/nee (optional)
      * @param  string $supplier_ean Indien er in een omgeving meerdere leverancier-EANs geconfigureerd zijn kan met behulp van deze parameter aangegeven worden welke leverancier-EAN gebruikt moet worden om de gegevens uit het C-AR op te vragen. Standaard wordt de hoofd-EAN gebruikt. (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysMeteringPointsGetProposalMeteringPointAsync($ean, $mandate_id, $iban_key = null, $birth_day_key = null, $include_cer = null, $supplier_ean = null)
+    public function sysMeteringPointsGetProposalMeteringPointAsync($ean, $mandate_id, $iban_key = null, $birth_day_key = null, $include_cer = null, $supplier_ean = null, $company_label_id = null)
     {
-        return $this->sysMeteringPointsGetProposalMeteringPointAsyncWithHttpInfo($ean, $mandate_id, $iban_key, $birth_day_key, $include_cer, $supplier_ean)
+        return $this->sysMeteringPointsGetProposalMeteringPointAsyncWithHttpInfo($ean, $mandate_id, $iban_key, $birth_day_key, $include_cer, $supplier_ean, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1158,14 +1179,15 @@ class SysMeteringPointsApi
      * @param  string $birth_day_key Verjaardag vad klant in notatie MMDD (optional)
      * @param  bool $include_cer Opvragen CER contract data ja/nee (optional)
      * @param  string $supplier_ean Indien er in een omgeving meerdere leverancier-EANs geconfigureerd zijn kan met behulp van deze parameter aangegeven worden welke leverancier-EAN gebruikt moet worden om de gegevens uit het C-AR op te vragen. Standaard wordt de hoofd-EAN gebruikt. (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysMeteringPointsGetProposalMeteringPointAsyncWithHttpInfo($ean, $mandate_id, $iban_key = null, $birth_day_key = null, $include_cer = null, $supplier_ean = null)
+    public function sysMeteringPointsGetProposalMeteringPointAsyncWithHttpInfo($ean, $mandate_id, $iban_key = null, $birth_day_key = null, $include_cer = null, $supplier_ean = null, $company_label_id = null)
     {
         $returnType = '';
-        $request = $this->sysMeteringPointsGetProposalMeteringPointRequest($ean, $mandate_id, $iban_key, $birth_day_key, $include_cer, $supplier_ean);
+        $request = $this->sysMeteringPointsGetProposalMeteringPointRequest($ean, $mandate_id, $iban_key, $birth_day_key, $include_cer, $supplier_ean, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1199,11 +1221,12 @@ class SysMeteringPointsApi
      * @param  string $birth_day_key Verjaardag vad klant in notatie MMDD (optional)
      * @param  bool $include_cer Opvragen CER contract data ja/nee (optional)
      * @param  string $supplier_ean Indien er in een omgeving meerdere leverancier-EANs geconfigureerd zijn kan met behulp van deze parameter aangegeven worden welke leverancier-EAN gebruikt moet worden om de gegevens uit het C-AR op te vragen. Standaard wordt de hoofd-EAN gebruikt. (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysMeteringPointsGetProposalMeteringPointRequest($ean, $mandate_id, $iban_key = null, $birth_day_key = null, $include_cer = null, $supplier_ean = null)
+    protected function sysMeteringPointsGetProposalMeteringPointRequest($ean, $mandate_id, $iban_key = null, $birth_day_key = null, $include_cer = null, $supplier_ean = null, $company_label_id = null)
     {
         // verify the required parameter 'ean' is set
         if ($ean === null || (is_array($ean) && count($ean) === 0)) {
@@ -1244,6 +1267,10 @@ class SysMeteringPointsApi
         // query params
         if ($supplier_ean !== null) {
             $queryParams['supplierEAN'] = ObjectSerializer::toQueryValue($supplier_ean);
+        }
+        // query params
+        if ($company_label_id !== null) {
+            $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
         }
 
         // path params
@@ -1346,14 +1373,15 @@ class SysMeteringPointsApi
      * @param  string $address_zip_code Postcode (optional)
      * @param  int $address_number Huisnummer (optional)
      * @param  string $address_addition Optionele huisnummertoevoeging (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeteringPoint[]
      */
-    public function sysMeteringPointsSearch($market_segment = null, $ean = null, $address_zip_code = null, $address_number = null, $address_addition = null)
+    public function sysMeteringPointsSearch($market_segment = null, $ean = null, $address_zip_code = null, $address_number = null, $address_addition = null, $company_label_id = null)
     {
-        list($response) = $this->sysMeteringPointsSearchWithHttpInfo($market_segment, $ean, $address_zip_code, $address_number, $address_addition);
+        list($response) = $this->sysMeteringPointsSearchWithHttpInfo($market_segment, $ean, $address_zip_code, $address_number, $address_addition, $company_label_id);
         return $response;
     }
 
@@ -1367,15 +1395,16 @@ class SysMeteringPointsApi
      * @param  string $address_zip_code Postcode (optional)
      * @param  int $address_number Huisnummer (optional)
      * @param  string $address_addition Optionele huisnummertoevoeging (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeteringPoint[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysMeteringPointsSearchWithHttpInfo($market_segment = null, $ean = null, $address_zip_code = null, $address_number = null, $address_addition = null)
+    public function sysMeteringPointsSearchWithHttpInfo($market_segment = null, $ean = null, $address_zip_code = null, $address_number = null, $address_addition = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeteringPoint[]';
-        $request = $this->sysMeteringPointsSearchRequest($market_segment, $ean, $address_zip_code, $address_number, $address_addition);
+        $request = $this->sysMeteringPointsSearchRequest($market_segment, $ean, $address_zip_code, $address_number, $address_addition, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1462,13 +1491,14 @@ class SysMeteringPointsApi
      * @param  string $address_zip_code Postcode (optional)
      * @param  int $address_number Huisnummer (optional)
      * @param  string $address_addition Optionele huisnummertoevoeging (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysMeteringPointsSearchAsync($market_segment = null, $ean = null, $address_zip_code = null, $address_number = null, $address_addition = null)
+    public function sysMeteringPointsSearchAsync($market_segment = null, $ean = null, $address_zip_code = null, $address_number = null, $address_addition = null, $company_label_id = null)
     {
-        return $this->sysMeteringPointsSearchAsyncWithHttpInfo($market_segment, $ean, $address_zip_code, $address_number, $address_addition)
+        return $this->sysMeteringPointsSearchAsyncWithHttpInfo($market_segment, $ean, $address_zip_code, $address_number, $address_addition, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1486,14 +1516,15 @@ class SysMeteringPointsApi
      * @param  string $address_zip_code Postcode (optional)
      * @param  int $address_number Huisnummer (optional)
      * @param  string $address_addition Optionele huisnummertoevoeging (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysMeteringPointsSearchAsyncWithHttpInfo($market_segment = null, $ean = null, $address_zip_code = null, $address_number = null, $address_addition = null)
+    public function sysMeteringPointsSearchAsyncWithHttpInfo($market_segment = null, $ean = null, $address_zip_code = null, $address_number = null, $address_addition = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeteringPoint[]';
-        $request = $this->sysMeteringPointsSearchRequest($market_segment, $ean, $address_zip_code, $address_number, $address_addition);
+        $request = $this->sysMeteringPointsSearchRequest($market_segment, $ean, $address_zip_code, $address_number, $address_addition, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1540,11 +1571,12 @@ class SysMeteringPointsApi
      * @param  string $address_zip_code Postcode (optional)
      * @param  int $address_number Huisnummer (optional)
      * @param  string $address_addition Optionele huisnummertoevoeging (optional)
+     * @param  string $company_label_id Id van het companylabel, mag leeg worden gelaten wanneer de leverancier maar 1 EDSN Organisatie EAN heeft (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysMeteringPointsSearchRequest($market_segment = null, $ean = null, $address_zip_code = null, $address_number = null, $address_addition = null)
+    protected function sysMeteringPointsSearchRequest($market_segment = null, $ean = null, $address_zip_code = null, $address_number = null, $address_addition = null, $company_label_id = null)
     {
 
         $resourcePath = '/sysapi/v1.0/meteringpoints/search';
@@ -1573,6 +1605,10 @@ class SysMeteringPointsApi
         // query params
         if ($address_addition !== null) {
             $queryParams['addressAddition'] = ObjectSerializer::toQueryValue($address_addition);
+        }
+        // query params
+        if ($company_label_id !== null) {
+            $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
         }
 
 

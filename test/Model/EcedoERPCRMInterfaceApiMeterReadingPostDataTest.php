@@ -112,6 +112,13 @@ class EcedoERPCRMInterfaceApiMeterReadingPostDataTest extends \PHPUnit_Framework
     }
 
     /**
+     * Test attribute "has_already_been_validated"
+     */
+    public function testPropertyHasAlreadyBeenValidated()
+    {
+    }
+
+    /**
      * Test attribute "organization_id"
      */
     public function testPropertyOrganizationId()

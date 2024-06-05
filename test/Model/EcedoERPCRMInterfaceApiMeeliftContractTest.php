@@ -126,13 +126,6 @@ class EcedoERPCRMInterfaceApiMeeliftContractTest extends \PHPUnit_Framework_Test
     }
 
     /**
-     * Test attribute "original_end_date"
-     */
-    public function testPropertyOriginalEndDate()
-    {
-    }
-
-    /**
      * Test attribute "proposition_id"
      */
     public function testPropertyPropositionId()

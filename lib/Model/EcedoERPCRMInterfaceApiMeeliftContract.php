@@ -257,13 +257,13 @@ class EcedoERPCRMInterfaceApiMeeliftContract implements ModelInterface, ArrayAcc
     const PROPOSITION_PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
     const PROPOSITION_PRICING_TYPE_FULL_ENDEX = 'FullEndex';
     const PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
-    const STATUS_FINALIZED = 'Finalized';
     const STATUS_ACTIVE = 'Active';
     const STATUS_PROVISIONAL = 'Provisional';
     const STATUS_CANCELLED = 'Cancelled';
     const STATUS_ENDED = 'Ended';
     const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
     const STATUS_PROPOSED = 'Proposed';
+    const STATUS_FINALIZED = 'Finalized';
     
 
     
@@ -295,13 +295,13 @@ class EcedoERPCRMInterfaceApiMeeliftContract implements ModelInterface, ArrayAcc
     public function getStatusAllowableValues()
     {
         return [
-            self::STATUS_FINALIZED,
             self::STATUS_ACTIVE,
             self::STATUS_PROVISIONAL,
             self::STATUS_CANCELLED,
             self::STATUS_ENDED,
             self::STATUS_WAIT_FOR_APPROVAL,
             self::STATUS_PROPOSED,
+            self::STATUS_FINALIZED,
         ];
     }
     

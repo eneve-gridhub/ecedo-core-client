@@ -198,12 +198,14 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
     const ENTITY_TYPE_MEANS_OF_PRODUCTION_CONNECTION = 'MeansOfProductionConnection';
     const ENTITY_TYPE_PROPOSITION = 'Proposition';
     const ENTITY_TYPE_INVOICE = 'Invoice';
+    const ENTITY_TYPE_RESELLER = 'Reseller';
     const VALUE_TYPE_ENUM = 'Enum';
     const VALUE_TYPE_STRING = 'String';
     const VALUE_TYPE_INT = 'Int';
     const VALUE_TYPE_BOOL = 'Bool';
     const VALUE_TYPE_DATE_TIME = 'DateTime';
     const VALUE_TYPE_DECIMAL = 'Decimal';
+    const VALUE_TYPE_IMAGE = 'Image';
     
 
     
@@ -220,6 +222,7 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
             self::ENTITY_TYPE_MEANS_OF_PRODUCTION_CONNECTION,
             self::ENTITY_TYPE_PROPOSITION,
             self::ENTITY_TYPE_INVOICE,
+            self::ENTITY_TYPE_RESELLER,
         ];
     }
     
@@ -237,6 +240,7 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
             self::VALUE_TYPE_BOOL,
             self::VALUE_TYPE_DATE_TIME,
             self::VALUE_TYPE_DECIMAL,
+            self::VALUE_TYPE_IMAGE,
         ];
     }
     

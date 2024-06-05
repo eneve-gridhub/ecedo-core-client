@@ -84,6 +84,13 @@ class EcedoERPCRMInterfaceApiConnectionGroupTest extends \PHPUnit_Framework_Test
     }
 
     /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
      * Test attribute "comment"
      */
     public function testPropertyComment()

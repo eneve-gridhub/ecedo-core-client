@@ -91,13 +91,6 @@ class EcedoERPCRMInterfaceApiInvoiceRowPostDataTest extends \PHPUnit_Framework_T
     }
 
     /**
-     * Test attribute "contract_id"
-     */
-    public function testPropertyContractId()
-    {
-    }
-
-    /**
      * Test attribute "start_date"
      */
     public function testPropertyStartDate()
@@ -115,6 +108,13 @@ class EcedoERPCRMInterfaceApiInvoiceRowPostDataTest extends \PHPUnit_Framework_T
      * Test attribute "product_id"
      */
     public function testPropertyProductId()
+    {
+    }
+
+    /**
+     * Test attribute "contract_id"
+     */
+    public function testPropertyContractId()
     {
     }
 
@@ -150,6 +150,13 @@ class EcedoERPCRMInterfaceApiInvoiceRowPostDataTest extends \PHPUnit_Framework_T
      * Test attribute "vat_inclusive"
      */
     public function testPropertyVatInclusive()
+    {
+    }
+
+    /**
+     * Test attribute "custom_price_component_invoice_row_description"
+     */
+    public function testPropertyCustomPriceComponentInvoiceRowDescription()
     {
     }
 }

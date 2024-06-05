@@ -259,6 +259,13 @@ class EcedoERPCRMInterfaceApiOrganizationPostDataTest extends \PHPUnit_Framework
     }
 
     /**
+     * Test attribute "energy_tax_group_reference"
+     */
+    public function testPropertyEnergyTaxGroupReference()
+    {
+    }
+
+    /**
      * Test attribute "mailing_address"
      */
     public function testPropertyMailingAddress()
@@ -318,6 +325,13 @@ class EcedoERPCRMInterfaceApiOrganizationPostDataTest extends \PHPUnit_Framework
      * Test attribute "company_label_id"
      */
     public function testPropertyCompanyLabelId()
+    {
+    }
+
+    /**
+     * Test attribute "reseller_organization_id"
+     */
+    public function testPropertyResellerOrganizationId()
     {
     }
 }

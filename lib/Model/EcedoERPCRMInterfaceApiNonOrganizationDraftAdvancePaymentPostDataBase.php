@@ -60,7 +60,8 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         'organization_type' => 'string',
         'agreement_date' => '\DateTime',
         'month' => '\DateTime',
-        'connections' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData[]'
+        'connections' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData[]',
+        'company_label_id' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         'organization_type' => null,
         'agreement_date' => 'date',
         'month' => 'date',
-        'connections' => null
+        'connections' => null,
+        'company_label_id' => 'uuid'
     ];
 
     /**
@@ -105,7 +107,8 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         'organization_type' => 'OrganizationType',
         'agreement_date' => 'AgreementDate',
         'month' => 'Month',
-        'connections' => 'Connections'
+        'connections' => 'Connections',
+        'company_label_id' => 'CompanyLabelId'
     ];
 
     /**
@@ -117,7 +120,8 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         'organization_type' => 'setOrganizationType',
         'agreement_date' => 'setAgreementDate',
         'month' => 'setMonth',
-        'connections' => 'setConnections'
+        'connections' => 'setConnections',
+        'company_label_id' => 'setCompanyLabelId'
     ];
 
     /**
@@ -129,7 +133,8 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         'organization_type' => 'getOrganizationType',
         'agreement_date' => 'getAgreementDate',
         'month' => 'getMonth',
-        'connections' => 'getConnections'
+        'connections' => 'getConnections',
+        'company_label_id' => 'getCompanyLabelId'
     ];
 
     /**
@@ -211,6 +216,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
         $this->container['month'] = isset($data['month']) ? $data['month'] : null;
         $this->container['connections'] = isset($data['connections']) ? $data['connections'] : null;
+        $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
     }
 
     /**
@@ -346,6 +352,30 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
     public function setConnections($connections)
     {
         $this->container['connections'] = $connections;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_label_id
+     *
+     * @return string
+     */
+    public function getCompanyLabelId()
+    {
+        return $this->container['company_label_id'];
+    }
+
+    /**
+     * Sets company_label_id
+     *
+     * @param string $company_label_id Id van het companylabel, mag leeg gelaten worden wanneer de leverancier maar 1 EDSN Organisatie EAN heeft
+     *
+     * @return $this
+     */
+    public function setCompanyLabelId($company_label_id)
+    {
+        $this->container['company_label_id'] = $company_label_id;
 
         return $this;
     }

@@ -163,11 +163,11 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
         return self::$swaggerModelName;
     }
 
-    const PRICE_COMPONENT_GROUP_TERUGLEVERING_SURCHARGE = 'TerugleveringSurcharge';
-    const PRICE_COMPONENT_GROUP_LEVERING_SURCHARGE = 'LeveringSurcharge';
     const PRICE_COMPONENT_GROUP_LEVERING = 'Levering';
+    const PRICE_COMPONENT_GROUP_LEVERING_SURCHARGE = 'LeveringSurcharge';
     const PRICE_COMPONENT_GROUP_SHARES = 'Shares';
     const PRICE_COMPONENT_GROUP_TERUGLEVERING = 'Teruglevering';
+    const PRICE_COMPONENT_GROUP_TERUGLEVERING_SURCHARGE = 'TerugleveringSurcharge';
     const PRICE_COMPONENT_GROUP_FIXED_FEE = 'FixedFee';
     const PRICE_COMPONENT_GROUP_SURCHARGE = 'Surcharge';
     const PRICE_COMPONENT_GROUP_TAX = 'Tax';
@@ -202,11 +202,11 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
     public function getPriceComponentGroupAllowableValues()
     {
         return [
-            self::PRICE_COMPONENT_GROUP_TERUGLEVERING_SURCHARGE,
-            self::PRICE_COMPONENT_GROUP_LEVERING_SURCHARGE,
             self::PRICE_COMPONENT_GROUP_LEVERING,
+            self::PRICE_COMPONENT_GROUP_LEVERING_SURCHARGE,
             self::PRICE_COMPONENT_GROUP_SHARES,
             self::PRICE_COMPONENT_GROUP_TERUGLEVERING,
+            self::PRICE_COMPONENT_GROUP_TERUGLEVERING_SURCHARGE,
             self::PRICE_COMPONENT_GROUP_FIXED_FEE,
             self::PRICE_COMPONENT_GROUP_SURCHARGE,
             self::PRICE_COMPONENT_GROUP_TAX,

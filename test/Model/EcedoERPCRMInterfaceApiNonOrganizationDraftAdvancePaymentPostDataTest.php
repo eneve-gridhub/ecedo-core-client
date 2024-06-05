@@ -131,4 +131,11 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataTest exte
     public function testPropertyConnections()
     {
     }
+
+    /**
+     * Test attribute "company_label_id"
+     */
+    public function testPropertyCompanyLabelId()
+    {
+    }
 }

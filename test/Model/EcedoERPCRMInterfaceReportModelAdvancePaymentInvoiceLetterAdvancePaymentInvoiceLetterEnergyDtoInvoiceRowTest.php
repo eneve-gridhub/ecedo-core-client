@@ -77,6 +77,13 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
     }
 
     /**
+     * Test attribute "row_advance_payment_scheme"
+     */
+    public function testPropertyRowAdvancePaymentScheme()
+    {
+    }
+
+    /**
      * Test attribute "row_id"
      */
     public function testPropertyRowId()

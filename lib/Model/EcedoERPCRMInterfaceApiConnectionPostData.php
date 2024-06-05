@@ -62,6 +62,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         'switch_balance_responsible_party_ean' => 'string',
         'switch_supplier_ean' => 'string',
         'cluster' => 'string',
+        'energy_tax_connection_group' => 'string',
         'description' => 'string',
         'comment' => 'string',
         'switch_type' => 'string',
@@ -81,6 +82,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         'switch_balance_responsible_party_ean' => null,
         'switch_supplier_ean' => null,
         'cluster' => null,
+        'energy_tax_connection_group' => null,
         'description' => null,
         'comment' => null,
         'switch_type' => null,
@@ -121,6 +123,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         'switch_balance_responsible_party_ean' => 'SwitchBalanceResponsiblePartyEAN',
         'switch_supplier_ean' => 'SwitchSupplierEAN',
         'cluster' => 'Cluster',
+        'energy_tax_connection_group' => 'EnergyTaxConnectionGroup',
         'description' => 'Description',
         'comment' => 'Comment',
         'switch_type' => 'SwitchType',
@@ -140,6 +143,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         'switch_balance_responsible_party_ean' => 'setSwitchBalanceResponsiblePartyEan',
         'switch_supplier_ean' => 'setSwitchSupplierEan',
         'cluster' => 'setCluster',
+        'energy_tax_connection_group' => 'setEnergyTaxConnectionGroup',
         'description' => 'setDescription',
         'comment' => 'setComment',
         'switch_type' => 'setSwitchType',
@@ -159,6 +163,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         'switch_balance_responsible_party_ean' => 'getSwitchBalanceResponsiblePartyEan',
         'switch_supplier_ean' => 'getSwitchSupplierEan',
         'cluster' => 'getCluster',
+        'energy_tax_connection_group' => 'getEnergyTaxConnectionGroup',
         'description' => 'getDescription',
         'comment' => 'getComment',
         'switch_type' => 'getSwitchType',
@@ -262,6 +267,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         $this->container['switch_balance_responsible_party_ean'] = isset($data['switch_balance_responsible_party_ean']) ? $data['switch_balance_responsible_party_ean'] : null;
         $this->container['switch_supplier_ean'] = isset($data['switch_supplier_ean']) ? $data['switch_supplier_ean'] : null;
         $this->container['cluster'] = isset($data['cluster']) ? $data['cluster'] : null;
+        $this->container['energy_tax_connection_group'] = isset($data['energy_tax_connection_group']) ? $data['energy_tax_connection_group'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
         $this->container['switch_type'] = isset($data['switch_type']) ? $data['switch_type'] : null;
@@ -435,6 +441,30 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
     public function setCluster($cluster)
     {
         $this->container['cluster'] = $cluster;
+
+        return $this;
+    }
+
+    /**
+     * Gets energy_tax_connection_group
+     *
+     * @return string
+     */
+    public function getEnergyTaxConnectionGroup()
+    {
+        return $this->container['energy_tax_connection_group'];
+    }
+
+    /**
+     * Sets energy_tax_connection_group
+     *
+     * @param string $energy_tax_connection_group energy_tax_connection_group
+     *
+     * @return $this
+     */
+    public function setEnergyTaxConnectionGroup($energy_tax_connection_group)
+    {
+        $this->container['energy_tax_connection_group'] = $energy_tax_connection_group;
 
         return $this;
     }

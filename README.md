@@ -85,7 +85,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://innova-test.ecedo.com*
+All URIs are relative to *https://test.ecedo.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -117,6 +117,13 @@ Class | Method | HTTP request | Description
 *SysConnectionGroupApi* | [**sysConnectionGroupGet**](docs/Api/SysConnectionGroupApi.md#sysconnectiongroupget) | **GET** /sysapi/v1.0/organizations/{organizationId}/connectiongroups | 
 *SysConnectionGroupApi* | [**sysConnectionGroupPost**](docs/Api/SysConnectionGroupApi.md#sysconnectiongrouppost) | **POST** /sysapi/v1.0/organizations/{organizationId}/connectiongroups | 
 *SysConnectionGroupApi* | [**sysConnectionGroupPutClusterContractChange**](docs/Api/SysConnectionGroupApi.md#sysconnectiongroupputclustercontractchange) | **POST** /sysapi/v1.0/organizations/{organizationId}/connectiongroups/{clusterReference}/ClusterContractChange | 
+*SysConnectionUsagesApi* | [**sysConnectionUsagesDeleteConnectionUsage**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagesdeleteconnectionusage) | **DELETE** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId}/connectionUsage/{connectionUsageId} | Verwijdert een ConnectionUsage.
+*SysConnectionUsagesApi* | [**sysConnectionUsagesDeleteConnectionUsageGroup**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagesdeleteconnectionusagegroup) | **DELETE** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId} | Verwijdert een ConnectionUsageGroup.
+*SysConnectionUsagesApi* | [**sysConnectionUsagesGetConnectionUsageGroup**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagesgetconnectionusagegroup) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups | Haalt de ConnectionUsageGroups op die bij een aansluiting horen. Deze API haalt niet de volumes op die onder de ConnectionUsageGroups hangen.
+*SysConnectionUsagesApi* | [**sysConnectionUsagesGetConnectionUsages**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagesgetconnectionusages) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId}/connectionUsage | Haalt de ConnectionUsages op die bij een ConnectionUsageGroup horen.
+*SysConnectionUsagesApi* | [**sysConnectionUsagesPatchConnectionUsageGroup**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagespatchconnectionusagegroup) | **PUT** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId} | Deze API kan de beschrijving en comment wijzigen. Als een veld null is wordt het niet gewijzigd.
+*SysConnectionUsagesApi* | [**sysConnectionUsagesPostConnectionUsageGroup**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagespostconnectionusagegroup) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups | Deze API maakt een ConnectionUsageGroup aan.
+*SysConnectionUsagesApi* | [**sysConnectionUsagesPostConnectionUsageGroup_0**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagespostconnectionusagegroup_0) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId}/connectionUsage | Deze API maakt een ConnectionUsage aan.
 *SysConnectionsApi* | [**sysConnectionsCancel**](docs/Api/SysConnectionsApi.md#sysconnectionscancel) | **PUT** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/status/cancel | De status van de aansluiting op &#39;Aanmelding afgebroken&#39; zetten
 *SysConnectionsApi* | [**sysConnectionsChangeAllocationMethod**](docs/Api/SysConnectionsApi.md#sysconnectionschangeallocationmethod) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/changeallocationmethod | Wijzig allocatiemethode
 *SysConnectionsApi* | [**sysConnectionsConnectionProperties**](docs/Api/SysConnectionsApi.md#sysconnectionsconnectionproperties) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionproperties | Wijzig aansluitinggegevens
@@ -171,8 +178,8 @@ Class | Method | HTTP request | Description
 *SysDraftAdvancePaymentsApi* | [**sysDraftAdvancePaymentsCalculateAnnualPriceBreakdownForNonOrganization**](docs/Api/SysDraftAdvancePaymentsApi.md#sysdraftadvancepaymentscalculateannualpricebreakdownfornonorganization) | **POST** /sysapi/v1.0/annualpricebreakdown | Berekenen van de jaarlijkse kosten obv aangegeven verbruik
 *SysDraftAdvancePaymentsApi* | [**sysDraftAdvancePaymentsCalculateDraftAdvancePayment**](docs/Api/SysDraftAdvancePaymentsApi.md#sysdraftadvancepaymentscalculatedraftadvancepayment) | **POST** /sysapi/v1.0/organizations/{organizationId}/draftadvancepayments | Aanmaken proefvoorschot
 *SysDraftAdvancePaymentsApi* | [**sysDraftAdvancePaymentsCalculateDraftAdvancePaymentForNonOrganization**](docs/Api/SysDraftAdvancePaymentsApi.md#sysdraftadvancepaymentscalculatedraftadvancepaymentfornonorganization) | **POST** /sysapi/v1.0/draftadvancepayments | Aanmaken proefvoorschot
-*SysEmailsApi* | [**sysEmailsGet**](docs/Api/SysEmailsApi.md#sysemailsget) | **GET** /sysapi/v1.0/organizations/{organizationId}/emails | Retourneert een lijst van e-mails die bij een organisatie horen aan de hand van de meegegeven parameters
-*SysEmailsApi* | [**sysEmailsSendEmail**](docs/Api/SysEmailsApi.md#sysemailssendemail) | **POST** /sysapi/v1.0/organizations/{organizationId}/emails/{emailId}/send | Een e-mail versturen
+*SysEmailsApi* | [**sysEmailsGet**](docs/Api/SysEmailsApi.md#sysemailsget) | **GET** /sysapi/v1.0/organizations/{organizationId}/emails | Haal e-mails van een specifieke klant
+*SysEmailsApi* | [**sysEmailsSendEmail**](docs/Api/SysEmailsApi.md#sysemailssendemail) | **POST** /sysapi/v1.0/organizations/{organizationId}/emails/{emailId}/send | Een bestaande e-mail (opnieuw) oversturen
 *SysEntityPropertyApi* | [**sysEntityPropertyGetEntityPropertyDefinitions**](docs/Api/SysEntityPropertyApi.md#sysentitypropertygetentitypropertydefinitions) | **GET** /sysapi/v1.0/entitypropertydefinitions | Opvragen Entity Property Definitions
 *SysEntityRevisionApi* | [**sysEntityRevisionGetEntityRevisions**](docs/Api/SysEntityRevisionApi.md#sysentityrevisiongetentityrevisions) | **GET** /sysapi/v1.0/entityrevisions | Verkrijg Entiteiten die gewijzigd zijn na opgegeven datum
 *SysFlowsApi* | [**sysFlowsAcceptProposedAdvancePayment**](docs/Api/SysFlowsApi.md#sysflowsacceptproposedadvancepayment) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/accept | 
@@ -296,7 +303,7 @@ Class | Method | HTTP request | Description
 *SysPropositionGroupsApi* | [**sysPropositionGroupsDelete**](docs/Api/SysPropositionGroupsApi.md#syspropositiongroupsdelete) | **DELETE** /sysapi/v1.0/propositiongroups/{propositionGroupId} | 
 *SysPropositionGroupsApi* | [**sysPropositionGroupsGetPropositionGroups**](docs/Api/SysPropositionGroupsApi.md#syspropositiongroupsgetpropositiongroups) | **GET** /sysapi/v1.0/propositiongroups | Haal alle propositiegroepen op
 *SysPropositionGroupsApi* | [**sysPropositionGroupsPost**](docs/Api/SysPropositionGroupsApi.md#syspropositiongroupspost) | **POST** /sysapi/v1.0/propositiongroups | Aanmaken van een propositiegroep
-*SysPropositionGroupsApi* | [**sysPropositionGroupsPut**](docs/Api/SysPropositionGroupsApi.md#syspropositiongroupsput) | **PUT** /sysapi/v1.0/propositiongroups/{propositionGroupId} | 
+*SysPropositionGroupsApi* | [**sysPropositionGroupsPut**](docs/Api/SysPropositionGroupsApi.md#syspropositiongroupsput) | **PUT** /sysapi/v1.0/propositiongroups/{propositionGroupId} | Wijzigen van een propositiegroep
 *SysPropositionsApi* | [**sysPropositionsEnd**](docs/Api/SysPropositionsApi.md#syspropositionsend) | **PUT** /sysapi/v1.0/propositions/{propositionId}/end | Set de einddatum zodat de propositie beeindigd wordt.
 *SysPropositionsApi* | [**sysPropositionsFilter**](docs/Api/SysPropositionsApi.md#syspropositionsfilter) | **GET** /sysapi/v1.0/propositions/filter | Opvragen van proposities op basis van productid
 *SysPropositionsApi* | [**sysPropositionsGet**](docs/Api/SysPropositionsApi.md#syspropositionsget) | **GET** /sysapi/v1.0/meansofproductions/{meansOfProductionId}/propositions | Opvragen Meelift proposities van een productiemiddel.
@@ -389,6 +396,12 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiConnectionPropertyPostData](docs/Model/EcedoERPCRMInterfaceApiConnectionPropertyPostData.md)
  - [EcedoERPCRMInterfaceApiConnectionPutData](docs/Model/EcedoERPCRMInterfaceApiConnectionPutData.md)
  - [EcedoERPCRMInterfaceApiConnectionTerminationFeeTypes](docs/Model/EcedoERPCRMInterfaceApiConnectionTerminationFeeTypes.md)
+ - [EcedoERPCRMInterfaceApiConnectionUsage](docs/Model/EcedoERPCRMInterfaceApiConnectionUsage.md)
+ - [EcedoERPCRMInterfaceApiConnectionUsageGroup](docs/Model/EcedoERPCRMInterfaceApiConnectionUsageGroup.md)
+ - [EcedoERPCRMInterfaceApiConnectionUsageGroupPostData](docs/Model/EcedoERPCRMInterfaceApiConnectionUsageGroupPostData.md)
+ - [EcedoERPCRMInterfaceApiConnectionUsageGroupPostResult](docs/Model/EcedoERPCRMInterfaceApiConnectionUsageGroupPostResult.md)
+ - [EcedoERPCRMInterfaceApiConnectionUsageGroupPutData](docs/Model/EcedoERPCRMInterfaceApiConnectionUsageGroupPutData.md)
+ - [EcedoERPCRMInterfaceApiConnectionUsagePostData](docs/Model/EcedoERPCRMInterfaceApiConnectionUsagePostData.md)
  - [EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostData](docs/Model/EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostData.md)
  - [EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostDataProcessSettingsPostData](docs/Model/EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostDataProcessSettingsPostData.md)
  - [EcedoERPCRMInterfaceApiContract](docs/Model/EcedoERPCRMInterfaceApiContract.md)
@@ -597,6 +610,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbursementInvoiceLetterDto](docs/Model/EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbursementInvoiceLetterDto.md)
  - [EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbursementInvoiceLetterDtoInvoiceRow](docs/Model/EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbursementInvoiceLetterDtoInvoiceRow.md)
  - [EcedoERPCRMInterfaceReportModelOrganizationDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationDto.md)
+ - [EcedoERPCRMInterfaceReportModelOrganizationResellerDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationResellerDto.md)
  - [EcedoERPCRMInterfaceReportModelProductUnitDto](docs/Model/EcedoERPCRMInterfaceReportModelProductUnitDto.md)
  - [EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDto](docs/Model/EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDto.md)
  - [EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDtoConnection](docs/Model/EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDtoConnection.md)
@@ -617,6 +631,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceServicesEDSNCERCERLookupData](docs/Model/EcedoERPCRMInterfaceServicesEDSNCERCERLookupData.md)
  - [EcedoERPCRMInterfaceServicesEDSNCERCERNoticeData](docs/Model/EcedoERPCRMInterfaceServicesEDSNCERCERNoticeData.md)
  - [EcedoERPUIWebControllersSysApiSysDashboardControllerDashboardDto](docs/Model/EcedoERPUIWebControllersSysApiSysDashboardControllerDashboardDto.md)
+ - [EcedoInfrastructureReportingReportImage](docs/Model/EcedoInfrastructureReportingReportImage.md)
 
 
 ## Documentation For Authorization

@@ -104,7 +104,7 @@ class SysPropositionGroupsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysPropositionGroupsPut
      *
-     * .
+     * Wijzigen van een propositiegroep.
      *
      */
     public function testSysPropositionGroupsPut()

@@ -289,8 +289,8 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
     const END_REASON_CUSTOMER_RENEWAL = 'CustomerRenewal';
     const END_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const END_REASON_CANCELLED = 'Cancelled';
-    const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
     const PROPOSITION_PRICING_TYPE_FIXED = 'Fixed';
+    const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
     const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE = 'MeanDayMarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE = 'MeanMonthMarketPriceVariable';
@@ -298,13 +298,13 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
     const PROPOSITION_PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
     const PROPOSITION_PRICING_TYPE_FULL_ENDEX = 'FullEndex';
     const PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
-    const STATUS_FINALIZED = 'Finalized';
-    const STATUS_ACTIVE = 'Active';
     const STATUS_PROVISIONAL = 'Provisional';
+    const STATUS_ACTIVE = 'Active';
     const STATUS_CANCELLED = 'Cancelled';
     const STATUS_ENDED = 'Ended';
     const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
     const STATUS_PROPOSED = 'Proposed';
+    const STATUS_FINALIZED = 'Finalized';
     
 
     
@@ -349,8 +349,8 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
     public function getPropositionPricingTypeAllowableValues()
     {
         return [
-            self::PROPOSITION_PRICING_TYPE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_FIXED,
+            self::PROPOSITION_PRICING_TYPE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE,
@@ -369,13 +369,13 @@ class EcedoERPCRMInterfaceApiEnergieInkoopContract implements ModelInterface, Ar
     public function getStatusAllowableValues()
     {
         return [
-            self::STATUS_FINALIZED,
-            self::STATUS_ACTIVE,
             self::STATUS_PROVISIONAL,
+            self::STATUS_ACTIVE,
             self::STATUS_CANCELLED,
             self::STATUS_ENDED,
             self::STATUS_WAIT_FOR_APPROVAL,
             self::STATUS_PROPOSED,
+            self::STATUS_FINALIZED,
         ];
     }
     

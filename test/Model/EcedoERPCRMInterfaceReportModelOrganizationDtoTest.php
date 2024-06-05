@@ -196,6 +196,13 @@ class EcedoERPCRMInterfaceReportModelOrganizationDtoTest extends \PHPUnit_Framew
     }
 
     /**
+     * Test attribute "organization_has_reseller"
+     */
+    public function testPropertyOrganizationHasReseller()
+    {
+    }
+
+    /**
      * Test attribute "organization_person_gender_type"
      */
     public function testPropertyOrganizationPersonGenderType()
@@ -451,6 +458,13 @@ class EcedoERPCRMInterfaceReportModelOrganizationDtoTest extends \PHPUnit_Framew
      * Test attribute "company_label"
      */
     public function testPropertyCompanyLabel()
+    {
+    }
+
+    /**
+     * Test attribute "reseller"
+     */
+    public function testPropertyReseller()
     {
     }
 }

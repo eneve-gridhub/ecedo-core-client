@@ -176,6 +176,7 @@ class EcedoERPCRMInterfaceApiConnectionGroupPostData implements ModelInterface, 
     const CONNECTION_GROUP_TYPE_CLUSTER = 'Cluster';
     const CONNECTION_GROUP_TYPE_INVOICE = 'Invoice';
     const CONNECTION_GROUP_TYPE_ALLEGO_DIRECT_PAY = 'AllegoDirectPay';
+    const CONNECTION_GROUP_TYPE_ENERGY_TAX = 'EnergyTax';
     
 
     
@@ -190,6 +191,7 @@ class EcedoERPCRMInterfaceApiConnectionGroupPostData implements ModelInterface, 
             self::CONNECTION_GROUP_TYPE_CLUSTER,
             self::CONNECTION_GROUP_TYPE_INVOICE,
             self::CONNECTION_GROUP_TYPE_ALLEGO_DIRECT_PAY,
+            self::CONNECTION_GROUP_TYPE_ENERGY_TAX,
         ];
     }
     

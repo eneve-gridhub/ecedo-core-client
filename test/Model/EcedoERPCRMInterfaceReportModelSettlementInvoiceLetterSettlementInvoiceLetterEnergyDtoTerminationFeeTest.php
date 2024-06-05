@@ -238,6 +238,48 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "reference_proposition_peak_vat_price"
+     */
+    public function testPropertyReferencePropositionPeakVatPrice()
+    {
+    }
+
+    /**
+     * Test attribute "reference_proposition_off_peak_vat_price"
+     */
+    public function testPropertyReferencePropositionOffPeakVatPrice()
+    {
+    }
+
+    /**
+     * Test attribute "reference_proposition_base_vat_price"
+     */
+    public function testPropertyReferencePropositionBaseVatPrice()
+    {
+    }
+
+    /**
+     * Test attribute "reference_proposition_peak_total_price"
+     */
+    public function testPropertyReferencePropositionPeakTotalPrice()
+    {
+    }
+
+    /**
+     * Test attribute "reference_proposition_off_peak_total_price"
+     */
+    public function testPropertyReferencePropositionOffPeakTotalPrice()
+    {
+    }
+
+    /**
+     * Test attribute "reference_proposition_base_total_price"
+     */
+    public function testPropertyReferencePropositionBaseTotalPrice()
+    {
+    }
+
+    /**
      * Test attribute "contract_proposition_id"
      */
     public function testPropertyContractPropositionId()
@@ -283,6 +325,48 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
      * Test attribute "contract_base_price"
      */
     public function testPropertyContractBasePrice()
+    {
+    }
+
+    /**
+     * Test attribute "contract_peak_vat_price"
+     */
+    public function testPropertyContractPeakVatPrice()
+    {
+    }
+
+    /**
+     * Test attribute "contract_off_peak_vat_price"
+     */
+    public function testPropertyContractOffPeakVatPrice()
+    {
+    }
+
+    /**
+     * Test attribute "contract_base_vat_price"
+     */
+    public function testPropertyContractBaseVatPrice()
+    {
+    }
+
+    /**
+     * Test attribute "contract_peak_total_price"
+     */
+    public function testPropertyContractPeakTotalPrice()
+    {
+    }
+
+    /**
+     * Test attribute "contract_off_peak_total_price"
+     */
+    public function testPropertyContractOffPeakTotalPrice()
+    {
+    }
+
+    /**
+     * Test attribute "contract_base_total_price"
+     */
+    public function testPropertyContractBaseTotalPrice()
     {
     }
 

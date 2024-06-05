@@ -309,17 +309,17 @@ class EcedoERPCRMInterfaceApiContract implements ModelInterface, ArrayAccess
     }
 
     const START_REASON_INITIAL = 'Initial';
-    const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const START_REASON_CUSTOMER_RENEWAL = 'CustomerRenewal';
     const START_REASON_CONTRACT_TYPE_CHANGE = 'ContractTypeChange';
+    const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const START_REASON_MOVE = 'Move';
     const START_REASON_PRODUCER_SWITCH = 'ProducerSwitch';
-    const END_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
-    const END_REASON_VALID_TERMINATION = 'ValidTermination';
     const END_REASON_CANCELLED = 'Cancelled';
     const END_REASON_INVALID_TERMINATION = 'InvalidTermination';
+    const END_REASON_VALID_TERMINATION = 'ValidTermination';
     const END_REASON_CUSTOMER_RENEWAL = 'CustomerRenewal';
     const END_REASON_CONTRACT_TYPE_CHANGE = 'ContractTypeChange';
+    const END_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const END_REASON_PRODUCER_SWITCH = 'ProducerSwitch';
     const CANCELLATION_REASON_WITHIN_COOLING_DOWN_PERIOD = 'WithinCoolingDownPeriod';
     const CANCELLATION_REASON_NON_PAYMENT = 'NonPayment';
@@ -340,13 +340,13 @@ class EcedoERPCRMInterfaceApiContract implements ModelInterface, ArrayAccess
     const PROPOSITION_PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
     const PROPOSITION_PRICING_TYPE_FULL_ENDEX = 'FullEndex';
     const PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
-    const STATUS_FINALIZED = 'Finalized';
     const STATUS_ACTIVE = 'Active';
     const STATUS_PROVISIONAL = 'Provisional';
     const STATUS_CANCELLED = 'Cancelled';
     const STATUS_ENDED = 'Ended';
     const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
     const STATUS_PROPOSED = 'Proposed';
+    const STATUS_FINALIZED = 'Finalized';
     
 
     
@@ -359,9 +359,9 @@ class EcedoERPCRMInterfaceApiContract implements ModelInterface, ArrayAccess
     {
         return [
             self::START_REASON_INITIAL,
-            self::START_REASON_AUTOMATIC_RENEWAL,
             self::START_REASON_CUSTOMER_RENEWAL,
             self::START_REASON_CONTRACT_TYPE_CHANGE,
+            self::START_REASON_AUTOMATIC_RENEWAL,
             self::START_REASON_MOVE,
             self::START_REASON_PRODUCER_SWITCH,
         ];
@@ -375,12 +375,12 @@ class EcedoERPCRMInterfaceApiContract implements ModelInterface, ArrayAccess
     public function getEndReasonAllowableValues()
     {
         return [
-            self::END_REASON_AUTOMATIC_RENEWAL,
-            self::END_REASON_VALID_TERMINATION,
             self::END_REASON_CANCELLED,
             self::END_REASON_INVALID_TERMINATION,
+            self::END_REASON_VALID_TERMINATION,
             self::END_REASON_CUSTOMER_RENEWAL,
             self::END_REASON_CONTRACT_TYPE_CHANGE,
+            self::END_REASON_AUTOMATIC_RENEWAL,
             self::END_REASON_PRODUCER_SWITCH,
         ];
     }
@@ -434,13 +434,13 @@ class EcedoERPCRMInterfaceApiContract implements ModelInterface, ArrayAccess
     public function getStatusAllowableValues()
     {
         return [
-            self::STATUS_FINALIZED,
             self::STATUS_ACTIVE,
             self::STATUS_PROVISIONAL,
             self::STATUS_CANCELLED,
             self::STATUS_ENDED,
             self::STATUS_WAIT_FOR_APPROVAL,
             self::STATUS_PROPOSED,
+            self::STATUS_FINALIZED,
         ];
     }
     

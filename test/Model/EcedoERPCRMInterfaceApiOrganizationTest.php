@@ -231,6 +231,13 @@ class EcedoERPCRMInterfaceApiOrganizationTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "reseller_organization_id"
+     */
+    public function testPropertyResellerOrganizationId()
+    {
+    }
+
+    /**
      * Test attribute "product_or_service_info"
      */
     public function testPropertyProductOrServiceInfo()

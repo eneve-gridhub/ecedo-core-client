@@ -84,13 +84,6 @@ class EcedoERPCRMInterfaceApiCustomInvoiceRowPostDataTest extends \PHPUnit_Frame
     }
 
     /**
-     * Test attribute "custom_price_component_invoice_row_description"
-     */
-    public function testPropertyCustomPriceComponentInvoiceRowDescription()
-    {
-    }
-
-    /**
      * Test attribute "factor"
      */
     public function testPropertyFactor()
@@ -115,6 +108,13 @@ class EcedoERPCRMInterfaceApiCustomInvoiceRowPostDataTest extends \PHPUnit_Frame
      * Test attribute "product_id"
      */
     public function testPropertyProductId()
+    {
+    }
+
+    /**
+     * Test attribute "contract_id"
+     */
+    public function testPropertyContractId()
     {
     }
 
@@ -150,6 +150,13 @@ class EcedoERPCRMInterfaceApiCustomInvoiceRowPostDataTest extends \PHPUnit_Frame
      * Test attribute "vat_inclusive"
      */
     public function testPropertyVatInclusive()
+    {
+    }
+
+    /**
+     * Test attribute "custom_price_component_invoice_row_description"
+     */
+    public function testPropertyCustomPriceComponentInvoiceRowDescription()
     {
     }
 }

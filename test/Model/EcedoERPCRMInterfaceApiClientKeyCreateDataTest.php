@@ -96,4 +96,11 @@ class EcedoERPCRMInterfaceApiClientKeyCreateDataTest extends \PHPUnit_Framework_
     public function testPropertyIbanKey()
     {
     }
+
+    /**
+     * Test attribute "company_label_id"
+     */
+    public function testPropertyCompanyLabelId()
+    {
+    }
 }

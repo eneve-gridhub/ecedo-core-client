@@ -57,6 +57,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'row_advance_payment_scheme' => 'string',
         'row_id' => 'string',
         'invoice_id' => 'string',
         'organization_id' => 'string',
@@ -103,6 +104,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'row_advance_payment_scheme' => null,
         'row_id' => null,
         'invoice_id' => 'uuid',
         'organization_id' => null,
@@ -170,6 +172,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
      * @var string[]
      */
     protected static $attributeMap = [
+        'row_advance_payment_scheme' => 'Row_AdvancePayment_Scheme',
         'row_id' => 'Row_Id',
         'invoice_id' => 'Invoice_Id',
         'organization_id' => 'Organization_Id',
@@ -216,6 +219,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
      * @var string[]
      */
     protected static $setters = [
+        'row_advance_payment_scheme' => 'setRowAdvancePaymentScheme',
         'row_id' => 'setRowId',
         'invoice_id' => 'setInvoiceId',
         'organization_id' => 'setOrganizationId',
@@ -262,6 +266,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
      * @var string[]
      */
     protected static $getters = [
+        'row_advance_payment_scheme' => 'getRowAdvancePaymentScheme',
         'row_id' => 'getRowId',
         'invoice_id' => 'getInvoiceId',
         'organization_id' => 'getOrganizationId',
@@ -362,6 +367,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
      */
     public function __construct(array $data = null)
     {
+        $this->container['row_advance_payment_scheme'] = isset($data['row_advance_payment_scheme']) ? $data['row_advance_payment_scheme'] : null;
         $this->container['row_id'] = isset($data['row_id']) ? $data['row_id'] : null;
         $this->container['invoice_id'] = isset($data['invoice_id']) ? $data['invoice_id'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
@@ -425,6 +431,30 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets row_advance_payment_scheme
+     *
+     * @return string
+     */
+    public function getRowAdvancePaymentScheme()
+    {
+        return $this->container['row_advance_payment_scheme'];
+    }
+
+    /**
+     * Sets row_advance_payment_scheme
+     *
+     * @param string $row_advance_payment_scheme row_advance_payment_scheme
+     *
+     * @return $this
+     */
+    public function setRowAdvancePaymentScheme($row_advance_payment_scheme)
+    {
+        $this->container['row_advance_payment_scheme'] = $row_advance_payment_scheme;
+
+        return $this;
+    }
 
     /**
      * Gets row_id

@@ -4686,14 +4686,15 @@ class SysFlowsApi
      * @param  string $connection_id Guid van de aansluiting (required)
      * @param  string $switch_out_type Type uitswitch dat afgehandeld moet worden (required)
      * @param  \DateTime $switch_out_date De datum waarop de uitswitch moet plaatsvinden. Met behulp van API \&quot;GET /sysapi/v1.0/events/minimumeventdate\&quot; kan bepaald worden wat de minimale datum is die ingestuurd kan worden. (required)
+     * @param  bool $calculate_provisional_termination_fee Boolean die aangeeft of er een voorlopige opzegboete berekend moet worden (als de CERContractLoss trigger is ingesteld dan zal er ook e-mail naar de klant worden verstuurd). Deze boolean staat default op true. Deze boolean doet alleen iets als het switch out event een uithuizing is. Bij einde levering wordt er nooit een voorlopige opzegboete berekend. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function sysFlowsSendSwitchOut($connection_id, $switch_out_type, $switch_out_date)
+    public function sysFlowsSendSwitchOut($connection_id, $switch_out_type, $switch_out_date, $calculate_provisional_termination_fee = null)
     {
-        list($response) = $this->sysFlowsSendSwitchOutWithHttpInfo($connection_id, $switch_out_type, $switch_out_date);
+        list($response) = $this->sysFlowsSendSwitchOutWithHttpInfo($connection_id, $switch_out_type, $switch_out_date, $calculate_provisional_termination_fee);
         return $response;
     }
 
@@ -4705,15 +4706,16 @@ class SysFlowsApi
      * @param  string $connection_id Guid van de aansluiting (required)
      * @param  string $switch_out_type Type uitswitch dat afgehandeld moet worden (required)
      * @param  \DateTime $switch_out_date De datum waarop de uitswitch moet plaatsvinden. Met behulp van API \&quot;GET /sysapi/v1.0/events/minimumeventdate\&quot; kan bepaald worden wat de minimale datum is die ingestuurd kan worden. (required)
+     * @param  bool $calculate_provisional_termination_fee Boolean die aangeeft of er een voorlopige opzegboete berekend moet worden (als de CERContractLoss trigger is ingesteld dan zal er ook e-mail naar de klant worden verstuurd). Deze boolean staat default op true. Deze boolean doet alleen iets als het switch out event een uithuizing is. Bij einde levering wordt er nooit een voorlopige opzegboete berekend. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysFlowsSendSwitchOutWithHttpInfo($connection_id, $switch_out_type, $switch_out_date)
+    public function sysFlowsSendSwitchOutWithHttpInfo($connection_id, $switch_out_type, $switch_out_date, $calculate_provisional_termination_fee = null)
     {
         $returnType = 'object';
-        $request = $this->sysFlowsSendSwitchOutRequest($connection_id, $switch_out_type, $switch_out_date);
+        $request = $this->sysFlowsSendSwitchOutRequest($connection_id, $switch_out_type, $switch_out_date, $calculate_provisional_termination_fee);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4798,13 +4800,14 @@ class SysFlowsApi
      * @param  string $connection_id Guid van de aansluiting (required)
      * @param  string $switch_out_type Type uitswitch dat afgehandeld moet worden (required)
      * @param  \DateTime $switch_out_date De datum waarop de uitswitch moet plaatsvinden. Met behulp van API \&quot;GET /sysapi/v1.0/events/minimumeventdate\&quot; kan bepaald worden wat de minimale datum is die ingestuurd kan worden. (required)
+     * @param  bool $calculate_provisional_termination_fee Boolean die aangeeft of er een voorlopige opzegboete berekend moet worden (als de CERContractLoss trigger is ingesteld dan zal er ook e-mail naar de klant worden verstuurd). Deze boolean staat default op true. Deze boolean doet alleen iets als het switch out event een uithuizing is. Bij einde levering wordt er nooit een voorlopige opzegboete berekend. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsSendSwitchOutAsync($connection_id, $switch_out_type, $switch_out_date)
+    public function sysFlowsSendSwitchOutAsync($connection_id, $switch_out_type, $switch_out_date, $calculate_provisional_termination_fee = null)
     {
-        return $this->sysFlowsSendSwitchOutAsyncWithHttpInfo($connection_id, $switch_out_type, $switch_out_date)
+        return $this->sysFlowsSendSwitchOutAsyncWithHttpInfo($connection_id, $switch_out_type, $switch_out_date, $calculate_provisional_termination_fee)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4820,14 +4823,15 @@ class SysFlowsApi
      * @param  string $connection_id Guid van de aansluiting (required)
      * @param  string $switch_out_type Type uitswitch dat afgehandeld moet worden (required)
      * @param  \DateTime $switch_out_date De datum waarop de uitswitch moet plaatsvinden. Met behulp van API \&quot;GET /sysapi/v1.0/events/minimumeventdate\&quot; kan bepaald worden wat de minimale datum is die ingestuurd kan worden. (required)
+     * @param  bool $calculate_provisional_termination_fee Boolean die aangeeft of er een voorlopige opzegboete berekend moet worden (als de CERContractLoss trigger is ingesteld dan zal er ook e-mail naar de klant worden verstuurd). Deze boolean staat default op true. Deze boolean doet alleen iets als het switch out event een uithuizing is. Bij einde levering wordt er nooit een voorlopige opzegboete berekend. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsSendSwitchOutAsyncWithHttpInfo($connection_id, $switch_out_type, $switch_out_date)
+    public function sysFlowsSendSwitchOutAsyncWithHttpInfo($connection_id, $switch_out_type, $switch_out_date, $calculate_provisional_termination_fee = null)
     {
         $returnType = 'object';
-        $request = $this->sysFlowsSendSwitchOutRequest($connection_id, $switch_out_type, $switch_out_date);
+        $request = $this->sysFlowsSendSwitchOutRequest($connection_id, $switch_out_type, $switch_out_date, $calculate_provisional_termination_fee);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4872,11 +4876,12 @@ class SysFlowsApi
      * @param  string $connection_id Guid van de aansluiting (required)
      * @param  string $switch_out_type Type uitswitch dat afgehandeld moet worden (required)
      * @param  \DateTime $switch_out_date De datum waarop de uitswitch moet plaatsvinden. Met behulp van API \&quot;GET /sysapi/v1.0/events/minimumeventdate\&quot; kan bepaald worden wat de minimale datum is die ingestuurd kan worden. (required)
+     * @param  bool $calculate_provisional_termination_fee Boolean die aangeeft of er een voorlopige opzegboete berekend moet worden (als de CERContractLoss trigger is ingesteld dan zal er ook e-mail naar de klant worden verstuurd). Deze boolean staat default op true. Deze boolean doet alleen iets als het switch out event een uithuizing is. Bij einde levering wordt er nooit een voorlopige opzegboete berekend. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysFlowsSendSwitchOutRequest($connection_id, $switch_out_type, $switch_out_date)
+    protected function sysFlowsSendSwitchOutRequest($connection_id, $switch_out_type, $switch_out_date, $calculate_provisional_termination_fee = null)
     {
         // verify the required parameter 'connection_id' is set
         if ($connection_id === null || (is_array($connection_id) && count($connection_id) === 0)) {
@@ -4915,6 +4920,10 @@ class SysFlowsApi
         // query params
         if ($switch_out_date !== null) {
             $queryParams['switchOutDate'] = ObjectSerializer::toQueryValue($switch_out_date);
+        }
+        // query params
+        if ($calculate_provisional_termination_fee !== null) {
+            $queryParams['calculateProvisionalTerminationFee'] = ObjectSerializer::toQueryValue($calculate_provisional_termination_fee);
         }
 
 

@@ -59,7 +59,8 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
     protected static $swaggerTypes = [
         'external_reference' => 'string',
         'birth_day_key' => 'string',
-        'iban_key' => 'string'
+        'iban_key' => 'string',
+        'company_label_id' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
     protected static $swaggerFormats = [
         'external_reference' => null,
         'birth_day_key' => null,
-        'iban_key' => null
+        'iban_key' => null,
+        'company_label_id' => 'uuid'
     ];
 
     /**
@@ -102,7 +104,8 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
     protected static $attributeMap = [
         'external_reference' => 'ExternalReference',
         'birth_day_key' => 'BirthDayKey',
-        'iban_key' => 'IbanKey'
+        'iban_key' => 'IbanKey',
+        'company_label_id' => 'CompanyLabelId'
     ];
 
     /**
@@ -113,7 +116,8 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
     protected static $setters = [
         'external_reference' => 'setExternalReference',
         'birth_day_key' => 'setBirthDayKey',
-        'iban_key' => 'setIbanKey'
+        'iban_key' => 'setIbanKey',
+        'company_label_id' => 'setCompanyLabelId'
     ];
 
     /**
@@ -124,7 +128,8 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
     protected static $getters = [
         'external_reference' => 'getExternalReference',
         'birth_day_key' => 'getBirthDayKey',
-        'iban_key' => 'getIbanKey'
+        'iban_key' => 'getIbanKey',
+        'company_label_id' => 'getCompanyLabelId'
     ];
 
     /**
@@ -190,6 +195,7 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
         $this->container['external_reference'] = isset($data['external_reference']) ? $data['external_reference'] : null;
         $this->container['birth_day_key'] = isset($data['birth_day_key']) ? $data['birth_day_key'] : null;
         $this->container['iban_key'] = isset($data['iban_key']) ? $data['iban_key'] : null;
+        $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
     }
 
     /**
@@ -284,6 +290,30 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
     public function setIbanKey($iban_key)
     {
         $this->container['iban_key'] = $iban_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_label_id
+     *
+     * @return string
+     */
+    public function getCompanyLabelId()
+    {
+        return $this->container['company_label_id'];
+    }
+
+    /**
+     * Sets company_label_id
+     *
+     * @param string $company_label_id Id van het companylabel, mag leeg worden zijn wanneer de leverancier maar 1 EDSN Organisatie EAN heeft
+     *
+     * @return $this
+     */
+    public function setCompanyLabelId($company_label_id)
+    {
+        $this->container['company_label_id'] = $company_label_id;
 
         return $this;
     }

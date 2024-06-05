@@ -117,4 +117,11 @@ class EcedoERPCRMInterfaceApiPropositionGroupTest extends \PHPUnit_Framework_Tes
     public function testPropertyProductId()
     {
     }
+
+    /**
+     * Test attribute "reference_proposition_group_id"
+     */
+    public function testPropertyReferencePropositionGroupId()
+    {
+    }
 }
