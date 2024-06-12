@@ -66,7 +66,8 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         'meter_registers_direction_type_localized' => 'string',
         'meter_dial_position_order_type' => 'string',
         'meter_dial_position_order_type_localized' => 'string',
-        'factor' => 'double'
+        'factor' => 'double',
+        'communication_status_code' => 'object'
     ];
 
     /**
@@ -84,7 +85,8 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         'meter_registers_direction_type_localized' => null,
         'meter_dial_position_order_type' => null,
         'meter_dial_position_order_type_localized' => null,
-        'factor' => 'double'
+        'factor' => 'double',
+        'communication_status_code' => null
     ];
 
     /**
@@ -123,7 +125,8 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         'meter_registers_direction_type_localized' => 'MeterRegistersDirectionTypeLocalized',
         'meter_dial_position_order_type' => 'MeterDialPositionOrderType',
         'meter_dial_position_order_type_localized' => 'MeterDialPositionOrderTypeLocalized',
-        'factor' => 'Factor'
+        'factor' => 'Factor',
+        'communication_status_code' => 'CommunicationStatusCode'
     ];
 
     /**
@@ -141,7 +144,8 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         'meter_registers_direction_type_localized' => 'setMeterRegistersDirectionTypeLocalized',
         'meter_dial_position_order_type' => 'setMeterDialPositionOrderType',
         'meter_dial_position_order_type_localized' => 'setMeterDialPositionOrderTypeLocalized',
-        'factor' => 'setFactor'
+        'factor' => 'setFactor',
+        'communication_status_code' => 'setCommunicationStatusCode'
     ];
 
     /**
@@ -159,7 +163,8 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         'meter_registers_direction_type_localized' => 'getMeterRegistersDirectionTypeLocalized',
         'meter_dial_position_order_type' => 'getMeterDialPositionOrderType',
         'meter_dial_position_order_type_localized' => 'getMeterDialPositionOrderTypeLocalized',
-        'factor' => 'getFactor'
+        'factor' => 'getFactor',
+        'communication_status_code' => 'getCommunicationStatusCode'
     ];
 
     /**
@@ -293,6 +298,7 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         $this->container['meter_dial_position_order_type'] = isset($data['meter_dial_position_order_type']) ? $data['meter_dial_position_order_type'] : null;
         $this->container['meter_dial_position_order_type_localized'] = isset($data['meter_dial_position_order_type_localized']) ? $data['meter_dial_position_order_type_localized'] : null;
         $this->container['factor'] = isset($data['factor']) ? $data['factor'] : null;
+        $this->container['communication_status_code'] = isset($data['communication_status_code']) ? $data['communication_status_code'] : null;
     }
 
     /**
@@ -606,6 +612,30 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
     public function setFactor($factor)
     {
         $this->container['factor'] = $factor;
+
+        return $this;
+    }
+
+    /**
+     * Gets communication_status_code
+     *
+     * @return object
+     */
+    public function getCommunicationStatusCode()
+    {
+        return $this->container['communication_status_code'];
+    }
+
+    /**
+     * Sets communication_status_code
+     *
+     * @param object $communication_status_code communication_status_code
+     *
+     * @return $this
+     */
+    public function setCommunicationStatusCode($communication_status_code)
+    {
+        $this->container['communication_status_code'] = $communication_status_code;
 
         return $this;
     }
