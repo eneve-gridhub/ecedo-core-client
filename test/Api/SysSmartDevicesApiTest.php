@@ -82,6 +82,16 @@ class SysSmartDevicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysSmartDevicesGetSmartDevice
+     *
+     * Verkrijg slimme apparaten van organisatie.
+     *
+     */
+    public function testSysSmartDevicesGetSmartDevice()
+    {
+    }
+
+    /**
      * Test case for sysSmartDevicesGetSmartDevices
      *
      * Verkrijg slimme apparaten van organisatie.

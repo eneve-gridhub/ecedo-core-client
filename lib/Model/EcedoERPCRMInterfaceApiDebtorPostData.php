@@ -252,8 +252,8 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
     const ADVANCE_PAYMENT_SCHEDULE_TYPE_FLEXIBLE = 'Flexible';
     const ADVANCE_PAYMENT_SCHEDULE_TYPE_IN_MONTH = 'InMonth';
     const ADVANCE_PAYMENT_SCHEDULE_TYPE_BEFORE_MONTH = 'BeforeMonth';
-    const PAYMENT_METHOD_AUTOMATIC_COLLECTION = 'AutomaticCollection';
     const PAYMENT_METHOD_INVOICE = 'Invoice';
+    const PAYMENT_METHOD_AUTOMATIC_COLLECTION = 'AutomaticCollection';
     const PAYMENT_METHOD_VIA_PARENT_ORGANIZATION = 'ViaParentOrganization';
     const PAYMENT_METHOD_DIRECT_PAY = 'DirectPay';
     const BANK_ACCOUNT_TYPE_BANK = 'Bank';
@@ -314,8 +314,8 @@ class EcedoERPCRMInterfaceApiDebtorPostData implements ModelInterface, ArrayAcce
     public function getPaymentMethodAllowableValues()
     {
         return [
-            self::PAYMENT_METHOD_AUTOMATIC_COLLECTION,
             self::PAYMENT_METHOD_INVOICE,
+            self::PAYMENT_METHOD_AUTOMATIC_COLLECTION,
             self::PAYMENT_METHOD_VIA_PARENT_ORGANIZATION,
             self::PAYMENT_METHOD_DIRECT_PAY,
         ];

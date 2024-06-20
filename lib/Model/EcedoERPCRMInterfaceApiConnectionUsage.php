@@ -200,6 +200,7 @@ class EcedoERPCRMInterfaceApiConnectionUsage implements ModelInterface, ArrayAcc
 
     const UNIT_KWH = 'KWh';
     const STATUS_CREATED = 'Created';
+    const STATUS_BILLED = 'Billed';
     const STATUS_CANCELLED = 'Cancelled';
     
 
@@ -225,6 +226,7 @@ class EcedoERPCRMInterfaceApiConnectionUsage implements ModelInterface, ArrayAcc
     {
         return [
             self::STATUS_CREATED,
+            self::STATUS_BILLED,
             self::STATUS_CANCELLED,
         ];
     }

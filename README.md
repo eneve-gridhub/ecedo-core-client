@@ -122,8 +122,8 @@ Class | Method | HTTP request | Description
 *SysConnectionUsagesApi* | [**sysConnectionUsagesGetConnectionUsageGroup**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagesgetconnectionusagegroup) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups | Haalt de ConnectionUsageGroups op die bij een aansluiting horen. Deze API haalt niet de volumes op die onder de ConnectionUsageGroups hangen.
 *SysConnectionUsagesApi* | [**sysConnectionUsagesGetConnectionUsages**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagesgetconnectionusages) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId}/connectionUsage | Haalt de ConnectionUsages op die bij een ConnectionUsageGroup horen.
 *SysConnectionUsagesApi* | [**sysConnectionUsagesPatchConnectionUsageGroup**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagespatchconnectionusagegroup) | **PUT** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId} | Deze API kan de beschrijving en comment wijzigen. Als een veld null is wordt het niet gewijzigd.
+*SysConnectionUsagesApi* | [**sysConnectionUsagesPostConnectionUsage**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagespostconnectionusage) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId}/connectionUsage | Deze API maakt een ConnectionUsage aan.
 *SysConnectionUsagesApi* | [**sysConnectionUsagesPostConnectionUsageGroup**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagespostconnectionusagegroup) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups | Deze API maakt een ConnectionUsageGroup aan.
-*SysConnectionUsagesApi* | [**sysConnectionUsagesPostConnectionUsageGroup_0**](docs/Api/SysConnectionUsagesApi.md#sysconnectionusagespostconnectionusagegroup_0) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId}/connectionUsage | Deze API maakt een ConnectionUsage aan.
 *SysConnectionsApi* | [**sysConnectionsCancel**](docs/Api/SysConnectionsApi.md#sysconnectionscancel) | **PUT** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/status/cancel | De status van de aansluiting op &#39;Aanmelding afgebroken&#39; zetten
 *SysConnectionsApi* | [**sysConnectionsChangeAllocationMethod**](docs/Api/SysConnectionsApi.md#sysconnectionschangeallocationmethod) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/changeallocationmethod | Wijzig allocatiemethode
 *SysConnectionsApi* | [**sysConnectionsConnectionProperties**](docs/Api/SysConnectionsApi.md#sysconnectionsconnectionproperties) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionproperties | Wijzig aansluitinggegevens
@@ -314,17 +314,21 @@ Class | Method | HTTP request | Description
 *SysRepresentativeApi* | [**sysRepresentativeGet**](docs/Api/SysRepresentativeApi.md#sysrepresentativeget) | **GET** /sysapi/v1.0/representatives | Opvragen verkopers
 *SysRepresentativeApi* | [**sysRepresentativePost**](docs/Api/SysRepresentativeApi.md#sysrepresentativepost) | **POST** /sysapi/v1.0/representatives | Aanmaken van een verkoper
 *SysRepresentativeApi* | [**sysRepresentativePut**](docs/Api/SysRepresentativeApi.md#sysrepresentativeput) | **PUT** /sysapi/v1.0/representatives/{representativeId} | Wijzigen van een verkoper
+*SysResellerApi* | [**sysResellerDeleteResellerDetail**](docs/Api/SysResellerApi.md#sysresellerdeleteresellerdetail) | **DELETE** /sysapi/v1.0/resellers/{resellerOrganizationId}/details | Verwijder wederverkoper detail
 *SysResellerApi* | [**sysResellerGetContractPrices**](docs/Api/SysResellerApi.md#sysresellergetcontractprices) | **GET** /sysapi/v1.0/reseller/organizations/{organizationId}/proposedcontracts/{contractId}/prices | Verkrijg de prijzen van alle prijscomponenten van offertes
 *SysResellerApi* | [**sysResellerGetContracts**](docs/Api/SysResellerApi.md#sysresellergetcontracts) | **GET** /sysapi/v1.0/reseller/{resellerOrganizationId}/contracts | Verkrijg de contracten van een wederverkoper
 *SysResellerApi* | [**sysResellerGetOrganizations**](docs/Api/SysResellerApi.md#sysresellergetorganizations) | **GET** /sysapi/v1.0/reseller/resellerorganizations/{resellerOrganizationId}/organizations | Verkrijg de klanten van een wederverkoper
 *SysResellerApi* | [**sysResellerGetProposedContracts**](docs/Api/SysResellerApi.md#sysresellergetproposedcontracts) | **GET** /sysapi/v1.0/reseller/resellerorganizations/{resellerOrganizationId}/proposedcontracts | Verkrijg offerte contracten
+*SysResellerApi* | [**sysResellerGetResellerDetail**](docs/Api/SysResellerApi.md#sysresellergetresellerdetail) | **GET** /sysapi/v1.0/resellers/{resellerOrganizationId}/details | Verkrijg de details van een wederverkoper
 *SysResellerApi* | [**sysResellerPostContract**](docs/Api/SysResellerApi.md#sysresellerpostcontract) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/proposedcontracts | Post contract
 *SysResellerApi* | [**sysResellerPostContractPrices**](docs/Api/SysResellerApi.md#sysresellerpostcontractprices) | **POST** /sysapi/v1.0/reseller/contracts/{contractId}/addresellerprices | Toevoegen van reseller prijzen per contract
 *SysResellerApi* | [**sysResellerPostContractProposalApproved**](docs/Api/SysResellerApi.md#sysresellerpostcontractproposalapproved) | **POST** /sysapi/v1.0/reseller/contracts/{contractId}/approveproposal | Post contract proposal approved
+*SysResellerApi* | [**sysResellerPutResellerDetail**](docs/Api/SysResellerApi.md#sysresellerputresellerdetail) | **PUT** /sysapi/v1.0/resellers/{resellerOrganizationId}/details | Update wederverkoper detail
 *SysResellerApi* | [**sysResellerSearch**](docs/Api/SysResellerApi.md#sysresellersearch) | **GET** /sysapi/v1.0/reseller/search | Verkrijg de wederverkopers
 *SysReservationApi* | [**sysReservationGetAnnualStandardUsageReservationResults**](docs/Api/SysReservationApi.md#sysreservationgetannualstandardusagereservationresults) | **GET** /sysapi/v1.0/propositions/{propositionReference}/reservations | Ophalen van SJV voor alle aansluitingen behorend bij een propositie referentie
 *SysServiceContractApi* | [**sysServiceContractGetServiceContract**](docs/Api/SysServiceContractApi.md#sysservicecontractgetservicecontract) | **GET** /sysapi/v1.0/organizations/{organizationId}/servicecontracts/{contractId} | 
 *SysSmartDevicesApi* | [**sysSmartDevicesGetSmartChargingSessions**](docs/Api/SysSmartDevicesApi.md#syssmartdevicesgetsmartchargingsessions) | **GET** /sysapi/v1.0/organizations/{organizationId}/smartdevices/{deviceId}/smartchargingsessions | Verkrijg slimme laadsessies per apparaat
+*SysSmartDevicesApi* | [**sysSmartDevicesGetSmartDevice**](docs/Api/SysSmartDevicesApi.md#syssmartdevicesgetsmartdevice) | **GET** /sysapi/v1.0/organizations/{organizationId}/smartdevices/{smartDeviceId} | Verkrijg slimme apparaten van organisatie
 *SysSmartDevicesApi* | [**sysSmartDevicesGetSmartDevices**](docs/Api/SysSmartDevicesApi.md#syssmartdevicesgetsmartdevices) | **GET** /sysapi/v1.0/organizations/{organizationId}/smartdevices | Verkrijg slimme apparaten van organisatie
 *SysTelemetryApi* | [**sysTelemetryGetMeansOfProductionTelemetryById**](docs/Api/SysTelemetryApi.md#systelemetrygetmeansofproductiontelemetrybyid) | **GET** /sysapi/v1.0/telemetryreadings/meansofproductionconnection/{id} | Opvragen telemetrie van productiemiddel door middel van het ID van de aansluiting
 *SysTelemetryApi* | [**sysTelemetryGetTelemetry**](docs/Api/SysTelemetryApi.md#systelemetrygettelemetry) | **GET** /sysapi/v1.0/telemetryreadings/{ean} | Opvragen telemetrie aan de hand van een EAN
@@ -337,6 +341,10 @@ Class | Method | HTTP request | Description
 *SysTerminationFeesApi* | [**sysTerminationFeesGetTerminationFeesByConnection**](docs/Api/SysTerminationFeesApi.md#systerminationfeesgetterminationfeesbyconnection) | **GET** /sysapi/v1.0/terminationfees/byConnection/{connectionId} | Haalt de opzegvergoedingen op die bij een aansluiting horen
 *SysTerminationFeesApi* | [**sysTerminationFeesGetTerminationFeesByInvoice**](docs/Api/SysTerminationFeesApi.md#systerminationfeesgetterminationfeesbyinvoice) | **GET** /sysapi/v1.0/terminationfees/byInvoice/{invoiceId} | Haalt de gefactureerde opzegvergoedingen op voor een specifieke factuur
 *SysValidateMeterReadingApi* | [**sysValidateMeterReadingPost**](docs/Api/SysValidateMeterReadingApi.md#sysvalidatemeterreadingpost) | **POST** /sysapi/v1.0/validatemeterreading | 
+*SysZipAreaTaxCreditProjectApi* | [**sysZipAreaTaxCreditProjectDeleteZipAreaEnergyTaxCreditProject**](docs/Api/SysZipAreaTaxCreditProjectApi.md#syszipareataxcreditprojectdeletezipareaenergytaxcreditproject) | **DELETE** /sysapi/v1.0/zipareaenergytaxcreditproject/{zipAreaEnergyTaxCreditProjectId} | Verwijder een postcoderoosproject
+*SysZipAreaTaxCreditProjectApi* | [**sysZipAreaTaxCreditProjectGetZipAreaEnergyTaxCreditProjects**](docs/Api/SysZipAreaTaxCreditProjectApi.md#syszipareataxcreditprojectgetzipareaenergytaxcreditprojects) | **GET** /sysapi/v1.0/zipareaenergytaxcreditproject | Verkrijg een lijst van objecten met de velden uit postcoderoosproject
+*SysZipAreaTaxCreditProjectApi* | [**sysZipAreaTaxCreditProjectPostZipAreaEnergyTaxCreditProject**](docs/Api/SysZipAreaTaxCreditProjectApi.md#syszipareataxcreditprojectpostzipareaenergytaxcreditproject) | **POST** /sysapi/v1.0/zipareaenergytaxcreditproject | Voeg een postcoderoosproject toe
+*SysZipAreaTaxCreditProjectApi* | [**sysZipAreaTaxCreditProjectPutZipAreaEnergyTaxCreditProject**](docs/Api/SysZipAreaTaxCreditProjectApi.md#syszipareataxcreditprojectputzipareaenergytaxcreditproject) | **PUT** /sysapi/v1.0/zipareaenergytaxcreditproject/{zipAreaEnergyTaxCreditProjectId} | Update een postcoderoosproject
 
 
 ## Documentation For Models
@@ -558,6 +566,8 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiResellerContract](docs/Model/EcedoERPCRMInterfaceApiResellerContract.md)
  - [EcedoERPCRMInterfaceApiResellerContractPostData](docs/Model/EcedoERPCRMInterfaceApiResellerContractPostData.md)
  - [EcedoERPCRMInterfaceApiResellerContractPricePostData](docs/Model/EcedoERPCRMInterfaceApiResellerContractPricePostData.md)
+ - [EcedoERPCRMInterfaceApiResellerDetail](docs/Model/EcedoERPCRMInterfaceApiResellerDetail.md)
+ - [EcedoERPCRMInterfaceApiResellerDetailPutData](docs/Model/EcedoERPCRMInterfaceApiResellerDetailPutData.md)
  - [EcedoERPCRMInterfaceApiResellerOrganization](docs/Model/EcedoERPCRMInterfaceApiResellerOrganization.md)
  - [EcedoERPCRMInterfaceApiReservation](docs/Model/EcedoERPCRMInterfaceApiReservation.md)
  - [EcedoERPCRMInterfaceApiReservationBase](docs/Model/EcedoERPCRMInterfaceApiReservationBase.md)
@@ -576,6 +586,12 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiValidateMeterReadingPostData](docs/Model/EcedoERPCRMInterfaceApiValidateMeterReadingPostData.md)
  - [EcedoERPCRMInterfaceApiValidateMeterReadingPostResult](docs/Model/EcedoERPCRMInterfaceApiValidateMeterReadingPostResult.md)
  - [EcedoERPCRMInterfaceApiWorkflowStep](docs/Model/EcedoERPCRMInterfaceApiWorkflowStep.md)
+ - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProject](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProject.md)
+ - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData.md)
+ - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostResult](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostResult.md)
+ - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData.md)
+ - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipArea](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipArea.md)
+ - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipAreaPostData](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipAreaPostData.md)
  - [EcedoERPCRMInterfaceGDPRAddress](docs/Model/EcedoERPCRMInterfaceGDPRAddress.md)
  - [EcedoERPCRMInterfaceGDPRBusiness](docs/Model/EcedoERPCRMInterfaceGDPRBusiness.md)
  - [EcedoERPCRMInterfaceGDPRConnection](docs/Model/EcedoERPCRMInterfaceGDPRConnection.md)

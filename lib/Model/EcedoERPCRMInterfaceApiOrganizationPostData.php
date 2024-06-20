@@ -59,6 +59,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     protected static $swaggerTypes = [
         'process_settings' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiOrganizationPostDataProcessSettingsPostData',
         'organization_type' => 'string',
+        'organization_sub_type' => 'string',
         'client_reference' => 'string',
         'sales_reference' => 'string',
         'channel' => 'string',
@@ -104,6 +105,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     protected static $swaggerFormats = [
         'process_settings' => null,
         'organization_type' => null,
+        'organization_sub_type' => null,
         'client_reference' => null,
         'sales_reference' => null,
         'channel' => null,
@@ -170,6 +172,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     protected static $attributeMap = [
         'process_settings' => 'ProcessSettings',
         'organization_type' => 'OrganizationType',
+        'organization_sub_type' => 'OrganizationSubType',
         'client_reference' => 'ClientReference',
         'sales_reference' => 'SalesReference',
         'channel' => 'Channel',
@@ -215,6 +218,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     protected static $setters = [
         'process_settings' => 'setProcessSettings',
         'organization_type' => 'setOrganizationType',
+        'organization_sub_type' => 'setOrganizationSubType',
         'client_reference' => 'setClientReference',
         'sales_reference' => 'setSalesReference',
         'channel' => 'setChannel',
@@ -260,6 +264,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     protected static $getters = [
         'process_settings' => 'getProcessSettings',
         'organization_type' => 'getOrganizationType',
+        'organization_sub_type' => 'getOrganizationSubType',
         'client_reference' => 'getClientReference',
         'sales_reference' => 'getSalesReference',
         'channel' => 'getChannel',
@@ -340,6 +345,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
 
     const ORGANIZATION_TYPE_BUSINESS = 'Business';
     const ORGANIZATION_TYPE_CONSUMER = 'Consumer';
+    const ORGANIZATION_SUB_TYPE_RESELLER = 'Reseller';
+    const ORGANIZATION_SUB_TYPE_PRODUCER = 'Producer';
     const PREFERRED_CONTACT_METHOD_EMAIL = 'Email';
     const PREFERRED_CONTACT_METHOD_MAIL = 'Mail';
     
@@ -355,6 +362,19 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         return [
             self::ORGANIZATION_TYPE_BUSINESS,
             self::ORGANIZATION_TYPE_CONSUMER,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getOrganizationSubTypeAllowableValues()
+    {
+        return [
+            self::ORGANIZATION_SUB_TYPE_RESELLER,
+            self::ORGANIZATION_SUB_TYPE_PRODUCER,
         ];
     }
     
@@ -389,6 +409,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     {
         $this->container['process_settings'] = isset($data['process_settings']) ? $data['process_settings'] : null;
         $this->container['organization_type'] = isset($data['organization_type']) ? $data['organization_type'] : null;
+        $this->container['organization_sub_type'] = isset($data['organization_sub_type']) ? $data['organization_sub_type'] : null;
         $this->container['client_reference'] = isset($data['client_reference']) ? $data['client_reference'] : null;
         $this->container['sales_reference'] = isset($data['sales_reference']) ? $data['sales_reference'] : null;
         $this->container['channel'] = isset($data['channel']) ? $data['channel'] : null;
@@ -439,6 +460,14 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         if (!is_null($this->container['organization_type']) && !in_array($this->container['organization_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'organization_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getOrganizationSubTypeAllowableValues();
+        if (!is_null($this->container['organization_sub_type']) && !in_array($this->container['organization_sub_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'organization_sub_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -519,6 +548,39 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
             );
         }
         $this->container['organization_type'] = $organization_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_sub_type
+     *
+     * @return string
+     */
+    public function getOrganizationSubType()
+    {
+        return $this->container['organization_sub_type'];
+    }
+
+    /**
+     * Sets organization_sub_type
+     *
+     * @param string $organization_sub_type Optioneel veld. Als de klant een zakelijke klant is kan hier het type zakelijke klant vastgelegd worden
+     *
+     * @return $this
+     */
+    public function setOrganizationSubType($organization_sub_type)
+    {
+        $allowedValues = $this->getOrganizationSubTypeAllowableValues();
+        if (!is_null($organization_sub_type) && !in_array($organization_sub_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'organization_sub_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['organization_sub_type'] = $organization_sub_type;
 
         return $this;
     }

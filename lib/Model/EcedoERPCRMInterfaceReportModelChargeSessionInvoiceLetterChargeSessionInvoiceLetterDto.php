@@ -125,6 +125,7 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
         'organization_product_units' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvoiceLetterDtoProductUnit[]',
         'company_label_id' => 'string',
         'organization_id' => 'string',
+        'organization_organization_sub_type' => 'string',
         'organization_reference' => 'string',
         'organization_client_reference' => 'string',
         'organization_origin_reference' => 'string',
@@ -255,6 +256,7 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
         'organization_product_units' => null,
         'company_label_id' => null,
         'organization_id' => null,
+        'organization_organization_sub_type' => null,
         'organization_reference' => null,
         'organization_client_reference' => null,
         'organization_origin_reference' => null,
@@ -406,6 +408,7 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
         'organization_product_units' => 'Organization_ProductUnits',
         'company_label_id' => 'CompanyLabel_Id',
         'organization_id' => 'Organization_Id',
+        'organization_organization_sub_type' => 'Organization_OrganizationSubType',
         'organization_reference' => 'Organization_Reference',
         'organization_client_reference' => 'Organization_ClientReference',
         'organization_origin_reference' => 'Organization_OriginReference',
@@ -536,6 +539,7 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
         'organization_product_units' => 'setOrganizationProductUnits',
         'company_label_id' => 'setCompanyLabelId',
         'organization_id' => 'setOrganizationId',
+        'organization_organization_sub_type' => 'setOrganizationOrganizationSubType',
         'organization_reference' => 'setOrganizationReference',
         'organization_client_reference' => 'setOrganizationClientReference',
         'organization_origin_reference' => 'setOrganizationOriginReference',
@@ -666,6 +670,7 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
         'organization_product_units' => 'getOrganizationProductUnits',
         'company_label_id' => 'getCompanyLabelId',
         'organization_id' => 'getOrganizationId',
+        'organization_organization_sub_type' => 'getOrganizationOrganizationSubType',
         'organization_reference' => 'getOrganizationReference',
         'organization_client_reference' => 'getOrganizationClientReference',
         'organization_origin_reference' => 'getOrganizationOriginReference',
@@ -850,6 +855,7 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
         $this->container['organization_product_units'] = isset($data['organization_product_units']) ? $data['organization_product_units'] : null;
         $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
+        $this->container['organization_organization_sub_type'] = isset($data['organization_organization_sub_type']) ? $data['organization_organization_sub_type'] : null;
         $this->container['organization_reference'] = isset($data['organization_reference']) ? $data['organization_reference'] : null;
         $this->container['organization_client_reference'] = isset($data['organization_client_reference']) ? $data['organization_client_reference'] : null;
         $this->container['organization_origin_reference'] = isset($data['organization_origin_reference']) ? $data['organization_origin_reference'] : null;
@@ -2558,6 +2564,30 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
     public function setOrganizationId($organization_id)
     {
         $this->container['organization_id'] = $organization_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_organization_sub_type
+     *
+     * @return string
+     */
+    public function getOrganizationOrganizationSubType()
+    {
+        return $this->container['organization_organization_sub_type'];
+    }
+
+    /**
+     * Sets organization_organization_sub_type
+     *
+     * @param string $organization_organization_sub_type organization_organization_sub_type
+     *
+     * @return $this
+     */
+    public function setOrganizationOrganizationSubType($organization_organization_sub_type)
+    {
+        $this->container['organization_organization_sub_type'] = $organization_organization_sub_type;
 
         return $this;
     }

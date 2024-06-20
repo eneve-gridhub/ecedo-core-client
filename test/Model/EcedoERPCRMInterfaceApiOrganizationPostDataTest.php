@@ -91,6 +91,13 @@ class EcedoERPCRMInterfaceApiOrganizationPostDataTest extends \PHPUnit_Framework
     }
 
     /**
+     * Test attribute "organization_sub_type"
+     */
+    public function testPropertyOrganizationSubType()
+    {
+    }
+
+    /**
      * Test attribute "client_reference"
      */
     public function testPropertyClientReference()

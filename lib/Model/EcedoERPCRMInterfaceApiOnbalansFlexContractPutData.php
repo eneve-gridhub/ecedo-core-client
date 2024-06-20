@@ -59,6 +59,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
     protected static $swaggerTypes = [
         'smart_device_reference' => 'string',
         'smart_device_description' => 'string',
+        'connection_id' => 'string',
+        'device_entity_id' => 'string',
         'smart_device_type' => 'string',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
@@ -75,6 +77,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
     protected static $swaggerFormats = [
         'smart_device_reference' => null,
         'smart_device_description' => null,
+        'connection_id' => 'uuid',
+        'device_entity_id' => 'uuid',
         'smart_device_type' => null,
         'start_date' => 'date',
         'end_date' => 'date',
@@ -112,6 +116,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
     protected static $attributeMap = [
         'smart_device_reference' => 'SmartDeviceReference',
         'smart_device_description' => 'SmartDeviceDescription',
+        'connection_id' => 'ConnectionId',
+        'device_entity_id' => 'DeviceEntityId',
         'smart_device_type' => 'SmartDeviceType',
         'start_date' => 'StartDate',
         'end_date' => 'EndDate',
@@ -128,6 +134,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
     protected static $setters = [
         'smart_device_reference' => 'setSmartDeviceReference',
         'smart_device_description' => 'setSmartDeviceDescription',
+        'connection_id' => 'setConnectionId',
+        'device_entity_id' => 'setDeviceEntityId',
         'smart_device_type' => 'setSmartDeviceType',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
@@ -144,6 +152,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
     protected static $getters = [
         'smart_device_reference' => 'getSmartDeviceReference',
         'smart_device_description' => 'getSmartDeviceDescription',
+        'connection_id' => 'getConnectionId',
+        'device_entity_id' => 'getDeviceEntityId',
         'smart_device_type' => 'getSmartDeviceType',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
@@ -233,6 +243,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
     {
         $this->container['smart_device_reference'] = isset($data['smart_device_reference']) ? $data['smart_device_reference'] : null;
         $this->container['smart_device_description'] = isset($data['smart_device_description']) ? $data['smart_device_description'] : null;
+        $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
+        $this->container['device_entity_id'] = isset($data['device_entity_id']) ? $data['device_entity_id'] : null;
         $this->container['smart_device_type'] = isset($data['smart_device_type']) ? $data['smart_device_type'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
@@ -317,6 +329,54 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
     public function setSmartDeviceDescription($smart_device_description)
     {
         $this->container['smart_device_description'] = $smart_device_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_id
+     *
+     * @return string
+     */
+    public function getConnectionId()
+    {
+        return $this->container['connection_id'];
+    }
+
+    /**
+     * Sets connection_id
+     *
+     * @param string $connection_id Optionele parameter oftype (nullable)Guid
+     *
+     * @return $this
+     */
+    public function setConnectionId($connection_id)
+    {
+        $this->container['connection_id'] = $connection_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets device_entity_id
+     *
+     * @return string
+     */
+    public function getDeviceEntityId()
+    {
+        return $this->container['device_entity_id'];
+    }
+
+    /**
+     * Sets device_entity_id
+     *
+     * @param string $device_entity_id Optionele parameter oftype (nullable)Guid
+     *
+     * @return $this
+     */
+    public function setDeviceEntityId($device_entity_id)
+    {
+        $this->container['device_entity_id'] = $device_entity_id;
 
         return $this;
     }

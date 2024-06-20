@@ -61,7 +61,9 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         'smart_device_type' => 'string',
         'smart_device_type_localized' => 'string',
         'reference' => 'string',
-        'description' => 'string'
+        'description' => 'string',
+        'connection_id' => 'string',
+        'device_entity_id' => 'string'
     ];
 
     /**
@@ -74,7 +76,9 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         'smart_device_type' => null,
         'smart_device_type_localized' => null,
         'reference' => null,
-        'description' => null
+        'description' => null,
+        'connection_id' => 'uuid',
+        'device_entity_id' => 'uuid'
     ];
 
     /**
@@ -108,7 +112,9 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         'smart_device_type' => 'SmartDeviceType',
         'smart_device_type_localized' => 'SmartDeviceTypeLocalized',
         'reference' => 'Reference',
-        'description' => 'Description'
+        'description' => 'Description',
+        'connection_id' => 'ConnectionId',
+        'device_entity_id' => 'DeviceEntityId'
     ];
 
     /**
@@ -121,7 +127,9 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         'smart_device_type' => 'setSmartDeviceType',
         'smart_device_type_localized' => 'setSmartDeviceTypeLocalized',
         'reference' => 'setReference',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
+        'connection_id' => 'setConnectionId',
+        'device_entity_id' => 'setDeviceEntityId'
     ];
 
     /**
@@ -134,7 +142,9 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         'smart_device_type' => 'getSmartDeviceType',
         'smart_device_type_localized' => 'getSmartDeviceTypeLocalized',
         'reference' => 'getReference',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
+        'connection_id' => 'getConnectionId',
+        'device_entity_id' => 'getDeviceEntityId'
     ];
 
     /**
@@ -221,6 +231,8 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         $this->container['smart_device_type_localized'] = isset($data['smart_device_type_localized']) ? $data['smart_device_type_localized'] : null;
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
+        $this->container['device_entity_id'] = isset($data['device_entity_id']) ? $data['device_entity_id'] : null;
     }
 
     /**
@@ -380,6 +392,54 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
     public function setDescription($description)
     {
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_id
+     *
+     * @return string
+     */
+    public function getConnectionId()
+    {
+        return $this->container['connection_id'];
+    }
+
+    /**
+     * Sets connection_id
+     *
+     * @param string $connection_id connection_id
+     *
+     * @return $this
+     */
+    public function setConnectionId($connection_id)
+    {
+        $this->container['connection_id'] = $connection_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets device_entity_id
+     *
+     * @return string
+     */
+    public function getDeviceEntityId()
+    {
+        return $this->container['device_entity_id'];
+    }
+
+    /**
+     * Sets device_entity_id
+     *
+     * @param string $device_entity_id device_entity_id
+     *
+     * @return $this
+     */
+    public function setDeviceEntityId($device_entity_id)
+    {
+        $this->container['device_entity_id'] = $device_entity_id;
 
         return $this;
     }

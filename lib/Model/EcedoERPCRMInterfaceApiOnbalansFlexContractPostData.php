@@ -60,6 +60,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPostData implements ModelInterf
         'cluster_reference' => 'string',
         'smart_device_reference' => 'string',
         'smart_device_description' => 'string',
+        'connection_id' => 'string',
+        'device_entity_id' => 'string',
         'smart_device_type' => 'string',
         'agreement_date' => '\DateTime',
         'reference' => 'string',
@@ -78,6 +80,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPostData implements ModelInterf
         'cluster_reference' => null,
         'smart_device_reference' => null,
         'smart_device_description' => null,
+        'connection_id' => 'uuid',
+        'device_entity_id' => 'uuid',
         'smart_device_type' => null,
         'agreement_date' => 'date',
         'reference' => null,
@@ -117,6 +121,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPostData implements ModelInterf
         'cluster_reference' => 'ClusterReference',
         'smart_device_reference' => 'SmartDeviceReference',
         'smart_device_description' => 'SmartDeviceDescription',
+        'connection_id' => 'ConnectionId',
+        'device_entity_id' => 'DeviceEntityId',
         'smart_device_type' => 'SmartDeviceType',
         'agreement_date' => 'AgreementDate',
         'reference' => 'Reference',
@@ -135,6 +141,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPostData implements ModelInterf
         'cluster_reference' => 'setClusterReference',
         'smart_device_reference' => 'setSmartDeviceReference',
         'smart_device_description' => 'setSmartDeviceDescription',
+        'connection_id' => 'setConnectionId',
+        'device_entity_id' => 'setDeviceEntityId',
         'smart_device_type' => 'setSmartDeviceType',
         'agreement_date' => 'setAgreementDate',
         'reference' => 'setReference',
@@ -153,6 +161,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPostData implements ModelInterf
         'cluster_reference' => 'getClusterReference',
         'smart_device_reference' => 'getSmartDeviceReference',
         'smart_device_description' => 'getSmartDeviceDescription',
+        'connection_id' => 'getConnectionId',
+        'device_entity_id' => 'getDeviceEntityId',
         'smart_device_type' => 'getSmartDeviceType',
         'agreement_date' => 'getAgreementDate',
         'reference' => 'getReference',
@@ -244,6 +254,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPostData implements ModelInterf
         $this->container['cluster_reference'] = isset($data['cluster_reference']) ? $data['cluster_reference'] : null;
         $this->container['smart_device_reference'] = isset($data['smart_device_reference']) ? $data['smart_device_reference'] : null;
         $this->container['smart_device_description'] = isset($data['smart_device_description']) ? $data['smart_device_description'] : null;
+        $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
+        $this->container['device_entity_id'] = isset($data['device_entity_id']) ? $data['device_entity_id'] : null;
         $this->container['smart_device_type'] = isset($data['smart_device_type']) ? $data['smart_device_type'] : null;
         $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
@@ -353,6 +365,54 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPostData implements ModelInterf
     public function setSmartDeviceDescription($smart_device_description)
     {
         $this->container['smart_device_description'] = $smart_device_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_id
+     *
+     * @return string
+     */
+    public function getConnectionId()
+    {
+        return $this->container['connection_id'];
+    }
+
+    /**
+     * Sets connection_id
+     *
+     * @param string $connection_id Optionele parameter oftype Guid, hiermee wordt het SmartDevice aan een aansluiting gekoppeld.
+     *
+     * @return $this
+     */
+    public function setConnectionId($connection_id)
+    {
+        $this->container['connection_id'] = $connection_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets device_entity_id
+     *
+     * @return string
+     */
+    public function getDeviceEntityId()
+    {
+        return $this->container['device_entity_id'];
+    }
+
+    /**
+     * Sets device_entity_id
+     *
+     * @param string $device_entity_id Optionele parameter oftype Guid
+     *
+     * @return $this
+     */
+    public function setDeviceEntityId($device_entity_id)
+    {
+        $this->container['device_entity_id'] = $device_entity_id;
 
         return $this;
     }

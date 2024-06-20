@@ -91,6 +91,20 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutDataTest extends \PHPUnit_Fr
     }
 
     /**
+     * Test attribute "connection_id"
+     */
+    public function testPropertyConnectionId()
+    {
+    }
+
+    /**
+     * Test attribute "device_entity_id"
+     */
+    public function testPropertyDeviceEntityId()
+    {
+    }
+
+    /**
      * Test attribute "smart_device_type"
      */
     public function testPropertySmartDeviceType()

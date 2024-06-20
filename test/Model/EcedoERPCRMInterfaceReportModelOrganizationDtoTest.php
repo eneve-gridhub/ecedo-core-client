@@ -91,6 +91,13 @@ class EcedoERPCRMInterfaceReportModelOrganizationDtoTest extends \PHPUnit_Framew
     }
 
     /**
+     * Test attribute "organization_organization_sub_type"
+     */
+    public function testPropertyOrganizationOrganizationSubType()
+    {
+    }
+
+    /**
      * Test attribute "organization_reference"
      */
     public function testPropertyOrganizationReference()

@@ -122,22 +122,22 @@ class SysConnectionUsagesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysConnectionUsagesPostConnectionUsage
+     *
+     * Deze API maakt een ConnectionUsage aan..
+     *
+     */
+    public function testSysConnectionUsagesPostConnectionUsage()
+    {
+    }
+
+    /**
      * Test case for sysConnectionUsagesPostConnectionUsageGroup
      *
      * Deze API maakt een ConnectionUsageGroup aan..
      *
      */
     public function testSysConnectionUsagesPostConnectionUsageGroup()
-    {
-    }
-
-    /**
-     * Test case for sysConnectionUsagesPostConnectionUsageGroup_0
-     *
-     * Deze API maakt een ConnectionUsage aan..
-     *
-     */
-    public function testSysConnectionUsagesPostConnectionUsageGroup0()
     {
     }
 }

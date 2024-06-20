@@ -72,6 +72,16 @@ class SysResellerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysResellerDeleteResellerDetail
+     *
+     * Verwijder wederverkoper detail.
+     *
+     */
+    public function testSysResellerDeleteResellerDetail()
+    {
+    }
+
+    /**
      * Test case for sysResellerGetContractPrices
      *
      * Verkrijg de prijzen van alle prijscomponenten van offertes.
@@ -112,6 +122,16 @@ class SysResellerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysResellerGetResellerDetail
+     *
+     * Verkrijg de details van een wederverkoper.
+     *
+     */
+    public function testSysResellerGetResellerDetail()
+    {
+    }
+
+    /**
      * Test case for sysResellerPostContract
      *
      * Post contract.
@@ -138,6 +158,16 @@ class SysResellerApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSysResellerPostContractProposalApproved()
+    {
+    }
+
+    /**
+     * Test case for sysResellerPutResellerDetail
+     *
+     * Update wederverkoper detail.
+     *
+     */
+    public function testSysResellerPutResellerDetail()
     {
     }
 

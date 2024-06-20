@@ -71,7 +71,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationResellerDto implements ModelInt
         'reseller_website' => 'string',
         'reseller_kv_k_number' => 'string',
         'extended_property_prefix' => 'string',
-        'extended_properties' => 'map[string,string]',
+        'extended_properties' => 'map[string,object]',
         'report_image_prefix' => 'string',
         'report_images' => '\Swagger\Client\Model\EcedoInfrastructureReportingReportImage[]'
     ];
@@ -639,7 +639,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationResellerDto implements ModelInt
     /**
      * Gets extended_properties
      *
-     * @return map[string,string]
+     * @return map[string,object]
      */
     public function getExtendedProperties()
     {
@@ -649,7 +649,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationResellerDto implements ModelInt
     /**
      * Sets extended_properties
      *
-     * @param map[string,string] $extended_properties extended_properties
+     * @param map[string,object] $extended_properties extended_properties
      *
      * @return $this
      */

@@ -1767,6 +1767,353 @@ class SysConnectionUsagesApi
     }
 
     /**
+     * Operation sysConnectionUsagesPostConnectionUsage
+     *
+     * Deze API maakt een ConnectionUsage aan.
+     *
+     * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
+     * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
+     * @param  string $connection_usage_group_id De ConnectionUsageGroup waar de aan te maken ConnectionUsage bij hoort (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionUsagePostData $post_data Object dat de data bevat voor de velden van de aan te maken ConnectionUsage (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return object
+     */
+    public function sysConnectionUsagesPostConnectionUsage($organization_id, $connection_id, $connection_usage_group_id, $post_data)
+    {
+        list($response) = $this->sysConnectionUsagesPostConnectionUsageWithHttpInfo($organization_id, $connection_id, $connection_usage_group_id, $post_data);
+        return $response;
+    }
+
+    /**
+     * Operation sysConnectionUsagesPostConnectionUsageWithHttpInfo
+     *
+     * Deze API maakt een ConnectionUsage aan.
+     *
+     * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
+     * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
+     * @param  string $connection_usage_group_id De ConnectionUsageGroup waar de aan te maken ConnectionUsage bij hoort (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionUsagePostData $post_data Object dat de data bevat voor de velden van de aan te maken ConnectionUsage (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysConnectionUsagesPostConnectionUsageWithHttpInfo($organization_id, $connection_id, $connection_usage_group_id, $post_data)
+    {
+        $returnType = 'object';
+        $request = $this->sysConnectionUsagesPostConnectionUsageRequest($organization_id, $connection_id, $connection_usage_group_id, $post_data);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysConnectionUsagesPostConnectionUsageAsync
+     *
+     * Deze API maakt een ConnectionUsage aan.
+     *
+     * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
+     * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
+     * @param  string $connection_usage_group_id De ConnectionUsageGroup waar de aan te maken ConnectionUsage bij hoort (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionUsagePostData $post_data Object dat de data bevat voor de velden van de aan te maken ConnectionUsage (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysConnectionUsagesPostConnectionUsageAsync($organization_id, $connection_id, $connection_usage_group_id, $post_data)
+    {
+        return $this->sysConnectionUsagesPostConnectionUsageAsyncWithHttpInfo($organization_id, $connection_id, $connection_usage_group_id, $post_data)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysConnectionUsagesPostConnectionUsageAsyncWithHttpInfo
+     *
+     * Deze API maakt een ConnectionUsage aan.
+     *
+     * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
+     * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
+     * @param  string $connection_usage_group_id De ConnectionUsageGroup waar de aan te maken ConnectionUsage bij hoort (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionUsagePostData $post_data Object dat de data bevat voor de velden van de aan te maken ConnectionUsage (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysConnectionUsagesPostConnectionUsageAsyncWithHttpInfo($organization_id, $connection_id, $connection_usage_group_id, $post_data)
+    {
+        $returnType = 'object';
+        $request = $this->sysConnectionUsagesPostConnectionUsageRequest($organization_id, $connection_id, $connection_usage_group_id, $post_data);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysConnectionUsagesPostConnectionUsage'
+     *
+     * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
+     * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
+     * @param  string $connection_usage_group_id De ConnectionUsageGroup waar de aan te maken ConnectionUsage bij hoort (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionUsagePostData $post_data Object dat de data bevat voor de velden van de aan te maken ConnectionUsage (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysConnectionUsagesPostConnectionUsageRequest($organization_id, $connection_id, $connection_usage_group_id, $post_data)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling sysConnectionUsagesPostConnectionUsage'
+            );
+        }
+        // verify the required parameter 'connection_id' is set
+        if ($connection_id === null || (is_array($connection_id) && count($connection_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $connection_id when calling sysConnectionUsagesPostConnectionUsage'
+            );
+        }
+        // verify the required parameter 'connection_usage_group_id' is set
+        if ($connection_usage_group_id === null || (is_array($connection_usage_group_id) && count($connection_usage_group_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $connection_usage_group_id when calling sysConnectionUsagesPostConnectionUsage'
+            );
+        }
+        // verify the required parameter 'post_data' is set
+        if ($post_data === null || (is_array($post_data) && count($post_data) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $post_data when calling sysConnectionUsagesPostConnectionUsage'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId}/connectionUsage';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($connection_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'connectionId' . '}',
+                ObjectSerializer::toPathValue($connection_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($connection_usage_group_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'connectionUsageGroupId' . '}',
+                ObjectSerializer::toPathValue($connection_usage_group_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($post_data)) {
+            $_tempBody = $post_data;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation sysConnectionUsagesPostConnectionUsageGroup
      *
      * Deze API maakt een ConnectionUsageGroup aan.
@@ -2006,353 +2353,6 @@ class SysConnectionUsagesApi
             $resourcePath = str_replace(
                 '{' . 'connectionId' . '}',
                 ObjectSerializer::toPathValue($connection_id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($post_data)) {
-            $_tempBody = $post_data;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
-                // \stdClass has no __toString(), so we should encode it manually
-                if ($httpBody instanceof \stdClass) {
-                    $httpBody = \GuzzleHttp\json_encode($httpBody);
-                }
-                // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
-        if ($apiKey !== null) {
-            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation sysConnectionUsagesPostConnectionUsageGroup_0
-     *
-     * Deze API maakt een ConnectionUsage aan.
-     *
-     * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
-     * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
-     * @param  string $connection_usage_group_id De ConnectionUsageGroup waar de aan te maken ConnectionUsage bij hoort (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionUsagePostData $post_data Object dat de data bevat voor de velden van de aan te maken ConnectionUsage (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return object
-     */
-    public function sysConnectionUsagesPostConnectionUsageGroup_0($organization_id, $connection_id, $connection_usage_group_id, $post_data)
-    {
-        list($response) = $this->sysConnectionUsagesPostConnectionUsageGroup_0WithHttpInfo($organization_id, $connection_id, $connection_usage_group_id, $post_data);
-        return $response;
-    }
-
-    /**
-     * Operation sysConnectionUsagesPostConnectionUsageGroup_0WithHttpInfo
-     *
-     * Deze API maakt een ConnectionUsage aan.
-     *
-     * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
-     * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
-     * @param  string $connection_usage_group_id De ConnectionUsageGroup waar de aan te maken ConnectionUsage bij hoort (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionUsagePostData $post_data Object dat de data bevat voor de velden van de aan te maken ConnectionUsage (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function sysConnectionUsagesPostConnectionUsageGroup_0WithHttpInfo($organization_id, $connection_id, $connection_usage_group_id, $post_data)
-    {
-        $returnType = 'object';
-        $request = $this->sysConnectionUsagesPostConnectionUsageGroup_0Request($organization_id, $connection_id, $connection_usage_group_id, $post_data);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation sysConnectionUsagesPostConnectionUsageGroup_0Async
-     *
-     * Deze API maakt een ConnectionUsage aan.
-     *
-     * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
-     * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
-     * @param  string $connection_usage_group_id De ConnectionUsageGroup waar de aan te maken ConnectionUsage bij hoort (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionUsagePostData $post_data Object dat de data bevat voor de velden van de aan te maken ConnectionUsage (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function sysConnectionUsagesPostConnectionUsageGroup_0Async($organization_id, $connection_id, $connection_usage_group_id, $post_data)
-    {
-        return $this->sysConnectionUsagesPostConnectionUsageGroup_0AsyncWithHttpInfo($organization_id, $connection_id, $connection_usage_group_id, $post_data)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation sysConnectionUsagesPostConnectionUsageGroup_0AsyncWithHttpInfo
-     *
-     * Deze API maakt een ConnectionUsage aan.
-     *
-     * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
-     * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
-     * @param  string $connection_usage_group_id De ConnectionUsageGroup waar de aan te maken ConnectionUsage bij hoort (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionUsagePostData $post_data Object dat de data bevat voor de velden van de aan te maken ConnectionUsage (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function sysConnectionUsagesPostConnectionUsageGroup_0AsyncWithHttpInfo($organization_id, $connection_id, $connection_usage_group_id, $post_data)
-    {
-        $returnType = 'object';
-        $request = $this->sysConnectionUsagesPostConnectionUsageGroup_0Request($organization_id, $connection_id, $connection_usage_group_id, $post_data);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'sysConnectionUsagesPostConnectionUsageGroup_0'
-     *
-     * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
-     * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
-     * @param  string $connection_usage_group_id De ConnectionUsageGroup waar de aan te maken ConnectionUsage bij hoort (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionUsagePostData $post_data Object dat de data bevat voor de velden van de aan te maken ConnectionUsage (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function sysConnectionUsagesPostConnectionUsageGroup_0Request($organization_id, $connection_id, $connection_usage_group_id, $post_data)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling sysConnectionUsagesPostConnectionUsageGroup_0'
-            );
-        }
-        // verify the required parameter 'connection_id' is set
-        if ($connection_id === null || (is_array($connection_id) && count($connection_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $connection_id when calling sysConnectionUsagesPostConnectionUsageGroup_0'
-            );
-        }
-        // verify the required parameter 'connection_usage_group_id' is set
-        if ($connection_usage_group_id === null || (is_array($connection_usage_group_id) && count($connection_usage_group_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $connection_usage_group_id when calling sysConnectionUsagesPostConnectionUsageGroup_0'
-            );
-        }
-        // verify the required parameter 'post_data' is set
-        if ($post_data === null || (is_array($post_data) && count($post_data) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $post_data when calling sysConnectionUsagesPostConnectionUsageGroup_0'
-            );
-        }
-
-        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/connectionUsageGroups/{connectionUsageGroupId}/connectionUsage';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($connection_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'connectionId' . '}',
-                ObjectSerializer::toPathValue($connection_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($connection_usage_group_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'connectionUsageGroupId' . '}',
-                ObjectSerializer::toPathValue($connection_usage_group_id),
                 $resourcePath
             );
         }
