@@ -64,7 +64,8 @@ class EcedoERPCRMInterfaceApiResellerDetailPutData implements ModelInterface, Ar
         'phone_number_debtor' => 'string',
         'email_address_debtor' => 'string',
         'website' => 'string',
-        'kv_k_number' => 'string'
+        'kv_k_number' => 'string',
+        'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyValuePostData[]'
     ];
 
     /**
@@ -80,7 +81,8 @@ class EcedoERPCRMInterfaceApiResellerDetailPutData implements ModelInterface, Ar
         'phone_number_debtor' => null,
         'email_address_debtor' => null,
         'website' => null,
-        'kv_k_number' => null
+        'kv_k_number' => null,
+        'entity_properties' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class EcedoERPCRMInterfaceApiResellerDetailPutData implements ModelInterface, Ar
         'phone_number_debtor' => 'PhoneNumberDebtor',
         'email_address_debtor' => 'EmailAddressDebtor',
         'website' => 'Website',
-        'kv_k_number' => 'KvKNumber'
+        'kv_k_number' => 'KvKNumber',
+        'entity_properties' => 'EntityProperties'
     ];
 
     /**
@@ -133,7 +136,8 @@ class EcedoERPCRMInterfaceApiResellerDetailPutData implements ModelInterface, Ar
         'phone_number_debtor' => 'setPhoneNumberDebtor',
         'email_address_debtor' => 'setEmailAddressDebtor',
         'website' => 'setWebsite',
-        'kv_k_number' => 'setKvKNumber'
+        'kv_k_number' => 'setKvKNumber',
+        'entity_properties' => 'setEntityProperties'
     ];
 
     /**
@@ -149,7 +153,8 @@ class EcedoERPCRMInterfaceApiResellerDetailPutData implements ModelInterface, Ar
         'phone_number_debtor' => 'getPhoneNumberDebtor',
         'email_address_debtor' => 'getEmailAddressDebtor',
         'website' => 'getWebsite',
-        'kv_k_number' => 'getKvKNumber'
+        'kv_k_number' => 'getKvKNumber',
+        'entity_properties' => 'getEntityProperties'
     ];
 
     /**
@@ -220,6 +225,7 @@ class EcedoERPCRMInterfaceApiResellerDetailPutData implements ModelInterface, Ar
         $this->container['email_address_debtor'] = isset($data['email_address_debtor']) ? $data['email_address_debtor'] : null;
         $this->container['website'] = isset($data['website']) ? $data['website'] : null;
         $this->container['kv_k_number'] = isset($data['kv_k_number']) ? $data['kv_k_number'] : null;
+        $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
     }
 
     /**
@@ -434,6 +440,30 @@ class EcedoERPCRMInterfaceApiResellerDetailPutData implements ModelInterface, Ar
     public function setKvKNumber($kv_k_number)
     {
         $this->container['kv_k_number'] = $kv_k_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_properties
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyValuePostData[]
+     */
+    public function getEntityProperties()
+    {
+        return $this->container['entity_properties'];
+    }
+
+    /**
+     * Sets entity_properties
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyValuePostData[] $entity_properties entity_properties
+     *
+     * @return $this
+     */
+    public function setEntityProperties($entity_properties)
+    {
+        $this->container['entity_properties'] = $entity_properties;
 
         return $this;
     }

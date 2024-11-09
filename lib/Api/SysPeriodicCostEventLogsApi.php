@@ -90,10 +90,12 @@ class SysPeriodicCostEventLogsApi
     /**
      * Operation sysPeriodicCostEventLogsGet
      *
-     * @param  string $organization_id organization_id (required)
-     * @param  \DateTime $event_end_date event_end_date (optional)
-     * @param  string $cluster_reference cluster_reference (optional)
-     * @param  bool $include_last_year include_last_year (optional)
+     * Haal VKO-records van een specifieke klant op
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  \DateTime $event_end_date Optionele datum waarmee aangegeven welk VKO opgevraagd moet worden. Voor het opvragen van de VKO die over de periode mei 2024 gaat moet datum &#x60;2024-06-01&#x60; meegegeven worden. (optional)
+     * @param  string $cluster_reference Optionele parameter waarmee alleen VKO&#39;s met deze clusterreferentie opgevraagd kunnen worden. (optional)
+     * @param  bool $include_last_year Optionele boolean (default false) waarmee aangegeven kan worden dat ook de VKO van het vorige jaar teruggegeven moet worden. Dit kan alleen gebruikt worden in combinatie met &#x60;eventEndDate&#x60;. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -108,10 +110,12 @@ class SysPeriodicCostEventLogsApi
     /**
      * Operation sysPeriodicCostEventLogsGetWithHttpInfo
      *
-     * @param  string $organization_id (required)
-     * @param  \DateTime $event_end_date (optional)
-     * @param  string $cluster_reference (optional)
-     * @param  bool $include_last_year (optional)
+     * Haal VKO-records van een specifieke klant op
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  \DateTime $event_end_date Optionele datum waarmee aangegeven welk VKO opgevraagd moet worden. Voor het opvragen van de VKO die over de periode mei 2024 gaat moet datum &#x60;2024-06-01&#x60; meegegeven worden. (optional)
+     * @param  string $cluster_reference Optionele parameter waarmee alleen VKO&#39;s met deze clusterreferentie opgevraagd kunnen worden. (optional)
+     * @param  bool $include_last_year Optionele boolean (default false) waarmee aangegeven kan worden dat ook de VKO van het vorige jaar teruggegeven moet worden. Dit kan alleen gebruikt worden in combinatie met &#x60;eventEndDate&#x60;. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -200,12 +204,12 @@ class SysPeriodicCostEventLogsApi
     /**
      * Operation sysPeriodicCostEventLogsGetAsync
      *
-     * 
+     * Haal VKO-records van een specifieke klant op
      *
-     * @param  string $organization_id (required)
-     * @param  \DateTime $event_end_date (optional)
-     * @param  string $cluster_reference (optional)
-     * @param  bool $include_last_year (optional)
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  \DateTime $event_end_date Optionele datum waarmee aangegeven welk VKO opgevraagd moet worden. Voor het opvragen van de VKO die over de periode mei 2024 gaat moet datum &#x60;2024-06-01&#x60; meegegeven worden. (optional)
+     * @param  string $cluster_reference Optionele parameter waarmee alleen VKO&#39;s met deze clusterreferentie opgevraagd kunnen worden. (optional)
+     * @param  bool $include_last_year Optionele boolean (default false) waarmee aangegeven kan worden dat ook de VKO van het vorige jaar teruggegeven moet worden. Dit kan alleen gebruikt worden in combinatie met &#x60;eventEndDate&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -223,12 +227,12 @@ class SysPeriodicCostEventLogsApi
     /**
      * Operation sysPeriodicCostEventLogsGetAsyncWithHttpInfo
      *
-     * 
+     * Haal VKO-records van een specifieke klant op
      *
-     * @param  string $organization_id (required)
-     * @param  \DateTime $event_end_date (optional)
-     * @param  string $cluster_reference (optional)
-     * @param  bool $include_last_year (optional)
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  \DateTime $event_end_date Optionele datum waarmee aangegeven welk VKO opgevraagd moet worden. Voor het opvragen van de VKO die over de periode mei 2024 gaat moet datum &#x60;2024-06-01&#x60; meegegeven worden. (optional)
+     * @param  string $cluster_reference Optionele parameter waarmee alleen VKO&#39;s met deze clusterreferentie opgevraagd kunnen worden. (optional)
+     * @param  bool $include_last_year Optionele boolean (default false) waarmee aangegeven kan worden dat ook de VKO van het vorige jaar teruggegeven moet worden. Dit kan alleen gebruikt worden in combinatie met &#x60;eventEndDate&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -278,10 +282,10 @@ class SysPeriodicCostEventLogsApi
     /**
      * Create request for operation 'sysPeriodicCostEventLogsGet'
      *
-     * @param  string $organization_id (required)
-     * @param  \DateTime $event_end_date (optional)
-     * @param  string $cluster_reference (optional)
-     * @param  bool $include_last_year (optional)
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  \DateTime $event_end_date Optionele datum waarmee aangegeven welk VKO opgevraagd moet worden. Voor het opvragen van de VKO die over de periode mei 2024 gaat moet datum &#x60;2024-06-01&#x60; meegegeven worden. (optional)
+     * @param  string $cluster_reference Optionele parameter waarmee alleen VKO&#39;s met deze clusterreferentie opgevraagd kunnen worden. (optional)
+     * @param  bool $include_last_year Optionele boolean (default false) waarmee aangegeven kan worden dat ook de VKO van het vorige jaar teruggegeven moet worden. Dit kan alleen gebruikt worden in combinatie met &#x60;eventEndDate&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -69,6 +69,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'product_description_localized' => 'string',
         'proposition_group_id' => 'string',
         'proposition_group' => 'string',
+        'is_model_contract' => 'bool',
         'proposition_prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionPrice[]',
         'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[]',
         'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractProperty[]'
@@ -92,6 +93,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'product_description_localized' => null,
         'proposition_group_id' => null,
         'proposition_group' => null,
+        'is_model_contract' => null,
         'proposition_prices' => null,
         'entity_properties' => null,
         'contract_properties' => null
@@ -136,6 +138,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'product_description_localized' => 'ProductDescriptionLocalized',
         'proposition_group_id' => 'PropositionGroupId',
         'proposition_group' => 'PropositionGroup',
+        'is_model_contract' => 'IsModelContract',
         'proposition_prices' => 'PropositionPrices',
         'entity_properties' => 'EntityProperties',
         'contract_properties' => 'ContractProperties'
@@ -159,6 +162,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'product_description_localized' => 'setProductDescriptionLocalized',
         'proposition_group_id' => 'setPropositionGroupId',
         'proposition_group' => 'setPropositionGroup',
+        'is_model_contract' => 'setIsModelContract',
         'proposition_prices' => 'setPropositionPrices',
         'entity_properties' => 'setEntityProperties',
         'contract_properties' => 'setContractProperties'
@@ -182,6 +186,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'product_description_localized' => 'getProductDescriptionLocalized',
         'proposition_group_id' => 'getPropositionGroupId',
         'proposition_group' => 'getPropositionGroup',
+        'is_model_contract' => 'getIsModelContract',
         'proposition_prices' => 'getPropositionPrices',
         'entity_properties' => 'getEntityProperties',
         'contract_properties' => 'getContractProperties'
@@ -259,6 +264,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         $this->container['product_description_localized'] = isset($data['product_description_localized']) ? $data['product_description_localized'] : null;
         $this->container['proposition_group_id'] = isset($data['proposition_group_id']) ? $data['proposition_group_id'] : null;
         $this->container['proposition_group'] = isset($data['proposition_group']) ? $data['proposition_group'] : null;
+        $this->container['is_model_contract'] = isset($data['is_model_contract']) ? $data['is_model_contract'] : null;
         $this->container['proposition_prices'] = isset($data['proposition_prices']) ? $data['proposition_prices'] : null;
         $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
         $this->container['contract_properties'] = isset($data['contract_properties']) ? $data['contract_properties'] : null;
@@ -572,6 +578,30 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
     public function setPropositionGroup($proposition_group)
     {
         $this->container['proposition_group'] = $proposition_group;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_model_contract
+     *
+     * @return bool
+     */
+    public function getIsModelContract()
+    {
+        return $this->container['is_model_contract'];
+    }
+
+    /**
+     * Sets is_model_contract
+     *
+     * @param bool $is_model_contract is_model_contract
+     *
+     * @return $this
+     */
+    public function setIsModelContract($is_model_contract)
+    {
+        $this->container['is_model_contract'] = $is_model_contract;
 
         return $this;
     }

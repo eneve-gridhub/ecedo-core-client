@@ -2520,9 +2520,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelSwitchOutFlow
      *
-     * Uithuizingsflow afbreken
+     * Uitswitch flow afbreken
      *
-     * @param  string $connection_id  (required)
+     * @param  string $connection_id Guid van de aansluiting (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2537,9 +2537,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelSwitchOutFlowWithHttpInfo
      *
-     * Uithuizingsflow afbreken
+     * Uitswitch flow afbreken
      *
-     * @param  string $connection_id  (required)
+     * @param  string $connection_id Guid van de aansluiting (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2628,9 +2628,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelSwitchOutFlowAsync
      *
-     * Uithuizingsflow afbreken
+     * Uitswitch flow afbreken
      *
-     * @param  string $connection_id  (required)
+     * @param  string $connection_id Guid van de aansluiting (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2648,9 +2648,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelSwitchOutFlowAsyncWithHttpInfo
      *
-     * Uithuizingsflow afbreken
+     * Uitswitch flow afbreken
      *
-     * @param  string $connection_id  (required)
+     * @param  string $connection_id Guid van de aansluiting (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2700,7 +2700,7 @@ class SysFlowsApi
     /**
      * Create request for operation 'sysFlowsCancelSwitchOutFlow'
      *
-     * @param  string $connection_id  (required)
+     * @param  string $connection_id Guid van de aansluiting (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3129,41 +3129,41 @@ class SysFlowsApi
     }
 
     /**
-     * Operation sysFlowsGetAdvancePaymentInvoicesByStep
+     * Operation sysFlowsGetAdvancePaymentInvoicesByStepV10
      *
-     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de voorschot factuurflow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]
      */
-    public function sysFlowsGetAdvancePaymentInvoicesByStep($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepV10($step_type, $take_count = null, $company_label_id = null)
     {
-        list($response) = $this->sysFlowsGetAdvancePaymentInvoicesByStepWithHttpInfo($step_type, $take_count, $company_label_id);
+        list($response) = $this->sysFlowsGetAdvancePaymentInvoicesByStepV10WithHttpInfo($step_type, $take_count, $company_label_id);
         return $response;
     }
 
     /**
-     * Operation sysFlowsGetAdvancePaymentInvoicesByStepWithHttpInfo
+     * Operation sysFlowsGetAdvancePaymentInvoicesByStepV10WithHttpInfo
      *
-     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de voorschot factuurflow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysFlowsGetAdvancePaymentInvoicesByStepWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepV10WithHttpInfo($step_type, $take_count = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
-        $request = $this->sysFlowsGetAdvancePaymentInvoicesByStepRequest($step_type, $take_count, $company_label_id);
+        $request = $this->sysFlowsGetAdvancePaymentInvoicesByStepV10Request($step_type, $take_count, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3241,20 +3241,20 @@ class SysFlowsApi
     }
 
     /**
-     * Operation sysFlowsGetAdvancePaymentInvoicesByStepAsync
+     * Operation sysFlowsGetAdvancePaymentInvoicesByStepV10Async
      *
-     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de voorschot factuurflow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsGetAdvancePaymentInvoicesByStepAsync($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepV10Async($step_type, $take_count = null, $company_label_id = null)
     {
-        return $this->sysFlowsGetAdvancePaymentInvoicesByStepAsyncWithHttpInfo($step_type, $take_count, $company_label_id)
+        return $this->sysFlowsGetAdvancePaymentInvoicesByStepV10AsyncWithHttpInfo($step_type, $take_count, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3263,21 +3263,21 @@ class SysFlowsApi
     }
 
     /**
-     * Operation sysFlowsGetAdvancePaymentInvoicesByStepAsyncWithHttpInfo
+     * Operation sysFlowsGetAdvancePaymentInvoicesByStepV10AsyncWithHttpInfo
      *
-     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de voorschot factuurflow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsGetAdvancePaymentInvoicesByStepAsyncWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepV10AsyncWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
-        $request = $this->sysFlowsGetAdvancePaymentInvoicesByStepRequest($step_type, $take_count, $company_label_id);
+        $request = $this->sysFlowsGetAdvancePaymentInvoicesByStepV10Request($step_type, $take_count, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3317,21 +3317,21 @@ class SysFlowsApi
     }
 
     /**
-     * Create request for operation 'sysFlowsGetAdvancePaymentInvoicesByStep'
+     * Create request for operation 'sysFlowsGetAdvancePaymentInvoicesByStepV10'
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de voorschot factuurflow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysFlowsGetAdvancePaymentInvoicesByStepRequest($step_type, $take_count = null, $company_label_id = null)
+    protected function sysFlowsGetAdvancePaymentInvoicesByStepV10Request($step_type, $take_count = null, $company_label_id = null)
     {
         // verify the required parameter 'step_type' is set
         if ($step_type === null || (is_array($step_type) && count($step_type) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $step_type when calling sysFlowsGetAdvancePaymentInvoicesByStep'
+                'Missing the required parameter $step_type when calling sysFlowsGetAdvancePaymentInvoicesByStepV10'
             );
         }
 
@@ -3442,41 +3442,41 @@ class SysFlowsApi
     }
 
     /**
-     * Operation sysFlowsGetProductPurchaseInvoicesByStep
+     * Operation sysFlowsGetAdvancePaymentInvoicesByStepV11
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de voorschot factuurflow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]
      */
-    public function sysFlowsGetProductPurchaseInvoicesByStep($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepV11($step_type, $page_size = null, $company_label_id = null)
     {
-        list($response) = $this->sysFlowsGetProductPurchaseInvoicesByStepWithHttpInfo($step_type, $take_count, $company_label_id);
+        list($response) = $this->sysFlowsGetAdvancePaymentInvoicesByStepV11WithHttpInfo($step_type, $page_size, $company_label_id);
         return $response;
     }
 
     /**
-     * Operation sysFlowsGetProductPurchaseInvoicesByStepWithHttpInfo
+     * Operation sysFlowsGetAdvancePaymentInvoicesByStepV11WithHttpInfo
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de voorschot factuurflow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysFlowsGetProductPurchaseInvoicesByStepWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepV11WithHttpInfo($step_type, $page_size = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
-        $request = $this->sysFlowsGetProductPurchaseInvoicesByStepRequest($step_type, $take_count, $company_label_id);
+        $request = $this->sysFlowsGetAdvancePaymentInvoicesByStepV11Request($step_type, $page_size, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3554,20 +3554,20 @@ class SysFlowsApi
     }
 
     /**
-     * Operation sysFlowsGetProductPurchaseInvoicesByStepAsync
+     * Operation sysFlowsGetAdvancePaymentInvoicesByStepV11Async
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de voorschot factuurflow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsGetProductPurchaseInvoicesByStepAsync($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepV11Async($step_type, $page_size = null, $company_label_id = null)
     {
-        return $this->sysFlowsGetProductPurchaseInvoicesByStepAsyncWithHttpInfo($step_type, $take_count, $company_label_id)
+        return $this->sysFlowsGetAdvancePaymentInvoicesByStepV11AsyncWithHttpInfo($step_type, $page_size, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3576,21 +3576,21 @@ class SysFlowsApi
     }
 
     /**
-     * Operation sysFlowsGetProductPurchaseInvoicesByStepAsyncWithHttpInfo
+     * Operation sysFlowsGetAdvancePaymentInvoicesByStepV11AsyncWithHttpInfo
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de voorschot factuurflow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsGetProductPurchaseInvoicesByStepAsyncWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetAdvancePaymentInvoicesByStepV11AsyncWithHttpInfo($step_type, $page_size = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
-        $request = $this->sysFlowsGetProductPurchaseInvoicesByStepRequest($step_type, $take_count, $company_label_id);
+        $request = $this->sysFlowsGetAdvancePaymentInvoicesByStepV11Request($step_type, $page_size, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3630,21 +3630,334 @@ class SysFlowsApi
     }
 
     /**
-     * Create request for operation 'sysFlowsGetProductPurchaseInvoicesByStep'
+     * Create request for operation 'sysFlowsGetAdvancePaymentInvoicesByStepV11'
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de voorschot factuurflow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysFlowsGetProductPurchaseInvoicesByStepRequest($step_type, $take_count = null, $company_label_id = null)
+    protected function sysFlowsGetAdvancePaymentInvoicesByStepV11Request($step_type, $page_size = null, $company_label_id = null)
     {
         // verify the required parameter 'step_type' is set
         if ($step_type === null || (is_array($step_type) && count($step_type) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $step_type when calling sysFlowsGetProductPurchaseInvoicesByStep'
+                'Missing the required parameter $step_type when calling sysFlowsGetAdvancePaymentInvoicesByStepV11'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.1/flows/advancepaymentinvoiceflow/invoices/getByStep/{stepType}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($page_size !== null) {
+            $queryParams['pageSize'] = ObjectSerializer::toQueryValue($page_size);
+        }
+        // query params
+        if ($company_label_id !== null) {
+            $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
+        }
+
+        // path params
+        if ($step_type !== null) {
+            $resourcePath = str_replace(
+                '{' . 'stepType' . '}',
+                ObjectSerializer::toPathValue($step_type),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepV10
+     *
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]
+     */
+    public function sysFlowsGetProductPurchaseInvoicesByStepV10($step_type, $take_count = null, $company_label_id = null)
+    {
+        list($response) = $this->sysFlowsGetProductPurchaseInvoicesByStepV10WithHttpInfo($step_type, $take_count, $company_label_id);
+        return $response;
+    }
+
+    /**
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepV10WithHttpInfo
+     *
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysFlowsGetProductPurchaseInvoicesByStepV10WithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
+        $request = $this->sysFlowsGetProductPurchaseInvoicesByStepV10Request($step_type, $take_count, $company_label_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepV10Async
+     *
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsGetProductPurchaseInvoicesByStepV10Async($step_type, $take_count = null, $company_label_id = null)
+    {
+        return $this->sysFlowsGetProductPurchaseInvoicesByStepV10AsyncWithHttpInfo($step_type, $take_count, $company_label_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepV10AsyncWithHttpInfo
+     *
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsGetProductPurchaseInvoicesByStepV10AsyncWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
+        $request = $this->sysFlowsGetProductPurchaseInvoicesByStepV10Request($step_type, $take_count, $company_label_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysFlowsGetProductPurchaseInvoicesByStepV10'
+     *
+     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysFlowsGetProductPurchaseInvoicesByStepV10Request($step_type, $take_count = null, $company_label_id = null)
+    {
+        // verify the required parameter 'step_type' is set
+        if ($step_type === null || (is_array($step_type) && count($step_type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $step_type when calling sysFlowsGetProductPurchaseInvoicesByStepV10'
             );
         }
 
@@ -3755,41 +4068,41 @@ class SysFlowsApi
     }
 
     /**
-     * Operation sysFlowsGetSettlementInvoicesByStep
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepV11
      *
-     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]
      */
-    public function sysFlowsGetSettlementInvoicesByStep($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetProductPurchaseInvoicesByStepV11($step_type, $page_size = null, $company_label_id = null)
     {
-        list($response) = $this->sysFlowsGetSettlementInvoicesByStepWithHttpInfo($step_type, $take_count, $company_label_id);
+        list($response) = $this->sysFlowsGetProductPurchaseInvoicesByStepV11WithHttpInfo($step_type, $page_size, $company_label_id);
         return $response;
     }
 
     /**
-     * Operation sysFlowsGetSettlementInvoicesByStepWithHttpInfo
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepV11WithHttpInfo
      *
-     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysFlowsGetSettlementInvoicesByStepWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetProductPurchaseInvoicesByStepV11WithHttpInfo($step_type, $page_size = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
-        $request = $this->sysFlowsGetSettlementInvoicesByStepRequest($step_type, $take_count, $company_label_id);
+        $request = $this->sysFlowsGetProductPurchaseInvoicesByStepV11Request($step_type, $page_size, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3867,20 +4180,20 @@ class SysFlowsApi
     }
 
     /**
-     * Operation sysFlowsGetSettlementInvoicesByStepAsync
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepV11Async
      *
-     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsGetSettlementInvoicesByStepAsync($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetProductPurchaseInvoicesByStepV11Async($step_type, $page_size = null, $company_label_id = null)
     {
-        return $this->sysFlowsGetSettlementInvoicesByStepAsyncWithHttpInfo($step_type, $take_count, $company_label_id)
+        return $this->sysFlowsGetProductPurchaseInvoicesByStepV11AsyncWithHttpInfo($step_type, $page_size, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3889,21 +4202,21 @@ class SysFlowsApi
     }
 
     /**
-     * Operation sysFlowsGetSettlementInvoicesByStepAsyncWithHttpInfo
+     * Operation sysFlowsGetProductPurchaseInvoicesByStepV11AsyncWithHttpInfo
      *
-     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'
+     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysFlowsGetSettlementInvoicesByStepAsyncWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    public function sysFlowsGetProductPurchaseInvoicesByStepV11AsyncWithHttpInfo($step_type, $page_size = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
-        $request = $this->sysFlowsGetSettlementInvoicesByStepRequest($step_type, $take_count, $company_label_id);
+        $request = $this->sysFlowsGetProductPurchaseInvoicesByStepV11Request($step_type, $page_size, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3943,21 +4256,647 @@ class SysFlowsApi
     }
 
     /**
-     * Create request for operation 'sysFlowsGetSettlementInvoicesByStep'
+     * Create request for operation 'sysFlowsGetProductPurchaseInvoicesByStepV11'
      *
-     * @param  string $step_type  (required)
-     * @param  int $take_count  (optional)
-     * @param  string $company_label_id  (optional)
+     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysFlowsGetSettlementInvoicesByStepRequest($step_type, $take_count = null, $company_label_id = null)
+    protected function sysFlowsGetProductPurchaseInvoicesByStepV11Request($step_type, $page_size = null, $company_label_id = null)
     {
         // verify the required parameter 'step_type' is set
         if ($step_type === null || (is_array($step_type) && count($step_type) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $step_type when calling sysFlowsGetSettlementInvoicesByStep'
+                'Missing the required parameter $step_type when calling sysFlowsGetProductPurchaseInvoicesByStepV11'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.1/flows/productpurchaseflow/invoices/getByStep/{stepType}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($page_size !== null) {
+            $queryParams['pageSize'] = ObjectSerializer::toQueryValue($page_size);
+        }
+        // query params
+        if ($company_label_id !== null) {
+            $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
+        }
+
+        // path params
+        if ($step_type !== null) {
+            $resourcePath = str_replace(
+                '{' . 'stepType' . '}',
+                ObjectSerializer::toPathValue($step_type),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysFlowsGetSettlementInvoiceByStepV11
+     *
+     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de afreken factuurflow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]
+     */
+    public function sysFlowsGetSettlementInvoiceByStepV11($step_type, $page_size = null, $company_label_id = null)
+    {
+        list($response) = $this->sysFlowsGetSettlementInvoiceByStepV11WithHttpInfo($step_type, $page_size, $company_label_id);
+        return $response;
+    }
+
+    /**
+     * Operation sysFlowsGetSettlementInvoiceByStepV11WithHttpInfo
+     *
+     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de afreken factuurflow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysFlowsGetSettlementInvoiceByStepV11WithHttpInfo($step_type, $page_size = null, $company_label_id = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
+        $request = $this->sysFlowsGetSettlementInvoiceByStepV11Request($step_type, $page_size, $company_label_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysFlowsGetSettlementInvoiceByStepV11Async
+     *
+     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de afreken factuurflow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsGetSettlementInvoiceByStepV11Async($step_type, $page_size = null, $company_label_id = null)
+    {
+        return $this->sysFlowsGetSettlementInvoiceByStepV11AsyncWithHttpInfo($step_type, $page_size, $company_label_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysFlowsGetSettlementInvoiceByStepV11AsyncWithHttpInfo
+     *
+     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de afreken factuurflow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsGetSettlementInvoiceByStepV11AsyncWithHttpInfo($step_type, $page_size = null, $company_label_id = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
+        $request = $this->sysFlowsGetSettlementInvoiceByStepV11Request($step_type, $page_size, $company_label_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysFlowsGetSettlementInvoiceByStepV11'
+     *
+     * @param  string $step_type Het type stap in de afreken factuurflow. (required)
+     * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysFlowsGetSettlementInvoiceByStepV11Request($step_type, $page_size = null, $company_label_id = null)
+    {
+        // verify the required parameter 'step_type' is set
+        if ($step_type === null || (is_array($step_type) && count($step_type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $step_type when calling sysFlowsGetSettlementInvoiceByStepV11'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.1/flows/settlementinvoiceflow/invoices/getByStep/{stepType}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($page_size !== null) {
+            $queryParams['pageSize'] = ObjectSerializer::toQueryValue($page_size);
+        }
+        // query params
+        if ($company_label_id !== null) {
+            $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
+        }
+
+        // path params
+        if ($step_type !== null) {
+            $resourcePath = str_replace(
+                '{' . 'stepType' . '}',
+                ObjectSerializer::toPathValue($step_type),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysFlowsGetSettlementInvoicesByStepV10
+     *
+     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de afreken factuurflow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]
+     */
+    public function sysFlowsGetSettlementInvoicesByStepV10($step_type, $take_count = null, $company_label_id = null)
+    {
+        list($response) = $this->sysFlowsGetSettlementInvoicesByStepV10WithHttpInfo($step_type, $take_count, $company_label_id);
+        return $response;
+    }
+
+    /**
+     * Operation sysFlowsGetSettlementInvoicesByStepV10WithHttpInfo
+     *
+     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de afreken factuurflow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysFlowsGetSettlementInvoicesByStepV10WithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
+        $request = $this->sysFlowsGetSettlementInvoicesByStepV10Request($step_type, $take_count, $company_label_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysFlowsGetSettlementInvoicesByStepV10Async
+     *
+     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de afreken factuurflow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsGetSettlementInvoicesByStepV10Async($step_type, $take_count = null, $company_label_id = null)
+    {
+        return $this->sysFlowsGetSettlementInvoicesByStepV10AsyncWithHttpInfo($step_type, $take_count, $company_label_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysFlowsGetSettlementInvoicesByStepV10AsyncWithHttpInfo
+     *
+     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.
+     *
+     * @param  string $step_type Het type stap in de afreken factuurflow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysFlowsGetSettlementInvoicesByStepV10AsyncWithHttpInfo($step_type, $take_count = null, $company_label_id = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
+        $request = $this->sysFlowsGetSettlementInvoicesByStepV10Request($step_type, $take_count, $company_label_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysFlowsGetSettlementInvoicesByStepV10'
+     *
+     * @param  string $step_type Het type stap in de afreken factuurflow. (required)
+     * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
+     * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysFlowsGetSettlementInvoicesByStepV10Request($step_type, $take_count = null, $company_label_id = null)
+    {
+        // verify the required parameter 'step_type' is set
+        if ($step_type === null || (is_array($step_type) && count($step_type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $step_type when calling sysFlowsGetSettlementInvoicesByStepV10'
             );
         }
 

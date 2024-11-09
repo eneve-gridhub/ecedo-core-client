@@ -80,7 +80,8 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         'is_discount' => 'bool',
         'billing_item_sub_type' => 'string',
         'billing_item_sub_type_localized' => 'string',
-        'billing_item_prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiBillingItemPrice[]'
+        'billing_item_prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiBillingItemPrice[]',
+        'entity_property' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty'
     ];
 
     /**
@@ -112,7 +113,8 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         'is_discount' => null,
         'billing_item_sub_type' => null,
         'billing_item_sub_type_localized' => null,
-        'billing_item_prices' => null
+        'billing_item_prices' => null,
+        'entity_property' => null
     ];
 
     /**
@@ -165,7 +167,8 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         'is_discount' => 'IsDiscount',
         'billing_item_sub_type' => 'BillingItemSubType',
         'billing_item_sub_type_localized' => 'BillingItemSubTypeLocalized',
-        'billing_item_prices' => 'BillingItemPrices'
+        'billing_item_prices' => 'BillingItemPrices',
+        'entity_property' => 'EntityProperty'
     ];
 
     /**
@@ -197,7 +200,8 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         'is_discount' => 'setIsDiscount',
         'billing_item_sub_type' => 'setBillingItemSubType',
         'billing_item_sub_type_localized' => 'setBillingItemSubTypeLocalized',
-        'billing_item_prices' => 'setBillingItemPrices'
+        'billing_item_prices' => 'setBillingItemPrices',
+        'entity_property' => 'setEntityProperty'
     ];
 
     /**
@@ -229,7 +233,8 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         'is_discount' => 'getIsDiscount',
         'billing_item_sub_type' => 'getBillingItemSubType',
         'billing_item_sub_type_localized' => 'getBillingItemSubTypeLocalized',
-        'billing_item_prices' => 'getBillingItemPrices'
+        'billing_item_prices' => 'getBillingItemPrices',
+        'entity_property' => 'getEntityProperty'
     ];
 
     /**
@@ -316,6 +321,7 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         $this->container['billing_item_sub_type'] = isset($data['billing_item_sub_type']) ? $data['billing_item_sub_type'] : null;
         $this->container['billing_item_sub_type_localized'] = isset($data['billing_item_sub_type_localized']) ? $data['billing_item_sub_type_localized'] : null;
         $this->container['billing_item_prices'] = isset($data['billing_item_prices']) ? $data['billing_item_prices'] : null;
+        $this->container['entity_property'] = isset($data['entity_property']) ? $data['entity_property'] : null;
     }
 
     /**
@@ -914,6 +920,30 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
     public function setBillingItemPrices($billing_item_prices)
     {
         $this->container['billing_item_prices'] = $billing_item_prices;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_property
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty
+     */
+    public function getEntityProperty()
+    {
+        return $this->container['entity_property'];
+    }
+
+    /**
+     * Sets entity_property
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty $entity_property entity_property
+     *
+     * @return $this
+     */
+    public function setEntityProperty($entity_property)
+    {
+        $this->container['entity_property'] = $entity_property;
 
         return $this;
     }

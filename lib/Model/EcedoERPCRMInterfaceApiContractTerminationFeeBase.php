@@ -202,6 +202,7 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterfac
     const CALCULATION_REASON_SETTLEMENT = 'Settlement';
     const CALCULATION_REASON_TERMINATION_FEE_INVOICE = 'TerminationFeeInvoice';
     const CALCULATION_REASON_SWITCH_OUT = 'SwitchOut';
+    const CALCULATION_REASON_LOSS = 'Loss';
     const TERMINATION_FEE_TYPE_NONE = 'None';
     const TERMINATION_FEE_TYPE_BUSINESS = 'Business';
     const TERMINATION_FEE_TYPE_ROVER2013 = 'Rover2013';
@@ -221,6 +222,7 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterfac
             self::CALCULATION_REASON_SETTLEMENT,
             self::CALCULATION_REASON_TERMINATION_FEE_INVOICE,
             self::CALCULATION_REASON_SWITCH_OUT,
+            self::CALCULATION_REASON_LOSS,
         ];
     }
     

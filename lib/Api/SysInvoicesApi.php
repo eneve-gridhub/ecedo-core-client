@@ -387,15 +387,18 @@ class SysInvoicesApi
      * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;InvoiceDocuments&#x60; (optional)
      * @param  bool $include_child_invoice_ids Optionele parameter (default false) waardoor het response-object van verzamelfacturen voorzien kan worden van &#x60;ChildInvoiceIds&#x60; (optional)
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
+     * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
+     * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
+     * @param  bool $include_settled_advance_payment_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van verrekende voorschotfacturen &#x60;SettledAdvancePaymentInvoiceIds&#x60;. Dit veld wordt alleen gevuld bij afrekeningen (optional)
      * @param  string $company_label_id Optionele parameter (default null) waarmee de factuur horende bij een specifieke Label opgehaald kan worden (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice
      */
-    public function sysInvoicesByNumber($invoice_number, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $company_label_id = null)
+    public function sysInvoicesByNumber($invoice_number, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null, $include_settled_advance_payment_invoice_ids = null, $company_label_id = null)
     {
-        list($response) = $this->sysInvoicesByNumberWithHttpInfo($invoice_number, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $company_label_id);
+        list($response) = $this->sysInvoicesByNumberWithHttpInfo($invoice_number, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows, $include_settled_advance_payment_invoice_ids, $company_label_id);
         return $response;
     }
 
@@ -408,16 +411,19 @@ class SysInvoicesApi
      * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;InvoiceDocuments&#x60; (optional)
      * @param  bool $include_child_invoice_ids Optionele parameter (default false) waardoor het response-object van verzamelfacturen voorzien kan worden van &#x60;ChildInvoiceIds&#x60; (optional)
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
+     * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
+     * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
+     * @param  bool $include_settled_advance_payment_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van verrekende voorschotfacturen &#x60;SettledAdvancePaymentInvoiceIds&#x60;. Dit veld wordt alleen gevuld bij afrekeningen (optional)
      * @param  string $company_label_id Optionele parameter (default null) waarmee de factuur horende bij een specifieke Label opgehaald kan worden (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysInvoicesByNumberWithHttpInfo($invoice_number, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $company_label_id = null)
+    public function sysInvoicesByNumberWithHttpInfo($invoice_number, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null, $include_settled_advance_payment_invoice_ids = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice';
-        $request = $this->sysInvoicesByNumberRequest($invoice_number, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $company_label_id);
+        $request = $this->sysInvoicesByNumberRequest($invoice_number, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows, $include_settled_advance_payment_invoice_ids, $company_label_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -489,6 +495,14 @@ class SysInvoicesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -503,14 +517,17 @@ class SysInvoicesApi
      * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;InvoiceDocuments&#x60; (optional)
      * @param  bool $include_child_invoice_ids Optionele parameter (default false) waardoor het response-object van verzamelfacturen voorzien kan worden van &#x60;ChildInvoiceIds&#x60; (optional)
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
+     * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
+     * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
+     * @param  bool $include_settled_advance_payment_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van verrekende voorschotfacturen &#x60;SettledAdvancePaymentInvoiceIds&#x60;. Dit veld wordt alleen gevuld bij afrekeningen (optional)
      * @param  string $company_label_id Optionele parameter (default null) waarmee de factuur horende bij een specifieke Label opgehaald kan worden (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysInvoicesByNumberAsync($invoice_number, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $company_label_id = null)
+    public function sysInvoicesByNumberAsync($invoice_number, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null, $include_settled_advance_payment_invoice_ids = null, $company_label_id = null)
     {
-        return $this->sysInvoicesByNumberAsyncWithHttpInfo($invoice_number, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $company_label_id)
+        return $this->sysInvoicesByNumberAsyncWithHttpInfo($invoice_number, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows, $include_settled_advance_payment_invoice_ids, $company_label_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -527,15 +544,18 @@ class SysInvoicesApi
      * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;InvoiceDocuments&#x60; (optional)
      * @param  bool $include_child_invoice_ids Optionele parameter (default false) waardoor het response-object van verzamelfacturen voorzien kan worden van &#x60;ChildInvoiceIds&#x60; (optional)
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
+     * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
+     * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
+     * @param  bool $include_settled_advance_payment_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van verrekende voorschotfacturen &#x60;SettledAdvancePaymentInvoiceIds&#x60;. Dit veld wordt alleen gevuld bij afrekeningen (optional)
      * @param  string $company_label_id Optionele parameter (default null) waarmee de factuur horende bij een specifieke Label opgehaald kan worden (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysInvoicesByNumberAsyncWithHttpInfo($invoice_number, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $company_label_id = null)
+    public function sysInvoicesByNumberAsyncWithHttpInfo($invoice_number, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null, $include_settled_advance_payment_invoice_ids = null, $company_label_id = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice';
-        $request = $this->sysInvoicesByNumberRequest($invoice_number, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $company_label_id);
+        $request = $this->sysInvoicesByNumberRequest($invoice_number, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows, $include_settled_advance_payment_invoice_ids, $company_label_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -581,12 +601,15 @@ class SysInvoicesApi
      * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;InvoiceDocuments&#x60; (optional)
      * @param  bool $include_child_invoice_ids Optionele parameter (default false) waardoor het response-object van verzamelfacturen voorzien kan worden van &#x60;ChildInvoiceIds&#x60; (optional)
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
+     * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
+     * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
+     * @param  bool $include_settled_advance_payment_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van verrekende voorschotfacturen &#x60;SettledAdvancePaymentInvoiceIds&#x60;. Dit veld wordt alleen gevuld bij afrekeningen (optional)
      * @param  string $company_label_id Optionele parameter (default null) waarmee de factuur horende bij een specifieke Label opgehaald kan worden (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysInvoicesByNumberRequest($invoice_number, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $company_label_id = null)
+    protected function sysInvoicesByNumberRequest($invoice_number, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null, $include_settled_advance_payment_invoice_ids = null, $company_label_id = null)
     {
         // verify the required parameter 'invoice_number' is set
         if ($invoice_number === null || (is_array($invoice_number) && count($invoice_number) === 0)) {
@@ -613,6 +636,18 @@ class SysInvoicesApi
         // query params
         if ($include_corrected_invoice_ids !== null) {
             $queryParams['includeCorrectedInvoiceIds'] = ObjectSerializer::toQueryValue($include_corrected_invoice_ids);
+        }
+        // query params
+        if ($include_invoice_rows !== null) {
+            $queryParams['includeInvoiceRows'] = ObjectSerializer::toQueryValue($include_invoice_rows);
+        }
+        // query params
+        if ($include_combined_invoice_rows !== null) {
+            $queryParams['includeCombinedInvoiceRows'] = ObjectSerializer::toQueryValue($include_combined_invoice_rows);
+        }
+        // query params
+        if ($include_settled_advance_payment_invoice_ids !== null) {
+            $queryParams['includeSettledAdvancePaymentInvoiceIds'] = ObjectSerializer::toQueryValue($include_settled_advance_payment_invoice_ids);
         }
         // query params
         if ($company_label_id !== null) {
@@ -2622,14 +2657,15 @@ class SysInvoicesApi
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
      * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
      * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
+     * @param  bool $include_settled_advance_payment_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van verrekende voorschotfacturen &#x60;SettledAdvancePaymentInvoiceIds&#x60;. Dit veld wordt alleen gevuld bij afrekeningen (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice
      */
-    public function sysInvoicesGetInvoice($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null)
+    public function sysInvoicesGetInvoice($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null, $include_settled_advance_payment_invoice_ids = null)
     {
-        list($response) = $this->sysInvoicesGetInvoiceWithHttpInfo($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows);
+        list($response) = $this->sysInvoicesGetInvoiceWithHttpInfo($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows, $include_settled_advance_payment_invoice_ids);
         return $response;
     }
 
@@ -2645,15 +2681,16 @@ class SysInvoicesApi
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
      * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
      * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
+     * @param  bool $include_settled_advance_payment_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van verrekende voorschotfacturen &#x60;SettledAdvancePaymentInvoiceIds&#x60;. Dit veld wordt alleen gevuld bij afrekeningen (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysInvoicesGetInvoiceWithHttpInfo($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null)
+    public function sysInvoicesGetInvoiceWithHttpInfo($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null, $include_settled_advance_payment_invoice_ids = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice';
-        $request = $this->sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows);
+        $request = $this->sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows, $include_settled_advance_payment_invoice_ids);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2725,6 +2762,14 @@ class SysInvoicesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -2742,13 +2787,14 @@ class SysInvoicesApi
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
      * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
      * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
+     * @param  bool $include_settled_advance_payment_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van verrekende voorschotfacturen &#x60;SettledAdvancePaymentInvoiceIds&#x60;. Dit veld wordt alleen gevuld bij afrekeningen (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysInvoicesGetInvoiceAsync($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null)
+    public function sysInvoicesGetInvoiceAsync($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null, $include_settled_advance_payment_invoice_ids = null)
     {
-        return $this->sysInvoicesGetInvoiceAsyncWithHttpInfo($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows)
+        return $this->sysInvoicesGetInvoiceAsyncWithHttpInfo($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows, $include_settled_advance_payment_invoice_ids)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2768,14 +2814,15 @@ class SysInvoicesApi
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
      * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
      * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
+     * @param  bool $include_settled_advance_payment_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van verrekende voorschotfacturen &#x60;SettledAdvancePaymentInvoiceIds&#x60;. Dit veld wordt alleen gevuld bij afrekeningen (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysInvoicesGetInvoiceAsyncWithHttpInfo($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null)
+    public function sysInvoicesGetInvoiceAsyncWithHttpInfo($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null, $include_settled_advance_payment_invoice_ids = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice';
-        $request = $this->sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows);
+        $request = $this->sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents, $include_child_invoice_ids, $include_corrected_invoice_ids, $include_invoice_rows, $include_combined_invoice_rows, $include_settled_advance_payment_invoice_ids);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2824,11 +2871,12 @@ class SysInvoicesApi
      * @param  bool $include_corrected_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van &#x60;CorrectedInvoiceIds&#x60; (optional)
      * @param  bool $include_invoice_rows Optionele parameter (default false) waarmee de niet-gecombineerde factuurregels opgevraagd kunnen worden (optional)
      * @param  bool $include_combined_invoice_rows Optionele parameter (default false) waarmee de gecombineerde factuurregels opgevraagd kunnen worden. De regels worden gecombineerd zoals ze ook op de factuur gecombineerd worden (optional)
+     * @param  bool $include_settled_advance_payment_invoice_ids Optionele parameter (default false) waardoor het response-object voorzien kan worden van verrekende voorschotfacturen &#x60;SettledAdvancePaymentInvoiceIds&#x60;. Dit veld wordt alleen gevuld bij afrekeningen (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null)
+    protected function sysInvoicesGetInvoiceRequest($invoice_id, $organization_id, $include_documents = null, $include_child_invoice_ids = null, $include_corrected_invoice_ids = null, $include_invoice_rows = null, $include_combined_invoice_rows = null, $include_settled_advance_payment_invoice_ids = null)
     {
         // verify the required parameter 'invoice_id' is set
         if ($invoice_id === null || (is_array($invoice_id) && count($invoice_id) === 0)) {
@@ -2869,6 +2917,10 @@ class SysInvoicesApi
         // query params
         if ($include_combined_invoice_rows !== null) {
             $queryParams['includeCombinedInvoiceRows'] = ObjectSerializer::toQueryValue($include_combined_invoice_rows);
+        }
+        // query params
+        if ($include_settled_advance_payment_invoice_ids !== null) {
+            $queryParams['includeSettledAdvancePaymentInvoiceIds'] = ObjectSerializer::toQueryValue($include_settled_advance_payment_invoice_ids);
         }
 
         // path params
@@ -3365,6 +3417,14 @@ class SysInvoicesApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

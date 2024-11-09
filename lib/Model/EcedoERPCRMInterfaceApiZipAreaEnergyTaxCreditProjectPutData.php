@@ -36,6 +36,7 @@ use \Swagger\Client\ObjectSerializer;
  * EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData Class Doc Comment
  *
  * @category Class
+ * @description Bevat de gegevens voor het updaten van een postcoderoosproject.
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -57,6 +58,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData implements Mod
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'project_ean' => 'string',
         'project_name' => 'string',
         'project_cooperative' => 'string',
         'start_date' => '\DateTime'
@@ -68,6 +70,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData implements Mod
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'project_ean' => null,
         'project_name' => null,
         'project_cooperative' => null,
         'start_date' => 'date'
@@ -100,6 +103,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData implements Mod
      * @var string[]
      */
     protected static $attributeMap = [
+        'project_ean' => 'ProjectEAN',
         'project_name' => 'ProjectName',
         'project_cooperative' => 'ProjectCooperative',
         'start_date' => 'StartDate'
@@ -111,6 +115,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData implements Mod
      * @var string[]
      */
     protected static $setters = [
+        'project_ean' => 'setProjectEan',
         'project_name' => 'setProjectName',
         'project_cooperative' => 'setProjectCooperative',
         'start_date' => 'setStartDate'
@@ -122,6 +127,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData implements Mod
      * @var string[]
      */
     protected static $getters = [
+        'project_ean' => 'getProjectEan',
         'project_name' => 'getProjectName',
         'project_cooperative' => 'getProjectCooperative',
         'start_date' => 'getStartDate'
@@ -187,6 +193,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData implements Mod
      */
     public function __construct(array $data = null)
     {
+        $this->container['project_ean'] = isset($data['project_ean']) ? $data['project_ean'] : null;
         $this->container['project_name'] = isset($data['project_name']) ? $data['project_name'] : null;
         $this->container['project_cooperative'] = isset($data['project_cooperative']) ? $data['project_cooperative'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
@@ -217,6 +224,30 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData implements Mod
 
 
     /**
+     * Gets project_ean
+     *
+     * @return string
+     */
+    public function getProjectEan()
+    {
+        return $this->container['project_ean'];
+    }
+
+    /**
+     * Sets project_ean
+     *
+     * @param string $project_ean De EAN-code van de opwekinstallatie
+     *
+     * @return $this
+     */
+    public function setProjectEan($project_ean)
+    {
+        $this->container['project_ean'] = $project_ean;
+
+        return $this;
+    }
+
+    /**
      * Gets project_name
      *
      * @return string
@@ -229,7 +260,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData implements Mod
     /**
      * Sets project_name
      *
-     * @param string $project_name project_name
+     * @param string $project_name De naam van het project
      *
      * @return $this
      */
@@ -253,7 +284,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData implements Mod
     /**
      * Sets project_cooperative
      *
-     * @param string $project_cooperative project_cooperative
+     * @param string $project_cooperative De naam van de coöperatie die de opwekinstallatie beheert
      *
      * @return $this
      */
@@ -277,7 +308,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData implements Mod
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date start_date
+     * @param \DateTime $start_date De start datum van het project
      *
      * @return $this
      */

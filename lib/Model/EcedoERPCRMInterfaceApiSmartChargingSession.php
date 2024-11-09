@@ -79,8 +79,8 @@ class EcedoERPCRMInterfaceApiSmartChargingSession implements ModelInterface, Arr
     protected static $swaggerFormats = [
         'charge_session_id' => null,
         'external_session_id' => null,
-        'start_date' => 'date',
-        'end_date' => 'date',
+        'start_date' => 'date-time',
+        'end_date' => 'date-time',
         'duration' => 'int32',
         'volume' => 'double',
         'total_cost' => 'double',

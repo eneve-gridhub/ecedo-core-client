@@ -199,6 +199,7 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
     const ENTITY_TYPE_PROPOSITION = 'Proposition';
     const ENTITY_TYPE_INVOICE = 'Invoice';
     const ENTITY_TYPE_RESELLER = 'Reseller';
+    const ENTITY_TYPE_BILLING_ITEM_GROUP = 'BillingItemGroup';
     const VALUE_TYPE_ENUM = 'Enum';
     const VALUE_TYPE_STRING = 'String';
     const VALUE_TYPE_INT = 'Int';
@@ -223,6 +224,7 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
             self::ENTITY_TYPE_PROPOSITION,
             self::ENTITY_TYPE_INVOICE,
             self::ENTITY_TYPE_RESELLER,
+            self::ENTITY_TYPE_BILLING_ITEM_GROUP,
         ];
     }
     

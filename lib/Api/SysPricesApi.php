@@ -90,7 +90,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByConnection
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de aansluiting.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting.
      *
      * @param  string $connection_id Het Id van de aansluiting waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. Deze datum moet binnen de een contractperiode van de aansluiting liggen. (required)
@@ -110,7 +110,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByConnectionWithHttpInfo
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de aansluiting.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting.
      *
      * @param  string $connection_id Het Id van de aansluiting waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. Deze datum moet binnen de een contractperiode van de aansluiting liggen. (required)
@@ -204,7 +204,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByConnectionAsync
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de aansluiting.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting.
      *
      * @param  string $connection_id Het Id van de aansluiting waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. Deze datum moet binnen de een contractperiode van de aansluiting liggen. (required)
@@ -227,7 +227,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByConnectionAsyncWithHttpInfo
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de aansluiting.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting.
      *
      * @param  string $connection_id Het Id van de aansluiting waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. Deze datum moet binnen de een contractperiode van de aansluiting liggen. (required)
@@ -418,7 +418,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByContract
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract.
      *
      * @param  string $contract_id Het Id van het contract waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. Deze datum moet binnen de contractperiode liggen. (required)
@@ -438,7 +438,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByContractWithHttpInfo
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract.
      *
      * @param  string $contract_id Het Id van het contract waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. Deze datum moet binnen de contractperiode liggen. (required)
@@ -532,7 +532,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByContractAsync
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract.
      *
      * @param  string $contract_id Het Id van het contract waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. Deze datum moet binnen de contractperiode liggen. (required)
@@ -555,7 +555,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByContractAsyncWithHttpInfo
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract.
      *
      * @param  string $contract_id Het Id van het contract waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. Deze datum moet binnen de contractperiode liggen. (required)
@@ -746,7 +746,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByPropositionId
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de propositie.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie.
      *
      * @param  string $proposition_id Het id van de propositie waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. (required)
@@ -778,7 +778,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByPropositionIdWithHttpInfo
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de propositie.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie.
      *
      * @param  string $proposition_id Het id van de propositie waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. (required)
@@ -884,7 +884,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByPropositionIdAsync
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de propositie.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie.
      *
      * @param  string $proposition_id Het id van de propositie waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. (required)
@@ -919,7 +919,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByPropositionIdAsyncWithHttpInfo
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de propositie.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie.
      *
      * @param  string $proposition_id Het id van de propositie waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. (required)
@@ -1182,7 +1182,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByPropositionReference
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de propositie op basis van de propositiereferentie.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie op basis van de propositiereferentie.
      *
      * @param  string $proposition_reference De referentie van de propositie waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. (required)
@@ -1214,7 +1214,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByPropositionReferenceWithHttpInfo
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de propositie op basis van de propositiereferentie.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie op basis van de propositiereferentie.
      *
      * @param  string $proposition_reference De referentie van de propositie waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. (required)
@@ -1320,7 +1320,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByPropositionReferenceAsync
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de propositie op basis van de propositiereferentie.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie op basis van de propositiereferentie.
      *
      * @param  string $proposition_reference De referentie van de propositie waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. (required)
@@ -1355,7 +1355,7 @@ class SysPricesApi
     /**
      * Operation sysPricesGetByPropositionReferenceAsyncWithHttpInfo
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de propositie op basis van de propositiereferentie.
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie op basis van de propositiereferentie.
      *
      * @param  string $proposition_reference De referentie van de propositie waarvoor de prijzen opgehaald moeten worden. (required)
      * @param  \DateTime $price_date yyyy-MM-dd; De dag waarvoor de prijzen opgehaald moeten worden. (required)

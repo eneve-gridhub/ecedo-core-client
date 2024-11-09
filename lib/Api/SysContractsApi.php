@@ -90,7 +90,7 @@ class SysContractsApi
     /**
      * Operation sysContractsCreateOnbalansFlexContract
      *
-     * Toevoegen van een onbalansflex contract
+     * Toevoegen van een SmartDevice met onbalansflex contract
      *
      * @param  string $organization_id Guid van de klant (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiOnbalansFlexContractPostData $data data gebruikt om het contract aan te kunnen maken (required)
@@ -108,7 +108,7 @@ class SysContractsApi
     /**
      * Operation sysContractsCreateOnbalansFlexContractWithHttpInfo
      *
-     * Toevoegen van een onbalansflex contract
+     * Toevoegen van een SmartDevice met onbalansflex contract
      *
      * @param  string $organization_id Guid van de klant (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiOnbalansFlexContractPostData $data data gebruikt om het contract aan te kunnen maken (required)
@@ -200,7 +200,7 @@ class SysContractsApi
     /**
      * Operation sysContractsCreateOnbalansFlexContractAsync
      *
-     * Toevoegen van een onbalansflex contract
+     * Toevoegen van een SmartDevice met onbalansflex contract
      *
      * @param  string $organization_id Guid van de klant (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiOnbalansFlexContractPostData $data data gebruikt om het contract aan te kunnen maken (required)
@@ -221,7 +221,7 @@ class SysContractsApi
     /**
      * Operation sysContractsCreateOnbalansFlexContractAsyncWithHttpInfo
      *
-     * Toevoegen van een onbalansflex contract
+     * Toevoegen van een SmartDevice met onbalansflex contract
      *
      * @param  string $organization_id Guid van de klant (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiOnbalansFlexContractPostData $data data gebruikt om het contract aan te kunnen maken (required)

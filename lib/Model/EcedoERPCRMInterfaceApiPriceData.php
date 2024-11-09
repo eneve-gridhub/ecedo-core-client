@@ -222,6 +222,8 @@ class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
     const LOCATION_TYPE_HORTICULTURE = 'Horticulture';
     const LOCATION_TYPE_GRID_LOSS = 'GridLoss';
     const LOCATION_TYPE_WAL_STROOM = 'WalStroom';
+    const LOCATION_TYPE_RESUPPLY = 'Resupply';
+    const LOCATION_TYPE_ENERGY_STORAGE = 'EnergyStorage';
     
 
     
@@ -264,6 +266,8 @@ class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
             self::LOCATION_TYPE_HORTICULTURE,
             self::LOCATION_TYPE_GRID_LOSS,
             self::LOCATION_TYPE_WAL_STROOM,
+            self::LOCATION_TYPE_RESUPPLY,
+            self::LOCATION_TYPE_ENERGY_STORAGE,
         ];
     }
     

@@ -286,6 +286,7 @@ class EcedoERPCRMInterfaceApiOrganizationEventWithWorkflowData implements ModelI
     const EVENT_TYPE_INVALID_SWITCH_OUT = 'InvalidSwitchOut';
     const EVENT_TYPE_INVALID_SWITCH_IN = 'InvalidSwitchIn';
     const EVENT_TYPE_ADVANCE_PAYMENT_INVOICE = 'AdvancePaymentInvoice';
+    const EVENT_TYPE_ENERGY_APPLICATION = 'EnergyApplication';
     const STATUS_IN_PROGRESS = 'InProgress';
     const STATUS_FINISHED = 'Finished';
     const STATUS_CANCELLED = 'Cancelled';
@@ -343,6 +344,7 @@ class EcedoERPCRMInterfaceApiOrganizationEventWithWorkflowData implements ModelI
             self::EVENT_TYPE_INVALID_SWITCH_OUT,
             self::EVENT_TYPE_INVALID_SWITCH_IN,
             self::EVENT_TYPE_ADVANCE_PAYMENT_INVOICE,
+            self::EVENT_TYPE_ENERGY_APPLICATION,
         ];
     }
     

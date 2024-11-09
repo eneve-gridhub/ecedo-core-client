@@ -229,7 +229,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipArea implements Mod
     /**
      * Sets zip_area_id
      *
-     * @param string $zip_area_id zip_area_id
+     * @param string $zip_area_id Het id van de postcode
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipArea implements Mod
     /**
      * Sets zip_area_energy_tax_credit_project_id
      *
-     * @param string $zip_area_energy_tax_credit_project_id zip_area_energy_tax_credit_project_id
+     * @param string $zip_area_energy_tax_credit_project_id Het id van het postcoderoosproject
      *
      * @return $this
      */
@@ -277,7 +277,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipArea implements Mod
     /**
      * Sets zip_code
      *
-     * @param string $zip_code zip_code
+     * @param string $zip_code Een postcode bestaande uit 4 cijfers, zonder letters
      *
      * @return $this
      */

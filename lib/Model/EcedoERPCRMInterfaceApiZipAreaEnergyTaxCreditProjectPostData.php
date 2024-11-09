@@ -36,6 +36,7 @@ use \Swagger\Client\ObjectSerializer;
  * EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData Class Doc Comment
  *
  * @category Class
+ * @description Bevat de gegevens voor het aanmaken van een postcoderoosproject.
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -272,7 +273,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData implements Mo
     /**
      * Sets project_ean
      *
-     * @param string $project_ean project_ean
+     * @param string $project_ean De EAN-code van de opwekinstallatie
      *
      * @return $this
      */
@@ -296,7 +297,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData implements Mo
     /**
      * Sets project_name
      *
-     * @param string $project_name project_name
+     * @param string $project_name De naam van het project
      *
      * @return $this
      */
@@ -320,7 +321,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData implements Mo
     /**
      * Sets project_cooperative
      *
-     * @param string $project_cooperative project_cooperative
+     * @param string $project_cooperative De naam van de coöperatie die de opwekinstallatie beheert
      *
      * @return $this
      */
@@ -344,7 +345,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData implements Mo
     /**
      * Sets project_type
      *
-     * @param string $project_type project_type
+     * @param string $project_type Het type van een postcoderoosproject. Extern kan gebruikt worden om een externe coöperatie aan te duiden. Het type financieel is voor een project dat een periodieke kapitaalstorting heeft
      *
      * @return $this
      */
@@ -377,7 +378,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData implements Mo
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date start_date
+     * @param \DateTime $start_date De start datum van het project
      *
      * @return $this
      */
@@ -401,7 +402,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData implements Mo
     /**
      * Sets zip_areas
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipAreaPostData[] $zip_areas zip_areas
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipAreaPostData[] $zip_areas Een lijst van postcodes die onder het project vallen. Moet minstens 1 postcode bevatten.
      *
      * @return $this
      */

@@ -169,6 +169,14 @@ class SysPersonsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -465,6 +473,14 @@ class SysPersonsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -781,6 +797,14 @@ class SysPersonsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1074,6 +1098,14 @@ class SysPersonsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1392,6 +1424,14 @@ class SysPersonsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1676,6 +1716,14 @@ class SysPersonsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

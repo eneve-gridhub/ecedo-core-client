@@ -238,6 +238,7 @@ class EcedoERPCRMInterfaceApiGenerateDocumentPostData implements ModelInterface,
     const DOCUMENT_TYPE_APX_DAY_AHEAD_HOUR_IMPORT_PRICES_DOCUMENT = 'ApxDayAheadHourImportPricesDocument';
     const DOCUMENT_TYPE_APX_DAY_AHEAD_HOUR_IMPORT_ERROR_DOCUMENT = 'ApxDayAheadHourImportErrorDocument';
     const DOCUMENT_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT_LETTER = 'CustomEnergyPurchaseSettlementLetter';
+    const DOCUMENT_TYPE_CUSTOM_DISCOUNT_INVOICE_LETTER = 'CustomDiscountInvoiceLetter';
     
 
     
@@ -314,6 +315,7 @@ class EcedoERPCRMInterfaceApiGenerateDocumentPostData implements ModelInterface,
             self::DOCUMENT_TYPE_APX_DAY_AHEAD_HOUR_IMPORT_PRICES_DOCUMENT,
             self::DOCUMENT_TYPE_APX_DAY_AHEAD_HOUR_IMPORT_ERROR_DOCUMENT,
             self::DOCUMENT_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT_LETTER,
+            self::DOCUMENT_TYPE_CUSTOM_DISCOUNT_INVOICE_LETTER,
         ];
     }
     

@@ -36,6 +36,7 @@ use \Swagger\Client\ObjectSerializer;
  * EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostResult Class Doc Comment
  *
  * @category Class
+ * @description Bevat het resultaat van een postcoderoosproject aanmaakactie (POST).
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -217,7 +218,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostResult implements 
     /**
      * Sets zip_area_energy_tax_credit_project_id
      *
-     * @param string $zip_area_energy_tax_credit_project_id zip_area_energy_tax_credit_project_id
+     * @param string $zip_area_energy_tax_credit_project_id De unieke identifier van het aangemaakte postcoderoosproject.
      *
      * @return $this
      */

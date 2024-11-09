@@ -36,6 +36,7 @@ use \Swagger\Client\ObjectSerializer;
  * EcedoERPCRMInterfaceApiConnectionUsagePostData Class Doc Comment
  *
  * @category Class
+ * @description Bevat de gegevens voor het aanmaken van een ConnectionUsage (Volume).
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -256,7 +257,7 @@ class EcedoERPCRMInterfaceApiConnectionUsagePostData implements ModelInterface, 
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date start_date
+     * @param \DateTime $start_date Verplicht veld. Startdatum van de periode waarvoor het volume geldt.
      *
      * @return $this
      */
@@ -280,7 +281,7 @@ class EcedoERPCRMInterfaceApiConnectionUsagePostData implements ModelInterface, 
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date end_date
+     * @param \DateTime $end_date Verplicht veld. Einddatum van de periode waarvoor het volume geldt.
      *
      * @return $this
      */
@@ -304,7 +305,7 @@ class EcedoERPCRMInterfaceApiConnectionUsagePostData implements ModelInterface, 
     /**
      * Sets usage
      *
-     * @param int $usage usage
+     * @param int $usage Verplicht veld. Verbruik van de periode.
      *
      * @return $this
      */
@@ -328,7 +329,7 @@ class EcedoERPCRMInterfaceApiConnectionUsagePostData implements ModelInterface, 
     /**
      * Sets unit
      *
-     * @param string $unit unit
+     * @param string $unit Verplicht veld. De eenheid van het verbruik. Bij ConnectionUsageType `ZipAreaEnergyTaxCredit` moet de eenheid `kWh` zijn.
      *
      * @return $this
      */

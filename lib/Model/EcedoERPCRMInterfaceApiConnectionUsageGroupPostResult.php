@@ -36,6 +36,7 @@ use \Swagger\Client\ObjectSerializer;
  * EcedoERPCRMInterfaceApiConnectionUsageGroupPostResult Class Doc Comment
  *
  * @category Class
+ * @description Bevat het resultaat van een ConnectionUsageGroup aanmaakactie.
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -217,7 +218,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroupPostResult implements ModelInte
     /**
      * Sets connection_usage_group_id
      *
-     * @param string $connection_usage_group_id connection_usage_group_id
+     * @param string $connection_usage_group_id De unieke identifier van de volumegroep.
      *
      * @return $this
      */

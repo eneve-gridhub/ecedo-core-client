@@ -169,6 +169,14 @@ class SysInvoiceProcessRulesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -471,6 +479,14 @@ class SysInvoiceProcessRulesApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -808,6 +824,14 @@ class SysInvoiceProcessRulesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1140,6 +1164,14 @@ class SysInvoiceProcessRulesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1437,6 +1469,14 @@ class SysInvoiceProcessRulesApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

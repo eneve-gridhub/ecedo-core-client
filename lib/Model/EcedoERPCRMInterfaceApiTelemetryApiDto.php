@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto
+ * EcedoERPCRMInterfaceApiTelemetryApiDto
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto Class Doc Comment
+ * EcedoERPCRMInterfaceApiTelemetryApiDto Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.ReadModel.Telemetry.TelemetryDto';
+    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.TelemetryApiDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,25 +57,18 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'value' => 'double',
+        'value_ldn' => 'double',
+        'value_odn' => 'double',
         'telemetry_id' => 'string',
         'connection_id' => 'string',
         'ean' => 'string',
         'start_date' => '\DateTime',
-        'start_date_localized' => 'string',
         'end_date' => '\DateTime',
-        'end_date_localized' => 'string',
-        'value_ldn' => 'double',
-        'ldn_localized' => 'string',
-        'value_odn' => 'double',
-        'odn_localized' => 'string',
-        'raw_unit' => 'int',
         'unit' => 'string',
         'unit_localized' => 'string',
         'version' => 'int',
         'revision' => 'int',
-        'reference_date_time' => '\DateTime',
-        'reference_date_time_localized' => 'string',
-        'telemetry_document_id' => 'string',
         'source' => 'string',
         'source_localized' => 'string'
     ];
@@ -86,25 +79,18 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'value' => 'double',
+        'value_ldn' => 'double',
+        'value_odn' => 'double',
         'telemetry_id' => null,
         'connection_id' => 'uuid',
         'ean' => null,
         'start_date' => 'date-time',
-        'start_date_localized' => null,
         'end_date' => 'date-time',
-        'end_date_localized' => null,
-        'value_ldn' => 'double',
-        'ldn_localized' => null,
-        'value_odn' => 'double',
-        'odn_localized' => null,
-        'raw_unit' => 'int32',
         'unit' => null,
         'unit_localized' => null,
         'version' => 'int32',
         'revision' => 'int32',
-        'reference_date_time' => 'date-time',
-        'reference_date_time_localized' => null,
-        'telemetry_document_id' => 'uuid',
         'source' => null,
         'source_localized' => null
     ];
@@ -136,25 +122,18 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
      * @var string[]
      */
     protected static $attributeMap = [
+        'value' => 'Value',
+        'value_ldn' => 'ValueLDN',
+        'value_odn' => 'ValueODN',
         'telemetry_id' => 'TelemetryId',
         'connection_id' => 'ConnectionId',
         'ean' => 'EAN',
         'start_date' => 'StartDate',
-        'start_date_localized' => 'StartDateLocalized',
         'end_date' => 'EndDate',
-        'end_date_localized' => 'EndDateLocalized',
-        'value_ldn' => 'ValueLDN',
-        'ldn_localized' => 'LDNLocalized',
-        'value_odn' => 'ValueODN',
-        'odn_localized' => 'ODNLocalized',
-        'raw_unit' => 'RawUnit',
         'unit' => 'Unit',
         'unit_localized' => 'UnitLocalized',
         'version' => 'Version',
         'revision' => 'Revision',
-        'reference_date_time' => 'ReferenceDateTime',
-        'reference_date_time_localized' => 'ReferenceDateTimeLocalized',
-        'telemetry_document_id' => 'TelemetryDocumentId',
         'source' => 'Source',
         'source_localized' => 'SourceLocalized'
     ];
@@ -165,25 +144,18 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
+        'value' => 'setValue',
+        'value_ldn' => 'setValueLdn',
+        'value_odn' => 'setValueOdn',
         'telemetry_id' => 'setTelemetryId',
         'connection_id' => 'setConnectionId',
         'ean' => 'setEan',
         'start_date' => 'setStartDate',
-        'start_date_localized' => 'setStartDateLocalized',
         'end_date' => 'setEndDate',
-        'end_date_localized' => 'setEndDateLocalized',
-        'value_ldn' => 'setValueLdn',
-        'ldn_localized' => 'setLdnLocalized',
-        'value_odn' => 'setValueOdn',
-        'odn_localized' => 'setOdnLocalized',
-        'raw_unit' => 'setRawUnit',
         'unit' => 'setUnit',
         'unit_localized' => 'setUnitLocalized',
         'version' => 'setVersion',
         'revision' => 'setRevision',
-        'reference_date_time' => 'setReferenceDateTime',
-        'reference_date_time_localized' => 'setReferenceDateTimeLocalized',
-        'telemetry_document_id' => 'setTelemetryDocumentId',
         'source' => 'setSource',
         'source_localized' => 'setSourceLocalized'
     ];
@@ -194,25 +166,18 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
      * @var string[]
      */
     protected static $getters = [
+        'value' => 'getValue',
+        'value_ldn' => 'getValueLdn',
+        'value_odn' => 'getValueOdn',
         'telemetry_id' => 'getTelemetryId',
         'connection_id' => 'getConnectionId',
         'ean' => 'getEan',
         'start_date' => 'getStartDate',
-        'start_date_localized' => 'getStartDateLocalized',
         'end_date' => 'getEndDate',
-        'end_date_localized' => 'getEndDateLocalized',
-        'value_ldn' => 'getValueLdn',
-        'ldn_localized' => 'getLdnLocalized',
-        'value_odn' => 'getValueOdn',
-        'odn_localized' => 'getOdnLocalized',
-        'raw_unit' => 'getRawUnit',
         'unit' => 'getUnit',
         'unit_localized' => 'getUnitLocalized',
         'version' => 'getVersion',
         'revision' => 'getRevision',
-        'reference_date_time' => 'getReferenceDateTime',
-        'reference_date_time_localized' => 'getReferenceDateTimeLocalized',
-        'telemetry_document_id' => 'getTelemetryDocumentId',
         'source' => 'getSource',
         'source_localized' => 'getSourceLocalized'
     ];
@@ -319,25 +284,18 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['value_ldn'] = isset($data['value_ldn']) ? $data['value_ldn'] : null;
+        $this->container['value_odn'] = isset($data['value_odn']) ? $data['value_odn'] : null;
         $this->container['telemetry_id'] = isset($data['telemetry_id']) ? $data['telemetry_id'] : null;
         $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
         $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['start_date_localized'] = isset($data['start_date_localized']) ? $data['start_date_localized'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['end_date_localized'] = isset($data['end_date_localized']) ? $data['end_date_localized'] : null;
-        $this->container['value_ldn'] = isset($data['value_ldn']) ? $data['value_ldn'] : null;
-        $this->container['ldn_localized'] = isset($data['ldn_localized']) ? $data['ldn_localized'] : null;
-        $this->container['value_odn'] = isset($data['value_odn']) ? $data['value_odn'] : null;
-        $this->container['odn_localized'] = isset($data['odn_localized']) ? $data['odn_localized'] : null;
-        $this->container['raw_unit'] = isset($data['raw_unit']) ? $data['raw_unit'] : null;
         $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
         $this->container['unit_localized'] = isset($data['unit_localized']) ? $data['unit_localized'] : null;
         $this->container['version'] = isset($data['version']) ? $data['version'] : null;
         $this->container['revision'] = isset($data['revision']) ? $data['revision'] : null;
-        $this->container['reference_date_time'] = isset($data['reference_date_time']) ? $data['reference_date_time'] : null;
-        $this->container['reference_date_time_localized'] = isset($data['reference_date_time_localized']) ? $data['reference_date_time_localized'] : null;
-        $this->container['telemetry_document_id'] = isset($data['telemetry_document_id']) ? $data['telemetry_document_id'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['source_localized'] = isset($data['source_localized']) ? $data['source_localized'] : null;
     }
@@ -383,6 +341,78 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
 
 
     /**
+     * Gets value
+     *
+     * @return double
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param double $value Tot 01-04-2023 werden verbruiken voor elektriciteit-aansluitingen gesaldeerd in alle marktprocessen. Er waren geen losse waarden voor LDN en ODN, maar alleen deze Value. Om backwards compatible te blijven is dit value-veld behouden en bevat deze een on-the-fly gesaldeerd volume van ValueLDN en ValueODN. Deze waarde is negatief bij teruglevering (ODN) en positief bij verbruik (LDN).
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets value_ldn
+     *
+     * @return double
+     */
+    public function getValueLdn()
+    {
+        return $this->container['value_ldn'];
+    }
+
+    /**
+     * Sets value_ldn
+     *
+     * @param double $value_ldn Het volume dat geleverd is door de netbeheerder (dus verbruik vanuit het perspectief van een aansluiting). Deze is 0 wanneer er geen verbruik is bij zowel gas- als elektriciteit-aansluitingen
+     *
+     * @return $this
+     */
+    public function setValueLdn($value_ldn)
+    {
+        $this->container['value_ldn'] = $value_ldn;
+
+        return $this;
+    }
+
+    /**
+     * Gets value_odn
+     *
+     * @return double
+     */
+    public function getValueOdn()
+    {
+        return $this->container['value_odn'];
+    }
+
+    /**
+     * Sets value_odn
+     *
+     * @param double $value_odn Het volume dat ontvangen is door de netbeheerder (dus teruglevering vanuit het perspectief van een aansluiting). Deze is 0 wanneer er geen teruglevering is bij een elektriciteit-aansluiting en `null` bij gas-aansluitingen.
+     *
+     * @return $this
+     */
+    public function setValueOdn($value_odn)
+    {
+        $this->container['value_odn'] = $value_odn;
+
+        return $this;
+    }
+
+    /**
      * Gets telemetry_id
      *
      * @return string
@@ -419,7 +449,7 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
     /**
      * Sets connection_id
      *
-     * @param string $connection_id Wordt enkel binnen MeansOfProduction gebruikt/gevuld, overige gevallen blijft dit NULL
+     * @param string $connection_id connection_id
      *
      * @return $this
      */
@@ -479,30 +509,6 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
     }
 
     /**
-     * Gets start_date_localized
-     *
-     * @return string
-     */
-    public function getStartDateLocalized()
-    {
-        return $this->container['start_date_localized'];
-    }
-
-    /**
-     * Sets start_date_localized
-     *
-     * @param string $start_date_localized start_date_localized
-     *
-     * @return $this
-     */
-    public function setStartDateLocalized($start_date_localized)
-    {
-        $this->container['start_date_localized'] = $start_date_localized;
-
-        return $this;
-    }
-
-    /**
      * Gets end_date
      *
      * @return \DateTime
@@ -522,150 +528,6 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date_localized
-     *
-     * @return string
-     */
-    public function getEndDateLocalized()
-    {
-        return $this->container['end_date_localized'];
-    }
-
-    /**
-     * Sets end_date_localized
-     *
-     * @param string $end_date_localized end_date_localized
-     *
-     * @return $this
-     */
-    public function setEndDateLocalized($end_date_localized)
-    {
-        $this->container['end_date_localized'] = $end_date_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets value_ldn
-     *
-     * @return double
-     */
-    public function getValueLdn()
-    {
-        return $this->container['value_ldn'];
-    }
-
-    /**
-     * Sets value_ldn
-     *
-     * @param double $value_ldn value_ldn
-     *
-     * @return $this
-     */
-    public function setValueLdn($value_ldn)
-    {
-        $this->container['value_ldn'] = $value_ldn;
-
-        return $this;
-    }
-
-    /**
-     * Gets ldn_localized
-     *
-     * @return string
-     */
-    public function getLdnLocalized()
-    {
-        return $this->container['ldn_localized'];
-    }
-
-    /**
-     * Sets ldn_localized
-     *
-     * @param string $ldn_localized ldn_localized
-     *
-     * @return $this
-     */
-    public function setLdnLocalized($ldn_localized)
-    {
-        $this->container['ldn_localized'] = $ldn_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets value_odn
-     *
-     * @return double
-     */
-    public function getValueOdn()
-    {
-        return $this->container['value_odn'];
-    }
-
-    /**
-     * Sets value_odn
-     *
-     * @param double $value_odn value_odn
-     *
-     * @return $this
-     */
-    public function setValueOdn($value_odn)
-    {
-        $this->container['value_odn'] = $value_odn;
-
-        return $this;
-    }
-
-    /**
-     * Gets odn_localized
-     *
-     * @return string
-     */
-    public function getOdnLocalized()
-    {
-        return $this->container['odn_localized'];
-    }
-
-    /**
-     * Sets odn_localized
-     *
-     * @param string $odn_localized odn_localized
-     *
-     * @return $this
-     */
-    public function setOdnLocalized($odn_localized)
-    {
-        $this->container['odn_localized'] = $odn_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets raw_unit
-     *
-     * @return int
-     */
-    public function getRawUnit()
-    {
-        return $this->container['raw_unit'];
-    }
-
-    /**
-     * Sets raw_unit
-     *
-     * @param int $raw_unit raw_unit
-     *
-     * @return $this
-     */
-    public function setRawUnit($raw_unit)
-    {
-        $this->container['raw_unit'] = $raw_unit;
 
         return $this;
     }
@@ -771,78 +633,6 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto implements ModelInterfa
     public function setRevision($revision)
     {
         $this->container['revision'] = $revision;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference_date_time
-     *
-     * @return \DateTime
-     */
-    public function getReferenceDateTime()
-    {
-        return $this->container['reference_date_time'];
-    }
-
-    /**
-     * Sets reference_date_time
-     *
-     * @param \DateTime $reference_date_time reference_date_time
-     *
-     * @return $this
-     */
-    public function setReferenceDateTime($reference_date_time)
-    {
-        $this->container['reference_date_time'] = $reference_date_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference_date_time_localized
-     *
-     * @return string
-     */
-    public function getReferenceDateTimeLocalized()
-    {
-        return $this->container['reference_date_time_localized'];
-    }
-
-    /**
-     * Sets reference_date_time_localized
-     *
-     * @param string $reference_date_time_localized reference_date_time_localized
-     *
-     * @return $this
-     */
-    public function setReferenceDateTimeLocalized($reference_date_time_localized)
-    {
-        $this->container['reference_date_time_localized'] = $reference_date_time_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets telemetry_document_id
-     *
-     * @return string
-     */
-    public function getTelemetryDocumentId()
-    {
-        return $this->container['telemetry_document_id'];
-    }
-
-    /**
-     * Sets telemetry_document_id
-     *
-     * @param string $telemetry_document_id telemetry_document_id
-     *
-     * @return $this
-     */
-    public function setTelemetryDocumentId($telemetry_document_id)
-    {
-        $this->container['telemetry_document_id'] = $telemetry_document_id;
 
         return $this;
     }

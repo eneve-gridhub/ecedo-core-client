@@ -36,6 +36,7 @@ use \Swagger\Client\ObjectSerializer;
  * EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipAreaPostData Class Doc Comment
  *
  * @category Class
+ * @description Bevat de gegevens voor een postcodegebied dat onder een postcoderoosproject valt.
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -217,7 +218,7 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipAreaPostData implem
     /**
      * Sets zip_code
      *
-     * @param string $zip_code zip_code
+     * @param string $zip_code Een postcode bestaande uit 4 cijfers, zonder letters
      *
      * @return $this
      */

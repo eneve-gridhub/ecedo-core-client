@@ -95,6 +95,7 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         'correction_invoice_type_localized' => 'string',
         'invoice_documents' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDocument[]',
         'has_invoice_usage_calculation_rows' => 'bool',
+        'settled_advance_payment_invoice_ids' => 'string[]',
         'client_reference' => 'string',
         'financial_description' => 'string',
         'purchase_order_number' => 'string',
@@ -146,6 +147,7 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         'correction_invoice_type_localized' => null,
         'invoice_documents' => null,
         'has_invoice_usage_calculation_rows' => null,
+        'settled_advance_payment_invoice_ids' => null,
         'client_reference' => null,
         'financial_description' => null,
         'purchase_order_number' => null,
@@ -218,6 +220,7 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         'correction_invoice_type_localized' => 'CorrectionInvoiceTypeLocalized',
         'invoice_documents' => 'InvoiceDocuments',
         'has_invoice_usage_calculation_rows' => 'HasInvoiceUsageCalculationRows',
+        'settled_advance_payment_invoice_ids' => 'SettledAdvancePaymentInvoiceIds',
         'client_reference' => 'ClientReference',
         'financial_description' => 'FinancialDescription',
         'purchase_order_number' => 'PurchaseOrderNumber',
@@ -269,6 +272,7 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         'correction_invoice_type_localized' => 'setCorrectionInvoiceTypeLocalized',
         'invoice_documents' => 'setInvoiceDocuments',
         'has_invoice_usage_calculation_rows' => 'setHasInvoiceUsageCalculationRows',
+        'settled_advance_payment_invoice_ids' => 'setSettledAdvancePaymentInvoiceIds',
         'client_reference' => 'setClientReference',
         'financial_description' => 'setFinancialDescription',
         'purchase_order_number' => 'setPurchaseOrderNumber',
@@ -320,6 +324,7 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         'correction_invoice_type_localized' => 'getCorrectionInvoiceTypeLocalized',
         'invoice_documents' => 'getInvoiceDocuments',
         'has_invoice_usage_calculation_rows' => 'getHasInvoiceUsageCalculationRows',
+        'settled_advance_payment_invoice_ids' => 'getSettledAdvancePaymentInvoiceIds',
         'client_reference' => 'getClientReference',
         'financial_description' => 'getFinancialDescription',
         'purchase_order_number' => 'getPurchaseOrderNumber',
@@ -397,6 +402,7 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
     const INVOICE_SUB_TYPE_CUSTOM_CHARGING_STATION = 'Custom_ChargingStation';
     const INVOICE_SUB_TYPE_CUSTOM_CHARGE_CARD = 'Custom_ChargeCard';
     const INVOICE_SUB_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT = 'Custom_EnergyPurchaseSettlement';
+    const INVOICE_SUB_TYPE_CUSTOM_DISCOUNT_INVOICE = 'Custom_DiscountInvoice';
     const STATUS_CREATED = 'Created';
     const STATUS_IN_FLOW = 'InFlow';
     const STATUS_BILLED = 'Billed';
@@ -465,6 +471,7 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
             self::INVOICE_SUB_TYPE_CUSTOM_CHARGING_STATION,
             self::INVOICE_SUB_TYPE_CUSTOM_CHARGE_CARD,
             self::INVOICE_SUB_TYPE_CUSTOM_ENERGY_PURCHASE_SETTLEMENT,
+            self::INVOICE_SUB_TYPE_CUSTOM_DISCOUNT_INVOICE,
         ];
     }
     
@@ -594,6 +601,7 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
         $this->container['correction_invoice_type_localized'] = isset($data['correction_invoice_type_localized']) ? $data['correction_invoice_type_localized'] : null;
         $this->container['invoice_documents'] = isset($data['invoice_documents']) ? $data['invoice_documents'] : null;
         $this->container['has_invoice_usage_calculation_rows'] = isset($data['has_invoice_usage_calculation_rows']) ? $data['has_invoice_usage_calculation_rows'] : null;
+        $this->container['settled_advance_payment_invoice_ids'] = isset($data['settled_advance_payment_invoice_ids']) ? $data['settled_advance_payment_invoice_ids'] : null;
         $this->container['client_reference'] = isset($data['client_reference']) ? $data['client_reference'] : null;
         $this->container['financial_description'] = isset($data['financial_description']) ? $data['financial_description'] : null;
         $this->container['purchase_order_number'] = isset($data['purchase_order_number']) ? $data['purchase_order_number'] : null;
@@ -1652,6 +1660,30 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
     public function setHasInvoiceUsageCalculationRows($has_invoice_usage_calculation_rows)
     {
         $this->container['has_invoice_usage_calculation_rows'] = $has_invoice_usage_calculation_rows;
+
+        return $this;
+    }
+
+    /**
+     * Gets settled_advance_payment_invoice_ids
+     *
+     * @return string[]
+     */
+    public function getSettledAdvancePaymentInvoiceIds()
+    {
+        return $this->container['settled_advance_payment_invoice_ids'];
+    }
+
+    /**
+     * Sets settled_advance_payment_invoice_ids
+     *
+     * @param string[] $settled_advance_payment_invoice_ids settled_advance_payment_invoice_ids
+     *
+     * @return $this
+     */
+    public function setSettledAdvancePaymentInvoiceIds($settled_advance_payment_invoice_ids)
+    {
+        $this->container['settled_advance_payment_invoice_ids'] = $settled_advance_payment_invoice_ids;
 
         return $this;
     }

@@ -65,6 +65,7 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         'connection_capacity_physic' => 'string',
         'connection_contract_power_type' => 'string',
         'connection_is_charging_station' => 'bool',
+        'connection_is_excluded_from_energy_tax' => 'bool',
         'connection_contract_proposition_has_termination_fee' => 'bool',
         'connection_id' => 'string',
         'organization_id' => 'string',
@@ -134,6 +135,7 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         'connection_capacity_physic' => null,
         'connection_contract_power_type' => null,
         'connection_is_charging_station' => null,
+        'connection_is_excluded_from_energy_tax' => null,
         'connection_contract_proposition_has_termination_fee' => null,
         'connection_id' => null,
         'organization_id' => null,
@@ -224,6 +226,7 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         'connection_capacity_physic' => 'Connection_CapacityPhysic',
         'connection_contract_power_type' => 'Connection_Contract_PowerType',
         'connection_is_charging_station' => 'Connection_IsChargingStation',
+        'connection_is_excluded_from_energy_tax' => 'Connection_IsExcludedFromEnergyTax',
         'connection_contract_proposition_has_termination_fee' => 'Connection_Contract_Proposition_HasTerminationFee',
         'connection_id' => 'Connection_Id',
         'organization_id' => 'Organization_Id',
@@ -293,6 +296,7 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         'connection_capacity_physic' => 'setConnectionCapacityPhysic',
         'connection_contract_power_type' => 'setConnectionContractPowerType',
         'connection_is_charging_station' => 'setConnectionIsChargingStation',
+        'connection_is_excluded_from_energy_tax' => 'setConnectionIsExcludedFromEnergyTax',
         'connection_contract_proposition_has_termination_fee' => 'setConnectionContractPropositionHasTerminationFee',
         'connection_id' => 'setConnectionId',
         'organization_id' => 'setOrganizationId',
@@ -362,6 +366,7 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         'connection_capacity_physic' => 'getConnectionCapacityPhysic',
         'connection_contract_power_type' => 'getConnectionContractPowerType',
         'connection_is_charging_station' => 'getConnectionIsChargingStation',
+        'connection_is_excluded_from_energy_tax' => 'getConnectionIsExcludedFromEnergyTax',
         'connection_contract_proposition_has_termination_fee' => 'getConnectionContractPropositionHasTerminationFee',
         'connection_id' => 'getConnectionId',
         'organization_id' => 'getOrganizationId',
@@ -485,6 +490,7 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         $this->container['connection_capacity_physic'] = isset($data['connection_capacity_physic']) ? $data['connection_capacity_physic'] : null;
         $this->container['connection_contract_power_type'] = isset($data['connection_contract_power_type']) ? $data['connection_contract_power_type'] : null;
         $this->container['connection_is_charging_station'] = isset($data['connection_is_charging_station']) ? $data['connection_is_charging_station'] : null;
+        $this->container['connection_is_excluded_from_energy_tax'] = isset($data['connection_is_excluded_from_energy_tax']) ? $data['connection_is_excluded_from_energy_tax'] : null;
         $this->container['connection_contract_proposition_has_termination_fee'] = isset($data['connection_contract_proposition_has_termination_fee']) ? $data['connection_contract_proposition_has_termination_fee'] : null;
         $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
@@ -752,6 +758,30 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
     public function setConnectionIsChargingStation($connection_is_charging_station)
     {
         $this->container['connection_is_charging_station'] = $connection_is_charging_station;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_is_excluded_from_energy_tax
+     *
+     * @return bool
+     */
+    public function getConnectionIsExcludedFromEnergyTax()
+    {
+        return $this->container['connection_is_excluded_from_energy_tax'];
+    }
+
+    /**
+     * Sets connection_is_excluded_from_energy_tax
+     *
+     * @param bool $connection_is_excluded_from_energy_tax connection_is_excluded_from_energy_tax
+     *
+     * @return $this
+     */
+    public function setConnectionIsExcludedFromEnergyTax($connection_is_excluded_from_energy_tax)
+    {
+        $this->container['connection_is_excluded_from_energy_tax'] = $connection_is_excluded_from_energy_tax;
 
         return $this;
     }

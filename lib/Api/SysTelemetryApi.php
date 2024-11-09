@@ -98,7 +98,7 @@ class SysTelemetryApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto[]
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiTelemetryApiDto[]
      */
     public function sysTelemetryGetMeansOfProductionTelemetryById($id, $start_date, $end_date)
     {
@@ -117,11 +117,11 @@ class SysTelemetryApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiTelemetryApiDto[], HTTP status code, HTTP response headers (array of strings)
      */
     public function sysTelemetryGetMeansOfProductionTelemetryByIdWithHttpInfo($id, $start_date, $end_date)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto[]';
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiTelemetryApiDto[]';
         $request = $this->sysTelemetryGetMeansOfProductionTelemetryByIdRequest($id, $start_date, $end_date);
 
         try {
@@ -173,7 +173,7 @@ class SysTelemetryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto[]',
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiTelemetryApiDto[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -235,7 +235,7 @@ class SysTelemetryApi
      */
     public function sysTelemetryGetMeansOfProductionTelemetryByIdAsyncWithHttpInfo($id, $start_date, $end_date)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto[]';
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiTelemetryApiDto[]';
         $request = $this->sysTelemetryGetMeansOfProductionTelemetryByIdRequest($id, $start_date, $end_date);
 
         return $this->client
@@ -420,14 +420,15 @@ class SysTelemetryApi
      * @param  string $ean EAN als referentie van de telemetrie (required)
      * @param  \DateTime $start_date Vanaf datum (dag, bijvoorbeeld 2023-01-31) (required)
      * @param  \DateTime $end_date Tot datum (dag, bijvoorbeeld 2023-02-28) (required)
+     * @param  bool $only_highest_version_and_revision Retourneer alleen readings met de laatste versie en revisie. Staat standaard op true (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto[]
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiTelemetryApiDto[]
      */
-    public function sysTelemetryGetTelemetry($ean, $start_date, $end_date)
+    public function sysTelemetryGetTelemetry($ean, $start_date, $end_date, $only_highest_version_and_revision = null)
     {
-        list($response) = $this->sysTelemetryGetTelemetryWithHttpInfo($ean, $start_date, $end_date);
+        list($response) = $this->sysTelemetryGetTelemetryWithHttpInfo($ean, $start_date, $end_date, $only_highest_version_and_revision);
         return $response;
     }
 
@@ -439,15 +440,16 @@ class SysTelemetryApi
      * @param  string $ean EAN als referentie van de telemetrie (required)
      * @param  \DateTime $start_date Vanaf datum (dag, bijvoorbeeld 2023-01-31) (required)
      * @param  \DateTime $end_date Tot datum (dag, bijvoorbeeld 2023-02-28) (required)
+     * @param  bool $only_highest_version_and_revision Retourneer alleen readings met de laatste versie en revisie. Staat standaard op true (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiTelemetryApiDto[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysTelemetryGetTelemetryWithHttpInfo($ean, $start_date, $end_date)
+    public function sysTelemetryGetTelemetryWithHttpInfo($ean, $start_date, $end_date, $only_highest_version_and_revision = null)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto[]';
-        $request = $this->sysTelemetryGetTelemetryRequest($ean, $start_date, $end_date);
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiTelemetryApiDto[]';
+        $request = $this->sysTelemetryGetTelemetryRequest($ean, $start_date, $end_date, $only_highest_version_and_revision);
 
         try {
             $options = $this->createHttpClientOption();
@@ -498,7 +500,7 @@ class SysTelemetryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto[]',
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiTelemetryApiDto[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -532,13 +534,14 @@ class SysTelemetryApi
      * @param  string $ean EAN als referentie van de telemetrie (required)
      * @param  \DateTime $start_date Vanaf datum (dag, bijvoorbeeld 2023-01-31) (required)
      * @param  \DateTime $end_date Tot datum (dag, bijvoorbeeld 2023-02-28) (required)
+     * @param  bool $only_highest_version_and_revision Retourneer alleen readings met de laatste versie en revisie. Staat standaard op true (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysTelemetryGetTelemetryAsync($ean, $start_date, $end_date)
+    public function sysTelemetryGetTelemetryAsync($ean, $start_date, $end_date, $only_highest_version_and_revision = null)
     {
-        return $this->sysTelemetryGetTelemetryAsyncWithHttpInfo($ean, $start_date, $end_date)
+        return $this->sysTelemetryGetTelemetryAsyncWithHttpInfo($ean, $start_date, $end_date, $only_highest_version_and_revision)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -554,14 +557,15 @@ class SysTelemetryApi
      * @param  string $ean EAN als referentie van de telemetrie (required)
      * @param  \DateTime $start_date Vanaf datum (dag, bijvoorbeeld 2023-01-31) (required)
      * @param  \DateTime $end_date Tot datum (dag, bijvoorbeeld 2023-02-28) (required)
+     * @param  bool $only_highest_version_and_revision Retourneer alleen readings met de laatste versie en revisie. Staat standaard op true (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysTelemetryGetTelemetryAsyncWithHttpInfo($ean, $start_date, $end_date)
+    public function sysTelemetryGetTelemetryAsyncWithHttpInfo($ean, $start_date, $end_date, $only_highest_version_and_revision = null)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto[]';
-        $request = $this->sysTelemetryGetTelemetryRequest($ean, $start_date, $end_date);
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiTelemetryApiDto[]';
+        $request = $this->sysTelemetryGetTelemetryRequest($ean, $start_date, $end_date, $only_highest_version_and_revision);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -606,11 +610,12 @@ class SysTelemetryApi
      * @param  string $ean EAN als referentie van de telemetrie (required)
      * @param  \DateTime $start_date Vanaf datum (dag, bijvoorbeeld 2023-01-31) (required)
      * @param  \DateTime $end_date Tot datum (dag, bijvoorbeeld 2023-02-28) (required)
+     * @param  bool $only_highest_version_and_revision Retourneer alleen readings met de laatste versie en revisie. Staat standaard op true (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysTelemetryGetTelemetryRequest($ean, $start_date, $end_date)
+    protected function sysTelemetryGetTelemetryRequest($ean, $start_date, $end_date, $only_highest_version_and_revision = null)
     {
         // verify the required parameter 'ean' is set
         if ($ean === null || (is_array($ean) && count($ean) === 0)) {
@@ -645,6 +650,10 @@ class SysTelemetryApi
         // query params
         if ($end_date !== null) {
             $queryParams['endDate'] = ObjectSerializer::toQueryValue($end_date);
+        }
+        // query params
+        if ($only_highest_version_and_revision !== null) {
+            $queryParams['onlyHighestVersionAndRevision'] = ObjectSerializer::toQueryValue($only_highest_version_and_revision);
         }
 
         // path params

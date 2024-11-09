@@ -36,6 +36,7 @@ use \Swagger\Client\ObjectSerializer;
  * EcedoERPCRMInterfaceApiConnectionUsageGroupPostData Class Doc Comment
  *
  * @category Class
+ * @description Bevat de gegevens voor het aanmaken van een ConnectionUsageGroup (Volumegroep).
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -256,7 +257,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroupPostData implements ModelInterf
     /**
      * Sets zip_area_energy_tax_credit_project_id
      *
-     * @param string $zip_area_energy_tax_credit_project_id zip_area_energy_tax_credit_project_id
+     * @param string $zip_area_energy_tax_credit_project_id Verplicht veld. De unieke identifier van het postcoderoosproject.
      *
      * @return $this
      */
@@ -280,7 +281,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroupPostData implements ModelInterf
     /**
      * Sets connection_usage_group_type
      *
-     * @param string $connection_usage_group_type connection_usage_group_type
+     * @param string $connection_usage_group_type Verplicht veld. Het type volumegroep.
      *
      * @return $this
      */
@@ -313,7 +314,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroupPostData implements ModelInterf
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Verplicht veld dat gebruikt kan worden voor een naam of omschrijving.
      *
      * @return $this
      */
@@ -337,7 +338,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroupPostData implements ModelInterf
     /**
      * Sets comment
      *
-     * @param string $comment comment
+     * @param string $comment Optioneel veld dat gebruikt kan worden voor opmerkingen of aantekeningen.
      *
      * @return $this
      */

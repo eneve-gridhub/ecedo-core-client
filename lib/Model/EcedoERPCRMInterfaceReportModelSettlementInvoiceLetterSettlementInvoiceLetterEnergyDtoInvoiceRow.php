@@ -61,6 +61,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'row_total_odn_usage' => 'double',
         'row_total_ldn_usage' => 'double',
         'row_meter_reading_id' => 'string',
+        'row_connection_ean' => 'string',
         'row_id' => 'string',
         'invoice_id' => 'string',
         'organization_id' => 'string',
@@ -111,6 +112,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'row_total_odn_usage' => 'double',
         'row_total_ldn_usage' => 'double',
         'row_meter_reading_id' => 'uuid',
+        'row_connection_ean' => null,
         'row_id' => null,
         'invoice_id' => 'uuid',
         'organization_id' => null,
@@ -182,6 +184,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'row_total_odn_usage' => 'Row_TotalODNUsage',
         'row_total_ldn_usage' => 'Row_TotalLDNUsage',
         'row_meter_reading_id' => 'Row_MeterReading_Id',
+        'row_connection_ean' => 'Row_Connection_EAN',
         'row_id' => 'Row_Id',
         'invoice_id' => 'Invoice_Id',
         'organization_id' => 'Organization_Id',
@@ -232,6 +235,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'row_total_odn_usage' => 'setRowTotalOdnUsage',
         'row_total_ldn_usage' => 'setRowTotalLdnUsage',
         'row_meter_reading_id' => 'setRowMeterReadingId',
+        'row_connection_ean' => 'setRowConnectionEan',
         'row_id' => 'setRowId',
         'invoice_id' => 'setInvoiceId',
         'organization_id' => 'setOrganizationId',
@@ -282,6 +286,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'row_total_odn_usage' => 'getRowTotalOdnUsage',
         'row_total_ldn_usage' => 'getRowTotalLdnUsage',
         'row_meter_reading_id' => 'getRowMeterReadingId',
+        'row_connection_ean' => 'getRowConnectionEan',
         'row_id' => 'getRowId',
         'invoice_id' => 'getInvoiceId',
         'organization_id' => 'getOrganizationId',
@@ -386,6 +391,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         $this->container['row_total_odn_usage'] = isset($data['row_total_odn_usage']) ? $data['row_total_odn_usage'] : null;
         $this->container['row_total_ldn_usage'] = isset($data['row_total_ldn_usage']) ? $data['row_total_ldn_usage'] : null;
         $this->container['row_meter_reading_id'] = isset($data['row_meter_reading_id']) ? $data['row_meter_reading_id'] : null;
+        $this->container['row_connection_ean'] = isset($data['row_connection_ean']) ? $data['row_connection_ean'] : null;
         $this->container['row_id'] = isset($data['row_id']) ? $data['row_id'] : null;
         $this->container['invoice_id'] = isset($data['invoice_id']) ? $data['invoice_id'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
@@ -542,6 +548,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setRowMeterReadingId($row_meter_reading_id)
     {
         $this->container['row_meter_reading_id'] = $row_meter_reading_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets row_connection_ean
+     *
+     * @return string
+     */
+    public function getRowConnectionEan()
+    {
+        return $this->container['row_connection_ean'];
+    }
+
+    /**
+     * Sets row_connection_ean
+     *
+     * @param string $row_connection_ean row_connection_ean
+     *
+     * @return $this
+     */
+    public function setRowConnectionEan($row_connection_ean)
+    {
+        $this->container['row_connection_ean'] = $row_connection_ean;
 
         return $this;
     }

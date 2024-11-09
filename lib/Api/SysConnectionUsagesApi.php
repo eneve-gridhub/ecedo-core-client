@@ -90,7 +90,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesDeleteConnectionUsage
      *
-     * Verwijdert een ConnectionUsage.
+     * Verwijder een ConnectionUsage
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage verwijderd moet worden (required)
@@ -110,7 +110,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesDeleteConnectionUsageWithHttpInfo
      *
-     * Verwijdert een ConnectionUsage.
+     * Verwijder een ConnectionUsage
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage verwijderd moet worden (required)
@@ -204,7 +204,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesDeleteConnectionUsageAsync
      *
-     * Verwijdert een ConnectionUsage.
+     * Verwijder een ConnectionUsage
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage verwijderd moet worden (required)
@@ -227,7 +227,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesDeleteConnectionUsageAsyncWithHttpInfo
      *
-     * Verwijdert een ConnectionUsage.
+     * Verwijder een ConnectionUsage
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage verwijderd moet worden (required)
@@ -442,7 +442,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesDeleteConnectionUsageGroup
      *
-     * Verwijdert een ConnectionUsageGroup.
+     * Verwijder een ConnectionUsageGroup
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup verwijderd moet worden (required)
@@ -461,7 +461,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesDeleteConnectionUsageGroupWithHttpInfo
      *
-     * Verwijdert een ConnectionUsageGroup.
+     * Verwijder een ConnectionUsageGroup
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup verwijderd moet worden (required)
@@ -554,7 +554,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesDeleteConnectionUsageGroupAsync
      *
-     * Verwijdert een ConnectionUsageGroup.
+     * Verwijder een ConnectionUsageGroup
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup verwijderd moet worden (required)
@@ -576,7 +576,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesDeleteConnectionUsageGroupAsyncWithHttpInfo
      *
-     * Verwijdert een ConnectionUsageGroup.
+     * Verwijder een ConnectionUsageGroup
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup verwijderd moet worden (required)
@@ -775,7 +775,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesGetConnectionUsageGroup
      *
-     * Haalt de ConnectionUsageGroups op die bij een aansluiting horen. Deze API haalt niet de volumes op die onder de ConnectionUsageGroups hangen.
+     * Haal de ConnectionUsageGroups van een specifieke aansluiting op
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroups opgehaald moeten worden (required)
@@ -793,7 +793,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesGetConnectionUsageGroupWithHttpInfo
      *
-     * Haalt de ConnectionUsageGroups op die bij een aansluiting horen. Deze API haalt niet de volumes op die onder de ConnectionUsageGroups hangen.
+     * Haal de ConnectionUsageGroups van een specifieke aansluiting op
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroups opgehaald moeten worden (required)
@@ -885,7 +885,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesGetConnectionUsageGroupAsync
      *
-     * Haalt de ConnectionUsageGroups op die bij een aansluiting horen. Deze API haalt niet de volumes op die onder de ConnectionUsageGroups hangen.
+     * Haal de ConnectionUsageGroups van een specifieke aansluiting op
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroups opgehaald moeten worden (required)
@@ -906,7 +906,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesGetConnectionUsageGroupAsyncWithHttpInfo
      *
-     * Haalt de ConnectionUsageGroups op die bij een aansluiting horen. Deze API haalt niet de volumes op die onder de ConnectionUsageGroups hangen.
+     * Haal de ConnectionUsageGroups van een specifieke aansluiting op
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroups opgehaald moeten worden (required)
@@ -1089,7 +1089,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesGetConnectionUsages
      *
-     * Haalt de ConnectionUsages op die bij een ConnectionUsageGroup horen.
+     * Haal de ConnectionUsages van een specifieke ConnectionUsageGroup op
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de verbruiken opgehaald moet worden (required)
@@ -1108,7 +1108,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesGetConnectionUsagesWithHttpInfo
      *
-     * Haalt de ConnectionUsages op die bij een ConnectionUsageGroup horen.
+     * Haal de ConnectionUsages van een specifieke ConnectionUsageGroup op
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de verbruiken opgehaald moet worden (required)
@@ -1201,7 +1201,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesGetConnectionUsagesAsync
      *
-     * Haalt de ConnectionUsages op die bij een ConnectionUsageGroup horen.
+     * Haal de ConnectionUsages van een specifieke ConnectionUsageGroup op
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de verbruiken opgehaald moet worden (required)
@@ -1223,7 +1223,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesGetConnectionUsagesAsyncWithHttpInfo
      *
-     * Haalt de ConnectionUsages op die bij een ConnectionUsageGroup horen.
+     * Haal de ConnectionUsages van een specifieke ConnectionUsageGroup op
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de verbruiken opgehaald moet worden (required)
@@ -1422,7 +1422,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPatchConnectionUsageGroup
      *
-     * Deze API kan de beschrijving en comment wijzigen. Als een veld null is wordt het niet gewijzigd.
+     * Wijzig een ConnectionUsageGroup
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup gewijzigd moet worden (required)
@@ -1442,7 +1442,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPatchConnectionUsageGroupWithHttpInfo
      *
-     * Deze API kan de beschrijving en comment wijzigen. Als een veld null is wordt het niet gewijzigd.
+     * Wijzig een ConnectionUsageGroup
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup gewijzigd moet worden (required)
@@ -1536,7 +1536,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPatchConnectionUsageGroupAsync
      *
-     * Deze API kan de beschrijving en comment wijzigen. Als een veld null is wordt het niet gewijzigd.
+     * Wijzig een ConnectionUsageGroup
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup gewijzigd moet worden (required)
@@ -1559,7 +1559,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPatchConnectionUsageGroupAsyncWithHttpInfo
      *
-     * Deze API kan de beschrijving en comment wijzigen. Als een veld null is wordt het niet gewijzigd.
+     * Wijzig een ConnectionUsageGroup
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup gewijzigd moet worden (required)
@@ -1769,7 +1769,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPostConnectionUsage
      *
-     * Deze API maakt een ConnectionUsage aan.
+     * Nieuwe ConnectionUsage aanmaken
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
@@ -1789,7 +1789,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPostConnectionUsageWithHttpInfo
      *
-     * Deze API maakt een ConnectionUsage aan.
+     * Nieuwe ConnectionUsage aanmaken
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
@@ -1883,7 +1883,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPostConnectionUsageAsync
      *
-     * Deze API maakt een ConnectionUsage aan.
+     * Nieuwe ConnectionUsage aanmaken
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
@@ -1906,7 +1906,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPostConnectionUsageAsyncWithHttpInfo
      *
-     * Deze API maakt een ConnectionUsage aan.
+     * Nieuwe ConnectionUsage aanmaken
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waar de ConnectionUsageGroup bij hoort waarvoor de ConnectionUsage aangemaakt moet worden (required)
@@ -2116,7 +2116,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPostConnectionUsageGroup
      *
-     * Deze API maakt een ConnectionUsageGroup aan.
+     * Nieuwe ConnectionUsageGroup aanmaken
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup aangemaakt moet worden (required)
@@ -2135,7 +2135,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPostConnectionUsageGroupWithHttpInfo
      *
-     * Deze API maakt een ConnectionUsageGroup aan.
+     * Nieuwe ConnectionUsageGroup aanmaken
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup aangemaakt moet worden (required)
@@ -2228,7 +2228,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPostConnectionUsageGroupAsync
      *
-     * Deze API maakt een ConnectionUsageGroup aan.
+     * Nieuwe ConnectionUsageGroup aanmaken
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup aangemaakt moet worden (required)
@@ -2250,7 +2250,7 @@ class SysConnectionUsagesApi
     /**
      * Operation sysConnectionUsagesPostConnectionUsageGroupAsyncWithHttpInfo
      *
-     * Deze API maakt een ConnectionUsageGroup aan.
+     * Nieuwe ConnectionUsageGroup aanmaken
      *
      * @param  string $organization_id De organisatie waar de aansluiting bij hoort (required)
      * @param  string $connection_id De aansluiting waarvoor de ConnectionUsageGroup aangemaakt moet worden (required)

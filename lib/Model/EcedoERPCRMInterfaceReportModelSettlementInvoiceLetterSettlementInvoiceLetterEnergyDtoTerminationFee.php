@@ -59,6 +59,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     protected static $swaggerTypes = [
         'calculated_termination_fee_id' => 'string',
         'termination_fee_type' => 'string',
+        'termination_fee_calculation_reason' => 'string',
         'has_termination_fee' => 'bool',
         'termination_fee_amount' => 'double',
         'termination_fee_vat_amount' => 'double',
@@ -118,6 +119,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     protected static $swaggerFormats = [
         'calculated_termination_fee_id' => null,
         'termination_fee_type' => null,
+        'termination_fee_calculation_reason' => null,
         'has_termination_fee' => null,
         'termination_fee_amount' => 'double',
         'termination_fee_vat_amount' => 'double',
@@ -198,6 +200,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     protected static $attributeMap = [
         'calculated_termination_fee_id' => 'CalculatedTerminationFee_Id',
         'termination_fee_type' => 'TerminationFeeType',
+        'termination_fee_calculation_reason' => 'TerminationFeeCalculationReason',
         'has_termination_fee' => 'HasTerminationFee',
         'termination_fee_amount' => 'TerminationFeeAmount',
         'termination_fee_vat_amount' => 'TerminationFeeVatAmount',
@@ -257,6 +260,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     protected static $setters = [
         'calculated_termination_fee_id' => 'setCalculatedTerminationFeeId',
         'termination_fee_type' => 'setTerminationFeeType',
+        'termination_fee_calculation_reason' => 'setTerminationFeeCalculationReason',
         'has_termination_fee' => 'setHasTerminationFee',
         'termination_fee_amount' => 'setTerminationFeeAmount',
         'termination_fee_vat_amount' => 'setTerminationFeeVatAmount',
@@ -316,6 +320,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     protected static $getters = [
         'calculated_termination_fee_id' => 'getCalculatedTerminationFeeId',
         'termination_fee_type' => 'getTerminationFeeType',
+        'termination_fee_calculation_reason' => 'getTerminationFeeCalculationReason',
         'has_termination_fee' => 'getHasTerminationFee',
         'termination_fee_amount' => 'getTerminationFeeAmount',
         'termination_fee_vat_amount' => 'getTerminationFeeVatAmount',
@@ -429,6 +434,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     {
         $this->container['calculated_termination_fee_id'] = isset($data['calculated_termination_fee_id']) ? $data['calculated_termination_fee_id'] : null;
         $this->container['termination_fee_type'] = isset($data['termination_fee_type']) ? $data['termination_fee_type'] : null;
+        $this->container['termination_fee_calculation_reason'] = isset($data['termination_fee_calculation_reason']) ? $data['termination_fee_calculation_reason'] : null;
         $this->container['has_termination_fee'] = isset($data['has_termination_fee']) ? $data['has_termination_fee'] : null;
         $this->container['termination_fee_amount'] = isset($data['termination_fee_amount']) ? $data['termination_fee_amount'] : null;
         $this->container['termination_fee_vat_amount'] = isset($data['termination_fee_vat_amount']) ? $data['termination_fee_vat_amount'] : null;
@@ -548,6 +554,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setTerminationFeeType($termination_fee_type)
     {
         $this->container['termination_fee_type'] = $termination_fee_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets termination_fee_calculation_reason
+     *
+     * @return string
+     */
+    public function getTerminationFeeCalculationReason()
+    {
+        return $this->container['termination_fee_calculation_reason'];
+    }
+
+    /**
+     * Sets termination_fee_calculation_reason
+     *
+     * @param string $termination_fee_calculation_reason termination_fee_calculation_reason
+     *
+     * @return $this
+     */
+    public function setTerminationFeeCalculationReason($termination_fee_calculation_reason)
+    {
+        $this->container['termination_fee_calculation_reason'] = $termination_fee_calculation_reason;
 
         return $this;
     }

@@ -92,7 +92,7 @@ class SysZipAreaTaxCreditProjectApi
      *
      * Verwijder een postcoderoosproject
      *
-     * @param  string $zip_area_energy_tax_credit_project_id Id van het postcoderoosproject om te verwijderen (required)
+     * @param  string $zip_area_energy_tax_credit_project_id De unieke identifier van het postcoderoosproject (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -109,7 +109,7 @@ class SysZipAreaTaxCreditProjectApi
      *
      * Verwijder een postcoderoosproject
      *
-     * @param  string $zip_area_energy_tax_credit_project_id Id van het postcoderoosproject om te verwijderen (required)
+     * @param  string $zip_area_energy_tax_credit_project_id De unieke identifier van het postcoderoosproject (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -200,7 +200,7 @@ class SysZipAreaTaxCreditProjectApi
      *
      * Verwijder een postcoderoosproject
      *
-     * @param  string $zip_area_energy_tax_credit_project_id Id van het postcoderoosproject om te verwijderen (required)
+     * @param  string $zip_area_energy_tax_credit_project_id De unieke identifier van het postcoderoosproject (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -220,7 +220,7 @@ class SysZipAreaTaxCreditProjectApi
      *
      * Verwijder een postcoderoosproject
      *
-     * @param  string $zip_area_energy_tax_credit_project_id Id van het postcoderoosproject om te verwijderen (required)
+     * @param  string $zip_area_energy_tax_credit_project_id De unieke identifier van het postcoderoosproject (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -270,7 +270,7 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Create request for operation 'sysZipAreaTaxCreditProjectDeleteZipAreaEnergyTaxCreditProject'
      *
-     * @param  string $zip_area_energy_tax_credit_project_id Id van het postcoderoosproject om te verwijderen (required)
+     * @param  string $zip_area_energy_tax_credit_project_id De unieke identifier van het postcoderoosproject (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -284,7 +284,7 @@ class SysZipAreaTaxCreditProjectApi
             );
         }
 
-        $resourcePath = '/sysapi/v1.0/zipareaenergytaxcreditproject/{zipAreaEnergyTaxCreditProjectId}';
+        $resourcePath = '/sysapi/v1.0/zipareaenergytaxcreditprojects/{zipAreaEnergyTaxCreditProjectId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -385,7 +385,7 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectGetZipAreaEnergyTaxCreditProjects
      *
-     * Verkrijg een lijst van objecten met de velden uit postcoderoosproject
+     * Verkrijg een lijst van postcoderoosprojecten.
      *
      * @param  string $project_ean Optionele query parameter voor filtering op projectEAN (optional)
      *
@@ -402,7 +402,7 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectGetZipAreaEnergyTaxCreditProjectsWithHttpInfo
      *
-     * Verkrijg een lijst van objecten met de velden uit postcoderoosproject
+     * Verkrijg een lijst van postcoderoosprojecten.
      *
      * @param  string $project_ean Optionele query parameter voor filtering op projectEAN (optional)
      *
@@ -493,7 +493,7 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectGetZipAreaEnergyTaxCreditProjectsAsync
      *
-     * Verkrijg een lijst van objecten met de velden uit postcoderoosproject
+     * Verkrijg een lijst van postcoderoosprojecten.
      *
      * @param  string $project_ean Optionele query parameter voor filtering op projectEAN (optional)
      *
@@ -513,7 +513,7 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectGetZipAreaEnergyTaxCreditProjectsAsyncWithHttpInfo
      *
-     * Verkrijg een lijst van objecten met de velden uit postcoderoosproject
+     * Verkrijg een lijst van postcoderoosprojecten.
      *
      * @param  string $project_ean Optionele query parameter voor filtering op projectEAN (optional)
      *
@@ -573,7 +573,7 @@ class SysZipAreaTaxCreditProjectApi
     protected function sysZipAreaTaxCreditProjectGetZipAreaEnergyTaxCreditProjectsRequest($project_ean = null)
     {
 
-        $resourcePath = '/sysapi/v1.0/zipareaenergytaxcreditproject';
+        $resourcePath = '/sysapi/v1.0/zipareaenergytaxcreditprojects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -670,7 +670,7 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectPostZipAreaEnergyTaxCreditProject
      *
-     * Voeg een postcoderoosproject toe
+     * Voeg een nieuw postcoderoosproject toe.
      *
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData $post_data Object dat de data bevat voor de velden van het postcoderoosproject (required)
      *
@@ -687,7 +687,7 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectPostZipAreaEnergyTaxCreditProjectWithHttpInfo
      *
-     * Voeg een postcoderoosproject toe
+     * Voeg een nieuw postcoderoosproject toe.
      *
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData $post_data Object dat de data bevat voor de velden van het postcoderoosproject (required)
      *
@@ -778,7 +778,7 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectPostZipAreaEnergyTaxCreditProjectAsync
      *
-     * Voeg een postcoderoosproject toe
+     * Voeg een nieuw postcoderoosproject toe.
      *
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData $post_data Object dat de data bevat voor de velden van het postcoderoosproject (required)
      *
@@ -798,7 +798,7 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectPostZipAreaEnergyTaxCreditProjectAsyncWithHttpInfo
      *
-     * Voeg een postcoderoosproject toe
+     * Voeg een nieuw postcoderoosproject toe.
      *
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData $post_data Object dat de data bevat voor de velden van het postcoderoosproject (required)
      *
@@ -864,7 +864,7 @@ class SysZipAreaTaxCreditProjectApi
             );
         }
 
-        $resourcePath = '/sysapi/v1.0/zipareaenergytaxcreditproject';
+        $resourcePath = '/sysapi/v1.0/zipareaenergytaxcreditprojects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -960,10 +960,10 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectPutZipAreaEnergyTaxCreditProject
      *
-     * Update een postcoderoosproject
+     * Wijzig een postcoderoosproject
      *
-     * @param  string $zip_area_energy_tax_credit_project_id Id van een postcoderoosproject om te updaten (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData $put_data ProjectName, ProjectCooperative en StartDate (required)
+     * @param  string $zip_area_energy_tax_credit_project_id De unieke identifier van het postcoderoosproject (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData $put_data ProjectEAN, ProjectName, ProjectCooperative en StartDate. Let op: Het wijzigen van een EAN kan grote gevolgen hebben, pas deze alleen aan om foutieve data te corrigeren. (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -978,10 +978,10 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectPutZipAreaEnergyTaxCreditProjectWithHttpInfo
      *
-     * Update een postcoderoosproject
+     * Wijzig een postcoderoosproject
      *
-     * @param  string $zip_area_energy_tax_credit_project_id Id van een postcoderoosproject om te updaten (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData $put_data ProjectName, ProjectCooperative en StartDate (required)
+     * @param  string $zip_area_energy_tax_credit_project_id De unieke identifier van het postcoderoosproject (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData $put_data ProjectEAN, ProjectName, ProjectCooperative en StartDate. Let op: Het wijzigen van een EAN kan grote gevolgen hebben, pas deze alleen aan om foutieve data te corrigeren. (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1070,10 +1070,10 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectPutZipAreaEnergyTaxCreditProjectAsync
      *
-     * Update een postcoderoosproject
+     * Wijzig een postcoderoosproject
      *
-     * @param  string $zip_area_energy_tax_credit_project_id Id van een postcoderoosproject om te updaten (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData $put_data ProjectName, ProjectCooperative en StartDate (required)
+     * @param  string $zip_area_energy_tax_credit_project_id De unieke identifier van het postcoderoosproject (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData $put_data ProjectEAN, ProjectName, ProjectCooperative en StartDate. Let op: Het wijzigen van een EAN kan grote gevolgen hebben, pas deze alleen aan om foutieve data te corrigeren. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1091,10 +1091,10 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Operation sysZipAreaTaxCreditProjectPutZipAreaEnergyTaxCreditProjectAsyncWithHttpInfo
      *
-     * Update een postcoderoosproject
+     * Wijzig een postcoderoosproject
      *
-     * @param  string $zip_area_energy_tax_credit_project_id Id van een postcoderoosproject om te updaten (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData $put_data ProjectName, ProjectCooperative en StartDate (required)
+     * @param  string $zip_area_energy_tax_credit_project_id De unieke identifier van het postcoderoosproject (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData $put_data ProjectEAN, ProjectName, ProjectCooperative en StartDate. Let op: Het wijzigen van een EAN kan grote gevolgen hebben, pas deze alleen aan om foutieve data te corrigeren. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1144,8 +1144,8 @@ class SysZipAreaTaxCreditProjectApi
     /**
      * Create request for operation 'sysZipAreaTaxCreditProjectPutZipAreaEnergyTaxCreditProject'
      *
-     * @param  string $zip_area_energy_tax_credit_project_id Id van een postcoderoosproject om te updaten (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData $put_data ProjectName, ProjectCooperative en StartDate (required)
+     * @param  string $zip_area_energy_tax_credit_project_id De unieke identifier van het postcoderoosproject (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData $put_data ProjectEAN, ProjectName, ProjectCooperative en StartDate. Let op: Het wijzigen van een EAN kan grote gevolgen hebben, pas deze alleen aan om foutieve data te corrigeren. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1165,7 +1165,7 @@ class SysZipAreaTaxCreditProjectApi
             );
         }
 
-        $resourcePath = '/sysapi/v1.0/zipareaenergytaxcreditproject/{zipAreaEnergyTaxCreditProjectId}';
+        $resourcePath = '/sysapi/v1.0/zipareaenergytaxcreditprojects/{zipAreaEnergyTaxCreditProjectId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

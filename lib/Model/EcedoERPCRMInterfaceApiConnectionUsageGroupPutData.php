@@ -36,6 +36,7 @@ use \Swagger\Client\ObjectSerializer;
  * EcedoERPCRMInterfaceApiConnectionUsageGroupPutData Class Doc Comment
  *
  * @category Class
+ * @description Bevat de gegevens voor het updaten van een ConnectionUsageGroup.
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -223,7 +224,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroupPutData implements ModelInterfa
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description De beschrijving van de ConnectionUsageGroup.
      *
      * @return $this
      */
@@ -247,7 +248,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroupPutData implements ModelInterfa
     /**
      * Sets comment
      *
-     * @param string $comment comment
+     * @param string $comment Het commentaar voor de ConnectionUsageGroup.
      *
      * @return $this
      */
