@@ -268,7 +268,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroup implements ModelInterface, Arr
      */
     public function getZipAreaEnergyTaxCreditProjectId()
     {
-        return $this->container['connection_usage_group_id'];
+        return $this->container['zip_area_energy_tax_credit_project_id'];
     }
 
     /**
