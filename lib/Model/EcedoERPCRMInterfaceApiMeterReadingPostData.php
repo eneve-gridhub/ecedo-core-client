@@ -57,8 +57,8 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'event_id' => 'string',
         'event' => 'string',
+        'event_id' => 'string',
         'reason' => 'string',
         'is_used' => 'bool',
         'validate_tmr_band_width' => 'bool',
@@ -85,8 +85,8 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'event_id' => 'uuid',
         'event' => null,
+        'event_id' => 'uuid',
         'reason' => null,
         'is_used' => null,
         'validate_tmr_band_width' => null,
@@ -134,8 +134,8 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'event_id' => 'EventId',
         'event' => 'Event',
+        'event_id' => 'EventId',
         'reason' => 'Reason',
         'is_used' => 'IsUsed',
         'validate_tmr_band_width' => 'ValidateTMRBandWidth',
@@ -162,8 +162,8 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'event_id' => 'setEventId',
         'event' => 'setEvent',
+        'event_id' => 'setEventId',
         'reason' => 'setReason',
         'is_used' => 'setIsUsed',
         'validate_tmr_band_width' => 'setValidateTmrBandWidth',
@@ -190,8 +190,8 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'event_id' => 'getEventId',
         'event' => 'getEvent',
+        'event_id' => 'getEventId',
         'reason' => 'getReason',
         'is_used' => 'getIsUsed',
         'validate_tmr_band_width' => 'getValidateTmrBandWidth',
@@ -480,8 +480,8 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
-        $this->container['event_id'] = isset($data['event_id']) ? $data['event_id'] : null;
         $this->container['event'] = isset($data['event']) ? $data['event'] : null;
+        $this->container['event_id'] = isset($data['event_id']) ? $data['event_id'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['is_used'] = isset($data['is_used']) ? $data['is_used'] : null;
         $this->container['validate_tmr_band_width'] = isset($data['validate_tmr_band_width']) ? $data['validate_tmr_band_width'] : null;
@@ -575,30 +575,6 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
 
 
     /**
-     * Gets event_id
-     *
-     * @return string
-     */
-    public function getEventId()
-    {
-        return $this->container['event_id'];
-    }
-
-    /**
-     * Sets event_id
-     *
-     * @param string $event_id event_id
-     *
-     * @return $this
-     */
-    public function setEventId($event_id)
-    {
-        $this->container['event_id'] = $event_id;
-
-        return $this;
-    }
-
-    /**
      * Gets event
      *
      * @return string
@@ -627,6 +603,30 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
             );
         }
         $this->container['event'] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Gets event_id
+     *
+     * @return string
+     */
+    public function getEventId()
+    {
+        return $this->container['event_id'];
+    }
+
+    /**
+     * Sets event_id
+     *
+     * @param string $event_id event_id
+     *
+     * @return $this
+     */
+    public function setEventId($event_id)
+    {
+        $this->container['event_id'] = $event_id;
 
         return $this;
     }

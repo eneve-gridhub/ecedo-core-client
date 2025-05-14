@@ -64,7 +64,8 @@ class EcedoERPCRMInterfaceApiCustomInvoicePostData implements ModelInterface, Ar
         'payment_method' => 'string',
         'invoice_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCustomInvoiceRowPostData[]',
         'invoice_sub_type' => 'string',
-        'client_reference' => 'string'
+        'client_reference' => 'string',
+        'cluster_reference' => 'string'
     ];
 
     /**
@@ -80,7 +81,8 @@ class EcedoERPCRMInterfaceApiCustomInvoicePostData implements ModelInterface, Ar
         'payment_method' => null,
         'invoice_rows' => null,
         'invoice_sub_type' => null,
-        'client_reference' => null
+        'client_reference' => null,
+        'cluster_reference' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class EcedoERPCRMInterfaceApiCustomInvoicePostData implements ModelInterface, Ar
         'payment_method' => 'PaymentMethod',
         'invoice_rows' => 'InvoiceRows',
         'invoice_sub_type' => 'InvoiceSubType',
-        'client_reference' => 'ClientReference'
+        'client_reference' => 'ClientReference',
+        'cluster_reference' => 'ClusterReference'
     ];
 
     /**
@@ -133,7 +136,8 @@ class EcedoERPCRMInterfaceApiCustomInvoicePostData implements ModelInterface, Ar
         'payment_method' => 'setPaymentMethod',
         'invoice_rows' => 'setInvoiceRows',
         'invoice_sub_type' => 'setInvoiceSubType',
-        'client_reference' => 'setClientReference'
+        'client_reference' => 'setClientReference',
+        'cluster_reference' => 'setClusterReference'
     ];
 
     /**
@@ -149,7 +153,8 @@ class EcedoERPCRMInterfaceApiCustomInvoicePostData implements ModelInterface, Ar
         'payment_method' => 'getPaymentMethod',
         'invoice_rows' => 'getInvoiceRows',
         'invoice_sub_type' => 'getInvoiceSubType',
-        'client_reference' => 'getClientReference'
+        'client_reference' => 'getClientReference',
+        'cluster_reference' => 'getClusterReference'
     ];
 
     /**
@@ -300,6 +305,7 @@ class EcedoERPCRMInterfaceApiCustomInvoicePostData implements ModelInterface, Ar
         $this->container['invoice_rows'] = isset($data['invoice_rows']) ? $data['invoice_rows'] : null;
         $this->container['invoice_sub_type'] = isset($data['invoice_sub_type']) ? $data['invoice_sub_type'] : null;
         $this->container['client_reference'] = isset($data['client_reference']) ? $data['client_reference'] : null;
+        $this->container['cluster_reference'] = isset($data['cluster_reference']) ? $data['cluster_reference'] : null;
     }
 
     /**
@@ -548,6 +554,30 @@ class EcedoERPCRMInterfaceApiCustomInvoicePostData implements ModelInterface, Ar
     public function setClientReference($client_reference)
     {
         $this->container['client_reference'] = $client_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets cluster_reference
+     *
+     * @return string
+     */
+    public function getClusterReference()
+    {
+        return $this->container['cluster_reference'];
+    }
+
+    /**
+     * Sets cluster_reference
+     *
+     * @param string $cluster_reference Optioneel Guid van een cluster. Dit veld heeft geen impact op voorschotten en/of afrekeningen.
+     *
+     * @return $this
+     */
+    public function setClusterReference($cluster_reference)
+    {
+        $this->container['cluster_reference'] = $cluster_reference;
 
         return $this;
     }

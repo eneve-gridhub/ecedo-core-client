@@ -223,7 +223,7 @@ class EcedoERPCRMInterfaceApiDraftBillingItem implements ModelInterface, ArrayAc
     /**
      * Sets billing_item_group_id
      *
-     * @param string $billing_item_group_id billing_item_group_id
+     * @param string $billing_item_group_id De factuuritemgroep (dit kan gezien worden als een blauwdruk of een template) waarop het factuuritem moet worden gebaseerd. De `BillingItemGroups` zijn op te halen via een API in de groep `SysBillingItems`
      *
      * @return $this
      */
@@ -247,7 +247,7 @@ class EcedoERPCRMInterfaceApiDraftBillingItem implements ModelInterface, ArrayAc
     /**
      * Sets price
      *
-     * @param double $price price
+     * @param double $price Optionele prijs voor het factuuritem. Of deze meegegeven mag worden is afhankelijk van de configuratie van de factuuritemgroep.
      *
      * @return $this
      */

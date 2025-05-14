@@ -65,8 +65,8 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_start_date' => '\DateTime',
         'contract_end_date' => '\DateTime',
         'contract_termination_date' => '\DateTime',
-        'termination_fee_type' => 'string',
         'calculation_data' => 'object',
+        'termination_fee_type' => 'string'
     ];
 
     /**
@@ -83,8 +83,8 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_start_date' => 'date',
         'contract_end_date' => 'date',
         'contract_termination_date' => 'date',
-        'termination_fee_type' => null,
         'calculation_data' => null,
+        'termination_fee_type' => null
     ];
 
     /**
@@ -122,8 +122,8 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_start_date' => 'ContractStartDate',
         'contract_end_date' => 'ContractEndDate',
         'contract_termination_date' => 'ContractTerminationDate',
-        'termination_fee_type' => 'TerminationFeeType',
         'calculation_data' => 'CalculationData',
+        'termination_fee_type' => 'TerminationFeeType'
     ];
 
     /**
@@ -140,8 +140,8 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_start_date' => 'setContractStartDate',
         'contract_end_date' => 'setContractEndDate',
         'contract_termination_date' => 'setContractTerminationDate',
-        'termination_fee_type' => 'setTerminationFeeType',
         'calculation_data' => 'setCalculationData',
+        'termination_fee_type' => 'setTerminationFeeType'
     ];
 
     /**
@@ -158,9 +158,8 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_start_date' => 'getContractStartDate',
         'contract_end_date' => 'getContractEndDate',
         'contract_termination_date' => 'getContractTerminationDate',
-        'termination_fee_type' => 'getTerminationFeeType',
         'calculation_data' => 'getCalculationData',
-
+        'termination_fee_type' => 'getTerminationFeeType'
     ];
 
     /**

@@ -249,6 +249,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionDat
     const LOCATION_TYPE_WAL_STROOM = 'WalStroom';
     const LOCATION_TYPE_RESUPPLY = 'Resupply';
     const LOCATION_TYPE_ENERGY_STORAGE = 'EnergyStorage';
+    const LOCATION_TYPE_EFFICIENT_ELECTRICITY_GENERATION = 'EfficientElectricityGeneration';
     
 
     
@@ -293,6 +294,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionDat
             self::LOCATION_TYPE_WAL_STROOM,
             self::LOCATION_TYPE_RESUPPLY,
             self::LOCATION_TYPE_ENERGY_STORAGE,
+            self::LOCATION_TYPE_EFFICIENT_ELECTRICITY_GENERATION,
         ];
     }
     

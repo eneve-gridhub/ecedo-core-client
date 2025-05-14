@@ -301,7 +301,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets cluster_reference
      *
-     * @param string $cluster_reference cluster_reference
+     * @param string $cluster_reference De referentie naar het cluster waarvoor het proefvoorschot moet worden aangemaakt. Deze waarde wordt gebruikt voor de bepaling welke aansluitingen meegenomen moeten worden in de voorschotberekening.
      *
      * @return $this
      */
@@ -325,7 +325,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets agreement_date
      *
-     * @param \DateTime $agreement_date agreement_date
+     * @param \DateTime $agreement_date De tekendatum van het contract. Deze tekendatum wordt gebruikt om te valideren of de propositie(s) geldig waren op het moment van tekenen. Dit veld is verplicht wanneer `ElectricityContractAgreementDate` en `GasContractAgreementDate` leeg zijn.
      *
      * @return $this
      */
@@ -349,7 +349,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets reference_date
      *
-     * @param \DateTime $reference_date reference_date
+     * @param \DateTime $reference_date De optionele peildatum waarmee bepaald wordt welke aansluitingen actief zijn binnen het meegegeven cluster. De standaardwaarde is \"vandaag\". Alle aansluitingen met een actief contract op de peildatum worden gebruikt in de voorschotberekening.
      *
      * @return $this
      */
@@ -373,7 +373,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date start_date
+     * @param \DateTime $start_date De maand waarvoor het voorschot berekend moet worden. Gebruik hier altijd de eerste dag van de maand, bijvoorbeeld `2025-12-01` voor December 2025.
      *
      * @return $this
      */
@@ -397,7 +397,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets electricity_contract_agreement_date
      *
-     * @param \DateTime $electricity_contract_agreement_date electricity_contract_agreement_date
+     * @param \DateTime $electricity_contract_agreement_date De tekendatum van het elektriciteit-contract. Dit veld is verplicht wanneer `AgreementDate` leeg is.
      *
      * @return $this
      */
@@ -421,7 +421,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets gas_contract_agreement_date
      *
-     * @param \DateTime $gas_contract_agreement_date gas_contract_agreement_date
+     * @param \DateTime $gas_contract_agreement_date De tekendatum van het gas-contract. Dit veld is verplicht wanneer `AgreementDate` leeg is.
      *
      * @return $this
      */
@@ -445,7 +445,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets electricity_proposition_reference
      *
-     * @param string $electricity_proposition_reference electricity_proposition_reference
+     * @param string $electricity_proposition_reference De referentie naar de elektriciteit-propositie waarvan de prijzen gebruikt moeten worden in de voorschotberekening. Dit is een verplicht veld wanneer het voorschot (deels) wordt gebaseerd op een elektriciteit-aansluiting.
      *
      * @return $this
      */
@@ -469,7 +469,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets gas_proposition_reference
      *
-     * @param string $gas_proposition_reference gas_proposition_reference
+     * @param string $gas_proposition_reference De referentie naar de gas-propositie waarvan de prijzen gebruikt moeten worden in de voorschotberekening. Dit is een verplicht veld wanneer het voorschot (deels) wordt gebaseerd op een gas-aansluiting.
      *
      * @return $this
      */
@@ -493,7 +493,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets electricity_meelift_proposition_reference
      *
-     * @param string $electricity_meelift_proposition_reference electricity_meelift_proposition_reference
+     * @param string $electricity_meelift_proposition_reference De referentie naar de elektriciteit-meeliftpropositie waarvan de prijzen gebruikt moeten worden in de voorschotberekening. Dit is een verplicht veld wanneer het voorschot (deels) wordt gebaseerd op een elektriciteit-aansluiting en wanneer de meelift-functionaliteit is ingeschakeld.
      *
      * @return $this
      */
@@ -517,7 +517,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets gas_meelift_proposition_reference
      *
-     * @param string $gas_meelift_proposition_reference gas_meelift_proposition_reference
+     * @param string $gas_meelift_proposition_reference De referentie naar de gas-meeliftpropositie waarvan de prijzen gebruikt moeten worden in de voorschotberekening. Dit is een verplicht veld wanneer het voorschot (deels) wordt gebaseerd op een gas-aansluiting en wanneer de meelift-functionaliteit is ingeschakeld.
      *
      * @return $this
      */
@@ -541,7 +541,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets connection_annual_standard_usages
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiDraftAnnualStandardUsageForConnection[] $connection_annual_standard_usages connection_annual_standard_usages
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiDraftAnnualStandardUsageForConnection[] $connection_annual_standard_usages Met behulp van deze optionele lijst is het mogelijk om jaarverbruiken (`SJV` of `SJI/SJA`) mee te geven. Als voor een aansluiting geen expliciet verbruik wordt meegegeven, dan wordt het SJV/VJV van de aansluiting gebruikt.
      *
      * @return $this
      */
@@ -565,7 +565,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets connection_billing_items
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiDraftBillingItemsForConnection[] $connection_billing_items connection_billing_items
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiDraftBillingItemsForConnection[] $connection_billing_items Met behulp van deze optionele lijst is het mogelijk om kortingen of andere factuuritems (`BillingItems`) mee te geven.
      *
      * @return $this
      */
@@ -589,7 +589,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets contract_prices
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionPriceGroupPostData[] $contract_prices contract_prices
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionPriceGroupPostData[] $contract_prices Met behulp van deze optionele lijst is het mogelijk om expliciete contractprijzen mee te geven. Deze kunnen gebruikt worden om de propositieprijzen te overschrijven.
      *
      * @return $this
      */
@@ -613,7 +613,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets contract_properties
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionContractPropertyPostData[] $contract_properties contract_properties
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionContractPropertyPostData[] $contract_properties Met behulp van deze optionele lijst is het mogelijk om contractafspraken te specificeren.
      *
      * @return $this
      */
@@ -637,7 +637,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData implements ModelInterfa
     /**
      * Sets do_combine_rows
      *
-     * @param bool $do_combine_rows do_combine_rows
+     * @param bool $do_combine_rows Optionele parameter (default `false`) waarmee aangegeven kan worden dat de `CombinedAdvancePaymentRows`-lijst in de response gevuld moet worden. Deze lijst bevat de resultaten uit de `AdvancePaymentRows`-lijst, maar gecombineerd tot verkoopprijzen zoals dat ook voor facturen wordt gedaan.
      *
      * @return $this
      */

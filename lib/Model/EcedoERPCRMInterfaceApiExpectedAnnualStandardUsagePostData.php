@@ -353,7 +353,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
     /**
      * Sets valid_until
      *
-     * @param \DateTime $valid_until valid_until
+     * @param \DateTime $valid_until Optioneel veld waarin vastgelegd kan worden tot wanneer het VJV geldig is. __Let op!__ Dit veld wordt niet gebruikt door Ecedo en is alleen bedoeld om processen van leveranciers te ondersteunen.
      *
      * @return $this
      */

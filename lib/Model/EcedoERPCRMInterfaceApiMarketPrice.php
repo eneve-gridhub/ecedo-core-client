@@ -193,15 +193,15 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const PRICE_UNIT_YEAR = 'Year';
-    const PRICE_UNIT_DAY = 'Day';
     const PRICE_UNIT_KWH = 'KWh';
+    const PRICE_UNIT_YEAR = 'Year';
+    const PRICE_UNIT_INVOICE = 'Invoice';
+    const PRICE_UNIT_DAY = 'Day';
     const PRICE_UNIT_M3 = 'M3';
     const PRICE_UNIT_ONE_OFF = 'OneOff';
     const PRICE_UNIT_MONTH = 'Month';
     const PRICE_UNIT_MWH = 'MWh';
     const PRICE_UNIT_WH = 'Wh';
-    const PRICE_UNIT_INVOICE = 'Invoice';
     const PRICE_UNIT_PERCENTAGE = 'Percentage';
     const PRICE_UNIT_SECONDS = 'Seconds';
     const PRICE_UNIT_CHARGE_SESSION = 'ChargeSession';
@@ -231,15 +231,15 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     public function getPriceUnitAllowableValues()
     {
         return [
-            self::PRICE_UNIT_YEAR,
-            self::PRICE_UNIT_DAY,
             self::PRICE_UNIT_KWH,
+            self::PRICE_UNIT_YEAR,
+            self::PRICE_UNIT_INVOICE,
+            self::PRICE_UNIT_DAY,
             self::PRICE_UNIT_M3,
             self::PRICE_UNIT_ONE_OFF,
             self::PRICE_UNIT_MONTH,
             self::PRICE_UNIT_MWH,
             self::PRICE_UNIT_WH,
-            self::PRICE_UNIT_INVOICE,
             self::PRICE_UNIT_PERCENTAGE,
             self::PRICE_UNIT_SECONDS,
             self::PRICE_UNIT_CHARGE_SESSION,

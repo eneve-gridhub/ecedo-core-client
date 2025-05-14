@@ -223,7 +223,7 @@ class EcedoERPCRMInterfaceApiDraftAnnualStandardUsageForConnection implements Mo
     /**
      * Sets connection_id
      *
-     * @param string $connection_id connection_id
+     * @param string $connection_id Het Id van de aansluiting waarop het verbruik moet worden toegepast
      *
      * @return $this
      */
@@ -247,7 +247,7 @@ class EcedoERPCRMInterfaceApiDraftAnnualStandardUsageForConnection implements Mo
     /**
      * Sets annual_standard_usage
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiAnnualStandardUsage $annual_standard_usage annual_standard_usage
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiAnnualStandardUsage $annual_standard_usage Het te gebruiken verbruik. Let op dat de meegegeven waarden overeen moeten komen met het type en profiel van de aansluiting.
      *
      * @return $this
      */

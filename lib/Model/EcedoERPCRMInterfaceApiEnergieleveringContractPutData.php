@@ -229,8 +229,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
     const START_REASON_MOVE = 'Move';
     const START_REASON_PRODUCER_SWITCH = 'ProducerSwitch';
-    const STATUS_PROVISIONAL = 'Provisional';
     const STATUS_ACTIVE = 'Active';
+    const STATUS_PROVISIONAL = 'Provisional';
     const STATUS_CANCELLED = 'Cancelled';
     const STATUS_ENDED = 'Ended';
     const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
@@ -264,8 +264,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     public function getStatusAllowableValues()
     {
         return [
-            self::STATUS_PROVISIONAL,
             self::STATUS_ACTIVE,
+            self::STATUS_PROVISIONAL,
             self::STATUS_CANCELLED,
             self::STATUS_ENDED,
             self::STATUS_WAIT_FOR_APPROVAL,

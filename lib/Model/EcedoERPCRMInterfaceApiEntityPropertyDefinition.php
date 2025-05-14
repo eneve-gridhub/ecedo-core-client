@@ -64,7 +64,8 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
         'property_description' => 'string',
         'value_type' => 'string',
         'list_of_values' => 'string[]',
-        'required' => 'bool'
+        'required' => 'bool',
+        'default_value' => 'string'
     ];
 
     /**
@@ -80,7 +81,8 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
         'property_description' => null,
         'value_type' => null,
         'list_of_values' => null,
-        'required' => null
+        'required' => null,
+        'default_value' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
         'property_description' => 'PropertyDescription',
         'value_type' => 'ValueType',
         'list_of_values' => 'ListOfValues',
-        'required' => 'Required'
+        'required' => 'Required',
+        'default_value' => 'DefaultValue'
     ];
 
     /**
@@ -133,7 +136,8 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
         'property_description' => 'setPropertyDescription',
         'value_type' => 'setValueType',
         'list_of_values' => 'setListOfValues',
-        'required' => 'setRequired'
+        'required' => 'setRequired',
+        'default_value' => 'setDefaultValue'
     ];
 
     /**
@@ -149,7 +153,8 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
         'property_description' => 'getPropertyDescription',
         'value_type' => 'getValueType',
         'list_of_values' => 'getListOfValues',
-        'required' => 'getRequired'
+        'required' => 'getRequired',
+        'default_value' => 'getDefaultValue'
     ];
 
     /**
@@ -270,6 +275,7 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
         $this->container['value_type'] = isset($data['value_type']) ? $data['value_type'] : null;
         $this->container['list_of_values'] = isset($data['list_of_values']) ? $data['list_of_values'] : null;
         $this->container['required'] = isset($data['required']) ? $data['required'] : null;
+        $this->container['default_value'] = isset($data['default_value']) ? $data['default_value'] : null;
     }
 
     /**
@@ -518,6 +524,30 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinition implements ModelInterface,
     public function setRequired($required)
     {
         $this->container['required'] = $required;
+
+        return $this;
+    }
+
+    /**
+     * Gets default_value
+     *
+     * @return string
+     */
+    public function getDefaultValue()
+    {
+        return $this->container['default_value'];
+    }
+
+    /**
+     * Sets default_value
+     *
+     * @param string $default_value default_value
+     *
+     * @return $this
+     */
+    public function setDefaultValue($default_value)
+    {
+        $this->container['default_value'] = $default_value;
 
         return $this;
     }

@@ -193,6 +193,7 @@ class EcedoERPCRMInterfaceApiCreditInvoicePostDataNewAdvancePaymentInputModel im
     const CALCULATION_REASON_MOVE = 'Move';
     const CALCULATION_REASON_ADVANCE_PAYMENT_SCHEME_CHANGE = 'AdvancePaymentSchemeChange';
     const CALCULATION_REASON_PRODUCER_SWITCH = 'ProducerSwitch';
+    const CALCULATION_REASON_TYPE_OF_SUPPLY = 'TypeOfSupply';
     
 
     
@@ -219,6 +220,7 @@ class EcedoERPCRMInterfaceApiCreditInvoicePostDataNewAdvancePaymentInputModel im
             self::CALCULATION_REASON_MOVE,
             self::CALCULATION_REASON_ADVANCE_PAYMENT_SCHEME_CHANGE,
             self::CALCULATION_REASON_PRODUCER_SWITCH,
+            self::CALCULATION_REASON_TYPE_OF_SUPPLY,
         ];
     }
     

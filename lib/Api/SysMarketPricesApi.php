@@ -92,9 +92,9 @@ class SysMarketPricesApi
      *
      * Haal marktprijzen (excl. btw) op voor periode en marktprijstype
      *
-     * @param  \DateTime $start_date  (required)
-     * @param  \DateTime $end_date  (required)
-     * @param  string $market_price_type  (required)
+     * @param  \DateTime $start_date De startdatum van de periode waarvoor de prijzen opgevraagd worden. Bijvoorbeeld &#x60;2025-12-20&#x60;. (required)
+     * @param  \DateTime $end_date De einddatum (tot-datum) van de periode waarvoor de prijzen opgevraagd worden. Bijvoorbeeld &#x60;2025-12-25&#x60;. (required)
+     * @param  string $market_price_type Het type marktprijs wat waarvoor de prijzen opgevraagd worden. (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -111,9 +111,9 @@ class SysMarketPricesApi
      *
      * Haal marktprijzen (excl. btw) op voor periode en marktprijstype
      *
-     * @param  \DateTime $start_date  (required)
-     * @param  \DateTime $end_date  (required)
-     * @param  string $market_price_type  (required)
+     * @param  \DateTime $start_date De startdatum van de periode waarvoor de prijzen opgevraagd worden. Bijvoorbeeld &#x60;2025-12-20&#x60;. (required)
+     * @param  \DateTime $end_date De einddatum (tot-datum) van de periode waarvoor de prijzen opgevraagd worden. Bijvoorbeeld &#x60;2025-12-25&#x60;. (required)
+     * @param  string $market_price_type Het type marktprijs wat waarvoor de prijzen opgevraagd worden. (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -204,9 +204,9 @@ class SysMarketPricesApi
      *
      * Haal marktprijzen (excl. btw) op voor periode en marktprijstype
      *
-     * @param  \DateTime $start_date  (required)
-     * @param  \DateTime $end_date  (required)
-     * @param  string $market_price_type  (required)
+     * @param  \DateTime $start_date De startdatum van de periode waarvoor de prijzen opgevraagd worden. Bijvoorbeeld &#x60;2025-12-20&#x60;. (required)
+     * @param  \DateTime $end_date De einddatum (tot-datum) van de periode waarvoor de prijzen opgevraagd worden. Bijvoorbeeld &#x60;2025-12-25&#x60;. (required)
+     * @param  string $market_price_type Het type marktprijs wat waarvoor de prijzen opgevraagd worden. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -226,9 +226,9 @@ class SysMarketPricesApi
      *
      * Haal marktprijzen (excl. btw) op voor periode en marktprijstype
      *
-     * @param  \DateTime $start_date  (required)
-     * @param  \DateTime $end_date  (required)
-     * @param  string $market_price_type  (required)
+     * @param  \DateTime $start_date De startdatum van de periode waarvoor de prijzen opgevraagd worden. Bijvoorbeeld &#x60;2025-12-20&#x60;. (required)
+     * @param  \DateTime $end_date De einddatum (tot-datum) van de periode waarvoor de prijzen opgevraagd worden. Bijvoorbeeld &#x60;2025-12-25&#x60;. (required)
+     * @param  string $market_price_type Het type marktprijs wat waarvoor de prijzen opgevraagd worden. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -278,9 +278,9 @@ class SysMarketPricesApi
     /**
      * Create request for operation 'sysMarketPricesGet'
      *
-     * @param  \DateTime $start_date  (required)
-     * @param  \DateTime $end_date  (required)
-     * @param  string $market_price_type  (required)
+     * @param  \DateTime $start_date De startdatum van de periode waarvoor de prijzen opgevraagd worden. Bijvoorbeeld &#x60;2025-12-20&#x60;. (required)
+     * @param  \DateTime $end_date De einddatum (tot-datum) van de periode waarvoor de prijzen opgevraagd worden. Bijvoorbeeld &#x60;2025-12-25&#x60;. (required)
+     * @param  string $market_price_type Het type marktprijs wat waarvoor de prijzen opgevraagd worden. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

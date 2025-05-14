@@ -223,7 +223,7 @@ class EcedoERPCRMInterfaceApiDraftBillingItemsForConnection implements ModelInte
     /**
      * Sets connection_id
      *
-     * @param string $connection_id connection_id
+     * @param string $connection_id Het Id van de aansluiting waarop het factuuritem moet worden toegepast
      *
      * @return $this
      */
@@ -247,7 +247,7 @@ class EcedoERPCRMInterfaceApiDraftBillingItemsForConnection implements ModelInte
     /**
      * Sets billing_items
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiDraftBillingItem[] $billing_items billing_items
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiDraftBillingItem[] $billing_items De lijst van factuuritems
      *
      * @return $this
      */

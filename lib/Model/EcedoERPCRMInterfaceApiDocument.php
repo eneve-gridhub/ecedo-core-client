@@ -257,6 +257,7 @@ class EcedoERPCRMInterfaceApiDocument implements ModelInterface, ArrayAccess
     const DOCUMENT_TYPE_CERTIFICATE_SALE_INVOICE_LETTER = 'CertificateSaleInvoiceLetter';
     const DOCUMENT_TYPE_SETTLEMENT_E_INVOICE_DOCUMENT = 'SettlementEInvoiceDocument';
     const DOCUMENT_TYPE_ADVANCE_PAYMENT_E_INVOICE_DOCUMENT = 'AdvancePaymentEInvoiceDocument';
+    const DOCUMENT_TYPE_PRODUCT_PURCHASE_E_INVOICE_DOCUMENT = 'ProductPurchaseEInvoiceDocument';
     const DOCUMENT_TYPE_ENERGY_VKO_DOCUMENT = 'EnergyVKODocument';
     const DOCUMENT_TYPE_RECONCILIATION_PROPOSAL_DOCUMENT = 'ReconciliationProposalDocument';
     const DOCUMENT_TYPE_MEANS_OF_PRODUCTION_CONTRACT_PROPOSAL_DOCUMENT = 'MeansOfProductionContractProposalDocument';
@@ -345,6 +346,7 @@ class EcedoERPCRMInterfaceApiDocument implements ModelInterface, ArrayAccess
             self::DOCUMENT_TYPE_CERTIFICATE_SALE_INVOICE_LETTER,
             self::DOCUMENT_TYPE_SETTLEMENT_E_INVOICE_DOCUMENT,
             self::DOCUMENT_TYPE_ADVANCE_PAYMENT_E_INVOICE_DOCUMENT,
+            self::DOCUMENT_TYPE_PRODUCT_PURCHASE_E_INVOICE_DOCUMENT,
             self::DOCUMENT_TYPE_ENERGY_VKO_DOCUMENT,
             self::DOCUMENT_TYPE_RECONCILIATION_PROPOSAL_DOCUMENT,
             self::DOCUMENT_TYPE_MEANS_OF_PRODUCTION_CONTRACT_PROPOSAL_DOCUMENT,

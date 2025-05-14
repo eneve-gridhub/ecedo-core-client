@@ -2021,7 +2021,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesGet
      *
-     * Haal facturen van een specifieke klant op (op basis van InvoiceId)
+     * Haal facturen van een specifieke klant op.
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  bool $only_complete Optionele parameter (default true) waarmee woorkomen kan worden dat facturen die nog in een workflow zitten worden geretourneerd (optional)
@@ -2040,7 +2040,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesGetWithHttpInfo
      *
-     * Haal facturen van een specifieke klant op (op basis van InvoiceId)
+     * Haal facturen van een specifieke klant op.
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  bool $only_complete Optionele parameter (default true) waarmee woorkomen kan worden dat facturen die nog in een workflow zitten worden geretourneerd (optional)
@@ -2133,7 +2133,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesGetAsync
      *
-     * Haal facturen van een specifieke klant op (op basis van InvoiceId)
+     * Haal facturen van een specifieke klant op.
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  bool $only_complete Optionele parameter (default true) waarmee woorkomen kan worden dat facturen die nog in een workflow zitten worden geretourneerd (optional)
@@ -2155,7 +2155,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesGetAsyncWithHttpInfo
      *
-     * Haal facturen van een specifieke klant op (op basis van InvoiceId)
+     * Haal facturen van een specifieke klant op.
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  bool $only_complete Optionele parameter (default true) waarmee woorkomen kan worden dat facturen die nog in een workflow zitten worden geretourneerd (optional)
@@ -3319,7 +3319,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesGetInvoicesByCompany
      *
-     * Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer<br></br>  Fetch invoices with invoice number greater than \"invoiceNumber\" for a company label: \"companyLabelId\"<br></br>      Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
+     * Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer<br></br>  Fetch invoices with invoice number greater than \"invoiceNumber\" for a company label: \"companyLabelId\"<br></br>                 Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
      *
      * @param  int $invoice_number invoice number (required)
      * @param  string $company_label_id Voor nu verplichte parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden (optional)
@@ -3337,7 +3337,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesGetInvoicesByCompanyWithHttpInfo
      *
-     * Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer<br></br>  Fetch invoices with invoice number greater than \"invoiceNumber\" for a company label: \"companyLabelId\"<br></br>      Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
+     * Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer<br></br>  Fetch invoices with invoice number greater than \"invoiceNumber\" for a company label: \"companyLabelId\"<br></br>                 Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
      *
      * @param  int $invoice_number invoice number (required)
      * @param  string $company_label_id Voor nu verplichte parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden (optional)
@@ -3437,7 +3437,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesGetInvoicesByCompanyAsync
      *
-     * Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer<br></br>  Fetch invoices with invoice number greater than \"invoiceNumber\" for a company label: \"companyLabelId\"<br></br>      Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
+     * Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer<br></br>  Fetch invoices with invoice number greater than \"invoiceNumber\" for a company label: \"companyLabelId\"<br></br>                 Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
      *
      * @param  int $invoice_number invoice number (required)
      * @param  string $company_label_id Voor nu verplichte parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden (optional)
@@ -3458,7 +3458,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesGetInvoicesByCompanyAsyncWithHttpInfo
      *
-     * Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer<br></br>  Fetch invoices with invoice number greater than \"invoiceNumber\" for a company label: \"companyLabelId\"<br></br>      Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
+     * Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer<br></br>  Fetch invoices with invoice number greater than \"invoiceNumber\" for a company label: \"companyLabelId\"<br></br>                 Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned
      *
      * @param  int $invoice_number invoice number (required)
      * @param  string $company_label_id Voor nu verplichte parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden (optional)
@@ -3543,6 +3543,436 @@ class SysInvoicesApi
             $resourcePath = str_replace(
                 '{' . 'invoiceNumber' . '}',
                 ObjectSerializer::toPathValue($invoice_number),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysInvoicesGetInvoicesPaginated
+     *
+     * Haal facturen van een specifieke klant op
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  bool $only_complete Optionele parameter (default true) waarmee woorkomen kan worden dat facturen die nog in een workflow zitten worden geretourneerd (optional)
+     * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden &#x60;InvoiceDocuments&#x60; (optional)
+     * @param  string $sort_by Optionele parameter voor de veldnaam waar je op wilt sorteren. (optional)
+     * @param  string $sort_direction Optionele parameter voor de sorteerrichting als er een sorteerveld is opgegeven. (optional)
+     * @param  int $page Optionele parameter om aan te geven welk paginanummer van een gepagineerde result set er teruggegeven moet worden. (optional)
+     * @param  int $page_size Optionele parameter om aan te geven hoe veel resultaten per pagina er terug moeten worden gegeven. (optional)
+     * @param  string $filter_property_0 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_0 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_0 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_1 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_1 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_1 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_2 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_2 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_2 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]
+     */
+    public function sysInvoicesGetInvoicesPaginated($organization_id, $only_complete = null, $include_documents = null, $sort_by = null, $sort_direction = null, $page = null, $page_size = null, $filter_property_0 = null, $filter_operator_0 = null, $filter_value_0 = null, $filter_property_1 = null, $filter_operator_1 = null, $filter_value_1 = null, $filter_property_2 = null, $filter_operator_2 = null, $filter_value_2 = null)
+    {
+        list($response) = $this->sysInvoicesGetInvoicesPaginatedWithHttpInfo($organization_id, $only_complete, $include_documents, $sort_by, $sort_direction, $page, $page_size, $filter_property_0, $filter_operator_0, $filter_value_0, $filter_property_1, $filter_operator_1, $filter_value_1, $filter_property_2, $filter_operator_2, $filter_value_2);
+        return $response;
+    }
+
+    /**
+     * Operation sysInvoicesGetInvoicesPaginatedWithHttpInfo
+     *
+     * Haal facturen van een specifieke klant op
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  bool $only_complete Optionele parameter (default true) waarmee woorkomen kan worden dat facturen die nog in een workflow zitten worden geretourneerd (optional)
+     * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden &#x60;InvoiceDocuments&#x60; (optional)
+     * @param  string $sort_by Optionele parameter voor de veldnaam waar je op wilt sorteren. (optional)
+     * @param  string $sort_direction Optionele parameter voor de sorteerrichting als er een sorteerveld is opgegeven. (optional)
+     * @param  int $page Optionele parameter om aan te geven welk paginanummer van een gepagineerde result set er teruggegeven moet worden. (optional)
+     * @param  int $page_size Optionele parameter om aan te geven hoe veel resultaten per pagina er terug moeten worden gegeven. (optional)
+     * @param  string $filter_property_0 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_0 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_0 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_1 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_1 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_1 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_2 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_2 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_2 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysInvoicesGetInvoicesPaginatedWithHttpInfo($organization_id, $only_complete = null, $include_documents = null, $sort_by = null, $sort_direction = null, $page = null, $page_size = null, $filter_property_0 = null, $filter_operator_0 = null, $filter_value_0 = null, $filter_property_1 = null, $filter_operator_1 = null, $filter_value_1 = null, $filter_property_2 = null, $filter_operator_2 = null, $filter_value_2 = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
+        $request = $this->sysInvoicesGetInvoicesPaginatedRequest($organization_id, $only_complete, $include_documents, $sort_by, $sort_direction, $page, $page_size, $filter_property_0, $filter_operator_0, $filter_value_0, $filter_property_1, $filter_operator_1, $filter_value_1, $filter_property_2, $filter_operator_2, $filter_value_2);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysInvoicesGetInvoicesPaginatedAsync
+     *
+     * Haal facturen van een specifieke klant op
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  bool $only_complete Optionele parameter (default true) waarmee woorkomen kan worden dat facturen die nog in een workflow zitten worden geretourneerd (optional)
+     * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden &#x60;InvoiceDocuments&#x60; (optional)
+     * @param  string $sort_by Optionele parameter voor de veldnaam waar je op wilt sorteren. (optional)
+     * @param  string $sort_direction Optionele parameter voor de sorteerrichting als er een sorteerveld is opgegeven. (optional)
+     * @param  int $page Optionele parameter om aan te geven welk paginanummer van een gepagineerde result set er teruggegeven moet worden. (optional)
+     * @param  int $page_size Optionele parameter om aan te geven hoe veel resultaten per pagina er terug moeten worden gegeven. (optional)
+     * @param  string $filter_property_0 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_0 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_0 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_1 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_1 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_1 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_2 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_2 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_2 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysInvoicesGetInvoicesPaginatedAsync($organization_id, $only_complete = null, $include_documents = null, $sort_by = null, $sort_direction = null, $page = null, $page_size = null, $filter_property_0 = null, $filter_operator_0 = null, $filter_value_0 = null, $filter_property_1 = null, $filter_operator_1 = null, $filter_value_1 = null, $filter_property_2 = null, $filter_operator_2 = null, $filter_value_2 = null)
+    {
+        return $this->sysInvoicesGetInvoicesPaginatedAsyncWithHttpInfo($organization_id, $only_complete, $include_documents, $sort_by, $sort_direction, $page, $page_size, $filter_property_0, $filter_operator_0, $filter_value_0, $filter_property_1, $filter_operator_1, $filter_value_1, $filter_property_2, $filter_operator_2, $filter_value_2)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysInvoicesGetInvoicesPaginatedAsyncWithHttpInfo
+     *
+     * Haal facturen van een specifieke klant op
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  bool $only_complete Optionele parameter (default true) waarmee woorkomen kan worden dat facturen die nog in een workflow zitten worden geretourneerd (optional)
+     * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden &#x60;InvoiceDocuments&#x60; (optional)
+     * @param  string $sort_by Optionele parameter voor de veldnaam waar je op wilt sorteren. (optional)
+     * @param  string $sort_direction Optionele parameter voor de sorteerrichting als er een sorteerveld is opgegeven. (optional)
+     * @param  int $page Optionele parameter om aan te geven welk paginanummer van een gepagineerde result set er teruggegeven moet worden. (optional)
+     * @param  int $page_size Optionele parameter om aan te geven hoe veel resultaten per pagina er terug moeten worden gegeven. (optional)
+     * @param  string $filter_property_0 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_0 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_0 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_1 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_1 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_1 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_2 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_2 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_2 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysInvoicesGetInvoicesPaginatedAsyncWithHttpInfo($organization_id, $only_complete = null, $include_documents = null, $sort_by = null, $sort_direction = null, $page = null, $page_size = null, $filter_property_0 = null, $filter_operator_0 = null, $filter_value_0 = null, $filter_property_1 = null, $filter_operator_1 = null, $filter_value_1 = null, $filter_property_2 = null, $filter_operator_2 = null, $filter_value_2 = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiInvoice[]';
+        $request = $this->sysInvoicesGetInvoicesPaginatedRequest($organization_id, $only_complete, $include_documents, $sort_by, $sort_direction, $page, $page_size, $filter_property_0, $filter_operator_0, $filter_value_0, $filter_property_1, $filter_operator_1, $filter_value_1, $filter_property_2, $filter_operator_2, $filter_value_2);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysInvoicesGetInvoicesPaginated'
+     *
+     * @param  string $organization_id Guid van de klant (Organization) (required)
+     * @param  bool $only_complete Optionele parameter (default true) waarmee woorkomen kan worden dat facturen die nog in een workflow zitten worden geretourneerd (optional)
+     * @param  bool $include_documents Optionele parameter (default false) waardoor het response-object voorzien kan worden &#x60;InvoiceDocuments&#x60; (optional)
+     * @param  string $sort_by Optionele parameter voor de veldnaam waar je op wilt sorteren. (optional)
+     * @param  string $sort_direction Optionele parameter voor de sorteerrichting als er een sorteerveld is opgegeven. (optional)
+     * @param  int $page Optionele parameter om aan te geven welk paginanummer van een gepagineerde result set er teruggegeven moet worden. (optional)
+     * @param  int $page_size Optionele parameter om aan te geven hoe veel resultaten per pagina er terug moeten worden gegeven. (optional)
+     * @param  string $filter_property_0 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_0 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_0 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_1 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_1 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_1 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_2 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_2 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_2 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysInvoicesGetInvoicesPaginatedRequest($organization_id, $only_complete = null, $include_documents = null, $sort_by = null, $sort_direction = null, $page = null, $page_size = null, $filter_property_0 = null, $filter_operator_0 = null, $filter_value_0 = null, $filter_property_1 = null, $filter_operator_1 = null, $filter_value_1 = null, $filter_property_2 = null, $filter_operator_2 = null, $filter_value_2 = null)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling sysInvoicesGetInvoicesPaginated'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.1/organizations/{organizationId}/invoices';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($only_complete !== null) {
+            $queryParams['onlyComplete'] = ObjectSerializer::toQueryValue($only_complete);
+        }
+        // query params
+        if ($include_documents !== null) {
+            $queryParams['includeDocuments'] = ObjectSerializer::toQueryValue($include_documents);
+        }
+        // query params
+        if ($sort_by !== null) {
+            $queryParams['sortBy'] = ObjectSerializer::toQueryValue($sort_by);
+        }
+        // query params
+        if ($sort_direction !== null) {
+            $queryParams['sortDirection'] = ObjectSerializer::toQueryValue($sort_direction);
+        }
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($page_size !== null) {
+            $queryParams['pageSize'] = ObjectSerializer::toQueryValue($page_size);
+        }
+        // query params
+        if ($filter_property_0 !== null) {
+            $queryParams['FilterProperty[0]'] = ObjectSerializer::toQueryValue($filter_property_0);
+        }
+        // query params
+        if ($filter_operator_0 !== null) {
+            $queryParams['FilterOperator[0]'] = ObjectSerializer::toQueryValue($filter_operator_0);
+        }
+        // query params
+        if ($filter_value_0 !== null) {
+            $queryParams['FilterValue[0]'] = ObjectSerializer::toQueryValue($filter_value_0);
+        }
+        // query params
+        if ($filter_property_1 !== null) {
+            $queryParams['FilterProperty[1]'] = ObjectSerializer::toQueryValue($filter_property_1);
+        }
+        // query params
+        if ($filter_operator_1 !== null) {
+            $queryParams['FilterOperator[1]'] = ObjectSerializer::toQueryValue($filter_operator_1);
+        }
+        // query params
+        if ($filter_value_1 !== null) {
+            $queryParams['FilterValue[1]'] = ObjectSerializer::toQueryValue($filter_value_1);
+        }
+        // query params
+        if ($filter_property_2 !== null) {
+            $queryParams['FilterProperty[2]'] = ObjectSerializer::toQueryValue($filter_property_2);
+        }
+        // query params
+        if ($filter_operator_2 !== null) {
+            $queryParams['FilterOperator[2]'] = ObjectSerializer::toQueryValue($filter_operator_2);
+        }
+        // query params
+        if ($filter_value_2 !== null) {
+            $queryParams['FilterValue[2]'] = ObjectSerializer::toQueryValue($filter_value_2);
+        }
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }

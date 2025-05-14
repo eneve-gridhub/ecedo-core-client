@@ -380,7 +380,7 @@ class SysDraftAdvancePaymentsApi
     /**
      * Operation sysDraftAdvancePaymentsCalculateDraftAdvancePayment
      *
-     * Aanmaken proefvoorschot
+     * Aanmaken proefvoorschot voor bestaande klant
      *
      * @param  string $organization_id organization_id (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData $post_data post_data (required)
@@ -398,7 +398,7 @@ class SysDraftAdvancePaymentsApi
     /**
      * Operation sysDraftAdvancePaymentsCalculateDraftAdvancePaymentWithHttpInfo
      *
-     * Aanmaken proefvoorschot
+     * Aanmaken proefvoorschot voor bestaande klant
      *
      * @param  string $organization_id (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData $post_data (required)
@@ -490,7 +490,7 @@ class SysDraftAdvancePaymentsApi
     /**
      * Operation sysDraftAdvancePaymentsCalculateDraftAdvancePaymentAsync
      *
-     * Aanmaken proefvoorschot
+     * Aanmaken proefvoorschot voor bestaande klant
      *
      * @param  string $organization_id (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData $post_data (required)
@@ -511,7 +511,7 @@ class SysDraftAdvancePaymentsApi
     /**
      * Operation sysDraftAdvancePaymentsCalculateDraftAdvancePaymentAsyncWithHttpInfo
      *
-     * Aanmaken proefvoorschot
+     * Aanmaken proefvoorschot voor bestaande klant
      *
      * @param  string $organization_id (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiDraftAdvancePaymentPostData $post_data (required)
@@ -689,7 +689,7 @@ class SysDraftAdvancePaymentsApi
     /**
      * Operation sysDraftAdvancePaymentsCalculateDraftAdvancePaymentForNonOrganization
      *
-     * Aanmaken proefvoorschot
+     * Aanmaken proefvoorschot voor een nieuwe klant
      *
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData $post_data post_data (required)
      *
@@ -706,7 +706,7 @@ class SysDraftAdvancePaymentsApi
     /**
      * Operation sysDraftAdvancePaymentsCalculateDraftAdvancePaymentForNonOrganizationWithHttpInfo
      *
-     * Aanmaken proefvoorschot
+     * Aanmaken proefvoorschot voor een nieuwe klant
      *
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData $post_data (required)
      *
@@ -797,7 +797,7 @@ class SysDraftAdvancePaymentsApi
     /**
      * Operation sysDraftAdvancePaymentsCalculateDraftAdvancePaymentForNonOrganizationAsync
      *
-     * Aanmaken proefvoorschot
+     * Aanmaken proefvoorschot voor een nieuwe klant
      *
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData $post_data (required)
      *
@@ -817,7 +817,7 @@ class SysDraftAdvancePaymentsApi
     /**
      * Operation sysDraftAdvancePaymentsCalculateDraftAdvancePaymentForNonOrganizationAsyncWithHttpInfo
      *
-     * Aanmaken proefvoorschot
+     * Aanmaken proefvoorschot voor een nieuwe klant
      *
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData $post_data (required)
      *
