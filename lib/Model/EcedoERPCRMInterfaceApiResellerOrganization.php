@@ -58,6 +58,7 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
       */
     protected static $swaggerTypes = [
         'organization_type' => 'string',
+        'organization_sub_type' => 'string',
         'organization_type_localized' => 'string',
         'organization_id' => 'string',
         'reference' => 'string',
@@ -78,6 +79,7 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
       */
     protected static $swaggerFormats = [
         'organization_type' => null,
+        'organization_sub_type' => null,
         'organization_type_localized' => null,
         'organization_id' => null,
         'reference' => null,
@@ -119,6 +121,7 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
      */
     protected static $attributeMap = [
         'organization_type' => 'OrganizationType',
+        'organization_sub_type' => 'OrganizationSubType',
         'organization_type_localized' => 'OrganizationTypeLocalized',
         'organization_id' => 'OrganizationId',
         'reference' => 'Reference',
@@ -139,6 +142,7 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
      */
     protected static $setters = [
         'organization_type' => 'setOrganizationType',
+        'organization_sub_type' => 'setOrganizationSubType',
         'organization_type_localized' => 'setOrganizationTypeLocalized',
         'organization_id' => 'setOrganizationId',
         'reference' => 'setReference',
@@ -159,6 +163,7 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
      */
     protected static $getters = [
         'organization_type' => 'getOrganizationType',
+        'organization_sub_type' => 'getOrganizationSubType',
         'organization_type_localized' => 'getOrganizationTypeLocalized',
         'organization_id' => 'getOrganizationId',
         'reference' => 'getReference',
@@ -213,8 +218,27 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
         return self::$swaggerModelName;
     }
 
+    const ORGANIZATION_SUB_TYPE_RESELLER = 'Reseller';
+    const ORGANIZATION_SUB_TYPE_PRODUCER = 'Producer';
+    const ORGANIZATION_SUB_TYPE_MSP = 'Msp';
+    const ORGANIZATION_SUB_TYPE_CPO = 'Cpo';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getOrganizationSubTypeAllowableValues()
+    {
+        return [
+            self::ORGANIZATION_SUB_TYPE_RESELLER,
+            self::ORGANIZATION_SUB_TYPE_PRODUCER,
+            self::ORGANIZATION_SUB_TYPE_MSP,
+            self::ORGANIZATION_SUB_TYPE_CPO,
+        ];
+    }
     
 
     /**
@@ -233,6 +257,7 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     public function __construct(array $data = null)
     {
         $this->container['organization_type'] = isset($data['organization_type']) ? $data['organization_type'] : null;
+        $this->container['organization_sub_type'] = isset($data['organization_sub_type']) ? $data['organization_sub_type'] : null;
         $this->container['organization_type_localized'] = isset($data['organization_type_localized']) ? $data['organization_type_localized'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
@@ -254,6 +279,14 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getOrganizationSubTypeAllowableValues();
+        if (!is_null($this->container['organization_sub_type']) && !in_array($this->container['organization_sub_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'organization_sub_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -290,6 +323,39 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     public function setOrganizationType($organization_type)
     {
         $this->container['organization_type'] = $organization_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_sub_type
+     *
+     * @return string
+     */
+    public function getOrganizationSubType()
+    {
+        return $this->container['organization_sub_type'];
+    }
+
+    /**
+     * Sets organization_sub_type
+     *
+     * @param string $organization_sub_type Het subtype van de organisatie.
+     *
+     * @return $this
+     */
+    public function setOrganizationSubType($organization_sub_type)
+    {
+        $allowedValues = $this->getOrganizationSubTypeAllowableValues();
+        if (!is_null($organization_sub_type) && !in_array($organization_sub_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'organization_sub_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['organization_sub_type'] = $organization_sub_type;
 
         return $this;
     }

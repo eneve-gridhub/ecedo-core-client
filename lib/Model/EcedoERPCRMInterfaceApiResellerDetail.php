@@ -65,6 +65,7 @@ class EcedoERPCRMInterfaceApiResellerDetail implements ModelInterface, ArrayAcce
         'email_address_customer_care' => 'string',
         'phone_number_debtor' => 'string',
         'email_address_debtor' => 'string',
+        'email_address_sender' => 'string',
         'website' => 'string',
         'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyValue[]'
     ];
@@ -83,6 +84,7 @@ class EcedoERPCRMInterfaceApiResellerDetail implements ModelInterface, ArrayAcce
         'email_address_customer_care' => null,
         'phone_number_debtor' => null,
         'email_address_debtor' => null,
+        'email_address_sender' => null,
         'website' => null,
         'entity_properties' => null
     ];
@@ -122,6 +124,7 @@ class EcedoERPCRMInterfaceApiResellerDetail implements ModelInterface, ArrayAcce
         'email_address_customer_care' => 'EmailAddressCustomerCare',
         'phone_number_debtor' => 'PhoneNumberDebtor',
         'email_address_debtor' => 'EmailAddressDebtor',
+        'email_address_sender' => 'EmailAddressSender',
         'website' => 'Website',
         'entity_properties' => 'EntityProperties'
     ];
@@ -140,6 +143,7 @@ class EcedoERPCRMInterfaceApiResellerDetail implements ModelInterface, ArrayAcce
         'email_address_customer_care' => 'setEmailAddressCustomerCare',
         'phone_number_debtor' => 'setPhoneNumberDebtor',
         'email_address_debtor' => 'setEmailAddressDebtor',
+        'email_address_sender' => 'setEmailAddressSender',
         'website' => 'setWebsite',
         'entity_properties' => 'setEntityProperties'
     ];
@@ -158,6 +162,7 @@ class EcedoERPCRMInterfaceApiResellerDetail implements ModelInterface, ArrayAcce
         'email_address_customer_care' => 'getEmailAddressCustomerCare',
         'phone_number_debtor' => 'getPhoneNumberDebtor',
         'email_address_debtor' => 'getEmailAddressDebtor',
+        'email_address_sender' => 'getEmailAddressSender',
         'website' => 'getWebsite',
         'entity_properties' => 'getEntityProperties'
     ];
@@ -230,6 +235,7 @@ class EcedoERPCRMInterfaceApiResellerDetail implements ModelInterface, ArrayAcce
         $this->container['email_address_customer_care'] = isset($data['email_address_customer_care']) ? $data['email_address_customer_care'] : null;
         $this->container['phone_number_debtor'] = isset($data['phone_number_debtor']) ? $data['phone_number_debtor'] : null;
         $this->container['email_address_debtor'] = isset($data['email_address_debtor']) ? $data['email_address_debtor'] : null;
+        $this->container['email_address_sender'] = isset($data['email_address_sender']) ? $data['email_address_sender'] : null;
         $this->container['website'] = isset($data['website']) ? $data['website'] : null;
         $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
     }
@@ -446,6 +452,30 @@ class EcedoERPCRMInterfaceApiResellerDetail implements ModelInterface, ArrayAcce
     public function setEmailAddressDebtor($email_address_debtor)
     {
         $this->container['email_address_debtor'] = $email_address_debtor;
+
+        return $this;
+    }
+
+    /**
+     * Gets email_address_sender
+     *
+     * @return string
+     */
+    public function getEmailAddressSender()
+    {
+        return $this->container['email_address_sender'];
+    }
+
+    /**
+     * Sets email_address_sender
+     *
+     * @param string $email_address_sender email_address_sender
+     *
+     * @return $this
+     */
+    public function setEmailAddressSender($email_address_sender)
+    {
+        $this->container['email_address_sender'] = $email_address_sender;
 
         return $this;
     }

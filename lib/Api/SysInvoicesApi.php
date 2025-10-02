@@ -1388,14 +1388,16 @@ class SysInvoicesApi
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $invoice_id Guid van de factuur (Invoice) (required)
+     * @param  string $report_perspective Specificeer verkoop of inkoop rapport (required)
+     * @param  string $report_type report_type (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function sysInvoicesDownloadRemitReport($organization_id, $invoice_id)
+    public function sysInvoicesDownloadRemitReport($organization_id, $invoice_id, $report_perspective, $report_type)
     {
-        list($response) = $this->sysInvoicesDownloadRemitReportWithHttpInfo($organization_id, $invoice_id);
+        list($response) = $this->sysInvoicesDownloadRemitReportWithHttpInfo($organization_id, $invoice_id, $report_perspective, $report_type);
         return $response;
     }
 
@@ -1406,15 +1408,17 @@ class SysInvoicesApi
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $invoice_id Guid van de factuur (Invoice) (required)
+     * @param  string $report_perspective Specificeer verkoop of inkoop rapport (required)
+     * @param  string $report_type (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysInvoicesDownloadRemitReportWithHttpInfo($organization_id, $invoice_id)
+    public function sysInvoicesDownloadRemitReportWithHttpInfo($organization_id, $invoice_id, $report_perspective, $report_type)
     {
         $returnType = 'object';
-        $request = $this->sysInvoicesDownloadRemitReportRequest($organization_id, $invoice_id);
+        $request = $this->sysInvoicesDownloadRemitReportRequest($organization_id, $invoice_id, $report_perspective, $report_type);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1498,13 +1502,15 @@ class SysInvoicesApi
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $invoice_id Guid van de factuur (Invoice) (required)
+     * @param  string $report_perspective Specificeer verkoop of inkoop rapport (required)
+     * @param  string $report_type (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysInvoicesDownloadRemitReportAsync($organization_id, $invoice_id)
+    public function sysInvoicesDownloadRemitReportAsync($organization_id, $invoice_id, $report_perspective, $report_type)
     {
-        return $this->sysInvoicesDownloadRemitReportAsyncWithHttpInfo($organization_id, $invoice_id)
+        return $this->sysInvoicesDownloadRemitReportAsyncWithHttpInfo($organization_id, $invoice_id, $report_perspective, $report_type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1519,14 +1525,16 @@ class SysInvoicesApi
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $invoice_id Guid van de factuur (Invoice) (required)
+     * @param  string $report_perspective Specificeer verkoop of inkoop rapport (required)
+     * @param  string $report_type (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysInvoicesDownloadRemitReportAsyncWithHttpInfo($organization_id, $invoice_id)
+    public function sysInvoicesDownloadRemitReportAsyncWithHttpInfo($organization_id, $invoice_id, $report_perspective, $report_type)
     {
         $returnType = 'object';
-        $request = $this->sysInvoicesDownloadRemitReportRequest($organization_id, $invoice_id);
+        $request = $this->sysInvoicesDownloadRemitReportRequest($organization_id, $invoice_id, $report_perspective, $report_type);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1570,11 +1578,13 @@ class SysInvoicesApi
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $invoice_id Guid van de factuur (Invoice) (required)
+     * @param  string $report_perspective Specificeer verkoop of inkoop rapport (required)
+     * @param  string $report_type (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysInvoicesDownloadRemitReportRequest($organization_id, $invoice_id)
+    protected function sysInvoicesDownloadRemitReportRequest($organization_id, $invoice_id, $report_perspective, $report_type)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
@@ -1588,14 +1598,30 @@ class SysInvoicesApi
                 'Missing the required parameter $invoice_id when calling sysInvoicesDownloadRemitReport'
             );
         }
+        // verify the required parameter 'report_perspective' is set
+        if ($report_perspective === null || (is_array($report_perspective) && count($report_perspective) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $report_perspective when calling sysInvoicesDownloadRemitReport'
+            );
+        }
+        // verify the required parameter 'report_type' is set
+        if ($report_type === null || (is_array($report_type) && count($report_type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $report_type when calling sysInvoicesDownloadRemitReport'
+            );
+        }
 
-        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/downloadremitreport';
+        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/invoices/{invoiceId}/downloadremitreport/{reportType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($report_perspective !== null) {
+            $queryParams['reportPerspective'] = ObjectSerializer::toQueryValue($report_perspective);
+        }
 
         // path params
         if ($organization_id !== null) {
@@ -1610,6 +1636,14 @@ class SysInvoicesApi
             $resourcePath = str_replace(
                 '{' . 'invoiceId' . '}',
                 ObjectSerializer::toPathValue($invoice_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($report_type !== null) {
+            $resourcePath = str_replace(
+                '{' . 'reportType' . '}',
+                ObjectSerializer::toPathValue($report_type),
                 $resourcePath
             );
         }

@@ -173,15 +173,15 @@ class EcedoERPCRMInterfaceApiMarketPricesData implements ModelInterface, ArrayAc
         return self::$swaggerModelName;
     }
 
-    const PRICE_UNIT_KWH = 'KWh';
     const PRICE_UNIT_YEAR = 'Year';
-    const PRICE_UNIT_INVOICE = 'Invoice';
     const PRICE_UNIT_DAY = 'Day';
+    const PRICE_UNIT_KWH = 'KWh';
     const PRICE_UNIT_M3 = 'M3';
     const PRICE_UNIT_ONE_OFF = 'OneOff';
     const PRICE_UNIT_MONTH = 'Month';
     const PRICE_UNIT_MWH = 'MWh';
     const PRICE_UNIT_WH = 'Wh';
+    const PRICE_UNIT_INVOICE = 'Invoice';
     const PRICE_UNIT_PERCENTAGE = 'Percentage';
     const PRICE_UNIT_SECONDS = 'Seconds';
     const PRICE_UNIT_CHARGE_SESSION = 'ChargeSession';
@@ -198,15 +198,15 @@ class EcedoERPCRMInterfaceApiMarketPricesData implements ModelInterface, ArrayAc
     public function getPriceUnitAllowableValues()
     {
         return [
-            self::PRICE_UNIT_KWH,
             self::PRICE_UNIT_YEAR,
-            self::PRICE_UNIT_INVOICE,
             self::PRICE_UNIT_DAY,
+            self::PRICE_UNIT_KWH,
             self::PRICE_UNIT_M3,
             self::PRICE_UNIT_ONE_OFF,
             self::PRICE_UNIT_MONTH,
             self::PRICE_UNIT_MWH,
             self::PRICE_UNIT_WH,
+            self::PRICE_UNIT_INVOICE,
             self::PRICE_UNIT_PERCENTAGE,
             self::PRICE_UNIT_SECONDS,
             self::PRICE_UNIT_CHARGE_SESSION,
@@ -282,7 +282,7 @@ class EcedoERPCRMInterfaceApiMarketPricesData implements ModelInterface, ArrayAc
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date Startdatum met tijd van de periode waarop de prijs geldig is.
+     * @param \DateTime $start_date Startdatum met tijd van de periode waarop de prijs geldig is. Dit is een datetime object met tijd in het formaat `yyyy-MM-ddTHH:mm:sszzz` (bijvoorbeeld: 2024-10-01T03:00:00+02:00).
      *
      * @return $this
      */
@@ -306,7 +306,7 @@ class EcedoERPCRMInterfaceApiMarketPricesData implements ModelInterface, ArrayAc
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date Einddatum met tijd van de periode waarop de prijs geldig is. Dit is een tot-datum.
+     * @param \DateTime $end_date Einddatum met tijd van de periode waarop de prijs geldig is. Dit is een tot-datum. Dit is een datetime object met tijd in het formaat `yyyy-MM-ddTHH:mm:sszzz`.
      *
      * @return $this
      */
@@ -354,7 +354,7 @@ class EcedoERPCRMInterfaceApiMarketPricesData implements ModelInterface, ArrayAc
     /**
      * Sets price_unit
      *
-     * @param string $price_unit De eenheid van de marktprijs. Bij marktprijstype `ApxDayAheadHour` moet de eenheid `MWh` zijn, bij marktprijstype `TtfDayAheadDay` moet de eenheid `M3` zijn.
+     * @param string $price_unit De eenheid van de marktprijs. Bij marktprijstype `ApxDayAheadHour` moet de eenheid `MWh` zijn, bij marktprijstype `ApxDayAheadQuarter` ook `MWh`, en bij marktprijstype `TtfDayAheadDay` moet de eenheid `M3` zijn.
      *
      * @return $this
      */

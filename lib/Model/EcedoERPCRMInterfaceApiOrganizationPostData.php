@@ -94,7 +94,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'representative_id' => 'string',
         'is_intercompany' => 'bool',
         'company_label_id' => 'string',
-        'reseller_organization_id' => 'string'
+        'reseller_organization_id' => 'string',
+        'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyValuePostData[]'
     ];
 
     /**
@@ -140,7 +141,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'representative_id' => 'uuid',
         'is_intercompany' => null,
         'company_label_id' => 'uuid',
-        'reseller_organization_id' => 'uuid'
+        'reseller_organization_id' => 'uuid',
+        'entity_properties' => null
     ];
 
     /**
@@ -207,7 +209,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'representative_id' => 'RepresentativeId',
         'is_intercompany' => 'IsIntercompany',
         'company_label_id' => 'CompanyLabelId',
-        'reseller_organization_id' => 'ResellerOrganizationId'
+        'reseller_organization_id' => 'ResellerOrganizationId',
+        'entity_properties' => 'EntityProperties'
     ];
 
     /**
@@ -253,7 +256,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'representative_id' => 'setRepresentativeId',
         'is_intercompany' => 'setIsIntercompany',
         'company_label_id' => 'setCompanyLabelId',
-        'reseller_organization_id' => 'setResellerOrganizationId'
+        'reseller_organization_id' => 'setResellerOrganizationId',
+        'entity_properties' => 'setEntityProperties'
     ];
 
     /**
@@ -299,7 +303,8 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'representative_id' => 'getRepresentativeId',
         'is_intercompany' => 'getIsIntercompany',
         'company_label_id' => 'getCompanyLabelId',
-        'reseller_organization_id' => 'getResellerOrganizationId'
+        'reseller_organization_id' => 'getResellerOrganizationId',
+        'entity_properties' => 'getEntityProperties'
     ];
 
     /**
@@ -445,6 +450,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         $this->container['is_intercompany'] = isset($data['is_intercompany']) ? $data['is_intercompany'] : null;
         $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
         $this->container['reseller_organization_id'] = isset($data['reseller_organization_id']) ? $data['reseller_organization_id'] : null;
+        $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
     }
 
     /**
@@ -1430,6 +1436,30 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     public function setResellerOrganizationId($reseller_organization_id)
     {
         $this->container['reseller_organization_id'] = $reseller_organization_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_properties
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyValuePostData[]
+     */
+    public function getEntityProperties()
+    {
+        return $this->container['entity_properties'];
+    }
+
+    /**
+     * Sets entity_properties
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyValuePostData[] $entity_properties Generieke kenmerken van deze organisatie
+     *
+     * @return $this
+     */
+    public function setEntityProperties($entity_properties)
+    {
+        $this->container['entity_properties'] = $entity_properties;
 
         return $this;
     }

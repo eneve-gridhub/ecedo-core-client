@@ -1877,6 +1877,626 @@ class SysMeansOfProductionsApi
     }
 
     /**
+     * Operation sysMeansOfProductionsGetMeansOfProductionConnectionServiceContract
+     *
+     * Ophalen van een productiemiddelaansluiting service contract op basis van contractId
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $contract_id Service contract ID (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto
+     */
+    public function sysMeansOfProductionsGetMeansOfProductionConnectionServiceContract($organization_id, $contract_id)
+    {
+        list($response) = $this->sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractWithHttpInfo($organization_id, $contract_id);
+        return $response;
+    }
+
+    /**
+     * Operation sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractWithHttpInfo
+     *
+     * Ophalen van een productiemiddelaansluiting service contract op basis van contractId
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $contract_id Service contract ID (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractWithHttpInfo($organization_id, $contract_id)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto';
+        $request = $this->sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractRequest($organization_id, $contract_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractAsync
+     *
+     * Ophalen van een productiemiddelaansluiting service contract op basis van contractId
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $contract_id Service contract ID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractAsync($organization_id, $contract_id)
+    {
+        return $this->sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractAsyncWithHttpInfo($organization_id, $contract_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractAsyncWithHttpInfo
+     *
+     * Ophalen van een productiemiddelaansluiting service contract op basis van contractId
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $contract_id Service contract ID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractAsyncWithHttpInfo($organization_id, $contract_id)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto';
+        $request = $this->sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractRequest($organization_id, $contract_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysMeansOfProductionsGetMeansOfProductionConnectionServiceContract'
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $contract_id Service contract ID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractRequest($organization_id, $contract_id)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling sysMeansOfProductionsGetMeansOfProductionConnectionServiceContract'
+            );
+        }
+        // verify the required parameter 'contract_id' is set
+        if ($contract_id === null || (is_array($contract_id) && count($contract_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $contract_id when calling sysMeansOfProductionsGetMeansOfProductionConnectionServiceContract'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/meansofproductionconnectionservicecontracts/{contractId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($organization_id !== null) {
+            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
+        }
+
+        // path params
+        if ($contract_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'contractId' . '}',
+                ObjectSerializer::toPathValue($contract_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysMeansOfProductionsGetMeansOfProductionConnectionServiceContracts
+     *
+     * Ophalen van alle service contracten voor een productiemiddelaansluiting op basis van meansOfProductionConnectionId
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $means_of_production_connection_id Means of production connection ID (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto[]
+     */
+    public function sysMeansOfProductionsGetMeansOfProductionConnectionServiceContracts($organization_id, $means_of_production_connection_id)
+    {
+        list($response) = $this->sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsWithHttpInfo($organization_id, $means_of_production_connection_id);
+        return $response;
+    }
+
+    /**
+     * Operation sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsWithHttpInfo
+     *
+     * Ophalen van alle service contracten voor een productiemiddelaansluiting op basis van meansOfProductionConnectionId
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $means_of_production_connection_id Means of production connection ID (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsWithHttpInfo($organization_id, $means_of_production_connection_id)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto[]';
+        $request = $this->sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsRequest($organization_id, $means_of_production_connection_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsAsync
+     *
+     * Ophalen van alle service contracten voor een productiemiddelaansluiting op basis van meansOfProductionConnectionId
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $means_of_production_connection_id Means of production connection ID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsAsync($organization_id, $means_of_production_connection_id)
+    {
+        return $this->sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsAsyncWithHttpInfo($organization_id, $means_of_production_connection_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsAsyncWithHttpInfo
+     *
+     * Ophalen van alle service contracten voor een productiemiddelaansluiting op basis van meansOfProductionConnectionId
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $means_of_production_connection_id Means of production connection ID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsAsyncWithHttpInfo($organization_id, $means_of_production_connection_id)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto[]';
+        $request = $this->sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsRequest($organization_id, $means_of_production_connection_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysMeansOfProductionsGetMeansOfProductionConnectionServiceContracts'
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $means_of_production_connection_id Means of production connection ID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysMeansOfProductionsGetMeansOfProductionConnectionServiceContractsRequest($organization_id, $means_of_production_connection_id)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling sysMeansOfProductionsGetMeansOfProductionConnectionServiceContracts'
+            );
+        }
+        // verify the required parameter 'means_of_production_connection_id' is set
+        if ($means_of_production_connection_id === null || (is_array($means_of_production_connection_id) && count($means_of_production_connection_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $means_of_production_connection_id when calling sysMeansOfProductionsGetMeansOfProductionConnectionServiceContracts'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/meansofproductionconnections/{meansOfProductionConnectionId}/servicecontracts';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($organization_id !== null) {
+            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
+        }
+
+        // path params
+        if ($means_of_production_connection_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'meansOfProductionConnectionId' . '}',
+                ObjectSerializer::toPathValue($means_of_production_connection_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation sysMeansOfProductionsGetMeansOfProductionConnections
      *
      * Opvragen productiemiddelaansluitingen van een klant
@@ -2165,6 +2785,971 @@ class SysMeansOfProductionsApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPost
+     *
+     * Aanmaken van een productiemiddel op basis van verbruik
+     *
+     * @param  string $organization_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionPostData $post_data  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionPostResult
+     */
+    public function sysMeansOfProductionsPost($organization_id, $post_data)
+    {
+        list($response) = $this->sysMeansOfProductionsPostWithHttpInfo($organization_id, $post_data);
+        return $response;
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostWithHttpInfo
+     *
+     * Aanmaken van een productiemiddel op basis van verbruik
+     *
+     * @param  string $organization_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionPostData $post_data  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionPostResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysMeansOfProductionsPostWithHttpInfo($organization_id, $post_data)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionPostResult';
+        $request = $this->sysMeansOfProductionsPostRequest($organization_id, $post_data);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionPostResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostAsync
+     *
+     * Aanmaken van een productiemiddel op basis van verbruik
+     *
+     * @param  string $organization_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionPostData $post_data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysMeansOfProductionsPostAsync($organization_id, $post_data)
+    {
+        return $this->sysMeansOfProductionsPostAsyncWithHttpInfo($organization_id, $post_data)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostAsyncWithHttpInfo
+     *
+     * Aanmaken van een productiemiddel op basis van verbruik
+     *
+     * @param  string $organization_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionPostData $post_data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysMeansOfProductionsPostAsyncWithHttpInfo($organization_id, $post_data)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionPostResult';
+        $request = $this->sysMeansOfProductionsPostRequest($organization_id, $post_data);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysMeansOfProductionsPost'
+     *
+     * @param  string $organization_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionPostData $post_data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysMeansOfProductionsPostRequest($organization_id, $post_data)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling sysMeansOfProductionsPost'
+            );
+        }
+        // verify the required parameter 'post_data' is set
+        if ($post_data === null || (is_array($post_data) && count($post_data) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $post_data when calling sysMeansOfProductionsPost'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/meansofproductions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($post_data)) {
+            $_tempBody = $post_data;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostMeansOfProductionCertiQEan
+     *
+     * Aanmaken van een CertiQEan voor een productiemiddel
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPostData $post_data  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPostResult
+     */
+    public function sysMeansOfProductionsPostMeansOfProductionCertiQEan($organization_id, $means_of_production_id, $post_data)
+    {
+        list($response) = $this->sysMeansOfProductionsPostMeansOfProductionCertiQEanWithHttpInfo($organization_id, $means_of_production_id, $post_data);
+        return $response;
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostMeansOfProductionCertiQEanWithHttpInfo
+     *
+     * Aanmaken van een CertiQEan voor een productiemiddel
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPostData $post_data  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPostResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysMeansOfProductionsPostMeansOfProductionCertiQEanWithHttpInfo($organization_id, $means_of_production_id, $post_data)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPostResult';
+        $request = $this->sysMeansOfProductionsPostMeansOfProductionCertiQEanRequest($organization_id, $means_of_production_id, $post_data);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPostResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostMeansOfProductionCertiQEanAsync
+     *
+     * Aanmaken van een CertiQEan voor een productiemiddel
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPostData $post_data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysMeansOfProductionsPostMeansOfProductionCertiQEanAsync($organization_id, $means_of_production_id, $post_data)
+    {
+        return $this->sysMeansOfProductionsPostMeansOfProductionCertiQEanAsyncWithHttpInfo($organization_id, $means_of_production_id, $post_data)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostMeansOfProductionCertiQEanAsyncWithHttpInfo
+     *
+     * Aanmaken van een CertiQEan voor een productiemiddel
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPostData $post_data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysMeansOfProductionsPostMeansOfProductionCertiQEanAsyncWithHttpInfo($organization_id, $means_of_production_id, $post_data)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPostResult';
+        $request = $this->sysMeansOfProductionsPostMeansOfProductionCertiQEanRequest($organization_id, $means_of_production_id, $post_data);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysMeansOfProductionsPostMeansOfProductionCertiQEan'
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPostData $post_data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysMeansOfProductionsPostMeansOfProductionCertiQEanRequest($organization_id, $means_of_production_id, $post_data)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling sysMeansOfProductionsPostMeansOfProductionCertiQEan'
+            );
+        }
+        // verify the required parameter 'means_of_production_id' is set
+        if ($means_of_production_id === null || (is_array($means_of_production_id) && count($means_of_production_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $means_of_production_id when calling sysMeansOfProductionsPostMeansOfProductionCertiQEan'
+            );
+        }
+        // verify the required parameter 'post_data' is set
+        if ($post_data === null || (is_array($post_data) && count($post_data) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $post_data when calling sysMeansOfProductionsPostMeansOfProductionCertiQEan'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/meansofproductions/{meansOfProductionId}/certiqeans';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($means_of_production_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'meansOfProductionId' . '}',
+                ObjectSerializer::toPathValue($means_of_production_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($post_data)) {
+            $_tempBody = $post_data;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostMeansOfProductionConnection
+     *
+     * Aanmaken van een aansluiting voor een productiemiddel
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionConnectionPostData $post_data  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionConnectionPostResult
+     */
+    public function sysMeansOfProductionsPostMeansOfProductionConnection($organization_id, $means_of_production_id, $post_data)
+    {
+        list($response) = $this->sysMeansOfProductionsPostMeansOfProductionConnectionWithHttpInfo($organization_id, $means_of_production_id, $post_data);
+        return $response;
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostMeansOfProductionConnectionWithHttpInfo
+     *
+     * Aanmaken van een aansluiting voor een productiemiddel
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionConnectionPostData $post_data  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionConnectionPostResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysMeansOfProductionsPostMeansOfProductionConnectionWithHttpInfo($organization_id, $means_of_production_id, $post_data)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionConnectionPostResult';
+        $request = $this->sysMeansOfProductionsPostMeansOfProductionConnectionRequest($organization_id, $means_of_production_id, $post_data);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionConnectionPostResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostMeansOfProductionConnectionAsync
+     *
+     * Aanmaken van een aansluiting voor een productiemiddel
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionConnectionPostData $post_data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysMeansOfProductionsPostMeansOfProductionConnectionAsync($organization_id, $means_of_production_id, $post_data)
+    {
+        return $this->sysMeansOfProductionsPostMeansOfProductionConnectionAsyncWithHttpInfo($organization_id, $means_of_production_id, $post_data)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysMeansOfProductionsPostMeansOfProductionConnectionAsyncWithHttpInfo
+     *
+     * Aanmaken van een aansluiting voor een productiemiddel
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionConnectionPostData $post_data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysMeansOfProductionsPostMeansOfProductionConnectionAsyncWithHttpInfo($organization_id, $means_of_production_id, $post_data)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionConnectionPostResult';
+        $request = $this->sysMeansOfProductionsPostMeansOfProductionConnectionRequest($organization_id, $means_of_production_id, $post_data);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysMeansOfProductionsPostMeansOfProductionConnection'
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeansOfProductionConnectionPostData $post_data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysMeansOfProductionsPostMeansOfProductionConnectionRequest($organization_id, $means_of_production_id, $post_data)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling sysMeansOfProductionsPostMeansOfProductionConnection'
+            );
+        }
+        // verify the required parameter 'means_of_production_id' is set
+        if ($means_of_production_id === null || (is_array($means_of_production_id) && count($means_of_production_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $means_of_production_id when calling sysMeansOfProductionsPostMeansOfProductionConnection'
+            );
+        }
+        // verify the required parameter 'post_data' is set
+        if ($post_data === null || (is_array($post_data) && count($post_data) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $post_data when calling sysMeansOfProductionsPostMeansOfProductionConnection'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/meansofproductions/{meansOfProductionId}/connections';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($means_of_production_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'meansOfProductionId' . '}',
+                ObjectSerializer::toPathValue($means_of_production_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($post_data)) {
+            $_tempBody = $post_data;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

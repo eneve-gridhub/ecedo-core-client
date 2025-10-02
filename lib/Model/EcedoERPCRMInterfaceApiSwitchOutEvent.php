@@ -74,6 +74,7 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
         'escalation_date' => '\DateTime',
         'final_date' => '\DateTime',
         'terminal_date' => '\DateTime',
+        'deadline' => '\DateTime',
         'comment' => 'string',
         'parent_organization_event' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiOrganizationEvent'
     ];
@@ -101,6 +102,7 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
         'escalation_date' => 'date',
         'final_date' => 'date',
         'terminal_date' => 'date',
+        'deadline' => 'date-time',
         'comment' => null,
         'parent_organization_event' => null
     ];
@@ -149,6 +151,7 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
         'escalation_date' => 'EscalationDate',
         'final_date' => 'FinalDate',
         'terminal_date' => 'TerminalDate',
+        'deadline' => 'Deadline',
         'comment' => 'Comment',
         'parent_organization_event' => 'ParentOrganizationEvent'
     ];
@@ -176,6 +179,7 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
         'escalation_date' => 'setEscalationDate',
         'final_date' => 'setFinalDate',
         'terminal_date' => 'setTerminalDate',
+        'deadline' => 'setDeadline',
         'comment' => 'setComment',
         'parent_organization_event' => 'setParentOrganizationEvent'
     ];
@@ -203,6 +207,7 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
         'escalation_date' => 'getEscalationDate',
         'final_date' => 'getFinalDate',
         'terminal_date' => 'getTerminalDate',
+        'deadline' => 'getDeadline',
         'comment' => 'getComment',
         'parent_organization_event' => 'getParentOrganizationEvent'
     ];
@@ -301,6 +306,7 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
     const EVENT_TYPE_INVALID_SWITCH_IN = 'InvalidSwitchIn';
     const EVENT_TYPE_ADVANCE_PAYMENT_INVOICE = 'AdvancePaymentInvoice';
     const EVENT_TYPE_ENERGY_APPLICATION = 'EnergyApplication';
+    const EVENT_TYPE_ZIP_AREA_ENERGY_TAX_CREDIT = 'ZipAreaEnergyTaxCredit';
     const STATUS_IN_PROGRESS = 'InProgress';
     const STATUS_FINISHED = 'Finished';
     const STATUS_CANCELLED = 'Cancelled';
@@ -379,6 +385,7 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
             self::EVENT_TYPE_INVALID_SWITCH_IN,
             self::EVENT_TYPE_ADVANCE_PAYMENT_INVOICE,
             self::EVENT_TYPE_ENERGY_APPLICATION,
+            self::EVENT_TYPE_ZIP_AREA_ENERGY_TAX_CREDIT,
         ];
     }
     
@@ -429,6 +436,7 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
         $this->container['escalation_date'] = isset($data['escalation_date']) ? $data['escalation_date'] : null;
         $this->container['final_date'] = isset($data['final_date']) ? $data['final_date'] : null;
         $this->container['terminal_date'] = isset($data['terminal_date']) ? $data['terminal_date'] : null;
+        $this->container['deadline'] = isset($data['deadline']) ? $data['deadline'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
         $this->container['parent_organization_event'] = isset($data['parent_organization_event']) ? $data['parent_organization_event'] : null;
     }
@@ -857,7 +865,7 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
     /**
      * Sets escalation_date
      *
-     * @param \DateTime $escalation_date escalation_date
+     * @param \DateTime $escalation_date Dit veld wordt in de toekomst verwijderd en mag dus niet gebruikt worden
      *
      * @return $this
      */
@@ -881,7 +889,7 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
     /**
      * Sets final_date
      *
-     * @param \DateTime $final_date final_date
+     * @param \DateTime $final_date Dit veld wordt in de toekomst verwijderd en mag dus niet gebruikt worden
      *
      * @return $this
      */
@@ -905,13 +913,37 @@ class EcedoERPCRMInterfaceApiSwitchOutEvent implements ModelInterface, ArrayAcce
     /**
      * Sets terminal_date
      *
-     * @param \DateTime $terminal_date terminal_date
+     * @param \DateTime $terminal_date Dit veld wordt in de toekomst verwijderd en mag dus niet gebruikt worden
      *
      * @return $this
      */
     public function setTerminalDate($terminal_date)
     {
         $this->container['terminal_date'] = $terminal_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets deadline
+     *
+     * @return \DateTime
+     */
+    public function getDeadline()
+    {
+        return $this->container['deadline'];
+    }
+
+    /**
+     * Sets deadline
+     *
+     * @param \DateTime $deadline Dit veld wordt voor MeterReadingCollection-events gebruikt om aan te geven voor welke datum de meterstand moet worden doorgegeven
+     *
+     * @return $this
+     */
+    public function setDeadline($deadline)
+    {
+        $this->container['deadline'] = $deadline;
 
         return $this;
     }

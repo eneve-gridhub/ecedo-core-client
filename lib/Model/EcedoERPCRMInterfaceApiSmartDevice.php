@@ -63,7 +63,8 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         'reference' => 'string',
         'description' => 'string',
         'connection_id' => 'string',
-        'device_entity_id' => 'string'
+        'device_entity_id' => 'string',
+        'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[]'
     ];
 
     /**
@@ -78,7 +79,8 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         'reference' => null,
         'description' => null,
         'connection_id' => 'uuid',
-        'device_entity_id' => 'uuid'
+        'device_entity_id' => 'uuid',
+        'entity_properties' => null
     ];
 
     /**
@@ -114,7 +116,8 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         'reference' => 'Reference',
         'description' => 'Description',
         'connection_id' => 'ConnectionId',
-        'device_entity_id' => 'DeviceEntityId'
+        'device_entity_id' => 'DeviceEntityId',
+        'entity_properties' => 'EntityProperties'
     ];
 
     /**
@@ -129,7 +132,8 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         'reference' => 'setReference',
         'description' => 'setDescription',
         'connection_id' => 'setConnectionId',
-        'device_entity_id' => 'setDeviceEntityId'
+        'device_entity_id' => 'setDeviceEntityId',
+        'entity_properties' => 'setEntityProperties'
     ];
 
     /**
@@ -144,7 +148,8 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         'reference' => 'getReference',
         'description' => 'getDescription',
         'connection_id' => 'getConnectionId',
-        'device_entity_id' => 'getDeviceEntityId'
+        'device_entity_id' => 'getDeviceEntityId',
+        'entity_properties' => 'getEntityProperties'
     ];
 
     /**
@@ -233,6 +238,7 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
         $this->container['device_entity_id'] = isset($data['device_entity_id']) ? $data['device_entity_id'] : null;
+        $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
     }
 
     /**
@@ -440,6 +446,30 @@ class EcedoERPCRMInterfaceApiSmartDevice implements ModelInterface, ArrayAccess
     public function setDeviceEntityId($device_entity_id)
     {
         $this->container['device_entity_id'] = $device_entity_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_properties
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[]
+     */
+    public function getEntityProperties()
+    {
+        return $this->container['entity_properties'];
+    }
+
+    /**
+     * Sets entity_properties
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[] $entity_properties entity_properties
+     *
+     * @return $this
+     */
+    public function setEntityProperties($entity_properties)
+    {
+        $this->container['entity_properties'] = $entity_properties;
 
         return $this;
     }

@@ -70,7 +70,6 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         'price_unit' => 'string',
         'price_unit_localized' => 'string',
         'in_advance_payment' => 'bool',
-        'invoice_group' => 'string',
         'market_segment' => 'string',
         'market_segment_localized' => 'string',
         'vat_inclusive' => 'bool',
@@ -103,7 +102,6 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         'price_unit' => null,
         'price_unit_localized' => null,
         'in_advance_payment' => null,
-        'invoice_group' => null,
         'market_segment' => null,
         'market_segment_localized' => null,
         'vat_inclusive' => null,
@@ -157,7 +155,6 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         'price_unit' => 'PriceUnit',
         'price_unit_localized' => 'PriceUnitLocalized',
         'in_advance_payment' => 'InAdvancePayment',
-        'invoice_group' => 'InvoiceGroup',
         'market_segment' => 'MarketSegment',
         'market_segment_localized' => 'MarketSegmentLocalized',
         'vat_inclusive' => 'VatInclusive',
@@ -190,7 +187,6 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         'price_unit' => 'setPriceUnit',
         'price_unit_localized' => 'setPriceUnitLocalized',
         'in_advance_payment' => 'setInAdvancePayment',
-        'invoice_group' => 'setInvoiceGroup',
         'market_segment' => 'setMarketSegment',
         'market_segment_localized' => 'setMarketSegmentLocalized',
         'vat_inclusive' => 'setVatInclusive',
@@ -223,7 +219,6 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         'price_unit' => 'getPriceUnit',
         'price_unit_localized' => 'getPriceUnitLocalized',
         'in_advance_payment' => 'getInAdvancePayment',
-        'invoice_group' => 'getInvoiceGroup',
         'market_segment' => 'getMarketSegment',
         'market_segment_localized' => 'getMarketSegmentLocalized',
         'vat_inclusive' => 'getVatInclusive',
@@ -310,7 +305,6 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
         $this->container['price_unit'] = isset($data['price_unit']) ? $data['price_unit'] : null;
         $this->container['price_unit_localized'] = isset($data['price_unit_localized']) ? $data['price_unit_localized'] : null;
         $this->container['in_advance_payment'] = isset($data['in_advance_payment']) ? $data['in_advance_payment'] : null;
-        $this->container['invoice_group'] = isset($data['invoice_group']) ? $data['invoice_group'] : null;
         $this->container['market_segment'] = isset($data['market_segment']) ? $data['market_segment'] : null;
         $this->container['market_segment_localized'] = isset($data['market_segment_localized']) ? $data['market_segment_localized'] : null;
         $this->container['vat_inclusive'] = isset($data['vat_inclusive']) ? $data['vat_inclusive'] : null;
@@ -656,30 +650,6 @@ class EcedoERPCRMInterfaceApiBillingItemGroup implements ModelInterface, ArrayAc
     public function setInAdvancePayment($in_advance_payment)
     {
         $this->container['in_advance_payment'] = $in_advance_payment;
-
-        return $this;
-    }
-
-    /**
-     * Gets invoice_group
-     *
-     * @return string
-     */
-    public function getInvoiceGroup()
-    {
-        return $this->container['invoice_group'];
-    }
-
-    /**
-     * Sets invoice_group
-     *
-     * @param string $invoice_group invoice_group
-     *
-     * @return $this
-     */
-    public function setInvoiceGroup($invoice_group)
-    {
-        $this->container['invoice_group'] = $invoice_group;
 
         return $this;
     }

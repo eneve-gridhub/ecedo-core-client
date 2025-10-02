@@ -70,6 +70,8 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'proposition_group_id' => 'string',
         'proposition_group' => 'string',
         'is_model_contract' => 'bool',
+        'market_price_source' => 'string',
+        'market_price_source_localized' => 'string',
         'proposition_prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionPrice[]',
         'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[]',
         'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractProperty[]'
@@ -94,6 +96,8 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'proposition_group_id' => null,
         'proposition_group' => null,
         'is_model_contract' => null,
+        'market_price_source' => null,
+        'market_price_source_localized' => null,
         'proposition_prices' => null,
         'entity_properties' => null,
         'contract_properties' => null
@@ -139,6 +143,8 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'proposition_group_id' => 'PropositionGroupId',
         'proposition_group' => 'PropositionGroup',
         'is_model_contract' => 'IsModelContract',
+        'market_price_source' => 'MarketPriceSource',
+        'market_price_source_localized' => 'MarketPriceSourceLocalized',
         'proposition_prices' => 'PropositionPrices',
         'entity_properties' => 'EntityProperties',
         'contract_properties' => 'ContractProperties'
@@ -163,6 +169,8 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'proposition_group_id' => 'setPropositionGroupId',
         'proposition_group' => 'setPropositionGroup',
         'is_model_contract' => 'setIsModelContract',
+        'market_price_source' => 'setMarketPriceSource',
+        'market_price_source_localized' => 'setMarketPriceSourceLocalized',
         'proposition_prices' => 'setPropositionPrices',
         'entity_properties' => 'setEntityProperties',
         'contract_properties' => 'setContractProperties'
@@ -187,6 +195,8 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'proposition_group_id' => 'getPropositionGroupId',
         'proposition_group' => 'getPropositionGroup',
         'is_model_contract' => 'getIsModelContract',
+        'market_price_source' => 'getMarketPriceSource',
+        'market_price_source_localized' => 'getMarketPriceSourceLocalized',
         'proposition_prices' => 'getPropositionPrices',
         'entity_properties' => 'getEntityProperties',
         'contract_properties' => 'getContractProperties'
@@ -233,8 +243,49 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const MARKET_PRICE_SOURCE_APX_DAY_AHEAD_HOUR = 'ApxDayAheadHour';
+    const MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY = 'TtfDayAheadDay';
+    const MARKET_PRICE_SOURCE_MEAN_APX_DAY = 'MeanApxDay';
+    const MARKET_PRICE_SOURCE_MEAN_APX_MONTH = 'MeanApxMonth';
+    const MARKET_PRICE_SOURCE_MEAN_TTF_DAY = 'MeanTtfDay';
+    const MARKET_PRICE_SOURCE_MEAN_TTF_MONTH = 'MeanTtfMonth';
+    const MARKET_PRICE_SOURCE_MEAN_APX_YEAR = 'MeanApxYear';
+    const MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_YEAR = 'UnweightedMeanApxYear';
+    const MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_MONTH = 'UnweightedMeanApxMonth';
+    const MARKET_PRICE_SOURCE_IMBALANCE_TAKE_FROM_SYSTEM = 'ImbalanceTakeFromSystem';
+    const MARKET_PRICE_SOURCE_IMBALANCE_FEED_INTO_SYSTEM = 'ImbalanceFeedIntoSystem';
+    const MARKET_PRICE_SOURCE_RECONCILIATION_PEAK = 'ReconciliationPeak';
+    const MARKET_PRICE_SOURCE_RECONCILIATION_OFF_PEAK = 'ReconciliationOffPeak';
+    const MARKET_PRICE_SOURCE_APX_DAY_AHEAD_QUARTER = 'ApxDayAheadQuarter';
+    const MARKET_PRICE_SOURCE_NONE = 'None';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getMarketPriceSourceAllowableValues()
+    {
+        return [
+            self::MARKET_PRICE_SOURCE_APX_DAY_AHEAD_HOUR,
+            self::MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY,
+            self::MARKET_PRICE_SOURCE_MEAN_APX_DAY,
+            self::MARKET_PRICE_SOURCE_MEAN_APX_MONTH,
+            self::MARKET_PRICE_SOURCE_MEAN_TTF_DAY,
+            self::MARKET_PRICE_SOURCE_MEAN_TTF_MONTH,
+            self::MARKET_PRICE_SOURCE_MEAN_APX_YEAR,
+            self::MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_YEAR,
+            self::MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_MONTH,
+            self::MARKET_PRICE_SOURCE_IMBALANCE_TAKE_FROM_SYSTEM,
+            self::MARKET_PRICE_SOURCE_IMBALANCE_FEED_INTO_SYSTEM,
+            self::MARKET_PRICE_SOURCE_RECONCILIATION_PEAK,
+            self::MARKET_PRICE_SOURCE_RECONCILIATION_OFF_PEAK,
+            self::MARKET_PRICE_SOURCE_APX_DAY_AHEAD_QUARTER,
+            self::MARKET_PRICE_SOURCE_NONE,
+        ];
+    }
     
 
     /**
@@ -265,6 +316,8 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         $this->container['proposition_group_id'] = isset($data['proposition_group_id']) ? $data['proposition_group_id'] : null;
         $this->container['proposition_group'] = isset($data['proposition_group']) ? $data['proposition_group'] : null;
         $this->container['is_model_contract'] = isset($data['is_model_contract']) ? $data['is_model_contract'] : null;
+        $this->container['market_price_source'] = isset($data['market_price_source']) ? $data['market_price_source'] : null;
+        $this->container['market_price_source_localized'] = isset($data['market_price_source_localized']) ? $data['market_price_source_localized'] : null;
         $this->container['proposition_prices'] = isset($data['proposition_prices']) ? $data['proposition_prices'] : null;
         $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
         $this->container['contract_properties'] = isset($data['contract_properties']) ? $data['contract_properties'] : null;
@@ -278,6 +331,14 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getMarketPriceSourceAllowableValues();
+        if (!is_null($this->container['market_price_source']) && !in_array($this->container['market_price_source'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'market_price_source', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -602,6 +663,63 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
     public function setIsModelContract($is_model_contract)
     {
         $this->container['is_model_contract'] = $is_model_contract;
+
+        return $this;
+    }
+
+    /**
+     * Gets market_price_source
+     *
+     * @return string
+     */
+    public function getMarketPriceSource()
+    {
+        return $this->container['market_price_source'];
+    }
+
+    /**
+     * Sets market_price_source
+     *
+     * @param string $market_price_source market_price_source
+     *
+     * @return $this
+     */
+    public function setMarketPriceSource($market_price_source)
+    {
+        $allowedValues = $this->getMarketPriceSourceAllowableValues();
+        if (!is_null($market_price_source) && !in_array($market_price_source, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'market_price_source', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['market_price_source'] = $market_price_source;
+
+        return $this;
+    }
+
+    /**
+     * Gets market_price_source_localized
+     *
+     * @return string
+     */
+    public function getMarketPriceSourceLocalized()
+    {
+        return $this->container['market_price_source_localized'];
+    }
+
+    /**
+     * Sets market_price_source_localized
+     *
+     * @param string $market_price_source_localized market_price_source_localized
+     *
+     * @return $this
+     */
+    public function setMarketPriceSourceLocalized($market_price_source_localized)
+    {
+        $this->container['market_price_source_localized'] = $market_price_source_localized;
 
         return $this;
     }

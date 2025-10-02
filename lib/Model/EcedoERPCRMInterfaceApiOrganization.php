@@ -68,6 +68,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'sales_reference' => 'string',
         'parent_organization_id' => 'string',
         'is_parent' => 'bool',
+        'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyValue[]',
         'address' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAddress',
         'business_address' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAddress',
         'debtor' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDebtor',
@@ -86,6 +87,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'is_intercompany' => 'bool',
         'company_label_id' => 'string',
         'organization_type' => 'string',
+        'organization_sub_type' => 'string',
         'organization_type_localized' => 'string',
         'organization_id' => 'string',
         'reference' => 'string',
@@ -116,6 +118,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'sales_reference' => null,
         'parent_organization_id' => 'uuid',
         'is_parent' => null,
+        'entity_properties' => null,
         'address' => null,
         'business_address' => null,
         'debtor' => null,
@@ -134,6 +137,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'is_intercompany' => null,
         'company_label_id' => null,
         'organization_type' => null,
+        'organization_sub_type' => null,
         'organization_type_localized' => null,
         'organization_id' => null,
         'reference' => null,
@@ -185,6 +189,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'sales_reference' => 'SalesReference',
         'parent_organization_id' => 'ParentOrganizationId',
         'is_parent' => 'IsParent',
+        'entity_properties' => 'EntityProperties',
         'address' => 'Address',
         'business_address' => 'BusinessAddress',
         'debtor' => 'Debtor',
@@ -203,6 +208,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'is_intercompany' => 'IsIntercompany',
         'company_label_id' => 'CompanyLabelId',
         'organization_type' => 'OrganizationType',
+        'organization_sub_type' => 'OrganizationSubType',
         'organization_type_localized' => 'OrganizationTypeLocalized',
         'organization_id' => 'OrganizationId',
         'reference' => 'Reference',
@@ -233,6 +239,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'sales_reference' => 'setSalesReference',
         'parent_organization_id' => 'setParentOrganizationId',
         'is_parent' => 'setIsParent',
+        'entity_properties' => 'setEntityProperties',
         'address' => 'setAddress',
         'business_address' => 'setBusinessAddress',
         'debtor' => 'setDebtor',
@@ -251,6 +258,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'is_intercompany' => 'setIsIntercompany',
         'company_label_id' => 'setCompanyLabelId',
         'organization_type' => 'setOrganizationType',
+        'organization_sub_type' => 'setOrganizationSubType',
         'organization_type_localized' => 'setOrganizationTypeLocalized',
         'organization_id' => 'setOrganizationId',
         'reference' => 'setReference',
@@ -281,6 +289,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'sales_reference' => 'getSalesReference',
         'parent_organization_id' => 'getParentOrganizationId',
         'is_parent' => 'getIsParent',
+        'entity_properties' => 'getEntityProperties',
         'address' => 'getAddress',
         'business_address' => 'getBusinessAddress',
         'debtor' => 'getDebtor',
@@ -299,6 +308,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'is_intercompany' => 'getIsIntercompany',
         'company_label_id' => 'getCompanyLabelId',
         'organization_type' => 'getOrganizationType',
+        'organization_sub_type' => 'getOrganizationSubType',
         'organization_type_localized' => 'getOrganizationTypeLocalized',
         'organization_id' => 'getOrganizationId',
         'reference' => 'getReference',
@@ -353,8 +363,27 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const ORGANIZATION_SUB_TYPE_RESELLER = 'Reseller';
+    const ORGANIZATION_SUB_TYPE_PRODUCER = 'Producer';
+    const ORGANIZATION_SUB_TYPE_MSP = 'Msp';
+    const ORGANIZATION_SUB_TYPE_CPO = 'Cpo';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getOrganizationSubTypeAllowableValues()
+    {
+        return [
+            self::ORGANIZATION_SUB_TYPE_RESELLER,
+            self::ORGANIZATION_SUB_TYPE_PRODUCER,
+            self::ORGANIZATION_SUB_TYPE_MSP,
+            self::ORGANIZATION_SUB_TYPE_CPO,
+        ];
+    }
     
 
     /**
@@ -383,6 +412,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         $this->container['sales_reference'] = isset($data['sales_reference']) ? $data['sales_reference'] : null;
         $this->container['parent_organization_id'] = isset($data['parent_organization_id']) ? $data['parent_organization_id'] : null;
         $this->container['is_parent'] = isset($data['is_parent']) ? $data['is_parent'] : null;
+        $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['business_address'] = isset($data['business_address']) ? $data['business_address'] : null;
         $this->container['debtor'] = isset($data['debtor']) ? $data['debtor'] : null;
@@ -401,6 +431,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         $this->container['is_intercompany'] = isset($data['is_intercompany']) ? $data['is_intercompany'] : null;
         $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
         $this->container['organization_type'] = isset($data['organization_type']) ? $data['organization_type'] : null;
+        $this->container['organization_sub_type'] = isset($data['organization_sub_type']) ? $data['organization_sub_type'] : null;
         $this->container['organization_type_localized'] = isset($data['organization_type_localized']) ? $data['organization_type_localized'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
@@ -422,6 +453,14 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getOrganizationSubTypeAllowableValues();
+        if (!is_null($this->container['organization_sub_type']) && !in_array($this->container['organization_sub_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'organization_sub_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -698,6 +737,30 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
     public function setIsParent($is_parent)
     {
         $this->container['is_parent'] = $is_parent;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_properties
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyValue[]
+     */
+    public function getEntityProperties()
+    {
+        return $this->container['entity_properties'];
+    }
+
+    /**
+     * Sets entity_properties
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyValue[] $entity_properties Generieke kenmerken van deze organisatie
+     *
+     * @return $this
+     */
+    public function setEntityProperties($entity_properties)
+    {
+        $this->container['entity_properties'] = $entity_properties;
 
         return $this;
     }
@@ -1130,6 +1193,39 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
     public function setOrganizationType($organization_type)
     {
         $this->container['organization_type'] = $organization_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_sub_type
+     *
+     * @return string
+     */
+    public function getOrganizationSubType()
+    {
+        return $this->container['organization_sub_type'];
+    }
+
+    /**
+     * Sets organization_sub_type
+     *
+     * @param string $organization_sub_type Het subtype van de organisatie.
+     *
+     * @return $this
+     */
+    public function setOrganizationSubType($organization_sub_type)
+    {
+        $allowedValues = $this->getOrganizationSubTypeAllowableValues();
+        if (!is_null($organization_sub_type) && !in_array($organization_sub_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'organization_sub_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['organization_sub_type'] = $organization_sub_type;
 
         return $this;
     }

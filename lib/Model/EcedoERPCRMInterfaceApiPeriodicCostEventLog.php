@@ -36,6 +36,7 @@ use \Swagger\Client\ObjectSerializer;
  * EcedoERPCRMInterfaceApiPeriodicCostEventLog Class Doc Comment
  *
  * @category Class
+ * @description The PeriodicCostEventLog class represents a comprehensive data structure for exchanging periodic cost event data.&lt;br /&gt;  The Dutch translation is VKO or verbruik- en kostenoverzicht.&lt;br /&gt;  The is class contains the data for a specific connection and a specific month.
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -463,7 +464,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets organization_id
      *
-     * @param string $organization_id organization_id
+     * @param string $organization_id Unique identifier of the organization that owns the connection for which this periodic cost event was calculated.<br />  This value corresponds to the primary key of the <em>Organization</em> domain aggregate and can be used to retrieve additional organization information through the Organization end-points.
      *
      * @return $this
      */
@@ -487,7 +488,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets cluster_reference
      *
-     * @param string $cluster_reference cluster_reference
+     * @param string $cluster_reference Reference of the cluster (connection group) the connection belongs to.<br />  A cluster groups multiple physical connections into a single commercial entity for billing purposes.
      *
      * @return $this
      */
@@ -511,7 +512,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets connection_id
      *
-     * @param string $connection_id connection_id
+     * @param string $connection_id Unique identifier of the physical connection (electricity or gas) for this customer for which the usage and prices are reported.<br />  This value matches the <em>ConnectionId</em> used throughout the API.
      *
      * @return $this
      */
@@ -535,7 +536,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets ean
      *
-     * @param string $ean ean
+     * @param string $ean The 18-digit EAN-code (European Article Number) that uniquely identifies the connection.
      *
      * @return $this
      */
@@ -559,7 +560,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date start_date
+     * @param \DateTime $start_date First day (inclusive) of the period for which usage and costs have been calculated.<br />  The date is expressed in local time (CET / CEST).
      *
      * @return $this
      */
@@ -583,7 +584,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date end_date
+     * @param \DateTime $end_date Last day (exclusive) of the period for which usage and costs have been calculated.<br />  The date is expressed in local time (CET / CEST).
      *
      * @return $this
      */
@@ -607,7 +608,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets start_meter_reading_id
      *
-     * @param string $start_meter_reading_id start_meter_reading_id
+     * @param string $start_meter_reading_id [Deprecated] Identifier of the meter reading that marks the start of the period.<br />  When the usage has been derived from a P4Reading instead of a legacy MeterReading this value is null.
      *
      * @return $this
      */
@@ -631,7 +632,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets end_meter_reading_id
      *
-     * @param string $end_meter_reading_id end_meter_reading_id
+     * @param string $end_meter_reading_id [Deprecated] Identifier of the meter reading that marks the end of the period.<br />  When the usage has been derived from a P4Reading instead of a legacy MeterReading this value is null.
      *
      * @return $this
      */
@@ -655,7 +656,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets start_p4_reading_id
      *
-     * @param string $start_p4_reading_id start_p4_reading_id
+     * @param string $start_p4_reading_id Identifier of the P4 remote reading (EDSN-interface) that marks the start of the period.<br />  When the usage has been derived from a legacy MeterReading instead of a P4Reading this value is null.
      *
      * @return $this
      */
@@ -679,7 +680,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets end_p4_reading_id
      *
-     * @param string $end_p4_reading_id end_p4_reading_id
+     * @param string $end_p4_reading_id Identifier of the P4 remote reading (EDSN-interface) that marks the end of the period.<br />  When the usage has been derived from a legacy MeterReading instead of a P4Reading this value is null.
      *
      * @return $this
      */
@@ -703,7 +704,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets document_id
      *
-     * @param string $document_id document_id
+     * @param string $document_id Identifier of the document (a pdf) that has been generated for this periodic cost event.<br />  When the event has not yet resulted in a document or when this is not configured, this value is null.
      *
      * @return $this
      */
@@ -727,7 +728,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets usage_high_ldn
      *
-     * @param int $usage_high_ldn usage_high_ldn
+     * @param int $usage_high_ldn Consumption measured on the grid in the <b>High</b> (Normaal) tariff band for the LDN (supplied) part of electricity, expressed in kWh.<br />  The value will be null when the connection is a gas connection or when the high-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -751,7 +752,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets usage_low_ldn
      *
-     * @param int $usage_low_ldn usage_low_ldn
+     * @param int $usage_low_ldn Consumption measured on the grid in the <b>Low</b> (Dal) tariff band for the LDN (supplied) part of electricity, expressed in kWh.<br />  The value will be null when the connection is a gas connection or when the low-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -775,7 +776,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets usage_single_ldn
      *
-     * @param int $usage_single_ldn usage_single_ldn
+     * @param int $usage_single_ldn Consumption measured on the grid when only a single (Enkel) tariff is applicable for the LDN (supplied) part of electricity, expressed in kWh.<br />  The value will be null when the connection is a gas connection or when the single-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -799,7 +800,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets usage_high_odn
      *
-     * @param int $usage_high_odn usage_high_odn
+     * @param int $usage_high_odn Production that has been <em>fed back</em> to the grid (ODN) in the <b>High</b> (Normaal) tariff band, expressed in kWh.<br />  For connections without generation this value is 0. For connections with generation this value is positive.<br />  The value will be null when the connection is a gas connection or when the high-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -823,7 +824,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets usage_low_odn
      *
-     * @param int $usage_low_odn usage_low_odn
+     * @param int $usage_low_odn Production that has been <em>fed back</em> to the grid (ODN) in the <b>Low</b> (Dal) tariff band, expressed in kWh.<br />  For connections without generation this value is 0. For connections with generation this value is positive.<br />  The value will be null when the connection is a gas connection or when the low-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -847,7 +848,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets usage_single_odn
      *
-     * @param int $usage_single_odn usage_single_odn
+     * @param int $usage_single_odn Production that has been <em>fed back</em> to the grid (ODN) when only a single (Enkel) tariff is applicable, expressed in kWh.<br />  For connections without generation this value is 0. For connections with generation this value is positive.<br />  The value will be null when the connection is a gas connection or when the single-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -871,7 +872,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets usage_gas
      *
-     * @param int $usage_gas usage_gas
+     * @param int $usage_gas Consumption of natural gas during the period, expressed in standard cubic metres (Nm<sup>3</sup>).<br />  The value will be null when the connection is an electricity connection.
      *
      * @return $this
      */
@@ -895,7 +896,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_high_ldn
      *
-     * @param double $price_high_ldn price_high_ldn
+     * @param double $price_high_ldn Price per kWh for electricity consumed in the <b>High</b> (Normaal) tariff band (LDN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the high-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -919,7 +920,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_low_ldn
      *
-     * @param double $price_low_ldn price_low_ldn
+     * @param double $price_low_ldn Price per kWh for electricity consumed in the <b>Low</b> (Dal) tariff band (LDN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the low-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -943,7 +944,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_single_ldn
      *
-     * @param double $price_single_ldn price_single_ldn
+     * @param double $price_single_ldn Price per kWh for electricity consumed when a single (Enkel) tariff is used (LDN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the single-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -967,7 +968,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_high_odn
      *
-     * @param double $price_high_odn price_high_odn
+     * @param double $price_high_odn Price per kWh for electricity fed into the grid in the <b>High</b> (Normaal) tariff band (ODN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the high-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -991,7 +992,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_low_odn
      *
-     * @param double $price_low_odn price_low_odn
+     * @param double $price_low_odn Price per kWh for electricity fed into the grid in the <b>Low</b> (Dal) tariff band (ODN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the low-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1015,7 +1016,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_single_odn
      *
-     * @param double $price_single_odn price_single_odn
+     * @param double $price_single_odn Price per kWh for electricity fed into the grid when a single (Enkel) tariff applies (ODN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the single-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1039,7 +1040,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_gas
      *
-     * @param double $price_gas price_gas
+     * @param double $price_gas Price per standard cubic metre for natural gas consumption, <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is an electricity connection.
      *
      * @return $this
      */
@@ -1063,7 +1064,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_fixed_fee_electricity
      *
-     * @param double $price_fixed_fee_electricity price_fixed_fee_electricity
+     * @param double $price_fixed_fee_electricity Fixed annual (pro-rata) fee for an electricity connection, <strong>excluding VAT</strong>.
      *
      * @return $this
      */
@@ -1087,7 +1088,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_fixed_fee_gas
      *
-     * @param double $price_fixed_fee_gas price_fixed_fee_gas
+     * @param double $price_fixed_fee_gas Fixed annual (pro-rata) fee for a gas connection, <strong>excluding VAT</strong>.
      *
      * @return $this
      */
@@ -1111,7 +1112,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_network_costs_electricity
      *
-     * @param double $price_network_costs_electricity price_network_costs_electricity
+     * @param double $price_network_costs_electricity Network (distribution) costs for electricity during the period, <strong>excluding VAT</strong>.<br />  These costs are collected on behalf of the regional network operator.<br />  This value will be null when the connection is a gas connection.
      *
      * @return $this
      */
@@ -1135,7 +1136,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_network_costs_gas
      *
-     * @param double $price_network_costs_gas price_network_costs_gas
+     * @param double $price_network_costs_gas Network (distribution) costs for gas during the period, <strong>excluding VAT</strong>.<br />  These costs are collected on behalf of the regional network operator.<br />  This value will be null when the connection is an electricity connection.
      *
      * @return $this
      */
@@ -1159,7 +1160,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_tax_credit
      *
-     * @param double $price_tax_credit price_tax_credit
+     * @param double $price_tax_credit Energy-tax credit (\"heffingskorting\") that is deducted from the electricity invoice.<br />  The value is negative and represents an amount <strong>excluding VAT</strong>.<br />  This value will be null when the connection is a gas connection.
      *
      * @return $this
      */
@@ -1183,7 +1184,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_high_ldn_taxed
      *
-     * @param double $price_high_ldn_taxed Dit veld is inclusief EB en ODE.
+     * @param double $price_high_ldn_taxed Price per kWh for the <b>High</b> (Normaal) tariff band (LDN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the high-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1207,7 +1208,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_low_ldn_taxed
      *
-     * @param double $price_low_ldn_taxed Dit veld is inclusief EB en ODE.
+     * @param double $price_low_ldn_taxed Price per kWh for the <b>Low</b> (Dal) tariff band (LDN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the low-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1231,7 +1232,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_single_ldn_taxed
      *
-     * @param double $price_single_ldn_taxed Dit veld is inclusief EB en ODE.
+     * @param double $price_single_ldn_taxed Price per kWh for the <b>Single</b> (Enkel) tariff band (LDN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the single-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1255,7 +1256,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_high_odn_taxed
      *
-     * @param double $price_high_odn_taxed Dit veld is inclusief EB en ODE.
+     * @param double $price_high_odn_taxed Price per kWh for feed-in during the <b>High</b> (Normaal) tariff band (ODN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the high-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1279,7 +1280,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_low_odn_taxed
      *
-     * @param double $price_low_odn_taxed Dit veld is inclusief EB en ODE.
+     * @param double $price_low_odn_taxed Price per kWh for feed-in during the <b>Low</b> (Dal) tariff band (ODN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the low-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1303,7 +1304,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_single_odn_taxed
      *
-     * @param double $price_single_odn_taxed Dit veld is inclusief EB en ODE.
+     * @param double $price_single_odn_taxed Price per kWh for feed-in when a <b>Single</b> (Enkel) tariff band applies (ODN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the single-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1327,7 +1328,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_gas_taxed
      *
-     * @param double $price_gas_taxed price_gas_taxed
+     * @param double $price_gas_taxed Price per standard cubic metre for natural gas <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is an electricity connection.
      *
      * @return $this
      */
@@ -1351,7 +1352,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_fixed_fee_electricity_taxed
      *
-     * @param double $price_fixed_fee_electricity_taxed price_fixed_fee_electricity_taxed
+     * @param double $price_fixed_fee_electricity_taxed Fixed fee for electricity <strong>including VAT</strong>.<br />  This value will be null when the connection is a gas connection.
      *
      * @return $this
      */
@@ -1375,7 +1376,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_fixed_fee_gas_taxed
      *
-     * @param double $price_fixed_fee_gas_taxed price_fixed_fee_gas_taxed
+     * @param double $price_fixed_fee_gas_taxed Fixed fee for gas <strong>including VAT</strong>.<br />  This value will be null when the connection is an electricity connection.
      *
      * @return $this
      */
@@ -1399,7 +1400,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_network_costs_electricity_taxed
      *
-     * @param double $price_network_costs_electricity_taxed price_network_costs_electricity_taxed
+     * @param double $price_network_costs_electricity_taxed Network costs for electricity <strong>including VAT</strong>.<br />  This value will be null when the connection is a gas connection.
      *
      * @return $this
      */
@@ -1423,7 +1424,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_network_costs_gas_taxed
      *
-     * @param double $price_network_costs_gas_taxed price_network_costs_gas_taxed
+     * @param double $price_network_costs_gas_taxed Network costs for gas <strong>including VAT</strong>.<br />  This value will be null when the connection is a gas connection.
      *
      * @return $this
      */
@@ -1447,7 +1448,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_tax_credit_taxed
      *
-     * @param double $price_tax_credit_taxed price_tax_credit_taxed
+     * @param double $price_tax_credit_taxed Energy-tax credit (\"heffingskorting\") that is deducted from the electricity invoice.<br />  The value is negative and represents an amount <strong>including VAT</strong>.<br />  This value will be null when the connection is a gas connection.
      *
      * @return $this
      */

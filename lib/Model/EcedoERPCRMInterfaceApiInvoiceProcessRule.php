@@ -228,6 +228,7 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
     const INVOICE_SUB_TYPE_RECONCILIATION_SETTLEMENT = 'ReconciliationSettlement';
     const INVOICE_SUB_TYPE_CERTIFICATE_SALE = 'CertificateSale';
     const INVOICE_SUB_TYPE_EV_BUSINESS_PARTNER = 'EVBusinessPartner';
+    const INVOICE_SUB_TYPE_ZIP_AREA_ENERGY_TAX_CREDIT = 'ZipAreaEnergyTaxCredit';
     const INVOICE_SUB_TYPE_CUSTOM_GENERAL = 'Custom_General';
     const INVOICE_SUB_TYPE_CUSTOM_CHARGING_STATION = 'Custom_ChargingStation';
     const INVOICE_SUB_TYPE_CUSTOM_CHARGE_CARD = 'Custom_ChargeCard';
@@ -282,6 +283,7 @@ class EcedoERPCRMInterfaceApiInvoiceProcessRule implements ModelInterface, Array
             self::INVOICE_SUB_TYPE_RECONCILIATION_SETTLEMENT,
             self::INVOICE_SUB_TYPE_CERTIFICATE_SALE,
             self::INVOICE_SUB_TYPE_EV_BUSINESS_PARTNER,
+            self::INVOICE_SUB_TYPE_ZIP_AREA_ENERGY_TAX_CREDIT,
             self::INVOICE_SUB_TYPE_CUSTOM_GENERAL,
             self::INVOICE_SUB_TYPE_CUSTOM_CHARGING_STATION,
             self::INVOICE_SUB_TYPE_CUSTOM_CHARGE_CARD,

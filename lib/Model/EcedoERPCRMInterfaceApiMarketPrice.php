@@ -193,15 +193,15 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const PRICE_UNIT_KWH = 'KWh';
     const PRICE_UNIT_YEAR = 'Year';
-    const PRICE_UNIT_INVOICE = 'Invoice';
     const PRICE_UNIT_DAY = 'Day';
+    const PRICE_UNIT_KWH = 'KWh';
     const PRICE_UNIT_M3 = 'M3';
     const PRICE_UNIT_ONE_OFF = 'OneOff';
     const PRICE_UNIT_MONTH = 'Month';
     const PRICE_UNIT_MWH = 'MWh';
     const PRICE_UNIT_WH = 'Wh';
+    const PRICE_UNIT_INVOICE = 'Invoice';
     const PRICE_UNIT_PERCENTAGE = 'Percentage';
     const PRICE_UNIT_SECONDS = 'Seconds';
     const PRICE_UNIT_CHARGE_SESSION = 'ChargeSession';
@@ -220,6 +220,8 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     const MARKET_PRICE_TYPE_IMBALANCE_FEED_INTO_SYSTEM = 'ImbalanceFeedIntoSystem';
     const MARKET_PRICE_TYPE_RECONCILIATION_PEAK = 'ReconciliationPeak';
     const MARKET_PRICE_TYPE_RECONCILIATION_OFF_PEAK = 'ReconciliationOffPeak';
+    const MARKET_PRICE_TYPE_APX_DAY_AHEAD_QUARTER = 'ApxDayAheadQuarter';
+    const MARKET_PRICE_TYPE_NONE = 'None';
     
 
     
@@ -231,15 +233,15 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     public function getPriceUnitAllowableValues()
     {
         return [
-            self::PRICE_UNIT_KWH,
             self::PRICE_UNIT_YEAR,
-            self::PRICE_UNIT_INVOICE,
             self::PRICE_UNIT_DAY,
+            self::PRICE_UNIT_KWH,
             self::PRICE_UNIT_M3,
             self::PRICE_UNIT_ONE_OFF,
             self::PRICE_UNIT_MONTH,
             self::PRICE_UNIT_MWH,
             self::PRICE_UNIT_WH,
+            self::PRICE_UNIT_INVOICE,
             self::PRICE_UNIT_PERCENTAGE,
             self::PRICE_UNIT_SECONDS,
             self::PRICE_UNIT_CHARGE_SESSION,
@@ -269,6 +271,8 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
             self::MARKET_PRICE_TYPE_IMBALANCE_FEED_INTO_SYSTEM,
             self::MARKET_PRICE_TYPE_RECONCILIATION_PEAK,
             self::MARKET_PRICE_TYPE_RECONCILIATION_OFF_PEAK,
+            self::MARKET_PRICE_TYPE_APX_DAY_AHEAD_QUARTER,
+            self::MARKET_PRICE_TYPE_NONE,
         ];
     }
     
@@ -351,7 +355,7 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date start_date
+     * @param \DateTime $start_date Startdatum en -tijd van de marktprijs. Dit is de datum vanaf wanneer de prijs geldig is.
      *
      * @return $this
      */
@@ -375,7 +379,7 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date end_date
+     * @param \DateTime $end_date Einddatum en -tijd van de marktprijs. Dit is de datum tot wanneer de prijs geldig is.
      *
      * @return $this
      */
@@ -399,7 +403,7 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param double $price price
+     * @param double $price De marktprijs.
      *
      * @return $this
      */
@@ -423,7 +427,7 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     /**
      * Sets price_unit
      *
-     * @param string $price_unit price_unit
+     * @param string $price_unit De eenheid van de marktprijs. De eenheid is afhankelijk van het type marktprijs: 'ApxDayAheadHour' zal 'MWh' zijn, 'ApxDayAheadQuarter' ook 'MWh', en 'TtfDayAheadDay' zal 'M3' zijn.
      *
      * @return $this
      */
@@ -456,7 +460,7 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     /**
      * Sets price_unit_localized
      *
-     * @param string $price_unit_localized price_unit_localized
+     * @param string $price_unit_localized Leesbare omschrijving van de eenheid van de marktprijs.
      *
      * @return $this
      */
@@ -480,7 +484,7 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     /**
      * Sets market_price_type
      *
-     * @param string $market_price_type market_price_type
+     * @param string $market_price_type Het type marktprijs. Dit geeft aan welk soort marktprijs het is, zoals 'ApxDayAheadHour', 'ApxDayAheadQuarter', of 'TtfDayAheadDay'.
      *
      * @return $this
      */
@@ -513,7 +517,7 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     /**
      * Sets market_price_type_localized
      *
-     * @param string $market_price_type_localized market_price_type_localized
+     * @param string $market_price_type_localized De leesbare omschrijving van het type marktprijs.
      *
      * @return $this
      */
@@ -537,7 +541,7 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     /**
      * Sets comment
      *
-     * @param string $comment comment
+     * @param string $comment Het commentaar bij de marktprijs. Dit kan extra informatie bevatten over de prijs, zoals de bron of bijzonderheden.
      *
      * @return $this
      */

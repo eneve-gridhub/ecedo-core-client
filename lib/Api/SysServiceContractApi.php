@@ -90,12 +90,14 @@ class SysServiceContractApi
     /**
      * Operation sysServiceContractGetServiceContract
      *
-     * @param  string $organization_id organization_id (required)
-     * @param  string $contract_id contract_id (required)
+     * Deze API wordt niet langer actief ondersteund, gebruik evchargerservicecontracts/{contractId} om een laadpaal service contract op te halen
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $contract_id Service contract ID (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEvChargerServiceContractData
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto
      */
     public function sysServiceContractGetServiceContract($organization_id, $contract_id)
     {
@@ -106,16 +108,18 @@ class SysServiceContractApi
     /**
      * Operation sysServiceContractGetServiceContractWithHttpInfo
      *
-     * @param  string $organization_id (required)
-     * @param  string $contract_id (required)
+     * Deze API wordt niet langer actief ondersteund, gebruik evchargerservicecontracts/{contractId} om een laadpaal service contract op te halen
+     *
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $contract_id Service contract ID (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiEvChargerServiceContractData, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function sysServiceContractGetServiceContractWithHttpInfo($organization_id, $contract_id)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEvChargerServiceContractData';
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto';
         $request = $this->sysServiceContractGetServiceContractRequest($organization_id, $contract_id);
 
         try {
@@ -167,7 +171,7 @@ class SysServiceContractApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEvChargerServiceContractData',
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -196,10 +200,10 @@ class SysServiceContractApi
     /**
      * Operation sysServiceContractGetServiceContractAsync
      *
-     * 
+     * Deze API wordt niet langer actief ondersteund, gebruik evchargerservicecontracts/{contractId} om een laadpaal service contract op te halen
      *
-     * @param  string $organization_id (required)
-     * @param  string $contract_id (required)
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $contract_id Service contract ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -217,17 +221,17 @@ class SysServiceContractApi
     /**
      * Operation sysServiceContractGetServiceContractAsyncWithHttpInfo
      *
-     * 
+     * Deze API wordt niet langer actief ondersteund, gebruik evchargerservicecontracts/{contractId} om een laadpaal service contract op te halen
      *
-     * @param  string $organization_id (required)
-     * @param  string $contract_id (required)
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $contract_id Service contract ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function sysServiceContractGetServiceContractAsyncWithHttpInfo($organization_id, $contract_id)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEvChargerServiceContractData';
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto';
         $request = $this->sysServiceContractGetServiceContractRequest($organization_id, $contract_id);
 
         return $this->client
@@ -270,8 +274,8 @@ class SysServiceContractApi
     /**
      * Create request for operation 'sysServiceContractGetServiceContract'
      *
-     * @param  string $organization_id (required)
-     * @param  string $contract_id (required)
+     * @param  string $organization_id Organization ID (required)
+     * @param  string $contract_id Service contract ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

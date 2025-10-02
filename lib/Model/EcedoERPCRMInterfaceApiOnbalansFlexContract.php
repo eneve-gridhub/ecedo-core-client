@@ -71,6 +71,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
         'proposition_duration' => 'int',
         'proposition_pricing_type' => 'string',
         'proposition_pricing_type_localized' => 'string',
+        'proposition_market_price_source' => 'string',
+        'proposition_market_price_source_localized' => 'string',
         'status' => 'string',
         'status_localized' => 'string',
         'comment' => 'string',
@@ -99,6 +101,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
         'proposition_duration' => 'int32',
         'proposition_pricing_type' => null,
         'proposition_pricing_type_localized' => null,
+        'proposition_market_price_source' => null,
+        'proposition_market_price_source_localized' => null,
         'status' => null,
         'status_localized' => null,
         'comment' => null,
@@ -148,6 +152,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
         'proposition_duration' => 'PropositionDuration',
         'proposition_pricing_type' => 'PropositionPricingType',
         'proposition_pricing_type_localized' => 'PropositionPricingTypeLocalized',
+        'proposition_market_price_source' => 'PropositionMarketPriceSource',
+        'proposition_market_price_source_localized' => 'PropositionMarketPriceSourceLocalized',
         'status' => 'Status',
         'status_localized' => 'StatusLocalized',
         'comment' => 'Comment',
@@ -176,6 +182,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
         'proposition_duration' => 'setPropositionDuration',
         'proposition_pricing_type' => 'setPropositionPricingType',
         'proposition_pricing_type_localized' => 'setPropositionPricingTypeLocalized',
+        'proposition_market_price_source' => 'setPropositionMarketPriceSource',
+        'proposition_market_price_source_localized' => 'setPropositionMarketPriceSourceLocalized',
         'status' => 'setStatus',
         'status_localized' => 'setStatusLocalized',
         'comment' => 'setComment',
@@ -204,6 +212,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
         'proposition_duration' => 'getPropositionDuration',
         'proposition_pricing_type' => 'getPropositionPricingType',
         'proposition_pricing_type_localized' => 'getPropositionPricingTypeLocalized',
+        'proposition_market_price_source' => 'getPropositionMarketPriceSource',
+        'proposition_market_price_source_localized' => 'getPropositionMarketPriceSourceLocalized',
         'status' => 'getStatus',
         'status_localized' => 'getStatusLocalized',
         'comment' => 'getComment',
@@ -257,17 +267,32 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
     const SMART_DEVICE_TYPE_HOME_DEVICE = 'HomeDevice';
     const SMART_DEVICE_TYPE_EV_CHARGER = 'EvCharger';
     const SMART_DEVICE_TYPE_BATTERY = 'Battery';
-    const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_FIXED = 'Fixed';
     const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
+    const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE = 'MeanDayMarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE = 'MeanMonthMarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_FUTURE_YEAR_MARKET_PRICE_FIXED = 'FutureYearMarketPriceFixed';
     const PROPOSITION_PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
     const PROPOSITION_PRICING_TYPE_FULL_ENDEX = 'FullEndex';
     const PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
-    const STATUS_ACTIVE = 'Active';
+    const PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_HOUR = 'ApxDayAheadHour';
+    const PROPOSITION_MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY = 'TtfDayAheadDay';
+    const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_DAY = 'MeanApxDay';
+    const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_MONTH = 'MeanApxMonth';
+    const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_TTF_DAY = 'MeanTtfDay';
+    const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_TTF_MONTH = 'MeanTtfMonth';
+    const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_YEAR = 'MeanApxYear';
+    const PROPOSITION_MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_YEAR = 'UnweightedMeanApxYear';
+    const PROPOSITION_MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_MONTH = 'UnweightedMeanApxMonth';
+    const PROPOSITION_MARKET_PRICE_SOURCE_IMBALANCE_TAKE_FROM_SYSTEM = 'ImbalanceTakeFromSystem';
+    const PROPOSITION_MARKET_PRICE_SOURCE_IMBALANCE_FEED_INTO_SYSTEM = 'ImbalanceFeedIntoSystem';
+    const PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_PEAK = 'ReconciliationPeak';
+    const PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_OFF_PEAK = 'ReconciliationOffPeak';
+    const PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_QUARTER = 'ApxDayAheadQuarter';
+    const PROPOSITION_MARKET_PRICE_SOURCE_NONE = 'None';
     const STATUS_PROVISIONAL = 'Provisional';
+    const STATUS_ACTIVE = 'Active';
     const STATUS_CANCELLED = 'Cancelled';
     const STATUS_ENDED = 'Ended';
     const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
@@ -299,9 +324,9 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
     public function getPropositionPricingTypeAllowableValues()
     {
         return [
-            self::PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_FIXED,
             self::PROPOSITION_PRICING_TYPE_VARIABLE,
+            self::PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_FUTURE_YEAR_MARKET_PRICE_FIXED,
@@ -316,11 +341,37 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
      *
      * @return string[]
      */
+    public function getPropositionMarketPriceSourceAllowableValues()
+    {
+        return [
+            self::PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_HOUR,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_DAY,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_MONTH,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_TTF_DAY,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_TTF_MONTH,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_YEAR,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_YEAR,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_MONTH,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_IMBALANCE_TAKE_FROM_SYSTEM,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_IMBALANCE_FEED_INTO_SYSTEM,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_PEAK,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_OFF_PEAK,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_QUARTER,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_NONE,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
     public function getStatusAllowableValues()
     {
         return [
-            self::STATUS_ACTIVE,
             self::STATUS_PROVISIONAL,
+            self::STATUS_ACTIVE,
             self::STATUS_CANCELLED,
             self::STATUS_ENDED,
             self::STATUS_WAIT_FOR_APPROVAL,
@@ -359,6 +410,8 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
         $this->container['proposition_duration'] = isset($data['proposition_duration']) ? $data['proposition_duration'] : null;
         $this->container['proposition_pricing_type'] = isset($data['proposition_pricing_type']) ? $data['proposition_pricing_type'] : null;
         $this->container['proposition_pricing_type_localized'] = isset($data['proposition_pricing_type_localized']) ? $data['proposition_pricing_type_localized'] : null;
+        $this->container['proposition_market_price_source'] = isset($data['proposition_market_price_source']) ? $data['proposition_market_price_source'] : null;
+        $this->container['proposition_market_price_source_localized'] = isset($data['proposition_market_price_source_localized']) ? $data['proposition_market_price_source_localized'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['status_localized'] = isset($data['status_localized']) ? $data['status_localized'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
@@ -388,6 +441,14 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
         if (!is_null($this->container['proposition_pricing_type']) && !in_array($this->container['proposition_pricing_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'proposition_pricing_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getPropositionMarketPriceSourceAllowableValues();
+        if (!is_null($this->container['proposition_market_price_source']) && !in_array($this->container['proposition_market_price_source'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'proposition_market_price_source', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -765,6 +826,63 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContract implements ModelInterface, Arr
     public function setPropositionPricingTypeLocalized($proposition_pricing_type_localized)
     {
         $this->container['proposition_pricing_type_localized'] = $proposition_pricing_type_localized;
+
+        return $this;
+    }
+
+    /**
+     * Gets proposition_market_price_source
+     *
+     * @return string
+     */
+    public function getPropositionMarketPriceSource()
+    {
+        return $this->container['proposition_market_price_source'];
+    }
+
+    /**
+     * Sets proposition_market_price_source
+     *
+     * @param string $proposition_market_price_source proposition_market_price_source
+     *
+     * @return $this
+     */
+    public function setPropositionMarketPriceSource($proposition_market_price_source)
+    {
+        $allowedValues = $this->getPropositionMarketPriceSourceAllowableValues();
+        if (!is_null($proposition_market_price_source) && !in_array($proposition_market_price_source, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'proposition_market_price_source', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['proposition_market_price_source'] = $proposition_market_price_source;
+
+        return $this;
+    }
+
+    /**
+     * Gets proposition_market_price_source_localized
+     *
+     * @return string
+     */
+    public function getPropositionMarketPriceSourceLocalized()
+    {
+        return $this->container['proposition_market_price_source_localized'];
+    }
+
+    /**
+     * Sets proposition_market_price_source_localized
+     *
+     * @param string $proposition_market_price_source_localized proposition_market_price_source_localized
+     *
+     * @return $this
+     */
+    public function setPropositionMarketPriceSourceLocalized($proposition_market_price_source_localized)
+    {
+        $this->container['proposition_market_price_source_localized'] = $proposition_market_price_source_localized;
 
         return $this;
     }

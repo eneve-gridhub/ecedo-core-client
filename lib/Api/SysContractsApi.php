@@ -2628,6 +2628,320 @@ class SysContractsApi
     }
 
     /**
+     * Operation sysContractsGetEnergieInkoopContracts
+     *
+     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_connection_id  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[]
+     */
+    public function sysContractsGetEnergieInkoopContracts($organization_id, $means_of_production_connection_id)
+    {
+        list($response) = $this->sysContractsGetEnergieInkoopContractsWithHttpInfo($organization_id, $means_of_production_connection_id);
+        return $response;
+    }
+
+    /**
+     * Operation sysContractsGetEnergieInkoopContractsWithHttpInfo
+     *
+     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_connection_id  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysContractsGetEnergieInkoopContractsWithHttpInfo($organization_id, $means_of_production_connection_id)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[]';
+        $request = $this->sysContractsGetEnergieInkoopContractsRequest($organization_id, $means_of_production_connection_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysContractsGetEnergieInkoopContractsAsync
+     *
+     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_connection_id  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysContractsGetEnergieInkoopContractsAsync($organization_id, $means_of_production_connection_id)
+    {
+        return $this->sysContractsGetEnergieInkoopContractsAsyncWithHttpInfo($organization_id, $means_of_production_connection_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysContractsGetEnergieInkoopContractsAsyncWithHttpInfo
+     *
+     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_connection_id  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysContractsGetEnergieInkoopContractsAsyncWithHttpInfo($organization_id, $means_of_production_connection_id)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[]';
+        $request = $this->sysContractsGetEnergieInkoopContractsRequest($organization_id, $means_of_production_connection_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysContractsGetEnergieInkoopContracts'
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_connection_id  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysContractsGetEnergieInkoopContractsRequest($organization_id, $means_of_production_connection_id)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling sysContractsGetEnergieInkoopContracts'
+            );
+        }
+        // verify the required parameter 'means_of_production_connection_id' is set
+        if ($means_of_production_connection_id === null || (is_array($means_of_production_connection_id) && count($means_of_production_connection_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $means_of_production_connection_id when calling sysContractsGetEnergieInkoopContracts'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/meansofproductionconnections/{meansOfProductionConnectionId}/contracts';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($means_of_production_connection_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'meansOfProductionConnectionId' . '}',
+                ObjectSerializer::toPathValue($means_of_production_connection_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation sysContractsGetEnergieleveringConnectionContractForContract
      *
      * Ophalen van energieleveringconnectioncontract op basis van contractId
@@ -3499,320 +3813,6 @@ class SysContractsApi
             $resourcePath = str_replace(
                 '{' . 'connectionId' . '}',
                 ObjectSerializer::toPathValue($connection_id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
-                // \stdClass has no __toString(), so we should encode it manually
-                if ($httpBody instanceof \stdClass) {
-                    $httpBody = \GuzzleHttp\json_encode($httpBody);
-                }
-                // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
-        if ($apiKey !== null) {
-            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation sysContractsGetMeansOfProductionConnectionContracts
-     *
-     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
-     *
-     * @param  string $organization_id  (required)
-     * @param  string $means_of_production_connection_id  (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[]
-     */
-    public function sysContractsGetMeansOfProductionConnectionContracts($organization_id, $means_of_production_connection_id)
-    {
-        list($response) = $this->sysContractsGetMeansOfProductionConnectionContractsWithHttpInfo($organization_id, $means_of_production_connection_id);
-        return $response;
-    }
-
-    /**
-     * Operation sysContractsGetMeansOfProductionConnectionContractsWithHttpInfo
-     *
-     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
-     *
-     * @param  string $organization_id  (required)
-     * @param  string $means_of_production_connection_id  (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function sysContractsGetMeansOfProductionConnectionContractsWithHttpInfo($organization_id, $means_of_production_connection_id)
-    {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[]';
-        $request = $this->sysContractsGetMeansOfProductionConnectionContractsRequest($organization_id, $means_of_production_connection_id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation sysContractsGetMeansOfProductionConnectionContractsAsync
-     *
-     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
-     *
-     * @param  string $organization_id  (required)
-     * @param  string $means_of_production_connection_id  (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function sysContractsGetMeansOfProductionConnectionContractsAsync($organization_id, $means_of_production_connection_id)
-    {
-        return $this->sysContractsGetMeansOfProductionConnectionContractsAsyncWithHttpInfo($organization_id, $means_of_production_connection_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation sysContractsGetMeansOfProductionConnectionContractsAsyncWithHttpInfo
-     *
-     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId
-     *
-     * @param  string $organization_id  (required)
-     * @param  string $means_of_production_connection_id  (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function sysContractsGetMeansOfProductionConnectionContractsAsyncWithHttpInfo($organization_id, $means_of_production_connection_id)
-    {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContract[]';
-        $request = $this->sysContractsGetMeansOfProductionConnectionContractsRequest($organization_id, $means_of_production_connection_id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'sysContractsGetMeansOfProductionConnectionContracts'
-     *
-     * @param  string $organization_id  (required)
-     * @param  string $means_of_production_connection_id  (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function sysContractsGetMeansOfProductionConnectionContractsRequest($organization_id, $means_of_production_connection_id)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling sysContractsGetMeansOfProductionConnectionContracts'
-            );
-        }
-        // verify the required parameter 'means_of_production_connection_id' is set
-        if ($means_of_production_connection_id === null || (is_array($means_of_production_connection_id) && count($means_of_production_connection_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $means_of_production_connection_id when calling sysContractsGetMeansOfProductionConnectionContracts'
-            );
-        }
-
-        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/meansofproductionconnections/{meansOfProductionConnectionId}/contracts';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($means_of_production_connection_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'meansOfProductionConnectionId' . '}',
-                ObjectSerializer::toPathValue($means_of_production_connection_id),
                 $resourcePath
             );
         }
@@ -6044,6 +6044,334 @@ class SysContractsApi
         $_tempBody = null;
         if (isset($contract)) {
             $_tempBody = $contract;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysContractsPostEnergieInkoopContract
+     *
+     * Aanmaken van een energieinkoopcontract voor een productiemiddelaansluiting
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_connection_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContractPostData $data  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContractPostResult
+     */
+    public function sysContractsPostEnergieInkoopContract($organization_id, $means_of_production_connection_id, $data)
+    {
+        list($response) = $this->sysContractsPostEnergieInkoopContractWithHttpInfo($organization_id, $means_of_production_connection_id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation sysContractsPostEnergieInkoopContractWithHttpInfo
+     *
+     * Aanmaken van een energieinkoopcontract voor een productiemiddelaansluiting
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_connection_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContractPostData $data  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContractPostResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysContractsPostEnergieInkoopContractWithHttpInfo($organization_id, $means_of_production_connection_id, $data)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContractPostResult';
+        $request = $this->sysContractsPostEnergieInkoopContractRequest($organization_id, $means_of_production_connection_id, $data);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContractPostResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysContractsPostEnergieInkoopContractAsync
+     *
+     * Aanmaken van een energieinkoopcontract voor een productiemiddelaansluiting
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_connection_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContractPostData $data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysContractsPostEnergieInkoopContractAsync($organization_id, $means_of_production_connection_id, $data)
+    {
+        return $this->sysContractsPostEnergieInkoopContractAsyncWithHttpInfo($organization_id, $means_of_production_connection_id, $data)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysContractsPostEnergieInkoopContractAsyncWithHttpInfo
+     *
+     * Aanmaken van een energieinkoopcontract voor een productiemiddelaansluiting
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_connection_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContractPostData $data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysContractsPostEnergieInkoopContractAsyncWithHttpInfo($organization_id, $means_of_production_connection_id, $data)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContractPostResult';
+        $request = $this->sysContractsPostEnergieInkoopContractRequest($organization_id, $means_of_production_connection_id, $data);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysContractsPostEnergieInkoopContract'
+     *
+     * @param  string $organization_id  (required)
+     * @param  string $means_of_production_connection_id  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergieInkoopContractPostData $data  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysContractsPostEnergieInkoopContractRequest($organization_id, $means_of_production_connection_id, $data)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling sysContractsPostEnergieInkoopContract'
+            );
+        }
+        // verify the required parameter 'means_of_production_connection_id' is set
+        if ($means_of_production_connection_id === null || (is_array($means_of_production_connection_id) && count($means_of_production_connection_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $means_of_production_connection_id when calling sysContractsPostEnergieInkoopContract'
+            );
+        }
+        // verify the required parameter 'data' is set
+        if ($data === null || (is_array($data) && count($data) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $data when calling sysContractsPostEnergieInkoopContract'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/meansofproductionconnections/{meansOfProductionConnectionId}/contracts';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($means_of_production_connection_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'meansOfProductionConnectionId' . '}',
+                ObjectSerializer::toPathValue($means_of_production_connection_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
         }
 
         if ($multipart) {

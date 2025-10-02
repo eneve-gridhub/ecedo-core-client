@@ -179,7 +179,7 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
     }
 
     const SETTLE_ENERGY_METHOD_NONE = 'None';
-    const SETTLE_ENERGY_METHOD_ONE_HOUR = 'OneHour';
+    const SETTLE_ENERGY_METHOD_CONTRACT = 'Contract';
     
 
     
@@ -192,7 +192,7 @@ class EcedoERPCRMInterfaceApiInvoiceUsageCalculationResponse implements ModelInt
     {
         return [
             self::SETTLE_ENERGY_METHOD_NONE,
-            self::SETTLE_ENERGY_METHOD_ONE_HOUR,
+            self::SETTLE_ENERGY_METHOD_CONTRACT,
         ];
     }
     
