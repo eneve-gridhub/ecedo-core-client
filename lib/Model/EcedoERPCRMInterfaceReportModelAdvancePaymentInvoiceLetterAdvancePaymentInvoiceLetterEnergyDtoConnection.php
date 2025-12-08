@@ -72,6 +72,9 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_type' => 'string',
         'connection_ean' => 'string',
         'connection_grid_operator' => 'string',
+        'connection_grid_operator_phone_number' => 'string',
+        'connection_grid_operator_email_address' => 'string',
+        'connection_grid_operator_website' => 'string',
         'connection_region' => 'string',
         'connection_switch_type' => 'string',
         'connection_description' => 'string',
@@ -98,6 +101,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_proposition_is_model_contract' => 'bool',
         'connection_contract_proposition_pricing_type' => 'string',
         'connection_contract_proposition_is_market_price_proposition' => 'bool',
+        'connection_contract_proposition_market_price_source' => 'string',
+        'connection_contract_proposition_market_price_source_localized' => 'string',
         'connection_meelift_contract_proposition_description' => 'string',
         'connection_switch_period_start_date' => '\DateTime',
         'connection_switch_period_end_date' => '\DateTime',
@@ -142,6 +147,9 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_type' => null,
         'connection_ean' => null,
         'connection_grid_operator' => null,
+        'connection_grid_operator_phone_number' => null,
+        'connection_grid_operator_email_address' => null,
+        'connection_grid_operator_website' => null,
         'connection_region' => null,
         'connection_switch_type' => null,
         'connection_description' => null,
@@ -168,6 +176,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_proposition_is_model_contract' => null,
         'connection_contract_proposition_pricing_type' => null,
         'connection_contract_proposition_is_market_price_proposition' => null,
+        'connection_contract_proposition_market_price_source' => null,
+        'connection_contract_proposition_market_price_source_localized' => null,
         'connection_meelift_contract_proposition_description' => null,
         'connection_switch_period_start_date' => 'date',
         'connection_switch_period_end_date' => 'date',
@@ -233,6 +243,9 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_type' => 'Connection_Type',
         'connection_ean' => 'Connection_EAN',
         'connection_grid_operator' => 'Connection_GridOperator',
+        'connection_grid_operator_phone_number' => 'Connection_GridOperator_PhoneNumber',
+        'connection_grid_operator_email_address' => 'Connection_GridOperator_EmailAddress',
+        'connection_grid_operator_website' => 'Connection_GridOperator_Website',
         'connection_region' => 'Connection_Region',
         'connection_switch_type' => 'Connection_SwitchType',
         'connection_description' => 'Connection_Description',
@@ -259,6 +272,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_proposition_is_model_contract' => 'Connection_Contract_Proposition_IsModelContract',
         'connection_contract_proposition_pricing_type' => 'Connection_Contract_Proposition_PricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'Connection_Contract_Proposition_IsMarketPriceProposition',
+        'connection_contract_proposition_market_price_source' => 'Connection_Contract_Proposition_MarketPriceSource',
+        'connection_contract_proposition_market_price_source_localized' => 'Connection_Contract_Proposition_MarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'Connection_MeeliftContract_Proposition_Description',
         'connection_switch_period_start_date' => 'Connection_SwitchPeriod_StartDate',
         'connection_switch_period_end_date' => 'Connection_SwitchPeriod_EndDate',
@@ -303,6 +318,9 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_type' => 'setConnectionType',
         'connection_ean' => 'setConnectionEan',
         'connection_grid_operator' => 'setConnectionGridOperator',
+        'connection_grid_operator_phone_number' => 'setConnectionGridOperatorPhoneNumber',
+        'connection_grid_operator_email_address' => 'setConnectionGridOperatorEmailAddress',
+        'connection_grid_operator_website' => 'setConnectionGridOperatorWebsite',
         'connection_region' => 'setConnectionRegion',
         'connection_switch_type' => 'setConnectionSwitchType',
         'connection_description' => 'setConnectionDescription',
@@ -329,6 +347,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_proposition_is_model_contract' => 'setConnectionContractPropositionIsModelContract',
         'connection_contract_proposition_pricing_type' => 'setConnectionContractPropositionPricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'setConnectionContractPropositionIsMarketPriceProposition',
+        'connection_contract_proposition_market_price_source' => 'setConnectionContractPropositionMarketPriceSource',
+        'connection_contract_proposition_market_price_source_localized' => 'setConnectionContractPropositionMarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'setConnectionMeeliftContractPropositionDescription',
         'connection_switch_period_start_date' => 'setConnectionSwitchPeriodStartDate',
         'connection_switch_period_end_date' => 'setConnectionSwitchPeriodEndDate',
@@ -373,6 +393,9 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_type' => 'getConnectionType',
         'connection_ean' => 'getConnectionEan',
         'connection_grid_operator' => 'getConnectionGridOperator',
+        'connection_grid_operator_phone_number' => 'getConnectionGridOperatorPhoneNumber',
+        'connection_grid_operator_email_address' => 'getConnectionGridOperatorEmailAddress',
+        'connection_grid_operator_website' => 'getConnectionGridOperatorWebsite',
         'connection_region' => 'getConnectionRegion',
         'connection_switch_type' => 'getConnectionSwitchType',
         'connection_description' => 'getConnectionDescription',
@@ -399,6 +422,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_proposition_is_model_contract' => 'getConnectionContractPropositionIsModelContract',
         'connection_contract_proposition_pricing_type' => 'getConnectionContractPropositionPricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'getConnectionContractPropositionIsMarketPriceProposition',
+        'connection_contract_proposition_market_price_source' => 'getConnectionContractPropositionMarketPriceSource',
+        'connection_contract_proposition_market_price_source_localized' => 'getConnectionContractPropositionMarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'getConnectionMeeliftContractPropositionDescription',
         'connection_switch_period_start_date' => 'getConnectionSwitchPeriodStartDate',
         'connection_switch_period_end_date' => 'getConnectionSwitchPeriodEndDate',
@@ -497,6 +522,9 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         $this->container['connection_type'] = isset($data['connection_type']) ? $data['connection_type'] : null;
         $this->container['connection_ean'] = isset($data['connection_ean']) ? $data['connection_ean'] : null;
         $this->container['connection_grid_operator'] = isset($data['connection_grid_operator']) ? $data['connection_grid_operator'] : null;
+        $this->container['connection_grid_operator_phone_number'] = isset($data['connection_grid_operator_phone_number']) ? $data['connection_grid_operator_phone_number'] : null;
+        $this->container['connection_grid_operator_email_address'] = isset($data['connection_grid_operator_email_address']) ? $data['connection_grid_operator_email_address'] : null;
+        $this->container['connection_grid_operator_website'] = isset($data['connection_grid_operator_website']) ? $data['connection_grid_operator_website'] : null;
         $this->container['connection_region'] = isset($data['connection_region']) ? $data['connection_region'] : null;
         $this->container['connection_switch_type'] = isset($data['connection_switch_type']) ? $data['connection_switch_type'] : null;
         $this->container['connection_description'] = isset($data['connection_description']) ? $data['connection_description'] : null;
@@ -523,6 +551,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         $this->container['connection_contract_proposition_is_model_contract'] = isset($data['connection_contract_proposition_is_model_contract']) ? $data['connection_contract_proposition_is_model_contract'] : null;
         $this->container['connection_contract_proposition_pricing_type'] = isset($data['connection_contract_proposition_pricing_type']) ? $data['connection_contract_proposition_pricing_type'] : null;
         $this->container['connection_contract_proposition_is_market_price_proposition'] = isset($data['connection_contract_proposition_is_market_price_proposition']) ? $data['connection_contract_proposition_is_market_price_proposition'] : null;
+        $this->container['connection_contract_proposition_market_price_source'] = isset($data['connection_contract_proposition_market_price_source']) ? $data['connection_contract_proposition_market_price_source'] : null;
+        $this->container['connection_contract_proposition_market_price_source_localized'] = isset($data['connection_contract_proposition_market_price_source_localized']) ? $data['connection_contract_proposition_market_price_source_localized'] : null;
         $this->container['connection_meelift_contract_proposition_description'] = isset($data['connection_meelift_contract_proposition_description']) ? $data['connection_meelift_contract_proposition_description'] : null;
         $this->container['connection_switch_period_start_date'] = isset($data['connection_switch_period_start_date']) ? $data['connection_switch_period_start_date'] : null;
         $this->container['connection_switch_period_end_date'] = isset($data['connection_switch_period_end_date']) ? $data['connection_switch_period_end_date'] : null;
@@ -926,6 +956,78 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
     public function setConnectionGridOperator($connection_grid_operator)
     {
         $this->container['connection_grid_operator'] = $connection_grid_operator;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_grid_operator_phone_number
+     *
+     * @return string
+     */
+    public function getConnectionGridOperatorPhoneNumber()
+    {
+        return $this->container['connection_grid_operator_phone_number'];
+    }
+
+    /**
+     * Sets connection_grid_operator_phone_number
+     *
+     * @param string $connection_grid_operator_phone_number connection_grid_operator_phone_number
+     *
+     * @return $this
+     */
+    public function setConnectionGridOperatorPhoneNumber($connection_grid_operator_phone_number)
+    {
+        $this->container['connection_grid_operator_phone_number'] = $connection_grid_operator_phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_grid_operator_email_address
+     *
+     * @return string
+     */
+    public function getConnectionGridOperatorEmailAddress()
+    {
+        return $this->container['connection_grid_operator_email_address'];
+    }
+
+    /**
+     * Sets connection_grid_operator_email_address
+     *
+     * @param string $connection_grid_operator_email_address connection_grid_operator_email_address
+     *
+     * @return $this
+     */
+    public function setConnectionGridOperatorEmailAddress($connection_grid_operator_email_address)
+    {
+        $this->container['connection_grid_operator_email_address'] = $connection_grid_operator_email_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_grid_operator_website
+     *
+     * @return string
+     */
+    public function getConnectionGridOperatorWebsite()
+    {
+        return $this->container['connection_grid_operator_website'];
+    }
+
+    /**
+     * Sets connection_grid_operator_website
+     *
+     * @param string $connection_grid_operator_website connection_grid_operator_website
+     *
+     * @return $this
+     */
+    public function setConnectionGridOperatorWebsite($connection_grid_operator_website)
+    {
+        $this->container['connection_grid_operator_website'] = $connection_grid_operator_website;
 
         return $this;
     }
@@ -1550,6 +1652,54 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
     public function setConnectionContractPropositionIsMarketPriceProposition($connection_contract_proposition_is_market_price_proposition)
     {
         $this->container['connection_contract_proposition_is_market_price_proposition'] = $connection_contract_proposition_is_market_price_proposition;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_contract_proposition_market_price_source
+     *
+     * @return string
+     */
+    public function getConnectionContractPropositionMarketPriceSource()
+    {
+        return $this->container['connection_contract_proposition_market_price_source'];
+    }
+
+    /**
+     * Sets connection_contract_proposition_market_price_source
+     *
+     * @param string $connection_contract_proposition_market_price_source connection_contract_proposition_market_price_source
+     *
+     * @return $this
+     */
+    public function setConnectionContractPropositionMarketPriceSource($connection_contract_proposition_market_price_source)
+    {
+        $this->container['connection_contract_proposition_market_price_source'] = $connection_contract_proposition_market_price_source;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_contract_proposition_market_price_source_localized
+     *
+     * @return string
+     */
+    public function getConnectionContractPropositionMarketPriceSourceLocalized()
+    {
+        return $this->container['connection_contract_proposition_market_price_source_localized'];
+    }
+
+    /**
+     * Sets connection_contract_proposition_market_price_source_localized
+     *
+     * @param string $connection_contract_proposition_market_price_source_localized connection_contract_proposition_market_price_source_localized
+     *
+     * @return $this
+     */
+    public function setConnectionContractPropositionMarketPriceSourceLocalized($connection_contract_proposition_market_price_source_localized)
+    {
+        $this->container['connection_contract_proposition_market_price_source_localized'] = $connection_contract_proposition_market_price_source_localized;
 
         return $this;
     }

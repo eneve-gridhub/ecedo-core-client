@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutDataTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData
+ * @description Bevat de gegevens voor het updaten van een postcoderoosproject.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -73,6 +73,13 @@ class EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutDataTest extends \P
      * Test "EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData"
      */
     public function testEcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData()
+    {
+    }
+
+    /**
+     * Test attribute "project_ean"
+     */
+    public function testPropertyProjectEan()
     {
     }
 

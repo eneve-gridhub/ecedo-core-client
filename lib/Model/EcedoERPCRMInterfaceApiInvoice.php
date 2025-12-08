@@ -411,8 +411,8 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
     const STATUS_CREDITED = 'Credited';
     const STATUS_CONCEPT = 'Concept';
     const STATUS_CORRECTED = 'Corrected';
-    const SETTLEMENT_INVOICE_FREQUENCY_YEARLY = 'Yearly';
     const SETTLEMENT_INVOICE_FREQUENCY_MONTHLY = 'Monthly';
+    const SETTLEMENT_INVOICE_FREQUENCY_YEARLY = 'Yearly';
     const SETTLEMENT_INVOICE_FREQUENCY_NONE = 'None';
     const SETTLEMENT_INVOICE_FREQUENCY_SEMIMONTHLY = 'Semimonthly';
     const FINAL_SETTLEMENT_REASON_EOS = 'EOS';
@@ -503,8 +503,8 @@ class EcedoERPCRMInterfaceApiInvoice implements ModelInterface, ArrayAccess
     public function getSettlementInvoiceFrequencyAllowableValues()
     {
         return [
-            self::SETTLEMENT_INVOICE_FREQUENCY_YEARLY,
             self::SETTLEMENT_INVOICE_FREQUENCY_MONTHLY,
+            self::SETTLEMENT_INVOICE_FREQUENCY_YEARLY,
             self::SETTLEMENT_INVOICE_FREQUENCY_NONE,
             self::SETTLEMENT_INVOICE_FREQUENCY_SEMIMONTHLY,
         ];

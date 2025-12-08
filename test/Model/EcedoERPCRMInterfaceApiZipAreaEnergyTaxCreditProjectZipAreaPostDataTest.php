@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipAreaPostDataTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipAreaPostData
+ * @description Bevat de gegevens voor een postcodegebied dat onder een postcoderoosproject valt.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

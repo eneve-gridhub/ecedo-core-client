@@ -84,27 +84,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataTest exte
     }
 
     /**
-     * Test attribute "mandate_id"
-     */
-    public function testPropertyMandateId()
-    {
-    }
-
-    /**
-     * Test attribute "iban_key"
-     */
-    public function testPropertyIbanKey()
-    {
-    }
-
-    /**
-     * Test attribute "birth_day_key"
-     */
-    public function testPropertyBirthDayKey()
-    {
-    }
-
-    /**
      * Test attribute "organization_type"
      */
     public function testPropertyOrganizationType()

@@ -196,6 +196,13 @@ class EcedoERPCRMInterfaceApiSettlementEventTest extends \PHPUnit_Framework_Test
     }
 
     /**
+     * Test attribute "deadline"
+     */
+    public function testPropertyDeadline()
+    {
+    }
+
+    /**
      * Test attribute "comment"
      */
     public function testPropertyComment()

@@ -60,6 +60,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'process_settings' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiOrganizationPostDataProcessSettingsPostData',
         'organization_type' => 'string',
         'organization_sub_type' => 'string',
+        'organization_category' => 'string',
         'client_reference' => 'string',
         'sales_reference' => 'string',
         'channel' => 'string',
@@ -107,6 +108,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'process_settings' => null,
         'organization_type' => null,
         'organization_sub_type' => null,
+        'organization_category' => null,
         'client_reference' => null,
         'sales_reference' => null,
         'channel' => null,
@@ -175,6 +177,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'process_settings' => 'ProcessSettings',
         'organization_type' => 'OrganizationType',
         'organization_sub_type' => 'OrganizationSubType',
+        'organization_category' => 'OrganizationCategory',
         'client_reference' => 'ClientReference',
         'sales_reference' => 'SalesReference',
         'channel' => 'Channel',
@@ -222,6 +225,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'process_settings' => 'setProcessSettings',
         'organization_type' => 'setOrganizationType',
         'organization_sub_type' => 'setOrganizationSubType',
+        'organization_category' => 'setOrganizationCategory',
         'client_reference' => 'setClientReference',
         'sales_reference' => 'setSalesReference',
         'channel' => 'setChannel',
@@ -269,6 +273,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         'process_settings' => 'getProcessSettings',
         'organization_type' => 'getOrganizationType',
         'organization_sub_type' => 'getOrganizationSubType',
+        'organization_category' => 'getOrganizationCategory',
         'client_reference' => 'getClientReference',
         'sales_reference' => 'getSalesReference',
         'channel' => 'getChannel',
@@ -352,6 +357,12 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     const ORGANIZATION_TYPE_CONSUMER = 'Consumer';
     const ORGANIZATION_SUB_TYPE_RESELLER = 'Reseller';
     const ORGANIZATION_SUB_TYPE_PRODUCER = 'Producer';
+    const ORGANIZATION_CATEGORY_PROTECTED_CONSUMER = 'ProtectedConsumer';
+    const ORGANIZATION_CATEGORY_REGULAR_CONSUMER = 'RegularConsumer';
+    const ORGANIZATION_CATEGORY_MICRO_BUSINESS = 'MicroBusiness';
+    const ORGANIZATION_CATEGORY_SMALL_BUSINESS = 'SmallBusiness';
+    const ORGANIZATION_CATEGORY_MEDIUM_BUSINESS = 'MediumBusiness';
+    const ORGANIZATION_CATEGORY_LARGE_BUSINESS = 'LargeBusiness';
     const PREFERRED_CONTACT_METHOD_EMAIL = 'Email';
     const PREFERRED_CONTACT_METHOD_MAIL = 'Mail';
     
@@ -388,6 +399,23 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
      *
      * @return string[]
      */
+    public function getOrganizationCategoryAllowableValues()
+    {
+        return [
+            self::ORGANIZATION_CATEGORY_PROTECTED_CONSUMER,
+            self::ORGANIZATION_CATEGORY_REGULAR_CONSUMER,
+            self::ORGANIZATION_CATEGORY_MICRO_BUSINESS,
+            self::ORGANIZATION_CATEGORY_SMALL_BUSINESS,
+            self::ORGANIZATION_CATEGORY_MEDIUM_BUSINESS,
+            self::ORGANIZATION_CATEGORY_LARGE_BUSINESS,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
     public function getPreferredContactMethodAllowableValues()
     {
         return [
@@ -415,6 +443,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         $this->container['process_settings'] = isset($data['process_settings']) ? $data['process_settings'] : null;
         $this->container['organization_type'] = isset($data['organization_type']) ? $data['organization_type'] : null;
         $this->container['organization_sub_type'] = isset($data['organization_sub_type']) ? $data['organization_sub_type'] : null;
+        $this->container['organization_category'] = isset($data['organization_category']) ? $data['organization_category'] : null;
         $this->container['client_reference'] = isset($data['client_reference']) ? $data['client_reference'] : null;
         $this->container['sales_reference'] = isset($data['sales_reference']) ? $data['sales_reference'] : null;
         $this->container['channel'] = isset($data['channel']) ? $data['channel'] : null;
@@ -474,6 +503,14 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
         if (!is_null($this->container['organization_sub_type']) && !in_array($this->container['organization_sub_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'organization_sub_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getOrganizationCategoryAllowableValues();
+        if (!is_null($this->container['organization_category']) && !in_array($this->container['organization_category'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'organization_category', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -587,6 +624,39 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
             );
         }
         $this->container['organization_sub_type'] = $organization_sub_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_category
+     *
+     * @return string
+     */
+    public function getOrganizationCategory()
+    {
+        return $this->container['organization_category'];
+    }
+
+    /**
+     * Sets organization_category
+     *
+     * @param string $organization_category Optioneel veld waarmee de klantcategorie volgens de Energiewet vastgelegd kan worden
+     *
+     * @return $this
+     */
+    public function setOrganizationCategory($organization_category)
+    {
+        $allowedValues = $this->getOrganizationCategoryAllowableValues();
+        if (!is_null($organization_category) && !in_array($organization_category, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'organization_category', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['organization_category'] = $organization_category;
 
         return $this;
     }

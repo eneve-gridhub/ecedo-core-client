@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDtoTest
+ * EcedoERPCRMInterfaceApiContractPostDataTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDtoTest Class Doc Comment
+ * EcedoERPCRMInterfaceApiContractPostDataTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto
+ * @description EcedoERPCRMInterfaceApiContractPostData
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDtoTest extends \PHPUnit_Framework_TestCase
+class EcedoERPCRMInterfaceApiContractPostDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,51 +70,23 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDtoTest extends \PHPUnit
     }
 
     /**
-     * Test "EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto"
+     * Test "EcedoERPCRMInterfaceApiContractPostData"
      */
-    public function testEcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDto()
+    public function testEcedoERPCRMInterfaceApiContractPostData()
     {
     }
 
     /**
-     * Test attribute "value"
+     * Test attribute "agreement_date"
      */
-    public function testPropertyValue()
+    public function testPropertyAgreementDate()
     {
     }
 
     /**
-     * Test attribute "value_ldn"
+     * Test attribute "reference"
      */
-    public function testPropertyValueLdn()
-    {
-    }
-
-    /**
-     * Test attribute "value_odn"
-     */
-    public function testPropertyValueOdn()
-    {
-    }
-
-    /**
-     * Test attribute "telemetry_id"
-     */
-    public function testPropertyTelemetryId()
-    {
-    }
-
-    /**
-     * Test attribute "connection_id"
-     */
-    public function testPropertyConnectionId()
-    {
-    }
-
-    /**
-     * Test attribute "ean"
-     */
-    public function testPropertyEan()
+    public function testPropertyReference()
     {
     }
 
@@ -133,16 +105,16 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryApiDtoTest extends \PHPUnit
     }
 
     /**
-     * Test attribute "unit"
+     * Test attribute "proposition_reference"
      */
-    public function testPropertyUnit()
+    public function testPropertyPropositionReference()
     {
     }
 
     /**
-     * Test attribute "unit_localized"
+     * Test attribute "comment"
      */
-    public function testPropertyUnitLocalized()
+    public function testPropertyComment()
     {
     }
 }

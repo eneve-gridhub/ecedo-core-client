@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * EcedoERPCRMInterfaceApiConnectionUsagePostDataTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiConnectionUsagePostData
+ * @description Bevat de gegevens voor het aanmaken van een ConnectionUsage (Volume).
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

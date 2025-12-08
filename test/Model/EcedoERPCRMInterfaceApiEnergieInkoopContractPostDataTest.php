@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiClientKeyCreateDataTest
+ * EcedoERPCRMInterfaceApiEnergieInkoopContractPostDataTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * EcedoERPCRMInterfaceApiClientKeyCreateDataTest Class Doc Comment
+ * EcedoERPCRMInterfaceApiEnergieInkoopContractPostDataTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiClientKeyCreateData
+ * @description EcedoERPCRMInterfaceApiEnergieInkoopContractPostData
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiClientKeyCreateDataTest extends \PHPUnit_Framework_TestCase
+class EcedoERPCRMInterfaceApiEnergieInkoopContractPostDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,37 +70,72 @@ class EcedoERPCRMInterfaceApiClientKeyCreateDataTest extends \PHPUnit_Framework_
     }
 
     /**
-     * Test "EcedoERPCRMInterfaceApiClientKeyCreateData"
+     * Test "EcedoERPCRMInterfaceApiEnergieInkoopContractPostData"
      */
-    public function testEcedoERPCRMInterfaceApiClientKeyCreateData()
+    public function testEcedoERPCRMInterfaceApiEnergieInkoopContractPostData()
     {
     }
 
     /**
-     * Test attribute "external_reference"
+     * Test attribute "agreement_date"
      */
-    public function testPropertyExternalReference()
+    public function testPropertyAgreementDate()
     {
     }
 
     /**
-     * Test attribute "birth_day_key"
+     * Test attribute "start_date"
      */
-    public function testPropertyBirthDayKey()
+    public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "iban_key"
+     * Test attribute "end_date"
      */
-    public function testPropertyIbanKey()
+    public function testPropertyEndDate()
     {
     }
 
     /**
-     * Test attribute "company_label_id"
+     * Test attribute "proposition_reference"
      */
-    public function testPropertyCompanyLabelId()
+    public function testPropertyPropositionReference()
+    {
+    }
+
+    /**
+     * Test attribute "has_energy_tax_type"
+     */
+    public function testPropertyHasEnergyTaxType()
+    {
+    }
+
+    /**
+     * Test attribute "reason"
+     */
+    public function testPropertyReason()
+    {
+    }
+
+    /**
+     * Test attribute "maintenance_cost_discount_price"
+     */
+    public function testPropertyMaintenanceCostDiscountPrice()
+    {
+    }
+
+    /**
+     * Test attribute "purchase_order_number"
+     */
+    public function testPropertyPurchaseOrderNumber()
+    {
+    }
+
+    /**
+     * Test attribute "comment"
+     */
+    public function testPropertyComment()
     {
     }
 }

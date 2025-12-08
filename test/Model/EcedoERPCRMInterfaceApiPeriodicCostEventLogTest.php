@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * EcedoERPCRMInterfaceApiPeriodicCostEventLogTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiPeriodicCostEventLog
+ * @description The PeriodicCostEventLog class represents a comprehensive data structure for exchanging periodic cost event data.&lt;br /&gt;  The Dutch translation is VKO or verbruik- en kostenoverzicht.&lt;br /&gt;  The is class contains the data for a specific connection and a specific month.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

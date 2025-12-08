@@ -112,13 +112,6 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
-     * Test attribute "organization_invoice_period_prices"
-     */
-    public function testPropertyOrganizationInvoicePeriodPrices()
-    {
-    }
-
-    /**
      * Test attribute "organization_invoice_termination_fees"
      */
     public function testPropertyOrganizationInvoiceTerminationFees()
@@ -542,6 +535,20 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
      * Test attribute "organization_organization_sub_type"
      */
     public function testPropertyOrganizationOrganizationSubType()
+    {
+    }
+
+    /**
+     * Test attribute "organization_category"
+     */
+    public function testPropertyOrganizationCategory()
+    {
+    }
+
+    /**
+     * Test attribute "organization_category_localized"
+     */
+    public function testPropertyOrganizationCategoryLocalized()
     {
     }
 

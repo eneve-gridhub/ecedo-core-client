@@ -196,6 +196,13 @@ class EcedoERPCRMInterfaceApiSwitchEventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "deadline"
+     */
+    public function testPropertyDeadline()
+    {
+    }
+
+    /**
      * Test attribute "comment"
      */
     public function testPropertyComment()

@@ -119,6 +119,13 @@ class EcedoERPCRMInterfaceApiResellerDetailPutDataTest extends \PHPUnit_Framewor
     }
 
     /**
+     * Test attribute "email_address_sender"
+     */
+    public function testPropertyEmailAddressSender()
+    {
+    }
+
+    /**
      * Test attribute "website"
      */
     public function testPropertyWebsite()
@@ -129,6 +136,13 @@ class EcedoERPCRMInterfaceApiResellerDetailPutDataTest extends \PHPUnit_Framewor
      * Test attribute "kv_k_number"
      */
     public function testPropertyKvKNumber()
+    {
+    }
+
+    /**
+     * Test attribute "entity_properties"
+     */
+    public function testPropertyEntityProperties()
     {
     }
 }

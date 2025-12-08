@@ -355,4 +355,11 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
     public function testPropertyRowClassification()
     {
     }
+
+    /**
+     * Test attribute "row_connection_ean"
+     */
+    public function testPropertyRowConnectionEan()
+    {
+    }
 }

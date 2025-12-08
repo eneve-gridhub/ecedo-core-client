@@ -117,6 +117,8 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         'company_label_id' => 'string',
         'organization_id' => 'string',
         'organization_organization_sub_type' => 'string',
+        'organization_category' => 'string',
+        'organization_category_localized' => 'string',
         'organization_reference' => 'string',
         'organization_client_reference' => 'string',
         'organization_origin_reference' => 'string',
@@ -239,6 +241,8 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         'company_label_id' => null,
         'organization_id' => null,
         'organization_organization_sub_type' => null,
+        'organization_category' => null,
+        'organization_category_localized' => null,
         'organization_reference' => null,
         'organization_client_reference' => null,
         'organization_origin_reference' => null,
@@ -382,6 +386,8 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         'company_label_id' => 'CompanyLabel_Id',
         'organization_id' => 'Organization_Id',
         'organization_organization_sub_type' => 'Organization_OrganizationSubType',
+        'organization_category' => 'Organization_Category',
+        'organization_category_localized' => 'Organization_CategoryLocalized',
         'organization_reference' => 'Organization_Reference',
         'organization_client_reference' => 'Organization_ClientReference',
         'organization_origin_reference' => 'Organization_OriginReference',
@@ -504,6 +510,8 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         'company_label_id' => 'setCompanyLabelId',
         'organization_id' => 'setOrganizationId',
         'organization_organization_sub_type' => 'setOrganizationOrganizationSubType',
+        'organization_category' => 'setOrganizationCategory',
+        'organization_category_localized' => 'setOrganizationCategoryLocalized',
         'organization_reference' => 'setOrganizationReference',
         'organization_client_reference' => 'setOrganizationClientReference',
         'organization_origin_reference' => 'setOrganizationOriginReference',
@@ -626,6 +634,8 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         'company_label_id' => 'getCompanyLabelId',
         'organization_id' => 'getOrganizationId',
         'organization_organization_sub_type' => 'getOrganizationOrganizationSubType',
+        'organization_category' => 'getOrganizationCategory',
+        'organization_category_localized' => 'getOrganizationCategoryLocalized',
         'organization_reference' => 'getOrganizationReference',
         'organization_client_reference' => 'getOrganizationClientReference',
         'organization_origin_reference' => 'getOrganizationOriginReference',
@@ -802,6 +812,8 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['organization_organization_sub_type'] = isset($data['organization_organization_sub_type']) ? $data['organization_organization_sub_type'] : null;
+        $this->container['organization_category'] = isset($data['organization_category']) ? $data['organization_category'] : null;
+        $this->container['organization_category_localized'] = isset($data['organization_category_localized']) ? $data['organization_category_localized'] : null;
         $this->container['organization_reference'] = isset($data['organization_reference']) ? $data['organization_reference'] : null;
         $this->container['organization_client_reference'] = isset($data['organization_client_reference']) ? $data['organization_client_reference'] : null;
         $this->container['organization_origin_reference'] = isset($data['organization_origin_reference']) ? $data['organization_origin_reference'] : null;
@@ -2318,6 +2330,54 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
     public function setOrganizationOrganizationSubType($organization_organization_sub_type)
     {
         $this->container['organization_organization_sub_type'] = $organization_organization_sub_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_category
+     *
+     * @return string
+     */
+    public function getOrganizationCategory()
+    {
+        return $this->container['organization_category'];
+    }
+
+    /**
+     * Sets organization_category
+     *
+     * @param string $organization_category organization_category
+     *
+     * @return $this
+     */
+    public function setOrganizationCategory($organization_category)
+    {
+        $this->container['organization_category'] = $organization_category;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_category_localized
+     *
+     * @return string
+     */
+    public function getOrganizationCategoryLocalized()
+    {
+        return $this->container['organization_category_localized'];
+    }
+
+    /**
+     * Sets organization_category_localized
+     *
+     * @param string $organization_category_localized organization_category_localized
+     *
+     * @return $this
+     */
+    public function setOrganizationCategoryLocalized($organization_category_localized)
+    {
+        $this->container['organization_category_localized'] = $organization_category_localized;
 
         return $this;
     }

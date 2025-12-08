@@ -124,4 +124,32 @@ class EcedoERPCRMInterfaceReportModelAnnualStandardUsageDtoTest extends \PHPUnit
     public function testPropertyAnnualStandardUsageGasUsage()
     {
     }
+
+    /**
+     * Test attribute "annual_standard_usage_has_electricity"
+     */
+    public function testPropertyAnnualStandardUsageHasElectricity()
+    {
+    }
+
+    /**
+     * Test attribute "annual_standard_usage_has_gas"
+     */
+    public function testPropertyAnnualStandardUsageHasGas()
+    {
+    }
+
+    /**
+     * Test attribute "annual_standard_usage_has_odn"
+     */
+    public function testPropertyAnnualStandardUsageHasOdn()
+    {
+    }
+
+    /**
+     * Test attribute "annual_standard_usage_usage_type"
+     */
+    public function testPropertyAnnualStandardUsageUsageType()
+    {
+    }
 }

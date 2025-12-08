@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiClientMandateTest
+ * EcedoERPCRMInterfaceApiActiveBillingItemGroupPutDataTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * EcedoERPCRMInterfaceApiClientMandateTest Class Doc Comment
+ * EcedoERPCRMInterfaceApiActiveBillingItemGroupPutDataTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiClientMandate
+ * @description EcedoERPCRMInterfaceApiActiveBillingItemGroupPutData
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiClientMandateTest extends \PHPUnit_Framework_TestCase
+class EcedoERPCRMInterfaceApiActiveBillingItemGroupPutDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,72 +70,37 @@ class EcedoERPCRMInterfaceApiClientMandateTest extends \PHPUnit_Framework_TestCa
     }
 
     /**
-     * Test "EcedoERPCRMInterfaceApiClientMandate"
+     * Test "EcedoERPCRMInterfaceApiActiveBillingItemGroupPutData"
      */
-    public function testEcedoERPCRMInterfaceApiClientMandate()
+    public function testEcedoERPCRMInterfaceApiActiveBillingItemGroupPutData()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "description"
      */
-    public function testPropertyName()
+    public function testPropertyDescription()
     {
     }
 
     /**
-     * Test attribute "date"
+     * Test attribute "start_date"
      */
-    public function testPropertyDate()
+    public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "valid_until"
+     * Test attribute "end_date"
      */
-    public function testPropertyValidUntil()
+    public function testPropertyEndDate()
     {
     }
 
     /**
-     * Test attribute "purpose"
+     * Test attribute "ledger"
      */
-    public function testPropertyPurpose()
-    {
-    }
-
-    /**
-     * Test attribute "manner"
-     */
-    public function testPropertyManner()
-    {
-    }
-
-    /**
-     * Test attribute "zip_code"
-     */
-    public function testPropertyZipCode()
-    {
-    }
-
-    /**
-     * Test attribute "number"
-     */
-    public function testPropertyNumber()
-    {
-    }
-
-    /**
-     * Test attribute "addition"
-     */
-    public function testPropertyAddition()
-    {
-    }
-
-    /**
-     * Test attribute "comment"
-     */
-    public function testPropertyComment()
+    public function testPropertyLedger()
     {
     }
 }

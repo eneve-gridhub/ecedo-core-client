@@ -603,7 +603,7 @@ class EcedoERPCRMInterfaceApiCustomInvoiceRowPostData implements ModelInterface,
     /**
      * Sets custom_price_component_invoice_row_description
      *
-     * @param string $custom_price_component_invoice_row_description Met dit optionele veld kan de standaard omschrijving vastgelegd bij het handmatige prijscomponent overruled worden. De omschrijving wordt de omschrijving van de factuurregel op de factuur.  Het veld mag geen lege string bevatten.
+     * @param string $custom_price_component_invoice_row_description Met dit optionele veld kan de standaard omschrijving vastgelegd bij het instelbare prijscomponent overruled worden. De omschrijving wordt de omschrijving van de factuurregel op de factuur.  Het veld mag geen lege string bevatten.
      *
      * @return $this
      */

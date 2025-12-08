@@ -77,16 +77,16 @@ class EcedoERPCRMInterfaceApiMeterReadingPostDataTest extends \PHPUnit_Framework
     }
 
     /**
-     * Test attribute "event_id"
+     * Test attribute "event"
      */
-    public function testPropertyEventId()
+    public function testPropertyEvent()
     {
     }
 
     /**
-     * Test attribute "event"
+     * Test attribute "event_id"
      */
-    public function testPropertyEvent()
+    public function testPropertyEventId()
     {
     }
 

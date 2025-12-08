@@ -168,6 +168,20 @@ class EcedoERPCRMInterfaceApiInvoicesDataSetSummaryDtoTest extends \PHPUnit_Fram
     }
 
     /**
+     * Test attribute "organization_category"
+     */
+    public function testPropertyOrganizationCategory()
+    {
+    }
+
+    /**
+     * Test attribute "organization_category_localized"
+     */
+    public function testPropertyOrganizationCategoryLocalized()
+    {
+    }
+
+    /**
      * Test attribute "organization_reference"
      */
     public function testPropertyOrganizationReference()

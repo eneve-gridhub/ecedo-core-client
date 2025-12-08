@@ -74,7 +74,7 @@ class SysPricesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysPricesGetByConnection
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de aansluiting..
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting..
      *
      */
     public function testSysPricesGetByConnection()
@@ -84,7 +84,7 @@ class SysPricesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysPricesGetByContract
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract..
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract..
      *
      */
     public function testSysPricesGetByContract()
@@ -94,7 +94,7 @@ class SysPricesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysPricesGetByPropositionId
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de propositie..
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie..
      *
      */
     public function testSysPricesGetByPropositionId()
@@ -104,7 +104,7 @@ class SysPricesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysPricesGetByPropositionReference
      *
-     * Ophalen van de gecombineernde prijzen geldig op de meegegeven dag voor de propositie op basis van de propositiereferentie..
+     * Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie op basis van de propositiereferentie..
      *
      */
     public function testSysPricesGetByPropositionReference()

@@ -166,4 +166,25 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function testPropertyGridOperatorAddressCity()
     {
     }
+
+    /**
+     * Test attribute "grid_operator_phone_number"
+     */
+    public function testPropertyGridOperatorPhoneNumber()
+    {
+    }
+
+    /**
+     * Test attribute "grid_operator_email_address"
+     */
+    public function testPropertyGridOperatorEmailAddress()
+    {
+    }
+
+    /**
+     * Test attribute "grid_operator_website"
+     */
+    public function testPropertyGridOperatorWebsite()
+    {
+    }
 }

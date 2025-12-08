@@ -69,7 +69,10 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'grid_operator_address_address_line2' => 'string',
         'grid_operator_address_full_address' => 'string',
         'grid_operator_address_zip_code' => 'string',
-        'grid_operator_address_city' => 'string'
+        'grid_operator_address_city' => 'string',
+        'grid_operator_phone_number' => 'string',
+        'grid_operator_email_address' => 'string',
+        'grid_operator_website' => 'string'
     ];
 
     /**
@@ -90,7 +93,10 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'grid_operator_address_address_line2' => null,
         'grid_operator_address_full_address' => null,
         'grid_operator_address_zip_code' => null,
-        'grid_operator_address_city' => null
+        'grid_operator_address_city' => null,
+        'grid_operator_phone_number' => null,
+        'grid_operator_email_address' => null,
+        'grid_operator_website' => null
     ];
 
     /**
@@ -132,7 +138,10 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'grid_operator_address_address_line2' => 'GridOperator_Address_AddressLine2',
         'grid_operator_address_full_address' => 'GridOperator_Address_FullAddress',
         'grid_operator_address_zip_code' => 'GridOperator_Address_ZipCode',
-        'grid_operator_address_city' => 'GridOperator_Address_City'
+        'grid_operator_address_city' => 'GridOperator_Address_City',
+        'grid_operator_phone_number' => 'GridOperator_PhoneNumber',
+        'grid_operator_email_address' => 'GridOperator_EmailAddress',
+        'grid_operator_website' => 'GridOperator_Website'
     ];
 
     /**
@@ -153,7 +162,10 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'grid_operator_address_address_line2' => 'setGridOperatorAddressAddressLine2',
         'grid_operator_address_full_address' => 'setGridOperatorAddressFullAddress',
         'grid_operator_address_zip_code' => 'setGridOperatorAddressZipCode',
-        'grid_operator_address_city' => 'setGridOperatorAddressCity'
+        'grid_operator_address_city' => 'setGridOperatorAddressCity',
+        'grid_operator_phone_number' => 'setGridOperatorPhoneNumber',
+        'grid_operator_email_address' => 'setGridOperatorEmailAddress',
+        'grid_operator_website' => 'setGridOperatorWebsite'
     ];
 
     /**
@@ -174,7 +186,10 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'grid_operator_address_address_line2' => 'getGridOperatorAddressAddressLine2',
         'grid_operator_address_full_address' => 'getGridOperatorAddressFullAddress',
         'grid_operator_address_zip_code' => 'getGridOperatorAddressZipCode',
-        'grid_operator_address_city' => 'getGridOperatorAddressCity'
+        'grid_operator_address_city' => 'getGridOperatorAddressCity',
+        'grid_operator_phone_number' => 'getGridOperatorPhoneNumber',
+        'grid_operator_email_address' => 'getGridOperatorEmailAddress',
+        'grid_operator_website' => 'getGridOperatorWebsite'
     ];
 
     /**
@@ -250,6 +265,9 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         $this->container['grid_operator_address_full_address'] = isset($data['grid_operator_address_full_address']) ? $data['grid_operator_address_full_address'] : null;
         $this->container['grid_operator_address_zip_code'] = isset($data['grid_operator_address_zip_code']) ? $data['grid_operator_address_zip_code'] : null;
         $this->container['grid_operator_address_city'] = isset($data['grid_operator_address_city']) ? $data['grid_operator_address_city'] : null;
+        $this->container['grid_operator_phone_number'] = isset($data['grid_operator_phone_number']) ? $data['grid_operator_phone_number'] : null;
+        $this->container['grid_operator_email_address'] = isset($data['grid_operator_email_address']) ? $data['grid_operator_email_address'] : null;
+        $this->container['grid_operator_website'] = isset($data['grid_operator_website']) ? $data['grid_operator_website'] : null;
     }
 
     /**
@@ -584,6 +602,78 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setGridOperatorAddressCity($grid_operator_address_city)
     {
         $this->container['grid_operator_address_city'] = $grid_operator_address_city;
+
+        return $this;
+    }
+
+    /**
+     * Gets grid_operator_phone_number
+     *
+     * @return string
+     */
+    public function getGridOperatorPhoneNumber()
+    {
+        return $this->container['grid_operator_phone_number'];
+    }
+
+    /**
+     * Sets grid_operator_phone_number
+     *
+     * @param string $grid_operator_phone_number grid_operator_phone_number
+     *
+     * @return $this
+     */
+    public function setGridOperatorPhoneNumber($grid_operator_phone_number)
+    {
+        $this->container['grid_operator_phone_number'] = $grid_operator_phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets grid_operator_email_address
+     *
+     * @return string
+     */
+    public function getGridOperatorEmailAddress()
+    {
+        return $this->container['grid_operator_email_address'];
+    }
+
+    /**
+     * Sets grid_operator_email_address
+     *
+     * @param string $grid_operator_email_address grid_operator_email_address
+     *
+     * @return $this
+     */
+    public function setGridOperatorEmailAddress($grid_operator_email_address)
+    {
+        $this->container['grid_operator_email_address'] = $grid_operator_email_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets grid_operator_website
+     *
+     * @return string
+     */
+    public function getGridOperatorWebsite()
+    {
+        return $this->container['grid_operator_website'];
+    }
+
+    /**
+     * Sets grid_operator_website
+     *
+     * @param string $grid_operator_website grid_operator_website
+     *
+     * @return $this
+     */
+    public function setGridOperatorWebsite($grid_operator_website)
+    {
+        $this->container['grid_operator_website'] = $grid_operator_website;
 
         return $this;
     }

@@ -132,12 +132,92 @@ class SysMeansOfProductionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysMeansOfProductionsGetMeansOfProductionConnectionServiceContract
+     *
+     * Ophalen van een productiemiddelaansluiting service contract op basis van contractId.
+     *
+     */
+    public function testSysMeansOfProductionsGetMeansOfProductionConnectionServiceContract()
+    {
+    }
+
+    /**
+     * Test case for sysMeansOfProductionsGetMeansOfProductionConnectionServiceContracts
+     *
+     * Ophalen van alle service contracten voor een productiemiddelaansluiting op basis van meansOfProductionConnectionId.
+     *
+     */
+    public function testSysMeansOfProductionsGetMeansOfProductionConnectionServiceContracts()
+    {
+    }
+
+    /**
      * Test case for sysMeansOfProductionsGetMeansOfProductionConnections
      *
      * Opvragen productiemiddelaansluitingen van een klant.
      *
      */
     public function testSysMeansOfProductionsGetMeansOfProductionConnections()
+    {
+    }
+
+    /**
+     * Test case for sysMeansOfProductionsPost
+     *
+     * Aanmaken van een productiemiddel op basis van verbruik.
+     *
+     */
+    public function testSysMeansOfProductionsPost()
+    {
+    }
+
+    /**
+     * Test case for sysMeansOfProductionsPostMeansOfProductionCertiQEan
+     *
+     * Aanmaken van een CertiQEan voor een productiemiddel.
+     *
+     */
+    public function testSysMeansOfProductionsPostMeansOfProductionCertiQEan()
+    {
+    }
+
+    /**
+     * Test case for sysMeansOfProductionsPostMeansOfProductionConnection
+     *
+     * Aanmaken van een aansluiting voor een productiemiddel.
+     *
+     */
+    public function testSysMeansOfProductionsPostMeansOfProductionConnection()
+    {
+    }
+
+    /**
+     * Test case for sysMeansOfProductionsPutMeansOfProduction
+     *
+     * Wijzigen van een productiemiddel.
+     *
+     */
+    public function testSysMeansOfProductionsPutMeansOfProduction()
+    {
+    }
+
+    /**
+     * Test case for sysMeansOfProductionsPutMeansOfProductionCertiqEan
+     *
+     * Wijzigen van een CertiQEan voor een productiemiddel.
+     *
+     */
+    public function testSysMeansOfProductionsPutMeansOfProductionCertiqEan()
+    {
+    }
+
+    /**
+     * Test case for sysMeansOfProductionsPutMeansOfProductionConnection
+     *
+     * Wijzigen van een aansluiting voor een productiemiddel.
+     *
+     */
+    public function testSysMeansOfProductionsPutMeansOfProductionConnection()
     {
     }
 }

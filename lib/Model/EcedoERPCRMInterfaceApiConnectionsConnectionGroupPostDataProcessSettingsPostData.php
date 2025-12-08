@@ -58,9 +58,6 @@ class EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostDataProcessSettingsPo
       */
     protected static $swaggerTypes = [
         'use_cer_lookup' => 'bool',
-        'mandate_id' => 'string',
-        'iban_key' => 'string',
-        'birth_day_key' => 'string',
         'cer_pre_notified' => 'bool',
         'skip_cooling_down_period' => 'bool',
         'start_energy_application_flow' => 'bool',
@@ -75,9 +72,6 @@ class EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostDataProcessSettingsPo
       */
     protected static $swaggerFormats = [
         'use_cer_lookup' => null,
-        'mandate_id' => null,
-        'iban_key' => null,
-        'birth_day_key' => null,
         'cer_pre_notified' => null,
         'skip_cooling_down_period' => null,
         'start_energy_application_flow' => null,
@@ -113,9 +107,6 @@ class EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostDataProcessSettingsPo
      */
     protected static $attributeMap = [
         'use_cer_lookup' => 'UseCERLookup',
-        'mandate_id' => 'MandateId',
-        'iban_key' => 'IBANKey',
-        'birth_day_key' => 'BirthDayKey',
         'cer_pre_notified' => 'CERPreNotified',
         'skip_cooling_down_period' => 'SkipCoolingDownPeriod',
         'start_energy_application_flow' => 'StartEnergyApplicationFlow',
@@ -130,9 +121,6 @@ class EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostDataProcessSettingsPo
      */
     protected static $setters = [
         'use_cer_lookup' => 'setUseCerLookup',
-        'mandate_id' => 'setMandateId',
-        'iban_key' => 'setIbanKey',
-        'birth_day_key' => 'setBirthDayKey',
         'cer_pre_notified' => 'setCerPreNotified',
         'skip_cooling_down_period' => 'setSkipCoolingDownPeriod',
         'start_energy_application_flow' => 'setStartEnergyApplicationFlow',
@@ -147,9 +135,6 @@ class EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostDataProcessSettingsPo
      */
     protected static $getters = [
         'use_cer_lookup' => 'getUseCerLookup',
-        'mandate_id' => 'getMandateId',
-        'iban_key' => 'getIbanKey',
-        'birth_day_key' => 'getBirthDayKey',
         'cer_pre_notified' => 'getCerPreNotified',
         'skip_cooling_down_period' => 'getSkipCoolingDownPeriod',
         'start_energy_application_flow' => 'getStartEnergyApplicationFlow',
@@ -218,9 +203,6 @@ class EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostDataProcessSettingsPo
     public function __construct(array $data = null)
     {
         $this->container['use_cer_lookup'] = isset($data['use_cer_lookup']) ? $data['use_cer_lookup'] : null;
-        $this->container['mandate_id'] = isset($data['mandate_id']) ? $data['mandate_id'] : null;
-        $this->container['iban_key'] = isset($data['iban_key']) ? $data['iban_key'] : null;
-        $this->container['birth_day_key'] = isset($data['birth_day_key']) ? $data['birth_day_key'] : null;
         $this->container['cer_pre_notified'] = isset($data['cer_pre_notified']) ? $data['cer_pre_notified'] : null;
         $this->container['skip_cooling_down_period'] = isset($data['skip_cooling_down_period']) ? $data['skip_cooling_down_period'] : null;
         $this->container['start_energy_application_flow'] = isset($data['start_energy_application_flow']) ? $data['start_energy_application_flow'] : null;
@@ -272,78 +254,6 @@ class EcedoERPCRMInterfaceApiConnectionsConnectionGroupPostDataProcessSettingsPo
     public function setUseCerLookup($use_cer_lookup)
     {
         $this->container['use_cer_lookup'] = $use_cer_lookup;
-
-        return $this;
-    }
-
-    /**
-     * Gets mandate_id
-     *
-     * @return string
-     */
-    public function getMandateId()
-    {
-        return $this->container['mandate_id'];
-    }
-
-    /**
-     * Sets mandate_id
-     *
-     * @param string $mandate_id mandate_id
-     *
-     * @return $this
-     */
-    public function setMandateId($mandate_id)
-    {
-        $this->container['mandate_id'] = $mandate_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets iban_key
-     *
-     * @return string
-     */
-    public function getIbanKey()
-    {
-        return $this->container['iban_key'];
-    }
-
-    /**
-     * Sets iban_key
-     *
-     * @param string $iban_key iban_key
-     *
-     * @return $this
-     */
-    public function setIbanKey($iban_key)
-    {
-        $this->container['iban_key'] = $iban_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets birth_day_key
-     *
-     * @return string
-     */
-    public function getBirthDayKey()
-    {
-        return $this->container['birth_day_key'];
-    }
-
-    /**
-     * Sets birth_day_key
-     *
-     * @param string $birth_day_key birth_day_key
-     *
-     * @return $this
-     */
-    public function setBirthDayKey($birth_day_key)
-    {
-        $this->container['birth_day_key'] = $birth_day_key;
 
         return $this;
     }

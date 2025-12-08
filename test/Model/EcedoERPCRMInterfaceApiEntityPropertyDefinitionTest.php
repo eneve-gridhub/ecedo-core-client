@@ -131,4 +131,11 @@ class EcedoERPCRMInterfaceApiEntityPropertyDefinitionTest extends \PHPUnit_Frame
     public function testPropertyRequired()
     {
     }
+
+    /**
+     * Test attribute "default_value"
+     */
+    public function testPropertyDefaultValue()
+    {
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiUpdateMeteringPointPostDataTest
+ * EcedoERPCRMInterfaceApiCompanyLabelTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * EcedoERPCRMInterfaceApiUpdateMeteringPointPostDataTest Class Doc Comment
+ * EcedoERPCRMInterfaceApiCompanyLabelTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiUpdateMeteringPointPostData
+ * @description EcedoERPCRMInterfaceApiCompanyLabel
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiUpdateMeteringPointPostDataTest extends \PHPUnit_Framework_TestCase
+class EcedoERPCRMInterfaceApiCompanyLabelTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,37 +70,79 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostDataTest extends \PHPUnit_Fr
     }
 
     /**
-     * Test "EcedoERPCRMInterfaceApiUpdateMeteringPointPostData"
+     * Test "EcedoERPCRMInterfaceApiCompanyLabel"
      */
-    public function testEcedoERPCRMInterfaceApiUpdateMeteringPointPostData()
+    public function testEcedoERPCRMInterfaceApiCompanyLabel()
     {
     }
 
     /**
-     * Test attribute "mandate_id"
+     * Test attribute "company_label_id"
      */
-    public function testPropertyMandateId()
+    public function testPropertyCompanyLabelId()
     {
     }
 
     /**
-     * Test attribute "iban_key"
+     * Test attribute "label_name"
      */
-    public function testPropertyIbanKey()
+    public function testPropertyLabelName()
     {
     }
 
     /**
-     * Test attribute "birth_day_key"
+     * Test attribute "kv_k_number"
      */
-    public function testPropertyBirthDayKey()
+    public function testPropertyKvKNumber()
     {
     }
 
     /**
-     * Test attribute "cer_pre_notified"
+     * Test attribute "vat_number"
      */
-    public function testPropertyCerPreNotified()
+    public function testPropertyVatNumber()
+    {
+    }
+
+    /**
+     * Test attribute "company_name"
+     */
+    public function testPropertyCompanyName()
+    {
+    }
+
+    /**
+     * Test attribute "website"
+     */
+    public function testPropertyWebsite()
+    {
+    }
+
+    /**
+     * Test attribute "website_my_portal"
+     */
+    public function testPropertyWebsiteMyPortal()
+    {
+    }
+
+    /**
+     * Test attribute "mailing_address"
+     */
+    public function testPropertyMailingAddress()
+    {
+    }
+
+    /**
+     * Test attribute "email_address_customer_care"
+     */
+    public function testPropertyEmailAddressCustomerCare()
+    {
+    }
+
+    /**
+     * Test attribute "bank_account_number"
+     */
+    public function testPropertyBankAccountNumber()
     {
     }
 }

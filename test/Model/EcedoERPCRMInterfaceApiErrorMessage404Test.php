@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiClientMandateResultTest
+ * EcedoERPCRMInterfaceApiErrorMessage404Test
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * EcedoERPCRMInterfaceApiClientMandateResultTest Class Doc Comment
+ * EcedoERPCRMInterfaceApiErrorMessage404Test Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiClientMandateResult
+ * @description EcedoERPCRMInterfaceApiErrorMessage404
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiClientMandateResultTest extends \PHPUnit_Framework_TestCase
+class EcedoERPCRMInterfaceApiErrorMessage404Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,16 @@ class EcedoERPCRMInterfaceApiClientMandateResultTest extends \PHPUnit_Framework_
     }
 
     /**
-     * Test "EcedoERPCRMInterfaceApiClientMandateResult"
+     * Test "EcedoERPCRMInterfaceApiErrorMessage404"
      */
-    public function testEcedoERPCRMInterfaceApiClientMandateResult()
+    public function testEcedoERPCRMInterfaceApiErrorMessage404()
     {
     }
 
     /**
-     * Test attribute "client_mandate_id"
+     * Test attribute "errors"
      */
-    public function testPropertyClientMandateId()
+    public function testPropertyErrors()
     {
     }
 }

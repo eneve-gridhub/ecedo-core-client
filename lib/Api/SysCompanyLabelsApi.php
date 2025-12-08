@@ -1,6 +1,6 @@
 <?php
 /**
- * SysClientMandateApi
+ * SysCompanyLabelsApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * SysClientMandateApi Class Doc Comment
+ * SysCompanyLabelsApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SysClientMandateApi
+class SysCompanyLabelsApi
 {
     /**
      * @var ClientInterface
@@ -88,37 +88,35 @@ class SysClientMandateApi
     }
 
     /**
-     * Operation sysClientMandatePost
+     * Operation sysCompanyLabelsGet
      *
-     * ClientMandate opslaan
+     * Get all company labels
      *
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiClientMandate $post_data  (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiClientMandateResult
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiCompanyLabel[]
      */
-    public function sysClientMandatePost($post_data)
+    public function sysCompanyLabelsGet()
     {
-        list($response) = $this->sysClientMandatePostWithHttpInfo($post_data);
+        list($response) = $this->sysCompanyLabelsGetWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation sysClientMandatePostWithHttpInfo
+     * Operation sysCompanyLabelsGetWithHttpInfo
      *
-     * ClientMandate opslaan
+     * Get all company labels
      *
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiClientMandate $post_data  (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiClientMandateResult, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiCompanyLabel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysClientMandatePostWithHttpInfo($post_data)
+    public function sysCompanyLabelsGetWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiClientMandateResult';
-        $request = $this->sysClientMandatePostRequest($post_data);
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCompanyLabel[]';
+        $request = $this->sysCompanyLabelsGetRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -169,7 +167,7 @@ class SysClientMandateApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiClientMandateResult',
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCompanyLabel[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -196,18 +194,17 @@ class SysClientMandateApi
     }
 
     /**
-     * Operation sysClientMandatePostAsync
+     * Operation sysCompanyLabelsGetAsync
      *
-     * ClientMandate opslaan
+     * Get all company labels
      *
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiClientMandate $post_data  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysClientMandatePostAsync($post_data)
+    public function sysCompanyLabelsGetAsync()
     {
-        return $this->sysClientMandatePostAsyncWithHttpInfo($post_data)
+        return $this->sysCompanyLabelsGetAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -216,19 +213,18 @@ class SysClientMandateApi
     }
 
     /**
-     * Operation sysClientMandatePostAsyncWithHttpInfo
+     * Operation sysCompanyLabelsGetAsyncWithHttpInfo
      *
-     * ClientMandate opslaan
+     * Get all company labels
      *
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiClientMandate $post_data  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysClientMandatePostAsyncWithHttpInfo($post_data)
+    public function sysCompanyLabelsGetAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiClientMandateResult';
-        $request = $this->sysClientMandatePostRequest($post_data);
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCompanyLabel[]';
+        $request = $this->sysCompanyLabelsGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -268,23 +264,16 @@ class SysClientMandateApi
     }
 
     /**
-     * Create request for operation 'sysClientMandatePost'
+     * Create request for operation 'sysCompanyLabelsGet'
      *
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiClientMandate $post_data  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysClientMandatePostRequest($post_data)
+    protected function sysCompanyLabelsGetRequest()
     {
-        // verify the required parameter 'post_data' is set
-        if ($post_data === null || (is_array($post_data) && count($post_data) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $post_data when calling sysClientMandatePost'
-            );
-        }
 
-        $resourcePath = '/sysapi/v1.0/clientmandate';
+        $resourcePath = '/sysapi/v1.0/companylabels';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -295,9 +284,6 @@ class SysClientMandateApi
 
         // body params
         $_tempBody = null;
-        if (isset($post_data)) {
-            $_tempBody = $post_data;
-        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -306,7 +292,7 @@ class SysClientMandateApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                []
             );
         }
 
@@ -370,7 +356,7 @@ class SysClientMandateApi
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
-            'POST',
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

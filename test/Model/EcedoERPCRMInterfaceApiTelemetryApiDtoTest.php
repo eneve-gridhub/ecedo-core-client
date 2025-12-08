@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceReadModelTelemetryTelemetryDtoTest
+ * EcedoERPCRMInterfaceApiTelemetryApiDtoTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * EcedoERPCRMInterfaceReadModelTelemetryTelemetryDtoTest Class Doc Comment
+ * EcedoERPCRMInterfaceApiTelemetryApiDtoTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto
+ * @description EcedoERPCRMInterfaceApiTelemetryApiDto
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDtoTest extends \PHPUnit_Framework_TestCase
+class EcedoERPCRMInterfaceApiTelemetryApiDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,30 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDtoTest extends \PHPUnit_Fr
     }
 
     /**
-     * Test "EcedoERPCRMInterfaceReadModelTelemetryTelemetryDto"
+     * Test "EcedoERPCRMInterfaceApiTelemetryApiDto"
      */
-    public function testEcedoERPCRMInterfaceReadModelTelemetryTelemetryDto()
+    public function testEcedoERPCRMInterfaceApiTelemetryApiDto()
+    {
+    }
+
+    /**
+     * Test attribute "value"
+     */
+    public function testPropertyValue()
+    {
+    }
+
+    /**
+     * Test attribute "value_ldn"
+     */
+    public function testPropertyValueLdn()
+    {
+    }
+
+    /**
+     * Test attribute "value_odn"
+     */
+    public function testPropertyValueOdn()
     {
     }
 
@@ -105,58 +126,9 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDtoTest extends \PHPUnit_Fr
     }
 
     /**
-     * Test attribute "start_date_localized"
-     */
-    public function testPropertyStartDateLocalized()
-    {
-    }
-
-    /**
      * Test attribute "end_date"
      */
     public function testPropertyEndDate()
-    {
-    }
-
-    /**
-     * Test attribute "end_date_localized"
-     */
-    public function testPropertyEndDateLocalized()
-    {
-    }
-
-    /**
-     * Test attribute "value_ldn"
-     */
-    public function testPropertyValueLdn()
-    {
-    }
-
-    /**
-     * Test attribute "ldn_localized"
-     */
-    public function testPropertyLdnLocalized()
-    {
-    }
-
-    /**
-     * Test attribute "value_odn"
-     */
-    public function testPropertyValueOdn()
-    {
-    }
-
-    /**
-     * Test attribute "odn_localized"
-     */
-    public function testPropertyOdnLocalized()
-    {
-    }
-
-    /**
-     * Test attribute "raw_unit"
-     */
-    public function testPropertyRawUnit()
     {
     }
 
@@ -185,27 +157,6 @@ class EcedoERPCRMInterfaceReadModelTelemetryTelemetryDtoTest extends \PHPUnit_Fr
      * Test attribute "revision"
      */
     public function testPropertyRevision()
-    {
-    }
-
-    /**
-     * Test attribute "reference_date_time"
-     */
-    public function testPropertyReferenceDateTime()
-    {
-    }
-
-    /**
-     * Test attribute "reference_date_time_localized"
-     */
-    public function testPropertyReferenceDateTimeLocalized()
-    {
-    }
-
-    /**
-     * Test attribute "telemetry_document_id"
-     */
-    public function testPropertyTelemetryDocumentId()
     {
     }
 

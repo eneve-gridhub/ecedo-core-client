@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiUpdateMeteringPointPostData
+ * EcedoERPCRMInterfaceApiPricePostDataV2
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * EcedoERPCRMInterfaceApiUpdateMeteringPointPostData Class Doc Comment
+ * EcedoERPCRMInterfaceApiPricePostDataV2 Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiPricePostDataV2 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterfa
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.UpdateMeteringPointPostData';
+    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.PricePostDataV2';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,12 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'mandate_id' => 'string',
-        'iban_key' => 'string',
-        'birth_day_key' => 'string',
-        'cer_pre_notified' => 'bool'
+        'price' => 'double',
+        'price_component_type' => 'string',
+        'vat_inclusive' => 'bool',
+        'price_unit' => 'string',
+        'range_begin' => 'int',
+        'range_end' => 'int'
     ];
 
     /**
@@ -69,10 +71,12 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'mandate_id' => null,
-        'iban_key' => null,
-        'birth_day_key' => null,
-        'cer_pre_notified' => null
+        'price' => 'double',
+        'price_component_type' => null,
+        'vat_inclusive' => null,
+        'price_unit' => null,
+        'range_begin' => 'int32',
+        'range_end' => 'int32'
     ];
 
     /**
@@ -102,10 +106,12 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterfa
      * @var string[]
      */
     protected static $attributeMap = [
-        'mandate_id' => 'MandateId',
-        'iban_key' => 'IBANKey',
-        'birth_day_key' => 'BirthDayKey',
-        'cer_pre_notified' => 'CERPreNotified'
+        'price' => 'Price',
+        'price_component_type' => 'PriceComponentType',
+        'vat_inclusive' => 'VatInclusive',
+        'price_unit' => 'PriceUnit',
+        'range_begin' => 'RangeBegin',
+        'range_end' => 'RangeEnd'
     ];
 
     /**
@@ -114,10 +120,12 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-        'mandate_id' => 'setMandateId',
-        'iban_key' => 'setIbanKey',
-        'birth_day_key' => 'setBirthDayKey',
-        'cer_pre_notified' => 'setCerPreNotified'
+        'price' => 'setPrice',
+        'price_component_type' => 'setPriceComponentType',
+        'vat_inclusive' => 'setVatInclusive',
+        'price_unit' => 'setPriceUnit',
+        'range_begin' => 'setRangeBegin',
+        'range_end' => 'setRangeEnd'
     ];
 
     /**
@@ -126,10 +134,12 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterfa
      * @var string[]
      */
     protected static $getters = [
-        'mandate_id' => 'getMandateId',
-        'iban_key' => 'getIbanKey',
-        'birth_day_key' => 'getBirthDayKey',
-        'cer_pre_notified' => 'getCerPreNotified'
+        'price' => 'getPrice',
+        'price_component_type' => 'getPriceComponentType',
+        'vat_inclusive' => 'getVatInclusive',
+        'price_unit' => 'getPriceUnit',
+        'range_begin' => 'getRangeBegin',
+        'range_end' => 'getRangeEnd'
     ];
 
     /**
@@ -173,8 +183,47 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterfa
         return self::$swaggerModelName;
     }
 
+    const PRICE_UNIT_YEAR = 'Year';
+    const PRICE_UNIT_DAY = 'Day';
+    const PRICE_UNIT_KWH = 'KWh';
+    const PRICE_UNIT_M3 = 'M3';
+    const PRICE_UNIT_ONE_OFF = 'OneOff';
+    const PRICE_UNIT_MONTH = 'Month';
+    const PRICE_UNIT_MWH = 'MWh';
+    const PRICE_UNIT_WH = 'Wh';
+    const PRICE_UNIT_INVOICE = 'Invoice';
+    const PRICE_UNIT_PERCENTAGE = 'Percentage';
+    const PRICE_UNIT_SECONDS = 'Seconds';
+    const PRICE_UNIT_CHARGE_SESSION = 'ChargeSession';
+    const PRICE_UNIT_CREDIT = 'Credit';
+    const PRICE_UNIT_HOUR = 'Hour';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPriceUnitAllowableValues()
+    {
+        return [
+            self::PRICE_UNIT_YEAR,
+            self::PRICE_UNIT_DAY,
+            self::PRICE_UNIT_KWH,
+            self::PRICE_UNIT_M3,
+            self::PRICE_UNIT_ONE_OFF,
+            self::PRICE_UNIT_MONTH,
+            self::PRICE_UNIT_MWH,
+            self::PRICE_UNIT_WH,
+            self::PRICE_UNIT_INVOICE,
+            self::PRICE_UNIT_PERCENTAGE,
+            self::PRICE_UNIT_SECONDS,
+            self::PRICE_UNIT_CHARGE_SESSION,
+            self::PRICE_UNIT_CREDIT,
+            self::PRICE_UNIT_HOUR,
+        ];
+    }
     
 
     /**
@@ -192,10 +241,12 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
-        $this->container['mandate_id'] = isset($data['mandate_id']) ? $data['mandate_id'] : null;
-        $this->container['iban_key'] = isset($data['iban_key']) ? $data['iban_key'] : null;
-        $this->container['birth_day_key'] = isset($data['birth_day_key']) ? $data['birth_day_key'] : null;
-        $this->container['cer_pre_notified'] = isset($data['cer_pre_notified']) ? $data['cer_pre_notified'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['price_component_type'] = isset($data['price_component_type']) ? $data['price_component_type'] : null;
+        $this->container['vat_inclusive'] = isset($data['vat_inclusive']) ? $data['vat_inclusive'] : null;
+        $this->container['price_unit'] = isset($data['price_unit']) ? $data['price_unit'] : null;
+        $this->container['range_begin'] = isset($data['range_begin']) ? $data['range_begin'] : null;
+        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
     }
 
     /**
@@ -206,6 +257,14 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterfa
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getPriceUnitAllowableValues();
+        if (!is_null($this->container['price_unit']) && !in_array($this->container['price_unit'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'price_unit', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -223,97 +282,154 @@ class EcedoERPCRMInterfaceApiUpdateMeteringPointPostData implements ModelInterfa
 
 
     /**
-     * Gets mandate_id
+     * Gets price
      *
-     * @return string
+     * @return double
      */
-    public function getMandateId()
+    public function getPrice()
     {
-        return $this->container['mandate_id'];
+        return $this->container['price'];
     }
 
     /**
-     * Sets mandate_id
+     * Sets price
      *
-     * @param string $mandate_id mandate_id
+     * @param double $price price
      *
      * @return $this
      */
-    public function setMandateId($mandate_id)
+    public function setPrice($price)
     {
-        $this->container['mandate_id'] = $mandate_id;
+        $this->container['price'] = $price;
 
         return $this;
     }
 
     /**
-     * Gets iban_key
+     * Gets price_component_type
      *
      * @return string
      */
-    public function getIbanKey()
+    public function getPriceComponentType()
     {
-        return $this->container['iban_key'];
+        return $this->container['price_component_type'];
     }
 
     /**
-     * Sets iban_key
+     * Sets price_component_type
      *
-     * @param string $iban_key iban_key
+     * @param string $price_component_type price_component_type
      *
      * @return $this
      */
-    public function setIbanKey($iban_key)
+    public function setPriceComponentType($price_component_type)
     {
-        $this->container['iban_key'] = $iban_key;
+        $this->container['price_component_type'] = $price_component_type;
 
         return $this;
     }
 
     /**
-     * Gets birth_day_key
-     *
-     * @return string
-     */
-    public function getBirthDayKey()
-    {
-        return $this->container['birth_day_key'];
-    }
-
-    /**
-     * Sets birth_day_key
-     *
-     * @param string $birth_day_key birth_day_key
-     *
-     * @return $this
-     */
-    public function setBirthDayKey($birth_day_key)
-    {
-        $this->container['birth_day_key'] = $birth_day_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets cer_pre_notified
+     * Gets vat_inclusive
      *
      * @return bool
      */
-    public function getCerPreNotified()
+    public function getVatInclusive()
     {
-        return $this->container['cer_pre_notified'];
+        return $this->container['vat_inclusive'];
     }
 
     /**
-     * Sets cer_pre_notified
+     * Sets vat_inclusive
      *
-     * @param bool $cer_pre_notified cer_pre_notified
+     * @param bool $vat_inclusive vat_inclusive
      *
      * @return $this
      */
-    public function setCerPreNotified($cer_pre_notified)
+    public function setVatInclusive($vat_inclusive)
     {
-        $this->container['cer_pre_notified'] = $cer_pre_notified;
+        $this->container['vat_inclusive'] = $vat_inclusive;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_unit
+     *
+     * @return string
+     */
+    public function getPriceUnit()
+    {
+        return $this->container['price_unit'];
+    }
+
+    /**
+     * Sets price_unit
+     *
+     * @param string $price_unit price_unit
+     *
+     * @return $this
+     */
+    public function setPriceUnit($price_unit)
+    {
+        $allowedValues = $this->getPriceUnitAllowableValues();
+        if (!is_null($price_unit) && !in_array($price_unit, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'price_unit', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['price_unit'] = $price_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets range_begin
+     *
+     * @return int
+     */
+    public function getRangeBegin()
+    {
+        return $this->container['range_begin'];
+    }
+
+    /**
+     * Sets range_begin
+     *
+     * @param int $range_begin range_begin
+     *
+     * @return $this
+     */
+    public function setRangeBegin($range_begin)
+    {
+        $this->container['range_begin'] = $range_begin;
+
+        return $this;
+    }
+
+    /**
+     * Gets range_end
+     *
+     * @return int
+     */
+    public function getRangeEnd()
+    {
+        return $this->container['range_end'];
+    }
+
+    /**
+     * Sets range_end
+     *
+     * @param int $range_end range_end
+     *
+     * @return $this
+     */
+    public function setRangeEnd($range_end)
+    {
+        $this->container['range_end'] = $range_end;
 
         return $this;
     }

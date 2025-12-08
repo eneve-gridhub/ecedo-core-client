@@ -170,14 +170,4 @@ class SysConnectionsApiTest extends \PHPUnit_Framework_TestCase
     public function testSysConnectionsReset()
     {
     }
-
-    /**
-     * Test case for sysConnectionsUpdateMeteringPoint
-     *
-     * Aansluiting bijwerken met EDSN gegevens.
-     *
-     */
-    public function testSysConnectionsUpdateMeteringPoint()
-    {
-    }
 }

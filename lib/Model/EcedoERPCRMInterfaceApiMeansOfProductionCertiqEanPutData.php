@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData
+ * EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPutData
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData Class Doc Comment
+ * EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPutData Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiMeansOfProductionCertiqEanPutData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData implements ModelInterf
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.EnergyPurchasePricesPostData';
+    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.MeansOfProductionCertiqEanPutData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,9 @@ class EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData implements ModelInterf
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'energy_purchase_price' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergyPurchasePricePostData[]'
+        'certiq_ean' => '\Swagger\Client\Model\EcedoInfrastructureTypesEan',
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime'
     ];
 
     /**
@@ -66,7 +68,9 @@ class EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData implements ModelInterf
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'energy_purchase_price' => null
+        'certiq_ean' => null,
+        'start_date' => 'date',
+        'end_date' => 'date'
     ];
 
     /**
@@ -96,7 +100,9 @@ class EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData implements ModelInterf
      * @var string[]
      */
     protected static $attributeMap = [
-        'energy_purchase_price' => 'EnergyPurchasePrice'
+        'certiq_ean' => 'CertiqEan',
+        'start_date' => 'StartDate',
+        'end_date' => 'EndDate'
     ];
 
     /**
@@ -105,7 +111,9 @@ class EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-        'energy_purchase_price' => 'setEnergyPurchasePrice'
+        'certiq_ean' => 'setCertiqEan',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate'
     ];
 
     /**
@@ -114,7 +122,9 @@ class EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData implements ModelInterf
      * @var string[]
      */
     protected static $getters = [
-        'energy_purchase_price' => 'getEnergyPurchasePrice'
+        'certiq_ean' => 'getCertiqEan',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate'
     ];
 
     /**
@@ -177,7 +187,9 @@ class EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData implements ModelInterf
      */
     public function __construct(array $data = null)
     {
-        $this->container['energy_purchase_price'] = isset($data['energy_purchase_price']) ? $data['energy_purchase_price'] : null;
+        $this->container['certiq_ean'] = isset($data['certiq_ean']) ? $data['certiq_ean'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
     }
 
     /**
@@ -205,25 +217,73 @@ class EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData implements ModelInterf
 
 
     /**
-     * Gets energy_purchase_price
+     * Gets certiq_ean
      *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergyPurchasePricePostData[]
+     * @return \Swagger\Client\Model\EcedoInfrastructureTypesEan
      */
-    public function getEnergyPurchasePrice()
+    public function getCertiqEan()
     {
-        return $this->container['energy_purchase_price'];
+        return $this->container['certiq_ean'];
     }
 
     /**
-     * Sets energy_purchase_price
+     * Sets certiq_ean
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergyPurchasePricePostData[] $energy_purchase_price energy_purchase_price
+     * @param \Swagger\Client\Model\EcedoInfrastructureTypesEan $certiq_ean certiq_ean
      *
      * @return $this
      */
-    public function setEnergyPurchasePrice($energy_purchase_price)
+    public function setCertiqEan($certiq_ean)
     {
-        $this->container['energy_purchase_price'] = $energy_purchase_price;
+        $this->container['certiq_ean'] = $certiq_ean;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime $start_date start_date
+     *
+     * @return $this
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     *
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     *
+     * @param \DateTime $end_date end_date
+     *
+     * @return $this
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }

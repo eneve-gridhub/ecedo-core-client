@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * EcedoERPCRMInterfaceApiPropositionPostDataTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiPropositionPostData
+ * @description Gegevens voor het aanmaken van een nieuwe propositie.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -136,6 +136,20 @@ class EcedoERPCRMInterfaceApiPropositionPostDataTest extends \PHPUnit_Framework_
      * Test attribute "company_label_id"
      */
     public function testPropertyCompanyLabelId()
+    {
+    }
+
+    /**
+     * Test attribute "market_price_source"
+     */
+    public function testPropertyMarketPriceSource()
+    {
+    }
+
+    /**
+     * Test attribute "is_model_contract"
+     */
+    public function testPropertyIsModelContract()
     {
     }
 

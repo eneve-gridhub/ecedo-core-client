@@ -74,7 +74,7 @@ class SysContractsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysContractsCreateOnbalansFlexContract
      *
-     * Toevoegen van een onbalansflex contract.
+     * Toevoegen van een SmartDevice met onbalansflex contract.
      *
      */
     public function testSysContractsCreateOnbalansFlexContract()
@@ -152,6 +152,16 @@ class SysContractsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysContractsGetEnergieInkoopContracts
+     *
+     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId.
+     *
+     */
+    public function testSysContractsGetEnergieInkoopContracts()
+    {
+    }
+
+    /**
      * Test case for sysContractsGetEnergieleveringConnectionContractForContract
      *
      * Ophalen van energieleveringconnectioncontract op basis van contractId.
@@ -178,16 +188,6 @@ class SysContractsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSysContractsGetFirstPossibleContractStartDate()
-    {
-    }
-
-    /**
-     * Test case for sysContractsGetMeansOfProductionConnectionContracts
-     *
-     * Opvragen energie inkoop contracten voor productiemiddelaansluiting op basis van meansOfProductionConnectionId.
-     *
-     */
-    public function testSysContractsGetMeansOfProductionConnectionContracts()
     {
     }
 
@@ -258,6 +258,16 @@ class SysContractsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSysContractsPostContracts()
+    {
+    }
+
+    /**
+     * Test case for sysContractsPostEnergieInkoopContract
+     *
+     * Aanmaken van een energieinkoopcontract voor een productiemiddelaansluiting.
+     *
+     */
+    public function testSysContractsPostEnergieInkoopContract()
     {
     }
 

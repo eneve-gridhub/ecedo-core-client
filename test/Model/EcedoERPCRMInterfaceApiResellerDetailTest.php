@@ -133,9 +133,23 @@ class EcedoERPCRMInterfaceApiResellerDetailTest extends \PHPUnit_Framework_TestC
     }
 
     /**
+     * Test attribute "email_address_sender"
+     */
+    public function testPropertyEmailAddressSender()
+    {
+    }
+
+    /**
      * Test attribute "website"
      */
     public function testPropertyWebsite()
+    {
+    }
+
+    /**
+     * Test attribute "entity_properties"
+     */
+    public function testPropertyEntityProperties()
     {
     }
 }

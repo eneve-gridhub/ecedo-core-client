@@ -63,7 +63,11 @@ class EcedoERPCRMInterfaceReportModelAnnualStandardUsageDto implements ModelInte
         'annual_standard_usage_single_usage_odn' => 'int',
         'annual_standard_usage_peak_usage_odn' => 'int',
         'annual_standard_usage_off_peak_usage_odn' => 'int',
-        'annual_standard_usage_gas_usage' => 'int'
+        'annual_standard_usage_gas_usage' => 'int',
+        'annual_standard_usage_has_electricity' => 'bool',
+        'annual_standard_usage_has_gas' => 'bool',
+        'annual_standard_usage_has_odn' => 'bool',
+        'annual_standard_usage_usage_type' => 'string'
     ];
 
     /**
@@ -78,7 +82,11 @@ class EcedoERPCRMInterfaceReportModelAnnualStandardUsageDto implements ModelInte
         'annual_standard_usage_single_usage_odn' => 'int32',
         'annual_standard_usage_peak_usage_odn' => 'int32',
         'annual_standard_usage_off_peak_usage_odn' => 'int32',
-        'annual_standard_usage_gas_usage' => 'int32'
+        'annual_standard_usage_gas_usage' => 'int32',
+        'annual_standard_usage_has_electricity' => null,
+        'annual_standard_usage_has_gas' => null,
+        'annual_standard_usage_has_odn' => null,
+        'annual_standard_usage_usage_type' => null
     ];
 
     /**
@@ -114,7 +122,11 @@ class EcedoERPCRMInterfaceReportModelAnnualStandardUsageDto implements ModelInte
         'annual_standard_usage_single_usage_odn' => 'AnnualStandardUsage_SingleUsageODN',
         'annual_standard_usage_peak_usage_odn' => 'AnnualStandardUsage_PeakUsageODN',
         'annual_standard_usage_off_peak_usage_odn' => 'AnnualStandardUsage_OffPeakUsageODN',
-        'annual_standard_usage_gas_usage' => 'AnnualStandardUsage_GasUsage'
+        'annual_standard_usage_gas_usage' => 'AnnualStandardUsage_GasUsage',
+        'annual_standard_usage_has_electricity' => 'AnnualStandardUsage_HasElectricity',
+        'annual_standard_usage_has_gas' => 'AnnualStandardUsage_HasGas',
+        'annual_standard_usage_has_odn' => 'AnnualStandardUsage_HasODN',
+        'annual_standard_usage_usage_type' => 'AnnualStandardUsage_UsageType'
     ];
 
     /**
@@ -129,7 +141,11 @@ class EcedoERPCRMInterfaceReportModelAnnualStandardUsageDto implements ModelInte
         'annual_standard_usage_single_usage_odn' => 'setAnnualStandardUsageSingleUsageOdn',
         'annual_standard_usage_peak_usage_odn' => 'setAnnualStandardUsagePeakUsageOdn',
         'annual_standard_usage_off_peak_usage_odn' => 'setAnnualStandardUsageOffPeakUsageOdn',
-        'annual_standard_usage_gas_usage' => 'setAnnualStandardUsageGasUsage'
+        'annual_standard_usage_gas_usage' => 'setAnnualStandardUsageGasUsage',
+        'annual_standard_usage_has_electricity' => 'setAnnualStandardUsageHasElectricity',
+        'annual_standard_usage_has_gas' => 'setAnnualStandardUsageHasGas',
+        'annual_standard_usage_has_odn' => 'setAnnualStandardUsageHasOdn',
+        'annual_standard_usage_usage_type' => 'setAnnualStandardUsageUsageType'
     ];
 
     /**
@@ -144,7 +160,11 @@ class EcedoERPCRMInterfaceReportModelAnnualStandardUsageDto implements ModelInte
         'annual_standard_usage_single_usage_odn' => 'getAnnualStandardUsageSingleUsageOdn',
         'annual_standard_usage_peak_usage_odn' => 'getAnnualStandardUsagePeakUsageOdn',
         'annual_standard_usage_off_peak_usage_odn' => 'getAnnualStandardUsageOffPeakUsageOdn',
-        'annual_standard_usage_gas_usage' => 'getAnnualStandardUsageGasUsage'
+        'annual_standard_usage_gas_usage' => 'getAnnualStandardUsageGasUsage',
+        'annual_standard_usage_has_electricity' => 'getAnnualStandardUsageHasElectricity',
+        'annual_standard_usage_has_gas' => 'getAnnualStandardUsageHasGas',
+        'annual_standard_usage_has_odn' => 'getAnnualStandardUsageHasOdn',
+        'annual_standard_usage_usage_type' => 'getAnnualStandardUsageUsageType'
     ];
 
     /**
@@ -214,6 +234,10 @@ class EcedoERPCRMInterfaceReportModelAnnualStandardUsageDto implements ModelInte
         $this->container['annual_standard_usage_peak_usage_odn'] = isset($data['annual_standard_usage_peak_usage_odn']) ? $data['annual_standard_usage_peak_usage_odn'] : null;
         $this->container['annual_standard_usage_off_peak_usage_odn'] = isset($data['annual_standard_usage_off_peak_usage_odn']) ? $data['annual_standard_usage_off_peak_usage_odn'] : null;
         $this->container['annual_standard_usage_gas_usage'] = isset($data['annual_standard_usage_gas_usage']) ? $data['annual_standard_usage_gas_usage'] : null;
+        $this->container['annual_standard_usage_has_electricity'] = isset($data['annual_standard_usage_has_electricity']) ? $data['annual_standard_usage_has_electricity'] : null;
+        $this->container['annual_standard_usage_has_gas'] = isset($data['annual_standard_usage_has_gas']) ? $data['annual_standard_usage_has_gas'] : null;
+        $this->container['annual_standard_usage_has_odn'] = isset($data['annual_standard_usage_has_odn']) ? $data['annual_standard_usage_has_odn'] : null;
+        $this->container['annual_standard_usage_usage_type'] = isset($data['annual_standard_usage_usage_type']) ? $data['annual_standard_usage_usage_type'] : null;
     }
 
     /**
@@ -404,6 +428,102 @@ class EcedoERPCRMInterfaceReportModelAnnualStandardUsageDto implements ModelInte
     public function setAnnualStandardUsageGasUsage($annual_standard_usage_gas_usage)
     {
         $this->container['annual_standard_usage_gas_usage'] = $annual_standard_usage_gas_usage;
+
+        return $this;
+    }
+
+    /**
+     * Gets annual_standard_usage_has_electricity
+     *
+     * @return bool
+     */
+    public function getAnnualStandardUsageHasElectricity()
+    {
+        return $this->container['annual_standard_usage_has_electricity'];
+    }
+
+    /**
+     * Sets annual_standard_usage_has_electricity
+     *
+     * @param bool $annual_standard_usage_has_electricity annual_standard_usage_has_electricity
+     *
+     * @return $this
+     */
+    public function setAnnualStandardUsageHasElectricity($annual_standard_usage_has_electricity)
+    {
+        $this->container['annual_standard_usage_has_electricity'] = $annual_standard_usage_has_electricity;
+
+        return $this;
+    }
+
+    /**
+     * Gets annual_standard_usage_has_gas
+     *
+     * @return bool
+     */
+    public function getAnnualStandardUsageHasGas()
+    {
+        return $this->container['annual_standard_usage_has_gas'];
+    }
+
+    /**
+     * Sets annual_standard_usage_has_gas
+     *
+     * @param bool $annual_standard_usage_has_gas annual_standard_usage_has_gas
+     *
+     * @return $this
+     */
+    public function setAnnualStandardUsageHasGas($annual_standard_usage_has_gas)
+    {
+        $this->container['annual_standard_usage_has_gas'] = $annual_standard_usage_has_gas;
+
+        return $this;
+    }
+
+    /**
+     * Gets annual_standard_usage_has_odn
+     *
+     * @return bool
+     */
+    public function getAnnualStandardUsageHasOdn()
+    {
+        return $this->container['annual_standard_usage_has_odn'];
+    }
+
+    /**
+     * Sets annual_standard_usage_has_odn
+     *
+     * @param bool $annual_standard_usage_has_odn annual_standard_usage_has_odn
+     *
+     * @return $this
+     */
+    public function setAnnualStandardUsageHasOdn($annual_standard_usage_has_odn)
+    {
+        $this->container['annual_standard_usage_has_odn'] = $annual_standard_usage_has_odn;
+
+        return $this;
+    }
+
+    /**
+     * Gets annual_standard_usage_usage_type
+     *
+     * @return string
+     */
+    public function getAnnualStandardUsageUsageType()
+    {
+        return $this->container['annual_standard_usage_usage_type'];
+    }
+
+    /**
+     * Sets annual_standard_usage_usage_type
+     *
+     * @param string $annual_standard_usage_usage_type annual_standard_usage_usage_type
+     *
+     * @return $this
+     */
+    public function setAnnualStandardUsageUsageType($annual_standard_usage_usage_type)
+    {
+        $this->container['annual_standard_usage_usage_type'] = $annual_standard_usage_usage_type;
 
         return $this;
     }

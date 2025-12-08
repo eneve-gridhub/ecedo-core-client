@@ -983,7 +983,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlow
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -1002,7 +1002,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlowWithHttpInfo
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -1095,7 +1095,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlowAsync
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -1117,7 +1117,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelApplicationFlowAsyncWithHttpInfo
      *
-     * Aanmeldflow beëindigen
+     * Aanmeldflow beëindigen
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiCancelFlowPostData $cancel_flow_post_data Optionele POST-data waarmee detailgedrag aangestuurd kan worden. Als de POST-data leeg is worden de default waarden van de verschillende parameters gebruikt (required)
@@ -1908,7 +1908,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelPurchaseFlow
      *
-     * Productaanschafflow afbreken
+     * 'Overige facturen' flow afbreken
      *
      * @param  string $organization_id  (required)
      * @param  string $product_unit_id  (required)
@@ -1926,7 +1926,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelPurchaseFlowWithHttpInfo
      *
-     * Productaanschafflow afbreken
+     * 'Overige facturen' flow afbreken
      *
      * @param  string $organization_id  (required)
      * @param  string $product_unit_id  (required)
@@ -2018,7 +2018,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelPurchaseFlowAsync
      *
-     * Productaanschafflow afbreken
+     * 'Overige facturen' flow afbreken
      *
      * @param  string $organization_id  (required)
      * @param  string $product_unit_id  (required)
@@ -2039,7 +2039,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelPurchaseFlowAsyncWithHttpInfo
      *
-     * Productaanschafflow afbreken
+     * 'Overige facturen' flow afbreken
      *
      * @param  string $organization_id  (required)
      * @param  string $product_unit_id  (required)
@@ -2214,7 +2214,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelPurchaseFlowDeposit
      *
-     * Productaanschafflow voor Borg afbreken
+     * 'Overige facturen' flow voor Borg afbreken
      *
      * @param  string $organization_id  (required)
      * @param  string $cluster_reference cluster naam van de contracten waarvoor de borg flow actief is (required)
@@ -2232,7 +2232,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelPurchaseFlowDepositWithHttpInfo
      *
-     * Productaanschafflow voor Borg afbreken
+     * 'Overige facturen' flow voor Borg afbreken
      *
      * @param  string $organization_id  (required)
      * @param  string $cluster_reference cluster naam van de contracten waarvoor de borg flow actief is (required)
@@ -2324,7 +2324,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelPurchaseFlowDepositAsync
      *
-     * Productaanschafflow voor Borg afbreken
+     * 'Overige facturen' flow voor Borg afbreken
      *
      * @param  string $organization_id  (required)
      * @param  string $cluster_reference cluster naam van de contracten waarvoor de borg flow actief is (required)
@@ -2345,7 +2345,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsCancelPurchaseFlowDepositAsyncWithHttpInfo
      *
-     * Productaanschafflow voor Borg afbreken
+     * 'Overige facturen' flow voor Borg afbreken
      *
      * @param  string $organization_id  (required)
      * @param  string $cluster_reference cluster naam van de contracten waarvoor de borg flow actief is (required)
@@ -3757,9 +3757,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsGetProductPurchaseInvoicesByStepV10
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     * Haalt de facturen die in de gevraagde 'Overige facturen' flow stap staan op.
      *
-     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  string $step_type Het type stap in de &#39;Overige facturen&#39; flow. (required)
      * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
      * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
@@ -3776,9 +3776,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsGetProductPurchaseInvoicesByStepV10WithHttpInfo
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     * Haalt de facturen die in de gevraagde 'Overige facturen' flow stap staan op.
      *
-     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  string $step_type Het type stap in de &#39;Overige facturen&#39; flow. (required)
      * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
      * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
@@ -3869,9 +3869,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsGetProductPurchaseInvoicesByStepV10Async
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     * Haalt de facturen die in de gevraagde 'Overige facturen' flow stap staan op.
      *
-     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  string $step_type Het type stap in de &#39;Overige facturen&#39; flow. (required)
      * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
      * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
@@ -3891,9 +3891,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsGetProductPurchaseInvoicesByStepV10AsyncWithHttpInfo
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     * Haalt de facturen die in de gevraagde 'Overige facturen' flow stap staan op.
      *
-     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  string $step_type Het type stap in de &#39;Overige facturen&#39; flow. (required)
      * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
      * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
@@ -3945,7 +3945,7 @@ class SysFlowsApi
     /**
      * Create request for operation 'sysFlowsGetProductPurchaseInvoicesByStepV10'
      *
-     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  string $step_type Het type stap in de &#39;Overige facturen&#39; flow. (required)
      * @param  int $take_count Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
      * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
@@ -4070,9 +4070,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsGetProductPurchaseInvoicesByStepV11
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     * Haalt de facturen die in de gevraagde 'Overige facturen' flow stap staan op.
      *
-     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  string $step_type Het type stap in de &#39;Overige facturen&#39; flow. (required)
      * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
      * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
@@ -4089,9 +4089,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsGetProductPurchaseInvoicesByStepV11WithHttpInfo
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     * Haalt de facturen die in de gevraagde 'Overige facturen' flow stap staan op.
      *
-     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  string $step_type Het type stap in de &#39;Overige facturen&#39; flow. (required)
      * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
      * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
@@ -4182,9 +4182,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsGetProductPurchaseInvoicesByStepV11Async
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     * Haalt de facturen die in de gevraagde 'Overige facturen' flow stap staan op.
      *
-     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  string $step_type Het type stap in de &#39;Overige facturen&#39; flow. (required)
      * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
      * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
@@ -4204,9 +4204,9 @@ class SysFlowsApi
     /**
      * Operation sysFlowsGetProductPurchaseInvoicesByStepV11AsyncWithHttpInfo
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.
+     * Haalt de facturen die in de gevraagde 'Overige facturen' flow stap staan op.
      *
-     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  string $step_type Het type stap in de &#39;Overige facturen&#39; flow. (required)
      * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
      * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
@@ -4258,7 +4258,7 @@ class SysFlowsApi
     /**
      * Create request for operation 'sysFlowsGetProductPurchaseInvoicesByStepV11'
      *
-     * @param  string $step_type Het type stap in de product aanschaf flow. (required)
+     * @param  string $step_type Het type stap in de &#39;Overige facturen&#39; flow. (required)
      * @param  int $page_size Het aantal facturen dat moet worden opgehaald. Toegestane waarde is tussen 1 en 250. Default is 250. (optional)
      * @param  string $company_label_id Optionele parameter waarmee de factuur horende bij een specifieke Label opgehaald kan worden. Default is null. (optional)
      *
@@ -5009,7 +5009,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsProductPurchaseInvoiceFlowModificationFinished
      *
-     * Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
+     * 'Overige facturen' flow stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
      *
      * @param  string $invoice_id  (required)
      *
@@ -5026,7 +5026,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsProductPurchaseInvoiceFlowModificationFinishedWithHttpInfo
      *
-     * Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
+     * 'Overige facturen' flow stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
      *
      * @param  string $invoice_id  (required)
      *
@@ -5117,7 +5117,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsProductPurchaseInvoiceFlowModificationFinishedAsync
      *
-     * Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
+     * 'Overige facturen' flow stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
      *
      * @param  string $invoice_id  (required)
      *
@@ -5137,7 +5137,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsProductPurchaseInvoiceFlowModificationFinishedAsyncWithHttpInfo
      *
-     * Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
+     * 'Overige facturen' flow stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}
      *
      * @param  string $invoice_id  (required)
      *
@@ -6564,7 +6564,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlow
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)
@@ -6587,7 +6587,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlowWithHttpInfo
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)
@@ -6684,7 +6684,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlowAsync
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)
@@ -6710,7 +6710,7 @@ class SysFlowsApi
     /**
      * Operation sysFlowsStartApplicationFlowAsyncWithHttpInfo
      *
-     * Aanmeldflow starten
+     * Aanmeldflow starten
      *
      * @param  string $organization_id Guid van de klant (Organization) (required)
      * @param  string $cluster_reference Optionele parameter (default null) waardoor de aanmeldflow alleen wordt gestart voor aansluitingen in het cluster met de aangegeven clusterreferentie. Als de clusterreferentie niet bestaat wordt er een foutmelding teruggegeven. (optional)

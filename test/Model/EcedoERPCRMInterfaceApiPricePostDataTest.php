@@ -112,6 +112,13 @@ class EcedoERPCRMInterfaceApiPricePostDataTest extends \PHPUnit_Framework_TestCa
     }
 
     /**
+     * Test attribute "price_unit"
+     */
+    public function testPropertyPriceUnit()
+    {
+    }
+
+    /**
      * Test attribute "vat_inclusive"
      */
     public function testPropertyVatInclusive()

@@ -410,7 +410,7 @@ class SysPropositionsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionWithPrices[]
      */
     public function sysPropositionsFilter($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null, $include_provisional = null)
     {
@@ -431,11 +431,11 @@ class SysPropositionsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionWithPrices[], HTTP status code, HTTP response headers (array of strings)
      */
     public function sysPropositionsFilterWithHttpInfo($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null, $include_provisional = null)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]';
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionWithPrices[]';
         $request = $this->sysPropositionsFilterRequest($product_id, $valid_on, $reference_filter, $company_label_id, $include_provisional);
 
         try {
@@ -487,7 +487,7 @@ class SysPropositionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]',
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionWithPrices[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -553,7 +553,7 @@ class SysPropositionsApi
      */
     public function sysPropositionsFilterAsyncWithHttpInfo($product_id, $valid_on = null, $reference_filter = null, $company_label_id = null, $include_provisional = null)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]';
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionWithPrices[]';
         $request = $this->sysPropositionsFilterRequest($product_id, $valid_on, $reference_filter, $company_label_id, $include_provisional);
 
         return $this->client
@@ -725,37 +725,65 @@ class SysPropositionsApi
     }
 
     /**
-     * Operation sysPropositionsGet
+     * Operation sysPropositionsFilterV11
      *
-     * Opvragen Meelift proposities van een productiemiddel.
+     * Opvragen van proposities op basis van product met paging en filtering ondersteuning
      *
-     * @param  string $means_of_production_id  (required)
+     * @param  string $product_type Het product type waarvoor proposities opgehaald moeten worden (verplicht) (required)
+     * @param  string $company_label_id Verplicht veld wanneer er in een omgeving meerdere labels geconfigureerd zijn. Mag weggelaten worden of null zijn in omgevingen waar maar één label geconfigureerd is (optional)
+     * @param  string $sort_by Optionele parameter voor de veldnaam waar je op wilt sorteren. (optional)
+     * @param  string $sort_direction Optionele parameter voor de sorteerrichting als er een sorteerveld is opgegeven. (optional)
+     * @param  int $page Optionele parameter om aan te geven welk paginanummer van een gepagineerde result set er teruggegeven moet worden. (optional)
+     * @param  int $page_size Optionele parameter om aan te geven hoe veel resultaten per pagina er terug moeten worden gegeven. (optional)
+     * @param  string $filter_property_0 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_0 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_0 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_1 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_1 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_1 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_2 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_2 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_2 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]
      */
-    public function sysPropositionsGet($means_of_production_id)
+    public function sysPropositionsFilterV11($product_type, $company_label_id = null, $sort_by = null, $sort_direction = null, $page = null, $page_size = null, $filter_property_0 = null, $filter_operator_0 = null, $filter_value_0 = null, $filter_property_1 = null, $filter_operator_1 = null, $filter_value_1 = null, $filter_property_2 = null, $filter_operator_2 = null, $filter_value_2 = null)
     {
-        list($response) = $this->sysPropositionsGetWithHttpInfo($means_of_production_id);
+        list($response) = $this->sysPropositionsFilterV11WithHttpInfo($product_type, $company_label_id, $sort_by, $sort_direction, $page, $page_size, $filter_property_0, $filter_operator_0, $filter_value_0, $filter_property_1, $filter_operator_1, $filter_value_1, $filter_property_2, $filter_operator_2, $filter_value_2);
         return $response;
     }
 
     /**
-     * Operation sysPropositionsGetWithHttpInfo
+     * Operation sysPropositionsFilterV11WithHttpInfo
      *
-     * Opvragen Meelift proposities van een productiemiddel.
+     * Opvragen van proposities op basis van product met paging en filtering ondersteuning
      *
-     * @param  string $means_of_production_id  (required)
+     * @param  string $product_type Het product type waarvoor proposities opgehaald moeten worden (verplicht) (required)
+     * @param  string $company_label_id Verplicht veld wanneer er in een omgeving meerdere labels geconfigureerd zijn. Mag weggelaten worden of null zijn in omgevingen waar maar één label geconfigureerd is (optional)
+     * @param  string $sort_by Optionele parameter voor de veldnaam waar je op wilt sorteren. (optional)
+     * @param  string $sort_direction Optionele parameter voor de sorteerrichting als er een sorteerveld is opgegeven. (optional)
+     * @param  int $page Optionele parameter om aan te geven welk paginanummer van een gepagineerde result set er teruggegeven moet worden. (optional)
+     * @param  int $page_size Optionele parameter om aan te geven hoe veel resultaten per pagina er terug moeten worden gegeven. (optional)
+     * @param  string $filter_property_0 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_0 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_0 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_1 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_1 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_1 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_2 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_2 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_2 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysPropositionsGetWithHttpInfo($means_of_production_id)
+    public function sysPropositionsFilterV11WithHttpInfo($product_type, $company_label_id = null, $sort_by = null, $sort_direction = null, $page = null, $page_size = null, $filter_property_0 = null, $filter_operator_0 = null, $filter_value_0 = null, $filter_property_1 = null, $filter_operator_1 = null, $filter_value_1 = null, $filter_property_2 = null, $filter_operator_2 = null, $filter_value_2 = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]';
-        $request = $this->sysPropositionsGetRequest($means_of_production_id);
+        $request = $this->sysPropositionsFilterV11Request($product_type, $company_label_id, $sort_by, $sort_direction, $page, $page_size, $filter_property_0, $filter_operator_0, $filter_value_0, $filter_property_1, $filter_operator_1, $filter_value_1, $filter_property_2, $filter_operator_2, $filter_value_2);
 
         try {
             $options = $this->createHttpClientOption();
@@ -833,6 +861,395 @@ class SysPropositionsApi
     }
 
     /**
+     * Operation sysPropositionsFilterV11Async
+     *
+     * Opvragen van proposities op basis van product met paging en filtering ondersteuning
+     *
+     * @param  string $product_type Het product type waarvoor proposities opgehaald moeten worden (verplicht) (required)
+     * @param  string $company_label_id Verplicht veld wanneer er in een omgeving meerdere labels geconfigureerd zijn. Mag weggelaten worden of null zijn in omgevingen waar maar één label geconfigureerd is (optional)
+     * @param  string $sort_by Optionele parameter voor de veldnaam waar je op wilt sorteren. (optional)
+     * @param  string $sort_direction Optionele parameter voor de sorteerrichting als er een sorteerveld is opgegeven. (optional)
+     * @param  int $page Optionele parameter om aan te geven welk paginanummer van een gepagineerde result set er teruggegeven moet worden. (optional)
+     * @param  int $page_size Optionele parameter om aan te geven hoe veel resultaten per pagina er terug moeten worden gegeven. (optional)
+     * @param  string $filter_property_0 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_0 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_0 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_1 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_1 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_1 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_2 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_2 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_2 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysPropositionsFilterV11Async($product_type, $company_label_id = null, $sort_by = null, $sort_direction = null, $page = null, $page_size = null, $filter_property_0 = null, $filter_operator_0 = null, $filter_value_0 = null, $filter_property_1 = null, $filter_operator_1 = null, $filter_value_1 = null, $filter_property_2 = null, $filter_operator_2 = null, $filter_value_2 = null)
+    {
+        return $this->sysPropositionsFilterV11AsyncWithHttpInfo($product_type, $company_label_id, $sort_by, $sort_direction, $page, $page_size, $filter_property_0, $filter_operator_0, $filter_value_0, $filter_property_1, $filter_operator_1, $filter_value_1, $filter_property_2, $filter_operator_2, $filter_value_2)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysPropositionsFilterV11AsyncWithHttpInfo
+     *
+     * Opvragen van proposities op basis van product met paging en filtering ondersteuning
+     *
+     * @param  string $product_type Het product type waarvoor proposities opgehaald moeten worden (verplicht) (required)
+     * @param  string $company_label_id Verplicht veld wanneer er in een omgeving meerdere labels geconfigureerd zijn. Mag weggelaten worden of null zijn in omgevingen waar maar één label geconfigureerd is (optional)
+     * @param  string $sort_by Optionele parameter voor de veldnaam waar je op wilt sorteren. (optional)
+     * @param  string $sort_direction Optionele parameter voor de sorteerrichting als er een sorteerveld is opgegeven. (optional)
+     * @param  int $page Optionele parameter om aan te geven welk paginanummer van een gepagineerde result set er teruggegeven moet worden. (optional)
+     * @param  int $page_size Optionele parameter om aan te geven hoe veel resultaten per pagina er terug moeten worden gegeven. (optional)
+     * @param  string $filter_property_0 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_0 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_0 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_1 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_1 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_1 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_2 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_2 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_2 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysPropositionsFilterV11AsyncWithHttpInfo($product_type, $company_label_id = null, $sort_by = null, $sort_direction = null, $page = null, $page_size = null, $filter_property_0 = null, $filter_operator_0 = null, $filter_value_0 = null, $filter_property_1 = null, $filter_operator_1 = null, $filter_value_1 = null, $filter_property_2 = null, $filter_operator_2 = null, $filter_value_2 = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]';
+        $request = $this->sysPropositionsFilterV11Request($product_type, $company_label_id, $sort_by, $sort_direction, $page, $page_size, $filter_property_0, $filter_operator_0, $filter_value_0, $filter_property_1, $filter_operator_1, $filter_value_1, $filter_property_2, $filter_operator_2, $filter_value_2);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysPropositionsFilterV11'
+     *
+     * @param  string $product_type Het product type waarvoor proposities opgehaald moeten worden (verplicht) (required)
+     * @param  string $company_label_id Verplicht veld wanneer er in een omgeving meerdere labels geconfigureerd zijn. Mag weggelaten worden of null zijn in omgevingen waar maar één label geconfigureerd is (optional)
+     * @param  string $sort_by Optionele parameter voor de veldnaam waar je op wilt sorteren. (optional)
+     * @param  string $sort_direction Optionele parameter voor de sorteerrichting als er een sorteerveld is opgegeven. (optional)
+     * @param  int $page Optionele parameter om aan te geven welk paginanummer van een gepagineerde result set er teruggegeven moet worden. (optional)
+     * @param  int $page_size Optionele parameter om aan te geven hoe veel resultaten per pagina er terug moeten worden gegeven. (optional)
+     * @param  string $filter_property_0 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_0 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_0 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_1 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_1 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_1 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     * @param  string $filter_property_2 Optionele parameter voor de veldnaam waar je op wilt filteren. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterProperty worden meegegeven met FilterProperty[1]&amp;FilterProperty[2] etc. (optional)
+     * @param  string $filter_operator_2 Optionele parameter voor het type filter. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterOperator worden meegegeven met FilterOperator[1]&amp;FilterOperator[2] etc. (optional)
+     * @param  string $filter_value_2 Optionele parameter voor de filter waarde. Als je meerdere filters meegeeft, moet voor elke filterindex ook een FilterValue worden meegegeven met FilterValue[1]&amp;FilterValue[2] etc.. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysPropositionsFilterV11Request($product_type, $company_label_id = null, $sort_by = null, $sort_direction = null, $page = null, $page_size = null, $filter_property_0 = null, $filter_operator_0 = null, $filter_value_0 = null, $filter_property_1 = null, $filter_operator_1 = null, $filter_value_1 = null, $filter_property_2 = null, $filter_operator_2 = null, $filter_value_2 = null)
+    {
+        // verify the required parameter 'product_type' is set
+        if ($product_type === null || (is_array($product_type) && count($product_type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $product_type when calling sysPropositionsFilterV11'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.1/propositions/filter';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($product_type !== null) {
+            $queryParams['ProductType'] = ObjectSerializer::toQueryValue($product_type);
+        }
+        // query params
+        if ($company_label_id !== null) {
+            $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
+        }
+        // query params
+        if ($sort_by !== null) {
+            $queryParams['sortBy'] = ObjectSerializer::toQueryValue($sort_by);
+        }
+        // query params
+        if ($sort_direction !== null) {
+            $queryParams['sortDirection'] = ObjectSerializer::toQueryValue($sort_direction);
+        }
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($page_size !== null) {
+            $queryParams['pageSize'] = ObjectSerializer::toQueryValue($page_size);
+        }
+        // query params
+        if ($filter_property_0 !== null) {
+            $queryParams['FilterProperty[0]'] = ObjectSerializer::toQueryValue($filter_property_0);
+        }
+        // query params
+        if ($filter_operator_0 !== null) {
+            $queryParams['FilterOperator[0]'] = ObjectSerializer::toQueryValue($filter_operator_0);
+        }
+        // query params
+        if ($filter_value_0 !== null) {
+            $queryParams['FilterValue[0]'] = ObjectSerializer::toQueryValue($filter_value_0);
+        }
+        // query params
+        if ($filter_property_1 !== null) {
+            $queryParams['FilterProperty[1]'] = ObjectSerializer::toQueryValue($filter_property_1);
+        }
+        // query params
+        if ($filter_operator_1 !== null) {
+            $queryParams['FilterOperator[1]'] = ObjectSerializer::toQueryValue($filter_operator_1);
+        }
+        // query params
+        if ($filter_value_1 !== null) {
+            $queryParams['FilterValue[1]'] = ObjectSerializer::toQueryValue($filter_value_1);
+        }
+        // query params
+        if ($filter_property_2 !== null) {
+            $queryParams['FilterProperty[2]'] = ObjectSerializer::toQueryValue($filter_property_2);
+        }
+        // query params
+        if ($filter_operator_2 !== null) {
+            $queryParams['FilterOperator[2]'] = ObjectSerializer::toQueryValue($filter_operator_2);
+        }
+        // query params
+        if ($filter_value_2 !== null) {
+            $queryParams['FilterValue[2]'] = ObjectSerializer::toQueryValue($filter_value_2);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sysPropositionsGet
+     *
+     * Opvragen Meelift proposities van een productiemiddel.
+     *
+     * @param  string $means_of_production_id  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionWithPrices[]
+     */
+    public function sysPropositionsGet($means_of_production_id)
+    {
+        list($response) = $this->sysPropositionsGetWithHttpInfo($means_of_production_id);
+        return $response;
+    }
+
+    /**
+     * Operation sysPropositionsGetWithHttpInfo
+     *
+     * Opvragen Meelift proposities van een productiemiddel.
+     *
+     * @param  string $means_of_production_id  (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionWithPrices[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysPropositionsGetWithHttpInfo($means_of_production_id)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionWithPrices[]';
+        $request = $this->sysPropositionsGetRequest($means_of_production_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionWithPrices[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
      * Operation sysPropositionsGetAsync
      *
      * Opvragen Meelift proposities van een productiemiddel.
@@ -864,7 +1281,7 @@ class SysPropositionsApi
      */
     public function sysPropositionsGetAsyncWithHttpInfo($means_of_production_id)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProposition[]';
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPropositionWithPrices[]';
         $request = $this->sysPropositionsGetRequest($means_of_production_id);
 
         return $this->client

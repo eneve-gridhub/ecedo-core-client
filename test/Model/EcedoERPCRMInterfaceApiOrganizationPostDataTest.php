@@ -98,6 +98,13 @@ class EcedoERPCRMInterfaceApiOrganizationPostDataTest extends \PHPUnit_Framework
     }
 
     /**
+     * Test attribute "organization_category"
+     */
+    public function testPropertyOrganizationCategory()
+    {
+    }
+
+    /**
      * Test attribute "client_reference"
      */
     public function testPropertyClientReference()
@@ -339,6 +346,13 @@ class EcedoERPCRMInterfaceApiOrganizationPostDataTest extends \PHPUnit_Framework
      * Test attribute "reseller_organization_id"
      */
     public function testPropertyResellerOrganizationId()
+    {
+    }
+
+    /**
+     * Test attribute "entity_properties"
+     */
+    public function testPropertyEntityProperties()
     {
     }
 }

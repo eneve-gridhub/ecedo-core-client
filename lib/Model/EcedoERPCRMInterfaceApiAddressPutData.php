@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiClientMandate
+ * EcedoERPCRMInterfaceApiAddressPutData
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * EcedoERPCRMInterfaceApiClientMandate Class Doc Comment
+ * EcedoERPCRMInterfaceApiAddressPutData Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiClientMandate implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiAddressPutData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class EcedoERPCRMInterfaceApiClientMandate implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.ClientMandate';
+    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.AddressPutData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,15 +57,12 @@ class EcedoERPCRMInterfaceApiClientMandate implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'date' => '\DateTime',
-        'valid_until' => '\DateTime',
-        'purpose' => 'string',
-        'manner' => 'string',
-        'zip_code' => 'string',
+        'street' => 'string',
         'number' => 'int',
         'addition' => 'string',
-        'comment' => 'string'
+        'zip_code' => 'string',
+        'city' => 'string',
+        'country' => 'string'
     ];
 
     /**
@@ -74,15 +71,12 @@ class EcedoERPCRMInterfaceApiClientMandate implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-        'date' => 'date',
-        'valid_until' => 'date',
-        'purpose' => null,
-        'manner' => null,
-        'zip_code' => null,
+        'street' => null,
         'number' => 'int32',
         'addition' => null,
-        'comment' => null
+        'zip_code' => null,
+        'city' => null,
+        'country' => null
     ];
 
     /**
@@ -112,15 +106,12 @@ class EcedoERPCRMInterfaceApiClientMandate implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'date' => 'Date',
-        'valid_until' => 'ValidUntil',
-        'purpose' => 'Purpose',
-        'manner' => 'Manner',
-        'zip_code' => 'ZipCode',
+        'street' => 'Street',
         'number' => 'Number',
         'addition' => 'Addition',
-        'comment' => 'Comment'
+        'zip_code' => 'ZipCode',
+        'city' => 'City',
+        'country' => 'Country'
     ];
 
     /**
@@ -129,15 +120,12 @@ class EcedoERPCRMInterfaceApiClientMandate implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'date' => 'setDate',
-        'valid_until' => 'setValidUntil',
-        'purpose' => 'setPurpose',
-        'manner' => 'setManner',
-        'zip_code' => 'setZipCode',
+        'street' => 'setStreet',
         'number' => 'setNumber',
         'addition' => 'setAddition',
-        'comment' => 'setComment'
+        'zip_code' => 'setZipCode',
+        'city' => 'setCity',
+        'country' => 'setCountry'
     ];
 
     /**
@@ -146,15 +134,12 @@ class EcedoERPCRMInterfaceApiClientMandate implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'date' => 'getDate',
-        'valid_until' => 'getValidUntil',
-        'purpose' => 'getPurpose',
-        'manner' => 'getManner',
-        'zip_code' => 'getZipCode',
+        'street' => 'getStreet',
         'number' => 'getNumber',
         'addition' => 'getAddition',
-        'comment' => 'getComment'
+        'zip_code' => 'getZipCode',
+        'city' => 'getCity',
+        'country' => 'getCountry'
     ];
 
     /**
@@ -217,15 +202,12 @@ class EcedoERPCRMInterfaceApiClientMandate implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
-        $this->container['valid_until'] = isset($data['valid_until']) ? $data['valid_until'] : null;
-        $this->container['purpose'] = isset($data['purpose']) ? $data['purpose'] : null;
-        $this->container['manner'] = isset($data['manner']) ? $data['manner'] : null;
-        $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
+        $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
         $this->container['addition'] = isset($data['addition']) ? $data['addition'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
     }
 
     /**
@@ -253,145 +235,25 @@ class EcedoERPCRMInterfaceApiClientMandate implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets name
+     * Gets street
      *
      * @return string
      */
-    public function getName()
+    public function getStreet()
     {
-        return $this->container['name'];
+        return $this->container['street'];
     }
 
     /**
-     * Sets name
+     * Sets street
      *
-     * @param string $name name
+     * @param string $street street
      *
      * @return $this
      */
-    public function setName($name)
+    public function setStreet($street)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets date
-     *
-     * @return \DateTime
-     */
-    public function getDate()
-    {
-        return $this->container['date'];
-    }
-
-    /**
-     * Sets date
-     *
-     * @param \DateTime $date date
-     *
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->container['date'] = $date;
-
-        return $this;
-    }
-
-    /**
-     * Gets valid_until
-     *
-     * @return \DateTime
-     */
-    public function getValidUntil()
-    {
-        return $this->container['valid_until'];
-    }
-
-    /**
-     * Sets valid_until
-     *
-     * @param \DateTime $valid_until valid_until
-     *
-     * @return $this
-     */
-    public function setValidUntil($valid_until)
-    {
-        $this->container['valid_until'] = $valid_until;
-
-        return $this;
-    }
-
-    /**
-     * Gets purpose
-     *
-     * @return string
-     */
-    public function getPurpose()
-    {
-        return $this->container['purpose'];
-    }
-
-    /**
-     * Sets purpose
-     *
-     * @param string $purpose purpose
-     *
-     * @return $this
-     */
-    public function setPurpose($purpose)
-    {
-        $this->container['purpose'] = $purpose;
-
-        return $this;
-    }
-
-    /**
-     * Gets manner
-     *
-     * @return string
-     */
-    public function getManner()
-    {
-        return $this->container['manner'];
-    }
-
-    /**
-     * Sets manner
-     *
-     * @param string $manner manner
-     *
-     * @return $this
-     */
-    public function setManner($manner)
-    {
-        $this->container['manner'] = $manner;
-
-        return $this;
-    }
-
-    /**
-     * Gets zip_code
-     *
-     * @return string
-     */
-    public function getZipCode()
-    {
-        return $this->container['zip_code'];
-    }
-
-    /**
-     * Sets zip_code
-     *
-     * @param string $zip_code zip_code
-     *
-     * @return $this
-     */
-    public function setZipCode($zip_code)
-    {
-        $this->container['zip_code'] = $zip_code;
+        $this->container['street'] = $street;
 
         return $this;
     }
@@ -445,25 +307,73 @@ class EcedoERPCRMInterfaceApiClientMandate implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets comment
+     * Gets zip_code
      *
      * @return string
      */
-    public function getComment()
+    public function getZipCode()
     {
-        return $this->container['comment'];
+        return $this->container['zip_code'];
     }
 
     /**
-     * Sets comment
+     * Sets zip_code
      *
-     * @param string $comment comment
+     * @param string $zip_code zip_code
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setZipCode($zip_code)
     {
-        $this->container['comment'] = $comment;
+        $this->container['zip_code'] = $zip_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string $city city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string $country country
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
 
         return $this;
     }

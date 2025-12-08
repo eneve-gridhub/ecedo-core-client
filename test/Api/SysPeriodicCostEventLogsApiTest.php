@@ -74,7 +74,7 @@ class SysPeriodicCostEventLogsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysPeriodicCostEventLogsGet
      *
-     * .
+     * Haal VKO-records van een specifieke klant op.
      *
      */
     public function testSysPeriodicCostEventLogsGet()

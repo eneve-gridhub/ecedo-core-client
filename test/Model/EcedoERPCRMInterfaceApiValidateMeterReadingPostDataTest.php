@@ -77,55 +77,6 @@ class EcedoERPCRMInterfaceApiValidateMeterReadingPostDataTest extends \PHPUnit_F
     }
 
     /**
-     * Test attribute "organization_id"
-     */
-    public function testPropertyOrganizationId()
-    {
-    }
-
-    /**
-     * Test attribute "connection_id"
-     */
-    public function testPropertyConnectionId()
-    {
-    }
-
-    /**
-     * Test attribute "ean"
-     */
-    public function testPropertyEan()
-    {
-    }
-
-    /**
-     * Test attribute "reading_method"
-     */
-    public function testPropertyReadingMethod()
-    {
-    }
-
-    /**
-     * Test attribute "source"
-     */
-    public function testPropertySource()
-    {
-    }
-
-    /**
-     * Test attribute "quality"
-     */
-    public function testPropertyQuality()
-    {
-    }
-
-    /**
-     * Test attribute "request_reason"
-     */
-    public function testPropertyRequestReason()
-    {
-    }
-
-    /**
      * Test attribute "meter_number"
      */
     public function testPropertyMeterNumber()
@@ -168,9 +119,23 @@ class EcedoERPCRMInterfaceApiValidateMeterReadingPostDataTest extends \PHPUnit_F
     }
 
     /**
-     * Test attribute "comment"
+     * Test attribute "organization_id"
      */
-    public function testPropertyComment()
+    public function testPropertyOrganizationId()
+    {
+    }
+
+    /**
+     * Test attribute "connection_id"
+     */
+    public function testPropertyConnectionId()
+    {
+    }
+
+    /**
+     * Test attribute "ean"
+     */
+    public function testPropertyEan()
     {
     }
 }

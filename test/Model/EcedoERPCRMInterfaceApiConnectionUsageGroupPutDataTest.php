@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * EcedoERPCRMInterfaceApiConnectionUsageGroupPutDataTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiConnectionUsageGroupPutData
+ * @description Bevat de gegevens voor het updaten van een ConnectionUsageGroup.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

@@ -84,7 +84,7 @@ class SysZipAreaTaxCreditProjectApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysZipAreaTaxCreditProjectGetZipAreaEnergyTaxCreditProjects
      *
-     * Verkrijg een lijst van objecten met de velden uit postcoderoosproject.
+     * Verkrijg een lijst van postcoderoosprojecten..
      *
      */
     public function testSysZipAreaTaxCreditProjectGetZipAreaEnergyTaxCreditProjects()
@@ -94,7 +94,7 @@ class SysZipAreaTaxCreditProjectApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysZipAreaTaxCreditProjectPostZipAreaEnergyTaxCreditProject
      *
-     * Voeg een postcoderoosproject toe.
+     * Voeg een nieuw postcoderoosproject toe..
      *
      */
     public function testSysZipAreaTaxCreditProjectPostZipAreaEnergyTaxCreditProject()
@@ -104,7 +104,7 @@ class SysZipAreaTaxCreditProjectApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysZipAreaTaxCreditProjectPutZipAreaEnergyTaxCreditProject
      *
-     * Update een postcoderoosproject.
+     * Wijzig een postcoderoosproject.
      *
      */
     public function testSysZipAreaTaxCreditProjectPutZipAreaEnergyTaxCreditProject()

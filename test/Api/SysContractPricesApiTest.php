@@ -90,4 +90,14 @@ class SysContractPricesApiTest extends \PHPUnit_Framework_TestCase
     public function testSysContractPricesPost()
     {
     }
+
+    /**
+     * Test case for sysContractPricesPostV11
+     *
+     * Toevoegen (of wijzigen) van contractprijzen.
+     *
+     */
+    public function testSysContractPricesPostV11()
+    {
+    }
 }

@@ -74,10 +74,20 @@ class SysResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysResellerDeleteResellerDetail
      *
-     * Verwijder wederverkoper detail.
+     * Verwijder de details van een wederverkoper.
      *
      */
     public function testSysResellerDeleteResellerDetail()
+    {
+    }
+
+    /**
+     * Test case for sysResellerDeleteResellerImage
+     *
+     * Verwijder een afbeelding va de wederverkoper..
+     *
+     */
+    public function testSysResellerDeleteResellerImage()
     {
     }
 
@@ -132,6 +142,16 @@ class SysResellerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysResellerGetResellerImage
+     *
+     * Haal een afbeelding van een wederverkoper op.
+     *
+     */
+    public function testSysResellerGetResellerImage()
+    {
+    }
+
+    /**
      * Test case for sysResellerPostContract
      *
      * Post contract.
@@ -164,10 +184,20 @@ class SysResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysResellerPutResellerDetail
      *
-     * Update wederverkoper detail.
+     * Wijzig de details van een wederverkoper.
      *
      */
     public function testSysResellerPutResellerDetail()
+    {
+    }
+
+    /**
+     * Test case for sysResellerPutResellerImageAsync
+     *
+     * Upload één of meerdere afbeeldingen voor een wederverkoper.
+     *
+     */
+    public function testSysResellerPutResellerImageAsync()
     {
     }
 

@@ -58,6 +58,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionDat
       */
     protected static $swaggerTypes = [
         'market_segment' => 'string',
+        'energy_tax_connection_group_reference' => 'string',
         'ean' => 'string',
         'agreement_date' => '\DateTime',
         'proposition_reference' => 'string',
@@ -83,6 +84,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionDat
       */
     protected static $swaggerFormats = [
         'market_segment' => null,
+        'energy_tax_connection_group_reference' => null,
         'ean' => null,
         'agreement_date' => 'date',
         'proposition_reference' => null,
@@ -129,6 +131,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionDat
      */
     protected static $attributeMap = [
         'market_segment' => 'MarketSegment',
+        'energy_tax_connection_group_reference' => 'EnergyTaxConnectionGroupReference',
         'ean' => 'EAN',
         'agreement_date' => 'AgreementDate',
         'proposition_reference' => 'PropositionReference',
@@ -154,6 +157,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionDat
      */
     protected static $setters = [
         'market_segment' => 'setMarketSegment',
+        'energy_tax_connection_group_reference' => 'setEnergyTaxConnectionGroupReference',
         'ean' => 'setEan',
         'agreement_date' => 'setAgreementDate',
         'proposition_reference' => 'setPropositionReference',
@@ -179,6 +183,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionDat
      */
     protected static $getters = [
         'market_segment' => 'getMarketSegment',
+        'energy_tax_connection_group_reference' => 'getEnergyTaxConnectionGroupReference',
         'ean' => 'getEan',
         'agreement_date' => 'getAgreementDate',
         'proposition_reference' => 'getPropositionReference',
@@ -315,6 +320,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionDat
     public function __construct(array $data = null)
     {
         $this->container['market_segment'] = isset($data['market_segment']) ? $data['market_segment'] : null;
+        $this->container['energy_tax_connection_group_reference'] = isset($data['energy_tax_connection_group_reference']) ? $data['energy_tax_connection_group_reference'] : null;
         $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
         $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
         $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
@@ -410,6 +416,30 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionDat
             );
         }
         $this->container['market_segment'] = $market_segment;
+
+        return $this;
+    }
+
+    /**
+     * Gets energy_tax_connection_group_reference
+     *
+     * @return string
+     */
+    public function getEnergyTaxConnectionGroupReference()
+    {
+        return $this->container['energy_tax_connection_group_reference'];
+    }
+
+    /**
+     * Sets energy_tax_connection_group_reference
+     *
+     * @param string $energy_tax_connection_group_reference Optionele referentie van een energiebelastinggroep waartoe de aansluiting behoort.  Als deze gevuld is dan doorlopen de aansluitingen in deze groep samen door de energiebelastingstaffels. Elke groep doorloopt apart door de staffels.  Als het veld gevuld is bij één aansluiting, dan moet het bij alle aansluitingen gevuld zijn.
+     *
+     * @return $this
+     */
+    public function setEnergyTaxConnectionGroupReference($energy_tax_connection_group_reference)
+    {
+        $this->container['energy_tax_connection_group_reference'] = $energy_tax_connection_group_reference;
 
         return $this;
     }

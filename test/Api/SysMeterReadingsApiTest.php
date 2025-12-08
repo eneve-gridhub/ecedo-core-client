@@ -122,12 +122,32 @@ class SysMeterReadingsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysMeterReadingsPost
+     *
+     * Valideert een meterstand. Het resultaat van de vallidatie wordt gereturnd..
+     *
+     */
+    public function testSysMeterReadingsPost()
+    {
+    }
+
+    /**
      * Test case for sysMeterReadingsPostNewMeterReading
      *
      * Meteropname insturen..
      *
      */
     public function testSysMeterReadingsPostNewMeterReading()
+    {
+    }
+
+    /**
+     * Test case for sysMeterReadingsPostNewMeterReadingByEventId
+     *
+     * Meteropname insturen..
+     *
+     */
+    public function testSysMeterReadingsPostNewMeterReadingByEventId()
     {
     }
 }

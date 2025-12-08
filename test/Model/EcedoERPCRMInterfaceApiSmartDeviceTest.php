@@ -124,4 +124,11 @@ class EcedoERPCRMInterfaceApiSmartDeviceTest extends \PHPUnit_Framework_TestCase
     public function testPropertyDeviceEntityId()
     {
     }
+
+    /**
+     * Test attribute "entity_properties"
+     */
+    public function testPropertyEntityProperties()
+    {
+    }
 }

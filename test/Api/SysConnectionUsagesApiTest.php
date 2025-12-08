@@ -74,7 +74,7 @@ class SysConnectionUsagesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysConnectionUsagesDeleteConnectionUsage
      *
-     * Verwijdert een ConnectionUsage..
+     * Verwijder een ConnectionUsage.
      *
      */
     public function testSysConnectionUsagesDeleteConnectionUsage()
@@ -84,7 +84,7 @@ class SysConnectionUsagesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysConnectionUsagesDeleteConnectionUsageGroup
      *
-     * Verwijdert een ConnectionUsageGroup..
+     * Verwijder een ConnectionUsageGroup.
      *
      */
     public function testSysConnectionUsagesDeleteConnectionUsageGroup()
@@ -94,7 +94,7 @@ class SysConnectionUsagesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysConnectionUsagesGetConnectionUsageGroup
      *
-     * Haalt de ConnectionUsageGroups op die bij een aansluiting horen. Deze API haalt niet de volumes op die onder de ConnectionUsageGroups hangen..
+     * Haal de ConnectionUsageGroups van een specifieke aansluiting op.
      *
      */
     public function testSysConnectionUsagesGetConnectionUsageGroup()
@@ -104,7 +104,7 @@ class SysConnectionUsagesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysConnectionUsagesGetConnectionUsages
      *
-     * Haalt de ConnectionUsages op die bij een ConnectionUsageGroup horen..
+     * Haal de ConnectionUsages van een specifieke ConnectionUsageGroup op.
      *
      */
     public function testSysConnectionUsagesGetConnectionUsages()
@@ -114,7 +114,7 @@ class SysConnectionUsagesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysConnectionUsagesPatchConnectionUsageGroup
      *
-     * Deze API kan de beschrijving en comment wijzigen. Als een veld null is wordt het niet gewijzigd..
+     * Wijzig een ConnectionUsageGroup.
      *
      */
     public function testSysConnectionUsagesPatchConnectionUsageGroup()
@@ -124,7 +124,7 @@ class SysConnectionUsagesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysConnectionUsagesPostConnectionUsage
      *
-     * Deze API maakt een ConnectionUsage aan..
+     * Nieuwe ConnectionUsage aanmaken.
      *
      */
     public function testSysConnectionUsagesPostConnectionUsage()
@@ -134,7 +134,7 @@ class SysConnectionUsagesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysConnectionUsagesPostConnectionUsageGroup
      *
-     * Deze API maakt een ConnectionUsageGroup aan..
+     * Nieuwe ConnectionUsageGroup aanmaken.
      *
      */
     public function testSysConnectionUsagesPostConnectionUsageGroup()

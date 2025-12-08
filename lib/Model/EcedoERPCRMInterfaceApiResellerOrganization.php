@@ -59,6 +59,8 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     protected static $swaggerTypes = [
         'organization_type' => 'string',
         'organization_sub_type' => 'string',
+        'organization_category' => 'string',
+        'organization_category_localized' => 'string',
         'organization_type_localized' => 'string',
         'organization_id' => 'string',
         'reference' => 'string',
@@ -80,6 +82,8 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     protected static $swaggerFormats = [
         'organization_type' => null,
         'organization_sub_type' => null,
+        'organization_category' => null,
+        'organization_category_localized' => null,
         'organization_type_localized' => null,
         'organization_id' => null,
         'reference' => null,
@@ -122,6 +126,8 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     protected static $attributeMap = [
         'organization_type' => 'OrganizationType',
         'organization_sub_type' => 'OrganizationSubType',
+        'organization_category' => 'OrganizationCategory',
+        'organization_category_localized' => 'OrganizationCategoryLocalized',
         'organization_type_localized' => 'OrganizationTypeLocalized',
         'organization_id' => 'OrganizationId',
         'reference' => 'Reference',
@@ -143,6 +149,8 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     protected static $setters = [
         'organization_type' => 'setOrganizationType',
         'organization_sub_type' => 'setOrganizationSubType',
+        'organization_category' => 'setOrganizationCategory',
+        'organization_category_localized' => 'setOrganizationCategoryLocalized',
         'organization_type_localized' => 'setOrganizationTypeLocalized',
         'organization_id' => 'setOrganizationId',
         'reference' => 'setReference',
@@ -164,6 +172,8 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     protected static $getters = [
         'organization_type' => 'getOrganizationType',
         'organization_sub_type' => 'getOrganizationSubType',
+        'organization_category' => 'getOrganizationCategory',
+        'organization_category_localized' => 'getOrganizationCategoryLocalized',
         'organization_type_localized' => 'getOrganizationTypeLocalized',
         'organization_id' => 'getOrganizationId',
         'reference' => 'getReference',
@@ -222,6 +232,12 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     const ORGANIZATION_SUB_TYPE_PRODUCER = 'Producer';
     const ORGANIZATION_SUB_TYPE_MSP = 'Msp';
     const ORGANIZATION_SUB_TYPE_CPO = 'Cpo';
+    const ORGANIZATION_CATEGORY_PROTECTED_CONSUMER = 'ProtectedConsumer';
+    const ORGANIZATION_CATEGORY_REGULAR_CONSUMER = 'RegularConsumer';
+    const ORGANIZATION_CATEGORY_MICRO_BUSINESS = 'MicroBusiness';
+    const ORGANIZATION_CATEGORY_SMALL_BUSINESS = 'SmallBusiness';
+    const ORGANIZATION_CATEGORY_MEDIUM_BUSINESS = 'MediumBusiness';
+    const ORGANIZATION_CATEGORY_LARGE_BUSINESS = 'LargeBusiness';
     
 
     
@@ -237,6 +253,23 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
             self::ORGANIZATION_SUB_TYPE_PRODUCER,
             self::ORGANIZATION_SUB_TYPE_MSP,
             self::ORGANIZATION_SUB_TYPE_CPO,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getOrganizationCategoryAllowableValues()
+    {
+        return [
+            self::ORGANIZATION_CATEGORY_PROTECTED_CONSUMER,
+            self::ORGANIZATION_CATEGORY_REGULAR_CONSUMER,
+            self::ORGANIZATION_CATEGORY_MICRO_BUSINESS,
+            self::ORGANIZATION_CATEGORY_SMALL_BUSINESS,
+            self::ORGANIZATION_CATEGORY_MEDIUM_BUSINESS,
+            self::ORGANIZATION_CATEGORY_LARGE_BUSINESS,
         ];
     }
     
@@ -258,6 +291,8 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     {
         $this->container['organization_type'] = isset($data['organization_type']) ? $data['organization_type'] : null;
         $this->container['organization_sub_type'] = isset($data['organization_sub_type']) ? $data['organization_sub_type'] : null;
+        $this->container['organization_category'] = isset($data['organization_category']) ? $data['organization_category'] : null;
+        $this->container['organization_category_localized'] = isset($data['organization_category_localized']) ? $data['organization_category_localized'] : null;
         $this->container['organization_type_localized'] = isset($data['organization_type_localized']) ? $data['organization_type_localized'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
@@ -284,6 +319,14 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
         if (!is_null($this->container['organization_sub_type']) && !in_array($this->container['organization_sub_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'organization_sub_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getOrganizationCategoryAllowableValues();
+        if (!is_null($this->container['organization_category']) && !in_array($this->container['organization_category'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'organization_category', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -356,6 +399,63 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
             );
         }
         $this->container['organization_sub_type'] = $organization_sub_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_category
+     *
+     * @return string
+     */
+    public function getOrganizationCategory()
+    {
+        return $this->container['organization_category'];
+    }
+
+    /**
+     * Sets organization_category
+     *
+     * @param string $organization_category De categorie van de klant volgens de Energiewet. Optioneel veld.
+     *
+     * @return $this
+     */
+    public function setOrganizationCategory($organization_category)
+    {
+        $allowedValues = $this->getOrganizationCategoryAllowableValues();
+        if (!is_null($organization_category) && !in_array($organization_category, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'organization_category', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['organization_category'] = $organization_category;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_category_localized
+     *
+     * @return string
+     */
+    public function getOrganizationCategoryLocalized()
+    {
+        return $this->container['organization_category_localized'];
+    }
+
+    /**
+     * Sets organization_category_localized
+     *
+     * @param string $organization_category_localized Nederlandse vertaling van OrganizationCategory
+     *
+     * @return $this
+     */
+    public function setOrganizationCategoryLocalized($organization_category_localized)
+    {
+        $this->container['organization_category_localized'] = $organization_category_localized;
 
         return $this;
     }
@@ -445,7 +545,7 @@ class EcedoERPCRMInterfaceApiResellerOrganization implements ModelInterface, Arr
     /**
      * Sets organization_group_id
      *
-     * @param string $organization_group_id Het klantnummer van de klant
+     * @param string $organization_group_id Het unieke ID van de klantgroep waarin de klant is geplaatst
      *
      * @return $this
      */

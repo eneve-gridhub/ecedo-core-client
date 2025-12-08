@@ -84,6 +84,13 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionDat
     }
 
     /**
+     * Test attribute "energy_tax_connection_group_reference"
+     */
+    public function testPropertyEnergyTaxConnectionGroupReference()
+    {
+    }
+
+    /**
      * Test attribute "ean"
      */
     public function testPropertyEan()

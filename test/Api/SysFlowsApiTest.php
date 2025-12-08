@@ -134,7 +134,7 @@ class SysFlowsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysFlowsCancelPurchaseFlow
      *
-     * Productaanschafflow afbreken.
+     * 'Overige facturen' flow afbreken.
      *
      */
     public function testSysFlowsCancelPurchaseFlow()
@@ -144,7 +144,7 @@ class SysFlowsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysFlowsCancelPurchaseFlowDeposit
      *
-     * Productaanschafflow voor Borg afbreken.
+     * 'Overige facturen' flow voor Borg afbreken.
      *
      */
     public function testSysFlowsCancelPurchaseFlowDeposit()
@@ -154,7 +154,7 @@ class SysFlowsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysFlowsCancelSwitchOutFlow
      *
-     * Uithuizingsflow afbreken.
+     * Uitswitch flow afbreken.
      *
      */
     public function testSysFlowsCancelSwitchOutFlow()
@@ -172,39 +172,69 @@ class SysFlowsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for sysFlowsGetAdvancePaymentInvoicesByStep
+     * Test case for sysFlowsGetAdvancePaymentInvoicesByStepV10
      *
-     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'.
+     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op..
      *
      */
-    public function testSysFlowsGetAdvancePaymentInvoicesByStep()
+    public function testSysFlowsGetAdvancePaymentInvoicesByStepV10()
     {
     }
 
     /**
-     * Test case for sysFlowsGetProductPurchaseInvoicesByStep
+     * Test case for sysFlowsGetAdvancePaymentInvoicesByStepV11
      *
-     * Haalt de facturen die in de gevraagde product aanschaf flow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'.
+     * Haalt de facturen die in de gevraagde voorschot factuurflow stap staan op..
      *
      */
-    public function testSysFlowsGetProductPurchaseInvoicesByStep()
+    public function testSysFlowsGetAdvancePaymentInvoicesByStepV11()
     {
     }
 
     /**
-     * Test case for sysFlowsGetSettlementInvoicesByStep
+     * Test case for sysFlowsGetProductPurchaseInvoicesByStepV10
      *
-     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op.  Geldige waarde(n) voor {stepType} zijn 'WaitForModification'.
+     * Haalt de facturen die in de gevraagde 'Overige facturen' flow stap staan op..
      *
      */
-    public function testSysFlowsGetSettlementInvoicesByStep()
+    public function testSysFlowsGetProductPurchaseInvoicesByStepV10()
+    {
+    }
+
+    /**
+     * Test case for sysFlowsGetProductPurchaseInvoicesByStepV11
+     *
+     * Haalt de facturen die in de gevraagde 'Overige facturen' flow stap staan op..
+     *
+     */
+    public function testSysFlowsGetProductPurchaseInvoicesByStepV11()
+    {
+    }
+
+    /**
+     * Test case for sysFlowsGetSettlementInvoiceByStepV11
+     *
+     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op..
+     *
+     */
+    public function testSysFlowsGetSettlementInvoiceByStepV11()
+    {
+    }
+
+    /**
+     * Test case for sysFlowsGetSettlementInvoicesByStepV10
+     *
+     * Haalt de facturen die in de gevraagde afreken factuurflow stap staan op..
+     *
+     */
+    public function testSysFlowsGetSettlementInvoicesByStepV10()
     {
     }
 
     /**
      * Test case for sysFlowsProductPurchaseInvoiceFlowModificationFinished
      *
-     * Product aanschaf stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}.
+     * 'Overige facturen' flow stap 'Wacht op aanpassingen' gereed melden voor {InvoiceId}.
      *
      */
     public function testSysFlowsProductPurchaseInvoiceFlowModificationFinished()

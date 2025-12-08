@@ -91,6 +91,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "termination_fee_calculation_reason"
+     */
+    public function testPropertyTerminationFeeCalculationReason()
+    {
+    }
+
+    /**
      * Test attribute "has_termination_fee"
      */
     public function testPropertyHasTerminationFee()

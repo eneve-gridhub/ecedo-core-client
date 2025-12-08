@@ -92,6 +92,26 @@ class SysSmartDevicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysSmartDevicesGetSmartDeviceServiceContract
+     *
+     * Ophalen van een slim apparaat service contract op basis van contractId.
+     *
+     */
+    public function testSysSmartDevicesGetSmartDeviceServiceContract()
+    {
+    }
+
+    /**
+     * Test case for sysSmartDevicesGetSmartDeviceServiceContracts
+     *
+     * Ophalen van alle service contracten van een slim apparaat op basis van smartDeviceId.
+     *
+     */
+    public function testSysSmartDevicesGetSmartDeviceServiceContracts()
+    {
+    }
+
+    /**
      * Test case for sysSmartDevicesGetSmartDevices
      *
      * Verkrijg slimme apparaten van organisatie.

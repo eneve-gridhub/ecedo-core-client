@@ -154,6 +154,13 @@ class EcedoERPCRMInterfaceApiOrganizationTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "entity_properties"
+     */
+    public function testPropertyEntityProperties()
+    {
+    }
+
+    /**
      * Test attribute "address"
      */
     public function testPropertyAddress()
@@ -276,6 +283,27 @@ class EcedoERPCRMInterfaceApiOrganizationTest extends \PHPUnit_Framework_TestCas
      * Test attribute "organization_type"
      */
     public function testPropertyOrganizationType()
+    {
+    }
+
+    /**
+     * Test attribute "organization_sub_type"
+     */
+    public function testPropertyOrganizationSubType()
+    {
+    }
+
+    /**
+     * Test attribute "organization_category"
+     */
+    public function testPropertyOrganizationCategory()
+    {
+    }
+
+    /**
+     * Test attribute "organization_category_localized"
+     */
+    public function testPropertyOrganizationCategoryLocalized()
     {
     }
 

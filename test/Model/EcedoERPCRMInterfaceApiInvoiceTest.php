@@ -343,6 +343,13 @@ class EcedoERPCRMInterfaceApiInvoiceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "settled_advance_payment_invoice_ids"
+     */
+    public function testPropertySettledAdvancePaymentInvoiceIds()
+    {
+    }
+
+    /**
      * Test attribute "client_reference"
      */
     public function testPropertyClientReference()

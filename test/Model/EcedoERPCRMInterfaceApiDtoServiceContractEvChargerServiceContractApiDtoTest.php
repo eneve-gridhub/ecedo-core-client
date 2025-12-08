@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiEvChargerServiceContractDataTest
+ * EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDtoTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * EcedoERPCRMInterfaceApiEvChargerServiceContractDataTest Class Doc Comment
+ * EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDtoTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiEvChargerServiceContractData
+ * @description EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiEvChargerServiceContractDataTest extends \PHPUnit_Framework_TestCase
+class EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class EcedoERPCRMInterfaceApiEvChargerServiceContractDataTest extends \PHPUnit_F
     }
 
     /**
-     * Test "EcedoERPCRMInterfaceApiEvChargerServiceContractData"
+     * Test "EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto"
      */
-    public function testEcedoERPCRMInterfaceApiEvChargerServiceContractData()
+    public function testEcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto()
     {
     }
 
@@ -80,34 +80,6 @@ class EcedoERPCRMInterfaceApiEvChargerServiceContractDataTest extends \PHPUnit_F
      * Test attribute "ev_charger_id"
      */
     public function testPropertyEvChargerId()
-    {
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
-     * Test attribute "status_localized"
-     */
-    public function testPropertyStatusLocalized()
-    {
-    }
-
-    /**
-     * Test attribute "contract_id"
-     */
-    public function testPropertyContractId()
-    {
-    }
-
-    /**
-     * Test attribute "cluster_connection_group_id"
-     */
-    public function testPropertyClusterConnectionGroupId()
     {
     }
 
@@ -157,6 +129,34 @@ class EcedoERPCRMInterfaceApiEvChargerServiceContractDataTest extends \PHPUnit_F
      * Test attribute "comment"
      */
     public function testPropertyComment()
+    {
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "status_localized"
+     */
+    public function testPropertyStatusLocalized()
+    {
+    }
+
+    /**
+     * Test attribute "contract_id"
+     */
+    public function testPropertyContractId()
+    {
+    }
+
+    /**
+     * Test attribute "cluster_connection_group_id"
+     */
+    public function testPropertyClusterConnectionGroupId()
     {
     }
 }

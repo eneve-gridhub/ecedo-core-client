@@ -72,6 +72,16 @@ class SysOrganizationEventApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysOrganizationEventGetEnergyApplicationEvents
+     *
+     * Opvragen van EnergyApplication events voor een klant.
+     *
+     */
+    public function testSysOrganizationEventGetEnergyApplicationEvents()
+    {
+    }
+
+    /**
      * Test case for sysOrganizationEventGetFirstPossibleEventDate
      *
      * Bepaal eerst mogelijke eventdatum op basis van een gewenste eventdatum.
@@ -88,6 +98,16 @@ class SysOrganizationEventApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSysOrganizationEventGetMeterReadingCollectionEvents()
+    {
+    }
+
+    /**
+     * Test case for sysOrganizationEventGetMoveEvents
+     *
+     * Opvragen van Move events voor een klant.
+     *
+     */
+    public function testSysOrganizationEventGetMoveEvents()
     {
     }
 
@@ -118,6 +138,16 @@ class SysOrganizationEventApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSysOrganizationEventGetSwitchEvents()
+    {
+    }
+
+    /**
+     * Test case for sysOrganizationEventGetSwitchOutEvents
+     *
+     * Opvragen van Switch Out (EndOfSupply en MoveOut) events voor een klant.
+     *
+     */
+    public function testSysOrganizationEventGetSwitchOutEvents()
     {
     }
 }

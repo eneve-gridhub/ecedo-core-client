@@ -168,13 +168,6 @@ class EcedoERPCRMInterfaceApiBillingItemGroupTest extends \PHPUnit_Framework_Tes
     }
 
     /**
-     * Test attribute "invoice_group"
-     */
-    public function testPropertyInvoiceGroup()
-    {
-    }
-
-    /**
      * Test attribute "market_segment"
      */
     public function testPropertyMarketSegment()
@@ -241,6 +234,13 @@ class EcedoERPCRMInterfaceApiBillingItemGroupTest extends \PHPUnit_Framework_Tes
      * Test attribute "billing_item_prices"
      */
     public function testPropertyBillingItemPrices()
+    {
+    }
+
+    /**
+     * Test attribute "entity_property"
+     */
+    public function testPropertyEntityProperty()
     {
     }
 }

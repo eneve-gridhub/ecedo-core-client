@@ -161,9 +161,23 @@ class EcedoERPCRMInterfaceApiPropositionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "proposition_prices"
+     * Test attribute "is_model_contract"
      */
-    public function testPropertyPropositionPrices()
+    public function testPropertyIsModelContract()
+    {
+    }
+
+    /**
+     * Test attribute "market_price_source"
+     */
+    public function testPropertyMarketPriceSource()
+    {
+    }
+
+    /**
+     * Test attribute "market_price_source_localized"
+     */
+    public function testPropertyMarketPriceSourceLocalized()
     {
     }
 

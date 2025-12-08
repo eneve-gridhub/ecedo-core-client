@@ -92,6 +92,16 @@ class SysPropositionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysPropositionsFilterV11
+     *
+     * Opvragen van proposities op basis van product met paging en filtering ondersteuning.
+     *
+     */
+    public function testSysPropositionsFilterV11()
+    {
+    }
+
+    /**
      * Test case for sysPropositionsGet
      *
      * Opvragen Meelift proposities van een productiemiddel..

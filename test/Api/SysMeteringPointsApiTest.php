@@ -82,32 +82,12 @@ class SysMeteringPointsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for sysMeteringPointsCreateClientKey
-     *
-     * Toevoegen van klantsleutels  aan het C-AR.
-     *
-     */
-    public function testSysMeteringPointsCreateClientKey()
-    {
-    }
-
-    /**
      * Test case for sysMeteringPointsGet
      *
      * Opvragen van aansluitingdetails uit het C-AR.
      *
      */
     public function testSysMeteringPointsGet()
-    {
-    }
-
-    /**
-     * Test case for sysMeteringPointsGetProposalMeteringPoint
-     *
-     * Opvragen van aansluitingdetails uit het C-AR tijdens het offerte-traject.
-     *
-     */
-    public function testSysMeteringPointsGetProposalMeteringPoint()
     {
     }
 

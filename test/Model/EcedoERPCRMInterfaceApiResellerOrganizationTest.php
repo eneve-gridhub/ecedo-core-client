@@ -84,6 +84,27 @@ class EcedoERPCRMInterfaceApiResellerOrganizationTest extends \PHPUnit_Framework
     }
 
     /**
+     * Test attribute "organization_sub_type"
+     */
+    public function testPropertyOrganizationSubType()
+    {
+    }
+
+    /**
+     * Test attribute "organization_category"
+     */
+    public function testPropertyOrganizationCategory()
+    {
+    }
+
+    /**
+     * Test attribute "organization_category_localized"
+     */
+    public function testPropertyOrganizationCategoryLocalized()
+    {
+    }
+
+    /**
      * Test attribute "organization_type_localized"
      */
     public function testPropertyOrganizationTypeLocalized()

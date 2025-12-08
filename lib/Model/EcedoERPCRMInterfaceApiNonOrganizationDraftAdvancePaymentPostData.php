@@ -58,9 +58,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
       */
     protected static $swaggerTypes = [
         'do_combine_rows' => 'bool',
-        'mandate_id' => 'string',
-        'iban_key' => 'string',
-        'birth_day_key' => 'string',
         'organization_type' => 'string',
         'agreement_date' => '\DateTime',
         'month' => '\DateTime',
@@ -75,9 +72,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
       */
     protected static $swaggerFormats = [
         'do_combine_rows' => null,
-        'mandate_id' => null,
-        'iban_key' => null,
-        'birth_day_key' => null,
         'organization_type' => null,
         'agreement_date' => 'date',
         'month' => 'date',
@@ -113,9 +107,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     protected static $attributeMap = [
         'do_combine_rows' => 'DoCombineRows',
-        'mandate_id' => 'MandateId',
-        'iban_key' => 'IBANKey',
-        'birth_day_key' => 'BirthDayKey',
         'organization_type' => 'OrganizationType',
         'agreement_date' => 'AgreementDate',
         'month' => 'Month',
@@ -130,9 +121,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     protected static $setters = [
         'do_combine_rows' => 'setDoCombineRows',
-        'mandate_id' => 'setMandateId',
-        'iban_key' => 'setIbanKey',
-        'birth_day_key' => 'setBirthDayKey',
         'organization_type' => 'setOrganizationType',
         'agreement_date' => 'setAgreementDate',
         'month' => 'setMonth',
@@ -147,9 +135,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     protected static $getters = [
         'do_combine_rows' => 'getDoCombineRows',
-        'mandate_id' => 'getMandateId',
-        'iban_key' => 'getIbanKey',
-        'birth_day_key' => 'getBirthDayKey',
         'organization_type' => 'getOrganizationType',
         'agreement_date' => 'getAgreementDate',
         'month' => 'getMonth',
@@ -233,9 +218,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
     public function __construct(array $data = null)
     {
         $this->container['do_combine_rows'] = isset($data['do_combine_rows']) ? $data['do_combine_rows'] : null;
-        $this->container['mandate_id'] = isset($data['mandate_id']) ? $data['mandate_id'] : null;
-        $this->container['iban_key'] = isset($data['iban_key']) ? $data['iban_key'] : null;
-        $this->container['birth_day_key'] = isset($data['birth_day_key']) ? $data['birth_day_key'] : null;
         $this->container['organization_type'] = isset($data['organization_type']) ? $data['organization_type'] : null;
         $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
         $this->container['month'] = isset($data['month']) ? $data['month'] : null;
@@ -295,78 +277,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
     public function setDoCombineRows($do_combine_rows)
     {
         $this->container['do_combine_rows'] = $do_combine_rows;
-
-        return $this;
-    }
-
-    /**
-     * Gets mandate_id
-     *
-     * @return string
-     */
-    public function getMandateId()
-    {
-        return $this->container['mandate_id'];
-    }
-
-    /**
-     * Sets mandate_id
-     *
-     * @param string $mandate_id Onderdeel van fase II functionaliteit die sinds januari 2020 \"tijdelijk\" niet meer beschikbaar is
-     *
-     * @return $this
-     */
-    public function setMandateId($mandate_id)
-    {
-        $this->container['mandate_id'] = $mandate_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets iban_key
-     *
-     * @return string
-     */
-    public function getIbanKey()
-    {
-        return $this->container['iban_key'];
-    }
-
-    /**
-     * Sets iban_key
-     *
-     * @param string $iban_key Onderdeel van fase II functionaliteit die sinds januari 2020 \"tijdelijk\" niet meer beschikbaar is
-     *
-     * @return $this
-     */
-    public function setIbanKey($iban_key)
-    {
-        $this->container['iban_key'] = $iban_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets birth_day_key
-     *
-     * @return string
-     */
-    public function getBirthDayKey()
-    {
-        return $this->container['birth_day_key'];
-    }
-
-    /**
-     * Sets birth_day_key
-     *
-     * @param string $birth_day_key Onderdeel van fase II functionaliteit die sinds januari 2020 \"tijdelijk\" niet meer beschikbaar is
-     *
-     * @return $this
-     */
-    public function setBirthDayKey($birth_day_key)
-    {
-        $this->container['birth_day_key'] = $birth_day_key;
 
         return $this;
     }

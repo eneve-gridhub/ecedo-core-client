@@ -84,7 +84,7 @@ class SysDraftAdvancePaymentsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysDraftAdvancePaymentsCalculateDraftAdvancePayment
      *
-     * Aanmaken proefvoorschot.
+     * Aanmaken proefvoorschot voor bestaande klant.
      *
      */
     public function testSysDraftAdvancePaymentsCalculateDraftAdvancePayment()
@@ -94,7 +94,7 @@ class SysDraftAdvancePaymentsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysDraftAdvancePaymentsCalculateDraftAdvancePaymentForNonOrganization
      *
-     * Aanmaken proefvoorschot.
+     * Aanmaken proefvoorschot voor een nieuwe klant.
      *
      */
     public function testSysDraftAdvancePaymentsCalculateDraftAdvancePaymentForNonOrganization()

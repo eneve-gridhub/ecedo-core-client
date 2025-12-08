@@ -133,6 +133,13 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
     }
 
     /**
+     * Test attribute "connection_is_excluded_from_energy_tax"
+     */
+    public function testPropertyConnectionIsExcludedFromEnergyTax()
+    {
+    }
+
+    /**
      * Test attribute "connection_contract_proposition_has_termination_fee"
      */
     public function testPropertyConnectionContractPropositionHasTerminationFee()
@@ -171,6 +178,27 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
      * Test attribute "connection_grid_operator"
      */
     public function testPropertyConnectionGridOperator()
+    {
+    }
+
+    /**
+     * Test attribute "connection_grid_operator_phone_number"
+     */
+    public function testPropertyConnectionGridOperatorPhoneNumber()
+    {
+    }
+
+    /**
+     * Test attribute "connection_grid_operator_email_address"
+     */
+    public function testPropertyConnectionGridOperatorEmailAddress()
+    {
+    }
+
+    /**
+     * Test attribute "connection_grid_operator_website"
+     */
+    public function testPropertyConnectionGridOperatorWebsite()
     {
     }
 
@@ -353,6 +381,20 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
      * Test attribute "connection_contract_proposition_is_market_price_proposition"
      */
     public function testPropertyConnectionContractPropositionIsMarketPriceProposition()
+    {
+    }
+
+    /**
+     * Test attribute "connection_contract_proposition_market_price_source"
+     */
+    public function testPropertyConnectionContractPropositionMarketPriceSource()
+    {
+    }
+
+    /**
+     * Test attribute "connection_contract_proposition_market_price_source_localized"
+     */
+    public function testPropertyConnectionContractPropositionMarketPriceSourceLocalized()
     {
     }
 

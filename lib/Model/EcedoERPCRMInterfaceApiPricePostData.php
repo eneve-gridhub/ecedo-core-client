@@ -62,6 +62,7 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'status' => 'string',
+        'price_unit' => 'string',
         'vat_inclusive' => 'bool',
         'gos_region' => 'string',
         'range_begin' => 'int',
@@ -79,6 +80,7 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'start_date' => 'date',
         'end_date' => 'date',
         'status' => null,
+        'price_unit' => null,
         'vat_inclusive' => null,
         'gos_region' => null,
         'range_begin' => 'int32',
@@ -117,6 +119,7 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'start_date' => 'StartDate',
         'end_date' => 'EndDate',
         'status' => 'Status',
+        'price_unit' => 'PriceUnit',
         'vat_inclusive' => 'VatInclusive',
         'gos_region' => 'GosRegion',
         'range_begin' => 'RangeBegin',
@@ -134,6 +137,7 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'status' => 'setStatus',
+        'price_unit' => 'setPriceUnit',
         'vat_inclusive' => 'setVatInclusive',
         'gos_region' => 'setGosRegion',
         'range_begin' => 'setRangeBegin',
@@ -151,6 +155,7 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'status' => 'getStatus',
+        'price_unit' => 'getPriceUnit',
         'vat_inclusive' => 'getVatInclusive',
         'gos_region' => 'getGosRegion',
         'range_begin' => 'getRangeBegin',
@@ -200,6 +205,20 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
 
     const STATUS_FINALIZED = 'Finalized';
     const STATUS_PROVISIONAL = 'Provisional';
+    const PRICE_UNIT_YEAR = 'Year';
+    const PRICE_UNIT_DAY = 'Day';
+    const PRICE_UNIT_KWH = 'KWh';
+    const PRICE_UNIT_M3 = 'M3';
+    const PRICE_UNIT_ONE_OFF = 'OneOff';
+    const PRICE_UNIT_MONTH = 'Month';
+    const PRICE_UNIT_MWH = 'MWh';
+    const PRICE_UNIT_WH = 'Wh';
+    const PRICE_UNIT_INVOICE = 'Invoice';
+    const PRICE_UNIT_PERCENTAGE = 'Percentage';
+    const PRICE_UNIT_SECONDS = 'Seconds';
+    const PRICE_UNIT_CHARGE_SESSION = 'ChargeSession';
+    const PRICE_UNIT_CREDIT = 'Credit';
+    const PRICE_UNIT_HOUR = 'Hour';
     const GOS_REGION_REGION1 = 'Region1';
     const GOS_REGION_REGION2 = 'Region2';
     const GOS_REGION_REGION3 = 'Region3';
@@ -223,6 +242,31 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         return [
             self::STATUS_FINALIZED,
             self::STATUS_PROVISIONAL,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPriceUnitAllowableValues()
+    {
+        return [
+            self::PRICE_UNIT_YEAR,
+            self::PRICE_UNIT_DAY,
+            self::PRICE_UNIT_KWH,
+            self::PRICE_UNIT_M3,
+            self::PRICE_UNIT_ONE_OFF,
+            self::PRICE_UNIT_MONTH,
+            self::PRICE_UNIT_MWH,
+            self::PRICE_UNIT_WH,
+            self::PRICE_UNIT_INVOICE,
+            self::PRICE_UNIT_PERCENTAGE,
+            self::PRICE_UNIT_SECONDS,
+            self::PRICE_UNIT_CHARGE_SESSION,
+            self::PRICE_UNIT_CREDIT,
+            self::PRICE_UNIT_HOUR,
         ];
     }
     
@@ -268,6 +312,7 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['price_unit'] = isset($data['price_unit']) ? $data['price_unit'] : null;
         $this->container['vat_inclusive'] = isset($data['vat_inclusive']) ? $data['vat_inclusive'] : null;
         $this->container['gos_region'] = isset($data['gos_region']) ? $data['gos_region'] : null;
         $this->container['range_begin'] = isset($data['range_begin']) ? $data['range_begin'] : null;
@@ -293,6 +338,14 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'status', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getPriceUnitAllowableValues();
+        if (!is_null($this->container['price_unit']) && !in_array($this->container['price_unit'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'price_unit', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -445,6 +498,39 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
             );
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_unit
+     *
+     * @return string
+     */
+    public function getPriceUnit()
+    {
+        return $this->container['price_unit'];
+    }
+
+    /**
+     * Sets price_unit
+     *
+     * @param string $price_unit price_unit
+     *
+     * @return $this
+     */
+    public function setPriceUnit($price_unit)
+    {
+        $allowedValues = $this->getPriceUnitAllowableValues();
+        if (!is_null($price_unit) && !in_array($price_unit, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'price_unit', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['price_unit'] = $price_unit;
 
         return $this;
     }

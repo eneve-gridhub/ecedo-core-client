@@ -74,7 +74,7 @@ class SysServiceContractApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysServiceContractGetServiceContract
      *
-     * .
+     * Deze API wordt niet langer actief ondersteund, gebruik evchargerservicecontracts/{contractId} om een laadpaal service contract op te halen.
      *
      */
     public function testSysServiceContractGetServiceContract()

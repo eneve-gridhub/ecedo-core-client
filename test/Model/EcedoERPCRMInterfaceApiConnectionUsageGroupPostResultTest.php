@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * EcedoERPCRMInterfaceApiConnectionUsageGroupPostResultTest Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiConnectionUsageGroupPostResult
+ * @description Bevat het resultaat van een ConnectionUsageGroup aanmaakactie.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

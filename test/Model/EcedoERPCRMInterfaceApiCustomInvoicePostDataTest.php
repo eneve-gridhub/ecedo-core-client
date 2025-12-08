@@ -131,4 +131,11 @@ class EcedoERPCRMInterfaceApiCustomInvoicePostDataTest extends \PHPUnit_Framewor
     public function testPropertyClientReference()
     {
     }
+
+    /**
+     * Test attribute "cluster_reference"
+     */
+    public function testPropertyClusterReference()
+    {
+    }
 }

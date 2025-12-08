@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiClientMandateResult
+ * EcedoERPCRMInterfaceApiMeansOfProductionConnectionPutData
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * EcedoERPCRMInterfaceApiClientMandateResult Class Doc Comment
+ * EcedoERPCRMInterfaceApiMeansOfProductionConnectionPutData Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiClientMandateResult implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiMeansOfProductionConnectionPutData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class EcedoERPCRMInterfaceApiClientMandateResult implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.ClientMandateResult';
+    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.MeansOfProductionConnectionPutData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,11 @@ class EcedoERPCRMInterfaceApiClientMandateResult implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'client_mandate_id' => 'string'
+        'balance_responsible_market_party_ean' => '\Swagger\Client\Model\EcedoInfrastructureTypesEan',
+        'connection_ean' => '\Swagger\Client\Model\EcedoInfrastructureTypesEan',
+        'expected_year_production' => 'int',
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime'
     ];
 
     /**
@@ -66,7 +70,11 @@ class EcedoERPCRMInterfaceApiClientMandateResult implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'client_mandate_id' => null
+        'balance_responsible_market_party_ean' => null,
+        'connection_ean' => null,
+        'expected_year_production' => 'int32',
+        'start_date' => 'date',
+        'end_date' => 'date'
     ];
 
     /**
@@ -96,7 +104,11 @@ class EcedoERPCRMInterfaceApiClientMandateResult implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'client_mandate_id' => 'ClientMandateId'
+        'balance_responsible_market_party_ean' => 'BalanceResponsibleMarketPartyEan',
+        'connection_ean' => 'ConnectionEan',
+        'expected_year_production' => 'ExpectedYearProduction',
+        'start_date' => 'StartDate',
+        'end_date' => 'EndDate'
     ];
 
     /**
@@ -105,7 +117,11 @@ class EcedoERPCRMInterfaceApiClientMandateResult implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'client_mandate_id' => 'setClientMandateId'
+        'balance_responsible_market_party_ean' => 'setBalanceResponsibleMarketPartyEan',
+        'connection_ean' => 'setConnectionEan',
+        'expected_year_production' => 'setExpectedYearProduction',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate'
     ];
 
     /**
@@ -114,7 +130,11 @@ class EcedoERPCRMInterfaceApiClientMandateResult implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'client_mandate_id' => 'getClientMandateId'
+        'balance_responsible_market_party_ean' => 'getBalanceResponsibleMarketPartyEan',
+        'connection_ean' => 'getConnectionEan',
+        'expected_year_production' => 'getExpectedYearProduction',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate'
     ];
 
     /**
@@ -177,7 +197,11 @@ class EcedoERPCRMInterfaceApiClientMandateResult implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['client_mandate_id'] = isset($data['client_mandate_id']) ? $data['client_mandate_id'] : null;
+        $this->container['balance_responsible_market_party_ean'] = isset($data['balance_responsible_market_party_ean']) ? $data['balance_responsible_market_party_ean'] : null;
+        $this->container['connection_ean'] = isset($data['connection_ean']) ? $data['connection_ean'] : null;
+        $this->container['expected_year_production'] = isset($data['expected_year_production']) ? $data['expected_year_production'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
     }
 
     /**
@@ -205,25 +229,121 @@ class EcedoERPCRMInterfaceApiClientMandateResult implements ModelInterface, Arra
 
 
     /**
-     * Gets client_mandate_id
+     * Gets balance_responsible_market_party_ean
      *
-     * @return string
+     * @return \Swagger\Client\Model\EcedoInfrastructureTypesEan
      */
-    public function getClientMandateId()
+    public function getBalanceResponsibleMarketPartyEan()
     {
-        return $this->container['client_mandate_id'];
+        return $this->container['balance_responsible_market_party_ean'];
     }
 
     /**
-     * Sets client_mandate_id
+     * Sets balance_responsible_market_party_ean
      *
-     * @param string $client_mandate_id client_mandate_id
+     * @param \Swagger\Client\Model\EcedoInfrastructureTypesEan $balance_responsible_market_party_ean balance_responsible_market_party_ean
      *
      * @return $this
      */
-    public function setClientMandateId($client_mandate_id)
+    public function setBalanceResponsibleMarketPartyEan($balance_responsible_market_party_ean)
     {
-        $this->container['client_mandate_id'] = $client_mandate_id;
+        $this->container['balance_responsible_market_party_ean'] = $balance_responsible_market_party_ean;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_ean
+     *
+     * @return \Swagger\Client\Model\EcedoInfrastructureTypesEan
+     */
+    public function getConnectionEan()
+    {
+        return $this->container['connection_ean'];
+    }
+
+    /**
+     * Sets connection_ean
+     *
+     * @param \Swagger\Client\Model\EcedoInfrastructureTypesEan $connection_ean connection_ean
+     *
+     * @return $this
+     */
+    public function setConnectionEan($connection_ean)
+    {
+        $this->container['connection_ean'] = $connection_ean;
+
+        return $this;
+    }
+
+    /**
+     * Gets expected_year_production
+     *
+     * @return int
+     */
+    public function getExpectedYearProduction()
+    {
+        return $this->container['expected_year_production'];
+    }
+
+    /**
+     * Sets expected_year_production
+     *
+     * @param int $expected_year_production expected_year_production
+     *
+     * @return $this
+     */
+    public function setExpectedYearProduction($expected_year_production)
+    {
+        $this->container['expected_year_production'] = $expected_year_production;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime $start_date start_date
+     *
+     * @return $this
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     *
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     *
+     * @param \DateTime $end_date end_date
+     *
+     * @return $this
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }

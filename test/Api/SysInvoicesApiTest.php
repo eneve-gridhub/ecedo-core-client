@@ -94,7 +94,7 @@ class SysInvoicesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysInvoicesCalculateExpectedSettlementInvoice
      *
-     * Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op.
+     * Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op. Deze jaarafrekening bevat ook de factuurregels..
      *
      */
     public function testSysInvoicesCalculateExpectedSettlementInvoice()
@@ -134,7 +134,7 @@ class SysInvoicesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysInvoicesGet
      *
-     * Haal facturen van een specifieke klant op (op basis van InvoiceId).
+     * Haal facturen van een specifieke klant op..
      *
      */
     public function testSysInvoicesGet()
@@ -174,10 +174,20 @@ class SysInvoicesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysInvoicesGetInvoicesByCompany
      *
-     * Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer<br></br>  Fetch invoices with invoice number greater than \"invoiceNumber\" for a company label: \"companyLabelId\"<br></br>      Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned.
+     * Haal facturen van een een specifieke label op, met factuurnummers hoger dan het meegegeven factuurnummer<br></br>  Fetch invoices with invoice number greater than \"invoiceNumber\" for a company label: \"companyLabelId\"<br></br>                 Maximum of 1000 records are returned. Additional calls are needed if more than 1000 records are returned.
      *
      */
     public function testSysInvoicesGetInvoicesByCompany()
+    {
+    }
+
+    /**
+     * Test case for sysInvoicesGetInvoicesPaginated
+     *
+     * Haal facturen van een specifieke klant op.
+     *
+     */
+    public function testSysInvoicesGetInvoicesPaginated()
     {
     }
 

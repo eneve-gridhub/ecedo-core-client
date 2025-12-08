@@ -747,7 +747,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesCalculateExpectedSettlementInvoice
      *
-     * Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op
+     * Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op. Deze jaarafrekening bevat ook de factuurregels.
      *
      * @param  string $organization_id  (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiExpectedSettlementInvoicePostData $expected_invoice_post_data  (required)
@@ -765,7 +765,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesCalculateExpectedSettlementInvoiceWithHttpInfo
      *
-     * Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op
+     * Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op. Deze jaarafrekening bevat ook de factuurregels.
      *
      * @param  string $organization_id  (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiExpectedSettlementInvoicePostData $expected_invoice_post_data  (required)
@@ -857,7 +857,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesCalculateExpectedSettlementInvoiceAsync
      *
-     * Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op
+     * Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op. Deze jaarafrekening bevat ook de factuurregels.
      *
      * @param  string $organization_id  (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiExpectedSettlementInvoicePostData $expected_invoice_post_data  (required)
@@ -878,7 +878,7 @@ class SysInvoicesApi
     /**
      * Operation sysInvoicesCalculateExpectedSettlementInvoiceAsyncWithHttpInfo
      *
-     * Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op
+     * Berekend en haalt de verwachte jaarafrekening voor een specifiek cluster op. Deze jaarafrekening bevat ook de factuurregels.
      *
      * @param  string $organization_id  (required)
      * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiExpectedSettlementInvoicePostData $expected_invoice_post_data  (required)

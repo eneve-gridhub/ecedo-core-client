@@ -210,6 +210,13 @@ class EcedoERPCRMInterfaceApiMeterReadingCollectionEventTest extends \PHPUnit_Fr
     }
 
     /**
+     * Test attribute "deadline"
+     */
+    public function testPropertyDeadline()
+    {
+    }
+
+    /**
      * Test attribute "comment"
      */
     public function testPropertyComment()

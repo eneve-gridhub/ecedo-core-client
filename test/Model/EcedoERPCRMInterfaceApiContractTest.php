@@ -252,6 +252,20 @@ class EcedoERPCRMInterfaceApiContractTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "proposition_market_price_source"
+     */
+    public function testPropertyPropositionMarketPriceSource()
+    {
+    }
+
+    /**
+     * Test attribute "proposition_market_price_source_localized"
+     */
+    public function testPropertyPropositionMarketPriceSourceLocalized()
+    {
+    }
+
+    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()

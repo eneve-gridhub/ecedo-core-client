@@ -1,6 +1,6 @@
 <?php
 /**
- * SysClientMandateApiTest
+ * SysBillingItemGroupsApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * SysClientMandateApiTest Class Doc Comment
+ * SysBillingItemGroupsApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SysClientMandateApiTest extends \PHPUnit_Framework_TestCase
+class SysBillingItemGroupsApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,12 +72,52 @@ class SysClientMandateApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for sysClientMandatePost
+     * Test case for sysBillingItemGroupsDelete
      *
-     * ClientMandate opslaan.
+     * Verwijdert een factuuritemgroep.
      *
      */
-    public function testSysClientMandatePost()
+    public function testSysBillingItemGroupsDelete()
+    {
+    }
+
+    /**
+     * Test case for sysBillingItemGroupsGet
+     *
+     * Haalt factuuritemgroepen op.
+     *
+     */
+    public function testSysBillingItemGroupsGet()
+    {
+    }
+
+    /**
+     * Test case for sysBillingItemGroupsPost
+     *
+     * Maak een factuuritemgroep aan.
+     *
+     */
+    public function testSysBillingItemGroupsPost()
+    {
+    }
+
+    /**
+     * Test case for sysBillingItemGroupsPutActiveBillingItemGroup
+     *
+     * Wijzigt een actieve factuuritemgroep.
+     *
+     */
+    public function testSysBillingItemGroupsPutActiveBillingItemGroup()
+    {
+    }
+
+    /**
+     * Test case for sysBillingItemGroupsPutBillingItemGroup
+     *
+     * Wijzigt een factuuritemgroep.
+     *
+     */
+    public function testSysBillingItemGroupsPutBillingItemGroup()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiClientKeyCreateData
+ * EcedoERPCRMInterfaceApiPricesPostDataV2
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * EcedoERPCRMInterfaceApiClientKeyCreateData Class Doc Comment
+ * EcedoERPCRMInterfaceApiPricesPostDataV2 Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiPricesPostDataV2 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.ClientKeyCreateData';
+    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.PricesPostDataV2';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,7 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'external_reference' => 'string',
-        'birth_day_key' => 'string',
-        'iban_key' => 'string',
-        'company_label_id' => 'string'
+        'prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPricePostDataV2[]'
     ];
 
     /**
@@ -69,10 +66,7 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'external_reference' => null,
-        'birth_day_key' => null,
-        'iban_key' => null,
-        'company_label_id' => 'uuid'
+        'prices' => null
     ];
 
     /**
@@ -102,10 +96,7 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'external_reference' => 'ExternalReference',
-        'birth_day_key' => 'BirthDayKey',
-        'iban_key' => 'IbanKey',
-        'company_label_id' => 'CompanyLabelId'
+        'prices' => 'Prices'
     ];
 
     /**
@@ -114,10 +105,7 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'external_reference' => 'setExternalReference',
-        'birth_day_key' => 'setBirthDayKey',
-        'iban_key' => 'setIbanKey',
-        'company_label_id' => 'setCompanyLabelId'
+        'prices' => 'setPrices'
     ];
 
     /**
@@ -126,10 +114,7 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'external_reference' => 'getExternalReference',
-        'birth_day_key' => 'getBirthDayKey',
-        'iban_key' => 'getIbanKey',
-        'company_label_id' => 'getCompanyLabelId'
+        'prices' => 'getPrices'
     ];
 
     /**
@@ -192,10 +177,7 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['external_reference'] = isset($data['external_reference']) ? $data['external_reference'] : null;
-        $this->container['birth_day_key'] = isset($data['birth_day_key']) ? $data['birth_day_key'] : null;
-        $this->container['iban_key'] = isset($data['iban_key']) ? $data['iban_key'] : null;
-        $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
+        $this->container['prices'] = isset($data['prices']) ? $data['prices'] : null;
     }
 
     /**
@@ -223,97 +205,25 @@ class EcedoERPCRMInterfaceApiClientKeyCreateData implements ModelInterface, Arra
 
 
     /**
-     * Gets external_reference
+     * Gets prices
      *
-     * @return string
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiPricePostDataV2[]
      */
-    public function getExternalReference()
+    public function getPrices()
     {
-        return $this->container['external_reference'];
+        return $this->container['prices'];
     }
 
     /**
-     * Sets external_reference
+     * Sets prices
      *
-     * @param string $external_reference Optionele referentie ten behoeven van interne processen van de leverancier of traceerbaarheid van de sleutels
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiPricePostDataV2[] $prices prices
      *
      * @return $this
      */
-    public function setExternalReference($external_reference)
+    public function setPrices($prices)
     {
-        $this->container['external_reference'] = $external_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets birth_day_key
-     *
-     * @return string
-     */
-    public function getBirthDayKey()
-    {
-        return $this->container['birth_day_key'];
-    }
-
-    /**
-     * Sets birth_day_key
-     *
-     * @param string $birth_day_key De verjaardag sleutel van de klant. Dit zijn de maand en de dag van de geboortedatum (MMDD).  Dit veld is verplicht wanneer de IbanKey leeg is.
-     *
-     * @return $this
-     */
-    public function setBirthDayKey($birth_day_key)
-    {
-        $this->container['birth_day_key'] = $birth_day_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets iban_key
-     *
-     * @return string
-     */
-    public function getIbanKey()
-    {
-        return $this->container['iban_key'];
-    }
-
-    /**
-     * Sets iban_key
-     *
-     * @param string $iban_key De IBAN sleutel van de klant. Dit zijn de laatste 3 cijfers van het IBAN-bankrekeningnummer van de klant.  Dit veld is verplicht wanneer de BirthDayKey leeg is.
-     *
-     * @return $this
-     */
-    public function setIbanKey($iban_key)
-    {
-        $this->container['iban_key'] = $iban_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_label_id
-     *
-     * @return string
-     */
-    public function getCompanyLabelId()
-    {
-        return $this->container['company_label_id'];
-    }
-
-    /**
-     * Sets company_label_id
-     *
-     * @param string $company_label_id Id van het companylabel, mag leeg worden zijn wanneer de leverancier maar 1 EDSN Organisatie EAN heeft
-     *
-     * @return $this
-     */
-    public function setCompanyLabelId($company_label_id)
-    {
-        $this->container['company_label_id'] = $company_label_id;
+        $this->container['prices'] = $prices;
 
         return $this;
     }

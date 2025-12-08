@@ -730,41 +730,41 @@ class SysContractPricesApi
     }
 
     /**
-     * Operation sysContractPricesPut
+     * Operation sysContractPricesPostV11
      *
-     * Toevoegen (als deze er nog niet is) of aanpassen van EnergieInkoopContract prijzen
+     * Toevoegen (of wijzigen) van contractprijzen
      *
      * @param  string $organization_id  (required)
      * @param  string $contract_id  (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData $prices_post_data  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPricesPostDataV2 $prices_post_data  (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function sysContractPricesPut($organization_id, $contract_id, $prices_post_data)
+    public function sysContractPricesPostV11($organization_id, $contract_id, $prices_post_data)
     {
-        list($response) = $this->sysContractPricesPutWithHttpInfo($organization_id, $contract_id, $prices_post_data);
+        list($response) = $this->sysContractPricesPostV11WithHttpInfo($organization_id, $contract_id, $prices_post_data);
         return $response;
     }
 
     /**
-     * Operation sysContractPricesPutWithHttpInfo
+     * Operation sysContractPricesPostV11WithHttpInfo
      *
-     * Toevoegen (als deze er nog niet is) of aanpassen van EnergieInkoopContract prijzen
+     * Toevoegen (of wijzigen) van contractprijzen
      *
      * @param  string $organization_id  (required)
      * @param  string $contract_id  (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData $prices_post_data  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPricesPostDataV2 $prices_post_data  (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysContractPricesPutWithHttpInfo($organization_id, $contract_id, $prices_post_data)
+    public function sysContractPricesPostV11WithHttpInfo($organization_id, $contract_id, $prices_post_data)
     {
         $returnType = 'object';
-        $request = $this->sysContractPricesPutRequest($organization_id, $contract_id, $prices_post_data);
+        $request = $this->sysContractPricesPostV11Request($organization_id, $contract_id, $prices_post_data);
 
         try {
             $options = $this->createHttpClientOption();
@@ -842,20 +842,20 @@ class SysContractPricesApi
     }
 
     /**
-     * Operation sysContractPricesPutAsync
+     * Operation sysContractPricesPostV11Async
      *
-     * Toevoegen (als deze er nog niet is) of aanpassen van EnergieInkoopContract prijzen
+     * Toevoegen (of wijzigen) van contractprijzen
      *
      * @param  string $organization_id  (required)
      * @param  string $contract_id  (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData $prices_post_data  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPricesPostDataV2 $prices_post_data  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysContractPricesPutAsync($organization_id, $contract_id, $prices_post_data)
+    public function sysContractPricesPostV11Async($organization_id, $contract_id, $prices_post_data)
     {
-        return $this->sysContractPricesPutAsyncWithHttpInfo($organization_id, $contract_id, $prices_post_data)
+        return $this->sysContractPricesPostV11AsyncWithHttpInfo($organization_id, $contract_id, $prices_post_data)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -864,21 +864,21 @@ class SysContractPricesApi
     }
 
     /**
-     * Operation sysContractPricesPutAsyncWithHttpInfo
+     * Operation sysContractPricesPostV11AsyncWithHttpInfo
      *
-     * Toevoegen (als deze er nog niet is) of aanpassen van EnergieInkoopContract prijzen
+     * Toevoegen (of wijzigen) van contractprijzen
      *
      * @param  string $organization_id  (required)
      * @param  string $contract_id  (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData $prices_post_data  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPricesPostDataV2 $prices_post_data  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysContractPricesPutAsyncWithHttpInfo($organization_id, $contract_id, $prices_post_data)
+    public function sysContractPricesPostV11AsyncWithHttpInfo($organization_id, $contract_id, $prices_post_data)
     {
         $returnType = 'object';
-        $request = $this->sysContractPricesPutRequest($organization_id, $contract_id, $prices_post_data);
+        $request = $this->sysContractPricesPostV11Request($organization_id, $contract_id, $prices_post_data);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -918,37 +918,37 @@ class SysContractPricesApi
     }
 
     /**
-     * Create request for operation 'sysContractPricesPut'
+     * Create request for operation 'sysContractPricesPostV11'
      *
      * @param  string $organization_id  (required)
      * @param  string $contract_id  (required)
-     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiEnergyPurchasePricesPostData $prices_post_data  (required)
+     * @param  \Swagger\Client\Model\EcedoERPCRMInterfaceApiPricesPostDataV2 $prices_post_data  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysContractPricesPutRequest($organization_id, $contract_id, $prices_post_data)
+    protected function sysContractPricesPostV11Request($organization_id, $contract_id, $prices_post_data)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null || (is_array($organization_id) && count($organization_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling sysContractPricesPut'
+                'Missing the required parameter $organization_id when calling sysContractPricesPostV11'
             );
         }
         // verify the required parameter 'contract_id' is set
         if ($contract_id === null || (is_array($contract_id) && count($contract_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $contract_id when calling sysContractPricesPut'
+                'Missing the required parameter $contract_id when calling sysContractPricesPostV11'
             );
         }
         // verify the required parameter 'prices_post_data' is set
         if ($prices_post_data === null || (is_array($prices_post_data) && count($prices_post_data) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $prices_post_data when calling sysContractPricesPut'
+                'Missing the required parameter $prices_post_data when calling sysContractPricesPostV11'
             );
         }
 
-        $resourcePath = '/sysapi/v1.0/organizations/{organizationId}/contracts/{contractId}/prices';
+        $resourcePath = '/sysapi/v1.1/organizations/{organizationId}/contracts/{contractId}/prices';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1050,7 +1050,7 @@ class SysContractPricesApi
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
-            'PUT',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
