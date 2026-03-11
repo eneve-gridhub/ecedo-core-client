@@ -92,6 +92,36 @@ class SysAnnualStandardUsagesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysAnnualStandardUsagesPostAnnualStandardUsage
+     *
+     * Bepaling geprofileerd standaard jaarverbruik. Voor bekende organisaties..
+     *
+     */
+    public function testSysAnnualStandardUsagesPostAnnualStandardUsage()
+    {
+    }
+
+    /**
+     * Test case for sysAnnualStandardUsagesPostAnnualStandardUsageElectricity
+     *
+     * Bepaling geprofileerd standaard jaarverbruik voor elektriciteit. Voor onbekende organisaties..
+     *
+     */
+    public function testSysAnnualStandardUsagesPostAnnualStandardUsageElectricity()
+    {
+    }
+
+    /**
+     * Test case for sysAnnualStandardUsagesPostAnnualStandardUsageGas
+     *
+     * Bepaling geprofileerd standaard jaarverbruik voor gas. Voor onbekende organisaties..
+     *
+     */
+    public function testSysAnnualStandardUsagesPostAnnualStandardUsageGas()
+    {
+    }
+
+    /**
      * Test case for sysAnnualStandardUsagesPostExpectedAnnualStandardUsage
      *
      * Aanpassen verwacht jaarverbruik.

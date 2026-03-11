@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiAdvancePayment extends EcedoERPCRMInterfaceApiAdvancePaymentBase 
 {
     const DISCRIMINATOR = null;
 
@@ -64,18 +62,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
         'calculation_reason' => 'string',
         'calculation_reason_localized' => 'string',
         'advance_payment_scheme' => 'string',
-        'advance_payment_scheme_localized' => 'string',
-        'cluster_id' => 'string',
-        'cluster_reference' => 'string',
-        'has_advance_payment' => 'bool',
-        'amount' => 'double',
-        'agreed_amount' => 'double',
-        'calculated_amount' => 'double',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'comment' => 'string',
-        'advance_payment_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]',
-        'combined_advance_payment_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]'
+        'advance_payment_scheme_localized' => 'string'
     ];
 
     /**
@@ -91,18 +78,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
         'calculation_reason' => null,
         'calculation_reason_localized' => null,
         'advance_payment_scheme' => null,
-        'advance_payment_scheme_localized' => null,
-        'cluster_id' => 'uuid',
-        'cluster_reference' => null,
-        'has_advance_payment' => null,
-        'amount' => 'double',
-        'agreed_amount' => 'double',
-        'calculated_amount' => 'double',
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'comment' => null,
-        'advance_payment_rows' => null,
-        'combined_advance_payment_rows' => null
+        'advance_payment_scheme_localized' => null
     ];
 
     /**
@@ -112,7 +88,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -122,7 +98,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -139,18 +115,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
         'calculation_reason' => 'CalculationReason',
         'calculation_reason_localized' => 'CalculationReasonLocalized',
         'advance_payment_scheme' => 'AdvancePaymentScheme',
-        'advance_payment_scheme_localized' => 'AdvancePaymentSchemeLocalized',
-        'cluster_id' => 'ClusterId',
-        'cluster_reference' => 'ClusterReference',
-        'has_advance_payment' => 'HasAdvancePayment',
-        'amount' => 'Amount',
-        'agreed_amount' => 'AgreedAmount',
-        'calculated_amount' => 'CalculatedAmount',
-        'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'comment' => 'Comment',
-        'advance_payment_rows' => 'AdvancePaymentRows',
-        'combined_advance_payment_rows' => 'CombinedAdvancePaymentRows'
+        'advance_payment_scheme_localized' => 'AdvancePaymentSchemeLocalized'
     ];
 
     /**
@@ -166,18 +131,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
         'calculation_reason' => 'setCalculationReason',
         'calculation_reason_localized' => 'setCalculationReasonLocalized',
         'advance_payment_scheme' => 'setAdvancePaymentScheme',
-        'advance_payment_scheme_localized' => 'setAdvancePaymentSchemeLocalized',
-        'cluster_id' => 'setClusterId',
-        'cluster_reference' => 'setClusterReference',
-        'has_advance_payment' => 'setHasAdvancePayment',
-        'amount' => 'setAmount',
-        'agreed_amount' => 'setAgreedAmount',
-        'calculated_amount' => 'setCalculatedAmount',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'comment' => 'setComment',
-        'advance_payment_rows' => 'setAdvancePaymentRows',
-        'combined_advance_payment_rows' => 'setCombinedAdvancePaymentRows'
+        'advance_payment_scheme_localized' => 'setAdvancePaymentSchemeLocalized'
     ];
 
     /**
@@ -193,18 +147,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
         'calculation_reason' => 'getCalculationReason',
         'calculation_reason_localized' => 'getCalculationReasonLocalized',
         'advance_payment_scheme' => 'getAdvancePaymentScheme',
-        'advance_payment_scheme_localized' => 'getAdvancePaymentSchemeLocalized',
-        'cluster_id' => 'getClusterId',
-        'cluster_reference' => 'getClusterReference',
-        'has_advance_payment' => 'getHasAdvancePayment',
-        'amount' => 'getAmount',
-        'agreed_amount' => 'getAgreedAmount',
-        'calculated_amount' => 'getCalculatedAmount',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'comment' => 'getComment',
-        'advance_payment_rows' => 'getAdvancePaymentRows',
-        'combined_advance_payment_rows' => 'getCombinedAdvancePaymentRows'
+        'advance_payment_scheme_localized' => 'getAdvancePaymentSchemeLocalized'
     ];
 
     /**
@@ -215,7 +158,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -225,7 +168,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -235,7 +178,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -295,12 +238,6 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
     }
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -310,6 +247,8 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['advance_payment_id'] = isset($data['advance_payment_id']) ? $data['advance_payment_id'] : null;
         $this->container['modified_by_user_name'] = isset($data['modified_by_user_name']) ? $data['modified_by_user_name'] : null;
         $this->container['connection_amounts'] = isset($data['connection_amounts']) ? $data['connection_amounts'] : null;
@@ -318,17 +257,6 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
         $this->container['calculation_reason_localized'] = isset($data['calculation_reason_localized']) ? $data['calculation_reason_localized'] : null;
         $this->container['advance_payment_scheme'] = isset($data['advance_payment_scheme']) ? $data['advance_payment_scheme'] : null;
         $this->container['advance_payment_scheme_localized'] = isset($data['advance_payment_scheme_localized']) ? $data['advance_payment_scheme_localized'] : null;
-        $this->container['cluster_id'] = isset($data['cluster_id']) ? $data['cluster_id'] : null;
-        $this->container['cluster_reference'] = isset($data['cluster_reference']) ? $data['cluster_reference'] : null;
-        $this->container['has_advance_payment'] = isset($data['has_advance_payment']) ? $data['has_advance_payment'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['agreed_amount'] = isset($data['agreed_amount']) ? $data['agreed_amount'] : null;
-        $this->container['calculated_amount'] = isset($data['calculated_amount']) ? $data['calculated_amount'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
-        $this->container['advance_payment_rows'] = isset($data['advance_payment_rows']) ? $data['advance_payment_rows'] : null;
-        $this->container['combined_advance_payment_rows'] = isset($data['combined_advance_payment_rows']) ? $data['combined_advance_payment_rows'] : null;
     }
 
     /**
@@ -338,7 +266,7 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         $allowedValues = $this->getCalculationReasonAllowableValues();
         if (!is_null($this->container['calculation_reason']) && !in_array($this->container['calculation_reason'], $allowedValues, true)) {
@@ -560,270 +488,6 @@ class EcedoERPCRMInterfaceApiAdvancePayment implements ModelInterface, ArrayAcce
     public function setAdvancePaymentSchemeLocalized($advance_payment_scheme_localized)
     {
         $this->container['advance_payment_scheme_localized'] = $advance_payment_scheme_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets cluster_id
-     *
-     * @return string
-     */
-    public function getClusterId()
-    {
-        return $this->container['cluster_id'];
-    }
-
-    /**
-     * Sets cluster_id
-     *
-     * @param string $cluster_id cluster_id
-     *
-     * @return $this
-     */
-    public function setClusterId($cluster_id)
-    {
-        $this->container['cluster_id'] = $cluster_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets cluster_reference
-     *
-     * @return string
-     */
-    public function getClusterReference()
-    {
-        return $this->container['cluster_reference'];
-    }
-
-    /**
-     * Sets cluster_reference
-     *
-     * @param string $cluster_reference De technische referentie van het cluster waarvoor het voorschot is aangemaakt
-     *
-     * @return $this
-     */
-    public function setClusterReference($cluster_reference)
-    {
-        $this->container['cluster_reference'] = $cluster_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets has_advance_payment
-     *
-     * @return bool
-     */
-    public function getHasAdvancePayment()
-    {
-        return $this->container['has_advance_payment'];
-    }
-
-    /**
-     * Sets has_advance_payment
-     *
-     * @param bool $has_advance_payment Wanneer een cluster geen voorschot moet ontvangen, wordt een nee-voorschot aangemaakt, waardoor er dus een AdvancePayment-object dat aangeeft dat er geen voorschot verstuurd moet worden. Als deze variabele de waarde false heeft is er geen voorschot.
-     *
-     * @return $this
-     */
-    public function setHasAdvancePayment($has_advance_payment)
-    {
-        $this->container['has_advance_payment'] = $has_advance_payment;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     *
-     * @return double
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param double $amount Het totale voorschotbedrag in euro's, inclusief btw
-     *
-     * @return $this
-     */
-    public function setAmount($amount)
-    {
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets agreed_amount
-     *
-     * @return double
-     */
-    public function getAgreedAmount()
-    {
-        return $this->container['agreed_amount'];
-    }
-
-    /**
-     * Sets agreed_amount
-     *
-     * @param double $agreed_amount agreed_amount
-     *
-     * @return $this
-     */
-    public function setAgreedAmount($agreed_amount)
-    {
-        $this->container['agreed_amount'] = $agreed_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets calculated_amount
-     *
-     * @return double
-     */
-    public function getCalculatedAmount()
-    {
-        return $this->container['calculated_amount'];
-    }
-
-    /**
-     * Sets calculated_amount
-     *
-     * @param double $calculated_amount Het berekende voorschotbedrag in euro's inclusief btw. Dit kan afwijken van het Amount als het voorschot met een AgreedAmount of TargetAmount is berekend
-     *
-     * @return $this
-     */
-    public function setCalculatedAmount($calculated_amount)
-    {
-        $this->container['calculated_amount'] = $calculated_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date Eerste dag van de maand vanaf wanneer het voorschot geldig is
-     *
-     * @return $this
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date Optionele eerste dag van de maand tot wanneer het voorschot geldig is (als het voorschot tot en met februari 2021 geldig is, zal dit veld de waarde \"2021-03-01T00:00:00\" bevatten. Als het voorschot geen einddatum heeft zal dit veld null zijn.
-     *
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment comment
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets advance_payment_rows
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]
-     */
-    public function getAdvancePaymentRows()
-    {
-        return $this->container['advance_payment_rows'];
-    }
-
-    /**
-     * Sets advance_payment_rows
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[] $advance_payment_rows Niet samengevoegde voorschotregels (zie uitleg over doCombineRows)
-     *
-     * @return $this
-     */
-    public function setAdvancePaymentRows($advance_payment_rows)
-    {
-        $this->container['advance_payment_rows'] = $advance_payment_rows;
-
-        return $this;
-    }
-
-    /**
-     * Gets combined_advance_payment_rows
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]
-     */
-    public function getCombinedAdvancePaymentRows()
-    {
-        return $this->container['combined_advance_payment_rows'];
-    }
-
-    /**
-     * Sets combined_advance_payment_rows
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[] $combined_advance_payment_rows Wel samengevoegde voorschotregels (zie uitleg over doCombineRows)
-     *
-     * @return $this
-     */
-    public function setCombinedAdvancePaymentRows($combined_advance_payment_rows)
-    {
-        $this->container['combined_advance_payment_rows'] = $combined_advance_payment_rows;
 
         return $this;
     }

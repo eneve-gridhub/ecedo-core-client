@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -41,7 +39,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiPrivateCertificatePostData extends EcedoERPCRMInterfaceApiCertificatePostData 
 {
     const DISCRIMINATOR = null;
 
@@ -58,12 +56,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'certificate_reference' => 'string',
-        'certificate_group' => 'string',
-        'certificate_type' => 'string',
-        'reference' => 'string',
-        'start_date_time' => '\DateTime',
-        'end_date_time' => '\DateTime'
+        'certificate_reference' => 'string'
     ];
 
     /**
@@ -72,12 +65,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'certificate_reference' => null,
-        'certificate_group' => null,
-        'certificate_type' => null,
-        'reference' => null,
-        'start_date_time' => 'date-time',
-        'end_date_time' => 'date-time'
+        'certificate_reference' => null
     ];
 
     /**
@@ -87,7 +75,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -97,7 +85,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -107,12 +95,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
-        'certificate_reference' => 'CertificateReference',
-        'certificate_group' => 'CertificateGroup',
-        'certificate_type' => 'CertificateType',
-        'reference' => 'Reference',
-        'start_date_time' => 'StartDateTime',
-        'end_date_time' => 'EndDateTime'
+        'certificate_reference' => 'CertificateReference'
     ];
 
     /**
@@ -121,12 +104,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-        'certificate_reference' => 'setCertificateReference',
-        'certificate_group' => 'setCertificateGroup',
-        'certificate_type' => 'setCertificateType',
-        'reference' => 'setReference',
-        'start_date_time' => 'setStartDateTime',
-        'end_date_time' => 'setEndDateTime'
+        'certificate_reference' => 'setCertificateReference'
     ];
 
     /**
@@ -135,12 +113,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
-        'certificate_reference' => 'getCertificateReference',
-        'certificate_group' => 'getCertificateGroup',
-        'certificate_type' => 'getCertificateType',
-        'reference' => 'getReference',
-        'start_date_time' => 'getStartDateTime',
-        'end_date_time' => 'getEndDateTime'
+        'certificate_reference' => 'getCertificateReference'
     ];
 
     /**
@@ -151,7 +124,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -161,7 +134,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -171,7 +144,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -184,33 +157,10 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
         return self::$swaggerModelName;
     }
 
-    const CERTIFICATE_TYPE_SIGNING = 'Signing';
-    const CERTIFICATE_TYPE_CARRIER = 'Carrier';
-    const CERTIFICATE_TYPE_SIGNATURE = 'Signature';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getCertificateTypeAllowableValues()
-    {
-        return [
-            self::CERTIFICATE_TYPE_SIGNING,
-            self::CERTIFICATE_TYPE_CARRIER,
-            self::CERTIFICATE_TYPE_SIGNATURE,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -220,12 +170,9 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['certificate_reference'] = isset($data['certificate_reference']) ? $data['certificate_reference'] : null;
-        $this->container['certificate_group'] = isset($data['certificate_group']) ? $data['certificate_group'] : null;
-        $this->container['certificate_type'] = isset($data['certificate_type']) ? $data['certificate_type'] : null;
-        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
-        $this->container['start_date_time'] = isset($data['start_date_time']) ? $data['start_date_time'] : null;
-        $this->container['end_date_time'] = isset($data['end_date_time']) ? $data['end_date_time'] : null;
     }
 
     /**
@@ -235,15 +182,7 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getCertificateTypeAllowableValues();
-        if (!is_null($this->container['certificate_type']) && !in_array($this->container['certificate_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'certificate_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -280,135 +219,6 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostData implements ModelInterfac
     public function setCertificateReference($certificate_reference)
     {
         $this->container['certificate_reference'] = $certificate_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets certificate_group
-     *
-     * @return string
-     */
-    public function getCertificateGroup()
-    {
-        return $this->container['certificate_group'];
-    }
-
-    /**
-     * Sets certificate_group
-     *
-     * @param string $certificate_group Een logische, vrij in te vullen string die aangeeft tot welke groep   het certificaat behoort. Bijvoorbeeld 'MMC-Hub_Tennet', 'EDSN' of 'TMR'.
-     *
-     * @return $this
-     */
-    public function setCertificateGroup($certificate_group)
-    {
-        $this->container['certificate_group'] = $certificate_group;
-
-        return $this;
-    }
-
-    /**
-     * Gets certificate_type
-     *
-     * @return string
-     */
-    public function getCertificateType()
-    {
-        return $this->container['certificate_type'];
-    }
-
-    /**
-     * Sets certificate_type
-     *
-     * @param string $certificate_type Het type van het certificaat, bijvoorbeeld 'Signing', 'Carrier (Signature)' of 'Signature'.
-     *
-     * @return $this
-     */
-    public function setCertificateType($certificate_type)
-    {
-        $allowedValues = $this->getCertificateTypeAllowableValues();
-        if (!is_null($certificate_type) && !in_array($certificate_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'certificate_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['certificate_type'] = $certificate_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
-     *
-     * @return string
-     */
-    public function getReference()
-    {
-        return $this->container['reference'];
-    }
-
-    /**
-     * Sets reference
-     *
-     * @param string $reference Een referentie (vrije string) om certificaten verder te onderscheiden,   bijvoorbeeld 'Ref123'.  Wordt gebruikt door Ecedo om certificaten te herkennen en gebruiken. Dit is vaak de EAN van de marktpartij.
-     *
-     * @return $this
-     */
-    public function setReference($reference)
-    {
-        $this->container['reference'] = $reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date_time
-     *
-     * @return \DateTime
-     */
-    public function getStartDateTime()
-    {
-        return $this->container['start_date_time'];
-    }
-
-    /**
-     * Sets start_date_time
-     *
-     * @param \DateTime $start_date_time De startdatum van het certificaat als een datum-tijd veld met offset.  Datum en tijd vanaf wanneer het certificaat geldt in het systeem.   Dit kan niet vóór de geldigheidsperiode van het daadwerkelijke   X.509-certificaat liggen.
-     *
-     * @return $this
-     */
-    public function setStartDateTime($start_date_time)
-    {
-        $this->container['start_date_time'] = $start_date_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date_time
-     *
-     * @return \DateTime
-     */
-    public function getEndDateTime()
-    {
-        return $this->container['end_date_time'];
-    }
-
-    /**
-     * Sets end_date_time
-     *
-     * @param \DateTime $end_date_time De optionele einddatum van het certificaat als een datum-tijd veld met offset.  Optionele einddatum. Is dit null, dan wordt het certificaat beschouwd   als geldig totdat er een nieuwe versie wordt ge-post of wanneer het verwijderd wordt.
-     *
-     * @return $this
-     */
-    public function setEndDateTime($end_date_time)
-    {
-        $this->container['end_date_time'] = $end_date_time;
 
         return $this;
     }

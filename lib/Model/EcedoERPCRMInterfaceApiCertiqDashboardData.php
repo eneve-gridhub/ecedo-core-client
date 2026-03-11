@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiCertiqDashboardData implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -232,6 +232,10 @@ class EcedoERPCRMInterfaceApiCertiqDashboardData implements ModelInterface, Arra
         $this->container['cnt_incoming_transfers'] = isset($data['cnt_incoming_transfers']) ? $data['cnt_incoming_transfers'] : null;
         $this->container['cnt_outgoing_transfers'] = isset($data['cnt_outgoing_transfers']) ? $data['cnt_outgoing_transfers'] : null;
         $this->container['cnt_total_valid'] = isset($data['cnt_total_valid']) ? $data['cnt_total_valid'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiInvoiceRowTotalsDto implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -232,6 +232,10 @@ class EcedoERPCRMInterfaceApiInvoiceRowTotalsDto implements ModelInterface, Arra
         $this->container['row_price_unit_singular'] = isset($data['row_price_unit_singular']) ? $data['row_price_unit_singular'] : null;
         $this->container['row_has_factor'] = isset($data['row_has_factor']) ? $data['row_has_factor'] : null;
         $this->container['row_factor'] = isset($data['row_factor']) ? $data['row_factor'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

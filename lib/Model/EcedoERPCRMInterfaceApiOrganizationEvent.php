@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiOrganizationEvent implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -398,6 +398,10 @@ class EcedoERPCRMInterfaceApiOrganizationEvent implements ModelInterface, ArrayA
         $this->container['deadline'] = isset($data['deadline']) ? $data['deadline'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
         $this->container['parent_organization_event'] = isset($data['parent_organization_event']) ? $data['parent_organization_event'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

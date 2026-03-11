@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData extends EcedoERPCRMInterfaceApiPriceGroupPostData 
 {
     const DISCRIMINATOR = null;
 
@@ -80,7 +78,7 @@ class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterf
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -90,7 +88,7 @@ class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterf
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -135,7 +133,7 @@ class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterf
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -145,7 +143,7 @@ class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterf
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -155,7 +153,7 @@ class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterf
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -169,9 +167,11 @@ class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterf
     }
 
     const PRICE_COMPONENT_GROUP_LEVERING = 'Levering';
+    const PRICE_COMPONENT_GROUP_LEVERING_PRICE_BLOCK = 'LeveringPriceBlock';
     const PRICE_COMPONENT_GROUP_LEVERING_SURCHARGE = 'LeveringSurcharge';
     const PRICE_COMPONENT_GROUP_SHARES = 'Shares';
     const PRICE_COMPONENT_GROUP_TERUGLEVERING = 'Teruglevering';
+    const PRICE_COMPONENT_GROUP_TERUGLEVERING_PRICE_BLOCK = 'TerugleveringPriceBlock';
     const PRICE_COMPONENT_GROUP_TERUGLEVERING_SURCHARGE = 'TerugleveringSurcharge';
     const PRICE_COMPONENT_GROUP_FIXED_FEE = 'FixedFee';
     const PRICE_COMPONENT_GROUP_SURCHARGE = 'Surcharge';
@@ -208,9 +208,11 @@ class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterf
     {
         return [
             self::PRICE_COMPONENT_GROUP_LEVERING,
+            self::PRICE_COMPONENT_GROUP_LEVERING_PRICE_BLOCK,
             self::PRICE_COMPONENT_GROUP_LEVERING_SURCHARGE,
             self::PRICE_COMPONENT_GROUP_SHARES,
             self::PRICE_COMPONENT_GROUP_TERUGLEVERING,
+            self::PRICE_COMPONENT_GROUP_TERUGLEVERING_PRICE_BLOCK,
             self::PRICE_COMPONENT_GROUP_TERUGLEVERING_SURCHARGE,
             self::PRICE_COMPONENT_GROUP_FIXED_FEE,
             self::PRICE_COMPONENT_GROUP_SURCHARGE,
@@ -239,12 +241,6 @@ class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterf
     }
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -254,6 +250,8 @@ class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterf
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['price_component_group'] = isset($data['price_component_group']) ? $data['price_component_group'] : null;
         $this->container['prices'] = isset($data['prices']) ? $data['prices'] : null;
         $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
@@ -266,7 +264,7 @@ class EcedoERPCRMInterfaceApiConnectionPriceGroupPostData implements ModelInterf
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         $allowedValues = $this->getPriceComponentGroupAllowableValues();
         if (!is_null($this->container['price_component_group']) && !in_array($this->container['price_component_group'], $allowedValues, true)) {

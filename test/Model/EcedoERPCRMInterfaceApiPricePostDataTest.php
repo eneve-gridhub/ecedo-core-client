@@ -145,4 +145,11 @@ class EcedoERPCRMInterfaceApiPricePostDataTest extends \PHPUnit_Framework_TestCa
     public function testPropertyRangeEnd()
     {
     }
+
+    /**
+     * Test attribute "price_block_id"
+     */
+    public function testPropertyPriceBlockId()
+    {
+    }
 }

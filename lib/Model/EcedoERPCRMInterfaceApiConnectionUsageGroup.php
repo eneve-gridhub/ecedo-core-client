@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiConnectionUsageGroup implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -227,6 +227,10 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroup implements ModelInterface, Arr
         $this->container['connection_usage_group_type_localized'] = isset($data['connection_usage_group_type_localized']) ? $data['connection_usage_group_type_localized'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

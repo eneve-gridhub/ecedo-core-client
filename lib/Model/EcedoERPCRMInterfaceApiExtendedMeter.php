@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiExtendedMeter extends EcedoERPCRMInterfaceApiMeter 
 {
     const DISCRIMINATOR = null;
 
@@ -65,17 +63,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
         'communication_status_code_localized' => 'string',
         'no_dials' => 'int',
         'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'meter_id' => 'string',
-        'meter_type' => 'string',
-        'meter_type_localized' => 'string',
-        'meter_number' => 'string',
-        'no_digits' => 'int',
-        'meter_registers_direction_type' => 'string',
-        'meter_registers_direction_type_localized' => 'string',
-        'meter_dial_position_order_type' => 'string',
-        'meter_dial_position_order_type_localized' => 'string',
-        'factor' => 'double'
+        'end_date' => '\DateTime'
     ];
 
     /**
@@ -92,17 +80,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
         'communication_status_code_localized' => null,
         'no_dials' => 'int32',
         'start_date' => 'date',
-        'end_date' => 'date',
-        'meter_id' => null,
-        'meter_type' => null,
-        'meter_type_localized' => null,
-        'meter_number' => null,
-        'no_digits' => 'int32',
-        'meter_registers_direction_type' => null,
-        'meter_registers_direction_type_localized' => null,
-        'meter_dial_position_order_type' => null,
-        'meter_dial_position_order_type_localized' => null,
-        'factor' => 'double'
+        'end_date' => 'date'
     ];
 
     /**
@@ -112,7 +90,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -122,7 +100,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -140,17 +118,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
         'communication_status_code_localized' => 'CommunicationStatusCodeLocalized',
         'no_dials' => 'NoDials',
         'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'meter_id' => 'MeterId',
-        'meter_type' => 'MeterType',
-        'meter_type_localized' => 'MeterTypeLocalized',
-        'meter_number' => 'MeterNumber',
-        'no_digits' => 'NoDigits',
-        'meter_registers_direction_type' => 'MeterRegistersDirectionType',
-        'meter_registers_direction_type_localized' => 'MeterRegistersDirectionTypeLocalized',
-        'meter_dial_position_order_type' => 'MeterDialPositionOrderType',
-        'meter_dial_position_order_type_localized' => 'MeterDialPositionOrderTypeLocalized',
-        'factor' => 'Factor'
+        'end_date' => 'EndDate'
     ];
 
     /**
@@ -167,17 +135,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
         'communication_status_code_localized' => 'setCommunicationStatusCodeLocalized',
         'no_dials' => 'setNoDials',
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'meter_id' => 'setMeterId',
-        'meter_type' => 'setMeterType',
-        'meter_type_localized' => 'setMeterTypeLocalized',
-        'meter_number' => 'setMeterNumber',
-        'no_digits' => 'setNoDigits',
-        'meter_registers_direction_type' => 'setMeterRegistersDirectionType',
-        'meter_registers_direction_type_localized' => 'setMeterRegistersDirectionTypeLocalized',
-        'meter_dial_position_order_type' => 'setMeterDialPositionOrderType',
-        'meter_dial_position_order_type_localized' => 'setMeterDialPositionOrderTypeLocalized',
-        'factor' => 'setFactor'
+        'end_date' => 'setEndDate'
     ];
 
     /**
@@ -194,17 +152,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
         'communication_status_code_localized' => 'getCommunicationStatusCodeLocalized',
         'no_dials' => 'getNoDials',
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'meter_id' => 'getMeterId',
-        'meter_type' => 'getMeterType',
-        'meter_type_localized' => 'getMeterTypeLocalized',
-        'meter_number' => 'getMeterNumber',
-        'no_digits' => 'getNoDigits',
-        'meter_registers_direction_type' => 'getMeterRegistersDirectionType',
-        'meter_registers_direction_type_localized' => 'getMeterRegistersDirectionTypeLocalized',
-        'meter_dial_position_order_type' => 'getMeterDialPositionOrderType',
-        'meter_dial_position_order_type_localized' => 'getMeterDialPositionOrderTypeLocalized',
-        'factor' => 'getFactor'
+        'end_date' => 'getEndDate'
     ];
 
     /**
@@ -215,7 +163,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -225,7 +173,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -235,7 +183,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -256,20 +204,6 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
     const ADMINISTRATIVE_STATUS_CODE_OFF = 'Off';
     const COMMUNICATION_STATUS_CODE_SMU = 'SMU';
     const COMMUNICATION_STATUS_CODE_SMN = 'SMN';
-    const METER_TYPE_CVN = 'CVN';
-    const METER_TYPE_SLM = 'SLM';
-    const METER_TYPE_GV = 'GV';
-    const METER_TYPE_OBM = 'OBM';
-    const METER_TYPE_INA = 'INA';
-    const METER_REGISTERS_DIRECTION_TYPE_L = 'L';
-    const METER_REGISTERS_DIRECTION_TYPE_LL = 'LL';
-    const METER_REGISTERS_DIRECTION_TYPE_LT = 'LT';
-    const METER_REGISTERS_DIRECTION_TYPE_LLT = 'LLT';
-    const METER_REGISTERS_DIRECTION_TYPE_LLTT = 'LLTT';
-    const METER_REGISTERS_DIRECTION_TYPE_T = 'T';
-    const METER_REGISTERS_DIRECTION_TYPE_TT = 'TT';
-    const METER_DIAL_POSITION_ORDER_TYPE_LOW_I_HIGH_II = 'Low_I_High_II';
-    const METER_DIAL_POSITION_ORDER_TYPE_HIGH_I_LOW_II = 'High_I_Low_II';
     
 
     
@@ -314,60 +248,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
         ];
     }
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getMeterTypeAllowableValues()
-    {
-        return [
-            self::METER_TYPE_CVN,
-            self::METER_TYPE_SLM,
-            self::METER_TYPE_GV,
-            self::METER_TYPE_OBM,
-            self::METER_TYPE_INA,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getMeterRegistersDirectionTypeAllowableValues()
-    {
-        return [
-            self::METER_REGISTERS_DIRECTION_TYPE_L,
-            self::METER_REGISTERS_DIRECTION_TYPE_LL,
-            self::METER_REGISTERS_DIRECTION_TYPE_LT,
-            self::METER_REGISTERS_DIRECTION_TYPE_LLT,
-            self::METER_REGISTERS_DIRECTION_TYPE_LLTT,
-            self::METER_REGISTERS_DIRECTION_TYPE_T,
-            self::METER_REGISTERS_DIRECTION_TYPE_TT,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getMeterDialPositionOrderTypeAllowableValues()
-    {
-        return [
-            self::METER_DIAL_POSITION_ORDER_TYPE_LOW_I_HIGH_II,
-            self::METER_DIAL_POSITION_ORDER_TYPE_HIGH_I_LOW_II,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -377,6 +258,8 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['measure_unit'] = isset($data['measure_unit']) ? $data['measure_unit'] : null;
         $this->container['measure_unit_localized'] = isset($data['measure_unit_localized']) ? $data['measure_unit_localized'] : null;
         $this->container['administrative_status_code'] = isset($data['administrative_status_code']) ? $data['administrative_status_code'] : null;
@@ -386,16 +269,6 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
         $this->container['no_dials'] = isset($data['no_dials']) ? $data['no_dials'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['meter_id'] = isset($data['meter_id']) ? $data['meter_id'] : null;
-        $this->container['meter_type'] = isset($data['meter_type']) ? $data['meter_type'] : null;
-        $this->container['meter_type_localized'] = isset($data['meter_type_localized']) ? $data['meter_type_localized'] : null;
-        $this->container['meter_number'] = isset($data['meter_number']) ? $data['meter_number'] : null;
-        $this->container['no_digits'] = isset($data['no_digits']) ? $data['no_digits'] : null;
-        $this->container['meter_registers_direction_type'] = isset($data['meter_registers_direction_type']) ? $data['meter_registers_direction_type'] : null;
-        $this->container['meter_registers_direction_type_localized'] = isset($data['meter_registers_direction_type_localized']) ? $data['meter_registers_direction_type_localized'] : null;
-        $this->container['meter_dial_position_order_type'] = isset($data['meter_dial_position_order_type']) ? $data['meter_dial_position_order_type'] : null;
-        $this->container['meter_dial_position_order_type_localized'] = isset($data['meter_dial_position_order_type_localized']) ? $data['meter_dial_position_order_type_localized'] : null;
-        $this->container['factor'] = isset($data['factor']) ? $data['factor'] : null;
     }
 
     /**
@@ -405,7 +278,7 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         $allowedValues = $this->getMeasureUnitAllowableValues();
         if (!is_null($this->container['measure_unit']) && !in_array($this->container['measure_unit'], $allowedValues, true)) {
@@ -427,30 +300,6 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
         if (!is_null($this->container['communication_status_code']) && !in_array($this->container['communication_status_code'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'communication_status_code', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getMeterTypeAllowableValues();
-        if (!is_null($this->container['meter_type']) && !in_array($this->container['meter_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'meter_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getMeterRegistersDirectionTypeAllowableValues();
-        if (!is_null($this->container['meter_registers_direction_type']) && !in_array($this->container['meter_registers_direction_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'meter_registers_direction_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getMeterDialPositionOrderTypeAllowableValues();
-        if (!is_null($this->container['meter_dial_position_order_type']) && !in_array($this->container['meter_dial_position_order_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'meter_dial_position_order_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -709,273 +558,6 @@ class EcedoERPCRMInterfaceApiExtendedMeter implements ModelInterface, ArrayAcces
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_id
-     *
-     * @return string
-     */
-    public function getMeterId()
-    {
-        return $this->container['meter_id'];
-    }
-
-    /**
-     * Sets meter_id
-     *
-     * @param string $meter_id Het Ecedo ID (GUID) van de Meter wanneer deze in Ecedo bekend is. Als de meter uit het C-AR wordt opgehaald, is het ID van de meter \"00000000-0000-0000-0000-000000000000\"
-     *
-     * @return $this
-     */
-    public function setMeterId($meter_id)
-    {
-        $this->container['meter_id'] = $meter_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_type
-     *
-     * @return string
-     */
-    public function getMeterType()
-    {
-        return $this->container['meter_type'];
-    }
-
-    /**
-     * Sets meter_type
-     *
-     * @param string $meter_type Het metertype
-     *
-     * @return $this
-     */
-    public function setMeterType($meter_type)
-    {
-        $allowedValues = $this->getMeterTypeAllowableValues();
-        if (!is_null($meter_type) && !in_array($meter_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'meter_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['meter_type'] = $meter_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_type_localized
-     *
-     * @return string
-     */
-    public function getMeterTypeLocalized()
-    {
-        return $this->container['meter_type_localized'];
-    }
-
-    /**
-     * Sets meter_type_localized
-     *
-     * @param string $meter_type_localized De Nederlandse vertaling van het metertype
-     *
-     * @return $this
-     */
-    public function setMeterTypeLocalized($meter_type_localized)
-    {
-        $this->container['meter_type_localized'] = $meter_type_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_number
-     *
-     * @return string
-     */
-    public function getMeterNumber()
-    {
-        return $this->container['meter_number'];
-    }
-
-    /**
-     * Sets meter_number
-     *
-     * @param string $meter_number Het meternummer
-     *
-     * @return $this
-     */
-    public function setMeterNumber($meter_number)
-    {
-        $this->container['meter_number'] = $meter_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets no_digits
-     *
-     * @return int
-     */
-    public function getNoDigits()
-    {
-        return $this->container['no_digits'];
-    }
-
-    /**
-     * Sets no_digits
-     *
-     * @param int $no_digits Aantal getallen per telwerk
-     *
-     * @return $this
-     */
-    public function setNoDigits($no_digits)
-    {
-        $this->container['no_digits'] = $no_digits;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_registers_direction_type
-     *
-     * @return string
-     */
-    public function getMeterRegistersDirectionType()
-    {
-        return $this->container['meter_registers_direction_type'];
-    }
-
-    /**
-     * Sets meter_registers_direction_type
-     *
-     * @param string $meter_registers_direction_type Omschrijving van het aantal telwerken en de richting van de telwerken.  L staat voor levering, T staat voor teruglevering.  LL is een meter met twee telwerken die beide levering registreren.  LT is een meter met twee telwerken waarvan de ene levering en de andere teruglevering registreert.
-     *
-     * @return $this
-     */
-    public function setMeterRegistersDirectionType($meter_registers_direction_type)
-    {
-        $allowedValues = $this->getMeterRegistersDirectionTypeAllowableValues();
-        if (!is_null($meter_registers_direction_type) && !in_array($meter_registers_direction_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'meter_registers_direction_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['meter_registers_direction_type'] = $meter_registers_direction_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_registers_direction_type_localized
-     *
-     * @return string
-     */
-    public function getMeterRegistersDirectionTypeLocalized()
-    {
-        return $this->container['meter_registers_direction_type_localized'];
-    }
-
-    /**
-     * Sets meter_registers_direction_type_localized
-     *
-     * @param string $meter_registers_direction_type_localized Leesbare omschrijving van MeterRegistersDirectionType
-     *
-     * @return $this
-     */
-    public function setMeterRegistersDirectionTypeLocalized($meter_registers_direction_type_localized)
-    {
-        $this->container['meter_registers_direction_type_localized'] = $meter_registers_direction_type_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_dial_position_order_type
-     *
-     * @return string
-     */
-    public function getMeterDialPositionOrderType()
-    {
-        return $this->container['meter_dial_position_order_type'];
-    }
-
-    /**
-     * Sets meter_dial_position_order_type
-     *
-     * @param string $meter_dial_position_order_type Geeft aan welke telweken volume van het normaaltarief registreren en welke telwerken het volume van het daltarief
-     *
-     * @return $this
-     */
-    public function setMeterDialPositionOrderType($meter_dial_position_order_type)
-    {
-        $allowedValues = $this->getMeterDialPositionOrderTypeAllowableValues();
-        if (!is_null($meter_dial_position_order_type) && !in_array($meter_dial_position_order_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'meter_dial_position_order_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['meter_dial_position_order_type'] = $meter_dial_position_order_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_dial_position_order_type_localized
-     *
-     * @return string
-     */
-    public function getMeterDialPositionOrderTypeLocalized()
-    {
-        return $this->container['meter_dial_position_order_type_localized'];
-    }
-
-    /**
-     * Sets meter_dial_position_order_type_localized
-     *
-     * @param string $meter_dial_position_order_type_localized Leesbare omschrijving van MeterDialPositionOrderType
-     *
-     * @return $this
-     */
-    public function setMeterDialPositionOrderTypeLocalized($meter_dial_position_order_type_localized)
-    {
-        $this->container['meter_dial_position_order_type_localized'] = $meter_dial_position_order_type_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets factor
-     *
-     * @return double
-     */
-    public function getFactor()
-    {
-        return $this->container['factor'];
-    }
-
-    /**
-     * Sets factor
-     *
-     * @param double $factor Geeft de MultiplicationFactor van de meter weer
-     *
-     * @return $this
-     */
-    public function setFactor($factor)
-    {
-        $this->container['factor'] = $factor;
 
         return $this;
     }

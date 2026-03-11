@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -241,6 +241,10 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['connection_property_source'] = isset($data['connection_property_source']) ? $data['connection_property_source'] : null;
         $this->container['connection_property_source_localized'] = isset($data['connection_property_source_localized']) ? $data['connection_property_source_localized'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

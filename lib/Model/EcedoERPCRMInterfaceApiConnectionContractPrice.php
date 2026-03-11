@@ -68,6 +68,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_unit_localized' => 'string',
         'range_begin' => 'int',
         'range_end' => 'int',
+        'price_block_id' => 'string',
+        'price_block_description' => 'string',
         'price_status_type' => 'string',
         'price_status_type_localized' => 'string'
     ];
@@ -89,6 +91,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_unit_localized' => null,
         'range_begin' => 'int32',
         'range_end' => 'int32',
+        'price_block_id' => 'uuid',
+        'price_block_description' => null,
         'price_status_type' => null,
         'price_status_type_localized' => null
     ];
@@ -131,6 +135,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_unit_localized' => 'PriceUnitLocalized',
         'range_begin' => 'RangeBegin',
         'range_end' => 'RangeEnd',
+        'price_block_id' => 'PriceBlockId',
+        'price_block_description' => 'PriceBlockDescription',
         'price_status_type' => 'PriceStatusType',
         'price_status_type_localized' => 'PriceStatusTypeLocalized'
     ];
@@ -152,6 +158,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_unit_localized' => 'setPriceUnitLocalized',
         'range_begin' => 'setRangeBegin',
         'range_end' => 'setRangeEnd',
+        'price_block_id' => 'setPriceBlockId',
+        'price_block_description' => 'setPriceBlockDescription',
         'price_status_type' => 'setPriceStatusType',
         'price_status_type_localized' => 'setPriceStatusTypeLocalized'
     ];
@@ -173,6 +181,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         'price_unit_localized' => 'getPriceUnitLocalized',
         'range_begin' => 'getRangeBegin',
         'range_end' => 'getRangeEnd',
+        'price_block_id' => 'getPriceBlockId',
+        'price_block_description' => 'getPriceBlockDescription',
         'price_status_type' => 'getPriceStatusType',
         'price_status_type_localized' => 'getPriceStatusTypeLocalized'
     ];
@@ -263,6 +273,8 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
         $this->container['price_unit_localized'] = isset($data['price_unit_localized']) ? $data['price_unit_localized'] : null;
         $this->container['range_begin'] = isset($data['range_begin']) ? $data['range_begin'] : null;
         $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
+        $this->container['price_block_id'] = isset($data['price_block_id']) ? $data['price_block_id'] : null;
+        $this->container['price_block_description'] = isset($data['price_block_description']) ? $data['price_block_description'] : null;
         $this->container['price_status_type'] = isset($data['price_status_type']) ? $data['price_status_type'] : null;
         $this->container['price_status_type_localized'] = isset($data['price_status_type_localized']) ? $data['price_status_type_localized'] : null;
     }
@@ -559,6 +571,54 @@ class EcedoERPCRMInterfaceApiConnectionContractPrice implements ModelInterface, 
     public function setRangeEnd($range_end)
     {
         $this->container['range_end'] = $range_end;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_block_id
+     *
+     * @return string
+     */
+    public function getPriceBlockId()
+    {
+        return $this->container['price_block_id'];
+    }
+
+    /**
+     * Sets price_block_id
+     *
+     * @param string $price_block_id price_block_id
+     *
+     * @return $this
+     */
+    public function setPriceBlockId($price_block_id)
+    {
+        $this->container['price_block_id'] = $price_block_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_block_description
+     *
+     * @return string
+     */
+    public function getPriceBlockDescription()
+    {
+        return $this->container['price_block_description'];
+    }
+
+    /**
+     * Sets price_block_description
+     *
+     * @param string $price_block_description price_block_description
+     *
+     * @return $this
+     */
+    public function setPriceBlockDescription($price_block_description)
+    {
+        $this->container['price_block_description'] = $price_block_description;
 
         return $this;
     }

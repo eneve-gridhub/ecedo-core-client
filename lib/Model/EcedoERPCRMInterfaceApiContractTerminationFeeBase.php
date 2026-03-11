@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -266,6 +266,10 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterfac
         $this->container['termination_fee_vat_amount'] = isset($data['termination_fee_vat_amount']) ? $data['termination_fee_vat_amount'] : null;
         $this->container['termination_fee_total_amount'] = isset($data['termination_fee_total_amount']) ? $data['termination_fee_total_amount'] : null;
         $this->container['termination_fee_type'] = isset($data['termination_fee_type']) ? $data['termination_fee_type'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

@@ -1563,7 +1563,7 @@ class SysTerminationFeesApi
      * Haalt de opzegvergoedingen op die bij een aansluiting horen
      *
      * @param  string $connection_id De aansluiting waarvoor de opzegvergoedingen opgehaald moeten worden (required)
-     * @param  string $calculation_reason De reden waarvoor de opzegvergoeding berekent is waarop gefilterd moet worden (indien gevuld) (optional)
+     * @param  string $calculation_reason De reden waarvoor de opzegvergoeding berekend is waarop gefilterd moet worden (indien gevuld) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1581,7 +1581,7 @@ class SysTerminationFeesApi
      * Haalt de opzegvergoedingen op die bij een aansluiting horen
      *
      * @param  string $connection_id De aansluiting waarvoor de opzegvergoedingen opgehaald moeten worden (required)
-     * @param  string $calculation_reason De reden waarvoor de opzegvergoeding berekent is waarop gefilterd moet worden (indien gevuld) (optional)
+     * @param  string $calculation_reason De reden waarvoor de opzegvergoeding berekend is waarop gefilterd moet worden (indien gevuld) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1673,7 +1673,7 @@ class SysTerminationFeesApi
      * Haalt de opzegvergoedingen op die bij een aansluiting horen
      *
      * @param  string $connection_id De aansluiting waarvoor de opzegvergoedingen opgehaald moeten worden (required)
-     * @param  string $calculation_reason De reden waarvoor de opzegvergoeding berekent is waarop gefilterd moet worden (indien gevuld) (optional)
+     * @param  string $calculation_reason De reden waarvoor de opzegvergoeding berekend is waarop gefilterd moet worden (indien gevuld) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1694,7 +1694,7 @@ class SysTerminationFeesApi
      * Haalt de opzegvergoedingen op die bij een aansluiting horen
      *
      * @param  string $connection_id De aansluiting waarvoor de opzegvergoedingen opgehaald moeten worden (required)
-     * @param  string $calculation_reason De reden waarvoor de opzegvergoeding berekent is waarop gefilterd moet worden (indien gevuld) (optional)
+     * @param  string $calculation_reason De reden waarvoor de opzegvergoeding berekend is waarop gefilterd moet worden (indien gevuld) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1745,7 +1745,7 @@ class SysTerminationFeesApi
      * Create request for operation 'sysTerminationFeesGetTerminationFeesByConnection'
      *
      * @param  string $connection_id De aansluiting waarvoor de opzegvergoedingen opgehaald moeten worden (required)
-     * @param  string $calculation_reason De reden waarvoor de opzegvergoeding berekent is waarop gefilterd moet worden (indien gevuld) (optional)
+     * @param  string $calculation_reason De reden waarvoor de opzegvergoeding berekend is waarop gefilterd moet worden (indien gevuld) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

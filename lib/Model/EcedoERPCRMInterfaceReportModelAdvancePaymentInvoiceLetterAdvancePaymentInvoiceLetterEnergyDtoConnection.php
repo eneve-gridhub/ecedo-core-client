@@ -95,6 +95,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_agreement_date' => '\DateTime',
         'connection_contract_start_date' => '\DateTime',
         'connection_contract_end_date' => '\DateTime',
+        'connection_contract_end_date_on_loss' => '\DateTime',
         'connection_contract_proposition_description' => 'string',
         'connection_contract_proposition_duration' => 'string',
         'connection_contract_proposition_reference' => 'string',
@@ -170,6 +171,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_agreement_date' => 'date',
         'connection_contract_start_date' => 'date',
         'connection_contract_end_date' => 'date',
+        'connection_contract_end_date_on_loss' => 'date',
         'connection_contract_proposition_description' => null,
         'connection_contract_proposition_duration' => null,
         'connection_contract_proposition_reference' => null,
@@ -266,6 +268,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_agreement_date' => 'Connection_Contract_AgreementDate',
         'connection_contract_start_date' => 'Connection_Contract_StartDate',
         'connection_contract_end_date' => 'Connection_Contract_EndDate',
+        'connection_contract_end_date_on_loss' => 'Connection_Contract_EndDateOnLoss',
         'connection_contract_proposition_description' => 'Connection_Contract_Proposition_Description',
         'connection_contract_proposition_duration' => 'Connection_Contract_Proposition_Duration',
         'connection_contract_proposition_reference' => 'Connection_Contract_Proposition_Reference',
@@ -341,6 +344,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_agreement_date' => 'setConnectionContractAgreementDate',
         'connection_contract_start_date' => 'setConnectionContractStartDate',
         'connection_contract_end_date' => 'setConnectionContractEndDate',
+        'connection_contract_end_date_on_loss' => 'setConnectionContractEndDateOnLoss',
         'connection_contract_proposition_description' => 'setConnectionContractPropositionDescription',
         'connection_contract_proposition_duration' => 'setConnectionContractPropositionDuration',
         'connection_contract_proposition_reference' => 'setConnectionContractPropositionReference',
@@ -416,6 +420,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_agreement_date' => 'getConnectionContractAgreementDate',
         'connection_contract_start_date' => 'getConnectionContractStartDate',
         'connection_contract_end_date' => 'getConnectionContractEndDate',
+        'connection_contract_end_date_on_loss' => 'getConnectionContractEndDateOnLoss',
         'connection_contract_proposition_description' => 'getConnectionContractPropositionDescription',
         'connection_contract_proposition_duration' => 'getConnectionContractPropositionDuration',
         'connection_contract_proposition_reference' => 'getConnectionContractPropositionReference',
@@ -545,6 +550,7 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         $this->container['connection_contract_agreement_date'] = isset($data['connection_contract_agreement_date']) ? $data['connection_contract_agreement_date'] : null;
         $this->container['connection_contract_start_date'] = isset($data['connection_contract_start_date']) ? $data['connection_contract_start_date'] : null;
         $this->container['connection_contract_end_date'] = isset($data['connection_contract_end_date']) ? $data['connection_contract_end_date'] : null;
+        $this->container['connection_contract_end_date_on_loss'] = isset($data['connection_contract_end_date_on_loss']) ? $data['connection_contract_end_date_on_loss'] : null;
         $this->container['connection_contract_proposition_description'] = isset($data['connection_contract_proposition_description']) ? $data['connection_contract_proposition_description'] : null;
         $this->container['connection_contract_proposition_duration'] = isset($data['connection_contract_proposition_duration']) ? $data['connection_contract_proposition_duration'] : null;
         $this->container['connection_contract_proposition_reference'] = isset($data['connection_contract_proposition_reference']) ? $data['connection_contract_proposition_reference'] : null;
@@ -1508,6 +1514,30 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
     public function setConnectionContractEndDate($connection_contract_end_date)
     {
         $this->container['connection_contract_end_date'] = $connection_contract_end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_contract_end_date_on_loss
+     *
+     * @return \DateTime
+     */
+    public function getConnectionContractEndDateOnLoss()
+    {
+        return $this->container['connection_contract_end_date_on_loss'];
+    }
+
+    /**
+     * Sets connection_contract_end_date_on_loss
+     *
+     * @param \DateTime $connection_contract_end_date_on_loss connection_contract_end_date_on_loss
+     *
+     * @return $this
+     */
+    public function setConnectionContractEndDateOnLoss($connection_contract_end_date_on_loss)
+    {
+        $this->container['connection_contract_end_date_on_loss'] = $connection_contract_end_date_on_loss;
 
         return $this;
     }

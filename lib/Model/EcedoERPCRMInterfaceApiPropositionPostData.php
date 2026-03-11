@@ -228,6 +228,7 @@ class EcedoERPCRMInterfaceApiPropositionPostData implements ModelInterface, Arra
     const PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
     const PRICING_TYPE_FULL_ENDEX = 'FullEndex';
     const PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
+    const PRICING_TYPE_PRICE_BLOCK_FIXED = 'PriceBlockFixed';
     const MARKET_PRICE_SOURCE_APX_DAY_AHEAD_HOUR = 'ApxDayAheadHour';
     const MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY = 'TtfDayAheadDay';
     const MARKET_PRICE_SOURCE_MEAN_APX_DAY = 'MeanApxDay';
@@ -263,6 +264,7 @@ class EcedoERPCRMInterfaceApiPropositionPostData implements ModelInterface, Arra
             self::PRICING_TYPE_HYBRID_ENDEX,
             self::PRICING_TYPE_FULL_ENDEX,
             self::PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE,
+            self::PRICING_TYPE_PRICE_BLOCK_FIXED,
         ];
     }
     

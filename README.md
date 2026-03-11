@@ -65,19 +65,21 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Oc
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\SysAPIProcessLogsApi(
+$apiInstance = new Swagger\Client\Api\SysAdvancePaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$api_process_log = new \Swagger\Client\Model\EcedoERPCRMInterfaceApiAPIProcessLogPostData(); // \Swagger\Client\Model\EcedoERPCRMInterfaceApiAPIProcessLogPostData | 
+$organization_id = "organization_id_example"; // string | Guid van de klant (Organization)
+$advance_payment_id = "advance_payment_id_example"; // string | Guid van het voorschot (AdvancePayment)
+$reactivate_previous_advance_payment = true; // bool | Geeft aan of het voorgaande voorschot opnieuw geactiveerd moet worden (alleen voorgesteld voorschot)
 
 try {
-    $result = $apiInstance->sysAPIProcessLogsPost($api_process_log);
+    $result = $apiInstance->sysAdvancePaymentsDelete($organization_id, $advance_payment_id, $reactivate_previous_advance_payment);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SysAPIProcessLogsApi->sysAPIProcessLogsPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SysAdvancePaymentsApi->sysAdvancePaymentsDelete: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -85,11 +87,10 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://demo.ecedo.com*
+All URIs are relative to *https://innova.ecedo.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SysAPIProcessLogsApi* | [**sysAPIProcessLogsPost**](docs/Api/SysAPIProcessLogsApi.md#sysapiprocesslogspost) | **POST** /sysapi/v1.0/processlogs | Algemene wijziging insturen
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsDelete**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsdelete) | **DELETE** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{advancePaymentId} | Voorschot verwijderen
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsGetAgreedAmountSupported**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsgetagreedamountsupported) | **GET** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{clusterReference}/agreedamountsupported | Opvragen of het is toegestaan om een afgesproken voorschot bedrag in te stellen
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsGetByAdvancePaymentId**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsgetbyadvancepaymentid) | **GET** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{advancePaymentId} | Haal specifiek voorschot op
@@ -99,6 +100,9 @@ Class | Method | HTTP request | Description
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsPut**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsput) | **PUT** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{advancePaymentId} | Voorschot wijzigen
 *SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesDeleteExpectedAnnualStandardUsage**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagesdeleteexpectedannualstandardusage) | **DELETE** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/expectedannualstandardusages | Verwijderen verwacht jaarverbruik
 *SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesGetAnnualStandardUsages**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagesgetannualstandardusages) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/annualstandardusages | Opvragen standaard jaarverbruiken.
+*SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesPostAnnualStandardUsage**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagespostannualstandardusage) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/profiledannualstandardusage | Bepaling geprofileerd standaard jaarverbruik. Voor bekende organisaties.
+*SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesPostAnnualStandardUsageElectricity**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagespostannualstandardusageelectricity) | **POST** /sysapi/v1.0/profiledannualstandardusage/electricity | Bepaling geprofileerd standaard jaarverbruik voor elektriciteit. Voor onbekende organisaties.
+*SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesPostAnnualStandardUsageGas**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagespostannualstandardusagegas) | **POST** /sysapi/v1.0/profiledannualstandardusage/gas | Bepaling geprofileerd standaard jaarverbruik voor gas. Voor onbekende organisaties.
 *SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesPostExpectedAnnualStandardUsage**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagespostexpectedannualstandardusage) | **POST** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/expectedannualstandardusages | Aanpassen verwacht jaarverbruik
 *SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesSetActiveAnnualStandardUsageType**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagessetactiveannualstandardusagetype) | **PUT** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/annualstandardusages/setactiveannualstandardusagetype | Aanpassen actief verbruikstype
 *SysBillingItemGroupsApi* | [**sysBillingItemGroupsDelete**](docs/Api/SysBillingItemGroupsApi.md#sysbillingitemgroupsdelete) | **DELETE** /sysapi/v1.0/billingitemgroups/{billingItemGroupId} | Verwijdert een factuuritemgroep
@@ -332,7 +336,8 @@ Class | Method | HTTP request | Description
 *SysPropositionsApi* | [**sysPropositionsEnd**](docs/Api/SysPropositionsApi.md#syspropositionsend) | **PUT** /sysapi/v1.0/propositions/{propositionId}/end | Set de einddatum zodat de propositie beeindigd wordt.
 *SysPropositionsApi* | [**sysPropositionsFilter**](docs/Api/SysPropositionsApi.md#syspropositionsfilter) | **GET** /sysapi/v1.0/propositions/filter | Opvragen van proposities op basis van productid
 *SysPropositionsApi* | [**sysPropositionsFilterV11**](docs/Api/SysPropositionsApi.md#syspropositionsfilterv11) | **GET** /sysapi/v1.1/propositions/filter | Opvragen van proposities op basis van product met paging en filtering ondersteuning
-*SysPropositionsApi* | [**sysPropositionsGet**](docs/Api/SysPropositionsApi.md#syspropositionsget) | **GET** /sysapi/v1.0/meansofproductions/{meansOfProductionId}/propositions | Opvragen Meelift proposities van een productiemiddel.
+*SysPropositionsApi* | [**sysPropositionsGet**](docs/Api/SysPropositionsApi.md#syspropositionsget) | **GET** /sysapi/v1.0/propositions/{propositionId} | Opvragen van een propositie op basis van PropositionId
+*SysPropositionsApi* | [**sysPropositionsGetByMeansOfProduction**](docs/Api/SysPropositionsApi.md#syspropositionsgetbymeansofproduction) | **GET** /sysapi/v1.0/meansofproductions/{meansOfProductionId}/propositions | Opvragen Meelift proposities van een productiemiddel.
 *SysPropositionsApi* | [**sysPropositionsGetPropositionPrices**](docs/Api/SysPropositionsApi.md#syspropositionsgetpropositionprices) | **GET** /sysapi/v1.0/propositionprices | Opvragen alle prijzen behorend bij een propositie
 *SysPropositionsApi* | [**sysPropositionsPost**](docs/Api/SysPropositionsApi.md#syspropositionspost) | **POST** /sysapi/v1.0/propositions | Aanmaken van een propositie
 *SysPropositionsApi* | [**sysPropositionsPrices**](docs/Api/SysPropositionsApi.md#syspropositionsprices) | **POST** /sysapi/v1.0/propositions/{propositionId}/prices | Aanmaken van de prijzen behorend bij een propositie
@@ -356,6 +361,7 @@ Class | Method | HTTP request | Description
 *SysResellerApi* | [**sysResellerSearch**](docs/Api/SysResellerApi.md#sysresellersearch) | **GET** /sysapi/v1.0/reseller/search | Verkrijg de wederverkopers
 *SysReservationApi* | [**sysReservationGetAnnualStandardUsageReservationResults**](docs/Api/SysReservationApi.md#sysreservationgetannualstandardusagereservationresults) | **GET** /sysapi/v1.0/propositions/{propositionReference}/reservations | Ophalen van SJV voor alle aansluitingen behorend bij een propositie referentie
 *SysServiceContractApi* | [**sysServiceContractGetServiceContract**](docs/Api/SysServiceContractApi.md#sysservicecontractgetservicecontract) | **GET** /sysapi/v1.0/organizations/{organizationId}/servicecontracts/{contractId} | Deze API wordt niet langer actief ondersteund, gebruik evchargerservicecontracts/{contractId} om een laadpaal service contract op te halen
+*SysSmartDevicesApi* | [**sysSmartDevicesAddServiceContract**](docs/Api/SysSmartDevicesApi.md#syssmartdevicesaddservicecontract) | **POST** /sysapi/v1.0/organizations/{organizationId}/smartdevices/{smartDeviceId}/servicecontracts | Toevoegen van een servicecontract aan een slim apparaat
 *SysSmartDevicesApi* | [**sysSmartDevicesGetSmartChargingSessions**](docs/Api/SysSmartDevicesApi.md#syssmartdevicesgetsmartchargingsessions) | **GET** /sysapi/v1.0/organizations/{organizationId}/smartdevices/{deviceId}/smartchargingsessions | Verkrijg slimme laadsessies per apparaat
 *SysSmartDevicesApi* | [**sysSmartDevicesGetSmartDevice**](docs/Api/SysSmartDevicesApi.md#syssmartdevicesgetsmartdevice) | **GET** /sysapi/v1.0/organizations/{organizationId}/smartdevices/{smartDeviceId} | Verkrijg slimme apparaten van organisatie
 *SysSmartDevicesApi* | [**sysSmartDevicesGetSmartDeviceServiceContract**](docs/Api/SysSmartDevicesApi.md#syssmartdevicesgetsmartdeviceservicecontract) | **GET** /sysapi/v1.0/organizations/{organizationId}/smartdeviceservicecontracts/{contractId} | Ophalen van een slim apparaat service contract op basis van contractId
@@ -379,13 +385,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [EcedoERPCRMInterfaceApiAPIProcessLogPostData](docs/Model/EcedoERPCRMInterfaceApiAPIProcessLogPostData.md)
  - [EcedoERPCRMInterfaceApiActiveBillingItemGroupPutData](docs/Model/EcedoERPCRMInterfaceApiActiveBillingItemGroupPutData.md)
+ - [EcedoERPCRMInterfaceApiAddRenewedEvChargeCardContractPostData](docs/Model/EcedoERPCRMInterfaceApiAddRenewedEvChargeCardContractPostData.md)
  - [EcedoERPCRMInterfaceApiAddress](docs/Model/EcedoERPCRMInterfaceApiAddress.md)
  - [EcedoERPCRMInterfaceApiAddressPostData](docs/Model/EcedoERPCRMInterfaceApiAddressPostData.md)
  - [EcedoERPCRMInterfaceApiAddressPutData](docs/Model/EcedoERPCRMInterfaceApiAddressPutData.md)
  - [EcedoERPCRMInterfaceApiAdvanceAgreedPaymentPerConnection](docs/Model/EcedoERPCRMInterfaceApiAdvanceAgreedPaymentPerConnection.md)
  - [EcedoERPCRMInterfaceApiAdvancePayment](docs/Model/EcedoERPCRMInterfaceApiAdvancePayment.md)
+ - [EcedoERPCRMInterfaceApiAdvancePaymentBase](docs/Model/EcedoERPCRMInterfaceApiAdvancePaymentBase.md)
  - [EcedoERPCRMInterfaceApiAdvancePaymentPerConnection](docs/Model/EcedoERPCRMInterfaceApiAdvancePaymentPerConnection.md)
  - [EcedoERPCRMInterfaceApiAdvancePaymentPostData](docs/Model/EcedoERPCRMInterfaceApiAdvancePaymentPostData.md)
  - [EcedoERPCRMInterfaceApiAdvancePaymentPutData](docs/Model/EcedoERPCRMInterfaceApiAdvancePaymentPutData.md)
@@ -394,7 +401,10 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiAnnualPriceBreakdown](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdown.md)
  - [EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection.md)
  - [EcedoERPCRMInterfaceApiAnnualStandardUsage](docs/Model/EcedoERPCRMInterfaceApiAnnualStandardUsage.md)
+ - [EcedoERPCRMInterfaceApiAnnualStandardUsagePostData](docs/Model/EcedoERPCRMInterfaceApiAnnualStandardUsagePostData.md)
  - [EcedoERPCRMInterfaceApiBaseContract](docs/Model/EcedoERPCRMInterfaceApiBaseContract.md)
+ - [EcedoERPCRMInterfaceApiBaseImbalanceFdrPostData](docs/Model/EcedoERPCRMInterfaceApiBaseImbalanceFdrPostData.md)
+ - [EcedoERPCRMInterfaceApiBaseInvoiceRowPostData](docs/Model/EcedoERPCRMInterfaceApiBaseInvoiceRowPostData.md)
  - [EcedoERPCRMInterfaceApiBillingItem](docs/Model/EcedoERPCRMInterfaceApiBillingItem.md)
  - [EcedoERPCRMInterfaceApiBillingItemGroup](docs/Model/EcedoERPCRMInterfaceApiBillingItemGroup.md)
  - [EcedoERPCRMInterfaceApiBillingItemGroupPostData](docs/Model/EcedoERPCRMInterfaceApiBillingItemGroupPostData.md)
@@ -404,14 +414,17 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiBillingItemPostResult](docs/Model/EcedoERPCRMInterfaceApiBillingItemPostResult.md)
  - [EcedoERPCRMInterfaceApiBillingItemPrice](docs/Model/EcedoERPCRMInterfaceApiBillingItemPrice.md)
  - [EcedoERPCRMInterfaceApiBillingItemPutData](docs/Model/EcedoERPCRMInterfaceApiBillingItemPutData.md)
+ - [EcedoERPCRMInterfaceApiBusinessCalculatedTerminationFee](docs/Model/EcedoERPCRMInterfaceApiBusinessCalculatedTerminationFee.md)
  - [EcedoERPCRMInterfaceApiCalculateAnnualStandardUsagePostData](docs/Model/EcedoERPCRMInterfaceApiCalculateAnnualStandardUsagePostData.md)
  - [EcedoERPCRMInterfaceApiCalculatedMeterReading](docs/Model/EcedoERPCRMInterfaceApiCalculatedMeterReading.md)
  - [EcedoERPCRMInterfaceApiCalculatedTerminationFee](docs/Model/EcedoERPCRMInterfaceApiCalculatedTerminationFee.md)
  - [EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult](docs/Model/EcedoERPCRMInterfaceApiCancelAdvancePaymentInvoicesResult.md)
  - [EcedoERPCRMInterfaceApiCancelFlowPostData](docs/Model/EcedoERPCRMInterfaceApiCancelFlowPostData.md)
+ - [EcedoERPCRMInterfaceApiCdrPostData](docs/Model/EcedoERPCRMInterfaceApiCdrPostData.md)
  - [EcedoERPCRMInterfaceApiCertiQEan](docs/Model/EcedoERPCRMInterfaceApiCertiQEan.md)
  - [EcedoERPCRMInterfaceApiCertiQReport](docs/Model/EcedoERPCRMInterfaceApiCertiQReport.md)
  - [EcedoERPCRMInterfaceApiCertificate](docs/Model/EcedoERPCRMInterfaceApiCertificate.md)
+ - [EcedoERPCRMInterfaceApiCertificatePostData](docs/Model/EcedoERPCRMInterfaceApiCertificatePostData.md)
  - [EcedoERPCRMInterfaceApiCertificatePostResult](docs/Model/EcedoERPCRMInterfaceApiCertificatePostResult.md)
  - [EcedoERPCRMInterfaceApiCertiqDashboardData](docs/Model/EcedoERPCRMInterfaceApiCertiqDashboardData.md)
  - [EcedoERPCRMInterfaceApiCertiqDashboardDataPerPeriod](docs/Model/EcedoERPCRMInterfaceApiCertiqDashboardDataPerPeriod.md)
@@ -453,7 +466,9 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiContractPostResult](docs/Model/EcedoERPCRMInterfaceApiContractPostResult.md)
  - [EcedoERPCRMInterfaceApiContractProperty](docs/Model/EcedoERPCRMInterfaceApiContractProperty.md)
  - [EcedoERPCRMInterfaceApiContractPropertyPostData](docs/Model/EcedoERPCRMInterfaceApiContractPropertyPostData.md)
+ - [EcedoERPCRMInterfaceApiContractPutData](docs/Model/EcedoERPCRMInterfaceApiContractPutData.md)
  - [EcedoERPCRMInterfaceApiContractStartDateResult](docs/Model/EcedoERPCRMInterfaceApiContractStartDateResult.md)
+ - [EcedoERPCRMInterfaceApiContractTerminationFee](docs/Model/EcedoERPCRMInterfaceApiContractTerminationFee.md)
  - [EcedoERPCRMInterfaceApiContractTerminationFeeBase](docs/Model/EcedoERPCRMInterfaceApiContractTerminationFeeBase.md)
  - [EcedoERPCRMInterfaceApiContractTerminationFeeType](docs/Model/EcedoERPCRMInterfaceApiContractTerminationFeeType.md)
  - [EcedoERPCRMInterfaceApiCreditInvoicePostData](docs/Model/EcedoERPCRMInterfaceApiCreditInvoicePostData.md)
@@ -470,6 +485,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiDayP4MeterReadings](docs/Model/EcedoERPCRMInterfaceApiDayP4MeterReadings.md)
  - [EcedoERPCRMInterfaceApiDeal](docs/Model/EcedoERPCRMInterfaceApiDeal.md)
  - [EcedoERPCRMInterfaceApiDebtor](docs/Model/EcedoERPCRMInterfaceApiDebtor.md)
+ - [EcedoERPCRMInterfaceApiDebtorBasePostData](docs/Model/EcedoERPCRMInterfaceApiDebtorBasePostData.md)
  - [EcedoERPCRMInterfaceApiDebtorPostData](docs/Model/EcedoERPCRMInterfaceApiDebtorPostData.md)
  - [EcedoERPCRMInterfaceApiDebtorProperty](docs/Model/EcedoERPCRMInterfaceApiDebtorProperty.md)
  - [EcedoERPCRMInterfaceApiDebtorPropertyPostData](docs/Model/EcedoERPCRMInterfaceApiDebtorPropertyPostData.md)
@@ -485,8 +501,11 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiDtoBillingItemGroupBillingItemGroup](docs/Model/EcedoERPCRMInterfaceApiDtoBillingItemGroupBillingItemGroup.md)
  - [EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto](docs/Model/EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto.md)
  - [EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto](docs/Model/EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto.md)
+ - [EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto](docs/Model/EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto.md)
+ - [EcedoERPCRMInterfaceApiDtoServiceContractServiceContractPostData](docs/Model/EcedoERPCRMInterfaceApiDtoServiceContractServiceContractPostData.md)
  - [EcedoERPCRMInterfaceApiDtoServiceContractSmartDeviceServiceContractApiDto](docs/Model/EcedoERPCRMInterfaceApiDtoServiceContractSmartDeviceServiceContractApiDto.md)
  - [EcedoERPCRMInterfaceApiEditMoveFlow](docs/Model/EcedoERPCRMInterfaceApiEditMoveFlow.md)
+ - [EcedoERPCRMInterfaceApiElectricityPriceData](docs/Model/EcedoERPCRMInterfaceApiElectricityPriceData.md)
  - [EcedoERPCRMInterfaceApiEmailResponse](docs/Model/EcedoERPCRMInterfaceApiEmailResponse.md)
  - [EcedoERPCRMInterfaceApiEnergieInkoopContract](docs/Model/EcedoERPCRMInterfaceApiEnergieInkoopContract.md)
  - [EcedoERPCRMInterfaceApiEnergieInkoopContractPostData](docs/Model/EcedoERPCRMInterfaceApiEnergieInkoopContractPostData.md)
@@ -506,28 +525,57 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiErrorMessageObject400](docs/Model/EcedoERPCRMInterfaceApiErrorMessageObject400.md)
  - [EcedoERPCRMInterfaceApiErrorMessageObject401](docs/Model/EcedoERPCRMInterfaceApiErrorMessageObject401.md)
  - [EcedoERPCRMInterfaceApiErrorMessageObject404](docs/Model/EcedoERPCRMInterfaceApiErrorMessageObject404.md)
+ - [EcedoERPCRMInterfaceApiEvChargeCardActivatePostData](docs/Model/EcedoERPCRMInterfaceApiEvChargeCardActivatePostData.md)
+ - [EcedoERPCRMInterfaceApiEvChargeCardActivateReplacementPostData](docs/Model/EcedoERPCRMInterfaceApiEvChargeCardActivateReplacementPostData.md)
+ - [EcedoERPCRMInterfaceApiEvChargeCardCdrPostData](docs/Model/EcedoERPCRMInterfaceApiEvChargeCardCdrPostData.md)
  - [EcedoERPCRMInterfaceApiEvChargeCardContract](docs/Model/EcedoERPCRMInterfaceApiEvChargeCardContract.md)
+ - [EcedoERPCRMInterfaceApiEvChargeCardContractPostDataEvChargeCardContract](docs/Model/EcedoERPCRMInterfaceApiEvChargeCardContractPostDataEvChargeCardContract.md)
+ - [EcedoERPCRMInterfaceApiEvChargeCardCreditBase](docs/Model/EcedoERPCRMInterfaceApiEvChargeCardCreditBase.md)
+ - [EcedoERPCRMInterfaceApiEvChargeCardCreditGetData](docs/Model/EcedoERPCRMInterfaceApiEvChargeCardCreditGetData.md)
+ - [EcedoERPCRMInterfaceApiEvChargeCardCreditPostData](docs/Model/EcedoERPCRMInterfaceApiEvChargeCardCreditPostData.md)
+ - [EcedoERPCRMInterfaceApiEvChargeCardCreditPutData](docs/Model/EcedoERPCRMInterfaceApiEvChargeCardCreditPutData.md)
+ - [EcedoERPCRMInterfaceApiEvChargerAddress](docs/Model/EcedoERPCRMInterfaceApiEvChargerAddress.md)
+ - [EcedoERPCRMInterfaceApiEvChargerCdrData](docs/Model/EcedoERPCRMInterfaceApiEvChargerCdrData.md)
+ - [EcedoERPCRMInterfaceApiEvChargerLocationPutData](docs/Model/EcedoERPCRMInterfaceApiEvChargerLocationPutData.md)
+ - [EcedoERPCRMInterfaceApiEvChargerPostData](docs/Model/EcedoERPCRMInterfaceApiEvChargerPostData.md)
+ - [EcedoERPCRMInterfaceApiEvChargerPutData](docs/Model/EcedoERPCRMInterfaceApiEvChargerPutData.md)
+ - [EcedoERPCRMInterfaceApiEvchargerContractData](docs/Model/EcedoERPCRMInterfaceApiEvchargerContractData.md)
+ - [EcedoERPCRMInterfaceApiEvseContractPostData](docs/Model/EcedoERPCRMInterfaceApiEvseContractPostData.md)
+ - [EcedoERPCRMInterfaceApiEvsePostData](docs/Model/EcedoERPCRMInterfaceApiEvsePostData.md)
  - [EcedoERPCRMInterfaceApiExpectedAnnualStandardUsage](docs/Model/EcedoERPCRMInterfaceApiExpectedAnnualStandardUsage.md)
  - [EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData](docs/Model/EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData.md)
  - [EcedoERPCRMInterfaceApiExpectedSettlementInvoicePostData](docs/Model/EcedoERPCRMInterfaceApiExpectedSettlementInvoicePostData.md)
  - [EcedoERPCRMInterfaceApiExpectedSettlementInvoiceResult](docs/Model/EcedoERPCRMInterfaceApiExpectedSettlementInvoiceResult.md)
  - [EcedoERPCRMInterfaceApiExpectedYield](docs/Model/EcedoERPCRMInterfaceApiExpectedYield.md)
+ - [EcedoERPCRMInterfaceApiExpectedYieldBase](docs/Model/EcedoERPCRMInterfaceApiExpectedYieldBase.md)
+ - [EcedoERPCRMInterfaceApiExtendedElectricityMeter](docs/Model/EcedoERPCRMInterfaceApiExtendedElectricityMeter.md)
+ - [EcedoERPCRMInterfaceApiExtendedGasMeter](docs/Model/EcedoERPCRMInterfaceApiExtendedGasMeter.md)
  - [EcedoERPCRMInterfaceApiExtendedMeter](docs/Model/EcedoERPCRMInterfaceApiExtendedMeter.md)
  - [EcedoERPCRMInterfaceApiExtendedMeteringPoint](docs/Model/EcedoERPCRMInterfaceApiExtendedMeteringPoint.md)
+ - [EcedoERPCRMInterfaceApiExterneOpwekContract](docs/Model/EcedoERPCRMInterfaceApiExterneOpwekContract.md)
+ - [EcedoERPCRMInterfaceApiExterneOpwekContractConnection](docs/Model/EcedoERPCRMInterfaceApiExterneOpwekContractConnection.md)
+ - [EcedoERPCRMInterfaceApiExterneOpwekContractPostData](docs/Model/EcedoERPCRMInterfaceApiExterneOpwekContractPostData.md)
+ - [EcedoERPCRMInterfaceApiExterneOpwekContractPutData](docs/Model/EcedoERPCRMInterfaceApiExterneOpwekContractPutData.md)
  - [EcedoERPCRMInterfaceApiFinancialDetails](docs/Model/EcedoERPCRMInterfaceApiFinancialDetails.md)
  - [EcedoERPCRMInterfaceApiFullPerson](docs/Model/EcedoERPCRMInterfaceApiFullPerson.md)
  - [EcedoERPCRMInterfaceApiFullPersonPostData](docs/Model/EcedoERPCRMInterfaceApiFullPersonPostData.md)
  - [EcedoERPCRMInterfaceApiFullPersonPostResult](docs/Model/EcedoERPCRMInterfaceApiFullPersonPostResult.md)
+ - [EcedoERPCRMInterfaceApiGasPriceData](docs/Model/EcedoERPCRMInterfaceApiGasPriceData.md)
  - [EcedoERPCRMInterfaceApiGdprOrganization](docs/Model/EcedoERPCRMInterfaceApiGdprOrganization.md)
  - [EcedoERPCRMInterfaceApiGenerateDocumentPostData](docs/Model/EcedoERPCRMInterfaceApiGenerateDocumentPostData.md)
  - [EcedoERPCRMInterfaceApiGreeningOption](docs/Model/EcedoERPCRMInterfaceApiGreeningOption.md)
+ - [EcedoERPCRMInterfaceApiGridAreaConnectionProperty](docs/Model/EcedoERPCRMInterfaceApiGridAreaConnectionProperty.md)
  - [EcedoERPCRMInterfaceApiHasContractInPeriodResponse](docs/Model/EcedoERPCRMInterfaceApiHasContractInPeriodResponse.md)
  - [EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage](docs/Model/EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage.md)
+ - [EcedoERPCRMInterfaceApiImbalanceFdrPostData](docs/Model/EcedoERPCRMInterfaceApiImbalanceFdrPostData.md)
+ - [EcedoERPCRMInterfaceApiIntP4MeterReading](docs/Model/EcedoERPCRMInterfaceApiIntP4MeterReading.md)
+ - [EcedoERPCRMInterfaceApiIntP4MeterReadings](docs/Model/EcedoERPCRMInterfaceApiIntP4MeterReadings.md)
  - [EcedoERPCRMInterfaceApiInvoice](docs/Model/EcedoERPCRMInterfaceApiInvoice.md)
  - [EcedoERPCRMInterfaceApiInvoiceProcessRule](docs/Model/EcedoERPCRMInterfaceApiInvoiceProcessRule.md)
  - [EcedoERPCRMInterfaceApiInvoiceProcessRulePostData](docs/Model/EcedoERPCRMInterfaceApiInvoiceProcessRulePostData.md)
  - [EcedoERPCRMInterfaceApiInvoiceReasonResult](docs/Model/EcedoERPCRMInterfaceApiInvoiceReasonResult.md)
  - [EcedoERPCRMInterfaceApiInvoiceRow](docs/Model/EcedoERPCRMInterfaceApiInvoiceRow.md)
+ - [EcedoERPCRMInterfaceApiInvoiceRowBase](docs/Model/EcedoERPCRMInterfaceApiInvoiceRowBase.md)
  - [EcedoERPCRMInterfaceApiInvoiceRowPostData](docs/Model/EcedoERPCRMInterfaceApiInvoiceRowPostData.md)
  - [EcedoERPCRMInterfaceApiInvoiceRowSummaryDto](docs/Model/EcedoERPCRMInterfaceApiInvoiceRowSummaryDto.md)
  - [EcedoERPCRMInterfaceApiInvoiceRowTotalsDto](docs/Model/EcedoERPCRMInterfaceApiInvoiceRowTotalsDto.md)
@@ -550,7 +598,9 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiMeansOfProductionConnectionPutData](docs/Model/EcedoERPCRMInterfaceApiMeansOfProductionConnectionPutData.md)
  - [EcedoERPCRMInterfaceApiMeansOfProductionPostData](docs/Model/EcedoERPCRMInterfaceApiMeansOfProductionPostData.md)
  - [EcedoERPCRMInterfaceApiMeansOfProductionPostResult](docs/Model/EcedoERPCRMInterfaceApiMeansOfProductionPostResult.md)
+ - [EcedoERPCRMInterfaceApiMeansOfProductionProposition](docs/Model/EcedoERPCRMInterfaceApiMeansOfProductionProposition.md)
  - [EcedoERPCRMInterfaceApiMeansOfProductionPutData](docs/Model/EcedoERPCRMInterfaceApiMeansOfProductionPutData.md)
+ - [EcedoERPCRMInterfaceApiMeansOfProductionTelemetryApiDto](docs/Model/EcedoERPCRMInterfaceApiMeansOfProductionTelemetryApiDto.md)
  - [EcedoERPCRMInterfaceApiMeeliftConnectionContract](docs/Model/EcedoERPCRMInterfaceApiMeeliftConnectionContract.md)
  - [EcedoERPCRMInterfaceApiMeeliftContract](docs/Model/EcedoERPCRMInterfaceApiMeeliftContract.md)
  - [EcedoERPCRMInterfaceApiMeeliftProposition](docs/Model/EcedoERPCRMInterfaceApiMeeliftProposition.md)
@@ -559,6 +609,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiMeterReadingBase](docs/Model/EcedoERPCRMInterfaceApiMeterReadingBase.md)
  - [EcedoERPCRMInterfaceApiMeterReadingByEventIdPostData](docs/Model/EcedoERPCRMInterfaceApiMeterReadingByEventIdPostData.md)
  - [EcedoERPCRMInterfaceApiMeterReadingCollectionEvent](docs/Model/EcedoERPCRMInterfaceApiMeterReadingCollectionEvent.md)
+ - [EcedoERPCRMInterfaceApiMeterReadingData](docs/Model/EcedoERPCRMInterfaceApiMeterReadingData.md)
  - [EcedoERPCRMInterfaceApiMeterReadingPostData](docs/Model/EcedoERPCRMInterfaceApiMeterReadingPostData.md)
  - [EcedoERPCRMInterfaceApiMeteringPoint](docs/Model/EcedoERPCRMInterfaceApiMeteringPoint.md)
  - [EcedoERPCRMInterfaceApiMeteringPointBAG](docs/Model/EcedoERPCRMInterfaceApiMeteringPointBAG.md)
@@ -568,12 +619,15 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData](docs/Model/EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData.md)
  - [EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData](docs/Model/EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData.md)
  - [EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase](docs/Model/EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase.md)
+ - [EcedoERPCRMInterfaceApiNoneCalculatedTerminationFee](docs/Model/EcedoERPCRMInterfaceApiNoneCalculatedTerminationFee.md)
  - [EcedoERPCRMInterfaceApiOnbalansFlexContract](docs/Model/EcedoERPCRMInterfaceApiOnbalansFlexContract.md)
  - [EcedoERPCRMInterfaceApiOnbalansFlexContractPostData](docs/Model/EcedoERPCRMInterfaceApiOnbalansFlexContractPostData.md)
  - [EcedoERPCRMInterfaceApiOnbalansFlexContractPostResult](docs/Model/EcedoERPCRMInterfaceApiOnbalansFlexContractPostResult.md)
  - [EcedoERPCRMInterfaceApiOnbalansFlexContractPutData](docs/Model/EcedoERPCRMInterfaceApiOnbalansFlexContractPutData.md)
  - [EcedoERPCRMInterfaceApiOpenMeasurementData](docs/Model/EcedoERPCRMInterfaceApiOpenMeasurementData.md)
  - [EcedoERPCRMInterfaceApiOpenMeasurementDetailData](docs/Model/EcedoERPCRMInterfaceApiOpenMeasurementDetailData.md)
+ - [EcedoERPCRMInterfaceApiOplaadPuntLocatieContractPostData](docs/Model/EcedoERPCRMInterfaceApiOplaadPuntLocatieContractPostData.md)
+ - [EcedoERPCRMInterfaceApiOplaadPuntLocatieContractPutData](docs/Model/EcedoERPCRMInterfaceApiOplaadPuntLocatieContractPutData.md)
  - [EcedoERPCRMInterfaceApiOrganization](docs/Model/EcedoERPCRMInterfaceApiOrganization.md)
  - [EcedoERPCRMInterfaceApiOrganizationEvent](docs/Model/EcedoERPCRMInterfaceApiOrganizationEvent.md)
  - [EcedoERPCRMInterfaceApiOrganizationEventWithWorkflowData](docs/Model/EcedoERPCRMInterfaceApiOrganizationEventWithWorkflowData.md)
@@ -581,14 +635,18 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiOrganizationPostDataProcessSettingsPostData](docs/Model/EcedoERPCRMInterfaceApiOrganizationPostDataProcessSettingsPostData.md)
  - [EcedoERPCRMInterfaceApiOrganizationPostResult](docs/Model/EcedoERPCRMInterfaceApiOrganizationPostResult.md)
  - [EcedoERPCRMInterfaceApiOrganizationSearchResult](docs/Model/EcedoERPCRMInterfaceApiOrganizationSearchResult.md)
+ - [EcedoERPCRMInterfaceApiOrganizationSubset](docs/Model/EcedoERPCRMInterfaceApiOrganizationSubset.md)
  - [EcedoERPCRMInterfaceApiOutboundEntityRevision](docs/Model/EcedoERPCRMInterfaceApiOutboundEntityRevision.md)
  - [EcedoERPCRMInterfaceApiOutstandingDebtorAmount](docs/Model/EcedoERPCRMInterfaceApiOutstandingDebtorAmount.md)
  - [EcedoERPCRMInterfaceApiP4MeterReading](docs/Model/EcedoERPCRMInterfaceApiP4MeterReading.md)
  - [EcedoERPCRMInterfaceApiP4MeterReadings](docs/Model/EcedoERPCRMInterfaceApiP4MeterReadings.md)
+ - [EcedoERPCRMInterfaceApiPassiveFlexSession](docs/Model/EcedoERPCRMInterfaceApiPassiveFlexSession.md)
+ - [EcedoERPCRMInterfaceApiPassiveImbalanceFdrPostData](docs/Model/EcedoERPCRMInterfaceApiPassiveImbalanceFdrPostData.md)
  - [EcedoERPCRMInterfaceApiPeriodicCostEventLog](docs/Model/EcedoERPCRMInterfaceApiPeriodicCostEventLog.md)
  - [EcedoERPCRMInterfaceApiPerson](docs/Model/EcedoERPCRMInterfaceApiPerson.md)
  - [EcedoERPCRMInterfaceApiPersonPostData](docs/Model/EcedoERPCRMInterfaceApiPersonPostData.md)
  - [EcedoERPCRMInterfaceApiPreNotifyContractProcessSettings](docs/Model/EcedoERPCRMInterfaceApiPreNotifyContractProcessSettings.md)
+ - [EcedoERPCRMInterfaceApiPrice](docs/Model/EcedoERPCRMInterfaceApiPrice.md)
  - [EcedoERPCRMInterfaceApiPriceComponentPrice](docs/Model/EcedoERPCRMInterfaceApiPriceComponentPrice.md)
  - [EcedoERPCRMInterfaceApiPriceData](docs/Model/EcedoERPCRMInterfaceApiPriceData.md)
  - [EcedoERPCRMInterfaceApiPriceGroupPostData](docs/Model/EcedoERPCRMInterfaceApiPriceGroupPostData.md)
@@ -605,10 +663,19 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiProductUnitOrderPostData](docs/Model/EcedoERPCRMInterfaceApiProductUnitOrderPostData.md)
  - [EcedoERPCRMInterfaceApiProductUnitPostData](docs/Model/EcedoERPCRMInterfaceApiProductUnitPostData.md)
  - [EcedoERPCRMInterfaceApiProductUnitPostResult](docs/Model/EcedoERPCRMInterfaceApiProductUnitPostResult.md)
+ - [EcedoERPCRMInterfaceApiProductUnitReadingUsageFixedPriceRow](docs/Model/EcedoERPCRMInterfaceApiProductUnitReadingUsageFixedPriceRow.md)
+ - [EcedoERPCRMInterfaceApiProductUnitReadingUsagePropositionPriceRow](docs/Model/EcedoERPCRMInterfaceApiProductUnitReadingUsagePropositionPriceRow.md)
+ - [EcedoERPCRMInterfaceApiProductUnitReadingUsageRow](docs/Model/EcedoERPCRMInterfaceApiProductUnitReadingUsageRow.md)
  - [EcedoERPCRMInterfaceApiProductUnitUsage](docs/Model/EcedoERPCRMInterfaceApiProductUnitUsage.md)
  - [EcedoERPCRMInterfaceApiProductUnitUsageGetData](docs/Model/EcedoERPCRMInterfaceApiProductUnitUsageGetData.md)
  - [EcedoERPCRMInterfaceApiProductUnitUsagePostData](docs/Model/EcedoERPCRMInterfaceApiProductUnitUsagePostData.md)
+ - [EcedoERPCRMInterfaceApiProfiledElectricitySauPeriod](docs/Model/EcedoERPCRMInterfaceApiProfiledElectricitySauPeriod.md)
+ - [EcedoERPCRMInterfaceApiProfiledGasSauPeriod](docs/Model/EcedoERPCRMInterfaceApiProfiledGasSauPeriod.md)
+ - [EcedoERPCRMInterfaceApiProfiledSauPeriod](docs/Model/EcedoERPCRMInterfaceApiProfiledSauPeriod.md)
+ - [EcedoERPCRMInterfaceApiProfiledSauPeriodResultData](docs/Model/EcedoERPCRMInterfaceApiProfiledSauPeriodResultData.md)
+ - [EcedoERPCRMInterfaceApiProposalMeteringPoint](docs/Model/EcedoERPCRMInterfaceApiProposalMeteringPoint.md)
  - [EcedoERPCRMInterfaceApiProposition](docs/Model/EcedoERPCRMInterfaceApiProposition.md)
+ - [EcedoERPCRMInterfaceApiPropositionData](docs/Model/EcedoERPCRMInterfaceApiPropositionData.md)
  - [EcedoERPCRMInterfaceApiPropositionGroup](docs/Model/EcedoERPCRMInterfaceApiPropositionGroup.md)
  - [EcedoERPCRMInterfaceApiPropositionGroupPostData](docs/Model/EcedoERPCRMInterfaceApiPropositionGroupPostData.md)
  - [EcedoERPCRMInterfaceApiPropositionGroupPostResult](docs/Model/EcedoERPCRMInterfaceApiPropositionGroupPostResult.md)
@@ -630,6 +697,8 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiResellerOrganization](docs/Model/EcedoERPCRMInterfaceApiResellerOrganization.md)
  - [EcedoERPCRMInterfaceApiReservation](docs/Model/EcedoERPCRMInterfaceApiReservation.md)
  - [EcedoERPCRMInterfaceApiReservationBase](docs/Model/EcedoERPCRMInterfaceApiReservationBase.md)
+ - [EcedoERPCRMInterfaceApiRover2013CalculatedTerminationFee](docs/Model/EcedoERPCRMInterfaceApiRover2013CalculatedTerminationFee.md)
+ - [EcedoERPCRMInterfaceApiRover2023CalculatedTerminationFee](docs/Model/EcedoERPCRMInterfaceApiRover2023CalculatedTerminationFee.md)
  - [EcedoERPCRMInterfaceApiSetAnnualStandardUsageTypePostData](docs/Model/EcedoERPCRMInterfaceApiSetAnnualStandardUsageTypePostData.md)
  - [EcedoERPCRMInterfaceApiSettlementEvent](docs/Model/EcedoERPCRMInterfaceApiSettlementEvent.md)
  - [EcedoERPCRMInterfaceApiSmartChargingSession](docs/Model/EcedoERPCRMInterfaceApiSmartChargingSession.md)
@@ -637,21 +706,29 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiSwitchEvent](docs/Model/EcedoERPCRMInterfaceApiSwitchEvent.md)
  - [EcedoERPCRMInterfaceApiSwitchOutEvent](docs/Model/EcedoERPCRMInterfaceApiSwitchOutEvent.md)
  - [EcedoERPCRMInterfaceApiSwitchPeriod](docs/Model/EcedoERPCRMInterfaceApiSwitchPeriod.md)
+ - [EcedoERPCRMInterfaceApiTankKaartContractPostData](docs/Model/EcedoERPCRMInterfaceApiTankKaartContractPostData.md)
  - [EcedoERPCRMInterfaceApiTelemetryApiDto](docs/Model/EcedoERPCRMInterfaceApiTelemetryApiDto.md)
+ - [EcedoERPCRMInterfaceApiTelemetryApiDtoBase](docs/Model/EcedoERPCRMInterfaceApiTelemetryApiDtoBase.md)
  - [EcedoERPCRMInterfaceApiTelemetryData](docs/Model/EcedoERPCRMInterfaceApiTelemetryData.md)
  - [EcedoERPCRMInterfaceApiTelemetryPostData](docs/Model/EcedoERPCRMInterfaceApiTelemetryPostData.md)
+ - [EcedoERPCRMInterfaceApiTerminationFeeCalculationData](docs/Model/EcedoERPCRMInterfaceApiTerminationFeeCalculationData.md)
  - [EcedoERPCRMInterfaceApiTerminationFeeCalculationTypeResponse](docs/Model/EcedoERPCRMInterfaceApiTerminationFeeCalculationTypeResponse.md)
  - [EcedoERPCRMInterfaceApiTerminationFeeConnectionCalculations](docs/Model/EcedoERPCRMInterfaceApiTerminationFeeConnectionCalculations.md)
  - [EcedoERPCRMInterfaceApiTerminationFeeReferencePropositions](docs/Model/EcedoERPCRMInterfaceApiTerminationFeeReferencePropositions.md)
+ - [EcedoERPCRMInterfaceApiUsageCalculationRow](docs/Model/EcedoERPCRMInterfaceApiUsageCalculationRow.md)
  - [EcedoERPCRMInterfaceApiValidateMeterReadingPostData](docs/Model/EcedoERPCRMInterfaceApiValidateMeterReadingPostData.md)
  - [EcedoERPCRMInterfaceApiValidateMeterReadingPostResult](docs/Model/EcedoERPCRMInterfaceApiValidateMeterReadingPostResult.md)
+ - [EcedoERPCRMInterfaceApiWeightedPrice](docs/Model/EcedoERPCRMInterfaceApiWeightedPrice.md)
+ - [EcedoERPCRMInterfaceApiWeightedPriceWeightedComponent](docs/Model/EcedoERPCRMInterfaceApiWeightedPriceWeightedComponent.md)
  - [EcedoERPCRMInterfaceApiWorkflowStep](docs/Model/EcedoERPCRMInterfaceApiWorkflowStep.md)
+ - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditConnectionUsageGroup](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditConnectionUsageGroup.md)
  - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProject](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProject.md)
  - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostData.md)
  - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostResult](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPostResult.md)
  - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectPutData.md)
  - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipArea](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipArea.md)
  - [EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipAreaPostData](docs/Model/EcedoERPCRMInterfaceApiZipAreaEnergyTaxCreditProjectZipAreaPostData.md)
+ - [EcedoERPCRMInterfaceEvApiProductUnitContractPrice](docs/Model/EcedoERPCRMInterfaceEvApiProductUnitContractPrice.md)
  - [EcedoERPCRMInterfaceGDPRAddress](docs/Model/EcedoERPCRMInterfaceGDPRAddress.md)
  - [EcedoERPCRMInterfaceGDPRBusiness](docs/Model/EcedoERPCRMInterfaceGDPRBusiness.md)
  - [EcedoERPCRMInterfaceGDPRConnection](docs/Model/EcedoERPCRMInterfaceGDPRConnection.md)
@@ -681,9 +758,18 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvoiceLetterDtoProductUnit](docs/Model/EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvoiceLetterDtoProductUnit.md)
  - [EcedoERPCRMInterfaceReportModelCompanyLabelDto](docs/Model/EcedoERPCRMInterfaceReportModelCompanyLabelDto.md)
  - [EcedoERPCRMInterfaceReportModelConnectionDto](docs/Model/EcedoERPCRMInterfaceReportModelConnectionDto.md)
+ - [EcedoERPCRMInterfaceReportModelEanDto](docs/Model/EcedoERPCRMInterfaceReportModelEanDto.md)
  - [EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbursementInvoiceLetterDto](docs/Model/EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbursementInvoiceLetterDto.md)
  - [EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbursementInvoiceLetterDtoInvoiceRow](docs/Model/EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbursementInvoiceLetterDtoInvoiceRow.md)
+ - [EcedoERPCRMInterfaceReportModelMeansOfProductionContractProposalLetterMeansOfProductionOrganizationDto](docs/Model/EcedoERPCRMInterfaceReportModelMeansOfProductionContractProposalLetterMeansOfProductionOrganizationDto.md)
+ - [EcedoERPCRMInterfaceReportModelMeansOfProductionMeansOfProductionDto](docs/Model/EcedoERPCRMInterfaceReportModelMeansOfProductionMeansOfProductionDto.md)
+ - [EcedoERPCRMInterfaceReportModelNewAdvancePaymentDto](docs/Model/EcedoERPCRMInterfaceReportModelNewAdvancePaymentDto.md)
+ - [EcedoERPCRMInterfaceReportModelOrganizationConnectionsMailDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationConnectionsMailDto.md)
  - [EcedoERPCRMInterfaceReportModelOrganizationDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationDto.md)
+ - [EcedoERPCRMInterfaceReportModelOrganizationEnergyVKODto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationEnergyVKODto.md)
+ - [EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto.md)
+ - [EcedoERPCRMInterfaceReportModelOrganizationMailDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationMailDto.md)
+ - [EcedoERPCRMInterfaceReportModelOrganizationPaymentMailDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationPaymentMailDto.md)
  - [EcedoERPCRMInterfaceReportModelOrganizationResellerDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationResellerDto.md)
  - [EcedoERPCRMInterfaceReportModelProductUnitDto](docs/Model/EcedoERPCRMInterfaceReportModelProductUnitDto.md)
  - [EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDto](docs/Model/EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDto.md)
@@ -691,6 +777,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDtoInvoiceRow](docs/Model/EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDtoInvoiceRow.md)
  - [EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDtoProductUnit](docs/Model/EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDtoProductUnit.md)
  - [EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterServiceContractInvoiceLetterDto](docs/Model/EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterServiceContractInvoiceLetterDto.md)
+ - [EcedoERPCRMInterfaceReportModelReducedConnectionDto](docs/Model/EcedoERPCRMInterfaceReportModelReducedConnectionDto.md)
  - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDto](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDto.md)
  - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoAdvancePayment](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoAdvancePayment.md)
  - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoConnection](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoConnection.md)
@@ -701,6 +788,11 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoNewAdvancePayment](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoNewAdvancePayment.md)
  - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoProductUnit](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoProductUnit.md)
  - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoTerminationFee](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoTerminationFee.md)
+ - [EcedoERPCRMInterfaceReportModelTriggerGroupDto](docs/Model/EcedoERPCRMInterfaceReportModelTriggerGroupDto.md)
+ - [EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto](docs/Model/EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto.md)
+ - [EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceComponentPriceDto](docs/Model/EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceComponentPriceDto.md)
+ - [EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoConnection](docs/Model/EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoConnection.md)
+ - [EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoNewAdvancePayment](docs/Model/EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoNewAdvancePayment.md)
  - [EcedoERPCRMInterfaceServicesEDSNCERCERLookupData](docs/Model/EcedoERPCRMInterfaceServicesEDSNCERCERLookupData.md)
  - [EcedoERPCRMInterfaceServicesEDSNCERCERNoticeData](docs/Model/EcedoERPCRMInterfaceServicesEDSNCERCERNoticeData.md)
  - [EcedoERPUIWebControllersSysApiSysDashboardControllerDashboardDto](docs/Model/EcedoERPUIWebControllersSysApiSysDashboardControllerDashboardDto.md)

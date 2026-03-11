@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiResellerContractPostData extends EcedoERPCRMInterfaceApiEnergieleveringContractPostData 
 {
     const DISCRIMINATOR = null;
 
@@ -57,20 +55,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'reseller_organization_id' => 'string',
-        'meelift_proposition_reference' => 'string',
-        'start_reason' => 'string',
-        'previous_contract_id' => 'string',
-        'channel' => 'string',
-        'sales_reference' => 'string',
-        'billing_items' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiBillingItemPostData[]',
-        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractPropertyPostData[]',
-        'agreement_date' => '\DateTime',
-        'reference' => 'string',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'proposition_reference' => 'string',
-        'comment' => 'string'
+        'reseller_organization_id' => 'string'
     ];
 
     /**
@@ -79,20 +64,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'reseller_organization_id' => 'uuid',
-        'meelift_proposition_reference' => null,
-        'start_reason' => null,
-        'previous_contract_id' => 'uuid',
-        'channel' => null,
-        'sales_reference' => null,
-        'billing_items' => null,
-        'contract_properties' => null,
-        'agreement_date' => 'date',
-        'reference' => null,
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'proposition_reference' => null,
-        'comment' => null
+        'reseller_organization_id' => 'uuid'
     ];
 
     /**
@@ -102,7 +74,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -112,7 +84,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -122,20 +94,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
-        'reseller_organization_id' => 'ResellerOrganizationId',
-        'meelift_proposition_reference' => 'MeeliftPropositionReference',
-        'start_reason' => 'StartReason',
-        'previous_contract_id' => 'PreviousContractId',
-        'channel' => 'Channel',
-        'sales_reference' => 'SalesReference',
-        'billing_items' => 'BillingItems',
-        'contract_properties' => 'ContractProperties',
-        'agreement_date' => 'AgreementDate',
-        'reference' => 'Reference',
-        'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'proposition_reference' => 'PropositionReference',
-        'comment' => 'Comment'
+        'reseller_organization_id' => 'ResellerOrganizationId'
     ];
 
     /**
@@ -144,20 +103,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-        'reseller_organization_id' => 'setResellerOrganizationId',
-        'meelift_proposition_reference' => 'setMeeliftPropositionReference',
-        'start_reason' => 'setStartReason',
-        'previous_contract_id' => 'setPreviousContractId',
-        'channel' => 'setChannel',
-        'sales_reference' => 'setSalesReference',
-        'billing_items' => 'setBillingItems',
-        'contract_properties' => 'setContractProperties',
-        'agreement_date' => 'setAgreementDate',
-        'reference' => 'setReference',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'proposition_reference' => 'setPropositionReference',
-        'comment' => 'setComment'
+        'reseller_organization_id' => 'setResellerOrganizationId'
     ];
 
     /**
@@ -166,20 +112,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
-        'reseller_organization_id' => 'getResellerOrganizationId',
-        'meelift_proposition_reference' => 'getMeeliftPropositionReference',
-        'start_reason' => 'getStartReason',
-        'previous_contract_id' => 'getPreviousContractId',
-        'channel' => 'getChannel',
-        'sales_reference' => 'getSalesReference',
-        'billing_items' => 'getBillingItems',
-        'contract_properties' => 'getContractProperties',
-        'agreement_date' => 'getAgreementDate',
-        'reference' => 'getReference',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'proposition_reference' => 'getPropositionReference',
-        'comment' => 'getComment'
+        'reseller_organization_id' => 'getResellerOrganizationId'
     ];
 
     /**
@@ -190,7 +123,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -200,7 +133,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -210,7 +143,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -223,39 +156,10 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
         return self::$swaggerModelName;
     }
 
-    const START_REASON_INITIAL = 'Initial';
-    const START_REASON_CUSTOMER_RENEWAL = 'CustomerRenewal';
-    const START_REASON_CONTRACT_TYPE_CHANGE = 'ContractTypeChange';
-    const START_REASON_AUTOMATIC_RENEWAL = 'AutomaticRenewal';
-    const START_REASON_MOVE = 'Move';
-    const START_REASON_PRODUCER_SWITCH = 'ProducerSwitch';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStartReasonAllowableValues()
-    {
-        return [
-            self::START_REASON_INITIAL,
-            self::START_REASON_CUSTOMER_RENEWAL,
-            self::START_REASON_CONTRACT_TYPE_CHANGE,
-            self::START_REASON_AUTOMATIC_RENEWAL,
-            self::START_REASON_MOVE,
-            self::START_REASON_PRODUCER_SWITCH,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -265,20 +169,9 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['reseller_organization_id'] = isset($data['reseller_organization_id']) ? $data['reseller_organization_id'] : null;
-        $this->container['meelift_proposition_reference'] = isset($data['meelift_proposition_reference']) ? $data['meelift_proposition_reference'] : null;
-        $this->container['start_reason'] = isset($data['start_reason']) ? $data['start_reason'] : null;
-        $this->container['previous_contract_id'] = isset($data['previous_contract_id']) ? $data['previous_contract_id'] : null;
-        $this->container['channel'] = isset($data['channel']) ? $data['channel'] : null;
-        $this->container['sales_reference'] = isset($data['sales_reference']) ? $data['sales_reference'] : null;
-        $this->container['billing_items'] = isset($data['billing_items']) ? $data['billing_items'] : null;
-        $this->container['contract_properties'] = isset($data['contract_properties']) ? $data['contract_properties'] : null;
-        $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
-        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
     }
 
     /**
@@ -288,15 +181,7 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getStartReasonAllowableValues();
-        if (!is_null($this->container['start_reason']) && !in_array($this->container['start_reason'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'start_reason', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -333,327 +218,6 @@ class EcedoERPCRMInterfaceApiResellerContractPostData implements ModelInterface,
     public function setResellerOrganizationId($reseller_organization_id)
     {
         $this->container['reseller_organization_id'] = $reseller_organization_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets meelift_proposition_reference
-     *
-     * @return string
-     */
-    public function getMeeliftPropositionReference()
-    {
-        return $this->container['meelift_proposition_reference'];
-    }
-
-    /**
-     * Sets meelift_proposition_reference
-     *
-     * @param string $meelift_proposition_reference meelift_proposition_reference
-     *
-     * @return $this
-     */
-    public function setMeeliftPropositionReference($meelift_proposition_reference)
-    {
-        $this->container['meelift_proposition_reference'] = $meelift_proposition_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_reason
-     *
-     * @return string
-     */
-    public function getStartReason()
-    {
-        return $this->container['start_reason'];
-    }
-
-    /**
-     * Sets start_reason
-     *
-     * @param string $start_reason start_reason
-     *
-     * @return $this
-     */
-    public function setStartReason($start_reason)
-    {
-        $allowedValues = $this->getStartReasonAllowableValues();
-        if (!is_null($start_reason) && !in_array($start_reason, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'start_reason', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['start_reason'] = $start_reason;
-
-        return $this;
-    }
-
-    /**
-     * Gets previous_contract_id
-     *
-     * @return string
-     */
-    public function getPreviousContractId()
-    {
-        return $this->container['previous_contract_id'];
-    }
-
-    /**
-     * Sets previous_contract_id
-     *
-     * @param string $previous_contract_id previous_contract_id
-     *
-     * @return $this
-     */
-    public function setPreviousContractId($previous_contract_id)
-    {
-        $this->container['previous_contract_id'] = $previous_contract_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets channel
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->container['channel'];
-    }
-
-    /**
-     * Sets channel
-     *
-     * @param string $channel channel
-     *
-     * @return $this
-     */
-    public function setChannel($channel)
-    {
-        $this->container['channel'] = $channel;
-
-        return $this;
-    }
-
-    /**
-     * Gets sales_reference
-     *
-     * @return string
-     */
-    public function getSalesReference()
-    {
-        return $this->container['sales_reference'];
-    }
-
-    /**
-     * Sets sales_reference
-     *
-     * @param string $sales_reference sales_reference
-     *
-     * @return $this
-     */
-    public function setSalesReference($sales_reference)
-    {
-        $this->container['sales_reference'] = $sales_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets billing_items
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiBillingItemPostData[]
-     */
-    public function getBillingItems()
-    {
-        return $this->container['billing_items'];
-    }
-
-    /**
-     * Sets billing_items
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiBillingItemPostData[] $billing_items billing_items
-     *
-     * @return $this
-     */
-    public function setBillingItems($billing_items)
-    {
-        $this->container['billing_items'] = $billing_items;
-
-        return $this;
-    }
-
-    /**
-     * Gets contract_properties
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiContractPropertyPostData[]
-     */
-    public function getContractProperties()
-    {
-        return $this->container['contract_properties'];
-    }
-
-    /**
-     * Sets contract_properties
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiContractPropertyPostData[] $contract_properties contract_properties
-     *
-     * @return $this
-     */
-    public function setContractProperties($contract_properties)
-    {
-        $this->container['contract_properties'] = $contract_properties;
-
-        return $this;
-    }
-
-    /**
-     * Gets agreement_date
-     *
-     * @return \DateTime
-     */
-    public function getAgreementDate()
-    {
-        return $this->container['agreement_date'];
-    }
-
-    /**
-     * Sets agreement_date
-     *
-     * @param \DateTime $agreement_date agreement_date
-     *
-     * @return $this
-     */
-    public function setAgreementDate($agreement_date)
-    {
-        $this->container['agreement_date'] = $agreement_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
-     *
-     * @return string
-     */
-    public function getReference()
-    {
-        return $this->container['reference'];
-    }
-
-    /**
-     * Sets reference
-     *
-     * @param string $reference reference
-     *
-     * @return $this
-     */
-    public function setReference($reference)
-    {
-        $this->container['reference'] = $reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date start_date
-     *
-     * @return $this
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date end_date
-     *
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_reference
-     *
-     * @return string
-     */
-    public function getPropositionReference()
-    {
-        return $this->container['proposition_reference'];
-    }
-
-    /**
-     * Sets proposition_reference
-     *
-     * @param string $proposition_reference proposition_reference
-     *
-     * @return $this
-     */
-    public function setPropositionReference($proposition_reference)
-    {
-        $this->container['proposition_reference'] = $proposition_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment comment
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
 
         return $this;
     }

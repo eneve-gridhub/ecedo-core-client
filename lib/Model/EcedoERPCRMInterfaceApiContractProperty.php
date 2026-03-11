@@ -229,6 +229,8 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
     const CONTRACT_PROPERTY_TYPE_SDE_REGULATION = 'SDERegulation';
     const CONTRACT_PROPERTY_TYPE_CONTRACT_END_DATE_ON_LOSS = 'ContractEndDateOnLoss';
     const CONTRACT_PROPERTY_TYPE_NO_TERMINATION_FEE_PERIOD = 'NoTerminationFeePeriod';
+    const CONTRACT_PROPERTY_TYPE_PRICE_BLOCK_GROUP = 'PriceBlockGroup';
+    const CONTRACT_PROPERTY_TYPE_KLIK_PRODUCT = 'KlikProduct';
     const CONTRACT_PROPERTY_VALUE_TYPE_GUID = 'Guid';
     const CONTRACT_PROPERTY_VALUE_TYPE_STRING = 'String';
     const CONTRACT_PROPERTY_VALUE_TYPE_INTEGER = 'Integer';
@@ -298,6 +300,8 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
             self::CONTRACT_PROPERTY_TYPE_SDE_REGULATION,
             self::CONTRACT_PROPERTY_TYPE_CONTRACT_END_DATE_ON_LOSS,
             self::CONTRACT_PROPERTY_TYPE_NO_TERMINATION_FEE_PERIOD,
+            self::CONTRACT_PROPERTY_TYPE_PRICE_BLOCK_GROUP,
+            self::CONTRACT_PROPERTY_TYPE_KLIK_PRODUCT,
         ];
     }
     

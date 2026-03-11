@@ -82,39 +82,4 @@ class EcedoERPCRMInterfaceApiPrivateCertificatePostDataTest extends \PHPUnit_Fra
     public function testPropertyCertificateReference()
     {
     }
-
-    /**
-     * Test attribute "certificate_group"
-     */
-    public function testPropertyCertificateGroup()
-    {
-    }
-
-    /**
-     * Test attribute "certificate_type"
-     */
-    public function testPropertyCertificateType()
-    {
-    }
-
-    /**
-     * Test attribute "reference"
-     */
-    public function testPropertyReference()
-    {
-    }
-
-    /**
-     * Test attribute "start_date_time"
-     */
-    public function testPropertyStartDateTime()
-    {
-    }
-
-    /**
-     * Test attribute "end_date_time"
-     */
-    public function testPropertyEndDateTime()
-    {
-    }
 }

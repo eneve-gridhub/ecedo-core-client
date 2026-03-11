@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiAddress implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -226,6 +226,10 @@ class EcedoERPCRMInterfaceApiAddress implements ModelInterface, ArrayAccess
         $this->container['address_line1'] = isset($data['address_line1']) ? $data['address_line1'] : null;
         $this->container['address_line2'] = isset($data['address_line2']) ? $data['address_line2'] : null;
         $this->container['full_address'] = isset($data['full_address']) ? $data['full_address'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow extends EcedoERPCRMInterfaceApiUsageCalculationRow 
 {
     const DISCRIMINATOR = null;
 
@@ -90,7 +88,7 @@ class EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow implements ModelI
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -100,7 +98,7 @@ class EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow implements ModelI
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -160,7 +158,7 @@ class EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow implements ModelI
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -170,7 +168,7 @@ class EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow implements ModelI
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -180,7 +178,7 @@ class EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow implements ModelI
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -261,12 +259,6 @@ class EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow implements ModelI
     }
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -276,6 +268,8 @@ class EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow implements ModelI
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
@@ -293,7 +287,7 @@ class EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow implements ModelI
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         $allowedValues = $this->getPriceUnitAllowableValues();
         if (!is_null($this->container['price_unit']) && !in_array($this->container['price_unit'], $allowedValues, true)) {

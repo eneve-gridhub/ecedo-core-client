@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiRepresentativeBase implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -184,6 +184,10 @@ class EcedoERPCRMInterfaceApiRepresentativeBase implements ModelInterface, Array
     {
         $this->container['representative_id'] = isset($data['representative_id']) ? $data['representative_id'] : null;
         $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

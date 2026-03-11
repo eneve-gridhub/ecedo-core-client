@@ -70,6 +70,8 @@ class EcedoERPCRMInterfaceApiPropositionPrice implements ModelInterface, ArrayAc
         'grid_area' => 'string',
         'range_begin' => 'int',
         'range_end' => 'int',
+        'price_block_id' => 'string',
+        'price_block_description' => 'string',
         'profile' => 'string',
         'location_type' => 'string',
         'location_type_localized' => 'string',
@@ -97,6 +99,8 @@ class EcedoERPCRMInterfaceApiPropositionPrice implements ModelInterface, ArrayAc
         'grid_area' => null,
         'range_begin' => 'int32',
         'range_end' => 'int32',
+        'price_block_id' => 'uuid',
+        'price_block_description' => null,
         'profile' => null,
         'location_type' => null,
         'location_type_localized' => null,
@@ -145,6 +149,8 @@ class EcedoERPCRMInterfaceApiPropositionPrice implements ModelInterface, ArrayAc
         'grid_area' => 'GridArea',
         'range_begin' => 'RangeBegin',
         'range_end' => 'RangeEnd',
+        'price_block_id' => 'PriceBlockId',
+        'price_block_description' => 'PriceBlockDescription',
         'profile' => 'Profile',
         'location_type' => 'LocationType',
         'location_type_localized' => 'LocationTypeLocalized',
@@ -172,6 +178,8 @@ class EcedoERPCRMInterfaceApiPropositionPrice implements ModelInterface, ArrayAc
         'grid_area' => 'setGridArea',
         'range_begin' => 'setRangeBegin',
         'range_end' => 'setRangeEnd',
+        'price_block_id' => 'setPriceBlockId',
+        'price_block_description' => 'setPriceBlockDescription',
         'profile' => 'setProfile',
         'location_type' => 'setLocationType',
         'location_type_localized' => 'setLocationTypeLocalized',
@@ -199,6 +207,8 @@ class EcedoERPCRMInterfaceApiPropositionPrice implements ModelInterface, ArrayAc
         'grid_area' => 'getGridArea',
         'range_begin' => 'getRangeBegin',
         'range_end' => 'getRangeEnd',
+        'price_block_id' => 'getPriceBlockId',
+        'price_block_description' => 'getPriceBlockDescription',
         'profile' => 'getProfile',
         'location_type' => 'getLocationType',
         'location_type_localized' => 'getLocationTypeLocalized',
@@ -280,6 +290,8 @@ class EcedoERPCRMInterfaceApiPropositionPrice implements ModelInterface, ArrayAc
         $this->container['grid_area'] = isset($data['grid_area']) ? $data['grid_area'] : null;
         $this->container['range_begin'] = isset($data['range_begin']) ? $data['range_begin'] : null;
         $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
+        $this->container['price_block_id'] = isset($data['price_block_id']) ? $data['price_block_id'] : null;
+        $this->container['price_block_description'] = isset($data['price_block_description']) ? $data['price_block_description'] : null;
         $this->container['profile'] = isset($data['profile']) ? $data['profile'] : null;
         $this->container['location_type'] = isset($data['location_type']) ? $data['location_type'] : null;
         $this->container['location_type_localized'] = isset($data['location_type_localized']) ? $data['location_type_localized'] : null;
@@ -620,6 +632,54 @@ class EcedoERPCRMInterfaceApiPropositionPrice implements ModelInterface, ArrayAc
     public function setRangeEnd($range_end)
     {
         $this->container['range_end'] = $range_end;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_block_id
+     *
+     * @return string
+     */
+    public function getPriceBlockId()
+    {
+        return $this->container['price_block_id'];
+    }
+
+    /**
+     * Sets price_block_id
+     *
+     * @param string $price_block_id price_block_id
+     *
+     * @return $this
+     */
+    public function setPriceBlockId($price_block_id)
+    {
+        $this->container['price_block_id'] = $price_block_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_block_description
+     *
+     * @return string
+     */
+    public function getPriceBlockDescription()
+    {
+        return $this->container['price_block_description'];
+    }
+
+    /**
+     * Sets price_block_description
+     *
+     * @param string $price_block_description price_block_description
+     *
+     * @return $this
+     */
+    public function setPriceBlockDescription($price_block_description)
+    {
+        $this->container['price_block_description'] = $price_block_description;
 
         return $this;
     }

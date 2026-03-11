@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiAnnualStandardUsage implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -208,6 +208,10 @@ class EcedoERPCRMInterfaceApiAnnualStandardUsage implements ModelInterface, Arra
         $this->container['single_usage_odn'] = isset($data['single_usage_odn']) ? $data['single_usage_odn'] : null;
         $this->container['peak_usage_odn'] = isset($data['peak_usage_odn']) ? $data['peak_usage_odn'] : null;
         $this->container['off_peak_usage_odn'] = isset($data['off_peak_usage_odn']) ? $data['off_peak_usage_odn'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

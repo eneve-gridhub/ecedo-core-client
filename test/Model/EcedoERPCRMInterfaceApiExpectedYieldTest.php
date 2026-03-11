@@ -82,46 +82,4 @@ class EcedoERPCRMInterfaceApiExpectedYieldTest extends \PHPUnit_Framework_TestCa
     public function testPropertyMeansOfProductionId()
     {
     }
-
-    /**
-     * Test attribute "usage_active"
-     */
-    public function testPropertyUsageActive()
-    {
-    }
-
-    /**
-     * Test attribute "count_active"
-     */
-    public function testPropertyCountActive()
-    {
-    }
-
-    /**
-     * Test attribute "usage_in_workflow"
-     */
-    public function testPropertyUsageInWorkflow()
-    {
-    }
-
-    /**
-     * Test attribute "count_in_workflow"
-     */
-    public function testPropertyCountInWorkflow()
-    {
-    }
-
-    /**
-     * Test attribute "proposition_reference"
-     */
-    public function testPropertyPropositionReference()
-    {
-    }
-
-    /**
-     * Test attribute "proposition_group_description"
-     */
-    public function testPropertyPropositionGroupDescription()
-    {
-    }
 }

@@ -97,7 +97,8 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         'row_has_factor' => 'bool',
         'row_factor' => 'double',
         'row_classification' => 'string',
-        'row_connection_ean' => 'string'
+        'row_connection_ean' => 'string',
+        'row_price_block_id' => 'string'
     ];
 
     /**
@@ -146,7 +147,8 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         'row_has_factor' => null,
         'row_factor' => 'double',
         'row_classification' => null,
-        'row_connection_ean' => null
+        'row_connection_ean' => null,
+        'row_price_block_id' => 'uuid'
     ];
 
     /**
@@ -216,7 +218,8 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         'row_has_factor' => 'Row_HasFactor',
         'row_factor' => 'Row_Factor',
         'row_classification' => 'Row_Classification',
-        'row_connection_ean' => 'Row_Connection_EAN'
+        'row_connection_ean' => 'Row_Connection_EAN',
+        'row_price_block_id' => 'Row_PriceBlock_Id'
     ];
 
     /**
@@ -265,7 +268,8 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         'row_has_factor' => 'setRowHasFactor',
         'row_factor' => 'setRowFactor',
         'row_classification' => 'setRowClassification',
-        'row_connection_ean' => 'setRowConnectionEan'
+        'row_connection_ean' => 'setRowConnectionEan',
+        'row_price_block_id' => 'setRowPriceBlockId'
     ];
 
     /**
@@ -314,7 +318,8 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         'row_has_factor' => 'getRowHasFactor',
         'row_factor' => 'getRowFactor',
         'row_classification' => 'getRowClassification',
-        'row_connection_ean' => 'getRowConnectionEan'
+        'row_connection_ean' => 'getRowConnectionEan',
+        'row_price_block_id' => 'getRowPriceBlockId'
     ];
 
     /**
@@ -418,6 +423,7 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
         $this->container['row_factor'] = isset($data['row_factor']) ? $data['row_factor'] : null;
         $this->container['row_classification'] = isset($data['row_classification']) ? $data['row_classification'] : null;
         $this->container['row_connection_ean'] = isset($data['row_connection_ean']) ? $data['row_connection_ean'] : null;
+        $this->container['row_price_block_id'] = isset($data['row_price_block_id']) ? $data['row_price_block_id'] : null;
     }
 
     /**
@@ -1424,6 +1430,30 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterD
     public function setRowConnectionEan($row_connection_ean)
     {
         $this->container['row_connection_ean'] = $row_connection_ean;
+
+        return $this;
+    }
+
+    /**
+     * Gets row_price_block_id
+     *
+     * @return string
+     */
+    public function getRowPriceBlockId()
+    {
+        return $this->container['row_price_block_id'];
+    }
+
+    /**
+     * Sets row_price_block_id
+     *
+     * @param string $row_price_block_id row_price_block_id
+     *
+     * @return $this
+     */
+    public function setRowPriceBlockId($row_price_block_id)
+    {
+        $this->container['row_price_block_id'] = $row_price_block_id;
 
         return $this;
     }

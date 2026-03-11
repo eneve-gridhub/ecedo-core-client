@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection extends EcedoERPCRMInterfaceApiAdvancePaymentPerConnection 
 {
     const DISCRIMINATOR = null;
 
@@ -57,12 +55,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'ean' => 'string',
-        'connection_id' => 'string',
-        'market_segment' => 'string',
-        'amount' => 'double',
-        'calculated_amount' => 'double',
-        'agreed_amount' => 'double'
+        'ean' => 'string'
     ];
 
     /**
@@ -71,12 +64,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'ean' => null,
-        'connection_id' => null,
-        'market_segment' => null,
-        'amount' => 'double',
-        'calculated_amount' => 'double',
-        'agreed_amount' => 'double'
+        'ean' => null
     ];
 
     /**
@@ -86,7 +74,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -96,7 +84,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -106,12 +94,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
      * @var string[]
      */
     protected static $attributeMap = [
-        'ean' => 'EAN',
-        'connection_id' => 'ConnectionId',
-        'market_segment' => 'MarketSegment',
-        'amount' => 'Amount',
-        'calculated_amount' => 'CalculatedAmount',
-        'agreed_amount' => 'AgreedAmount'
+        'ean' => 'EAN'
     ];
 
     /**
@@ -120,12 +103,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
      * @var string[]
      */
     protected static $setters = [
-        'ean' => 'setEan',
-        'connection_id' => 'setConnectionId',
-        'market_segment' => 'setMarketSegment',
-        'amount' => 'setAmount',
-        'calculated_amount' => 'setCalculatedAmount',
-        'agreed_amount' => 'setAgreedAmount'
+        'ean' => 'setEan'
     ];
 
     /**
@@ -134,12 +112,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
      * @var string[]
      */
     protected static $getters = [
-        'ean' => 'getEan',
-        'connection_id' => 'getConnectionId',
-        'market_segment' => 'getMarketSegment',
-        'amount' => 'getAmount',
-        'calculated_amount' => 'getCalculatedAmount',
-        'agreed_amount' => 'getAgreedAmount'
+        'ean' => 'getEan'
     ];
 
     /**
@@ -150,7 +123,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -160,7 +133,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -170,7 +143,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -183,31 +156,10 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
         return self::$swaggerModelName;
     }
 
-    const MARKET_SEGMENT_ELECTRICITY = 'Electricity';
-    const MARKET_SEGMENT_GAS = 'Gas';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getMarketSegmentAllowableValues()
-    {
-        return [
-            self::MARKET_SEGMENT_ELECTRICITY,
-            self::MARKET_SEGMENT_GAS,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -217,12 +169,9 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
-        $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
-        $this->container['market_segment'] = isset($data['market_segment']) ? $data['market_segment'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['calculated_amount'] = isset($data['calculated_amount']) ? $data['calculated_amount'] : null;
-        $this->container['agreed_amount'] = isset($data['agreed_amount']) ? $data['agreed_amount'] : null;
     }
 
     /**
@@ -232,15 +181,7 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getMarketSegmentAllowableValues();
-        if (!is_null($this->container['market_segment']) && !in_array($this->container['market_segment'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'market_segment', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -277,135 +218,6 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnection implements ModelIn
     public function setEan($ean)
     {
         $this->container['ean'] = $ean;
-
-        return $this;
-    }
-
-    /**
-     * Gets connection_id
-     *
-     * @return string
-     */
-    public function getConnectionId()
-    {
-        return $this->container['connection_id'];
-    }
-
-    /**
-     * Sets connection_id
-     *
-     * @param string $connection_id connection_id
-     *
-     * @return $this
-     */
-    public function setConnectionId($connection_id)
-    {
-        $this->container['connection_id'] = $connection_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets market_segment
-     *
-     * @return string
-     */
-    public function getMarketSegment()
-    {
-        return $this->container['market_segment'];
-    }
-
-    /**
-     * Sets market_segment
-     *
-     * @param string $market_segment Electricity / Gas. Dit veld is alleen gevuld wanneer de API is aangeroepen met query parameter includeConnectionDetails
-     *
-     * @return $this
-     */
-    public function setMarketSegment($market_segment)
-    {
-        $allowedValues = $this->getMarketSegmentAllowableValues();
-        if (!is_null($market_segment) && !in_array($market_segment, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'market_segment', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['market_segment'] = $market_segment;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     *
-     * @return double
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param double $amount Het voorschotbedrag van deze aansluiting in euro's, inclusief btw
-     *
-     * @return $this
-     */
-    public function setAmount($amount)
-    {
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets calculated_amount
-     *
-     * @return double
-     */
-    public function getCalculatedAmount()
-    {
-        return $this->container['calculated_amount'];
-    }
-
-    /**
-     * Sets calculated_amount
-     *
-     * @param double $calculated_amount Het berekende voorschotbedrag van deze aansluiting in euro's inclusief btw. Dit kan afwijken van het Amount als het voorschot met een AgreedAmount of TargetAmount is berekend
-     *
-     * @return $this
-     */
-    public function setCalculatedAmount($calculated_amount)
-    {
-        $this->container['calculated_amount'] = $calculated_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets agreed_amount
-     *
-     * @return double
-     */
-    public function getAgreedAmount()
-    {
-        return $this->container['agreed_amount'];
-    }
-
-    /**
-     * Sets agreed_amount
-     *
-     * @param double $agreed_amount agreed_amount
-     *
-     * @return $this
-     */
-    public function setAgreedAmount($agreed_amount)
-    {
-        $this->container['agreed_amount'] = $agreed_amount;
 
         return $this;
     }

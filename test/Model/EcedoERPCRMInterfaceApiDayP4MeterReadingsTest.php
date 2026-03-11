@@ -75,11 +75,4 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadingsTest extends \PHPUnit_Framework_T
     public function testEcedoERPCRMInterfaceApiDayP4MeterReadings()
     {
     }
-
-    /**
-     * Test attribute "day_details"
-     */
-    public function testPropertyDayDetails()
-    {
-    }
 }

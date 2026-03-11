@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiMeterReadingPostData extends EcedoERPCRMInterfaceApiMeterReadingData 
 {
     const DISCRIMINATOR = null;
 
@@ -62,21 +60,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         'reason' => 'string',
         'is_used' => 'bool',
         'validate_tmr_band_width' => 'bool',
-        'has_already_been_validated' => 'bool',
-        'organization_id' => 'string',
-        'connection_id' => 'string',
-        'ean' => 'string',
-        'reading_method' => 'string',
-        'source' => 'string',
-        'quality' => 'string',
-        'request_reason' => 'string',
-        'meter_number' => 'string',
-        'reading_date' => '\DateTime',
-        'odnt1' => 'int',
-        'odnt2' => 'int',
-        'ldnt1' => 'int',
-        'ldnt2' => 'int',
-        'comment' => 'string'
+        'has_already_been_validated' => 'bool'
     ];
 
     /**
@@ -90,21 +74,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         'reason' => null,
         'is_used' => null,
         'validate_tmr_band_width' => null,
-        'has_already_been_validated' => null,
-        'organization_id' => 'uuid',
-        'connection_id' => 'uuid',
-        'ean' => null,
-        'reading_method' => null,
-        'source' => null,
-        'quality' => null,
-        'request_reason' => null,
-        'meter_number' => null,
-        'reading_date' => 'date',
-        'odnt1' => 'int32',
-        'odnt2' => 'int32',
-        'ldnt1' => 'int32',
-        'ldnt2' => 'int32',
-        'comment' => null
+        'has_already_been_validated' => null
     ];
 
     /**
@@ -114,7 +84,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -124,7 +94,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -139,21 +109,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         'reason' => 'Reason',
         'is_used' => 'IsUsed',
         'validate_tmr_band_width' => 'ValidateTMRBandWidth',
-        'has_already_been_validated' => 'HasAlreadyBeenValidated',
-        'organization_id' => 'OrganizationId',
-        'connection_id' => 'ConnectionId',
-        'ean' => 'EAN',
-        'reading_method' => 'ReadingMethod',
-        'source' => 'Source',
-        'quality' => 'Quality',
-        'request_reason' => 'RequestReason',
-        'meter_number' => 'MeterNumber',
-        'reading_date' => 'ReadingDate',
-        'odnt1' => 'ODNT1',
-        'odnt2' => 'ODNT2',
-        'ldnt1' => 'LDNT1',
-        'ldnt2' => 'LDNT2',
-        'comment' => 'Comment'
+        'has_already_been_validated' => 'HasAlreadyBeenValidated'
     ];
 
     /**
@@ -167,21 +123,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         'reason' => 'setReason',
         'is_used' => 'setIsUsed',
         'validate_tmr_band_width' => 'setValidateTmrBandWidth',
-        'has_already_been_validated' => 'setHasAlreadyBeenValidated',
-        'organization_id' => 'setOrganizationId',
-        'connection_id' => 'setConnectionId',
-        'ean' => 'setEan',
-        'reading_method' => 'setReadingMethod',
-        'source' => 'setSource',
-        'quality' => 'setQuality',
-        'request_reason' => 'setRequestReason',
-        'meter_number' => 'setMeterNumber',
-        'reading_date' => 'setReadingDate',
-        'odnt1' => 'setOdnt1',
-        'odnt2' => 'setOdnt2',
-        'ldnt1' => 'setLdnt1',
-        'ldnt2' => 'setLdnt2',
-        'comment' => 'setComment'
+        'has_already_been_validated' => 'setHasAlreadyBeenValidated'
     ];
 
     /**
@@ -195,21 +137,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         'reason' => 'getReason',
         'is_used' => 'getIsUsed',
         'validate_tmr_band_width' => 'getValidateTmrBandWidth',
-        'has_already_been_validated' => 'getHasAlreadyBeenValidated',
-        'organization_id' => 'getOrganizationId',
-        'connection_id' => 'getConnectionId',
-        'ean' => 'getEan',
-        'reading_method' => 'getReadingMethod',
-        'source' => 'getSource',
-        'quality' => 'getQuality',
-        'request_reason' => 'getRequestReason',
-        'meter_number' => 'getMeterNumber',
-        'reading_date' => 'getReadingDate',
-        'odnt1' => 'getOdnt1',
-        'odnt2' => 'getOdnt2',
-        'ldnt1' => 'getLdnt1',
-        'ldnt2' => 'getLdnt2',
-        'comment' => 'getComment'
+        'has_already_been_validated' => 'getHasAlreadyBeenValidated'
     ];
 
     /**
@@ -220,7 +148,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -230,7 +158,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -240,7 +168,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -292,38 +220,6 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
     const REASON_SWTCHUPD = 'SWTCHUPD';
     const REASON_ALLMTCHG = 'ALLMTCHG';
     const REASON_MONTHMTR = 'MONTHMTR';
-    const READING_METHOD_CALCULATED_READING = 'CalculatedReading';
-    const READING_METHOD_PHYSICAL_READING_BALANCE_SUPPLIER = 'PhysicalReadingBalanceSupplier';
-    const READING_METHOD_ESTIMATED_OR_CALULATED_READING_BALANCE_SUPPLIER = 'EstimatedOrCalulatedReadingBalanceSupplier';
-    const READING_METHOD_PHYSICAL_READING = 'PhysicalReading';
-    const READING_METHOD_SMART_METER_READING = 'SmartMeterReading';
-    const READING_METHOD_ESTIMATED_READING = 'EstimatedReading';
-    const READING_METHOD_BEST_GUESS_READING = 'BestGuessReading';
-    const READING_METHOD_AGREED_READING = 'AgreedReading';
-    const READING_METHOD_CUSTOMER_READING = 'CustomerReading';
-    const READING_METHOD_PHYSICAL_READING_METER_RESPONSIBLE = 'PhysicalReadingMeterResponsible';
-    const READING_METHOD_ESTIMATED_OR_CALCULATED_METER_RESPONSIBLE = 'EstimatedOrCalculatedMeterResponsible';
-    const READING_METHOD_PHYSICAL_READING_GRID_OPERATOR = 'PhysicalReadingGridOperator';
-    const READING_METHOD_ESTIMATED_OR_CALCULATED_GRID_OPERATOR = 'EstimatedOrCalculatedGridOperator';
-    const READING_METHOD_AS_READ = 'AsRead';
-    const READING_METHOD_NORMALISED = 'Normalised';
-    const SOURCE_UNKNOWN = 'Unknown';
-    const SOURCE_CUSTOMER = 'Customer';
-    const SOURCE_GRID_OPERATOR = 'GridOperator';
-    const SOURCE_P4 = 'P4';
-    const SOURCE_BALANCE_SUPPLIER = 'BalanceSupplier';
-    const SOURCE_METER_RESPONSIBLE = 'MeterResponsible';
-    const QUALITY_MEASURED = 'Measured';
-    const QUALITY_CALCULATED = 'Calculated';
-    const QUALITY_SETTLED = 'Settled';
-    const QUALITY_ESTIMATED = 'Estimated';
-    const QUALITY_BEST_GUESS = 'BestGuess';
-    const REQUEST_REASON_VKO = 'VKO';
-    const REQUEST_REASON_SMA = 'SMA';
-    const REQUEST_REASON_TARIFF_CHANGE = 'TariffChange';
-    const REQUEST_REASON_ENERGY_TAX_CHANGE = 'EnergyTaxChange';
-    const REQUEST_REASON_CONTRACT_CHANGE = 'ContractChange';
-    const REQUEST_REASON_ENERGY_PROFILE_CHANGE = 'EnergyProfileChange';
     
 
     
@@ -388,89 +284,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         ];
     }
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getReadingMethodAllowableValues()
-    {
-        return [
-            self::READING_METHOD_CALCULATED_READING,
-            self::READING_METHOD_PHYSICAL_READING_BALANCE_SUPPLIER,
-            self::READING_METHOD_ESTIMATED_OR_CALULATED_READING_BALANCE_SUPPLIER,
-            self::READING_METHOD_PHYSICAL_READING,
-            self::READING_METHOD_SMART_METER_READING,
-            self::READING_METHOD_ESTIMATED_READING,
-            self::READING_METHOD_BEST_GUESS_READING,
-            self::READING_METHOD_AGREED_READING,
-            self::READING_METHOD_CUSTOMER_READING,
-            self::READING_METHOD_PHYSICAL_READING_METER_RESPONSIBLE,
-            self::READING_METHOD_ESTIMATED_OR_CALCULATED_METER_RESPONSIBLE,
-            self::READING_METHOD_PHYSICAL_READING_GRID_OPERATOR,
-            self::READING_METHOD_ESTIMATED_OR_CALCULATED_GRID_OPERATOR,
-            self::READING_METHOD_AS_READ,
-            self::READING_METHOD_NORMALISED,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getSourceAllowableValues()
-    {
-        return [
-            self::SOURCE_UNKNOWN,
-            self::SOURCE_CUSTOMER,
-            self::SOURCE_GRID_OPERATOR,
-            self::SOURCE_P4,
-            self::SOURCE_BALANCE_SUPPLIER,
-            self::SOURCE_METER_RESPONSIBLE,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getQualityAllowableValues()
-    {
-        return [
-            self::QUALITY_MEASURED,
-            self::QUALITY_CALCULATED,
-            self::QUALITY_SETTLED,
-            self::QUALITY_ESTIMATED,
-            self::QUALITY_BEST_GUESS,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getRequestReasonAllowableValues()
-    {
-        return [
-            self::REQUEST_REASON_VKO,
-            self::REQUEST_REASON_SMA,
-            self::REQUEST_REASON_TARIFF_CHANGE,
-            self::REQUEST_REASON_ENERGY_TAX_CHANGE,
-            self::REQUEST_REASON_CONTRACT_CHANGE,
-            self::REQUEST_REASON_ENERGY_PROFILE_CHANGE,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -480,26 +294,14 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['event'] = isset($data['event']) ? $data['event'] : null;
         $this->container['event_id'] = isset($data['event_id']) ? $data['event_id'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['is_used'] = isset($data['is_used']) ? $data['is_used'] : null;
         $this->container['validate_tmr_band_width'] = isset($data['validate_tmr_band_width']) ? $data['validate_tmr_band_width'] : null;
         $this->container['has_already_been_validated'] = isset($data['has_already_been_validated']) ? $data['has_already_been_validated'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
-        $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
-        $this->container['reading_method'] = isset($data['reading_method']) ? $data['reading_method'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['quality'] = isset($data['quality']) ? $data['quality'] : null;
-        $this->container['request_reason'] = isset($data['request_reason']) ? $data['request_reason'] : null;
-        $this->container['meter_number'] = isset($data['meter_number']) ? $data['meter_number'] : null;
-        $this->container['reading_date'] = isset($data['reading_date']) ? $data['reading_date'] : null;
-        $this->container['odnt1'] = isset($data['odnt1']) ? $data['odnt1'] : null;
-        $this->container['odnt2'] = isset($data['odnt2']) ? $data['odnt2'] : null;
-        $this->container['ldnt1'] = isset($data['ldnt1']) ? $data['ldnt1'] : null;
-        $this->container['ldnt2'] = isset($data['ldnt2']) ? $data['ldnt2'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
     }
 
     /**
@@ -509,7 +311,7 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         $allowedValues = $this->getEventAllowableValues();
         if (!is_null($this->container['event']) && !in_array($this->container['event'], $allowedValues, true)) {
@@ -523,38 +325,6 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
         if (!is_null($this->container['reason']) && !in_array($this->container['reason'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'reason', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getReadingMethodAllowableValues();
-        if (!is_null($this->container['reading_method']) && !in_array($this->container['reading_method'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'reading_method', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getSourceAllowableValues();
-        if (!is_null($this->container['source']) && !in_array($this->container['source'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'source', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getQualityAllowableValues();
-        if (!is_null($this->container['quality']) && !in_array($this->container['quality'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'quality', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getRequestReasonAllowableValues();
-        if (!is_null($this->container['request_reason']) && !in_array($this->container['request_reason'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'request_reason', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -732,378 +502,6 @@ class EcedoERPCRMInterfaceApiMeterReadingPostData implements ModelInterface, Arr
     public function setHasAlreadyBeenValidated($has_already_been_validated)
     {
         $this->container['has_already_been_validated'] = $has_already_been_validated;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_id
-     *
-     * @return string
-     */
-    public function getOrganizationId()
-    {
-        return $this->container['organization_id'];
-    }
-
-    /**
-     * Sets organization_id
-     *
-     * @param string $organization_id organization_id
-     *
-     * @return $this
-     */
-    public function setOrganizationId($organization_id)
-    {
-        $this->container['organization_id'] = $organization_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets connection_id
-     *
-     * @return string
-     */
-    public function getConnectionId()
-    {
-        return $this->container['connection_id'];
-    }
-
-    /**
-     * Sets connection_id
-     *
-     * @param string $connection_id connection_id
-     *
-     * @return $this
-     */
-    public function setConnectionId($connection_id)
-    {
-        $this->container['connection_id'] = $connection_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets ean
-     *
-     * @return string
-     */
-    public function getEan()
-    {
-        return $this->container['ean'];
-    }
-
-    /**
-     * Sets ean
-     *
-     * @param string $ean ean
-     *
-     * @return $this
-     */
-    public function setEan($ean)
-    {
-        $this->container['ean'] = $ean;
-
-        return $this;
-    }
-
-    /**
-     * Gets reading_method
-     *
-     * @return string
-     */
-    public function getReadingMethod()
-    {
-        return $this->container['reading_method'];
-    }
-
-    /**
-     * Sets reading_method
-     *
-     * @param string $reading_method reading_method
-     *
-     * @return $this
-     */
-    public function setReadingMethod($reading_method)
-    {
-        $allowedValues = $this->getReadingMethodAllowableValues();
-        if (!is_null($reading_method) && !in_array($reading_method, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reading_method', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['reading_method'] = $reading_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets source
-     *
-     * @return string
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     * @param string $source source
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $allowedValues = $this->getSourceAllowableValues();
-        if (!is_null($source) && !in_array($source, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'source', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['source'] = $source;
-
-        return $this;
-    }
-
-    /**
-     * Gets quality
-     *
-     * @return string
-     */
-    public function getQuality()
-    {
-        return $this->container['quality'];
-    }
-
-    /**
-     * Sets quality
-     *
-     * @param string $quality quality
-     *
-     * @return $this
-     */
-    public function setQuality($quality)
-    {
-        $allowedValues = $this->getQualityAllowableValues();
-        if (!is_null($quality) && !in_array($quality, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'quality', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['quality'] = $quality;
-
-        return $this;
-    }
-
-    /**
-     * Gets request_reason
-     *
-     * @return string
-     */
-    public function getRequestReason()
-    {
-        return $this->container['request_reason'];
-    }
-
-    /**
-     * Sets request_reason
-     *
-     * @param string $request_reason request_reason
-     *
-     * @return $this
-     */
-    public function setRequestReason($request_reason)
-    {
-        $allowedValues = $this->getRequestReasonAllowableValues();
-        if (!is_null($request_reason) && !in_array($request_reason, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'request_reason', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['request_reason'] = $request_reason;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_number
-     *
-     * @return string
-     */
-    public function getMeterNumber()
-    {
-        return $this->container['meter_number'];
-    }
-
-    /**
-     * Sets meter_number
-     *
-     * @param string $meter_number meter_number
-     *
-     * @return $this
-     */
-    public function setMeterNumber($meter_number)
-    {
-        $this->container['meter_number'] = $meter_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets reading_date
-     *
-     * @return \DateTime
-     */
-    public function getReadingDate()
-    {
-        return $this->container['reading_date'];
-    }
-
-    /**
-     * Sets reading_date
-     *
-     * @param \DateTime $reading_date reading_date
-     *
-     * @return $this
-     */
-    public function setReadingDate($reading_date)
-    {
-        $this->container['reading_date'] = $reading_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets odnt1
-     *
-     * @return int
-     */
-    public function getOdnt1()
-    {
-        return $this->container['odnt1'];
-    }
-
-    /**
-     * Sets odnt1
-     *
-     * @param int $odnt1 odnt1
-     *
-     * @return $this
-     */
-    public function setOdnt1($odnt1)
-    {
-        $this->container['odnt1'] = $odnt1;
-
-        return $this;
-    }
-
-    /**
-     * Gets odnt2
-     *
-     * @return int
-     */
-    public function getOdnt2()
-    {
-        return $this->container['odnt2'];
-    }
-
-    /**
-     * Sets odnt2
-     *
-     * @param int $odnt2 odnt2
-     *
-     * @return $this
-     */
-    public function setOdnt2($odnt2)
-    {
-        $this->container['odnt2'] = $odnt2;
-
-        return $this;
-    }
-
-    /**
-     * Gets ldnt1
-     *
-     * @return int
-     */
-    public function getLdnt1()
-    {
-        return $this->container['ldnt1'];
-    }
-
-    /**
-     * Sets ldnt1
-     *
-     * @param int $ldnt1 ldnt1
-     *
-     * @return $this
-     */
-    public function setLdnt1($ldnt1)
-    {
-        $this->container['ldnt1'] = $ldnt1;
-
-        return $this;
-    }
-
-    /**
-     * Gets ldnt2
-     *
-     * @return int
-     */
-    public function getLdnt2()
-    {
-        return $this->container['ldnt2'];
-    }
-
-    /**
-     * Sets ldnt2
-     *
-     * @param int $ldnt2 ldnt2
-     *
-     * @return $this
-     */
-    public function setLdnt2($ldnt2)
-    {
-        $this->container['ldnt2'] = $ldnt2;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment comment
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
 
         return $this;
     }

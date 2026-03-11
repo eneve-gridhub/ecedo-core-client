@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiOrganization extends EcedoERPCRMInterfaceApiOrganizationSubset 
 {
     const DISCRIMINATOR = null;
 
@@ -85,22 +83,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'print_welcome_letter' => 'bool',
         'with_collection_agency' => 'bool',
         'is_intercompany' => 'bool',
-        'company_label_id' => 'string',
-        'organization_type' => 'string',
-        'organization_sub_type' => 'string',
-        'organization_category' => 'string',
-        'organization_category_localized' => 'string',
-        'organization_type_localized' => 'string',
-        'organization_id' => 'string',
-        'reference' => 'string',
-        'organization_group_id' => 'string',
-        'organization_group' => 'string',
-        'name' => 'string',
-        'phone_number' => 'string',
-        'mobile_number' => 'string',
-        'fax_number' => 'string',
-        'email' => 'string',
-        'person' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPerson'
+        'company_label_id' => 'string'
     ];
 
     /**
@@ -137,22 +120,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'print_welcome_letter' => null,
         'with_collection_agency' => null,
         'is_intercompany' => null,
-        'company_label_id' => null,
-        'organization_type' => null,
-        'organization_sub_type' => null,
-        'organization_category' => null,
-        'organization_category_localized' => null,
-        'organization_type_localized' => null,
-        'organization_id' => null,
-        'reference' => null,
-        'organization_group_id' => null,
-        'organization_group' => null,
-        'name' => null,
-        'phone_number' => null,
-        'mobile_number' => null,
-        'fax_number' => null,
-        'email' => null,
-        'person' => null
+        'company_label_id' => null
     ];
 
     /**
@@ -162,7 +130,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -172,7 +140,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -210,22 +178,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'print_welcome_letter' => 'PrintWelcomeLetter',
         'with_collection_agency' => 'WithCollectionAgency',
         'is_intercompany' => 'IsIntercompany',
-        'company_label_id' => 'CompanyLabelId',
-        'organization_type' => 'OrganizationType',
-        'organization_sub_type' => 'OrganizationSubType',
-        'organization_category' => 'OrganizationCategory',
-        'organization_category_localized' => 'OrganizationCategoryLocalized',
-        'organization_type_localized' => 'OrganizationTypeLocalized',
-        'organization_id' => 'OrganizationId',
-        'reference' => 'Reference',
-        'organization_group_id' => 'OrganizationGroupId',
-        'organization_group' => 'OrganizationGroup',
-        'name' => 'Name',
-        'phone_number' => 'PhoneNumber',
-        'mobile_number' => 'MobileNumber',
-        'fax_number' => 'FaxNumber',
-        'email' => 'Email',
-        'person' => 'Person'
+        'company_label_id' => 'CompanyLabelId'
     ];
 
     /**
@@ -262,22 +215,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'print_welcome_letter' => 'setPrintWelcomeLetter',
         'with_collection_agency' => 'setWithCollectionAgency',
         'is_intercompany' => 'setIsIntercompany',
-        'company_label_id' => 'setCompanyLabelId',
-        'organization_type' => 'setOrganizationType',
-        'organization_sub_type' => 'setOrganizationSubType',
-        'organization_category' => 'setOrganizationCategory',
-        'organization_category_localized' => 'setOrganizationCategoryLocalized',
-        'organization_type_localized' => 'setOrganizationTypeLocalized',
-        'organization_id' => 'setOrganizationId',
-        'reference' => 'setReference',
-        'organization_group_id' => 'setOrganizationGroupId',
-        'organization_group' => 'setOrganizationGroup',
-        'name' => 'setName',
-        'phone_number' => 'setPhoneNumber',
-        'mobile_number' => 'setMobileNumber',
-        'fax_number' => 'setFaxNumber',
-        'email' => 'setEmail',
-        'person' => 'setPerson'
+        'company_label_id' => 'setCompanyLabelId'
     ];
 
     /**
@@ -314,22 +252,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         'print_welcome_letter' => 'getPrintWelcomeLetter',
         'with_collection_agency' => 'getWithCollectionAgency',
         'is_intercompany' => 'getIsIntercompany',
-        'company_label_id' => 'getCompanyLabelId',
-        'organization_type' => 'getOrganizationType',
-        'organization_sub_type' => 'getOrganizationSubType',
-        'organization_category' => 'getOrganizationCategory',
-        'organization_category_localized' => 'getOrganizationCategoryLocalized',
-        'organization_type_localized' => 'getOrganizationTypeLocalized',
-        'organization_id' => 'getOrganizationId',
-        'reference' => 'getReference',
-        'organization_group_id' => 'getOrganizationGroupId',
-        'organization_group' => 'getOrganizationGroup',
-        'name' => 'getName',
-        'phone_number' => 'getPhoneNumber',
-        'mobile_number' => 'getMobileNumber',
-        'fax_number' => 'getFaxNumber',
-        'email' => 'getEmail',
-        'person' => 'getPerson'
+        'company_label_id' => 'getCompanyLabelId'
     ];
 
     /**
@@ -340,7 +263,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -350,7 +273,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -360,7 +283,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -373,58 +296,10 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const ORGANIZATION_SUB_TYPE_RESELLER = 'Reseller';
-    const ORGANIZATION_SUB_TYPE_PRODUCER = 'Producer';
-    const ORGANIZATION_SUB_TYPE_MSP = 'Msp';
-    const ORGANIZATION_SUB_TYPE_CPO = 'Cpo';
-    const ORGANIZATION_CATEGORY_PROTECTED_CONSUMER = 'ProtectedConsumer';
-    const ORGANIZATION_CATEGORY_REGULAR_CONSUMER = 'RegularConsumer';
-    const ORGANIZATION_CATEGORY_MICRO_BUSINESS = 'MicroBusiness';
-    const ORGANIZATION_CATEGORY_SMALL_BUSINESS = 'SmallBusiness';
-    const ORGANIZATION_CATEGORY_MEDIUM_BUSINESS = 'MediumBusiness';
-    const ORGANIZATION_CATEGORY_LARGE_BUSINESS = 'LargeBusiness';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getOrganizationSubTypeAllowableValues()
-    {
-        return [
-            self::ORGANIZATION_SUB_TYPE_RESELLER,
-            self::ORGANIZATION_SUB_TYPE_PRODUCER,
-            self::ORGANIZATION_SUB_TYPE_MSP,
-            self::ORGANIZATION_SUB_TYPE_CPO,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getOrganizationCategoryAllowableValues()
-    {
-        return [
-            self::ORGANIZATION_CATEGORY_PROTECTED_CONSUMER,
-            self::ORGANIZATION_CATEGORY_REGULAR_CONSUMER,
-            self::ORGANIZATION_CATEGORY_MICRO_BUSINESS,
-            self::ORGANIZATION_CATEGORY_SMALL_BUSINESS,
-            self::ORGANIZATION_CATEGORY_MEDIUM_BUSINESS,
-            self::ORGANIZATION_CATEGORY_LARGE_BUSINESS,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -434,6 +309,8 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['e_invoice_address'] = isset($data['e_invoice_address']) ? $data['e_invoice_address'] : null;
         $this->container['preferred_contact_method'] = isset($data['preferred_contact_method']) ? $data['preferred_contact_method'] : null;
         $this->container['preferred_contact_method_localized'] = isset($data['preferred_contact_method_localized']) ? $data['preferred_contact_method_localized'] : null;
@@ -463,21 +340,6 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
         $this->container['with_collection_agency'] = isset($data['with_collection_agency']) ? $data['with_collection_agency'] : null;
         $this->container['is_intercompany'] = isset($data['is_intercompany']) ? $data['is_intercompany'] : null;
         $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
-        $this->container['organization_type'] = isset($data['organization_type']) ? $data['organization_type'] : null;
-        $this->container['organization_sub_type'] = isset($data['organization_sub_type']) ? $data['organization_sub_type'] : null;
-        $this->container['organization_category'] = isset($data['organization_category']) ? $data['organization_category'] : null;
-        $this->container['organization_category_localized'] = isset($data['organization_category_localized']) ? $data['organization_category_localized'] : null;
-        $this->container['organization_type_localized'] = isset($data['organization_type_localized']) ? $data['organization_type_localized'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
-        $this->container['organization_group_id'] = isset($data['organization_group_id']) ? $data['organization_group_id'] : null;
-        $this->container['organization_group'] = isset($data['organization_group']) ? $data['organization_group'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['mobile_number'] = isset($data['mobile_number']) ? $data['mobile_number'] : null;
-        $this->container['fax_number'] = isset($data['fax_number']) ? $data['fax_number'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['person'] = isset($data['person']) ? $data['person'] : null;
     }
 
     /**
@@ -487,23 +349,7 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getOrganizationSubTypeAllowableValues();
-        if (!is_null($this->container['organization_sub_type']) && !in_array($this->container['organization_sub_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'organization_sub_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getOrganizationCategoryAllowableValues();
-        if (!is_null($this->container['organization_category']) && !in_array($this->container['organization_category'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'organization_category', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -1212,384 +1058,6 @@ class EcedoERPCRMInterfaceApiOrganization implements ModelInterface, ArrayAccess
     public function setCompanyLabelId($company_label_id)
     {
         $this->container['company_label_id'] = $company_label_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_type
-     *
-     * @return string
-     */
-    public function getOrganizationType()
-    {
-        return $this->container['organization_type'];
-    }
-
-    /**
-     * Sets organization_type
-     *
-     * @param string $organization_type Geeft aan of het een zakelijke of particuliere klant is
-     *
-     * @return $this
-     */
-    public function setOrganizationType($organization_type)
-    {
-        $this->container['organization_type'] = $organization_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_sub_type
-     *
-     * @return string
-     */
-    public function getOrganizationSubType()
-    {
-        return $this->container['organization_sub_type'];
-    }
-
-    /**
-     * Sets organization_sub_type
-     *
-     * @param string $organization_sub_type Het subtype van de organisatie.
-     *
-     * @return $this
-     */
-    public function setOrganizationSubType($organization_sub_type)
-    {
-        $allowedValues = $this->getOrganizationSubTypeAllowableValues();
-        if (!is_null($organization_sub_type) && !in_array($organization_sub_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'organization_sub_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['organization_sub_type'] = $organization_sub_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_category
-     *
-     * @return string
-     */
-    public function getOrganizationCategory()
-    {
-        return $this->container['organization_category'];
-    }
-
-    /**
-     * Sets organization_category
-     *
-     * @param string $organization_category De categorie van de klant volgens de Energiewet. Optioneel veld.
-     *
-     * @return $this
-     */
-    public function setOrganizationCategory($organization_category)
-    {
-        $allowedValues = $this->getOrganizationCategoryAllowableValues();
-        if (!is_null($organization_category) && !in_array($organization_category, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'organization_category', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['organization_category'] = $organization_category;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_category_localized
-     *
-     * @return string
-     */
-    public function getOrganizationCategoryLocalized()
-    {
-        return $this->container['organization_category_localized'];
-    }
-
-    /**
-     * Sets organization_category_localized
-     *
-     * @param string $organization_category_localized Nederlandse vertaling van OrganizationCategory
-     *
-     * @return $this
-     */
-    public function setOrganizationCategoryLocalized($organization_category_localized)
-    {
-        $this->container['organization_category_localized'] = $organization_category_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_type_localized
-     *
-     * @return string
-     */
-    public function getOrganizationTypeLocalized()
-    {
-        return $this->container['organization_type_localized'];
-    }
-
-    /**
-     * Sets organization_type_localized
-     *
-     * @param string $organization_type_localized Nederlandse vertaling van OrganizationType
-     *
-     * @return $this
-     */
-    public function setOrganizationTypeLocalized($organization_type_localized)
-    {
-        $this->container['organization_type_localized'] = $organization_type_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_id
-     *
-     * @return string
-     */
-    public function getOrganizationId()
-    {
-        return $this->container['organization_id'];
-    }
-
-    /**
-     * Sets organization_id
-     *
-     * @param string $organization_id Het unieke ID van deze klant
-     *
-     * @return $this
-     */
-    public function setOrganizationId($organization_id)
-    {
-        $this->container['organization_id'] = $organization_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
-     *
-     * @return string
-     */
-    public function getReference()
-    {
-        return $this->container['reference'];
-    }
-
-    /**
-     * Sets reference
-     *
-     * @param string $reference Het klantnummer van de klant
-     *
-     * @return $this
-     */
-    public function setReference($reference)
-    {
-        $this->container['reference'] = $reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_group_id
-     *
-     * @return string
-     */
-    public function getOrganizationGroupId()
-    {
-        return $this->container['organization_group_id'];
-    }
-
-    /**
-     * Sets organization_group_id
-     *
-     * @param string $organization_group_id Het unieke ID van de klantgroep waarin de klant is geplaatst
-     *
-     * @return $this
-     */
-    public function setOrganizationGroupId($organization_group_id)
-    {
-        $this->container['organization_group_id'] = $organization_group_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_group
-     *
-     * @return string
-     */
-    public function getOrganizationGroup()
-    {
-        return $this->container['organization_group'];
-    }
-
-    /**
-     * Sets organization_group
-     *
-     * @param string $organization_group De naam van de klantgroep waarin de klant is geplaatst
-     *
-     * @return $this
-     */
-    public function setOrganizationGroup($organization_group)
-    {
-        $this->container['organization_group'] = $organization_group;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Bij zakelijke klanten bevat dit veld de bedrijfsnaam. Bij consumenten is dit een samengestelde naam op basis van de persoonsgegevens van de klant
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_number
-     *
-     * @return string
-     */
-    public function getPhoneNumber()
-    {
-        return $this->container['phone_number'];
-    }
-
-    /**
-     * Sets phone_number
-     *
-     * @param string $phone_number Optioneel veld waarin het vaste telefoonnummer van de klant kan worden opgeslagen
-     *
-     * @return $this
-     */
-    public function setPhoneNumber($phone_number)
-    {
-        $this->container['phone_number'] = $phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets mobile_number
-     *
-     * @return string
-     */
-    public function getMobileNumber()
-    {
-        return $this->container['mobile_number'];
-    }
-
-    /**
-     * Sets mobile_number
-     *
-     * @param string $mobile_number Optioneel veld waarin het mobiele telefoonnummer van de klant kan worden opgeslagen
-     *
-     * @return $this
-     */
-    public function setMobileNumber($mobile_number)
-    {
-        $this->container['mobile_number'] = $mobile_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets fax_number
-     *
-     * @return string
-     */
-    public function getFaxNumber()
-    {
-        return $this->container['fax_number'];
-    }
-
-    /**
-     * Sets fax_number
-     *
-     * @param string $fax_number Optioneel veld waarin het faxnummer van de klant kan worden opgeslagen
-     *
-     * @return $this
-     */
-    public function setFaxNumber($fax_number)
-    {
-        $this->container['fax_number'] = $fax_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string $email Optioneel veld waarin het e-mailadres van de klant kan worden opgeslagen
-     *
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets person
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiPerson
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiPerson $person De gegevens van de primaire contactpersoon
-     *
-     * @return $this
-     */
-    public function setPerson($person)
-    {
-        $this->container['person'] = $person;
 
         return $this;
     }

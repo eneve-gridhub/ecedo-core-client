@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiDayP4MeterReading extends EcedoERPCRMInterfaceApiP4MeterReading 
 {
     const DISCRIMINATOR = null;
 
@@ -60,13 +58,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
         'ldn_high' => 'double',
         'ldn_low' => 'double',
         'odn_high' => 'double',
-        'odn_low' => 'double',
-        'reading_date' => '\DateTime',
-        'measure_unit' => 'string',
-        'measure_unit_localized' => 'string',
-        'meter_number' => 'string',
-        'ean' => 'string',
-        'source' => 'string'
+        'odn_low' => 'double'
     ];
 
     /**
@@ -78,13 +70,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
         'ldn_high' => 'double',
         'ldn_low' => 'double',
         'odn_high' => 'double',
-        'odn_low' => 'double',
-        'reading_date' => 'date-time',
-        'measure_unit' => null,
-        'measure_unit_localized' => null,
-        'meter_number' => null,
-        'ean' => null,
-        'source' => null
+        'odn_low' => 'double'
     ];
 
     /**
@@ -94,7 +80,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -104,7 +90,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -117,13 +103,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
         'ldn_high' => 'LDNHigh',
         'ldn_low' => 'LDNLow',
         'odn_high' => 'ODNHigh',
-        'odn_low' => 'ODNLow',
-        'reading_date' => 'ReadingDate',
-        'measure_unit' => 'MeasureUnit',
-        'measure_unit_localized' => 'MeasureUnitLocalized',
-        'meter_number' => 'MeterNumber',
-        'ean' => 'EAN',
-        'source' => 'Source'
+        'odn_low' => 'ODNLow'
     ];
 
     /**
@@ -135,13 +115,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
         'ldn_high' => 'setLdnHigh',
         'ldn_low' => 'setLdnLow',
         'odn_high' => 'setOdnHigh',
-        'odn_low' => 'setOdnLow',
-        'reading_date' => 'setReadingDate',
-        'measure_unit' => 'setMeasureUnit',
-        'measure_unit_localized' => 'setMeasureUnitLocalized',
-        'meter_number' => 'setMeterNumber',
-        'ean' => 'setEan',
-        'source' => 'setSource'
+        'odn_low' => 'setOdnLow'
     ];
 
     /**
@@ -153,13 +127,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
         'ldn_high' => 'getLdnHigh',
         'ldn_low' => 'getLdnLow',
         'odn_high' => 'getOdnHigh',
-        'odn_low' => 'getOdnLow',
-        'reading_date' => 'getReadingDate',
-        'measure_unit' => 'getMeasureUnit',
-        'measure_unit_localized' => 'getMeasureUnitLocalized',
-        'meter_number' => 'getMeterNumber',
-        'ean' => 'getEan',
-        'source' => 'getSource'
+        'odn_low' => 'getOdnLow'
     ];
 
     /**
@@ -170,7 +138,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -180,7 +148,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -190,7 +158,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -203,43 +171,10 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
         return self::$swaggerModelName;
     }
 
-    const SOURCE_EDSN = 'EDSN';
-    const SOURCE_P1 = 'P1';
-    const SOURCE_CORRECTED = 'Corrected';
-    const SOURCE_P4_DAY_TO_P4_INT = 'P4DayToP4Int';
-    const SOURCE_P4_METER_READING_TO_P4_INT = 'P4MeterReadingToP4Int';
-    const SOURCE_METER_READING_TO_P4_INT = 'MeterReadingToP4Int';
-    const SOURCE_CALCULATED = 'Calculated';
-    const SOURCE_ESTIMATED = 'Estimated';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getSourceAllowableValues()
-    {
-        return [
-            self::SOURCE_EDSN,
-            self::SOURCE_P1,
-            self::SOURCE_CORRECTED,
-            self::SOURCE_P4_DAY_TO_P4_INT,
-            self::SOURCE_P4_METER_READING_TO_P4_INT,
-            self::SOURCE_METER_READING_TO_P4_INT,
-            self::SOURCE_CALCULATED,
-            self::SOURCE_ESTIMATED,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -249,16 +184,12 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['ldn_high'] = isset($data['ldn_high']) ? $data['ldn_high'] : null;
         $this->container['ldn_low'] = isset($data['ldn_low']) ? $data['ldn_low'] : null;
         $this->container['odn_high'] = isset($data['odn_high']) ? $data['odn_high'] : null;
         $this->container['odn_low'] = isset($data['odn_low']) ? $data['odn_low'] : null;
-        $this->container['reading_date'] = isset($data['reading_date']) ? $data['reading_date'] : null;
-        $this->container['measure_unit'] = isset($data['measure_unit']) ? $data['measure_unit'] : null;
-        $this->container['measure_unit_localized'] = isset($data['measure_unit_localized']) ? $data['measure_unit_localized'] : null;
-        $this->container['meter_number'] = isset($data['meter_number']) ? $data['meter_number'] : null;
-        $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
     }
 
     /**
@@ -268,15 +199,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getSourceAllowableValues();
-        if (!is_null($this->container['source']) && !in_array($this->container['source'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'source', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -385,159 +308,6 @@ class EcedoERPCRMInterfaceApiDayP4MeterReading implements ModelInterface, ArrayA
     public function setOdnLow($odn_low)
     {
         $this->container['odn_low'] = $odn_low;
-
-        return $this;
-    }
-
-    /**
-     * Gets reading_date
-     *
-     * @return \DateTime
-     */
-    public function getReadingDate()
-    {
-        return $this->container['reading_date'];
-    }
-
-    /**
-     * Sets reading_date
-     *
-     * @param \DateTime $reading_date reading_date
-     *
-     * @return $this
-     */
-    public function setReadingDate($reading_date)
-    {
-        $this->container['reading_date'] = $reading_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets measure_unit
-     *
-     * @return string
-     */
-    public function getMeasureUnit()
-    {
-        return $this->container['measure_unit'];
-    }
-
-    /**
-     * Sets measure_unit
-     *
-     * @param string $measure_unit measure_unit
-     *
-     * @return $this
-     */
-    public function setMeasureUnit($measure_unit)
-    {
-        $this->container['measure_unit'] = $measure_unit;
-
-        return $this;
-    }
-
-    /**
-     * Gets measure_unit_localized
-     *
-     * @return string
-     */
-    public function getMeasureUnitLocalized()
-    {
-        return $this->container['measure_unit_localized'];
-    }
-
-    /**
-     * Sets measure_unit_localized
-     *
-     * @param string $measure_unit_localized measure_unit_localized
-     *
-     * @return $this
-     */
-    public function setMeasureUnitLocalized($measure_unit_localized)
-    {
-        $this->container['measure_unit_localized'] = $measure_unit_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_number
-     *
-     * @return string
-     */
-    public function getMeterNumber()
-    {
-        return $this->container['meter_number'];
-    }
-
-    /**
-     * Sets meter_number
-     *
-     * @param string $meter_number meter_number
-     *
-     * @return $this
-     */
-    public function setMeterNumber($meter_number)
-    {
-        $this->container['meter_number'] = $meter_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets ean
-     *
-     * @return string
-     */
-    public function getEan()
-    {
-        return $this->container['ean'];
-    }
-
-    /**
-     * Sets ean
-     *
-     * @param string $ean ean
-     *
-     * @return $this
-     */
-    public function setEan($ean)
-    {
-        $this->container['ean'] = $ean;
-
-        return $this;
-    }
-
-    /**
-     * Gets source
-     *
-     * @return string
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     * @param string $source source
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $allowedValues = $this->getSourceAllowableValues();
-        if (!is_null($source) && !in_array($source, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'source', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['source'] = $source;
 
         return $this;
     }

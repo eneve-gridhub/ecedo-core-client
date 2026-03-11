@@ -168,6 +168,20 @@ class EcedoERPCRMInterfaceApiPropositionPriceTest extends \PHPUnit_Framework_Tes
     }
 
     /**
+     * Test attribute "price_block_id"
+     */
+    public function testPropertyPriceBlockId()
+    {
+    }
+
+    /**
+     * Test attribute "price_block_description"
+     */
+    public function testPropertyPriceBlockDescription()
+    {
+    }
+
+    /**
      * Test attribute "profile"
      */
     public function testPropertyProfile()

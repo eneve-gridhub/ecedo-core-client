@@ -214,6 +214,7 @@ class EcedoERPCRMInterfaceApiConnectionPropertyPostData implements ModelInterfac
     const CONNECTION_PROPERTY_TYPE_PHYSICAL_CAPACITY = 'PhysicalCapacity';
     const CONNECTION_PROPERTY_TYPE_BAG_ID = 'BagId';
     const CONNECTION_PROPERTY_TYPE_ETS = 'ETS';
+    const CONNECTION_PROPERTY_TYPE_SKIP_TAX_CREDIT_VALIDATION = 'SkipTaxCreditValidation';
     const CONNECTION_PROPERTY_SOURCE_USER = 'User';
     const CONNECTION_PROPERTY_SOURCE_CUSTOMER = 'Customer';
     const CONNECTION_PROPERTY_SOURCE_EAN_CODEBOOK = 'EANCodebook';
@@ -266,6 +267,7 @@ class EcedoERPCRMInterfaceApiConnectionPropertyPostData implements ModelInterfac
             self::CONNECTION_PROPERTY_TYPE_PHYSICAL_CAPACITY,
             self::CONNECTION_PROPERTY_TYPE_BAG_ID,
             self::CONNECTION_PROPERTY_TYPE_ETS,
+            self::CONNECTION_PROPERTY_TYPE_SKIP_TAX_CREDIT_VALIDATION,
         ];
     }
     

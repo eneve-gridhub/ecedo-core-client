@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiDayP4MeterReadings extends EcedoERPCRMInterfaceApiP4MeterReadings 
 {
     const DISCRIMINATOR = null;
 
@@ -57,7 +55,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'day_details' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiDayP4MeterReading[]'
+        
     ];
 
     /**
@@ -66,7 +64,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'day_details' => null
+        
     ];
 
     /**
@@ -76,7 +74,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -86,7 +84,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -96,7 +94,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'day_details' => 'DayDetails'
+        
     ];
 
     /**
@@ -105,7 +103,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'day_details' => 'setDayDetails'
+        
     ];
 
     /**
@@ -114,7 +112,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'day_details' => 'getDayDetails'
+        
     ];
 
     /**
@@ -125,7 +123,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -135,7 +133,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -145,7 +143,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -162,12 +160,6 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -177,7 +169,8 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['day_details'] = isset($data['day_details']) ? $data['day_details'] : null;
+        parent::__construct($data);
+
     }
 
     /**
@@ -187,7 +180,7 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -203,30 +196,6 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadings implements ModelInterface, Array
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets day_details
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiDayP4MeterReading[]
-     */
-    public function getDayDetails()
-    {
-        return $this->container['day_details'];
-    }
-
-    /**
-     * Sets day_details
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiDayP4MeterReading[] $day_details day_details
-     *
-     * @return $this
-     */
-    public function setDayDetails($day_details)
-    {
-        $this->container['day_details'] = $day_details;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

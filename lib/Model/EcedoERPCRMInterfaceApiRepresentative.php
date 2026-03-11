@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiRepresentative extends EcedoERPCRMInterfaceApiRepresentativeBase 
 {
     const DISCRIMINATOR = null;
 
@@ -62,9 +60,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
         'correspondence_name' => 'string',
         'correspondence_phone_number' => 'string',
         'correspondence_email_address' => 'string',
-        'correspondence_website' => 'string',
-        'representative_id' => 'string',
-        'full_name' => 'string'
+        'correspondence_website' => 'string'
     ];
 
     /**
@@ -78,9 +74,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
         'correspondence_name' => null,
         'correspondence_phone_number' => null,
         'correspondence_email_address' => null,
-        'correspondence_website' => null,
-        'representative_id' => null,
-        'full_name' => null
+        'correspondence_website' => null
     ];
 
     /**
@@ -90,7 +84,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -100,7 +94,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -115,9 +109,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
         'correspondence_name' => 'CorrespondenceName',
         'correspondence_phone_number' => 'CorrespondencePhoneNumber',
         'correspondence_email_address' => 'CorrespondenceEmailAddress',
-        'correspondence_website' => 'CorrespondenceWebsite',
-        'representative_id' => 'RepresentativeId',
-        'full_name' => 'FullName'
+        'correspondence_website' => 'CorrespondenceWebsite'
     ];
 
     /**
@@ -131,9 +123,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
         'correspondence_name' => 'setCorrespondenceName',
         'correspondence_phone_number' => 'setCorrespondencePhoneNumber',
         'correspondence_email_address' => 'setCorrespondenceEmailAddress',
-        'correspondence_website' => 'setCorrespondenceWebsite',
-        'representative_id' => 'setRepresentativeId',
-        'full_name' => 'setFullName'
+        'correspondence_website' => 'setCorrespondenceWebsite'
     ];
 
     /**
@@ -147,9 +137,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
         'correspondence_name' => 'getCorrespondenceName',
         'correspondence_phone_number' => 'getCorrespondencePhoneNumber',
         'correspondence_email_address' => 'getCorrespondenceEmailAddress',
-        'correspondence_website' => 'getCorrespondenceWebsite',
-        'representative_id' => 'getRepresentativeId',
-        'full_name' => 'getFullName'
+        'correspondence_website' => 'getCorrespondenceWebsite'
     ];
 
     /**
@@ -160,7 +148,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -170,7 +158,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -180,7 +168,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -197,12 +185,6 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -212,14 +194,14 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['organization_group_id'] = isset($data['organization_group_id']) ? $data['organization_group_id'] : null;
         $this->container['organization_group_name'] = isset($data['organization_group_name']) ? $data['organization_group_name'] : null;
         $this->container['correspondence_name'] = isset($data['correspondence_name']) ? $data['correspondence_name'] : null;
         $this->container['correspondence_phone_number'] = isset($data['correspondence_phone_number']) ? $data['correspondence_phone_number'] : null;
         $this->container['correspondence_email_address'] = isset($data['correspondence_email_address']) ? $data['correspondence_email_address'] : null;
         $this->container['correspondence_website'] = isset($data['correspondence_website']) ? $data['correspondence_website'] : null;
-        $this->container['representative_id'] = isset($data['representative_id']) ? $data['representative_id'] : null;
-        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
     }
 
     /**
@@ -229,7 +211,7 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -386,54 +368,6 @@ class EcedoERPCRMInterfaceApiRepresentative implements ModelInterface, ArrayAcce
     public function setCorrespondenceWebsite($correspondence_website)
     {
         $this->container['correspondence_website'] = $correspondence_website;
-
-        return $this;
-    }
-
-    /**
-     * Gets representative_id
-     *
-     * @return string
-     */
-    public function getRepresentativeId()
-    {
-        return $this->container['representative_id'];
-    }
-
-    /**
-     * Sets representative_id
-     *
-     * @param string $representative_id representative_id
-     *
-     * @return $this
-     */
-    public function setRepresentativeId($representative_id)
-    {
-        $this->container['representative_id'] = $representative_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets full_name
-     *
-     * @return string
-     */
-    public function getFullName()
-    {
-        return $this->container['full_name'];
-    }
-
-    /**
-     * Sets full_name
-     *
-     * @param string $full_name full_name
-     *
-     * @return $this
-     */
-    public function setFullName($full_name)
-    {
-        $this->container['full_name'] = $full_name;
 
         return $this;
     }

@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -301,6 +301,10 @@ class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
         $this->container['has_meelift'] = isset($data['has_meelift']) ? $data['has_meelift'] : null;
         $this->container['has_reseller'] = isset($data['has_reseller']) ? $data['has_reseller'] : null;
         $this->container['allow_missing_cap_tar'] = isset($data['allow_missing_cap_tar']) ? $data['allow_missing_cap_tar'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

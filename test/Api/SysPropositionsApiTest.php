@@ -104,10 +104,20 @@ class SysPropositionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sysPropositionsGet
      *
-     * Opvragen Meelift proposities van een productiemiddel..
+     * Opvragen van een propositie op basis van PropositionId.
      *
      */
     public function testSysPropositionsGet()
+    {
+    }
+
+    /**
+     * Test case for sysPropositionsGetByMeansOfProduction
+     *
+     * Opvragen Meelift proposities van een productiemiddel..
+     *
+     */
+    public function testSysPropositionsGetByMeansOfProduction()
     {
     }
 

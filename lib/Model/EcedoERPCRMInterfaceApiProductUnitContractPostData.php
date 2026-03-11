@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiProductUnitContractPostData extends EcedoERPCRMInterfaceApiContractPostData 
 {
     const DISCRIMINATOR = null;
 
@@ -58,13 +56,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
       */
     protected static $swaggerTypes = [
         'no_of_items' => 'int',
-        'purchase_mandate_reference' => 'string',
-        'agreement_date' => '\DateTime',
-        'reference' => 'string',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'proposition_reference' => 'string',
-        'comment' => 'string'
+        'purchase_mandate_reference' => 'string'
     ];
 
     /**
@@ -74,13 +66,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
       */
     protected static $swaggerFormats = [
         'no_of_items' => 'int32',
-        'purchase_mandate_reference' => null,
-        'agreement_date' => 'date',
-        'reference' => null,
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'proposition_reference' => null,
-        'comment' => null
+        'purchase_mandate_reference' => null
     ];
 
     /**
@@ -90,7 +76,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -100,7 +86,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -111,13 +97,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
      */
     protected static $attributeMap = [
         'no_of_items' => 'NoOfItems',
-        'purchase_mandate_reference' => 'PurchaseMandateReference',
-        'agreement_date' => 'AgreementDate',
-        'reference' => 'Reference',
-        'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'proposition_reference' => 'PropositionReference',
-        'comment' => 'Comment'
+        'purchase_mandate_reference' => 'PurchaseMandateReference'
     ];
 
     /**
@@ -127,13 +107,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
      */
     protected static $setters = [
         'no_of_items' => 'setNoOfItems',
-        'purchase_mandate_reference' => 'setPurchaseMandateReference',
-        'agreement_date' => 'setAgreementDate',
-        'reference' => 'setReference',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'proposition_reference' => 'setPropositionReference',
-        'comment' => 'setComment'
+        'purchase_mandate_reference' => 'setPurchaseMandateReference'
     ];
 
     /**
@@ -143,13 +117,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
      */
     protected static $getters = [
         'no_of_items' => 'getNoOfItems',
-        'purchase_mandate_reference' => 'getPurchaseMandateReference',
-        'agreement_date' => 'getAgreementDate',
-        'reference' => 'getReference',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'proposition_reference' => 'getPropositionReference',
-        'comment' => 'getComment'
+        'purchase_mandate_reference' => 'getPurchaseMandateReference'
     ];
 
     /**
@@ -160,7 +128,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -170,7 +138,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -180,7 +148,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -197,12 +165,6 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -212,14 +174,10 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['no_of_items'] = isset($data['no_of_items']) ? $data['no_of_items'] : null;
         $this->container['purchase_mandate_reference'] = isset($data['purchase_mandate_reference']) ? $data['purchase_mandate_reference'] : null;
-        $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
-        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
     }
 
     /**
@@ -229,7 +187,7 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -290,150 +248,6 @@ class EcedoERPCRMInterfaceApiProductUnitContractPostData implements ModelInterfa
     public function setPurchaseMandateReference($purchase_mandate_reference)
     {
         $this->container['purchase_mandate_reference'] = $purchase_mandate_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets agreement_date
-     *
-     * @return \DateTime
-     */
-    public function getAgreementDate()
-    {
-        return $this->container['agreement_date'];
-    }
-
-    /**
-     * Sets agreement_date
-     *
-     * @param \DateTime $agreement_date agreement_date
-     *
-     * @return $this
-     */
-    public function setAgreementDate($agreement_date)
-    {
-        $this->container['agreement_date'] = $agreement_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
-     *
-     * @return string
-     */
-    public function getReference()
-    {
-        return $this->container['reference'];
-    }
-
-    /**
-     * Sets reference
-     *
-     * @param string $reference reference
-     *
-     * @return $this
-     */
-    public function setReference($reference)
-    {
-        $this->container['reference'] = $reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date start_date
-     *
-     * @return $this
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date end_date
-     *
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_reference
-     *
-     * @return string
-     */
-    public function getPropositionReference()
-    {
-        return $this->container['proposition_reference'];
-    }
-
-    /**
-     * Sets proposition_reference
-     *
-     * @param string $proposition_reference proposition_reference
-     *
-     * @return $this
-     */
-    public function setPropositionReference($proposition_reference)
-    {
-        $this->container['proposition_reference'] = $proposition_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment comment
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
 
         return $this;
     }

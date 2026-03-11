@@ -66,7 +66,8 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'vat_inclusive' => 'bool',
         'gos_region' => 'string',
         'range_begin' => 'int',
-        'range_end' => 'int'
+        'range_end' => 'int',
+        'price_block_id' => 'string'
     ];
 
     /**
@@ -84,7 +85,8 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'vat_inclusive' => null,
         'gos_region' => null,
         'range_begin' => 'int32',
-        'range_end' => 'int32'
+        'range_end' => 'int32',
+        'price_block_id' => 'uuid'
     ];
 
     /**
@@ -123,7 +125,8 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'vat_inclusive' => 'VatInclusive',
         'gos_region' => 'GosRegion',
         'range_begin' => 'RangeBegin',
-        'range_end' => 'RangeEnd'
+        'range_end' => 'RangeEnd',
+        'price_block_id' => 'PriceBlockId'
     ];
 
     /**
@@ -141,7 +144,8 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'vat_inclusive' => 'setVatInclusive',
         'gos_region' => 'setGosRegion',
         'range_begin' => 'setRangeBegin',
-        'range_end' => 'setRangeEnd'
+        'range_end' => 'setRangeEnd',
+        'price_block_id' => 'setPriceBlockId'
     ];
 
     /**
@@ -159,7 +163,8 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         'vat_inclusive' => 'getVatInclusive',
         'gos_region' => 'getGosRegion',
         'range_begin' => 'getRangeBegin',
-        'range_end' => 'getRangeEnd'
+        'range_end' => 'getRangeEnd',
+        'price_block_id' => 'getPriceBlockId'
     ];
 
     /**
@@ -317,6 +322,7 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
         $this->container['gos_region'] = isset($data['gos_region']) ? $data['gos_region'] : null;
         $this->container['range_begin'] = isset($data['range_begin']) ? $data['range_begin'] : null;
         $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
+        $this->container['price_block_id'] = isset($data['price_block_id']) ? $data['price_block_id'] : null;
     }
 
     /**
@@ -636,6 +642,30 @@ class EcedoERPCRMInterfaceApiPricePostData implements ModelInterface, ArrayAcces
     public function setRangeEnd($range_end)
     {
         $this->container['range_end'] = $range_end;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_block_id
+     *
+     * @return string
+     */
+    public function getPriceBlockId()
+    {
+        return $this->container['price_block_id'];
+    }
+
+    /**
+     * Sets price_block_id
+     *
+     * @param string $price_block_id price_block_id
+     *
+     * @return $this
+     */
+    public function setPriceBlockId($price_block_id)
+    {
+        $this->container['price_block_id'] = $price_block_id;
 
         return $this;
     }

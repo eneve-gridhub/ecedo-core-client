@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract extends EcedoERPCRMInterfaceApiConnectionContract 
 {
     const DISCRIMINATOR = null;
 
@@ -65,30 +63,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
         'cancellation_reason_localized' => 'string',
         'meelift_contract_id' => 'string',
         'channel' => 'string',
-        'sales_reference' => 'string',
-        'connection_id' => 'string',
-        'product_id' => 'string',
-        'product_description_localized' => 'string',
-        'connection_contract_prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionContractPrices[]',
-        'contract_id' => 'string',
-        'reference' => 'string',
-        'agreement_date' => '\DateTime',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'proposition_id' => 'string',
-        'proposition_reference' => 'string',
-        'proposition_description' => 'string',
-        'proposition_duration' => 'int',
-        'proposition_pricing_type' => 'string',
-        'proposition_pricing_type_localized' => 'string',
-        'proposition_market_price_source' => 'string',
-        'proposition_market_price_source_localized' => 'string',
-        'status' => 'string',
-        'status_localized' => 'string',
-        'comment' => 'string',
-        'proposal_valid_until' => '\DateTime',
-        'organization_id' => 'string',
-        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractProperty[]'
+        'sales_reference' => 'string'
     ];
 
     /**
@@ -105,30 +80,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
         'cancellation_reason_localized' => null,
         'meelift_contract_id' => 'uuid',
         'channel' => null,
-        'sales_reference' => null,
-        'connection_id' => null,
-        'product_id' => null,
-        'product_description_localized' => null,
-        'connection_contract_prices' => null,
-        'contract_id' => null,
-        'reference' => null,
-        'agreement_date' => 'date',
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'proposition_id' => null,
-        'proposition_reference' => null,
-        'proposition_description' => null,
-        'proposition_duration' => 'int32',
-        'proposition_pricing_type' => null,
-        'proposition_pricing_type_localized' => null,
-        'proposition_market_price_source' => null,
-        'proposition_market_price_source_localized' => null,
-        'status' => null,
-        'status_localized' => null,
-        'comment' => null,
-        'proposal_valid_until' => 'date',
-        'organization_id' => null,
-        'contract_properties' => null
+        'sales_reference' => null
     ];
 
     /**
@@ -138,7 +90,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -148,7 +100,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -166,30 +118,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
         'cancellation_reason_localized' => 'CancellationReasonLocalized',
         'meelift_contract_id' => 'MeeliftContractId',
         'channel' => 'Channel',
-        'sales_reference' => 'SalesReference',
-        'connection_id' => 'ConnectionId',
-        'product_id' => 'ProductId',
-        'product_description_localized' => 'ProductDescriptionLocalized',
-        'connection_contract_prices' => 'ConnectionContractPrices',
-        'contract_id' => 'ContractId',
-        'reference' => 'Reference',
-        'agreement_date' => 'AgreementDate',
-        'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'proposition_id' => 'PropositionId',
-        'proposition_reference' => 'PropositionReference',
-        'proposition_description' => 'PropositionDescription',
-        'proposition_duration' => 'PropositionDuration',
-        'proposition_pricing_type' => 'PropositionPricingType',
-        'proposition_pricing_type_localized' => 'PropositionPricingTypeLocalized',
-        'proposition_market_price_source' => 'PropositionMarketPriceSource',
-        'proposition_market_price_source_localized' => 'PropositionMarketPriceSourceLocalized',
-        'status' => 'Status',
-        'status_localized' => 'StatusLocalized',
-        'comment' => 'Comment',
-        'proposal_valid_until' => 'ProposalValidUntil',
-        'organization_id' => 'OrganizationId',
-        'contract_properties' => 'ContractProperties'
+        'sales_reference' => 'SalesReference'
     ];
 
     /**
@@ -206,30 +135,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
         'cancellation_reason_localized' => 'setCancellationReasonLocalized',
         'meelift_contract_id' => 'setMeeliftContractId',
         'channel' => 'setChannel',
-        'sales_reference' => 'setSalesReference',
-        'connection_id' => 'setConnectionId',
-        'product_id' => 'setProductId',
-        'product_description_localized' => 'setProductDescriptionLocalized',
-        'connection_contract_prices' => 'setConnectionContractPrices',
-        'contract_id' => 'setContractId',
-        'reference' => 'setReference',
-        'agreement_date' => 'setAgreementDate',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'proposition_id' => 'setPropositionId',
-        'proposition_reference' => 'setPropositionReference',
-        'proposition_description' => 'setPropositionDescription',
-        'proposition_duration' => 'setPropositionDuration',
-        'proposition_pricing_type' => 'setPropositionPricingType',
-        'proposition_pricing_type_localized' => 'setPropositionPricingTypeLocalized',
-        'proposition_market_price_source' => 'setPropositionMarketPriceSource',
-        'proposition_market_price_source_localized' => 'setPropositionMarketPriceSourceLocalized',
-        'status' => 'setStatus',
-        'status_localized' => 'setStatusLocalized',
-        'comment' => 'setComment',
-        'proposal_valid_until' => 'setProposalValidUntil',
-        'organization_id' => 'setOrganizationId',
-        'contract_properties' => 'setContractProperties'
+        'sales_reference' => 'setSalesReference'
     ];
 
     /**
@@ -246,30 +152,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
         'cancellation_reason_localized' => 'getCancellationReasonLocalized',
         'meelift_contract_id' => 'getMeeliftContractId',
         'channel' => 'getChannel',
-        'sales_reference' => 'getSalesReference',
-        'connection_id' => 'getConnectionId',
-        'product_id' => 'getProductId',
-        'product_description_localized' => 'getProductDescriptionLocalized',
-        'connection_contract_prices' => 'getConnectionContractPrices',
-        'contract_id' => 'getContractId',
-        'reference' => 'getReference',
-        'agreement_date' => 'getAgreementDate',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'proposition_id' => 'getPropositionId',
-        'proposition_reference' => 'getPropositionReference',
-        'proposition_description' => 'getPropositionDescription',
-        'proposition_duration' => 'getPropositionDuration',
-        'proposition_pricing_type' => 'getPropositionPricingType',
-        'proposition_pricing_type_localized' => 'getPropositionPricingTypeLocalized',
-        'proposition_market_price_source' => 'getPropositionMarketPriceSource',
-        'proposition_market_price_source_localized' => 'getPropositionMarketPriceSourceLocalized',
-        'status' => 'getStatus',
-        'status_localized' => 'getStatusLocalized',
-        'comment' => 'getComment',
-        'proposal_valid_until' => 'getProposalValidUntil',
-        'organization_id' => 'getOrganizationId',
-        'contract_properties' => 'getContractProperties'
+        'sales_reference' => 'getSalesReference'
     ];
 
     /**
@@ -280,7 +163,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -290,7 +173,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -300,7 +183,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -323,37 +206,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
     const CANCELLATION_REASON_DISSATISFIED = 'Dissatisfied';
     const CANCELLATION_REASON_NOT_CREDITWORTHY = 'NotCreditworthy';
     const CANCELLATION_REASON_WRONG_CONNECTION = 'WrongConnection';
-    const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
-    const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
-    const PROPOSITION_PRICING_TYPE_FIXED = 'Fixed';
-    const PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE = 'MeanDayMarketPriceVariable';
-    const PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE = 'MeanMonthMarketPriceVariable';
-    const PROPOSITION_PRICING_TYPE_FUTURE_YEAR_MARKET_PRICE_FIXED = 'FutureYearMarketPriceFixed';
-    const PROPOSITION_PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
-    const PROPOSITION_PRICING_TYPE_FULL_ENDEX = 'FullEndex';
-    const PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
-    const PROPOSITION_MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY = 'TtfDayAheadDay';
-    const PROPOSITION_MARKET_PRICE_SOURCE_NONE = 'None';
-    const PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_HOUR = 'ApxDayAheadHour';
-    const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_DAY = 'MeanApxDay';
-    const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_MONTH = 'MeanApxMonth';
-    const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_TTF_DAY = 'MeanTtfDay';
-    const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_TTF_MONTH = 'MeanTtfMonth';
-    const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_YEAR = 'MeanApxYear';
-    const PROPOSITION_MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_YEAR = 'UnweightedMeanApxYear';
-    const PROPOSITION_MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_MONTH = 'UnweightedMeanApxMonth';
-    const PROPOSITION_MARKET_PRICE_SOURCE_IMBALANCE_TAKE_FROM_SYSTEM = 'ImbalanceTakeFromSystem';
-    const PROPOSITION_MARKET_PRICE_SOURCE_IMBALANCE_FEED_INTO_SYSTEM = 'ImbalanceFeedIntoSystem';
-    const PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_PEAK = 'ReconciliationPeak';
-    const PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_OFF_PEAK = 'ReconciliationOffPeak';
-    const PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_QUARTER = 'ApxDayAheadQuarter';
-    const STATUS_PROVISIONAL = 'Provisional';
-    const STATUS_ACTIVE = 'Active';
-    const STATUS_CANCELLED = 'Cancelled';
-    const STATUS_ENDED = 'Ended';
-    const STATUS_WAIT_FOR_APPROVAL = 'WaitForApproval';
-    const STATUS_PROPOSED = 'Proposed';
-    const STATUS_FINALIZED = 'Finalized';
     
 
     
@@ -378,77 +230,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
         ];
     }
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getPropositionPricingTypeAllowableValues()
-    {
-        return [
-            self::PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE,
-            self::PROPOSITION_PRICING_TYPE_VARIABLE,
-            self::PROPOSITION_PRICING_TYPE_FIXED,
-            self::PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE,
-            self::PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE,
-            self::PROPOSITION_PRICING_TYPE_FUTURE_YEAR_MARKET_PRICE_FIXED,
-            self::PROPOSITION_PRICING_TYPE_HYBRID_ENDEX,
-            self::PROPOSITION_PRICING_TYPE_FULL_ENDEX,
-            self::PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getPropositionMarketPriceSourceAllowableValues()
-    {
-        return [
-            self::PROPOSITION_MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_NONE,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_HOUR,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_DAY,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_MONTH,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_TTF_DAY,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_TTF_MONTH,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_YEAR,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_YEAR,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_UNWEIGHTED_MEAN_APX_MONTH,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_IMBALANCE_TAKE_FROM_SYSTEM,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_IMBALANCE_FEED_INTO_SYSTEM,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_PEAK,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_OFF_PEAK,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_QUARTER,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_PROVISIONAL,
-            self::STATUS_ACTIVE,
-            self::STATUS_CANCELLED,
-            self::STATUS_ENDED,
-            self::STATUS_WAIT_FOR_APPROVAL,
-            self::STATUS_PROPOSED,
-            self::STATUS_FINALIZED,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -458,6 +240,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['start_reason'] = isset($data['start_reason']) ? $data['start_reason'] : null;
         $this->container['start_reason_localized'] = isset($data['start_reason_localized']) ? $data['start_reason_localized'] : null;
         $this->container['end_reason'] = isset($data['end_reason']) ? $data['end_reason'] : null;
@@ -467,29 +251,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
         $this->container['meelift_contract_id'] = isset($data['meelift_contract_id']) ? $data['meelift_contract_id'] : null;
         $this->container['channel'] = isset($data['channel']) ? $data['channel'] : null;
         $this->container['sales_reference'] = isset($data['sales_reference']) ? $data['sales_reference'] : null;
-        $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
-        $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
-        $this->container['product_description_localized'] = isset($data['product_description_localized']) ? $data['product_description_localized'] : null;
-        $this->container['connection_contract_prices'] = isset($data['connection_contract_prices']) ? $data['connection_contract_prices'] : null;
-        $this->container['contract_id'] = isset($data['contract_id']) ? $data['contract_id'] : null;
-        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
-        $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['proposition_id'] = isset($data['proposition_id']) ? $data['proposition_id'] : null;
-        $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
-        $this->container['proposition_description'] = isset($data['proposition_description']) ? $data['proposition_description'] : null;
-        $this->container['proposition_duration'] = isset($data['proposition_duration']) ? $data['proposition_duration'] : null;
-        $this->container['proposition_pricing_type'] = isset($data['proposition_pricing_type']) ? $data['proposition_pricing_type'] : null;
-        $this->container['proposition_pricing_type_localized'] = isset($data['proposition_pricing_type_localized']) ? $data['proposition_pricing_type_localized'] : null;
-        $this->container['proposition_market_price_source'] = isset($data['proposition_market_price_source']) ? $data['proposition_market_price_source'] : null;
-        $this->container['proposition_market_price_source_localized'] = isset($data['proposition_market_price_source_localized']) ? $data['proposition_market_price_source_localized'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['status_localized'] = isset($data['status_localized']) ? $data['status_localized'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
-        $this->container['proposal_valid_until'] = isset($data['proposal_valid_until']) ? $data['proposal_valid_until'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['contract_properties'] = isset($data['contract_properties']) ? $data['contract_properties'] : null;
     }
 
     /**
@@ -499,36 +260,12 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         $allowedValues = $this->getCancellationReasonAllowableValues();
         if (!is_null($this->container['cancellation_reason']) && !in_array($this->container['cancellation_reason'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'cancellation_reason', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getPropositionPricingTypeAllowableValues();
-        if (!is_null($this->container['proposition_pricing_type']) && !in_array($this->container['proposition_pricing_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'proposition_pricing_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getPropositionMarketPriceSourceAllowableValues();
-        if (!is_null($this->container['proposition_market_price_source']) && !in_array($this->container['proposition_market_price_source'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'proposition_market_price_source', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'status', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -769,585 +506,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringConnectionContract implements ModelI
     public function setSalesReference($sales_reference)
     {
         $this->container['sales_reference'] = $sales_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets connection_id
-     *
-     * @return string
-     */
-    public function getConnectionId()
-    {
-        return $this->container['connection_id'];
-    }
-
-    /**
-     * Sets connection_id
-     *
-     * @param string $connection_id connection_id
-     *
-     * @return $this
-     */
-    public function setConnectionId($connection_id)
-    {
-        $this->container['connection_id'] = $connection_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets product_id
-     *
-     * @return string
-     */
-    public function getProductId()
-    {
-        return $this->container['product_id'];
-    }
-
-    /**
-     * Sets product_id
-     *
-     * @param string $product_id product_id
-     *
-     * @return $this
-     */
-    public function setProductId($product_id)
-    {
-        $this->container['product_id'] = $product_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets product_description_localized
-     *
-     * @return string
-     */
-    public function getProductDescriptionLocalized()
-    {
-        return $this->container['product_description_localized'];
-    }
-
-    /**
-     * Sets product_description_localized
-     *
-     * @param string $product_description_localized product_description_localized
-     *
-     * @return $this
-     */
-    public function setProductDescriptionLocalized($product_description_localized)
-    {
-        $this->container['product_description_localized'] = $product_description_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets connection_contract_prices
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionContractPrices[]
-     */
-    public function getConnectionContractPrices()
-    {
-        return $this->container['connection_contract_prices'];
-    }
-
-    /**
-     * Sets connection_contract_prices
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionContractPrices[] $connection_contract_prices connection_contract_prices
-     *
-     * @return $this
-     */
-    public function setConnectionContractPrices($connection_contract_prices)
-    {
-        $this->container['connection_contract_prices'] = $connection_contract_prices;
-
-        return $this;
-    }
-
-    /**
-     * Gets contract_id
-     *
-     * @return string
-     */
-    public function getContractId()
-    {
-        return $this->container['contract_id'];
-    }
-
-    /**
-     * Sets contract_id
-     *
-     * @param string $contract_id contract_id
-     *
-     * @return $this
-     */
-    public function setContractId($contract_id)
-    {
-        $this->container['contract_id'] = $contract_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
-     *
-     * @return string
-     */
-    public function getReference()
-    {
-        return $this->container['reference'];
-    }
-
-    /**
-     * Sets reference
-     *
-     * @param string $reference reference
-     *
-     * @return $this
-     */
-    public function setReference($reference)
-    {
-        $this->container['reference'] = $reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets agreement_date
-     *
-     * @return \DateTime
-     */
-    public function getAgreementDate()
-    {
-        return $this->container['agreement_date'];
-    }
-
-    /**
-     * Sets agreement_date
-     *
-     * @param \DateTime $agreement_date agreement_date
-     *
-     * @return $this
-     */
-    public function setAgreementDate($agreement_date)
-    {
-        $this->container['agreement_date'] = $agreement_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date start_date
-     *
-     * @return $this
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date end_date
-     *
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_id
-     *
-     * @return string
-     */
-    public function getPropositionId()
-    {
-        return $this->container['proposition_id'];
-    }
-
-    /**
-     * Sets proposition_id
-     *
-     * @param string $proposition_id proposition_id
-     *
-     * @return $this
-     */
-    public function setPropositionId($proposition_id)
-    {
-        $this->container['proposition_id'] = $proposition_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_reference
-     *
-     * @return string
-     */
-    public function getPropositionReference()
-    {
-        return $this->container['proposition_reference'];
-    }
-
-    /**
-     * Sets proposition_reference
-     *
-     * @param string $proposition_reference proposition_reference
-     *
-     * @return $this
-     */
-    public function setPropositionReference($proposition_reference)
-    {
-        $this->container['proposition_reference'] = $proposition_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_description
-     *
-     * @return string
-     */
-    public function getPropositionDescription()
-    {
-        return $this->container['proposition_description'];
-    }
-
-    /**
-     * Sets proposition_description
-     *
-     * @param string $proposition_description proposition_description
-     *
-     * @return $this
-     */
-    public function setPropositionDescription($proposition_description)
-    {
-        $this->container['proposition_description'] = $proposition_description;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_duration
-     *
-     * @return int
-     */
-    public function getPropositionDuration()
-    {
-        return $this->container['proposition_duration'];
-    }
-
-    /**
-     * Sets proposition_duration
-     *
-     * @param int $proposition_duration proposition_duration
-     *
-     * @return $this
-     */
-    public function setPropositionDuration($proposition_duration)
-    {
-        $this->container['proposition_duration'] = $proposition_duration;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_pricing_type
-     *
-     * @return string
-     */
-    public function getPropositionPricingType()
-    {
-        return $this->container['proposition_pricing_type'];
-    }
-
-    /**
-     * Sets proposition_pricing_type
-     *
-     * @param string $proposition_pricing_type proposition_pricing_type
-     *
-     * @return $this
-     */
-    public function setPropositionPricingType($proposition_pricing_type)
-    {
-        $allowedValues = $this->getPropositionPricingTypeAllowableValues();
-        if (!is_null($proposition_pricing_type) && !in_array($proposition_pricing_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'proposition_pricing_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['proposition_pricing_type'] = $proposition_pricing_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_pricing_type_localized
-     *
-     * @return string
-     */
-    public function getPropositionPricingTypeLocalized()
-    {
-        return $this->container['proposition_pricing_type_localized'];
-    }
-
-    /**
-     * Sets proposition_pricing_type_localized
-     *
-     * @param string $proposition_pricing_type_localized proposition_pricing_type_localized
-     *
-     * @return $this
-     */
-    public function setPropositionPricingTypeLocalized($proposition_pricing_type_localized)
-    {
-        $this->container['proposition_pricing_type_localized'] = $proposition_pricing_type_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_market_price_source
-     *
-     * @return string
-     */
-    public function getPropositionMarketPriceSource()
-    {
-        return $this->container['proposition_market_price_source'];
-    }
-
-    /**
-     * Sets proposition_market_price_source
-     *
-     * @param string $proposition_market_price_source proposition_market_price_source
-     *
-     * @return $this
-     */
-    public function setPropositionMarketPriceSource($proposition_market_price_source)
-    {
-        $allowedValues = $this->getPropositionMarketPriceSourceAllowableValues();
-        if (!is_null($proposition_market_price_source) && !in_array($proposition_market_price_source, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'proposition_market_price_source', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['proposition_market_price_source'] = $proposition_market_price_source;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_market_price_source_localized
-     *
-     * @return string
-     */
-    public function getPropositionMarketPriceSourceLocalized()
-    {
-        return $this->container['proposition_market_price_source_localized'];
-    }
-
-    /**
-     * Sets proposition_market_price_source_localized
-     *
-     * @param string $proposition_market_price_source_localized proposition_market_price_source_localized
-     *
-     * @return $this
-     */
-    public function setPropositionMarketPriceSourceLocalized($proposition_market_price_source_localized)
-    {
-        $this->container['proposition_market_price_source_localized'] = $proposition_market_price_source_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string $status status
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets status_localized
-     *
-     * @return string
-     */
-    public function getStatusLocalized()
-    {
-        return $this->container['status_localized'];
-    }
-
-    /**
-     * Sets status_localized
-     *
-     * @param string $status_localized status_localized
-     *
-     * @return $this
-     */
-    public function setStatusLocalized($status_localized)
-    {
-        $this->container['status_localized'] = $status_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment comment
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposal_valid_until
-     *
-     * @return \DateTime
-     */
-    public function getProposalValidUntil()
-    {
-        return $this->container['proposal_valid_until'];
-    }
-
-    /**
-     * Sets proposal_valid_until
-     *
-     * @param \DateTime $proposal_valid_until proposal_valid_until
-     *
-     * @return $this
-     */
-    public function setProposalValidUntil($proposal_valid_until)
-    {
-        $this->container['proposal_valid_until'] = $proposal_valid_until;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_id
-     *
-     * @return string
-     */
-    public function getOrganizationId()
-    {
-        return $this->container['organization_id'];
-    }
-
-    /**
-     * Sets organization_id
-     *
-     * @param string $organization_id organization_id
-     *
-     * @return $this
-     */
-    public function setOrganizationId($organization_id)
-    {
-        $this->container['organization_id'] = $organization_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets contract_properties
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiContractProperty[]
-     */
-    public function getContractProperties()
-    {
-        return $this->container['contract_properties'];
-    }
-
-    /**
-     * Sets contract_properties
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiContractProperty[] $contract_properties contract_properties
-     *
-     * @return $this
-     */
-    public function setContractProperties($contract_properties)
-    {
-        $this->container['contract_properties'] = $contract_properties;
 
         return $this;
     }

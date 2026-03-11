@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData extends EcedoERPCRMInterfaceApiContractPutData 
 {
     const DISCRIMINATOR = null;
 
@@ -61,12 +59,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
         'smart_device_description' => 'string',
         'connection_id' => 'string',
         'device_entity_id' => 'string',
-        'smart_device_type' => 'string',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'agreement_date' => '\DateTime',
-        'proposition_reference' => 'string',
-        'comment' => 'string'
+        'smart_device_type' => 'string'
     ];
 
     /**
@@ -79,12 +72,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
         'smart_device_description' => null,
         'connection_id' => 'uuid',
         'device_entity_id' => 'uuid',
-        'smart_device_type' => null,
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'agreement_date' => 'date',
-        'proposition_reference' => null,
-        'comment' => null
+        'smart_device_type' => null
     ];
 
     /**
@@ -94,7 +82,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -104,7 +92,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -118,12 +106,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
         'smart_device_description' => 'SmartDeviceDescription',
         'connection_id' => 'ConnectionId',
         'device_entity_id' => 'DeviceEntityId',
-        'smart_device_type' => 'SmartDeviceType',
-        'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'agreement_date' => 'AgreementDate',
-        'proposition_reference' => 'PropositionReference',
-        'comment' => 'Comment'
+        'smart_device_type' => 'SmartDeviceType'
     ];
 
     /**
@@ -136,12 +119,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
         'smart_device_description' => 'setSmartDeviceDescription',
         'connection_id' => 'setConnectionId',
         'device_entity_id' => 'setDeviceEntityId',
-        'smart_device_type' => 'setSmartDeviceType',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'agreement_date' => 'setAgreementDate',
-        'proposition_reference' => 'setPropositionReference',
-        'comment' => 'setComment'
+        'smart_device_type' => 'setSmartDeviceType'
     ];
 
     /**
@@ -154,12 +132,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
         'smart_device_description' => 'getSmartDeviceDescription',
         'connection_id' => 'getConnectionId',
         'device_entity_id' => 'getDeviceEntityId',
-        'smart_device_type' => 'getSmartDeviceType',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'agreement_date' => 'getAgreementDate',
-        'proposition_reference' => 'getPropositionReference',
-        'comment' => 'getComment'
+        'smart_device_type' => 'getSmartDeviceType'
     ];
 
     /**
@@ -170,7 +143,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -180,7 +153,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -190,7 +163,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -226,12 +199,6 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
     }
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -241,16 +208,13 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['smart_device_reference'] = isset($data['smart_device_reference']) ? $data['smart_device_reference'] : null;
         $this->container['smart_device_description'] = isset($data['smart_device_description']) ? $data['smart_device_description'] : null;
         $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
         $this->container['device_entity_id'] = isset($data['device_entity_id']) ? $data['device_entity_id'] : null;
         $this->container['smart_device_type'] = isset($data['smart_device_type']) ? $data['smart_device_type'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
-        $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
     }
 
     /**
@@ -260,7 +224,7 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         $allowedValues = $this->getSmartDeviceTypeAllowableValues();
         if (!is_null($this->container['smart_device_type']) && !in_array($this->container['smart_device_type'], $allowedValues, true)) {
@@ -410,126 +374,6 @@ class EcedoERPCRMInterfaceApiOnbalansFlexContractPutData implements ModelInterfa
             );
         }
         $this->container['smart_device_type'] = $smart_device_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date Optionele parameter (default null). Hiermee kan de startdatum van een contract worden aangepast. Gebruik dit alleen in zeer specifieke gevallen.
-     *
-     * @return $this
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date Optionele parameter (default null). Hiermee kan de einddatum van een contract worden aangepast. Gebruik dit alleen in zeer specifieke gevallen.
-     *
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets agreement_date
-     *
-     * @return \DateTime
-     */
-    public function getAgreementDate()
-    {
-        return $this->container['agreement_date'];
-    }
-
-    /**
-     * Sets agreement_date
-     *
-     * @param \DateTime $agreement_date Optionele parameter (default null). Hiermee kan de tekendatum van een contract worden aangepast. Gebruik dit alleen in zeer specifieke gevallen.
-     *
-     * @return $this
-     */
-    public function setAgreementDate($agreement_date)
-    {
-        $this->container['agreement_date'] = $agreement_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_reference
-     *
-     * @return string
-     */
-    public function getPropositionReference()
-    {
-        return $this->container['proposition_reference'];
-    }
-
-    /**
-     * Sets proposition_reference
-     *
-     * @param string $proposition_reference Optionele parameter (default null). Hiermee kan de propositie van een contract worden aangepast. Gebruik dit alleen in zeer specifieke gevallen.
-     *
-     * @return $this
-     */
-    public function setPropositionReference($proposition_reference)
-    {
-        $this->container['proposition_reference'] = $proposition_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment Optionele parameter (default null). De bestaande waarde wordt alleen bijgewerkt wanneer de nieuwe waarde niet null is. Geef een lege string mee om de bestaande waarde weg te halen.
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
 
         return $this;
     }

@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiMeterReadingBase implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -214,6 +214,10 @@ class EcedoERPCRMInterfaceApiMeterReadingBase implements ModelInterface, ArrayAc
         $this->container['ldnt1'] = isset($data['ldnt1']) ? $data['ldnt1'] : null;
         $this->container['ldnt2'] = isset($data['ldnt2']) ? $data['ldnt2'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

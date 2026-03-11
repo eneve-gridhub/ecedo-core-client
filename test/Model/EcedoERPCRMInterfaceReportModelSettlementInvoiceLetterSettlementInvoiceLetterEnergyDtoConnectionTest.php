@@ -343,6 +343,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "connection_contract_end_date_on_loss"
+     */
+    public function testPropertyConnectionContractEndDateOnLoss()
+    {
+    }
+
+    /**
      * Test attribute "connection_contract_proposition_description"
      */
     public function testPropertyConnectionContractPropositionDescription()

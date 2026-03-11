@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData extends EcedoERPCRMInterfaceApiAnnualStandardUsagePostData 
 {
     const DISCRIMINATOR = null;
 
@@ -58,16 +56,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
       */
     protected static $swaggerTypes = [
         'reason' => 'string',
-        'valid_until' => '\DateTime',
-        'usage_source' => 'string',
-        'active_annual_standard_usage_type' => 'string',
-        'start_advance_payment_calculation_flow' => 'bool',
-        'single_usage' => 'int',
-        'peak_usage' => 'int',
-        'off_peak_usage' => 'int',
-        'single_usage_odn' => 'int',
-        'peak_usage_odn' => 'int',
-        'off_peak_usage_odn' => 'int'
+        'valid_until' => '\DateTime'
     ];
 
     /**
@@ -77,16 +66,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
       */
     protected static $swaggerFormats = [
         'reason' => null,
-        'valid_until' => 'date',
-        'usage_source' => null,
-        'active_annual_standard_usage_type' => null,
-        'start_advance_payment_calculation_flow' => null,
-        'single_usage' => 'int32',
-        'peak_usage' => 'int32',
-        'off_peak_usage' => 'int32',
-        'single_usage_odn' => 'int32',
-        'peak_usage_odn' => 'int32',
-        'off_peak_usage_odn' => 'int32'
+        'valid_until' => 'date'
     ];
 
     /**
@@ -96,7 +76,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -106,7 +86,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -117,16 +97,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
      */
     protected static $attributeMap = [
         'reason' => 'Reason',
-        'valid_until' => 'ValidUntil',
-        'usage_source' => 'UsageSource',
-        'active_annual_standard_usage_type' => 'ActiveAnnualStandardUsageType',
-        'start_advance_payment_calculation_flow' => 'StartAdvancePaymentCalculationFlow',
-        'single_usage' => 'SingleUsage',
-        'peak_usage' => 'PeakUsage',
-        'off_peak_usage' => 'OffPeakUsage',
-        'single_usage_odn' => 'SingleUsageODN',
-        'peak_usage_odn' => 'PeakUsageODN',
-        'off_peak_usage_odn' => 'OffPeakUsageODN'
+        'valid_until' => 'ValidUntil'
     ];
 
     /**
@@ -136,16 +107,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
      */
     protected static $setters = [
         'reason' => 'setReason',
-        'valid_until' => 'setValidUntil',
-        'usage_source' => 'setUsageSource',
-        'active_annual_standard_usage_type' => 'setActiveAnnualStandardUsageType',
-        'start_advance_payment_calculation_flow' => 'setStartAdvancePaymentCalculationFlow',
-        'single_usage' => 'setSingleUsage',
-        'peak_usage' => 'setPeakUsage',
-        'off_peak_usage' => 'setOffPeakUsage',
-        'single_usage_odn' => 'setSingleUsageOdn',
-        'peak_usage_odn' => 'setPeakUsageOdn',
-        'off_peak_usage_odn' => 'setOffPeakUsageOdn'
+        'valid_until' => 'setValidUntil'
     ];
 
     /**
@@ -155,16 +117,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
      */
     protected static $getters = [
         'reason' => 'getReason',
-        'valid_until' => 'getValidUntil',
-        'usage_source' => 'getUsageSource',
-        'active_annual_standard_usage_type' => 'getActiveAnnualStandardUsageType',
-        'start_advance_payment_calculation_flow' => 'getStartAdvancePaymentCalculationFlow',
-        'single_usage' => 'getSingleUsage',
-        'peak_usage' => 'getPeakUsage',
-        'off_peak_usage' => 'getOffPeakUsage',
-        'single_usage_odn' => 'getSingleUsageOdn',
-        'peak_usage_odn' => 'getPeakUsageOdn',
-        'off_peak_usage_odn' => 'getOffPeakUsageOdn'
+        'valid_until' => 'getValidUntil'
     ];
 
     /**
@@ -175,7 +128,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -185,7 +138,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -195,7 +148,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -208,52 +161,10 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
         return self::$swaggerModelName;
     }
 
-    const USAGE_SOURCE_USER = 'User';
-    const USAGE_SOURCE_CUSTOMER = 'Customer';
-    const USAGE_SOURCE_GRID_OPERATOR = 'GridOperator';
-    const USAGE_SOURCE_EDSN_MESSAGE = 'EDSNMessage';
-    const USAGE_SOURCE_EXTERNAL_APPLICATION = 'ExternalApplication';
-    const ACTIVE_ANNUAL_STANDARD_USAGE_TYPE_SAU = 'SAU';
-    const ACTIVE_ANNUAL_STANDARD_USAGE_TYPE_EXPECTED_SAU = 'ExpectedSAU';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getUsageSourceAllowableValues()
-    {
-        return [
-            self::USAGE_SOURCE_USER,
-            self::USAGE_SOURCE_CUSTOMER,
-            self::USAGE_SOURCE_GRID_OPERATOR,
-            self::USAGE_SOURCE_EDSN_MESSAGE,
-            self::USAGE_SOURCE_EXTERNAL_APPLICATION,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getActiveAnnualStandardUsageTypeAllowableValues()
-    {
-        return [
-            self::ACTIVE_ANNUAL_STANDARD_USAGE_TYPE_SAU,
-            self::ACTIVE_ANNUAL_STANDARD_USAGE_TYPE_EXPECTED_SAU,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -263,17 +174,10 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['valid_until'] = isset($data['valid_until']) ? $data['valid_until'] : null;
-        $this->container['usage_source'] = isset($data['usage_source']) ? $data['usage_source'] : null;
-        $this->container['active_annual_standard_usage_type'] = isset($data['active_annual_standard_usage_type']) ? $data['active_annual_standard_usage_type'] : null;
-        $this->container['start_advance_payment_calculation_flow'] = isset($data['start_advance_payment_calculation_flow']) ? $data['start_advance_payment_calculation_flow'] : null;
-        $this->container['single_usage'] = isset($data['single_usage']) ? $data['single_usage'] : null;
-        $this->container['peak_usage'] = isset($data['peak_usage']) ? $data['peak_usage'] : null;
-        $this->container['off_peak_usage'] = isset($data['off_peak_usage']) ? $data['off_peak_usage'] : null;
-        $this->container['single_usage_odn'] = isset($data['single_usage_odn']) ? $data['single_usage_odn'] : null;
-        $this->container['peak_usage_odn'] = isset($data['peak_usage_odn']) ? $data['peak_usage_odn'] : null;
-        $this->container['off_peak_usage_odn'] = isset($data['off_peak_usage_odn']) ? $data['off_peak_usage_odn'] : null;
     }
 
     /**
@@ -283,23 +187,7 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getUsageSourceAllowableValues();
-        if (!is_null($this->container['usage_source']) && !in_array($this->container['usage_source'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'usage_source', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getActiveAnnualStandardUsageTypeAllowableValues();
-        if (!is_null($this->container['active_annual_standard_usage_type']) && !in_array($this->container['active_annual_standard_usage_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'active_annual_standard_usage_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -360,240 +248,6 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsagePostData implements Mode
     public function setValidUntil($valid_until)
     {
         $this->container['valid_until'] = $valid_until;
-
-        return $this;
-    }
-
-    /**
-     * Gets usage_source
-     *
-     * @return string
-     */
-    public function getUsageSource()
-    {
-        return $this->container['usage_source'];
-    }
-
-    /**
-     * Sets usage_source
-     *
-     * @param string $usage_source Met behulp van dit veld kan aangegeven worden wat de bron van het VJV is.
-     *
-     * @return $this
-     */
-    public function setUsageSource($usage_source)
-    {
-        $allowedValues = $this->getUsageSourceAllowableValues();
-        if (!is_null($usage_source) && !in_array($usage_source, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'usage_source', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['usage_source'] = $usage_source;
-
-        return $this;
-    }
-
-    /**
-     * Gets active_annual_standard_usage_type
-     *
-     * @return string
-     */
-    public function getActiveAnnualStandardUsageType()
-    {
-        return $this->container['active_annual_standard_usage_type'];
-    }
-
-    /**
-     * Sets active_annual_standard_usage_type
-     *
-     * @param string $active_annual_standard_usage_type Een VJV kan aangemaakt worden zonder dat Ecedo het gebruikt, bijvoorbeeld als dit alleen voor rapportagedoeleinden nodig is. Met behulp van dit verplichte veld kan aangegeven welke type `AnnualStandardUsage` de actieve is.
-     *
-     * @return $this
-     */
-    public function setActiveAnnualStandardUsageType($active_annual_standard_usage_type)
-    {
-        $allowedValues = $this->getActiveAnnualStandardUsageTypeAllowableValues();
-        if (!is_null($active_annual_standard_usage_type) && !in_array($active_annual_standard_usage_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'active_annual_standard_usage_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['active_annual_standard_usage_type'] = $active_annual_standard_usage_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_advance_payment_calculation_flow
-     *
-     * @return bool
-     */
-    public function getStartAdvancePaymentCalculationFlow()
-    {
-        return $this->container['start_advance_payment_calculation_flow'];
-    }
-
-    /**
-     * Sets start_advance_payment_calculation_flow
-     *
-     * @param bool $start_advance_payment_calculation_flow Optionele boolean (default: false) waarmee aangegeven kan worden dat er een nieuwe voorschotcalculatie-flow gestart moet worden vanwege het gewijzigde volume.
-     *
-     * @return $this
-     */
-    public function setStartAdvancePaymentCalculationFlow($start_advance_payment_calculation_flow)
-    {
-        $this->container['start_advance_payment_calculation_flow'] = $start_advance_payment_calculation_flow;
-
-        return $this;
-    }
-
-    /**
-     * Gets single_usage
-     *
-     * @return int
-     */
-    public function getSingleUsage()
-    {
-        return $this->container['single_usage'];
-    }
-
-    /**
-     * Sets single_usage
-     *
-     * @param int $single_usage Indien een aansluiting enkel-verbuik heeft wordt de Standaard Jaar Afname (SJA) in dit veld weergegeven.  Wanneer de aansluiting normaal- en dal-verbruik heeft is dit veld null  Wanneer de aansluiting een gas aansluiting betreft, is dit veld verplicht en moeten de anderen null zijn
-     *
-     * @return $this
-     */
-    public function setSingleUsage($single_usage)
-    {
-        $this->container['single_usage'] = $single_usage;
-
-        return $this;
-    }
-
-    /**
-     * Gets peak_usage
-     *
-     * @return int
-     */
-    public function getPeakUsage()
-    {
-        return $this->container['peak_usage'];
-    }
-
-    /**
-     * Sets peak_usage
-     *
-     * @param int $peak_usage Indien een aansluiting enkel-verbuik heeft is dit veld null.  Wanneer de aansluiting normaal- en dal-verbruik heeft wordt in dit veld het normaal-verbruik van de Standaard Jaar Afname (SJA) weergegeven.
-     *
-     * @return $this
-     */
-    public function setPeakUsage($peak_usage)
-    {
-        $this->container['peak_usage'] = $peak_usage;
-
-        return $this;
-    }
-
-    /**
-     * Gets off_peak_usage
-     *
-     * @return int
-     */
-    public function getOffPeakUsage()
-    {
-        return $this->container['off_peak_usage'];
-    }
-
-    /**
-     * Sets off_peak_usage
-     *
-     * @param int $off_peak_usage Indien een aansluiting enkel-verbuik heeft is dit veld null.  Wanneer de aansluiting normaal- en dal-verbruik heeft wordt in dit veld het dal-verbruik van de Standaard Jaar Afname (SJA) weergegeven.
-     *
-     * @return $this
-     */
-    public function setOffPeakUsage($off_peak_usage)
-    {
-        $this->container['off_peak_usage'] = $off_peak_usage;
-
-        return $this;
-    }
-
-    /**
-     * Gets single_usage_odn
-     *
-     * @return int
-     */
-    public function getSingleUsageOdn()
-    {
-        return $this->container['single_usage_odn'];
-    }
-
-    /**
-     * Sets single_usage_odn
-     *
-     * @param int $single_usage_odn Indien een aansluiting enkel-verbruik (en dus ook teruglevering) heeft wordt de Standaard Jaar Invoeding (SJI) in dit veld weergegeven. Wanneer de aansluiting geen teruglevering heeft wordt hier een 0 teruggegeven.  Wanneer de aansluiting normaal- en dal-verbruik (en dus ook teruglevering) heeft is dit veld null.
-     *
-     * @return $this
-     */
-    public function setSingleUsageOdn($single_usage_odn)
-    {
-        $this->container['single_usage_odn'] = $single_usage_odn;
-
-        return $this;
-    }
-
-    /**
-     * Gets peak_usage_odn
-     *
-     * @return int
-     */
-    public function getPeakUsageOdn()
-    {
-        return $this->container['peak_usage_odn'];
-    }
-
-    /**
-     * Sets peak_usage_odn
-     *
-     * @param int $peak_usage_odn Indien een aansluiting enkel-verbuik (en dus ook teruglevering) heeft is dit veld null.  Wanneer de aansluiting normaal- en dal-verbruik (en dus ook teruglevering) heeft wordt in dit veld de normaal-teruglevering van de Standaard Jaar Invoeding (SJI) weergegeven. Wanneer de aansluiting geen teruglevering heeft wordt hier een 0 teruggegeven.
-     *
-     * @return $this
-     */
-    public function setPeakUsageOdn($peak_usage_odn)
-    {
-        $this->container['peak_usage_odn'] = $peak_usage_odn;
-
-        return $this;
-    }
-
-    /**
-     * Gets off_peak_usage_odn
-     *
-     * @return int
-     */
-    public function getOffPeakUsageOdn()
-    {
-        return $this->container['off_peak_usage_odn'];
-    }
-
-    /**
-     * Sets off_peak_usage_odn
-     *
-     * @param int $off_peak_usage_odn Indien een aansluiting enkel-verbuik (en dus ook teruglevering) heeft is dit veld null.  Wanneer de aansluiting normaal- en dal-verbruik (en dus ook teruglevering) heeft wordt in dit veld de dal-teruglevering van de Standaard Jaar Invoeding (SJI) weergegeven. Wanneer de aansluiting geen teruglevering heeft wordt hier een 0 teruggegeven.
-     *
-     * @return $this
-     */
-    public function setOffPeakUsageOdn($off_peak_usage_odn)
-    {
-        $this->container['off_peak_usage_odn'] = $off_peak_usage_odn;
 
         return $this;
     }

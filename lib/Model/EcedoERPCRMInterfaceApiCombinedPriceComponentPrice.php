@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice extends EcedoERPCRMInterfaceApiPriceComponentPrice 
 {
     const DISCRIMINATOR = null;
 
@@ -57,17 +55,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'source_prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPriceComponentPrice[]',
-        'price_component_type' => 'string',
-        'price_component_type_localized' => 'string',
-        'price_unit' => 'string',
-        'price_unit_localized' => 'string',
-        'price' => 'double',
-        'price_taxed' => 'double',
-        'vat_inclusive' => 'bool',
-        'vat_percentage' => 'double',
-        'range_begin' => 'int',
-        'range_end' => 'int'
+        'source_prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPriceComponentPrice[]'
     ];
 
     /**
@@ -76,17 +64,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'source_prices' => null,
-        'price_component_type' => null,
-        'price_component_type_localized' => null,
-        'price_unit' => null,
-        'price_unit_localized' => null,
-        'price' => 'double',
-        'price_taxed' => 'double',
-        'vat_inclusive' => null,
-        'vat_percentage' => 'double',
-        'range_begin' => 'int32',
-        'range_end' => 'int32'
+        'source_prices' => null
     ];
 
     /**
@@ -96,7 +74,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -106,7 +84,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -116,17 +94,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_prices' => 'SourcePrices',
-        'price_component_type' => 'PriceComponentType',
-        'price_component_type_localized' => 'PriceComponentTypeLocalized',
-        'price_unit' => 'PriceUnit',
-        'price_unit_localized' => 'PriceUnitLocalized',
-        'price' => 'Price',
-        'price_taxed' => 'PriceTaxed',
-        'vat_inclusive' => 'VatInclusive',
-        'vat_percentage' => 'VatPercentage',
-        'range_begin' => 'RangeBegin',
-        'range_end' => 'RangeEnd'
+        'source_prices' => 'SourcePrices'
     ];
 
     /**
@@ -135,17 +103,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-        'source_prices' => 'setSourcePrices',
-        'price_component_type' => 'setPriceComponentType',
-        'price_component_type_localized' => 'setPriceComponentTypeLocalized',
-        'price_unit' => 'setPriceUnit',
-        'price_unit_localized' => 'setPriceUnitLocalized',
-        'price' => 'setPrice',
-        'price_taxed' => 'setPriceTaxed',
-        'vat_inclusive' => 'setVatInclusive',
-        'vat_percentage' => 'setVatPercentage',
-        'range_begin' => 'setRangeBegin',
-        'range_end' => 'setRangeEnd'
+        'source_prices' => 'setSourcePrices'
     ];
 
     /**
@@ -154,17 +112,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
      * @var string[]
      */
     protected static $getters = [
-        'source_prices' => 'getSourcePrices',
-        'price_component_type' => 'getPriceComponentType',
-        'price_component_type_localized' => 'getPriceComponentTypeLocalized',
-        'price_unit' => 'getPriceUnit',
-        'price_unit_localized' => 'getPriceUnitLocalized',
-        'price' => 'getPrice',
-        'price_taxed' => 'getPriceTaxed',
-        'vat_inclusive' => 'getVatInclusive',
-        'vat_percentage' => 'getVatPercentage',
-        'range_begin' => 'getRangeBegin',
-        'range_end' => 'getRangeEnd'
+        'source_prices' => 'getSourcePrices'
     ];
 
     /**
@@ -175,7 +123,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -185,7 +133,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -195,7 +143,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -208,55 +156,10 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
         return self::$swaggerModelName;
     }
 
-    const PRICE_UNIT_YEAR = 'Year';
-    const PRICE_UNIT_DAY = 'Day';
-    const PRICE_UNIT_KWH = 'KWh';
-    const PRICE_UNIT_M3 = 'M3';
-    const PRICE_UNIT_ONE_OFF = 'OneOff';
-    const PRICE_UNIT_MONTH = 'Month';
-    const PRICE_UNIT_MWH = 'MWh';
-    const PRICE_UNIT_WH = 'Wh';
-    const PRICE_UNIT_INVOICE = 'Invoice';
-    const PRICE_UNIT_PERCENTAGE = 'Percentage';
-    const PRICE_UNIT_SECONDS = 'Seconds';
-    const PRICE_UNIT_CHARGE_SESSION = 'ChargeSession';
-    const PRICE_UNIT_CREDIT = 'Credit';
-    const PRICE_UNIT_HOUR = 'Hour';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getPriceUnitAllowableValues()
-    {
-        return [
-            self::PRICE_UNIT_YEAR,
-            self::PRICE_UNIT_DAY,
-            self::PRICE_UNIT_KWH,
-            self::PRICE_UNIT_M3,
-            self::PRICE_UNIT_ONE_OFF,
-            self::PRICE_UNIT_MONTH,
-            self::PRICE_UNIT_MWH,
-            self::PRICE_UNIT_WH,
-            self::PRICE_UNIT_INVOICE,
-            self::PRICE_UNIT_PERCENTAGE,
-            self::PRICE_UNIT_SECONDS,
-            self::PRICE_UNIT_CHARGE_SESSION,
-            self::PRICE_UNIT_CREDIT,
-            self::PRICE_UNIT_HOUR,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -266,17 +169,9 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['source_prices'] = isset($data['source_prices']) ? $data['source_prices'] : null;
-        $this->container['price_component_type'] = isset($data['price_component_type']) ? $data['price_component_type'] : null;
-        $this->container['price_component_type_localized'] = isset($data['price_component_type_localized']) ? $data['price_component_type_localized'] : null;
-        $this->container['price_unit'] = isset($data['price_unit']) ? $data['price_unit'] : null;
-        $this->container['price_unit_localized'] = isset($data['price_unit_localized']) ? $data['price_unit_localized'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['price_taxed'] = isset($data['price_taxed']) ? $data['price_taxed'] : null;
-        $this->container['vat_inclusive'] = isset($data['vat_inclusive']) ? $data['vat_inclusive'] : null;
-        $this->container['vat_percentage'] = isset($data['vat_percentage']) ? $data['vat_percentage'] : null;
-        $this->container['range_begin'] = isset($data['range_begin']) ? $data['range_begin'] : null;
-        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
     }
 
     /**
@@ -286,15 +181,7 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getPriceUnitAllowableValues();
-        if (!is_null($this->container['price_unit']) && !in_array($this->container['price_unit'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'price_unit', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -331,255 +218,6 @@ class EcedoERPCRMInterfaceApiCombinedPriceComponentPrice implements ModelInterfa
     public function setSourcePrices($source_prices)
     {
         $this->container['source_prices'] = $source_prices;
-
-        return $this;
-    }
-
-    /**
-     * Gets price_component_type
-     *
-     * @return string
-     */
-    public function getPriceComponentType()
-    {
-        return $this->container['price_component_type'];
-    }
-
-    /**
-     * Sets price_component_type
-     *
-     * @param string $price_component_type price_component_type
-     *
-     * @return $this
-     */
-    public function setPriceComponentType($price_component_type)
-    {
-        $this->container['price_component_type'] = $price_component_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets price_component_type_localized
-     *
-     * @return string
-     */
-    public function getPriceComponentTypeLocalized()
-    {
-        return $this->container['price_component_type_localized'];
-    }
-
-    /**
-     * Sets price_component_type_localized
-     *
-     * @param string $price_component_type_localized price_component_type_localized
-     *
-     * @return $this
-     */
-    public function setPriceComponentTypeLocalized($price_component_type_localized)
-    {
-        $this->container['price_component_type_localized'] = $price_component_type_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets price_unit
-     *
-     * @return string
-     */
-    public function getPriceUnit()
-    {
-        return $this->container['price_unit'];
-    }
-
-    /**
-     * Sets price_unit
-     *
-     * @param string $price_unit price_unit
-     *
-     * @return $this
-     */
-    public function setPriceUnit($price_unit)
-    {
-        $allowedValues = $this->getPriceUnitAllowableValues();
-        if (!is_null($price_unit) && !in_array($price_unit, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'price_unit', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['price_unit'] = $price_unit;
-
-        return $this;
-    }
-
-    /**
-     * Gets price_unit_localized
-     *
-     * @return string
-     */
-    public function getPriceUnitLocalized()
-    {
-        return $this->container['price_unit_localized'];
-    }
-
-    /**
-     * Sets price_unit_localized
-     *
-     * @param string $price_unit_localized price_unit_localized
-     *
-     * @return $this
-     */
-    public function setPriceUnitLocalized($price_unit_localized)
-    {
-        $this->container['price_unit_localized'] = $price_unit_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets price
-     *
-     * @return double
-     */
-    public function getPrice()
-    {
-        return $this->container['price'];
-    }
-
-    /**
-     * Sets price
-     *
-     * @param double $price price
-     *
-     * @return $this
-     */
-    public function setPrice($price)
-    {
-        $this->container['price'] = $price;
-
-        return $this;
-    }
-
-    /**
-     * Gets price_taxed
-     *
-     * @return double
-     */
-    public function getPriceTaxed()
-    {
-        return $this->container['price_taxed'];
-    }
-
-    /**
-     * Sets price_taxed
-     *
-     * @param double $price_taxed price_taxed
-     *
-     * @return $this
-     */
-    public function setPriceTaxed($price_taxed)
-    {
-        $this->container['price_taxed'] = $price_taxed;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat_inclusive
-     *
-     * @return bool
-     */
-    public function getVatInclusive()
-    {
-        return $this->container['vat_inclusive'];
-    }
-
-    /**
-     * Sets vat_inclusive
-     *
-     * @param bool $vat_inclusive vat_inclusive
-     *
-     * @return $this
-     */
-    public function setVatInclusive($vat_inclusive)
-    {
-        $this->container['vat_inclusive'] = $vat_inclusive;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat_percentage
-     *
-     * @return double
-     */
-    public function getVatPercentage()
-    {
-        return $this->container['vat_percentage'];
-    }
-
-    /**
-     * Sets vat_percentage
-     *
-     * @param double $vat_percentage vat_percentage
-     *
-     * @return $this
-     */
-    public function setVatPercentage($vat_percentage)
-    {
-        $this->container['vat_percentage'] = $vat_percentage;
-
-        return $this;
-    }
-
-    /**
-     * Gets range_begin
-     *
-     * @return int
-     */
-    public function getRangeBegin()
-    {
-        return $this->container['range_begin'];
-    }
-
-    /**
-     * Sets range_begin
-     *
-     * @param int $range_begin range_begin
-     *
-     * @return $this
-     */
-    public function setRangeBegin($range_begin)
-    {
-        $this->container['range_begin'] = $range_begin;
-
-        return $this;
-    }
-
-    /**
-     * Gets range_end
-     *
-     * @return int
-     */
-    public function getRangeEnd()
-    {
-        return $this->container['range_end'];
-    }
-
-    /**
-     * Sets range_end
-     *
-     * @param int $range_end range_end
-     *
-     * @return $this
-     */
-    public function setRangeEnd($range_end)
-    {
-        $this->container['range_end'] = $range_end;
 
         return $this;
     }

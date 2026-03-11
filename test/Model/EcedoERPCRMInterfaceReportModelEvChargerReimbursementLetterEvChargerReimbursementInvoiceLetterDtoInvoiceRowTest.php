@@ -355,4 +355,11 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
     public function testPropertyRowConnectionEan()
     {
     }
+
+    /**
+     * Test attribute "row_price_block_id"
+     */
+    public function testPropertyRowPriceBlockId()
+    {
+    }
 }

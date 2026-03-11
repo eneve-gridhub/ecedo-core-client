@@ -82,18 +82,4 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostDataTest extends \PHP
     public function testPropertyConnectionId()
     {
     }
-
-    /**
-     * Test attribute "contract_property_type"
-     */
-    public function testPropertyContractPropertyType()
-    {
-    }
-
-    /**
-     * Test attribute "contract_property_value"
-     */
-    public function testPropertyContractPropertyValue()
-    {
-    }
 }

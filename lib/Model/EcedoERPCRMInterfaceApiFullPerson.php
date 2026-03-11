@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiFullPerson extends EcedoERPCRMInterfaceApiPerson 
 {
     const DISCRIMINATOR = null;
 
@@ -64,17 +62,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
         'product_groups' => 'string[]',
         'roles' => 'string[]',
         'roles_cc' => 'string[]',
-        'is_default' => 'bool',
-        'person_id' => 'string',
-        'gender' => 'string',
-        'gender_localized' => 'string',
-        'initials' => 'string',
-        'first_name' => 'string',
-        'infix' => 'string',
-        'last_name' => 'string',
-        'birth_date' => '\DateTime',
-        'full_name' => 'string',
-        'title' => 'string'
+        'is_default' => 'bool'
     ];
 
     /**
@@ -90,17 +78,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
         'product_groups' => null,
         'roles' => null,
         'roles_cc' => null,
-        'is_default' => null,
-        'person_id' => null,
-        'gender' => null,
-        'gender_localized' => null,
-        'initials' => null,
-        'first_name' => null,
-        'infix' => null,
-        'last_name' => null,
-        'birth_date' => 'date',
-        'full_name' => null,
-        'title' => null
+        'is_default' => null
     ];
 
     /**
@@ -110,7 +88,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -120,7 +98,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -137,17 +115,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
         'product_groups' => 'ProductGroups',
         'roles' => 'Roles',
         'roles_cc' => 'RolesCC',
-        'is_default' => 'IsDefault',
-        'person_id' => 'PersonId',
-        'gender' => 'Gender',
-        'gender_localized' => 'GenderLocalized',
-        'initials' => 'Initials',
-        'first_name' => 'FirstName',
-        'infix' => 'Infix',
-        'last_name' => 'LastName',
-        'birth_date' => 'BirthDate',
-        'full_name' => 'FullName',
-        'title' => 'Title'
+        'is_default' => 'IsDefault'
     ];
 
     /**
@@ -163,17 +131,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
         'product_groups' => 'setProductGroups',
         'roles' => 'setRoles',
         'roles_cc' => 'setRolesCc',
-        'is_default' => 'setIsDefault',
-        'person_id' => 'setPersonId',
-        'gender' => 'setGender',
-        'gender_localized' => 'setGenderLocalized',
-        'initials' => 'setInitials',
-        'first_name' => 'setFirstName',
-        'infix' => 'setInfix',
-        'last_name' => 'setLastName',
-        'birth_date' => 'setBirthDate',
-        'full_name' => 'setFullName',
-        'title' => 'setTitle'
+        'is_default' => 'setIsDefault'
     ];
 
     /**
@@ -189,17 +147,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
         'product_groups' => 'getProductGroups',
         'roles' => 'getRoles',
         'roles_cc' => 'getRolesCc',
-        'is_default' => 'getIsDefault',
-        'person_id' => 'getPersonId',
-        'gender' => 'getGender',
-        'gender_localized' => 'getGenderLocalized',
-        'initials' => 'getInitials',
-        'first_name' => 'getFirstName',
-        'infix' => 'getInfix',
-        'last_name' => 'getLastName',
-        'birth_date' => 'getBirthDate',
-        'full_name' => 'getFullName',
-        'title' => 'getTitle'
+        'is_default' => 'getIsDefault'
     ];
 
     /**
@@ -210,7 +158,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -220,7 +168,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -230,7 +178,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -320,12 +268,6 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
     }
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -335,6 +277,8 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['function'] = isset($data['function']) ? $data['function'] : null;
         $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
@@ -343,16 +287,6 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
         $this->container['roles'] = isset($data['roles']) ? $data['roles'] : null;
         $this->container['roles_cc'] = isset($data['roles_cc']) ? $data['roles_cc'] : null;
         $this->container['is_default'] = isset($data['is_default']) ? $data['is_default'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['gender_localized'] = isset($data['gender_localized']) ? $data['gender_localized'] : null;
-        $this->container['initials'] = isset($data['initials']) ? $data['initials'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['infix'] = isset($data['infix']) ? $data['infix'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
-        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
     }
 
     /**
@@ -362,7 +296,7 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -594,246 +528,6 @@ class EcedoERPCRMInterfaceApiFullPerson implements ModelInterface, ArrayAccess
     public function setIsDefault($is_default)
     {
         $this->container['is_default'] = $is_default;
-
-        return $this;
-    }
-
-    /**
-     * Gets person_id
-     *
-     * @return string
-     */
-    public function getPersonId()
-    {
-        return $this->container['person_id'];
-    }
-
-    /**
-     * Sets person_id
-     *
-     * @param string $person_id person_id
-     *
-     * @return $this
-     */
-    public function setPersonId($person_id)
-    {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets gender
-     *
-     * @return string
-     */
-    public function getGender()
-    {
-        return $this->container['gender'];
-    }
-
-    /**
-     * Sets gender
-     *
-     * @param string $gender gender
-     *
-     * @return $this
-     */
-    public function setGender($gender)
-    {
-        $this->container['gender'] = $gender;
-
-        return $this;
-    }
-
-    /**
-     * Gets gender_localized
-     *
-     * @return string
-     */
-    public function getGenderLocalized()
-    {
-        return $this->container['gender_localized'];
-    }
-
-    /**
-     * Sets gender_localized
-     *
-     * @param string $gender_localized gender_localized
-     *
-     * @return $this
-     */
-    public function setGenderLocalized($gender_localized)
-    {
-        $this->container['gender_localized'] = $gender_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets initials
-     *
-     * @return string
-     */
-    public function getInitials()
-    {
-        return $this->container['initials'];
-    }
-
-    /**
-     * Sets initials
-     *
-     * @param string $initials initials
-     *
-     * @return $this
-     */
-    public function setInitials($initials)
-    {
-        $this->container['initials'] = $initials;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_name
-     *
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->container['first_name'];
-    }
-
-    /**
-     * Sets first_name
-     *
-     * @param string $first_name first_name
-     *
-     * @return $this
-     */
-    public function setFirstName($first_name)
-    {
-        $this->container['first_name'] = $first_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets infix
-     *
-     * @return string
-     */
-    public function getInfix()
-    {
-        return $this->container['infix'];
-    }
-
-    /**
-     * Sets infix
-     *
-     * @param string $infix infix
-     *
-     * @return $this
-     */
-    public function setInfix($infix)
-    {
-        $this->container['infix'] = $infix;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_name
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['last_name'];
-    }
-
-    /**
-     * Sets last_name
-     *
-     * @param string $last_name last_name
-     *
-     * @return $this
-     */
-    public function setLastName($last_name)
-    {
-        $this->container['last_name'] = $last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets birth_date
-     *
-     * @return \DateTime
-     */
-    public function getBirthDate()
-    {
-        return $this->container['birth_date'];
-    }
-
-    /**
-     * Sets birth_date
-     *
-     * @param \DateTime $birth_date birth_date
-     *
-     * @return $this
-     */
-    public function setBirthDate($birth_date)
-    {
-        $this->container['birth_date'] = $birth_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets full_name
-     *
-     * @return string
-     */
-    public function getFullName()
-    {
-        return $this->container['full_name'];
-    }
-
-    /**
-     * Sets full_name
-     *
-     * @param string $full_name full_name
-     *
-     * @return $this
-     */
-    public function setFullName($full_name)
-    {
-        $this->container['full_name'] = $full_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title title
-     *
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
 
         return $this;
     }

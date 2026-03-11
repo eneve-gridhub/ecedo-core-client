@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData extends EcedoERPCRMInterfaceApiContractPropertyPostData 
 {
     const DISCRIMINATOR = null;
 
@@ -57,9 +55,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'connection_id' => 'string',
-        'contract_property_type' => 'string',
-        'contract_property_value' => 'string'
+        'connection_id' => 'string'
     ];
 
     /**
@@ -68,9 +64,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'connection_id' => null,
-        'contract_property_type' => null,
-        'contract_property_value' => null
+        'connection_id' => null
     ];
 
     /**
@@ -80,7 +74,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -90,7 +84,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -100,9 +94,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
      * @var string[]
      */
     protected static $attributeMap = [
-        'connection_id' => 'ConnectionId',
-        'contract_property_type' => 'ContractPropertyType',
-        'contract_property_value' => 'ContractPropertyValue'
+        'connection_id' => 'ConnectionId'
     ];
 
     /**
@@ -111,9 +103,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
      * @var string[]
      */
     protected static $setters = [
-        'connection_id' => 'setConnectionId',
-        'contract_property_type' => 'setContractPropertyType',
-        'contract_property_value' => 'setContractPropertyValue'
+        'connection_id' => 'setConnectionId'
     ];
 
     /**
@@ -122,9 +112,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
      * @var string[]
      */
     protected static $getters = [
-        'connection_id' => 'getConnectionId',
-        'contract_property_type' => 'getContractPropertyType',
-        'contract_property_value' => 'getContractPropertyValue'
+        'connection_id' => 'getConnectionId'
     ];
 
     /**
@@ -135,7 +123,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -145,7 +133,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -155,7 +143,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -168,103 +156,10 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
         return self::$swaggerModelName;
     }
 
-    const CONTRACT_PROPERTY_TYPE_HAS_TERMINATION_FEE = 'HasTerminationFee';
-    const CONTRACT_PROPERTY_TYPE_SETTLEMENT_INVOICE_FREQUENCY = 'SettlementInvoiceFrequency';
-    const CONTRACT_PROPERTY_TYPE_HAS_ADVANCE_PAYMENT_CALCULATION = 'HasAdvancePaymentCalculation';
-    const CONTRACT_PROPERTY_TYPE_ADVANCE_PAYMENT_SCHEME = 'AdvancePaymentScheme';
-    const CONTRACT_PROPERTY_TYPE_HAS_TARIFF_CHANGE_METER_READINGS = 'HasTariffChangeMeterReadings';
-    const CONTRACT_PROPERTY_TYPE_MARKET_PRICE_RISK_MARKUP_THRESHOLD = 'MarketPriceRiskMarkupThreshold';
-    const CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE = 'ElectricityPowerType';
-    const CONTRACT_PROPERTY_TYPE_FIXED_ODN_PRICE = 'FixedODNPrice';
-    const CONTRACT_PROPERTY_TYPE_ACTION_DISCOUNT_MOMENT = 'ActionDiscountMoment';
-    const CONTRACT_PROPERTY_TYPE_DEPOSIT_SETTLE_MOMENT = 'DepositSettleMoment';
-    const CONTRACT_PROPERTY_TYPE_CHANNEL = 'Channel';
-    const CONTRACT_PROPERTY_TYPE_SALES_REFERENCE = 'SalesReference';
-    const CONTRACT_PROPERTY_TYPE_SOLAR_SETTLEMENT_TO_COOPERATION = 'SolarSettlementToCooperation';
-    const CONTRACT_PROPERTY_TYPE_HAS_MEMBERSHIP_FEE_LOCAL_ENERGY = 'HasMembershipFeeLocalEnergy';
-    const CONTRACT_PROPERTY_TYPE_RESELLER = 'Reseller';
-    const CONTRACT_PROPERTY_TYPE_CLIENT_REVENUE_PERCENTAGE = 'ClientRevenuePercentage';
-    const CONTRACT_PROPERTY_TYPE_CREDIT_LIMIT = 'CreditLimit';
-    const CONTRACT_PROPERTY_TYPE_CAMPAIGN = 'Campaign';
-    const CONTRACT_PROPERTY_TYPE_HAS_ADVANCE_PAYMENT_INVOICE_DOCUMENT_PRINT_FEE = 'HasAdvancePaymentInvoiceDocumentPrintFee';
-    const CONTRACT_PROPERTY_TYPE_HAS_ADVANCE_PAYMENT_INVOICE_DOCUMENT_GENERATE_FEE = 'HasAdvancePaymentInvoiceDocumentGenerateFee';
-    const CONTRACT_PROPERTY_TYPE_CREDIT_INSURANCE_IDENTIFIER = 'CreditInsuranceIdentifier';
-    const CONTRACT_PROPERTY_TYPE_HAS_ENERGY_TAX = 'HasEnergyTax';
-    const CONTRACT_PROPERTY_TYPE_HAS_COLLECTION_FEES = 'HasCollectionFees';
-    const CONTRACT_PROPERTY_TYPE_MAX_ODN_LIMIT_TARIFF = 'MaxODNLimitTariff';
-    const CONTRACT_PROPERTY_TYPE_GAS_GREENING_OPTION = 'GasGreeningOption';
-    const CONTRACT_PROPERTY_TYPE_ELECTRICITY_GREENING_OPTION = 'ElectricityGreeningOption';
-    const CONTRACT_PROPERTY_TYPE_NOTICE_PERIOD = 'NoticePeriod';
-    const CONTRACT_PROPERTY_TYPE_PURCHASE_ORDER_NUMBER = 'PurchaseOrderNumber';
-    const CONTRACT_PROPERTY_TYPE_CURTAILMENT_PROFIT_DISTRIBUTION_KEY = 'CurtailmentProfitDistributionKey';
-    const CONTRACT_PROPERTY_TYPE_RENEWAL_DATE = 'RenewalDate';
-    const CONTRACT_PROPERTY_TYPE_HAS_ROLLING_DEPOSIT = 'HasRollingDeposit';
-    const CONTRACT_PROPERTY_TYPE_MIN_IMBALANCE_COMPENSATION_TARIFF = 'MinImbalanceCompensationTariff';
-    const CONTRACT_PROPERTY_TYPE_LOSS_DATE = 'LossDate';
-    const CONTRACT_PROPERTY_TYPE_WAIT_FOR_MODIFICATION = 'WaitForModification';
-    const CONTRACT_PROPERTY_TYPE_FIXED_LDN_MARKET_PRICE = 'FixedLDNMarketPrice';
-    const CONTRACT_PROPERTY_TYPE_SDE_REGULATION = 'SDERegulation';
-    const CONTRACT_PROPERTY_TYPE_CONTRACT_END_DATE_ON_LOSS = 'ContractEndDateOnLoss';
-    const CONTRACT_PROPERTY_TYPE_NO_TERMINATION_FEE_PERIOD = 'NoTerminationFeePeriod';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getContractPropertyTypeAllowableValues()
-    {
-        return [
-            self::CONTRACT_PROPERTY_TYPE_HAS_TERMINATION_FEE,
-            self::CONTRACT_PROPERTY_TYPE_SETTLEMENT_INVOICE_FREQUENCY,
-            self::CONTRACT_PROPERTY_TYPE_HAS_ADVANCE_PAYMENT_CALCULATION,
-            self::CONTRACT_PROPERTY_TYPE_ADVANCE_PAYMENT_SCHEME,
-            self::CONTRACT_PROPERTY_TYPE_HAS_TARIFF_CHANGE_METER_READINGS,
-            self::CONTRACT_PROPERTY_TYPE_MARKET_PRICE_RISK_MARKUP_THRESHOLD,
-            self::CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE,
-            self::CONTRACT_PROPERTY_TYPE_FIXED_ODN_PRICE,
-            self::CONTRACT_PROPERTY_TYPE_ACTION_DISCOUNT_MOMENT,
-            self::CONTRACT_PROPERTY_TYPE_DEPOSIT_SETTLE_MOMENT,
-            self::CONTRACT_PROPERTY_TYPE_CHANNEL,
-            self::CONTRACT_PROPERTY_TYPE_SALES_REFERENCE,
-            self::CONTRACT_PROPERTY_TYPE_SOLAR_SETTLEMENT_TO_COOPERATION,
-            self::CONTRACT_PROPERTY_TYPE_HAS_MEMBERSHIP_FEE_LOCAL_ENERGY,
-            self::CONTRACT_PROPERTY_TYPE_RESELLER,
-            self::CONTRACT_PROPERTY_TYPE_CLIENT_REVENUE_PERCENTAGE,
-            self::CONTRACT_PROPERTY_TYPE_CREDIT_LIMIT,
-            self::CONTRACT_PROPERTY_TYPE_CAMPAIGN,
-            self::CONTRACT_PROPERTY_TYPE_HAS_ADVANCE_PAYMENT_INVOICE_DOCUMENT_PRINT_FEE,
-            self::CONTRACT_PROPERTY_TYPE_HAS_ADVANCE_PAYMENT_INVOICE_DOCUMENT_GENERATE_FEE,
-            self::CONTRACT_PROPERTY_TYPE_CREDIT_INSURANCE_IDENTIFIER,
-            self::CONTRACT_PROPERTY_TYPE_HAS_ENERGY_TAX,
-            self::CONTRACT_PROPERTY_TYPE_HAS_COLLECTION_FEES,
-            self::CONTRACT_PROPERTY_TYPE_MAX_ODN_LIMIT_TARIFF,
-            self::CONTRACT_PROPERTY_TYPE_GAS_GREENING_OPTION,
-            self::CONTRACT_PROPERTY_TYPE_ELECTRICITY_GREENING_OPTION,
-            self::CONTRACT_PROPERTY_TYPE_NOTICE_PERIOD,
-            self::CONTRACT_PROPERTY_TYPE_PURCHASE_ORDER_NUMBER,
-            self::CONTRACT_PROPERTY_TYPE_CURTAILMENT_PROFIT_DISTRIBUTION_KEY,
-            self::CONTRACT_PROPERTY_TYPE_RENEWAL_DATE,
-            self::CONTRACT_PROPERTY_TYPE_HAS_ROLLING_DEPOSIT,
-            self::CONTRACT_PROPERTY_TYPE_MIN_IMBALANCE_COMPENSATION_TARIFF,
-            self::CONTRACT_PROPERTY_TYPE_LOSS_DATE,
-            self::CONTRACT_PROPERTY_TYPE_WAIT_FOR_MODIFICATION,
-            self::CONTRACT_PROPERTY_TYPE_FIXED_LDN_MARKET_PRICE,
-            self::CONTRACT_PROPERTY_TYPE_SDE_REGULATION,
-            self::CONTRACT_PROPERTY_TYPE_CONTRACT_END_DATE_ON_LOSS,
-            self::CONTRACT_PROPERTY_TYPE_NO_TERMINATION_FEE_PERIOD,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -274,9 +169,9 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
-        $this->container['contract_property_type'] = isset($data['contract_property_type']) ? $data['contract_property_type'] : null;
-        $this->container['contract_property_value'] = isset($data['contract_property_value']) ? $data['contract_property_value'] : null;
     }
 
     /**
@@ -286,15 +181,7 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getContractPropertyTypeAllowableValues();
-        if (!is_null($this->container['contract_property_type']) && !in_array($this->container['contract_property_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'contract_property_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -331,63 +218,6 @@ class EcedoERPCRMInterfaceApiConnectionContractPropertyPostData implements Model
     public function setConnectionId($connection_id)
     {
         $this->container['connection_id'] = $connection_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets contract_property_type
-     *
-     * @return string
-     */
-    public function getContractPropertyType()
-    {
-        return $this->container['contract_property_type'];
-    }
-
-    /**
-     * Sets contract_property_type
-     *
-     * @param string $contract_property_type contract_property_type
-     *
-     * @return $this
-     */
-    public function setContractPropertyType($contract_property_type)
-    {
-        $allowedValues = $this->getContractPropertyTypeAllowableValues();
-        if (!is_null($contract_property_type) && !in_array($contract_property_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'contract_property_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['contract_property_type'] = $contract_property_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets contract_property_value
-     *
-     * @return string
-     */
-    public function getContractPropertyValue()
-    {
-        return $this->container['contract_property_value'];
-    }
-
-    /**
-     * Sets contract_property_value
-     *
-     * @param string $contract_property_value contract_property_value
-     *
-     * @return $this
-     */
-    public function setContractPropertyValue($contract_property_value)
-    {
-        $this->container['contract_property_value'] = $contract_property_value;
 
         return $this;
     }

@@ -82,39 +82,4 @@ class EcedoERPCRMInterfaceApiDraftAdvancePaymentPerConnectionTest extends \PHPUn
     public function testPropertyEan()
     {
     }
-
-    /**
-     * Test attribute "connection_id"
-     */
-    public function testPropertyConnectionId()
-    {
-    }
-
-    /**
-     * Test attribute "market_segment"
-     */
-    public function testPropertyMarketSegment()
-    {
-    }
-
-    /**
-     * Test attribute "amount"
-     */
-    public function testPropertyAmount()
-    {
-    }
-
-    /**
-     * Test attribute "calculated_amount"
-     */
-    public function testPropertyCalculatedAmount()
-    {
-    }
-
-    /**
-     * Test attribute "agreed_amount"
-     */
-    public function testPropertyAgreedAmount()
-    {
-    }
 }

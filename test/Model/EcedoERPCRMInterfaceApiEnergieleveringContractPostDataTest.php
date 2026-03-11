@@ -124,46 +124,4 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPostDataTest extends \PHPUni
     public function testPropertyContractProperties()
     {
     }
-
-    /**
-     * Test attribute "agreement_date"
-     */
-    public function testPropertyAgreementDate()
-    {
-    }
-
-    /**
-     * Test attribute "reference"
-     */
-    public function testPropertyReference()
-    {
-    }
-
-    /**
-     * Test attribute "start_date"
-     */
-    public function testPropertyStartDate()
-    {
-    }
-
-    /**
-     * Test attribute "end_date"
-     */
-    public function testPropertyEndDate()
-    {
-    }
-
-    /**
-     * Test attribute "proposition_reference"
-     */
-    public function testPropertyPropositionReference()
-    {
-    }
-
-    /**
-     * Test attribute "comment"
-     */
-    public function testPropertyComment()
-    {
-    }
 }

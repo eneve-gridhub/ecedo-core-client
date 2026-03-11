@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -217,6 +217,10 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         $this->container['month'] = isset($data['month']) ? $data['month'] : null;
         $this->container['connections'] = isset($data['connections']) ? $data['connections'] : null;
         $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

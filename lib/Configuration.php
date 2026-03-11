@@ -81,7 +81,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://demo.ecedo.com';
+    protected $host = 'https://innova.ecedo.com';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default

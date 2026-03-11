@@ -154,6 +154,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "valid_until"
+     */
+    public function testPropertyValidUntil()
+    {
+    }
+
+    /**
      * Test attribute "connection_is_electricity"
      */
     public function testPropertyConnectionIsElectricity()
@@ -171,6 +178,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
      * Test attribute "has_base_prices"
      */
     public function testPropertyHasBasePrices()
+    {
+    }
+
+    /**
+     * Test attribute "has_price_block_ldn_prices"
+     */
+    public function testPropertyHasPriceBlockLdnPrices()
     {
     }
 
@@ -210,6 +224,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "reference_proposition_pricing_type"
+     */
+    public function testPropertyReferencePropositionPricingType()
+    {
+    }
+
+    /**
      * Test attribute "reference_proposition_meelift_proposition_id"
      */
     public function testPropertyReferencePropositionMeeliftPropositionId()
@@ -245,6 +266,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "reference_proposition_price_block_ldn_price"
+     */
+    public function testPropertyReferencePropositionPriceBlockLdnPrice()
+    {
+    }
+
+    /**
      * Test attribute "reference_proposition_peak_vat_price"
      */
     public function testPropertyReferencePropositionPeakVatPrice()
@@ -262,6 +290,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
      * Test attribute "reference_proposition_base_vat_price"
      */
     public function testPropertyReferencePropositionBaseVatPrice()
+    {
+    }
+
+    /**
+     * Test attribute "reference_proposition_price_block_ldn_vat_price"
+     */
+    public function testPropertyReferencePropositionPriceBlockLdnVatPrice()
     {
     }
 
@@ -287,6 +322,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "reference_proposition_price_block_ldn_total_price"
+     */
+    public function testPropertyReferencePropositionPriceBlockLdnTotalPrice()
+    {
+    }
+
+    /**
      * Test attribute "contract_proposition_id"
      */
     public function testPropertyContractPropositionId()
@@ -297,6 +339,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
      * Test attribute "contract_proposition_reference"
      */
     public function testPropertyContractPropositionReference()
+    {
+    }
+
+    /**
+     * Test attribute "contract_proposition_pricing_type"
+     */
+    public function testPropertyContractPropositionPricingType()
     {
     }
 
@@ -336,6 +385,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "contract_price_block_ldn_price"
+     */
+    public function testPropertyContractPriceBlockLdnPrice()
+    {
+    }
+
+    /**
      * Test attribute "contract_peak_vat_price"
      */
     public function testPropertyContractPeakVatPrice()
@@ -357,6 +413,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "contract_price_block_ldn_vat_price"
+     */
+    public function testPropertyContractPriceBlockLdnVatPrice()
+    {
+    }
+
+    /**
      * Test attribute "contract_peak_total_price"
      */
     public function testPropertyContractPeakTotalPrice()
@@ -374,6 +437,13 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
      * Test attribute "contract_base_total_price"
      */
     public function testPropertyContractBaseTotalPrice()
+    {
+    }
+
+    /**
+     * Test attribute "contract_price_block_ldn_total_price"
+     */
+    public function testPropertyContractPriceBlockLdnTotalPrice()
     {
     }
 

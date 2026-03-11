@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -248,18 +248,18 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
-    const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
     const PROPOSITION_PRICING_TYPE_FIXED = 'Fixed';
+    const PROPOSITION_PRICING_TYPE_VARIABLE = 'Variable';
+    const PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE = 'MarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE = 'MeanDayMarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE = 'MeanMonthMarketPriceVariable';
     const PROPOSITION_PRICING_TYPE_FUTURE_YEAR_MARKET_PRICE_FIXED = 'FutureYearMarketPriceFixed';
     const PROPOSITION_PRICING_TYPE_HYBRID_ENDEX = 'HybridEndex';
     const PROPOSITION_PRICING_TYPE_FULL_ENDEX = 'FullEndex';
     const PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE = 'UnweightedMeanMarketPrice';
-    const PROPOSITION_MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY = 'TtfDayAheadDay';
-    const PROPOSITION_MARKET_PRICE_SOURCE_NONE = 'None';
+    const PROPOSITION_PRICING_TYPE_PRICE_BLOCK_FIXED = 'PriceBlockFixed';
     const PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_HOUR = 'ApxDayAheadHour';
+    const PROPOSITION_MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY = 'TtfDayAheadDay';
     const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_DAY = 'MeanApxDay';
     const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_MONTH = 'MeanApxMonth';
     const PROPOSITION_MARKET_PRICE_SOURCE_MEAN_TTF_DAY = 'MeanTtfDay';
@@ -272,6 +272,7 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
     const PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_PEAK = 'ReconciliationPeak';
     const PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_OFF_PEAK = 'ReconciliationOffPeak';
     const PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_QUARTER = 'ApxDayAheadQuarter';
+    const PROPOSITION_MARKET_PRICE_SOURCE_NONE = 'None';
     const STATUS_PROVISIONAL = 'Provisional';
     const STATUS_ACTIVE = 'Active';
     const STATUS_CANCELLED = 'Cancelled';
@@ -290,15 +291,16 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
     public function getPropositionPricingTypeAllowableValues()
     {
         return [
-            self::PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE,
-            self::PROPOSITION_PRICING_TYPE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_FIXED,
+            self::PROPOSITION_PRICING_TYPE_VARIABLE,
+            self::PROPOSITION_PRICING_TYPE_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_DAY_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_MEAN_MONTH_MARKET_PRICE_VARIABLE,
             self::PROPOSITION_PRICING_TYPE_FUTURE_YEAR_MARKET_PRICE_FIXED,
             self::PROPOSITION_PRICING_TYPE_HYBRID_ENDEX,
             self::PROPOSITION_PRICING_TYPE_FULL_ENDEX,
             self::PROPOSITION_PRICING_TYPE_UNWEIGHTED_MEAN_MARKET_PRICE,
+            self::PROPOSITION_PRICING_TYPE_PRICE_BLOCK_FIXED,
         ];
     }
     
@@ -310,9 +312,8 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
     public function getPropositionMarketPriceSourceAllowableValues()
     {
         return [
-            self::PROPOSITION_MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY,
-            self::PROPOSITION_MARKET_PRICE_SOURCE_NONE,
             self::PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_HOUR,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_TTF_DAY_AHEAD_DAY,
             self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_DAY,
             self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_APX_MONTH,
             self::PROPOSITION_MARKET_PRICE_SOURCE_MEAN_TTF_DAY,
@@ -325,6 +326,7 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
             self::PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_PEAK,
             self::PROPOSITION_MARKET_PRICE_SOURCE_RECONCILIATION_OFF_PEAK,
             self::PROPOSITION_MARKET_PRICE_SOURCE_APX_DAY_AHEAD_QUARTER,
+            self::PROPOSITION_MARKET_PRICE_SOURCE_NONE,
         ];
     }
     
@@ -381,6 +383,10 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         $this->container['proposal_valid_until'] = isset($data['proposal_valid_until']) ? $data['proposal_valid_until'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['contract_properties'] = isset($data['contract_properties']) ? $data['contract_properties'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

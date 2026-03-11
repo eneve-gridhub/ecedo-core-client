@@ -117,46 +117,4 @@ class EcedoERPCRMInterfaceApiContractImportPostDataTest extends \PHPUnit_Framewo
     public function testPropertyBillingItems()
     {
     }
-
-    /**
-     * Test attribute "agreement_date"
-     */
-    public function testPropertyAgreementDate()
-    {
-    }
-
-    /**
-     * Test attribute "reference"
-     */
-    public function testPropertyReference()
-    {
-    }
-
-    /**
-     * Test attribute "start_date"
-     */
-    public function testPropertyStartDate()
-    {
-    }
-
-    /**
-     * Test attribute "end_date"
-     */
-    public function testPropertyEndDate()
-    {
-    }
-
-    /**
-     * Test attribute "proposition_reference"
-     */
-    public function testPropertyPropositionReference()
-    {
-    }
-
-    /**
-     * Test attribute "comment"
-     */
-    public function testPropertyComment()
-    {
-    }
 }

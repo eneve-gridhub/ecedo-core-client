@@ -103,46 +103,4 @@ class EcedoERPCRMInterfaceApiDayP4MeterReadingTest extends \PHPUnit_Framework_Te
     public function testPropertyOdnLow()
     {
     }
-
-    /**
-     * Test attribute "reading_date"
-     */
-    public function testPropertyReadingDate()
-    {
-    }
-
-    /**
-     * Test attribute "measure_unit"
-     */
-    public function testPropertyMeasureUnit()
-    {
-    }
-
-    /**
-     * Test attribute "measure_unit_localized"
-     */
-    public function testPropertyMeasureUnitLocalized()
-    {
-    }
-
-    /**
-     * Test attribute "meter_number"
-     */
-    public function testPropertyMeterNumber()
-    {
-    }
-
-    /**
-     * Test attribute "ean"
-     */
-    public function testPropertyEan()
-    {
-    }
-
-    /**
-     * Test attribute "source"
-     */
-    public function testPropertySource()
-    {
-    }
 }

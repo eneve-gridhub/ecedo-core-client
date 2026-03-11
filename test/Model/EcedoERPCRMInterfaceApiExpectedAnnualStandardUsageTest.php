@@ -89,46 +89,4 @@ class EcedoERPCRMInterfaceApiExpectedAnnualStandardUsageTest extends \PHPUnit_Fr
     public function testPropertyValidUntil()
     {
     }
-
-    /**
-     * Test attribute "single_usage"
-     */
-    public function testPropertySingleUsage()
-    {
-    }
-
-    /**
-     * Test attribute "peak_usage"
-     */
-    public function testPropertyPeakUsage()
-    {
-    }
-
-    /**
-     * Test attribute "off_peak_usage"
-     */
-    public function testPropertyOffPeakUsage()
-    {
-    }
-
-    /**
-     * Test attribute "single_usage_odn"
-     */
-    public function testPropertySingleUsageOdn()
-    {
-    }
-
-    /**
-     * Test attribute "peak_usage_odn"
-     */
-    public function testPropertyPeakUsageOdn()
-    {
-    }
-
-    /**
-     * Test attribute "off_peak_usage_odn"
-     */
-    public function testPropertyOffPeakUsageOdn()
-    {
-    }
 }

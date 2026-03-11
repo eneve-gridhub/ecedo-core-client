@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiAdvancePaymentPerConnection implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -217,6 +217,10 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPerConnection implements ModelInterfa
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['calculated_amount'] = isset($data['calculated_amount']) ? $data['calculated_amount'] : null;
         $this->container['agreed_amount'] = isset($data['agreed_amount']) ? $data['agreed_amount'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

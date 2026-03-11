@@ -72,6 +72,16 @@ class SysSmartDevicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sysSmartDevicesAddServiceContract
+     *
+     * Toevoegen van een servicecontract aan een slim apparaat.
+     *
+     */
+    public function testSysSmartDevicesAddServiceContract()
+    {
+    }
+
+    /**
      * Test case for sysSmartDevicesGetSmartChargingSessions
      *
      * Verkrijg slimme laadsessies per apparaat.

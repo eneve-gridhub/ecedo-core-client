@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage extends EcedoERPCRMInterfaceApiAnnualStandardUsage 
 {
     const DISCRIMINATOR = null;
 
@@ -58,13 +56,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
       */
     protected static $swaggerTypes = [
         'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'single_usage' => 'int',
-        'peak_usage' => 'int',
-        'off_peak_usage' => 'int',
-        'single_usage_odn' => 'int',
-        'peak_usage_odn' => 'int',
-        'off_peak_usage_odn' => 'int'
+        'end_date' => '\DateTime'
     ];
 
     /**
@@ -74,13 +66,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
       */
     protected static $swaggerFormats = [
         'start_date' => 'date-time',
-        'end_date' => 'date-time',
-        'single_usage' => 'int32',
-        'peak_usage' => 'int32',
-        'off_peak_usage' => 'int32',
-        'single_usage_odn' => 'int32',
-        'peak_usage_odn' => 'int32',
-        'off_peak_usage_odn' => 'int32'
+        'end_date' => 'date-time'
     ];
 
     /**
@@ -90,7 +76,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -100,7 +86,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -111,13 +97,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
      */
     protected static $attributeMap = [
         'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'single_usage' => 'SingleUsage',
-        'peak_usage' => 'PeakUsage',
-        'off_peak_usage' => 'OffPeakUsage',
-        'single_usage_odn' => 'SingleUsageODN',
-        'peak_usage_odn' => 'PeakUsageODN',
-        'off_peak_usage_odn' => 'OffPeakUsageODN'
+        'end_date' => 'EndDate'
     ];
 
     /**
@@ -127,13 +107,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
      */
     protected static $setters = [
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'single_usage' => 'setSingleUsage',
-        'peak_usage' => 'setPeakUsage',
-        'off_peak_usage' => 'setOffPeakUsage',
-        'single_usage_odn' => 'setSingleUsageOdn',
-        'peak_usage_odn' => 'setPeakUsageOdn',
-        'off_peak_usage_odn' => 'setOffPeakUsageOdn'
+        'end_date' => 'setEndDate'
     ];
 
     /**
@@ -143,13 +117,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
      */
     protected static $getters = [
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'single_usage' => 'getSingleUsage',
-        'peak_usage' => 'getPeakUsage',
-        'off_peak_usage' => 'getOffPeakUsage',
-        'single_usage_odn' => 'getSingleUsageOdn',
-        'peak_usage_odn' => 'getPeakUsageOdn',
-        'off_peak_usage_odn' => 'getOffPeakUsageOdn'
+        'end_date' => 'getEndDate'
     ];
 
     /**
@@ -160,7 +128,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -170,7 +138,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -180,7 +148,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -197,12 +165,6 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -212,14 +174,10 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['single_usage'] = isset($data['single_usage']) ? $data['single_usage'] : null;
-        $this->container['peak_usage'] = isset($data['peak_usage']) ? $data['peak_usage'] : null;
-        $this->container['off_peak_usage'] = isset($data['off_peak_usage']) ? $data['off_peak_usage'] : null;
-        $this->container['single_usage_odn'] = isset($data['single_usage_odn']) ? $data['single_usage_odn'] : null;
-        $this->container['peak_usage_odn'] = isset($data['peak_usage_odn']) ? $data['peak_usage_odn'] : null;
-        $this->container['off_peak_usage_odn'] = isset($data['off_peak_usage_odn']) ? $data['off_peak_usage_odn'] : null;
     }
 
     /**
@@ -229,7 +187,7 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -290,150 +248,6 @@ class EcedoERPCRMInterfaceApiHistoricalAnnualStandardUsage implements ModelInter
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets single_usage
-     *
-     * @return int
-     */
-    public function getSingleUsage()
-    {
-        return $this->container['single_usage'];
-    }
-
-    /**
-     * Sets single_usage
-     *
-     * @param int $single_usage Indien een aansluiting enkel-verbuik heeft wordt de Standaard Jaar Afname (SJA) in dit veld weergegeven.  Wanneer de aansluiting normaal- en dal-verbruik heeft is dit veld null  Wanneer de aansluiting een gas aansluiting betreft, is dit veld verplicht en moeten de anderen null zijn
-     *
-     * @return $this
-     */
-    public function setSingleUsage($single_usage)
-    {
-        $this->container['single_usage'] = $single_usage;
-
-        return $this;
-    }
-
-    /**
-     * Gets peak_usage
-     *
-     * @return int
-     */
-    public function getPeakUsage()
-    {
-        return $this->container['peak_usage'];
-    }
-
-    /**
-     * Sets peak_usage
-     *
-     * @param int $peak_usage Indien een aansluiting enkel-verbuik heeft is dit veld null.  Wanneer de aansluiting normaal- en dal-verbruik heeft wordt in dit veld het normaal-verbruik van de Standaard Jaar Afname (SJA) weergegeven.
-     *
-     * @return $this
-     */
-    public function setPeakUsage($peak_usage)
-    {
-        $this->container['peak_usage'] = $peak_usage;
-
-        return $this;
-    }
-
-    /**
-     * Gets off_peak_usage
-     *
-     * @return int
-     */
-    public function getOffPeakUsage()
-    {
-        return $this->container['off_peak_usage'];
-    }
-
-    /**
-     * Sets off_peak_usage
-     *
-     * @param int $off_peak_usage Indien een aansluiting enkel-verbuik heeft is dit veld null.  Wanneer de aansluiting normaal- en dal-verbruik heeft wordt in dit veld het dal-verbruik van de Standaard Jaar Afname (SJA) weergegeven.
-     *
-     * @return $this
-     */
-    public function setOffPeakUsage($off_peak_usage)
-    {
-        $this->container['off_peak_usage'] = $off_peak_usage;
-
-        return $this;
-    }
-
-    /**
-     * Gets single_usage_odn
-     *
-     * @return int
-     */
-    public function getSingleUsageOdn()
-    {
-        return $this->container['single_usage_odn'];
-    }
-
-    /**
-     * Sets single_usage_odn
-     *
-     * @param int $single_usage_odn Indien een aansluiting enkel-verbruik (en dus ook teruglevering) heeft wordt de Standaard Jaar Invoeding (SJI) in dit veld weergegeven. Wanneer de aansluiting geen teruglevering heeft wordt hier een 0 teruggegeven.  Wanneer de aansluiting normaal- en dal-verbruik (en dus ook teruglevering) heeft is dit veld null.
-     *
-     * @return $this
-     */
-    public function setSingleUsageOdn($single_usage_odn)
-    {
-        $this->container['single_usage_odn'] = $single_usage_odn;
-
-        return $this;
-    }
-
-    /**
-     * Gets peak_usage_odn
-     *
-     * @return int
-     */
-    public function getPeakUsageOdn()
-    {
-        return $this->container['peak_usage_odn'];
-    }
-
-    /**
-     * Sets peak_usage_odn
-     *
-     * @param int $peak_usage_odn Indien een aansluiting enkel-verbuik (en dus ook teruglevering) heeft is dit veld null.  Wanneer de aansluiting normaal- en dal-verbruik (en dus ook teruglevering) heeft wordt in dit veld de normaal-teruglevering van de Standaard Jaar Invoeding (SJI) weergegeven. Wanneer de aansluiting geen teruglevering heeft wordt hier een 0 teruggegeven.
-     *
-     * @return $this
-     */
-    public function setPeakUsageOdn($peak_usage_odn)
-    {
-        $this->container['peak_usage_odn'] = $peak_usage_odn;
-
-        return $this;
-    }
-
-    /**
-     * Gets off_peak_usage_odn
-     *
-     * @return int
-     */
-    public function getOffPeakUsageOdn()
-    {
-        return $this->container['off_peak_usage_odn'];
-    }
-
-    /**
-     * Sets off_peak_usage_odn
-     *
-     * @param int $off_peak_usage_odn Indien een aansluiting enkel-verbuik (en dus ook teruglevering) heeft is dit veld null.  Wanneer de aansluiting normaal- en dal-verbruik (en dus ook teruglevering) heeft wordt in dit veld de dal-teruglevering van de Standaard Jaar Invoeding (SJI) weergegeven. Wanneer de aansluiting geen teruglevering heeft wordt hier een 0 teruggegeven.
-     *
-     * @return $this
-     */
-    public function setOffPeakUsageOdn($off_peak_usage_odn)
-    {
-        $this->container['off_peak_usage_odn'] = $off_peak_usage_odn;
 
         return $this;
     }

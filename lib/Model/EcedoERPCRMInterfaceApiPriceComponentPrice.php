@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -66,7 +66,9 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         'vat_inclusive' => 'bool',
         'vat_percentage' => 'double',
         'range_begin' => 'int',
-        'range_end' => 'int'
+        'range_end' => 'int',
+        'price_block_id' => 'string',
+        'price_block_description' => 'string'
     ];
 
     /**
@@ -84,7 +86,9 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         'vat_inclusive' => null,
         'vat_percentage' => 'double',
         'range_begin' => 'int32',
-        'range_end' => 'int32'
+        'range_end' => 'int32',
+        'price_block_id' => 'uuid',
+        'price_block_description' => null
     ];
 
     /**
@@ -123,7 +127,9 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         'vat_inclusive' => 'VatInclusive',
         'vat_percentage' => 'VatPercentage',
         'range_begin' => 'RangeBegin',
-        'range_end' => 'RangeEnd'
+        'range_end' => 'RangeEnd',
+        'price_block_id' => 'PriceBlockId',
+        'price_block_description' => 'PriceBlockDescription'
     ];
 
     /**
@@ -141,7 +147,9 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         'vat_inclusive' => 'setVatInclusive',
         'vat_percentage' => 'setVatPercentage',
         'range_begin' => 'setRangeBegin',
-        'range_end' => 'setRangeEnd'
+        'range_end' => 'setRangeEnd',
+        'price_block_id' => 'setPriceBlockId',
+        'price_block_description' => 'setPriceBlockDescription'
     ];
 
     /**
@@ -159,7 +167,9 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         'vat_inclusive' => 'getVatInclusive',
         'vat_percentage' => 'getVatPercentage',
         'range_begin' => 'getRangeBegin',
-        'range_end' => 'getRangeEnd'
+        'range_end' => 'getRangeEnd',
+        'price_block_id' => 'getPriceBlockId',
+        'price_block_description' => 'getPriceBlockDescription'
     ];
 
     /**
@@ -271,6 +281,12 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         $this->container['vat_percentage'] = isset($data['vat_percentage']) ? $data['vat_percentage'] : null;
         $this->container['range_begin'] = isset($data['range_begin']) ? $data['range_begin'] : null;
         $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
+        $this->container['price_block_id'] = isset($data['price_block_id']) ? $data['price_block_id'] : null;
+        $this->container['price_block_description'] = isset($data['price_block_description']) ? $data['price_block_description'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -550,6 +566,54 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
     public function setRangeEnd($range_end)
     {
         $this->container['range_end'] = $range_end;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_block_id
+     *
+     * @return string
+     */
+    public function getPriceBlockId()
+    {
+        return $this->container['price_block_id'];
+    }
+
+    /**
+     * Sets price_block_id
+     *
+     * @param string $price_block_id price_block_id
+     *
+     * @return $this
+     */
+    public function setPriceBlockId($price_block_id)
+    {
+        $this->container['price_block_id'] = $price_block_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_block_description
+     *
+     * @return string
+     */
+    public function getPriceBlockDescription()
+    {
+        return $this->container['price_block_description'];
+    }
+
+    /**
+     * Sets price_block_description
+     *
+     * @param string $price_block_description price_block_description
+     *
+     * @return $this
+     */
+    public function setPriceBlockDescription($price_block_description)
+    {
+        $this->container['price_block_description'] = $price_block_description;
 
         return $this;
     }

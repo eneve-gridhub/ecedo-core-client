@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiContractPostData implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -208,6 +208,10 @@ class EcedoERPCRMInterfaceApiContractPostData implements ModelInterface, ArrayAc
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

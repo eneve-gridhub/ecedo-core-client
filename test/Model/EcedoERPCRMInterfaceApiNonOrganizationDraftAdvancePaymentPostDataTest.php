@@ -82,39 +82,4 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataTest exte
     public function testPropertyDoCombineRows()
     {
     }
-
-    /**
-     * Test attribute "organization_type"
-     */
-    public function testPropertyOrganizationType()
-    {
-    }
-
-    /**
-     * Test attribute "agreement_date"
-     */
-    public function testPropertyAgreementDate()
-    {
-    }
-
-    /**
-     * Test attribute "month"
-     */
-    public function testPropertyMonth()
-    {
-    }
-
-    /**
-     * Test attribute "connections"
-     */
-    public function testPropertyConnections()
-    {
-    }
-
-    /**
-     * Test attribute "company_label_id"
-     */
-    public function testPropertyCompanyLabelId()
-    {
-    }
 }

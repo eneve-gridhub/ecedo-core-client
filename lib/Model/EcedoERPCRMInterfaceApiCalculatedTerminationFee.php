@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -65,7 +65,6 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_start_date' => '\DateTime',
         'contract_end_date' => '\DateTime',
         'contract_termination_date' => '\DateTime',
-        'calculation_data' => 'object',
         'termination_fee_type' => 'string'
     ];
 
@@ -83,7 +82,6 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_start_date' => 'date',
         'contract_end_date' => 'date',
         'contract_termination_date' => 'date',
-        'calculation_data' => null,
         'termination_fee_type' => null
     ];
 
@@ -122,7 +120,6 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_start_date' => 'ContractStartDate',
         'contract_end_date' => 'ContractEndDate',
         'contract_termination_date' => 'ContractTerminationDate',
-        'calculation_data' => 'CalculationData',
         'termination_fee_type' => 'TerminationFeeType'
     ];
 
@@ -140,7 +137,6 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_start_date' => 'setContractStartDate',
         'contract_end_date' => 'setContractEndDate',
         'contract_termination_date' => 'setContractTerminationDate',
-        'calculation_data' => 'setCalculationData',
         'termination_fee_type' => 'setTerminationFeeType'
     ];
 
@@ -158,7 +154,6 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         'contract_start_date' => 'getContractStartDate',
         'contract_end_date' => 'getContractEndDate',
         'contract_termination_date' => 'getContractTerminationDate',
-        'calculation_data' => 'getCalculationData',
         'termination_fee_type' => 'getTerminationFeeType'
     ];
 
@@ -251,6 +246,9 @@ class EcedoERPCRMInterfaceApiCalculatedTerminationFee implements ModelInterface,
         $this->container['contract_termination_date'] = isset($data['contract_termination_date']) ? $data['contract_termination_date'] : null;
         $this->container['termination_fee_type'] = isset($data['termination_fee_type']) ? $data['termination_fee_type'] : null;
         $this->container['calculation_data'] = isset($data['calculation_data']) ? $data['calculation_data'] : null;
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

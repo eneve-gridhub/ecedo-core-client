@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -164,9 +164,11 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
     }
 
     const PRICE_COMPONENT_GROUP_LEVERING = 'Levering';
+    const PRICE_COMPONENT_GROUP_LEVERING_PRICE_BLOCK = 'LeveringPriceBlock';
     const PRICE_COMPONENT_GROUP_LEVERING_SURCHARGE = 'LeveringSurcharge';
     const PRICE_COMPONENT_GROUP_SHARES = 'Shares';
     const PRICE_COMPONENT_GROUP_TERUGLEVERING = 'Teruglevering';
+    const PRICE_COMPONENT_GROUP_TERUGLEVERING_PRICE_BLOCK = 'TerugleveringPriceBlock';
     const PRICE_COMPONENT_GROUP_TERUGLEVERING_SURCHARGE = 'TerugleveringSurcharge';
     const PRICE_COMPONENT_GROUP_FIXED_FEE = 'FixedFee';
     const PRICE_COMPONENT_GROUP_SURCHARGE = 'Surcharge';
@@ -203,9 +205,11 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
     {
         return [
             self::PRICE_COMPONENT_GROUP_LEVERING,
+            self::PRICE_COMPONENT_GROUP_LEVERING_PRICE_BLOCK,
             self::PRICE_COMPONENT_GROUP_LEVERING_SURCHARGE,
             self::PRICE_COMPONENT_GROUP_SHARES,
             self::PRICE_COMPONENT_GROUP_TERUGLEVERING,
+            self::PRICE_COMPONENT_GROUP_TERUGLEVERING_PRICE_BLOCK,
             self::PRICE_COMPONENT_GROUP_TERUGLEVERING_SURCHARGE,
             self::PRICE_COMPONENT_GROUP_FIXED_FEE,
             self::PRICE_COMPONENT_GROUP_SURCHARGE,
@@ -251,6 +255,10 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
     {
         $this->container['price_component_group'] = isset($data['price_component_group']) ? $data['price_component_group'] : null;
         $this->container['prices'] = isset($data['prices']) ? $data['prices'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

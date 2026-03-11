@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiEnergieleveringContractPutData extends EcedoERPCRMInterfaceApiContractPutData 
 {
     const DISCRIMINATOR = null;
 
@@ -65,12 +63,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
         'sales_reference' => 'string',
         'status' => 'string',
         'cancellation_reason' => 'string',
-        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractPropertyPostData[]',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'agreement_date' => '\DateTime',
-        'proposition_reference' => 'string',
-        'comment' => 'string'
+        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractPropertyPostData[]'
     ];
 
     /**
@@ -87,12 +80,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
         'sales_reference' => null,
         'status' => null,
         'cancellation_reason' => null,
-        'contract_properties' => null,
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'agreement_date' => 'date',
-        'proposition_reference' => null,
-        'comment' => null
+        'contract_properties' => null
     ];
 
     /**
@@ -102,7 +90,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -112,7 +100,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -130,12 +118,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
         'sales_reference' => 'SalesReference',
         'status' => 'Status',
         'cancellation_reason' => 'CancellationReason',
-        'contract_properties' => 'ContractProperties',
-        'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'agreement_date' => 'AgreementDate',
-        'proposition_reference' => 'PropositionReference',
-        'comment' => 'Comment'
+        'contract_properties' => 'ContractProperties'
     ];
 
     /**
@@ -152,12 +135,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
         'sales_reference' => 'setSalesReference',
         'status' => 'setStatus',
         'cancellation_reason' => 'setCancellationReason',
-        'contract_properties' => 'setContractProperties',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'agreement_date' => 'setAgreementDate',
-        'proposition_reference' => 'setPropositionReference',
-        'comment' => 'setComment'
+        'contract_properties' => 'setContractProperties'
     ];
 
     /**
@@ -174,12 +152,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
         'sales_reference' => 'getSalesReference',
         'status' => 'getStatus',
         'cancellation_reason' => 'getCancellationReason',
-        'contract_properties' => 'getContractProperties',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'agreement_date' => 'getAgreementDate',
-        'proposition_reference' => 'getPropositionReference',
-        'comment' => 'getComment'
+        'contract_properties' => 'getContractProperties'
     ];
 
     /**
@@ -190,7 +163,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -200,7 +173,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -210,7 +183,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -275,12 +248,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     }
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -290,6 +257,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['meelift_proposition_reference'] = isset($data['meelift_proposition_reference']) ? $data['meelift_proposition_reference'] : null;
         $this->container['start_reason'] = isset($data['start_reason']) ? $data['start_reason'] : null;
         $this->container['end_reason'] = isset($data['end_reason']) ? $data['end_reason'] : null;
@@ -299,11 +268,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['cancellation_reason'] = isset($data['cancellation_reason']) ? $data['cancellation_reason'] : null;
         $this->container['contract_properties'] = isset($data['contract_properties']) ? $data['contract_properties'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
-        $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
     }
 
     /**
@@ -313,7 +277,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         $allowedValues = $this->getStartReasonAllowableValues();
         if (!is_null($this->container['start_reason']) && !in_array($this->container['start_reason'], $allowedValues, true)) {
@@ -576,126 +540,6 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData implements ModelInte
     public function setContractProperties($contract_properties)
     {
         $this->container['contract_properties'] = $contract_properties;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date Optionele parameter (default null). Hiermee kan de startdatum van een contract worden aangepast. Gebruik dit alleen in zeer specifieke gevallen.
-     *
-     * @return $this
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date Optionele parameter (default null). Hiermee kan de einddatum van een contract worden aangepast. Gebruik dit alleen in zeer specifieke gevallen.
-     *
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets agreement_date
-     *
-     * @return \DateTime
-     */
-    public function getAgreementDate()
-    {
-        return $this->container['agreement_date'];
-    }
-
-    /**
-     * Sets agreement_date
-     *
-     * @param \DateTime $agreement_date Optionele parameter (default null). Hiermee kan de tekendatum van een contract worden aangepast. Gebruik dit alleen in zeer specifieke gevallen.
-     *
-     * @return $this
-     */
-    public function setAgreementDate($agreement_date)
-    {
-        $this->container['agreement_date'] = $agreement_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets proposition_reference
-     *
-     * @return string
-     */
-    public function getPropositionReference()
-    {
-        return $this->container['proposition_reference'];
-    }
-
-    /**
-     * Sets proposition_reference
-     *
-     * @param string $proposition_reference Optionele parameter (default null). Hiermee kan de propositie van een contract worden aangepast. Gebruik dit alleen in zeer specifieke gevallen.
-     *
-     * @return $this
-     */
-    public function setPropositionReference($proposition_reference)
-    {
-        $this->container['proposition_reference'] = $proposition_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment Optionele parameter (default null). De bestaande waarde wordt alleen bijgewerkt wanneer de nieuwe waarde niet null is. Geef een lege string mee om de bestaande waarde weg te halen.
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
 
         return $this;
     }

@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiFullPersonPostData extends EcedoERPCRMInterfaceApiPersonPostData 
 {
     const DISCRIMINATOR = null;
 
@@ -63,14 +61,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
         'mobile_number' => 'string',
         'product_groups' => 'string[]',
         'roles' => 'string[]',
-        'roles_cc' => 'string[]',
-        'gender' => 'string',
-        'initials' => 'string',
-        'first_name' => 'string',
-        'infix' => 'string',
-        'last_name' => 'string',
-        'birth_date' => '\DateTime',
-        'title' => 'string'
+        'roles_cc' => 'string[]'
     ];
 
     /**
@@ -85,14 +76,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
         'mobile_number' => null,
         'product_groups' => null,
         'roles' => null,
-        'roles_cc' => null,
-        'gender' => null,
-        'initials' => null,
-        'first_name' => null,
-        'infix' => null,
-        'last_name' => null,
-        'birth_date' => 'date',
-        'title' => null
+        'roles_cc' => null
     ];
 
     /**
@@ -102,7 +86,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -112,7 +96,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -128,14 +112,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
         'mobile_number' => 'MobileNumber',
         'product_groups' => 'ProductGroups',
         'roles' => 'Roles',
-        'roles_cc' => 'RolesCC',
-        'gender' => 'Gender',
-        'initials' => 'Initials',
-        'first_name' => 'FirstName',
-        'infix' => 'Infix',
-        'last_name' => 'LastName',
-        'birth_date' => 'BirthDate',
-        'title' => 'Title'
+        'roles_cc' => 'RolesCC'
     ];
 
     /**
@@ -150,14 +127,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
         'mobile_number' => 'setMobileNumber',
         'product_groups' => 'setProductGroups',
         'roles' => 'setRoles',
-        'roles_cc' => 'setRolesCc',
-        'gender' => 'setGender',
-        'initials' => 'setInitials',
-        'first_name' => 'setFirstName',
-        'infix' => 'setInfix',
-        'last_name' => 'setLastName',
-        'birth_date' => 'setBirthDate',
-        'title' => 'setTitle'
+        'roles_cc' => 'setRolesCc'
     ];
 
     /**
@@ -172,14 +142,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
         'mobile_number' => 'getMobileNumber',
         'product_groups' => 'getProductGroups',
         'roles' => 'getRoles',
-        'roles_cc' => 'getRolesCc',
-        'gender' => 'getGender',
-        'initials' => 'getInitials',
-        'first_name' => 'getFirstName',
-        'infix' => 'getInfix',
-        'last_name' => 'getLastName',
-        'birth_date' => 'getBirthDate',
-        'title' => 'getTitle'
+        'roles_cc' => 'getRolesCc'
     ];
 
     /**
@@ -190,7 +153,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -200,7 +163,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -210,7 +173,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,8 +206,6 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
     const ROLES_CC_BILLING = 'Billing';
     const ROLES_CC_METER_READINGS = 'MeterReadings';
     const ROLES_CC_VKO = 'VKO';
-    const GENDER_MALE = 'Male';
-    const GENDER_FEMALE = 'Female';
     
 
     
@@ -301,26 +262,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
         ];
     }
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getGenderAllowableValues()
-    {
-        return [
-            self::GENDER_MALE,
-            self::GENDER_FEMALE,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -330,6 +272,8 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['function'] = isset($data['function']) ? $data['function'] : null;
         $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
@@ -337,13 +281,6 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
         $this->container['product_groups'] = isset($data['product_groups']) ? $data['product_groups'] : null;
         $this->container['roles'] = isset($data['roles']) ? $data['roles'] : null;
         $this->container['roles_cc'] = isset($data['roles_cc']) ? $data['roles_cc'] : null;
-        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['initials'] = isset($data['initials']) ? $data['initials'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['infix'] = isset($data['infix']) ? $data['infix'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
     }
 
     /**
@@ -353,15 +290,7 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getGenderAllowableValues();
-        if (!is_null($this->container['gender']) && !in_array($this->container['gender'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'gender', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -569,183 +498,6 @@ class EcedoERPCRMInterfaceApiFullPersonPostData implements ModelInterface, Array
             );
         }
         $this->container['roles_cc'] = $roles_cc;
-
-        return $this;
-    }
-
-    /**
-     * Gets gender
-     *
-     * @return string
-     */
-    public function getGender()
-    {
-        return $this->container['gender'];
-    }
-
-    /**
-     * Sets gender
-     *
-     * @param string $gender gender
-     *
-     * @return $this
-     */
-    public function setGender($gender)
-    {
-        $allowedValues = $this->getGenderAllowableValues();
-        if (!is_null($gender) && !in_array($gender, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'gender', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['gender'] = $gender;
-
-        return $this;
-    }
-
-    /**
-     * Gets initials
-     *
-     * @return string
-     */
-    public function getInitials()
-    {
-        return $this->container['initials'];
-    }
-
-    /**
-     * Sets initials
-     *
-     * @param string $initials initials
-     *
-     * @return $this
-     */
-    public function setInitials($initials)
-    {
-        $this->container['initials'] = $initials;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_name
-     *
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->container['first_name'];
-    }
-
-    /**
-     * Sets first_name
-     *
-     * @param string $first_name first_name
-     *
-     * @return $this
-     */
-    public function setFirstName($first_name)
-    {
-        $this->container['first_name'] = $first_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets infix
-     *
-     * @return string
-     */
-    public function getInfix()
-    {
-        return $this->container['infix'];
-    }
-
-    /**
-     * Sets infix
-     *
-     * @param string $infix infix
-     *
-     * @return $this
-     */
-    public function setInfix($infix)
-    {
-        $this->container['infix'] = $infix;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_name
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['last_name'];
-    }
-
-    /**
-     * Sets last_name
-     *
-     * @param string $last_name last_name
-     *
-     * @return $this
-     */
-    public function setLastName($last_name)
-    {
-        $this->container['last_name'] = $last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets birth_date
-     *
-     * @return \DateTime
-     */
-    public function getBirthDate()
-    {
-        return $this->container['birth_date'];
-    }
-
-    /**
-     * Sets birth_date
-     *
-     * @param \DateTime $birth_date birth_date
-     *
-     * @return $this
-     */
-    public function setBirthDate($birth_date)
-    {
-        $this->container['birth_date'] = $birth_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title title
-     *
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
 
         return $this;
     }

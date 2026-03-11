@@ -68,38 +68,48 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'contract_id' => 'string',
         'termination_date' => '\DateTime',
         'calculation_date' => '\DateTime',
+        'valid_until' => '\DateTime',
         'connection_is_electricity' => 'bool',
         'connection_is_gas' => 'bool',
         'has_base_prices' => 'bool',
+        'has_price_block_ldn_prices' => 'bool',
         'remaining_peak_usage' => 'int',
         'remaining_off_peak_usage' => 'int',
         'remaining_base_usage' => 'int',
         'reference_proposition_proposition_id' => 'string',
         'reference_proposition_proposition_reference' => 'string',
+        'reference_proposition_pricing_type' => 'string',
         'reference_proposition_meelift_proposition_id' => 'string',
         'reference_proposition_meelift_proposition_reference' => 'string',
         'reference_proposition_peak_price' => 'double',
         'reference_proposition_off_peak_price' => 'double',
         'reference_proposition_base_price' => 'double',
+        'reference_proposition_price_block_ldn_price' => 'double',
         'reference_proposition_peak_vat_price' => 'double',
         'reference_proposition_off_peak_vat_price' => 'double',
         'reference_proposition_base_vat_price' => 'double',
+        'reference_proposition_price_block_ldn_vat_price' => 'double',
         'reference_proposition_peak_total_price' => 'double',
         'reference_proposition_off_peak_total_price' => 'double',
         'reference_proposition_base_total_price' => 'double',
+        'reference_proposition_price_block_ldn_total_price' => 'double',
         'contract_proposition_id' => 'string',
         'contract_proposition_reference' => 'string',
+        'contract_proposition_pricing_type' => 'string',
         'contract_meelift_proposition_id' => 'string',
         'contract_meelift_proposition_reference' => 'string',
         'contract_peak_price' => 'double',
         'contract_off_peak_price' => 'double',
         'contract_base_price' => 'double',
+        'contract_price_block_ldn_price' => 'double',
         'contract_peak_vat_price' => 'double',
         'contract_off_peak_vat_price' => 'double',
         'contract_base_vat_price' => 'double',
+        'contract_price_block_ldn_vat_price' => 'double',
         'contract_peak_total_price' => 'double',
         'contract_off_peak_total_price' => 'double',
         'contract_base_total_price' => 'double',
+        'contract_price_block_ldn_total_price' => 'double',
         'annual_standard_usage_annual_standard_usage_id' => 'string',
         'annual_standard_usage_annual_standard_usage_type' => 'string',
         'annual_standard_usage_single_usage' => 'int',
@@ -128,38 +138,48 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'contract_id' => null,
         'termination_date' => 'date',
         'calculation_date' => 'date-time',
+        'valid_until' => 'date',
         'connection_is_electricity' => null,
         'connection_is_gas' => null,
         'has_base_prices' => null,
+        'has_price_block_ldn_prices' => null,
         'remaining_peak_usage' => 'int32',
         'remaining_off_peak_usage' => 'int32',
         'remaining_base_usage' => 'int32',
         'reference_proposition_proposition_id' => 'uuid',
         'reference_proposition_proposition_reference' => null,
+        'reference_proposition_pricing_type' => null,
         'reference_proposition_meelift_proposition_id' => 'uuid',
         'reference_proposition_meelift_proposition_reference' => null,
         'reference_proposition_peak_price' => 'double',
         'reference_proposition_off_peak_price' => 'double',
         'reference_proposition_base_price' => 'double',
+        'reference_proposition_price_block_ldn_price' => 'double',
         'reference_proposition_peak_vat_price' => 'double',
         'reference_proposition_off_peak_vat_price' => 'double',
         'reference_proposition_base_vat_price' => 'double',
+        'reference_proposition_price_block_ldn_vat_price' => 'double',
         'reference_proposition_peak_total_price' => 'double',
         'reference_proposition_off_peak_total_price' => 'double',
         'reference_proposition_base_total_price' => 'double',
+        'reference_proposition_price_block_ldn_total_price' => 'double',
         'contract_proposition_id' => 'uuid',
         'contract_proposition_reference' => null,
+        'contract_proposition_pricing_type' => null,
         'contract_meelift_proposition_id' => 'uuid',
         'contract_meelift_proposition_reference' => null,
         'contract_peak_price' => 'double',
         'contract_off_peak_price' => 'double',
         'contract_base_price' => 'double',
+        'contract_price_block_ldn_price' => 'double',
         'contract_peak_vat_price' => 'double',
         'contract_off_peak_vat_price' => 'double',
         'contract_base_vat_price' => 'double',
+        'contract_price_block_ldn_vat_price' => 'double',
         'contract_peak_total_price' => 'double',
         'contract_off_peak_total_price' => 'double',
         'contract_base_total_price' => 'double',
+        'contract_price_block_ldn_total_price' => 'double',
         'annual_standard_usage_annual_standard_usage_id' => 'uuid',
         'annual_standard_usage_annual_standard_usage_type' => null,
         'annual_standard_usage_single_usage' => 'int32',
@@ -209,38 +229,48 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'contract_id' => 'ContractId',
         'termination_date' => 'TerminationDate',
         'calculation_date' => 'CalculationDate',
+        'valid_until' => 'ValidUntil',
         'connection_is_electricity' => 'Connection_IsElectricity',
         'connection_is_gas' => 'Connection_IsGas',
         'has_base_prices' => 'HasBasePrices',
+        'has_price_block_ldn_prices' => 'HasPriceBlockLDNPrices',
         'remaining_peak_usage' => 'RemainingPeakUsage',
         'remaining_off_peak_usage' => 'RemainingOffPeakUsage',
         'remaining_base_usage' => 'RemainingBaseUsage',
         'reference_proposition_proposition_id' => 'ReferenceProposition_PropositionId',
         'reference_proposition_proposition_reference' => 'ReferenceProposition_PropositionReference',
+        'reference_proposition_pricing_type' => 'ReferenceProposition_PricingType',
         'reference_proposition_meelift_proposition_id' => 'ReferenceProposition_MeeliftPropositionId',
         'reference_proposition_meelift_proposition_reference' => 'ReferenceProposition_MeeliftPropositionReference',
         'reference_proposition_peak_price' => 'ReferenceProposition_PeakPrice',
         'reference_proposition_off_peak_price' => 'ReferenceProposition_OffPeakPrice',
         'reference_proposition_base_price' => 'ReferenceProposition_BasePrice',
+        'reference_proposition_price_block_ldn_price' => 'ReferenceProposition_PriceBlockLDNPrice',
         'reference_proposition_peak_vat_price' => 'ReferenceProposition_PeakVatPrice',
         'reference_proposition_off_peak_vat_price' => 'ReferenceProposition_OffPeakVatPrice',
         'reference_proposition_base_vat_price' => 'ReferenceProposition_BaseVatPrice',
+        'reference_proposition_price_block_ldn_vat_price' => 'ReferenceProposition_PriceBlockLDNVatPrice',
         'reference_proposition_peak_total_price' => 'ReferenceProposition_PeakTotalPrice',
         'reference_proposition_off_peak_total_price' => 'ReferenceProposition_OffPeakTotalPrice',
         'reference_proposition_base_total_price' => 'ReferenceProposition_BaseTotalPrice',
+        'reference_proposition_price_block_ldn_total_price' => 'ReferenceProposition_PriceBlockLDNTotalPrice',
         'contract_proposition_id' => 'Contract_PropositionId',
         'contract_proposition_reference' => 'Contract_PropositionReference',
+        'contract_proposition_pricing_type' => 'Contract_PropositionPricingType',
         'contract_meelift_proposition_id' => 'Contract_MeeliftPropositionId',
         'contract_meelift_proposition_reference' => 'Contract_MeeliftPropositionReference',
         'contract_peak_price' => 'Contract_PeakPrice',
         'contract_off_peak_price' => 'Contract_OffPeakPrice',
         'contract_base_price' => 'Contract_BasePrice',
+        'contract_price_block_ldn_price' => 'Contract_PriceBlockLDNPrice',
         'contract_peak_vat_price' => 'Contract_PeakVatPrice',
         'contract_off_peak_vat_price' => 'Contract_OffPeakVatPrice',
         'contract_base_vat_price' => 'Contract_BaseVatPrice',
+        'contract_price_block_ldn_vat_price' => 'Contract_PriceBlockLDNVatPrice',
         'contract_peak_total_price' => 'Contract_PeakTotalPrice',
         'contract_off_peak_total_price' => 'Contract_OffPeakTotalPrice',
         'contract_base_total_price' => 'Contract_BaseTotalPrice',
+        'contract_price_block_ldn_total_price' => 'Contract_PriceBlockLDNTotalPrice',
         'annual_standard_usage_annual_standard_usage_id' => 'AnnualStandardUsage_AnnualStandardUsageId',
         'annual_standard_usage_annual_standard_usage_type' => 'AnnualStandardUsage_AnnualStandardUsageType',
         'annual_standard_usage_single_usage' => 'AnnualStandardUsage_SingleUsage',
@@ -269,38 +299,48 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'contract_id' => 'setContractId',
         'termination_date' => 'setTerminationDate',
         'calculation_date' => 'setCalculationDate',
+        'valid_until' => 'setValidUntil',
         'connection_is_electricity' => 'setConnectionIsElectricity',
         'connection_is_gas' => 'setConnectionIsGas',
         'has_base_prices' => 'setHasBasePrices',
+        'has_price_block_ldn_prices' => 'setHasPriceBlockLdnPrices',
         'remaining_peak_usage' => 'setRemainingPeakUsage',
         'remaining_off_peak_usage' => 'setRemainingOffPeakUsage',
         'remaining_base_usage' => 'setRemainingBaseUsage',
         'reference_proposition_proposition_id' => 'setReferencePropositionPropositionId',
         'reference_proposition_proposition_reference' => 'setReferencePropositionPropositionReference',
+        'reference_proposition_pricing_type' => 'setReferencePropositionPricingType',
         'reference_proposition_meelift_proposition_id' => 'setReferencePropositionMeeliftPropositionId',
         'reference_proposition_meelift_proposition_reference' => 'setReferencePropositionMeeliftPropositionReference',
         'reference_proposition_peak_price' => 'setReferencePropositionPeakPrice',
         'reference_proposition_off_peak_price' => 'setReferencePropositionOffPeakPrice',
         'reference_proposition_base_price' => 'setReferencePropositionBasePrice',
+        'reference_proposition_price_block_ldn_price' => 'setReferencePropositionPriceBlockLdnPrice',
         'reference_proposition_peak_vat_price' => 'setReferencePropositionPeakVatPrice',
         'reference_proposition_off_peak_vat_price' => 'setReferencePropositionOffPeakVatPrice',
         'reference_proposition_base_vat_price' => 'setReferencePropositionBaseVatPrice',
+        'reference_proposition_price_block_ldn_vat_price' => 'setReferencePropositionPriceBlockLdnVatPrice',
         'reference_proposition_peak_total_price' => 'setReferencePropositionPeakTotalPrice',
         'reference_proposition_off_peak_total_price' => 'setReferencePropositionOffPeakTotalPrice',
         'reference_proposition_base_total_price' => 'setReferencePropositionBaseTotalPrice',
+        'reference_proposition_price_block_ldn_total_price' => 'setReferencePropositionPriceBlockLdnTotalPrice',
         'contract_proposition_id' => 'setContractPropositionId',
         'contract_proposition_reference' => 'setContractPropositionReference',
+        'contract_proposition_pricing_type' => 'setContractPropositionPricingType',
         'contract_meelift_proposition_id' => 'setContractMeeliftPropositionId',
         'contract_meelift_proposition_reference' => 'setContractMeeliftPropositionReference',
         'contract_peak_price' => 'setContractPeakPrice',
         'contract_off_peak_price' => 'setContractOffPeakPrice',
         'contract_base_price' => 'setContractBasePrice',
+        'contract_price_block_ldn_price' => 'setContractPriceBlockLdnPrice',
         'contract_peak_vat_price' => 'setContractPeakVatPrice',
         'contract_off_peak_vat_price' => 'setContractOffPeakVatPrice',
         'contract_base_vat_price' => 'setContractBaseVatPrice',
+        'contract_price_block_ldn_vat_price' => 'setContractPriceBlockLdnVatPrice',
         'contract_peak_total_price' => 'setContractPeakTotalPrice',
         'contract_off_peak_total_price' => 'setContractOffPeakTotalPrice',
         'contract_base_total_price' => 'setContractBaseTotalPrice',
+        'contract_price_block_ldn_total_price' => 'setContractPriceBlockLdnTotalPrice',
         'annual_standard_usage_annual_standard_usage_id' => 'setAnnualStandardUsageAnnualStandardUsageId',
         'annual_standard_usage_annual_standard_usage_type' => 'setAnnualStandardUsageAnnualStandardUsageType',
         'annual_standard_usage_single_usage' => 'setAnnualStandardUsageSingleUsage',
@@ -329,38 +369,48 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'contract_id' => 'getContractId',
         'termination_date' => 'getTerminationDate',
         'calculation_date' => 'getCalculationDate',
+        'valid_until' => 'getValidUntil',
         'connection_is_electricity' => 'getConnectionIsElectricity',
         'connection_is_gas' => 'getConnectionIsGas',
         'has_base_prices' => 'getHasBasePrices',
+        'has_price_block_ldn_prices' => 'getHasPriceBlockLdnPrices',
         'remaining_peak_usage' => 'getRemainingPeakUsage',
         'remaining_off_peak_usage' => 'getRemainingOffPeakUsage',
         'remaining_base_usage' => 'getRemainingBaseUsage',
         'reference_proposition_proposition_id' => 'getReferencePropositionPropositionId',
         'reference_proposition_proposition_reference' => 'getReferencePropositionPropositionReference',
+        'reference_proposition_pricing_type' => 'getReferencePropositionPricingType',
         'reference_proposition_meelift_proposition_id' => 'getReferencePropositionMeeliftPropositionId',
         'reference_proposition_meelift_proposition_reference' => 'getReferencePropositionMeeliftPropositionReference',
         'reference_proposition_peak_price' => 'getReferencePropositionPeakPrice',
         'reference_proposition_off_peak_price' => 'getReferencePropositionOffPeakPrice',
         'reference_proposition_base_price' => 'getReferencePropositionBasePrice',
+        'reference_proposition_price_block_ldn_price' => 'getReferencePropositionPriceBlockLdnPrice',
         'reference_proposition_peak_vat_price' => 'getReferencePropositionPeakVatPrice',
         'reference_proposition_off_peak_vat_price' => 'getReferencePropositionOffPeakVatPrice',
         'reference_proposition_base_vat_price' => 'getReferencePropositionBaseVatPrice',
+        'reference_proposition_price_block_ldn_vat_price' => 'getReferencePropositionPriceBlockLdnVatPrice',
         'reference_proposition_peak_total_price' => 'getReferencePropositionPeakTotalPrice',
         'reference_proposition_off_peak_total_price' => 'getReferencePropositionOffPeakTotalPrice',
         'reference_proposition_base_total_price' => 'getReferencePropositionBaseTotalPrice',
+        'reference_proposition_price_block_ldn_total_price' => 'getReferencePropositionPriceBlockLdnTotalPrice',
         'contract_proposition_id' => 'getContractPropositionId',
         'contract_proposition_reference' => 'getContractPropositionReference',
+        'contract_proposition_pricing_type' => 'getContractPropositionPricingType',
         'contract_meelift_proposition_id' => 'getContractMeeliftPropositionId',
         'contract_meelift_proposition_reference' => 'getContractMeeliftPropositionReference',
         'contract_peak_price' => 'getContractPeakPrice',
         'contract_off_peak_price' => 'getContractOffPeakPrice',
         'contract_base_price' => 'getContractBasePrice',
+        'contract_price_block_ldn_price' => 'getContractPriceBlockLdnPrice',
         'contract_peak_vat_price' => 'getContractPeakVatPrice',
         'contract_off_peak_vat_price' => 'getContractOffPeakVatPrice',
         'contract_base_vat_price' => 'getContractBaseVatPrice',
+        'contract_price_block_ldn_vat_price' => 'getContractPriceBlockLdnVatPrice',
         'contract_peak_total_price' => 'getContractPeakTotalPrice',
         'contract_off_peak_total_price' => 'getContractOffPeakTotalPrice',
         'contract_base_total_price' => 'getContractBaseTotalPrice',
+        'contract_price_block_ldn_total_price' => 'getContractPriceBlockLdnTotalPrice',
         'annual_standard_usage_annual_standard_usage_id' => 'getAnnualStandardUsageAnnualStandardUsageId',
         'annual_standard_usage_annual_standard_usage_type' => 'getAnnualStandardUsageAnnualStandardUsageType',
         'annual_standard_usage_single_usage' => 'getAnnualStandardUsageSingleUsage',
@@ -443,38 +493,48 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         $this->container['contract_id'] = isset($data['contract_id']) ? $data['contract_id'] : null;
         $this->container['termination_date'] = isset($data['termination_date']) ? $data['termination_date'] : null;
         $this->container['calculation_date'] = isset($data['calculation_date']) ? $data['calculation_date'] : null;
+        $this->container['valid_until'] = isset($data['valid_until']) ? $data['valid_until'] : null;
         $this->container['connection_is_electricity'] = isset($data['connection_is_electricity']) ? $data['connection_is_electricity'] : null;
         $this->container['connection_is_gas'] = isset($data['connection_is_gas']) ? $data['connection_is_gas'] : null;
         $this->container['has_base_prices'] = isset($data['has_base_prices']) ? $data['has_base_prices'] : null;
+        $this->container['has_price_block_ldn_prices'] = isset($data['has_price_block_ldn_prices']) ? $data['has_price_block_ldn_prices'] : null;
         $this->container['remaining_peak_usage'] = isset($data['remaining_peak_usage']) ? $data['remaining_peak_usage'] : null;
         $this->container['remaining_off_peak_usage'] = isset($data['remaining_off_peak_usage']) ? $data['remaining_off_peak_usage'] : null;
         $this->container['remaining_base_usage'] = isset($data['remaining_base_usage']) ? $data['remaining_base_usage'] : null;
         $this->container['reference_proposition_proposition_id'] = isset($data['reference_proposition_proposition_id']) ? $data['reference_proposition_proposition_id'] : null;
         $this->container['reference_proposition_proposition_reference'] = isset($data['reference_proposition_proposition_reference']) ? $data['reference_proposition_proposition_reference'] : null;
+        $this->container['reference_proposition_pricing_type'] = isset($data['reference_proposition_pricing_type']) ? $data['reference_proposition_pricing_type'] : null;
         $this->container['reference_proposition_meelift_proposition_id'] = isset($data['reference_proposition_meelift_proposition_id']) ? $data['reference_proposition_meelift_proposition_id'] : null;
         $this->container['reference_proposition_meelift_proposition_reference'] = isset($data['reference_proposition_meelift_proposition_reference']) ? $data['reference_proposition_meelift_proposition_reference'] : null;
         $this->container['reference_proposition_peak_price'] = isset($data['reference_proposition_peak_price']) ? $data['reference_proposition_peak_price'] : null;
         $this->container['reference_proposition_off_peak_price'] = isset($data['reference_proposition_off_peak_price']) ? $data['reference_proposition_off_peak_price'] : null;
         $this->container['reference_proposition_base_price'] = isset($data['reference_proposition_base_price']) ? $data['reference_proposition_base_price'] : null;
+        $this->container['reference_proposition_price_block_ldn_price'] = isset($data['reference_proposition_price_block_ldn_price']) ? $data['reference_proposition_price_block_ldn_price'] : null;
         $this->container['reference_proposition_peak_vat_price'] = isset($data['reference_proposition_peak_vat_price']) ? $data['reference_proposition_peak_vat_price'] : null;
         $this->container['reference_proposition_off_peak_vat_price'] = isset($data['reference_proposition_off_peak_vat_price']) ? $data['reference_proposition_off_peak_vat_price'] : null;
         $this->container['reference_proposition_base_vat_price'] = isset($data['reference_proposition_base_vat_price']) ? $data['reference_proposition_base_vat_price'] : null;
+        $this->container['reference_proposition_price_block_ldn_vat_price'] = isset($data['reference_proposition_price_block_ldn_vat_price']) ? $data['reference_proposition_price_block_ldn_vat_price'] : null;
         $this->container['reference_proposition_peak_total_price'] = isset($data['reference_proposition_peak_total_price']) ? $data['reference_proposition_peak_total_price'] : null;
         $this->container['reference_proposition_off_peak_total_price'] = isset($data['reference_proposition_off_peak_total_price']) ? $data['reference_proposition_off_peak_total_price'] : null;
         $this->container['reference_proposition_base_total_price'] = isset($data['reference_proposition_base_total_price']) ? $data['reference_proposition_base_total_price'] : null;
+        $this->container['reference_proposition_price_block_ldn_total_price'] = isset($data['reference_proposition_price_block_ldn_total_price']) ? $data['reference_proposition_price_block_ldn_total_price'] : null;
         $this->container['contract_proposition_id'] = isset($data['contract_proposition_id']) ? $data['contract_proposition_id'] : null;
         $this->container['contract_proposition_reference'] = isset($data['contract_proposition_reference']) ? $data['contract_proposition_reference'] : null;
+        $this->container['contract_proposition_pricing_type'] = isset($data['contract_proposition_pricing_type']) ? $data['contract_proposition_pricing_type'] : null;
         $this->container['contract_meelift_proposition_id'] = isset($data['contract_meelift_proposition_id']) ? $data['contract_meelift_proposition_id'] : null;
         $this->container['contract_meelift_proposition_reference'] = isset($data['contract_meelift_proposition_reference']) ? $data['contract_meelift_proposition_reference'] : null;
         $this->container['contract_peak_price'] = isset($data['contract_peak_price']) ? $data['contract_peak_price'] : null;
         $this->container['contract_off_peak_price'] = isset($data['contract_off_peak_price']) ? $data['contract_off_peak_price'] : null;
         $this->container['contract_base_price'] = isset($data['contract_base_price']) ? $data['contract_base_price'] : null;
+        $this->container['contract_price_block_ldn_price'] = isset($data['contract_price_block_ldn_price']) ? $data['contract_price_block_ldn_price'] : null;
         $this->container['contract_peak_vat_price'] = isset($data['contract_peak_vat_price']) ? $data['contract_peak_vat_price'] : null;
         $this->container['contract_off_peak_vat_price'] = isset($data['contract_off_peak_vat_price']) ? $data['contract_off_peak_vat_price'] : null;
         $this->container['contract_base_vat_price'] = isset($data['contract_base_vat_price']) ? $data['contract_base_vat_price'] : null;
+        $this->container['contract_price_block_ldn_vat_price'] = isset($data['contract_price_block_ldn_vat_price']) ? $data['contract_price_block_ldn_vat_price'] : null;
         $this->container['contract_peak_total_price'] = isset($data['contract_peak_total_price']) ? $data['contract_peak_total_price'] : null;
         $this->container['contract_off_peak_total_price'] = isset($data['contract_off_peak_total_price']) ? $data['contract_off_peak_total_price'] : null;
         $this->container['contract_base_total_price'] = isset($data['contract_base_total_price']) ? $data['contract_base_total_price'] : null;
+        $this->container['contract_price_block_ldn_total_price'] = isset($data['contract_price_block_ldn_total_price']) ? $data['contract_price_block_ldn_total_price'] : null;
         $this->container['annual_standard_usage_annual_standard_usage_id'] = isset($data['annual_standard_usage_annual_standard_usage_id']) ? $data['annual_standard_usage_annual_standard_usage_id'] : null;
         $this->container['annual_standard_usage_annual_standard_usage_type'] = isset($data['annual_standard_usage_annual_standard_usage_type']) ? $data['annual_standard_usage_annual_standard_usage_type'] : null;
         $this->container['annual_standard_usage_single_usage'] = isset($data['annual_standard_usage_single_usage']) ? $data['annual_standard_usage_single_usage'] : null;
@@ -775,6 +835,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Gets valid_until
+     *
+     * @return \DateTime
+     */
+    public function getValidUntil()
+    {
+        return $this->container['valid_until'];
+    }
+
+    /**
+     * Sets valid_until
+     *
+     * @param \DateTime $valid_until valid_until
+     *
+     * @return $this
+     */
+    public function setValidUntil($valid_until)
+    {
+        $this->container['valid_until'] = $valid_until;
+
+        return $this;
+    }
+
+    /**
      * Gets connection_is_electricity
      *
      * @return bool
@@ -842,6 +926,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setHasBasePrices($has_base_prices)
     {
         $this->container['has_base_prices'] = $has_base_prices;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_price_block_ldn_prices
+     *
+     * @return bool
+     */
+    public function getHasPriceBlockLdnPrices()
+    {
+        return $this->container['has_price_block_ldn_prices'];
+    }
+
+    /**
+     * Sets has_price_block_ldn_prices
+     *
+     * @param bool $has_price_block_ldn_prices has_price_block_ldn_prices
+     *
+     * @return $this
+     */
+    public function setHasPriceBlockLdnPrices($has_price_block_ldn_prices)
+    {
+        $this->container['has_price_block_ldn_prices'] = $has_price_block_ldn_prices;
 
         return $this;
     }
@@ -967,6 +1075,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Gets reference_proposition_pricing_type
+     *
+     * @return string
+     */
+    public function getReferencePropositionPricingType()
+    {
+        return $this->container['reference_proposition_pricing_type'];
+    }
+
+    /**
+     * Sets reference_proposition_pricing_type
+     *
+     * @param string $reference_proposition_pricing_type reference_proposition_pricing_type
+     *
+     * @return $this
+     */
+    public function setReferencePropositionPricingType($reference_proposition_pricing_type)
+    {
+        $this->container['reference_proposition_pricing_type'] = $reference_proposition_pricing_type;
+
+        return $this;
+    }
+
+    /**
      * Gets reference_proposition_meelift_proposition_id
      *
      * @return string
@@ -1087,6 +1219,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Gets reference_proposition_price_block_ldn_price
+     *
+     * @return double
+     */
+    public function getReferencePropositionPriceBlockLdnPrice()
+    {
+        return $this->container['reference_proposition_price_block_ldn_price'];
+    }
+
+    /**
+     * Sets reference_proposition_price_block_ldn_price
+     *
+     * @param double $reference_proposition_price_block_ldn_price reference_proposition_price_block_ldn_price
+     *
+     * @return $this
+     */
+    public function setReferencePropositionPriceBlockLdnPrice($reference_proposition_price_block_ldn_price)
+    {
+        $this->container['reference_proposition_price_block_ldn_price'] = $reference_proposition_price_block_ldn_price;
+
+        return $this;
+    }
+
+    /**
      * Gets reference_proposition_peak_vat_price
      *
      * @return double
@@ -1154,6 +1310,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setReferencePropositionBaseVatPrice($reference_proposition_base_vat_price)
     {
         $this->container['reference_proposition_base_vat_price'] = $reference_proposition_base_vat_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets reference_proposition_price_block_ldn_vat_price
+     *
+     * @return double
+     */
+    public function getReferencePropositionPriceBlockLdnVatPrice()
+    {
+        return $this->container['reference_proposition_price_block_ldn_vat_price'];
+    }
+
+    /**
+     * Sets reference_proposition_price_block_ldn_vat_price
+     *
+     * @param double $reference_proposition_price_block_ldn_vat_price reference_proposition_price_block_ldn_vat_price
+     *
+     * @return $this
+     */
+    public function setReferencePropositionPriceBlockLdnVatPrice($reference_proposition_price_block_ldn_vat_price)
+    {
+        $this->container['reference_proposition_price_block_ldn_vat_price'] = $reference_proposition_price_block_ldn_vat_price;
 
         return $this;
     }
@@ -1231,6 +1411,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Gets reference_proposition_price_block_ldn_total_price
+     *
+     * @return double
+     */
+    public function getReferencePropositionPriceBlockLdnTotalPrice()
+    {
+        return $this->container['reference_proposition_price_block_ldn_total_price'];
+    }
+
+    /**
+     * Sets reference_proposition_price_block_ldn_total_price
+     *
+     * @param double $reference_proposition_price_block_ldn_total_price reference_proposition_price_block_ldn_total_price
+     *
+     * @return $this
+     */
+    public function setReferencePropositionPriceBlockLdnTotalPrice($reference_proposition_price_block_ldn_total_price)
+    {
+        $this->container['reference_proposition_price_block_ldn_total_price'] = $reference_proposition_price_block_ldn_total_price;
+
+        return $this;
+    }
+
+    /**
      * Gets contract_proposition_id
      *
      * @return string
@@ -1274,6 +1478,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setContractPropositionReference($contract_proposition_reference)
     {
         $this->container['contract_proposition_reference'] = $contract_proposition_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets contract_proposition_pricing_type
+     *
+     * @return string
+     */
+    public function getContractPropositionPricingType()
+    {
+        return $this->container['contract_proposition_pricing_type'];
+    }
+
+    /**
+     * Sets contract_proposition_pricing_type
+     *
+     * @param string $contract_proposition_pricing_type contract_proposition_pricing_type
+     *
+     * @return $this
+     */
+    public function setContractPropositionPricingType($contract_proposition_pricing_type)
+    {
+        $this->container['contract_proposition_pricing_type'] = $contract_proposition_pricing_type;
 
         return $this;
     }
@@ -1399,6 +1627,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Gets contract_price_block_ldn_price
+     *
+     * @return double
+     */
+    public function getContractPriceBlockLdnPrice()
+    {
+        return $this->container['contract_price_block_ldn_price'];
+    }
+
+    /**
+     * Sets contract_price_block_ldn_price
+     *
+     * @param double $contract_price_block_ldn_price contract_price_block_ldn_price
+     *
+     * @return $this
+     */
+    public function setContractPriceBlockLdnPrice($contract_price_block_ldn_price)
+    {
+        $this->container['contract_price_block_ldn_price'] = $contract_price_block_ldn_price;
+
+        return $this;
+    }
+
+    /**
      * Gets contract_peak_vat_price
      *
      * @return double
@@ -1471,6 +1723,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Gets contract_price_block_ldn_vat_price
+     *
+     * @return double
+     */
+    public function getContractPriceBlockLdnVatPrice()
+    {
+        return $this->container['contract_price_block_ldn_vat_price'];
+    }
+
+    /**
+     * Sets contract_price_block_ldn_vat_price
+     *
+     * @param double $contract_price_block_ldn_vat_price contract_price_block_ldn_vat_price
+     *
+     * @return $this
+     */
+    public function setContractPriceBlockLdnVatPrice($contract_price_block_ldn_vat_price)
+    {
+        $this->container['contract_price_block_ldn_vat_price'] = $contract_price_block_ldn_vat_price;
+
+        return $this;
+    }
+
+    /**
      * Gets contract_peak_total_price
      *
      * @return double
@@ -1538,6 +1814,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setContractBaseTotalPrice($contract_base_total_price)
     {
         $this->container['contract_base_total_price'] = $contract_base_total_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets contract_price_block_ldn_total_price
+     *
+     * @return double
+     */
+    public function getContractPriceBlockLdnTotalPrice()
+    {
+        return $this->container['contract_price_block_ldn_total_price'];
+    }
+
+    /**
+     * Sets contract_price_block_ldn_total_price
+     *
+     * @param double $contract_price_block_ldn_total_price contract_price_block_ldn_total_price
+     *
+     * @return $this
+     */
+    public function setContractPriceBlockLdnTotalPrice($contract_price_block_ldn_total_price)
+    {
+        $this->container['contract_price_block_ldn_total_price'] = $contract_price_block_ldn_total_price;
 
         return $this;
     }

@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto extends EcedoERPCRMInterfaceApiInvoiceRowTotalsDto 
 {
     const DISCRIMINATOR = null;
 
@@ -57,17 +55,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'row_description' => 'string',
-        'row_price_component_type' => 'string',
-        'row_usage' => 'double',
-        'row_price' => 'double',
-        'row_amount' => 'double',
-        'row_vat_amount' => 'double',
-        'row_total_amount' => 'double',
-        'row_vat_percentage' => 'double',
-        'row_price_unit_singular' => 'string',
-        'row_has_factor' => 'bool',
-        'row_factor' => 'double'
+        'row_description' => 'string'
     ];
 
     /**
@@ -76,17 +64,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'row_description' => null,
-        'row_price_component_type' => null,
-        'row_usage' => 'double',
-        'row_price' => 'double',
-        'row_amount' => 'double',
-        'row_vat_amount' => 'double',
-        'row_total_amount' => 'double',
-        'row_vat_percentage' => 'double',
-        'row_price_unit_singular' => null,
-        'row_has_factor' => null,
-        'row_factor' => 'double'
+        'row_description' => null
     ];
 
     /**
@@ -96,7 +74,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -106,7 +84,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -116,17 +94,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'row_description' => 'Row_Description',
-        'row_price_component_type' => 'Row_PriceComponentType',
-        'row_usage' => 'Row_Usage',
-        'row_price' => 'Row_Price',
-        'row_amount' => 'Row_Amount',
-        'row_vat_amount' => 'Row_VatAmount',
-        'row_total_amount' => 'Row_TotalAmount',
-        'row_vat_percentage' => 'Row_VatPercentage',
-        'row_price_unit_singular' => 'Row_PriceUnitSingular',
-        'row_has_factor' => 'Row_HasFactor',
-        'row_factor' => 'Row_Factor'
+        'row_description' => 'Row_Description'
     ];
 
     /**
@@ -135,17 +103,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'row_description' => 'setRowDescription',
-        'row_price_component_type' => 'setRowPriceComponentType',
-        'row_usage' => 'setRowUsage',
-        'row_price' => 'setRowPrice',
-        'row_amount' => 'setRowAmount',
-        'row_vat_amount' => 'setRowVatAmount',
-        'row_total_amount' => 'setRowTotalAmount',
-        'row_vat_percentage' => 'setRowVatPercentage',
-        'row_price_unit_singular' => 'setRowPriceUnitSingular',
-        'row_has_factor' => 'setRowHasFactor',
-        'row_factor' => 'setRowFactor'
+        'row_description' => 'setRowDescription'
     ];
 
     /**
@@ -154,17 +112,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'row_description' => 'getRowDescription',
-        'row_price_component_type' => 'getRowPriceComponentType',
-        'row_usage' => 'getRowUsage',
-        'row_price' => 'getRowPrice',
-        'row_amount' => 'getRowAmount',
-        'row_vat_amount' => 'getRowVatAmount',
-        'row_total_amount' => 'getRowTotalAmount',
-        'row_vat_percentage' => 'getRowVatPercentage',
-        'row_price_unit_singular' => 'getRowPriceUnitSingular',
-        'row_has_factor' => 'getRowHasFactor',
-        'row_factor' => 'getRowFactor'
+        'row_description' => 'getRowDescription'
     ];
 
     /**
@@ -175,7 +123,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -185,7 +133,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -195,7 +143,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -212,12 +160,6 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -227,17 +169,9 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['row_description'] = isset($data['row_description']) ? $data['row_description'] : null;
-        $this->container['row_price_component_type'] = isset($data['row_price_component_type']) ? $data['row_price_component_type'] : null;
-        $this->container['row_usage'] = isset($data['row_usage']) ? $data['row_usage'] : null;
-        $this->container['row_price'] = isset($data['row_price']) ? $data['row_price'] : null;
-        $this->container['row_amount'] = isset($data['row_amount']) ? $data['row_amount'] : null;
-        $this->container['row_vat_amount'] = isset($data['row_vat_amount']) ? $data['row_vat_amount'] : null;
-        $this->container['row_total_amount'] = isset($data['row_total_amount']) ? $data['row_total_amount'] : null;
-        $this->container['row_vat_percentage'] = isset($data['row_vat_percentage']) ? $data['row_vat_percentage'] : null;
-        $this->container['row_price_unit_singular'] = isset($data['row_price_unit_singular']) ? $data['row_price_unit_singular'] : null;
-        $this->container['row_has_factor'] = isset($data['row_has_factor']) ? $data['row_has_factor'] : null;
-        $this->container['row_factor'] = isset($data['row_factor']) ? $data['row_factor'] : null;
     }
 
     /**
@@ -247,7 +181,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -284,246 +218,6 @@ class EcedoERPCRMInterfaceApiInvoiceRowSummaryDto implements ModelInterface, Arr
     public function setRowDescription($row_description)
     {
         $this->container['row_description'] = $row_description;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_price_component_type
-     *
-     * @return string
-     */
-    public function getRowPriceComponentType()
-    {
-        return $this->container['row_price_component_type'];
-    }
-
-    /**
-     * Sets row_price_component_type
-     *
-     * @param string $row_price_component_type row_price_component_type
-     *
-     * @return $this
-     */
-    public function setRowPriceComponentType($row_price_component_type)
-    {
-        $this->container['row_price_component_type'] = $row_price_component_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_usage
-     *
-     * @return double
-     */
-    public function getRowUsage()
-    {
-        return $this->container['row_usage'];
-    }
-
-    /**
-     * Sets row_usage
-     *
-     * @param double $row_usage row_usage
-     *
-     * @return $this
-     */
-    public function setRowUsage($row_usage)
-    {
-        $this->container['row_usage'] = $row_usage;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_price
-     *
-     * @return double
-     */
-    public function getRowPrice()
-    {
-        return $this->container['row_price'];
-    }
-
-    /**
-     * Sets row_price
-     *
-     * @param double $row_price row_price
-     *
-     * @return $this
-     */
-    public function setRowPrice($row_price)
-    {
-        $this->container['row_price'] = $row_price;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_amount
-     *
-     * @return double
-     */
-    public function getRowAmount()
-    {
-        return $this->container['row_amount'];
-    }
-
-    /**
-     * Sets row_amount
-     *
-     * @param double $row_amount row_amount
-     *
-     * @return $this
-     */
-    public function setRowAmount($row_amount)
-    {
-        $this->container['row_amount'] = $row_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_vat_amount
-     *
-     * @return double
-     */
-    public function getRowVatAmount()
-    {
-        return $this->container['row_vat_amount'];
-    }
-
-    /**
-     * Sets row_vat_amount
-     *
-     * @param double $row_vat_amount row_vat_amount
-     *
-     * @return $this
-     */
-    public function setRowVatAmount($row_vat_amount)
-    {
-        $this->container['row_vat_amount'] = $row_vat_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_total_amount
-     *
-     * @return double
-     */
-    public function getRowTotalAmount()
-    {
-        return $this->container['row_total_amount'];
-    }
-
-    /**
-     * Sets row_total_amount
-     *
-     * @param double $row_total_amount row_total_amount
-     *
-     * @return $this
-     */
-    public function setRowTotalAmount($row_total_amount)
-    {
-        $this->container['row_total_amount'] = $row_total_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_vat_percentage
-     *
-     * @return double
-     */
-    public function getRowVatPercentage()
-    {
-        return $this->container['row_vat_percentage'];
-    }
-
-    /**
-     * Sets row_vat_percentage
-     *
-     * @param double $row_vat_percentage row_vat_percentage
-     *
-     * @return $this
-     */
-    public function setRowVatPercentage($row_vat_percentage)
-    {
-        $this->container['row_vat_percentage'] = $row_vat_percentage;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_price_unit_singular
-     *
-     * @return string
-     */
-    public function getRowPriceUnitSingular()
-    {
-        return $this->container['row_price_unit_singular'];
-    }
-
-    /**
-     * Sets row_price_unit_singular
-     *
-     * @param string $row_price_unit_singular row_price_unit_singular
-     *
-     * @return $this
-     */
-    public function setRowPriceUnitSingular($row_price_unit_singular)
-    {
-        $this->container['row_price_unit_singular'] = $row_price_unit_singular;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_has_factor
-     *
-     * @return bool
-     */
-    public function getRowHasFactor()
-    {
-        return $this->container['row_has_factor'];
-    }
-
-    /**
-     * Sets row_has_factor
-     *
-     * @param bool $row_has_factor row_has_factor
-     *
-     * @return $this
-     */
-    public function setRowHasFactor($row_has_factor)
-    {
-        $this->container['row_has_factor'] = $row_has_factor;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_factor
-     *
-     * @return double
-     */
-    public function getRowFactor()
-    {
-        return $this->container['row_factor'];
-    }
-
-    /**
-     * Sets row_factor
-     *
-     * @param double $row_factor row_factor
-     *
-     * @return $this
-     */
-    public function setRowFactor($row_factor)
-    {
-        $this->container['row_factor'] = $row_factor;
 
         return $this;
     }

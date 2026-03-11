@@ -1211,7 +1211,7 @@ class EcedoERPCRMInterfaceApiOrganizationPostData implements ModelInterface, Arr
     /**
      * Sets organization_group_id
      *
-     * @param string $organization_group_id Optioneel veld waarmee de klant in een specifieke klantgroep geplaatst kan worden. Als dit veld niet wordt meegegeven wordt de klant automatisch in de klantgroep \"Algemeen\" geplaatst
+     * @param string $organization_group_id Optioneel veld waarmee de klant in een specifieke klantgroep geplaatst kan worden. Als dit veld niet wordt meegegeven wordt de klant automatisch in de default klantgroep geplaatst
      *
      * @return $this
      */

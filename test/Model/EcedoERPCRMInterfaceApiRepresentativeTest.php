@@ -117,18 +117,4 @@ class EcedoERPCRMInterfaceApiRepresentativeTest extends \PHPUnit_Framework_TestC
     public function testPropertyCorrespondenceWebsite()
     {
     }
-
-    /**
-     * Test attribute "representative_id"
-     */
-    public function testPropertyRepresentativeId()
-    {
-    }
-
-    /**
-     * Test attribute "full_name"
-     */
-    public function testPropertyFullName()
-    {
-    }
 }

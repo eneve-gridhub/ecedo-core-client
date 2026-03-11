@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiReservationBase implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -244,6 +244,10 @@ class EcedoERPCRMInterfaceApiReservationBase implements ModelInterface, ArrayAcc
         $this->container['annual_standard_usage'] = isset($data['annual_standard_usage']) ? $data['annual_standard_usage'] : null;
         $this->container['connection_status'] = isset($data['connection_status']) ? $data['connection_status'] : null;
         $this->container['connection_status_localized'] = isset($data['connection_status_localized']) ? $data['connection_status_localized'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiMeterReading extends EcedoERPCRMInterfaceApiMeterReadingBase 
 {
     const DISCRIMINATOR = null;
 
@@ -72,14 +70,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
         'usage_odnt2' => 'int',
         'usage_ldnt1' => 'int',
         'usage_ldnt2' => 'int',
-        'previous_meter_reading_id' => 'string',
-        'meter_number' => 'string',
-        'reading_date' => '\DateTime',
-        'odnt1' => 'int',
-        'odnt2' => 'int',
-        'ldnt1' => 'int',
-        'ldnt2' => 'int',
-        'comment' => 'string'
+        'previous_meter_reading_id' => 'string'
     ];
 
     /**
@@ -103,14 +94,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
         'usage_odnt2' => 'int32',
         'usage_ldnt1' => 'int32',
         'usage_ldnt2' => 'int32',
-        'previous_meter_reading_id' => 'uuid',
-        'meter_number' => null,
-        'reading_date' => 'date',
-        'odnt1' => 'int32',
-        'odnt2' => 'int32',
-        'ldnt1' => 'int32',
-        'ldnt2' => 'int32',
-        'comment' => null
+        'previous_meter_reading_id' => 'uuid'
     ];
 
     /**
@@ -120,7 +104,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -130,7 +114,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -155,14 +139,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
         'usage_odnt2' => 'UsageODNT2',
         'usage_ldnt1' => 'UsageLDNT1',
         'usage_ldnt2' => 'UsageLDNT2',
-        'previous_meter_reading_id' => 'PreviousMeterReadingId',
-        'meter_number' => 'MeterNumber',
-        'reading_date' => 'ReadingDate',
-        'odnt1' => 'ODNT1',
-        'odnt2' => 'ODNT2',
-        'ldnt1' => 'LDNT1',
-        'ldnt2' => 'LDNT2',
-        'comment' => 'Comment'
+        'previous_meter_reading_id' => 'PreviousMeterReadingId'
     ];
 
     /**
@@ -186,14 +163,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
         'usage_odnt2' => 'setUsageOdnt2',
         'usage_ldnt1' => 'setUsageLdnt1',
         'usage_ldnt2' => 'setUsageLdnt2',
-        'previous_meter_reading_id' => 'setPreviousMeterReadingId',
-        'meter_number' => 'setMeterNumber',
-        'reading_date' => 'setReadingDate',
-        'odnt1' => 'setOdnt1',
-        'odnt2' => 'setOdnt2',
-        'ldnt1' => 'setLdnt1',
-        'ldnt2' => 'setLdnt2',
-        'comment' => 'setComment'
+        'previous_meter_reading_id' => 'setPreviousMeterReadingId'
     ];
 
     /**
@@ -217,14 +187,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
         'usage_odnt2' => 'getUsageOdnt2',
         'usage_ldnt1' => 'getUsageLdnt1',
         'usage_ldnt2' => 'getUsageLdnt2',
-        'previous_meter_reading_id' => 'getPreviousMeterReadingId',
-        'meter_number' => 'getMeterNumber',
-        'reading_date' => 'getReadingDate',
-        'odnt1' => 'getOdnt1',
-        'odnt2' => 'getOdnt2',
-        'ldnt1' => 'getLdnt1',
-        'ldnt2' => 'getLdnt2',
-        'comment' => 'getComment'
+        'previous_meter_reading_id' => 'getPreviousMeterReadingId'
     ];
 
     /**
@@ -235,7 +198,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -245,7 +208,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -255,7 +218,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -272,12 +235,6 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -287,6 +244,8 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['meter_reading_id'] = isset($data['meter_reading_id']) ? $data['meter_reading_id'] : null;
         $this->container['meter_reading_method'] = isset($data['meter_reading_method']) ? $data['meter_reading_method'] : null;
         $this->container['meter_reading_method_localized'] = isset($data['meter_reading_method_localized']) ? $data['meter_reading_method_localized'] : null;
@@ -303,13 +262,6 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
         $this->container['usage_ldnt1'] = isset($data['usage_ldnt1']) ? $data['usage_ldnt1'] : null;
         $this->container['usage_ldnt2'] = isset($data['usage_ldnt2']) ? $data['usage_ldnt2'] : null;
         $this->container['previous_meter_reading_id'] = isset($data['previous_meter_reading_id']) ? $data['previous_meter_reading_id'] : null;
-        $this->container['meter_number'] = isset($data['meter_number']) ? $data['meter_number'] : null;
-        $this->container['reading_date'] = isset($data['reading_date']) ? $data['reading_date'] : null;
-        $this->container['odnt1'] = isset($data['odnt1']) ? $data['odnt1'] : null;
-        $this->container['odnt2'] = isset($data['odnt2']) ? $data['odnt2'] : null;
-        $this->container['ldnt1'] = isset($data['ldnt1']) ? $data['ldnt1'] : null;
-        $this->container['ldnt2'] = isset($data['ldnt2']) ? $data['ldnt2'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
     }
 
     /**
@@ -319,7 +271,7 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -716,174 +668,6 @@ class EcedoERPCRMInterfaceApiMeterReading implements ModelInterface, ArrayAccess
     public function setPreviousMeterReadingId($previous_meter_reading_id)
     {
         $this->container['previous_meter_reading_id'] = $previous_meter_reading_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets meter_number
-     *
-     * @return string
-     */
-    public function getMeterNumber()
-    {
-        return $this->container['meter_number'];
-    }
-
-    /**
-     * Sets meter_number
-     *
-     * @param string $meter_number meter_number
-     *
-     * @return $this
-     */
-    public function setMeterNumber($meter_number)
-    {
-        $this->container['meter_number'] = $meter_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets reading_date
-     *
-     * @return \DateTime
-     */
-    public function getReadingDate()
-    {
-        return $this->container['reading_date'];
-    }
-
-    /**
-     * Sets reading_date
-     *
-     * @param \DateTime $reading_date reading_date
-     *
-     * @return $this
-     */
-    public function setReadingDate($reading_date)
-    {
-        $this->container['reading_date'] = $reading_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets odnt1
-     *
-     * @return int
-     */
-    public function getOdnt1()
-    {
-        return $this->container['odnt1'];
-    }
-
-    /**
-     * Sets odnt1
-     *
-     * @param int $odnt1 odnt1
-     *
-     * @return $this
-     */
-    public function setOdnt1($odnt1)
-    {
-        $this->container['odnt1'] = $odnt1;
-
-        return $this;
-    }
-
-    /**
-     * Gets odnt2
-     *
-     * @return int
-     */
-    public function getOdnt2()
-    {
-        return $this->container['odnt2'];
-    }
-
-    /**
-     * Sets odnt2
-     *
-     * @param int $odnt2 odnt2
-     *
-     * @return $this
-     */
-    public function setOdnt2($odnt2)
-    {
-        $this->container['odnt2'] = $odnt2;
-
-        return $this;
-    }
-
-    /**
-     * Gets ldnt1
-     *
-     * @return int
-     */
-    public function getLdnt1()
-    {
-        return $this->container['ldnt1'];
-    }
-
-    /**
-     * Sets ldnt1
-     *
-     * @param int $ldnt1 ldnt1
-     *
-     * @return $this
-     */
-    public function setLdnt1($ldnt1)
-    {
-        $this->container['ldnt1'] = $ldnt1;
-
-        return $this;
-    }
-
-    /**
-     * Gets ldnt2
-     *
-     * @return int
-     */
-    public function getLdnt2()
-    {
-        return $this->container['ldnt2'];
-    }
-
-    /**
-     * Sets ldnt2
-     *
-     * @param int $ldnt2 ldnt2
-     *
-     * @return $this
-     */
-    public function setLdnt2($ldnt2)
-    {
-        $this->container['ldnt2'] = $ldnt2;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment comment
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
 
         return $this;
     }

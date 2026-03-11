@@ -42,7 +42,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = '$type';
 
     /**
       * The original name of the model.
@@ -222,9 +222,9 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
     const METER_REGISTERS_DIRECTION_TYPE_TT = 'TT';
     const METER_DIAL_POSITION_ORDER_TYPE_LOW_I_HIGH_II = 'Low_I_High_II';
     const METER_DIAL_POSITION_ORDER_TYPE_HIGH_I_LOW_II = 'High_I_Low_II';
+    
 
-
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -240,7 +240,7 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
             self::METER_TYPE_INA,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -258,7 +258,7 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
             self::METER_REGISTERS_DIRECTION_TYPE_TT,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -271,7 +271,7 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
             self::METER_DIAL_POSITION_ORDER_TYPE_HIGH_I_LOW_II,
         ];
     }
-
+    
 
     /**
      * Associative array for storing property values
@@ -299,6 +299,9 @@ class EcedoERPCRMInterfaceApiMeter implements ModelInterface, ArrayAccess
         $this->container['meter_dial_position_order_type_localized'] = isset($data['meter_dial_position_order_type_localized']) ? $data['meter_dial_position_order_type_localized'] : null;
         $this->container['factor'] = isset($data['factor']) ? $data['factor'] : null;
         $this->container['communication_status_code'] = isset($data['communication_status_code']) ? $data['communication_status_code'] : null;
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('$type', self::$attributeMap, true);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

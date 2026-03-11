@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiTelemetryApiDto extends EcedoERPCRMInterfaceApiTelemetryApiDtoBase 
 {
     const DISCRIMINATOR = null;
 
@@ -59,18 +57,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
     protected static $swaggerTypes = [
         'value' => 'double',
         'value_ldn' => 'double',
-        'value_odn' => 'double',
-        'telemetry_id' => 'string',
-        'connection_id' => 'string',
-        'ean' => 'string',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'unit' => 'string',
-        'unit_localized' => 'string',
-        'version' => 'int',
-        'revision' => 'int',
-        'source' => 'string',
-        'source_localized' => 'string'
+        'value_odn' => 'double'
     ];
 
     /**
@@ -81,18 +68,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
     protected static $swaggerFormats = [
         'value' => 'double',
         'value_ldn' => 'double',
-        'value_odn' => 'double',
-        'telemetry_id' => null,
-        'connection_id' => 'uuid',
-        'ean' => null,
-        'start_date' => 'date-time',
-        'end_date' => 'date-time',
-        'unit' => null,
-        'unit_localized' => null,
-        'version' => 'int32',
-        'revision' => 'int32',
-        'source' => null,
-        'source_localized' => null
+        'value_odn' => 'double'
     ];
 
     /**
@@ -102,7 +78,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -112,7 +88,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -124,18 +100,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
     protected static $attributeMap = [
         'value' => 'Value',
         'value_ldn' => 'ValueLDN',
-        'value_odn' => 'ValueODN',
-        'telemetry_id' => 'TelemetryId',
-        'connection_id' => 'ConnectionId',
-        'ean' => 'EAN',
-        'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'unit' => 'Unit',
-        'unit_localized' => 'UnitLocalized',
-        'version' => 'Version',
-        'revision' => 'Revision',
-        'source' => 'Source',
-        'source_localized' => 'SourceLocalized'
+        'value_odn' => 'ValueODN'
     ];
 
     /**
@@ -146,18 +111,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
     protected static $setters = [
         'value' => 'setValue',
         'value_ldn' => 'setValueLdn',
-        'value_odn' => 'setValueOdn',
-        'telemetry_id' => 'setTelemetryId',
-        'connection_id' => 'setConnectionId',
-        'ean' => 'setEan',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'unit' => 'setUnit',
-        'unit_localized' => 'setUnitLocalized',
-        'version' => 'setVersion',
-        'revision' => 'setRevision',
-        'source' => 'setSource',
-        'source_localized' => 'setSourceLocalized'
+        'value_odn' => 'setValueOdn'
     ];
 
     /**
@@ -168,18 +122,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
     protected static $getters = [
         'value' => 'getValue',
         'value_ldn' => 'getValueLdn',
-        'value_odn' => 'getValueOdn',
-        'telemetry_id' => 'getTelemetryId',
-        'connection_id' => 'getConnectionId',
-        'ean' => 'getEan',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'unit' => 'getUnit',
-        'unit_localized' => 'getUnitLocalized',
-        'version' => 'getVersion',
-        'revision' => 'getRevision',
-        'source' => 'getSource',
-        'source_localized' => 'getSourceLocalized'
+        'value_odn' => 'getValueOdn'
     ];
 
     /**
@@ -190,7 +133,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -200,7 +143,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -210,7 +153,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -223,58 +166,10 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
         return self::$swaggerModelName;
     }
 
-    const UNIT_KWH = 'KWH';
-    const UNIT_KWT = 'KWT';
-    const UNIT_MTQ = 'MTQ';
-    const UNIT_WH = 'WH';
-    const UNIT_MJ = 'MJ';
-    const SOURCE_UNKNOWN = 'Unknown';
-    const SOURCE_PVNED = 'PVNED';
-    const SOURCE_EGSSIS = 'EGSSIS';
-    const SOURCE_NEXUS = 'Nexus';
-    const SOURCE_API = 'API';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getUnitAllowableValues()
-    {
-        return [
-            self::UNIT_KWH,
-            self::UNIT_KWT,
-            self::UNIT_MTQ,
-            self::UNIT_WH,
-            self::UNIT_MJ,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getSourceAllowableValues()
-    {
-        return [
-            self::SOURCE_UNKNOWN,
-            self::SOURCE_PVNED,
-            self::SOURCE_EGSSIS,
-            self::SOURCE_NEXUS,
-            self::SOURCE_API,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -284,20 +179,11 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['value_ldn'] = isset($data['value_ldn']) ? $data['value_ldn'] : null;
         $this->container['value_odn'] = isset($data['value_odn']) ? $data['value_odn'] : null;
-        $this->container['telemetry_id'] = isset($data['telemetry_id']) ? $data['telemetry_id'] : null;
-        $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
-        $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
-        $this->container['unit_localized'] = isset($data['unit_localized']) ? $data['unit_localized'] : null;
-        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
-        $this->container['revision'] = isset($data['revision']) ? $data['revision'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['source_localized'] = isset($data['source_localized']) ? $data['source_localized'] : null;
     }
 
     /**
@@ -307,23 +193,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getUnitAllowableValues();
-        if (!is_null($this->container['unit']) && !in_array($this->container['unit'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'unit', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getSourceAllowableValues();
-        if (!is_null($this->container['source']) && !in_array($this->container['source'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'source', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -408,288 +278,6 @@ class EcedoERPCRMInterfaceApiTelemetryApiDto implements ModelInterface, ArrayAcc
     public function setValueOdn($value_odn)
     {
         $this->container['value_odn'] = $value_odn;
-
-        return $this;
-    }
-
-    /**
-     * Gets telemetry_id
-     *
-     * @return string
-     */
-    public function getTelemetryId()
-    {
-        return $this->container['telemetry_id'];
-    }
-
-    /**
-     * Sets telemetry_id
-     *
-     * @param string $telemetry_id telemetry_id
-     *
-     * @return $this
-     */
-    public function setTelemetryId($telemetry_id)
-    {
-        $this->container['telemetry_id'] = $telemetry_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets connection_id
-     *
-     * @return string
-     */
-    public function getConnectionId()
-    {
-        return $this->container['connection_id'];
-    }
-
-    /**
-     * Sets connection_id
-     *
-     * @param string $connection_id connection_id
-     *
-     * @return $this
-     */
-    public function setConnectionId($connection_id)
-    {
-        $this->container['connection_id'] = $connection_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets ean
-     *
-     * @return string
-     */
-    public function getEan()
-    {
-        return $this->container['ean'];
-    }
-
-    /**
-     * Sets ean
-     *
-     * @param string $ean ean
-     *
-     * @return $this
-     */
-    public function setEan($ean)
-    {
-        $this->container['ean'] = $ean;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date start_date
-     *
-     * @return $this
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date end_date
-     *
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit
-     *
-     * @return string
-     */
-    public function getUnit()
-    {
-        return $this->container['unit'];
-    }
-
-    /**
-     * Sets unit
-     *
-     * @param string $unit unit
-     *
-     * @return $this
-     */
-    public function setUnit($unit)
-    {
-        $allowedValues = $this->getUnitAllowableValues();
-        if (!is_null($unit) && !in_array($unit, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'unit', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['unit'] = $unit;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit_localized
-     *
-     * @return string
-     */
-    public function getUnitLocalized()
-    {
-        return $this->container['unit_localized'];
-    }
-
-    /**
-     * Sets unit_localized
-     *
-     * @param string $unit_localized unit_localized
-     *
-     * @return $this
-     */
-    public function setUnitLocalized($unit_localized)
-    {
-        $this->container['unit_localized'] = $unit_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets version
-     *
-     * @return int
-     */
-    public function getVersion()
-    {
-        return $this->container['version'];
-    }
-
-    /**
-     * Sets version
-     *
-     * @param int $version version
-     *
-     * @return $this
-     */
-    public function setVersion($version)
-    {
-        $this->container['version'] = $version;
-
-        return $this;
-    }
-
-    /**
-     * Gets revision
-     *
-     * @return int
-     */
-    public function getRevision()
-    {
-        return $this->container['revision'];
-    }
-
-    /**
-     * Sets revision
-     *
-     * @param int $revision revision
-     *
-     * @return $this
-     */
-    public function setRevision($revision)
-    {
-        $this->container['revision'] = $revision;
-
-        return $this;
-    }
-
-    /**
-     * Gets source
-     *
-     * @return string
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     * @param string $source source
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $allowedValues = $this->getSourceAllowableValues();
-        if (!is_null($source) && !in_array($source, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'source', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['source'] = $source;
-
-        return $this;
-    }
-
-    /**
-     * Gets source_localized
-     *
-     * @return string
-     */
-    public function getSourceLocalized()
-    {
-        return $this->container['source_localized'];
-    }
-
-    /**
-     * Sets source_localized
-     *
-     * @param string $source_localized source_localized
-     *
-     * @return $this
-     */
-    public function setSourceLocalized($source_localized)
-    {
-        $this->container['source_localized'] = $source_localized;
 
         return $this;
     }

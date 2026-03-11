@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData extends EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase 
 {
     const DISCRIMINATOR = null;
 
@@ -57,12 +55,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'do_combine_rows' => 'bool',
-        'organization_type' => 'string',
-        'agreement_date' => '\DateTime',
-        'month' => '\DateTime',
-        'connections' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData[]',
-        'company_label_id' => 'string'
+        'do_combine_rows' => 'bool'
     ];
 
     /**
@@ -71,12 +64,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'do_combine_rows' => null,
-        'organization_type' => null,
-        'agreement_date' => 'date',
-        'month' => 'date',
-        'connections' => null,
-        'company_label_id' => 'uuid'
+        'do_combine_rows' => null
     ];
 
     /**
@@ -86,7 +74,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -96,7 +84,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -106,12 +94,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      * @var string[]
      */
     protected static $attributeMap = [
-        'do_combine_rows' => 'DoCombineRows',
-        'organization_type' => 'OrganizationType',
-        'agreement_date' => 'AgreementDate',
-        'month' => 'Month',
-        'connections' => 'Connections',
-        'company_label_id' => 'CompanyLabelId'
+        'do_combine_rows' => 'DoCombineRows'
     ];
 
     /**
@@ -120,12 +103,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      * @var string[]
      */
     protected static $setters = [
-        'do_combine_rows' => 'setDoCombineRows',
-        'organization_type' => 'setOrganizationType',
-        'agreement_date' => 'setAgreementDate',
-        'month' => 'setMonth',
-        'connections' => 'setConnections',
-        'company_label_id' => 'setCompanyLabelId'
+        'do_combine_rows' => 'setDoCombineRows'
     ];
 
     /**
@@ -134,12 +112,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      * @var string[]
      */
     protected static $getters = [
-        'do_combine_rows' => 'getDoCombineRows',
-        'organization_type' => 'getOrganizationType',
-        'agreement_date' => 'getAgreementDate',
-        'month' => 'getMonth',
-        'connections' => 'getConnections',
-        'company_label_id' => 'getCompanyLabelId'
+        'do_combine_rows' => 'getDoCombineRows'
     ];
 
     /**
@@ -150,7 +123,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -160,7 +133,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -170,7 +143,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -183,31 +156,10 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
         return self::$swaggerModelName;
     }
 
-    const ORGANIZATION_TYPE_BUSINESS = 'Business';
-    const ORGANIZATION_TYPE_CONSUMER = 'Consumer';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getOrganizationTypeAllowableValues()
-    {
-        return [
-            self::ORGANIZATION_TYPE_BUSINESS,
-            self::ORGANIZATION_TYPE_CONSUMER,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -217,12 +169,9 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['do_combine_rows'] = isset($data['do_combine_rows']) ? $data['do_combine_rows'] : null;
-        $this->container['organization_type'] = isset($data['organization_type']) ? $data['organization_type'] : null;
-        $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
-        $this->container['month'] = isset($data['month']) ? $data['month'] : null;
-        $this->container['connections'] = isset($data['connections']) ? $data['connections'] : null;
-        $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
     }
 
     /**
@@ -232,15 +181,7 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getOrganizationTypeAllowableValues();
-        if (!is_null($this->container['organization_type']) && !in_array($this->container['organization_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'organization_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -277,135 +218,6 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostData implemen
     public function setDoCombineRows($do_combine_rows)
     {
         $this->container['do_combine_rows'] = $do_combine_rows;
-
-        return $this;
-    }
-
-    /**
-     * Gets organization_type
-     *
-     * @return string
-     */
-    public function getOrganizationType()
-    {
-        return $this->container['organization_type'];
-    }
-
-    /**
-     * Sets organization_type
-     *
-     * @param string $organization_type Optioneel veld (default `Consumer`)
-     *
-     * @return $this
-     */
-    public function setOrganizationType($organization_type)
-    {
-        $allowedValues = $this->getOrganizationTypeAllowableValues();
-        if (!is_null($organization_type) && !in_array($organization_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'organization_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['organization_type'] = $organization_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets agreement_date
-     *
-     * @return \DateTime
-     */
-    public function getAgreementDate()
-    {
-        return $this->container['agreement_date'];
-    }
-
-    /**
-     * Sets agreement_date
-     *
-     * @param \DateTime $agreement_date De tekendatum van het contract. Deze tekendatum wordt gebruikt om te valideren of de propositie(s) geldig waren op het moment van tekenen. Dit is een verplicht veld wanneer de `AgreementDates` bij de aansluitingen niet gebruikt worden.
-     *
-     * @return $this
-     */
-    public function setAgreementDate($agreement_date)
-    {
-        $this->container['agreement_date'] = $agreement_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets month
-     *
-     * @return \DateTime
-     */
-    public function getMonth()
-    {
-        return $this->container['month'];
-    }
-
-    /**
-     * Sets month
-     *
-     * @param \DateTime $month Optionele maand waarvoor het voorschot berekend moet worden. Bij proposities met wisselende prijzen of bijvoorbeeld rond de jaarwisseling met wisselende energiebelasting-prijzen heeft deze datum invloed op het resultaat. Als deze waarde niet wordt meegegeven dan wordt automatisch de eerstvolgende maand geselecteerd. Als een datum wordt meegegeven moet deze altijd op de eerste dag van een maand vallen. Als de dag van de maand in de meegegeven datum niet de eerste dag van de maand is, dan wordt deze op de eerste dag ingesteld. 2021-10-28 wordt bijvoorbeeld 2021-10-01.
-     *
-     * @return $this
-     */
-    public function setMonth($month)
-    {
-        $this->container['month'] = $month;
-
-        return $this;
-    }
-
-    /**
-     * Gets connections
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData[]
-     */
-    public function getConnections()
-    {
-        return $this->container['connections'];
-    }
-
-    /**
-     * Sets connections
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData[] $connections De aansluitingen waarvoor het concept-voorschot berekend moet worden. Zie de uitleg in het object voor meer informatie.
-     *
-     * @return $this
-     */
-    public function setConnections($connections)
-    {
-        $this->container['connections'] = $connections;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_label_id
-     *
-     * @return string
-     */
-    public function getCompanyLabelId()
-    {
-        return $this->container['company_label_id'];
-    }
-
-    /**
-     * Sets company_label_id
-     *
-     * @param string $company_label_id Id van het companylabel, mag leeg gelaten worden wanneer de leverancier maar 1 EDSN Organisatie EAN heeft
-     *
-     * @return $this
-     */
-    public function setCompanyLabelId($company_label_id)
-    {
-        $this->container['company_label_id'] = $company_label_id;
 
         return $this;
     }
