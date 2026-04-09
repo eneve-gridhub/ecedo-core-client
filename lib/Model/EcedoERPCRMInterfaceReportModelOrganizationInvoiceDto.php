@@ -131,7 +131,8 @@ class EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto implements ModelInte
         'organization_productiemiddel_proposition_description' => 'string',
         'organization_organization_property_preferred_contact_method' => 'string',
         'company_label' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto',
-        'reseller' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto'
+        'reseller' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto',
+        'organization_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto'
     ];
 
     /**
@@ -214,7 +215,8 @@ class EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto implements ModelInte
         'organization_productiemiddel_proposition_description' => null,
         'organization_organization_property_preferred_contact_method' => null,
         'company_label' => null,
-        'reseller' => null
+        'reseller' => null,
+        'organization_properties' => null
     ];
 
     /**
@@ -318,7 +320,8 @@ class EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto implements ModelInte
         'organization_productiemiddel_proposition_description' => 'Organization_Productiemiddel_Proposition_Description',
         'organization_organization_property_preferred_contact_method' => 'Organization_OrganizationProperty_PreferredContactMethod',
         'company_label' => 'CompanyLabel',
-        'reseller' => 'Reseller'
+        'reseller' => 'Reseller',
+        'organization_properties' => 'OrganizationProperties'
     ];
 
     /**
@@ -401,7 +404,8 @@ class EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto implements ModelInte
         'organization_productiemiddel_proposition_description' => 'setOrganizationProductiemiddelPropositionDescription',
         'organization_organization_property_preferred_contact_method' => 'setOrganizationOrganizationPropertyPreferredContactMethod',
         'company_label' => 'setCompanyLabel',
-        'reseller' => 'setReseller'
+        'reseller' => 'setReseller',
+        'organization_properties' => 'setOrganizationProperties'
     ];
 
     /**
@@ -484,7 +488,8 @@ class EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto implements ModelInte
         'organization_productiemiddel_proposition_description' => 'getOrganizationProductiemiddelPropositionDescription',
         'organization_organization_property_preferred_contact_method' => 'getOrganizationOrganizationPropertyPreferredContactMethod',
         'company_label' => 'getCompanyLabel',
-        'reseller' => 'getReseller'
+        'reseller' => 'getReseller',
+        'organization_properties' => 'getOrganizationProperties'
     ];
 
     /**
@@ -622,6 +627,7 @@ class EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto implements ModelInte
         $this->container['organization_organization_property_preferred_contact_method'] = isset($data['organization_organization_property_preferred_contact_method']) ? $data['organization_organization_property_preferred_contact_method'] : null;
         $this->container['company_label'] = isset($data['company_label']) ? $data['company_label'] : null;
         $this->container['reseller'] = isset($data['reseller']) ? $data['reseller'] : null;
+        $this->container['organization_properties'] = isset($data['organization_properties']) ? $data['organization_properties'] : null;
     }
 
     /**
@@ -2444,6 +2450,30 @@ class EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto implements ModelInte
     public function setReseller($reseller)
     {
         $this->container['reseller'] = $reseller;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_properties
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto
+     */
+    public function getOrganizationProperties()
+    {
+        return $this->container['organization_properties'];
+    }
+
+    /**
+     * Sets organization_properties
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto $organization_properties organization_properties
+     *
+     * @return $this
+     */
+    public function setOrganizationProperties($organization_properties)
+    {
+        $this->container['organization_properties'] = $organization_properties;
 
         return $this;
     }

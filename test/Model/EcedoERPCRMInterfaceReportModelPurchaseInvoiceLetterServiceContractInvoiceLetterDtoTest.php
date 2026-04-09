@@ -866,4 +866,11 @@ class EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterServiceContractInvoice
     public function testPropertyReseller()
     {
     }
+
+    /**
+     * Test attribute "organization_properties"
+     */
+    public function testPropertyOrganizationProperties()
+    {
+    }
 }

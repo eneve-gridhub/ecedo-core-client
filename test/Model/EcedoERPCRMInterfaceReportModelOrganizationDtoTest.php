@@ -488,4 +488,11 @@ class EcedoERPCRMInterfaceReportModelOrganizationDtoTest extends \PHPUnit_Framew
     public function testPropertyReseller()
     {
     }
+
+    /**
+     * Test attribute "organization_properties"
+     */
+    public function testPropertyOrganizationProperties()
+    {
+    }
 }

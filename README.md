@@ -87,7 +87,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://innova.ecedo.com*
+All URIs are relative to *https://innova-test.ecedo.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -190,6 +190,7 @@ Class | Method | HTTP request | Description
 *SysDocumentsApi* | [**sysDocumentsStorePVNEDTimeSeriesDocument**](docs/Api/SysDocumentsApi.md#sysdocumentsstorepvnedtimeseriesdocument) | **POST** /sysapi/v1.0/documents/pvned/timeseriesdocument | Upload and process PVNED&#39;s Time Series Document
 *SysDocumentsApi* | [**sysDocumentsUploadUserDocument**](docs/Api/SysDocumentsApi.md#sysdocumentsuploaduserdocument) | **POST** /sysapi/v1.0/documents/UploadUserDocument/{organizationId}/{userDocumentType} | Upload document
 *SysDraftAdvancePaymentsApi* | [**sysDraftAdvancePaymentsCalculateAnnualPriceBreakdownForNonOrganization**](docs/Api/SysDraftAdvancePaymentsApi.md#sysdraftadvancepaymentscalculateannualpricebreakdownfornonorganization) | **POST** /sysapi/v1.0/annualpricebreakdown | Berekenen van de jaarlijkse kosten obv aangegeven verbruik
+*SysDraftAdvancePaymentsApi* | [**sysDraftAdvancePaymentsCalculateAnnualPriceBreakdownForNonOrganizationWithSplits**](docs/Api/SysDraftAdvancePaymentsApi.md#sysdraftadvancepaymentscalculateannualpricebreakdownfornonorganizationwithsplits) | **POST** /sysapi/v1.1/annualpricebreakdown | Berekenen van de jaarlijkse kosten obv aangegeven verbruik
 *SysDraftAdvancePaymentsApi* | [**sysDraftAdvancePaymentsCalculateDraftAdvancePayment**](docs/Api/SysDraftAdvancePaymentsApi.md#sysdraftadvancepaymentscalculatedraftadvancepayment) | **POST** /sysapi/v1.0/organizations/{organizationId}/draftadvancepayments | Aanmaken proefvoorschot voor bestaande klant
 *SysDraftAdvancePaymentsApi* | [**sysDraftAdvancePaymentsCalculateDraftAdvancePaymentForNonOrganization**](docs/Api/SysDraftAdvancePaymentsApi.md#sysdraftadvancepaymentscalculatedraftadvancepaymentfornonorganization) | **POST** /sysapi/v1.0/draftadvancepayments | Aanmaken proefvoorschot voor een nieuwe klant
 *SysEmailsApi* | [**sysEmailsGet**](docs/Api/SysEmailsApi.md#sysemailsget) | **GET** /sysapi/v1.0/organizations/{organizationId}/emails | Haal e-mails van een specifieke klant
@@ -399,7 +400,12 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiAdvancePaymentRow](docs/Model/EcedoERPCRMInterfaceApiAdvancePaymentRow.md)
  - [EcedoERPCRMInterfaceApiAgreedAmountSupportedResult](docs/Model/EcedoERPCRMInterfaceApiAgreedAmountSupportedResult.md)
  - [EcedoERPCRMInterfaceApiAnnualPriceBreakdown](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdown.md)
+ - [EcedoERPCRMInterfaceApiAnnualPriceBreakdownAdvancePayment](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdownAdvancePayment.md)
+ - [EcedoERPCRMInterfaceApiAnnualPriceBreakdownBase](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdownBase.md)
  - [EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection.md)
+ - [EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase.md)
+ - [EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionV11](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionV11.md)
+ - [EcedoERPCRMInterfaceApiAnnualPriceBreakdownV11](docs/Model/EcedoERPCRMInterfaceApiAnnualPriceBreakdownV11.md)
  - [EcedoERPCRMInterfaceApiAnnualStandardUsage](docs/Model/EcedoERPCRMInterfaceApiAnnualStandardUsage.md)
  - [EcedoERPCRMInterfaceApiAnnualStandardUsagePostData](docs/Model/EcedoERPCRMInterfaceApiAnnualStandardUsagePostData.md)
  - [EcedoERPCRMInterfaceApiBaseContract](docs/Model/EcedoERPCRMInterfaceApiBaseContract.md)
@@ -767,6 +773,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceReportModelOrganizationConnectionsMailDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationConnectionsMailDto.md)
  - [EcedoERPCRMInterfaceReportModelOrganizationDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationDto.md)
  - [EcedoERPCRMInterfaceReportModelOrganizationEnergyVKODto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationEnergyVKODto.md)
+ - [EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto.md)
  - [EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationInvoiceDto.md)
  - [EcedoERPCRMInterfaceReportModelOrganizationMailDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationMailDto.md)
  - [EcedoERPCRMInterfaceReportModelOrganizationPaymentMailDto](docs/Model/EcedoERPCRMInterfaceReportModelOrganizationPaymentMailDto.md)
@@ -790,6 +797,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoTerminationFee](docs/Model/EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLetterEnergyDtoTerminationFee.md)
  - [EcedoERPCRMInterfaceReportModelTriggerGroupDto](docs/Model/EcedoERPCRMInterfaceReportModelTriggerGroupDto.md)
  - [EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto](docs/Model/EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto.md)
+ - [EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceBlockPrice](docs/Model/EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceBlockPrice.md)
  - [EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceComponentPriceDto](docs/Model/EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceComponentPriceDto.md)
  - [EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoConnection](docs/Model/EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoConnection.md)
  - [EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoNewAdvancePayment](docs/Model/EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoNewAdvancePayment.md)

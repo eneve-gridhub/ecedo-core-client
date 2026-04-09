@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiAnnualPriceBreakdown extends EcedoERPCRMInterfaceApiAnnualPriceBreakdownBase 
 {
     const DISCRIMINATOR = null;
 
@@ -58,11 +56,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
       */
     protected static $swaggerTypes = [
         'advance_payment_amount' => 'double',
-        'calculated_year_amount' => 'double',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'connection_details' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection[]',
-        'combined_year_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]'
+        'connection_details' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection[]'
     ];
 
     /**
@@ -72,11 +66,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
       */
     protected static $swaggerFormats = [
         'advance_payment_amount' => 'double',
-        'calculated_year_amount' => 'double',
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'connection_details' => null,
-        'combined_year_rows' => null
+        'connection_details' => null
     ];
 
     /**
@@ -86,7 +76,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -96,7 +86,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -107,11 +97,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     protected static $attributeMap = [
         'advance_payment_amount' => 'AdvancePaymentAmount',
-        'calculated_year_amount' => 'CalculatedYearAmount',
-        'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'connection_details' => 'ConnectionDetails',
-        'combined_year_rows' => 'CombinedYearRows'
+        'connection_details' => 'ConnectionDetails'
     ];
 
     /**
@@ -121,11 +107,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     protected static $setters = [
         'advance_payment_amount' => 'setAdvancePaymentAmount',
-        'calculated_year_amount' => 'setCalculatedYearAmount',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'connection_details' => 'setConnectionDetails',
-        'combined_year_rows' => 'setCombinedYearRows'
+        'connection_details' => 'setConnectionDetails'
     ];
 
     /**
@@ -135,11 +117,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     protected static $getters = [
         'advance_payment_amount' => 'getAdvancePaymentAmount',
-        'calculated_year_amount' => 'getCalculatedYearAmount',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'connection_details' => 'getConnectionDetails',
-        'combined_year_rows' => 'getCombinedYearRows'
+        'connection_details' => 'getConnectionDetails'
     ];
 
     /**
@@ -150,7 +128,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -160,7 +138,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -170,7 +148,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -187,12 +165,6 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -202,12 +174,10 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['advance_payment_amount'] = isset($data['advance_payment_amount']) ? $data['advance_payment_amount'] : null;
-        $this->container['calculated_year_amount'] = isset($data['calculated_year_amount']) ? $data['calculated_year_amount'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['connection_details'] = isset($data['connection_details']) ? $data['connection_details'] : null;
-        $this->container['combined_year_rows'] = isset($data['combined_year_rows']) ? $data['combined_year_rows'] : null;
     }
 
     /**
@@ -217,7 +187,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -259,78 +229,6 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
     }
 
     /**
-     * Gets calculated_year_amount
-     *
-     * @return double
-     */
-    public function getCalculatedYearAmount()
-    {
-        return $this->container['calculated_year_amount'];
-    }
-
-    /**
-     * Sets calculated_year_amount
-     *
-     * @param double $calculated_year_amount Het berekende jaarbedrag in euro's inclusief btw.
-     *
-     * @return $this
-     */
-    public function setCalculatedYearAmount($calculated_year_amount)
-    {
-        $this->container['calculated_year_amount'] = $calculated_year_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date Eerste dag van het jaar vanaf wanneer het bedrag geldig is
-     *
-     * @return $this
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date end_date
-     *
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
      * Gets connection_details
      *
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection[]
@@ -350,30 +248,6 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdown implements ModelInterface, Arr
     public function setConnectionDetails($connection_details)
     {
         $this->container['connection_details'] = $connection_details;
-
-        return $this;
-    }
-
-    /**
-     * Gets combined_year_rows
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]
-     */
-    public function getCombinedYearRows()
-    {
-        return $this->container['combined_year_rows'];
-    }
-
-    /**
-     * Sets combined_year_rows
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[] $combined_year_rows Samengevoegde jaarregels
-     *
-     * @return $this
-     */
-    public function setCombinedYearRows($combined_year_rows)
-    {
-        $this->container['combined_year_rows'] = $combined_year_rows;
 
         return $this;
     }

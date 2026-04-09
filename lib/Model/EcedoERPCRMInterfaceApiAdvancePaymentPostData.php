@@ -218,12 +218,12 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
         return self::$swaggerModelName;
     }
 
-    const CALCULATION_REASON_ENERGY_TAX = 'EnergyTax';
     const CALCULATION_REASON__NEW = 'New';
     const CALCULATION_REASON_CONTRACT_RENEWAL = 'ContractRenewal';
     const CALCULATION_REASON_SETTLEMENT = 'Settlement';
     const CALCULATION_REASON_CUSTOMER = 'Customer';
     const CALCULATION_REASON_CONTRACT_TYPE_CHANGE = 'ContractTypeChange';
+    const CALCULATION_REASON_ENERGY_TAX = 'EnergyTax';
     const CALCULATION_REASON_NETWORKCOSTS = 'Networkcosts';
     const CALCULATION_REASON_ANNUAL_STANDARD_USAGE = 'AnnualStandardUsage';
     const CALCULATION_REASON_MASTER_DATA = 'MasterData';
@@ -245,12 +245,12 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     public function getCalculationReasonAllowableValues()
     {
         return [
-            self::CALCULATION_REASON_ENERGY_TAX,
             self::CALCULATION_REASON__NEW,
             self::CALCULATION_REASON_CONTRACT_RENEWAL,
             self::CALCULATION_REASON_SETTLEMENT,
             self::CALCULATION_REASON_CUSTOMER,
             self::CALCULATION_REASON_CONTRACT_TYPE_CHANGE,
+            self::CALCULATION_REASON_ENERGY_TAX,
             self::CALCULATION_REASON_NETWORKCOSTS,
             self::CALCULATION_REASON_ANNUAL_STANDARD_USAGE,
             self::CALCULATION_REASON_MASTER_DATA,

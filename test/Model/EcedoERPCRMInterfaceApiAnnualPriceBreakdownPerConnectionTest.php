@@ -77,51 +77,9 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionTest extends \PHPU
     }
 
     /**
-     * Test attribute "ean"
-     */
-    public function testPropertyEan()
-    {
-    }
-
-    /**
-     * Test attribute "grid_operator"
-     */
-    public function testPropertyGridOperator()
-    {
-    }
-
-    /**
-     * Test attribute "cap_tar_code_short"
-     */
-    public function testPropertyCapTarCodeShort()
-    {
-    }
-
-    /**
-     * Test attribute "cap_tar_code_localized"
-     */
-    public function testPropertyCapTarCodeLocalized()
-    {
-    }
-
-    /**
-     * Test attribute "market_segment"
-     */
-    public function testPropertyMarketSegment()
-    {
-    }
-
-    /**
      * Test attribute "advance_payment_amount"
      */
     public function testPropertyAdvancePaymentAmount()
-    {
-    }
-
-    /**
-     * Test attribute "calculated_year_amount"
-     */
-    public function testPropertyCalculatedYearAmount()
     {
     }
 }

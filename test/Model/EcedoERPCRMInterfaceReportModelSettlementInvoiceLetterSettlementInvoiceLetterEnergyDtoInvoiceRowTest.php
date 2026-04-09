@@ -378,9 +378,23 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     }
 
     /**
+     * Test attribute "has_price_block"
+     */
+    public function testPropertyHasPriceBlock()
+    {
+    }
+
+    /**
      * Test attribute "row_price_block_id"
      */
     public function testPropertyRowPriceBlockId()
+    {
+    }
+
+    /**
+     * Test attribute "row_price_block_description"
+     */
+    public function testPropertyRowPriceBlockDescription()
     {
     }
 }

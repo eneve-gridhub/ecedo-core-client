@@ -84,37 +84,9 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownTest extends \PHPUnit_Framework
     }
 
     /**
-     * Test attribute "calculated_year_amount"
-     */
-    public function testPropertyCalculatedYearAmount()
-    {
-    }
-
-    /**
-     * Test attribute "start_date"
-     */
-    public function testPropertyStartDate()
-    {
-    }
-
-    /**
-     * Test attribute "end_date"
-     */
-    public function testPropertyEndDate()
-    {
-    }
-
-    /**
      * Test attribute "connection_details"
      */
     public function testPropertyConnectionDetails()
-    {
-    }
-
-    /**
-     * Test attribute "combined_year_rows"
-     */
-    public function testPropertyCombinedYearRows()
     {
     }
 }

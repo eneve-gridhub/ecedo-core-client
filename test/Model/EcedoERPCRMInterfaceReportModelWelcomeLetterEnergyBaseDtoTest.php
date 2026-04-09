@@ -544,4 +544,11 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDtoTest extends \PHP
     public function testPropertyResellerkBackingField()
     {
     }
+
+    /**
+     * Test attribute "organization_propertiesk__backing_field"
+     */
+    public function testPropertyOrganizationPropertieskBackingField()
+    {
+    }
 }

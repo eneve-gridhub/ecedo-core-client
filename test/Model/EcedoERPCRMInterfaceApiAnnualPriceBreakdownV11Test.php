@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiAPIProcessLogPostDataTest
+ * EcedoERPCRMInterfaceApiAnnualPriceBreakdownV11Test
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * EcedoERPCRMInterfaceApiAPIProcessLogPostDataTest Class Doc Comment
+ * EcedoERPCRMInterfaceApiAnnualPriceBreakdownV11Test Class Doc Comment
  *
  * @category    Class
- * @description EcedoERPCRMInterfaceApiAPIProcessLogPostData
+ * @description EcedoERPCRMInterfaceApiAnnualPriceBreakdownV11
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiAPIProcessLogPostDataTest extends \PHPUnit_Framework_TestCase
+class EcedoERPCRMInterfaceApiAnnualPriceBreakdownV11Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,44 +70,23 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostDataTest extends \PHPUnit_Framewor
     }
 
     /**
-     * Test "EcedoERPCRMInterfaceApiAPIProcessLogPostData"
+     * Test "EcedoERPCRMInterfaceApiAnnualPriceBreakdownV11"
      */
-    public function testEcedoERPCRMInterfaceApiAPIProcessLogPostData()
+    public function testEcedoERPCRMInterfaceApiAnnualPriceBreakdownV11()
     {
     }
 
     /**
-     * Test attribute "organization_id"
+     * Test attribute "advance_payments"
      */
-    public function testPropertyOrganizationId()
+    public function testPropertyAdvancePayments()
     {
     }
 
     /**
-     * Test attribute "connection_id"
+     * Test attribute "connection_details"
      */
-    public function testPropertyConnectionId()
-    {
-    }
-
-    /**
-     * Test attribute "process_category"
-     */
-    public function testPropertyProcessCategory()
-    {
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-    }
-
-    /**
-     * Test attribute "comment"
-     */
-    public function testPropertyComment()
+    public function testPropertyConnectionDetails()
     {
     }
 }

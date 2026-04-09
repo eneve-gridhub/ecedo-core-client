@@ -1,6 +1,6 @@
 <?php
 /**
- * EcedoERPCRMInterfaceApiAPIProcessLogPostData
+ * EcedoERPCRMInterfaceApiAnnualPriceBreakdownAdvancePayment
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * EcedoERPCRMInterfaceApiAPIProcessLogPostData Class Doc Comment
+ * EcedoERPCRMInterfaceApiAnnualPriceBreakdownAdvancePayment Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiAnnualPriceBreakdownAdvancePayment implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, Ar
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.APIProcessLogPostData';
+    protected static $swaggerModelName = 'Ecedo.ERP.CRM.Interface.Api.AnnualPriceBreakdownAdvancePayment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,9 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, Ar
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'organization_id' => 'string',
-        'connection_id' => 'string',
-        'process_category' => 'string',
-        'description' => 'string',
-        'comment' => 'string'
+        'advance_payment_amount' => 'double',
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime'
     ];
 
     /**
@@ -70,11 +68,9 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, Ar
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'organization_id' => null,
-        'connection_id' => 'uuid',
-        'process_category' => null,
-        'description' => null,
-        'comment' => null
+        'advance_payment_amount' => 'double',
+        'start_date' => 'date',
+        'end_date' => 'date'
     ];
 
     /**
@@ -104,11 +100,9 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, Ar
      * @var string[]
      */
     protected static $attributeMap = [
-        'organization_id' => 'OrganizationId',
-        'connection_id' => 'ConnectionId',
-        'process_category' => 'ProcessCategory',
-        'description' => 'Description',
-        'comment' => 'Comment'
+        'advance_payment_amount' => 'AdvancePaymentAmount',
+        'start_date' => 'StartDate',
+        'end_date' => 'EndDate'
     ];
 
     /**
@@ -117,11 +111,9 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-        'organization_id' => 'setOrganizationId',
-        'connection_id' => 'setConnectionId',
-        'process_category' => 'setProcessCategory',
-        'description' => 'setDescription',
-        'comment' => 'setComment'
+        'advance_payment_amount' => 'setAdvancePaymentAmount',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate'
     ];
 
     /**
@@ -130,11 +122,9 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, Ar
      * @var string[]
      */
     protected static $getters = [
-        'organization_id' => 'getOrganizationId',
-        'connection_id' => 'getConnectionId',
-        'process_category' => 'getProcessCategory',
-        'description' => 'getDescription',
-        'comment' => 'getComment'
+        'advance_payment_amount' => 'getAdvancePaymentAmount',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate'
     ];
 
     /**
@@ -178,27 +168,8 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, Ar
         return self::$swaggerModelName;
     }
 
-    const PROCESS_CATEGORY_GENERAL = 'General';
-    const PROCESS_CATEGORY_METER_READING = 'MeterReading';
-    const PROCESS_CATEGORY_ADVANCE_PAYMENT = 'AdvancePayment';
-    const PROCESS_CATEGORY_DEBTOR = 'Debtor';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getProcessCategoryAllowableValues()
-    {
-        return [
-            self::PROCESS_CATEGORY_GENERAL,
-            self::PROCESS_CATEGORY_METER_READING,
-            self::PROCESS_CATEGORY_ADVANCE_PAYMENT,
-            self::PROCESS_CATEGORY_DEBTOR,
-        ];
-    }
     
 
     /**
@@ -216,11 +187,9 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, Ar
      */
     public function __construct(array $data = null)
     {
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
-        $this->container['process_category'] = isset($data['process_category']) ? $data['process_category'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['advance_payment_amount'] = isset($data['advance_payment_amount']) ? $data['advance_payment_amount'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
     }
 
     /**
@@ -231,14 +200,6 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, Ar
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getProcessCategoryAllowableValues();
-        if (!is_null($this->container['process_category']) && !in_array($this->container['process_category'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'process_category', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -256,130 +217,73 @@ class EcedoERPCRMInterfaceApiAPIProcessLogPostData implements ModelInterface, Ar
 
 
     /**
-     * Gets organization_id
+     * Gets advance_payment_amount
      *
-     * @return string
+     * @return double
      */
-    public function getOrganizationId()
+    public function getAdvancePaymentAmount()
     {
-        return $this->container['organization_id'];
+        return $this->container['advance_payment_amount'];
     }
 
     /**
-     * Sets organization_id
+     * Sets advance_payment_amount
      *
-     * @param string $organization_id organization_id
+     * @param double $advance_payment_amount advance_payment_amount
      *
      * @return $this
      */
-    public function setOrganizationId($organization_id)
+    public function setAdvancePaymentAmount($advance_payment_amount)
     {
-        $this->container['organization_id'] = $organization_id;
+        $this->container['advance_payment_amount'] = $advance_payment_amount;
 
         return $this;
     }
 
     /**
-     * Gets connection_id
+     * Gets start_date
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getConnectionId()
+    public function getStartDate()
     {
-        return $this->container['connection_id'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets connection_id
+     * Sets start_date
      *
-     * @param string $connection_id connection_id
+     * @param \DateTime $start_date start_date
      *
      * @return $this
      */
-    public function setConnectionId($connection_id)
+    public function setStartDate($start_date)
     {
-        $this->container['connection_id'] = $connection_id;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets process_category
+     * Gets end_date
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getProcessCategory()
+    public function getEndDate()
     {
-        return $this->container['process_category'];
+        return $this->container['end_date'];
     }
 
     /**
-     * Sets process_category
+     * Sets end_date
      *
-     * @param string $process_category process_category
+     * @param \DateTime $end_date end_date
      *
      * @return $this
      */
-    public function setProcessCategory($process_category)
+    public function setEndDate($end_date)
     {
-        $allowedValues = $this->getProcessCategoryAllowableValues();
-        if (!is_null($process_category) && !in_array($process_category, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'process_category', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['process_category'] = $process_category;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment comment
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }

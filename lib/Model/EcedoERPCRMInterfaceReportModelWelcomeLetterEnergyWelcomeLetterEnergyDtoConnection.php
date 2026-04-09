@@ -166,6 +166,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'connection_annual_standard_usage_single_usage' => 'int',
         'connection_annual_standard_usage_peak_usage' => 'int',
         'connection_annual_standard_usage_off_peak_usage' => 'int',
+        'connection_contract_prices_price_block_prices_ldn' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceBlockPrice[]',
+        'connection_contract_prices_price_block_prices_odn' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceBlockPrice[]',
         'connection_bill_as_single' => 'bool',
         'connection_contract_sales_reference' => 'string',
         'connection_is_residential' => 'bool',
@@ -180,6 +182,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'organization_id' => 'string',
         'connection_type' => 'string',
         'connection_ean' => 'string',
+        'connection_vat' => 'string',
         'connection_grid_operator' => 'string',
         'connection_grid_operator_phone_number' => 'string',
         'connection_grid_operator_email_address' => 'string',
@@ -211,6 +214,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'connection_contract_proposition_is_model_contract' => 'bool',
         'connection_contract_proposition_pricing_type' => 'string',
         'connection_contract_proposition_is_market_price_proposition' => 'bool',
+        'connection_contract_proposition_is_price_block_proposition' => 'bool',
         'connection_contract_proposition_market_price_source' => 'string',
         'connection_contract_proposition_market_price_source_localized' => 'string',
         'connection_meelift_contract_proposition_description' => 'string',
@@ -351,6 +355,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'connection_annual_standard_usage_single_usage' => 'int32',
         'connection_annual_standard_usage_peak_usage' => 'int32',
         'connection_annual_standard_usage_off_peak_usage' => 'int32',
+        'connection_contract_prices_price_block_prices_ldn' => null,
+        'connection_contract_prices_price_block_prices_odn' => null,
         'connection_bill_as_single' => null,
         'connection_contract_sales_reference' => null,
         'connection_is_residential' => null,
@@ -365,6 +371,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'organization_id' => null,
         'connection_type' => null,
         'connection_ean' => null,
+        'connection_vat' => null,
         'connection_grid_operator' => null,
         'connection_grid_operator_phone_number' => null,
         'connection_grid_operator_email_address' => null,
@@ -396,6 +403,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'connection_contract_proposition_is_model_contract' => null,
         'connection_contract_proposition_pricing_type' => null,
         'connection_contract_proposition_is_market_price_proposition' => null,
+        'connection_contract_proposition_is_price_block_proposition' => null,
         'connection_contract_proposition_market_price_source' => null,
         'connection_contract_proposition_market_price_source_localized' => null,
         'connection_meelift_contract_proposition_description' => null,
@@ -557,6 +565,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'connection_annual_standard_usage_single_usage' => 'Connection_AnnualStandardUsage_SingleUsage',
         'connection_annual_standard_usage_peak_usage' => 'Connection_AnnualStandardUsage_PeakUsage',
         'connection_annual_standard_usage_off_peak_usage' => 'Connection_AnnualStandardUsage_OffPeakUsage',
+        'connection_contract_prices_price_block_prices_ldn' => 'Connection_Contract_Prices_PriceBlockPrices_LDN',
+        'connection_contract_prices_price_block_prices_odn' => 'Connection_Contract_Prices_PriceBlockPrices_ODN',
         'connection_bill_as_single' => 'Connection_BillAsSingle',
         'connection_contract_sales_reference' => 'Connection_Contract_SalesReference',
         'connection_is_residential' => 'Connection_IsResidential',
@@ -571,6 +581,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'organization_id' => 'Organization_Id',
         'connection_type' => 'Connection_Type',
         'connection_ean' => 'Connection_EAN',
+        'connection_vat' => 'Connection_VAT',
         'connection_grid_operator' => 'Connection_GridOperator',
         'connection_grid_operator_phone_number' => 'Connection_GridOperator_PhoneNumber',
         'connection_grid_operator_email_address' => 'Connection_GridOperator_EmailAddress',
@@ -602,6 +613,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'connection_contract_proposition_is_model_contract' => 'Connection_Contract_Proposition_IsModelContract',
         'connection_contract_proposition_pricing_type' => 'Connection_Contract_Proposition_PricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'Connection_Contract_Proposition_IsMarketPriceProposition',
+        'connection_contract_proposition_is_price_block_proposition' => 'Connection_Contract_Proposition_IsPriceBlockProposition',
         'connection_contract_proposition_market_price_source' => 'Connection_Contract_Proposition_MarketPriceSource',
         'connection_contract_proposition_market_price_source_localized' => 'Connection_Contract_Proposition_MarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'Connection_MeeliftContract_Proposition_Description',
@@ -742,6 +754,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'connection_annual_standard_usage_single_usage' => 'setConnectionAnnualStandardUsageSingleUsage',
         'connection_annual_standard_usage_peak_usage' => 'setConnectionAnnualStandardUsagePeakUsage',
         'connection_annual_standard_usage_off_peak_usage' => 'setConnectionAnnualStandardUsageOffPeakUsage',
+        'connection_contract_prices_price_block_prices_ldn' => 'setConnectionContractPricesPriceBlockPricesLdn',
+        'connection_contract_prices_price_block_prices_odn' => 'setConnectionContractPricesPriceBlockPricesOdn',
         'connection_bill_as_single' => 'setConnectionBillAsSingle',
         'connection_contract_sales_reference' => 'setConnectionContractSalesReference',
         'connection_is_residential' => 'setConnectionIsResidential',
@@ -756,6 +770,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'organization_id' => 'setOrganizationId',
         'connection_type' => 'setConnectionType',
         'connection_ean' => 'setConnectionEan',
+        'connection_vat' => 'setConnectionVat',
         'connection_grid_operator' => 'setConnectionGridOperator',
         'connection_grid_operator_phone_number' => 'setConnectionGridOperatorPhoneNumber',
         'connection_grid_operator_email_address' => 'setConnectionGridOperatorEmailAddress',
@@ -787,6 +802,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'connection_contract_proposition_is_model_contract' => 'setConnectionContractPropositionIsModelContract',
         'connection_contract_proposition_pricing_type' => 'setConnectionContractPropositionPricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'setConnectionContractPropositionIsMarketPriceProposition',
+        'connection_contract_proposition_is_price_block_proposition' => 'setConnectionContractPropositionIsPriceBlockProposition',
         'connection_contract_proposition_market_price_source' => 'setConnectionContractPropositionMarketPriceSource',
         'connection_contract_proposition_market_price_source_localized' => 'setConnectionContractPropositionMarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'setConnectionMeeliftContractPropositionDescription',
@@ -927,6 +943,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'connection_annual_standard_usage_single_usage' => 'getConnectionAnnualStandardUsageSingleUsage',
         'connection_annual_standard_usage_peak_usage' => 'getConnectionAnnualStandardUsagePeakUsage',
         'connection_annual_standard_usage_off_peak_usage' => 'getConnectionAnnualStandardUsageOffPeakUsage',
+        'connection_contract_prices_price_block_prices_ldn' => 'getConnectionContractPricesPriceBlockPricesLdn',
+        'connection_contract_prices_price_block_prices_odn' => 'getConnectionContractPricesPriceBlockPricesOdn',
         'connection_bill_as_single' => 'getConnectionBillAsSingle',
         'connection_contract_sales_reference' => 'getConnectionContractSalesReference',
         'connection_is_residential' => 'getConnectionIsResidential',
@@ -941,6 +959,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'organization_id' => 'getOrganizationId',
         'connection_type' => 'getConnectionType',
         'connection_ean' => 'getConnectionEan',
+        'connection_vat' => 'getConnectionVat',
         'connection_grid_operator' => 'getConnectionGridOperator',
         'connection_grid_operator_phone_number' => 'getConnectionGridOperatorPhoneNumber',
         'connection_grid_operator_email_address' => 'getConnectionGridOperatorEmailAddress',
@@ -972,6 +991,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         'connection_contract_proposition_is_model_contract' => 'getConnectionContractPropositionIsModelContract',
         'connection_contract_proposition_pricing_type' => 'getConnectionContractPropositionPricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'getConnectionContractPropositionIsMarketPriceProposition',
+        'connection_contract_proposition_is_price_block_proposition' => 'getConnectionContractPropositionIsPriceBlockProposition',
         'connection_contract_proposition_market_price_source' => 'getConnectionContractPropositionMarketPriceSource',
         'connection_contract_proposition_market_price_source_localized' => 'getConnectionContractPropositionMarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'getConnectionMeeliftContractPropositionDescription',
@@ -1166,6 +1186,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         $this->container['connection_annual_standard_usage_single_usage'] = isset($data['connection_annual_standard_usage_single_usage']) ? $data['connection_annual_standard_usage_single_usage'] : null;
         $this->container['connection_annual_standard_usage_peak_usage'] = isset($data['connection_annual_standard_usage_peak_usage']) ? $data['connection_annual_standard_usage_peak_usage'] : null;
         $this->container['connection_annual_standard_usage_off_peak_usage'] = isset($data['connection_annual_standard_usage_off_peak_usage']) ? $data['connection_annual_standard_usage_off_peak_usage'] : null;
+        $this->container['connection_contract_prices_price_block_prices_ldn'] = isset($data['connection_contract_prices_price_block_prices_ldn']) ? $data['connection_contract_prices_price_block_prices_ldn'] : null;
+        $this->container['connection_contract_prices_price_block_prices_odn'] = isset($data['connection_contract_prices_price_block_prices_odn']) ? $data['connection_contract_prices_price_block_prices_odn'] : null;
         $this->container['connection_bill_as_single'] = isset($data['connection_bill_as_single']) ? $data['connection_bill_as_single'] : null;
         $this->container['connection_contract_sales_reference'] = isset($data['connection_contract_sales_reference']) ? $data['connection_contract_sales_reference'] : null;
         $this->container['connection_is_residential'] = isset($data['connection_is_residential']) ? $data['connection_is_residential'] : null;
@@ -1180,6 +1202,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['connection_type'] = isset($data['connection_type']) ? $data['connection_type'] : null;
         $this->container['connection_ean'] = isset($data['connection_ean']) ? $data['connection_ean'] : null;
+        $this->container['connection_vat'] = isset($data['connection_vat']) ? $data['connection_vat'] : null;
         $this->container['connection_grid_operator'] = isset($data['connection_grid_operator']) ? $data['connection_grid_operator'] : null;
         $this->container['connection_grid_operator_phone_number'] = isset($data['connection_grid_operator_phone_number']) ? $data['connection_grid_operator_phone_number'] : null;
         $this->container['connection_grid_operator_email_address'] = isset($data['connection_grid_operator_email_address']) ? $data['connection_grid_operator_email_address'] : null;
@@ -1211,6 +1234,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
         $this->container['connection_contract_proposition_is_model_contract'] = isset($data['connection_contract_proposition_is_model_contract']) ? $data['connection_contract_proposition_is_model_contract'] : null;
         $this->container['connection_contract_proposition_pricing_type'] = isset($data['connection_contract_proposition_pricing_type']) ? $data['connection_contract_proposition_pricing_type'] : null;
         $this->container['connection_contract_proposition_is_market_price_proposition'] = isset($data['connection_contract_proposition_is_market_price_proposition']) ? $data['connection_contract_proposition_is_market_price_proposition'] : null;
+        $this->container['connection_contract_proposition_is_price_block_proposition'] = isset($data['connection_contract_proposition_is_price_block_proposition']) ? $data['connection_contract_proposition_is_price_block_proposition'] : null;
         $this->container['connection_contract_proposition_market_price_source'] = isset($data['connection_contract_proposition_market_price_source']) ? $data['connection_contract_proposition_market_price_source'] : null;
         $this->container['connection_contract_proposition_market_price_source_localized'] = isset($data['connection_contract_proposition_market_price_source_localized']) ? $data['connection_contract_proposition_market_price_source_localized'] : null;
         $this->container['connection_meelift_contract_proposition_description'] = isset($data['connection_meelift_contract_proposition_description']) ? $data['connection_meelift_contract_proposition_description'] : null;
@@ -3877,6 +3901,54 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
     }
 
     /**
+     * Gets connection_contract_prices_price_block_prices_ldn
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceBlockPrice[]
+     */
+    public function getConnectionContractPricesPriceBlockPricesLdn()
+    {
+        return $this->container['connection_contract_prices_price_block_prices_ldn'];
+    }
+
+    /**
+     * Sets connection_contract_prices_price_block_prices_ldn
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceBlockPrice[] $connection_contract_prices_price_block_prices_ldn connection_contract_prices_price_block_prices_ldn
+     *
+     * @return $this
+     */
+    public function setConnectionContractPricesPriceBlockPricesLdn($connection_contract_prices_price_block_prices_ldn)
+    {
+        $this->container['connection_contract_prices_price_block_prices_ldn'] = $connection_contract_prices_price_block_prices_ldn;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_contract_prices_price_block_prices_odn
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceBlockPrice[]
+     */
+    public function getConnectionContractPricesPriceBlockPricesOdn()
+    {
+        return $this->container['connection_contract_prices_price_block_prices_odn'];
+    }
+
+    /**
+     * Sets connection_contract_prices_price_block_prices_odn
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceBlockPrice[] $connection_contract_prices_price_block_prices_odn connection_contract_prices_price_block_prices_odn
+     *
+     * @return $this
+     */
+    public function setConnectionContractPricesPriceBlockPricesOdn($connection_contract_prices_price_block_prices_odn)
+    {
+        $this->container['connection_contract_prices_price_block_prices_odn'] = $connection_contract_prices_price_block_prices_odn;
+
+        return $this;
+    }
+
+    /**
      * Gets connection_bill_as_single
      *
      * @return bool
@@ -4208,6 +4280,30 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
     public function setConnectionEan($connection_ean)
     {
         $this->container['connection_ean'] = $connection_ean;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_vat
+     *
+     * @return string
+     */
+    public function getConnectionVat()
+    {
+        return $this->container['connection_vat'];
+    }
+
+    /**
+     * Sets connection_vat
+     *
+     * @param string $connection_vat connection_vat
+     *
+     * @return $this
+     */
+    public function setConnectionVat($connection_vat)
+    {
+        $this->container['connection_vat'] = $connection_vat;
 
         return $this;
     }
@@ -4952,6 +5048,30 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
     public function setConnectionContractPropositionIsMarketPriceProposition($connection_contract_proposition_is_market_price_proposition)
     {
         $this->container['connection_contract_proposition_is_market_price_proposition'] = $connection_contract_proposition_is_market_price_proposition;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_contract_proposition_is_price_block_proposition
+     *
+     * @return bool
+     */
+    public function getConnectionContractPropositionIsPriceBlockProposition()
+    {
+        return $this->container['connection_contract_proposition_is_price_block_proposition'];
+    }
+
+    /**
+     * Sets connection_contract_proposition_is_price_block_proposition
+     *
+     * @param bool $connection_contract_proposition_is_price_block_proposition connection_contract_proposition_is_price_block_proposition
+     *
+     * @return $this
+     */
+    public function setConnectionContractPropositionIsPriceBlockProposition($connection_contract_proposition_is_price_block_proposition)
+    {
+        $this->container['connection_contract_proposition_is_price_block_proposition'] = $connection_contract_proposition_is_price_block_proposition;
 
         return $this;
     }

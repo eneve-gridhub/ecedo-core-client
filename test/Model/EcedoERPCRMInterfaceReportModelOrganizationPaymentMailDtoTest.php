@@ -495,4 +495,11 @@ class EcedoERPCRMInterfaceReportModelOrganizationPaymentMailDtoTest extends \PHP
     public function testPropertyReseller()
     {
     }
+
+    /**
+     * Test attribute "organization_properties"
+     */
+    public function testPropertyOrganizationProperties()
+    {
+    }
 }

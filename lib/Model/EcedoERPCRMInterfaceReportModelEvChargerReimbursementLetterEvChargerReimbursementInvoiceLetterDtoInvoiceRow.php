@@ -97,7 +97,9 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         'row_factor' => 'double',
         'row_classification' => 'string',
         'row_connection_ean' => 'string',
-        'row_price_block_id' => 'string'
+        'has_price_block' => 'bool',
+        'row_price_block_id' => 'string',
+        'row_price_block_description' => 'string'
     ];
 
     /**
@@ -146,7 +148,9 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         'row_factor' => 'double',
         'row_classification' => null,
         'row_connection_ean' => null,
-        'row_price_block_id' => 'uuid'
+        'has_price_block' => null,
+        'row_price_block_id' => 'uuid',
+        'row_price_block_description' => null
     ];
 
     /**
@@ -216,7 +220,9 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         'row_factor' => 'Row_Factor',
         'row_classification' => 'Row_Classification',
         'row_connection_ean' => 'Row_Connection_EAN',
-        'row_price_block_id' => 'Row_PriceBlock_Id'
+        'has_price_block' => 'HasPriceBlock',
+        'row_price_block_id' => 'Row_PriceBlock_Id',
+        'row_price_block_description' => 'Row_PriceBlock_Description'
     ];
 
     /**
@@ -265,7 +271,9 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         'row_factor' => 'setRowFactor',
         'row_classification' => 'setRowClassification',
         'row_connection_ean' => 'setRowConnectionEan',
-        'row_price_block_id' => 'setRowPriceBlockId'
+        'has_price_block' => 'setHasPriceBlock',
+        'row_price_block_id' => 'setRowPriceBlockId',
+        'row_price_block_description' => 'setRowPriceBlockDescription'
     ];
 
     /**
@@ -314,7 +322,9 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         'row_factor' => 'getRowFactor',
         'row_classification' => 'getRowClassification',
         'row_connection_ean' => 'getRowConnectionEan',
-        'row_price_block_id' => 'getRowPriceBlockId'
+        'has_price_block' => 'getHasPriceBlock',
+        'row_price_block_id' => 'getRowPriceBlockId',
+        'row_price_block_description' => 'getRowPriceBlockDescription'
     ];
 
     /**
@@ -417,7 +427,9 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
         $this->container['row_factor'] = isset($data['row_factor']) ? $data['row_factor'] : null;
         $this->container['row_classification'] = isset($data['row_classification']) ? $data['row_classification'] : null;
         $this->container['row_connection_ean'] = isset($data['row_connection_ean']) ? $data['row_connection_ean'] : null;
+        $this->container['has_price_block'] = isset($data['has_price_block']) ? $data['has_price_block'] : null;
         $this->container['row_price_block_id'] = isset($data['row_price_block_id']) ? $data['row_price_block_id'] : null;
+        $this->container['row_price_block_description'] = isset($data['row_price_block_description']) ? $data['row_price_block_description'] : null;
     }
 
     /**
@@ -1405,6 +1417,30 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
     }
 
     /**
+     * Gets has_price_block
+     *
+     * @return bool
+     */
+    public function getHasPriceBlock()
+    {
+        return $this->container['has_price_block'];
+    }
+
+    /**
+     * Sets has_price_block
+     *
+     * @param bool $has_price_block has_price_block
+     *
+     * @return $this
+     */
+    public function setHasPriceBlock($has_price_block)
+    {
+        $this->container['has_price_block'] = $has_price_block;
+
+        return $this;
+    }
+
+    /**
      * Gets row_price_block_id
      *
      * @return string
@@ -1424,6 +1460,30 @@ class EcedoERPCRMInterfaceReportModelEvChargerReimbursementLetterEvChargerReimbu
     public function setRowPriceBlockId($row_price_block_id)
     {
         $this->container['row_price_block_id'] = $row_price_block_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets row_price_block_description
+     *
+     * @return string
+     */
+    public function getRowPriceBlockDescription()
+    {
+        return $this->container['row_price_block_description'];
+    }
+
+    /**
+     * Sets row_price_block_description
+     *
+     * @param string $row_price_block_description row_price_block_description
+     *
+     * @return $this
+     */
+    public function setRowPriceBlockDescription($row_price_block_description)
+    {
+        $this->container['row_price_block_description'] = $row_price_block_description;
 
         return $this;
     }

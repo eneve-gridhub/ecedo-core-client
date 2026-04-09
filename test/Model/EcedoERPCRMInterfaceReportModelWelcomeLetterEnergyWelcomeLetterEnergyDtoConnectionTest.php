@@ -840,6 +840,20 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
     }
 
     /**
+     * Test attribute "connection_contract_prices_price_block_prices_ldn"
+     */
+    public function testPropertyConnectionContractPricesPriceBlockPricesLdn()
+    {
+    }
+
+    /**
+     * Test attribute "connection_contract_prices_price_block_prices_odn"
+     */
+    public function testPropertyConnectionContractPricesPriceBlockPricesOdn()
+    {
+    }
+
+    /**
      * Test attribute "connection_bill_as_single"
      */
     public function testPropertyConnectionBillAsSingle()
@@ -934,6 +948,13 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
      * Test attribute "connection_ean"
      */
     public function testPropertyConnectionEan()
+    {
+    }
+
+    /**
+     * Test attribute "connection_vat"
+     */
+    public function testPropertyConnectionVat()
     {
     }
 
@@ -1151,6 +1172,13 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoCo
      * Test attribute "connection_contract_proposition_is_market_price_proposition"
      */
     public function testPropertyConnectionContractPropositionIsMarketPriceProposition()
+    {
+    }
+
+    /**
+     * Test attribute "connection_contract_proposition_is_price_block_proposition"
+     */
+    public function testPropertyConnectionContractPropositionIsPriceBlockProposition()
     {
     }
 

@@ -71,6 +71,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'organization_id' => 'string',
         'connection_type' => 'string',
         'connection_ean' => 'string',
+        'connection_vat' => 'string',
         'connection_grid_operator' => 'string',
         'connection_grid_operator_phone_number' => 'string',
         'connection_grid_operator_email_address' => 'string',
@@ -102,6 +103,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'connection_contract_proposition_is_model_contract' => 'bool',
         'connection_contract_proposition_pricing_type' => 'string',
         'connection_contract_proposition_is_market_price_proposition' => 'bool',
+        'connection_contract_proposition_is_price_block_proposition' => 'bool',
         'connection_contract_proposition_market_price_source' => 'string',
         'connection_contract_proposition_market_price_source_localized' => 'string',
         'connection_meelift_contract_proposition_description' => 'string',
@@ -147,6 +149,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'organization_id' => null,
         'connection_type' => null,
         'connection_ean' => null,
+        'connection_vat' => null,
         'connection_grid_operator' => null,
         'connection_grid_operator_phone_number' => null,
         'connection_grid_operator_email_address' => null,
@@ -178,6 +181,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'connection_contract_proposition_is_model_contract' => null,
         'connection_contract_proposition_pricing_type' => null,
         'connection_contract_proposition_is_market_price_proposition' => null,
+        'connection_contract_proposition_is_price_block_proposition' => null,
         'connection_contract_proposition_market_price_source' => null,
         'connection_contract_proposition_market_price_source_localized' => null,
         'connection_meelift_contract_proposition_description' => null,
@@ -244,6 +248,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'organization_id' => 'Organization_Id',
         'connection_type' => 'Connection_Type',
         'connection_ean' => 'Connection_EAN',
+        'connection_vat' => 'Connection_VAT',
         'connection_grid_operator' => 'Connection_GridOperator',
         'connection_grid_operator_phone_number' => 'Connection_GridOperator_PhoneNumber',
         'connection_grid_operator_email_address' => 'Connection_GridOperator_EmailAddress',
@@ -275,6 +280,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'connection_contract_proposition_is_model_contract' => 'Connection_Contract_Proposition_IsModelContract',
         'connection_contract_proposition_pricing_type' => 'Connection_Contract_Proposition_PricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'Connection_Contract_Proposition_IsMarketPriceProposition',
+        'connection_contract_proposition_is_price_block_proposition' => 'Connection_Contract_Proposition_IsPriceBlockProposition',
         'connection_contract_proposition_market_price_source' => 'Connection_Contract_Proposition_MarketPriceSource',
         'connection_contract_proposition_market_price_source_localized' => 'Connection_Contract_Proposition_MarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'Connection_MeeliftContract_Proposition_Description',
@@ -320,6 +326,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'organization_id' => 'setOrganizationId',
         'connection_type' => 'setConnectionType',
         'connection_ean' => 'setConnectionEan',
+        'connection_vat' => 'setConnectionVat',
         'connection_grid_operator' => 'setConnectionGridOperator',
         'connection_grid_operator_phone_number' => 'setConnectionGridOperatorPhoneNumber',
         'connection_grid_operator_email_address' => 'setConnectionGridOperatorEmailAddress',
@@ -351,6 +358,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'connection_contract_proposition_is_model_contract' => 'setConnectionContractPropositionIsModelContract',
         'connection_contract_proposition_pricing_type' => 'setConnectionContractPropositionPricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'setConnectionContractPropositionIsMarketPriceProposition',
+        'connection_contract_proposition_is_price_block_proposition' => 'setConnectionContractPropositionIsPriceBlockProposition',
         'connection_contract_proposition_market_price_source' => 'setConnectionContractPropositionMarketPriceSource',
         'connection_contract_proposition_market_price_source_localized' => 'setConnectionContractPropositionMarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'setConnectionMeeliftContractPropositionDescription',
@@ -396,6 +404,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'organization_id' => 'getOrganizationId',
         'connection_type' => 'getConnectionType',
         'connection_ean' => 'getConnectionEan',
+        'connection_vat' => 'getConnectionVat',
         'connection_grid_operator' => 'getConnectionGridOperator',
         'connection_grid_operator_phone_number' => 'getConnectionGridOperatorPhoneNumber',
         'connection_grid_operator_email_address' => 'getConnectionGridOperatorEmailAddress',
@@ -427,6 +436,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         'connection_contract_proposition_is_model_contract' => 'getConnectionContractPropositionIsModelContract',
         'connection_contract_proposition_pricing_type' => 'getConnectionContractPropositionPricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'getConnectionContractPropositionIsMarketPriceProposition',
+        'connection_contract_proposition_is_price_block_proposition' => 'getConnectionContractPropositionIsPriceBlockProposition',
         'connection_contract_proposition_market_price_source' => 'getConnectionContractPropositionMarketPriceSource',
         'connection_contract_proposition_market_price_source_localized' => 'getConnectionContractPropositionMarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'getConnectionMeeliftContractPropositionDescription',
@@ -526,6 +536,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['connection_type'] = isset($data['connection_type']) ? $data['connection_type'] : null;
         $this->container['connection_ean'] = isset($data['connection_ean']) ? $data['connection_ean'] : null;
+        $this->container['connection_vat'] = isset($data['connection_vat']) ? $data['connection_vat'] : null;
         $this->container['connection_grid_operator'] = isset($data['connection_grid_operator']) ? $data['connection_grid_operator'] : null;
         $this->container['connection_grid_operator_phone_number'] = isset($data['connection_grid_operator_phone_number']) ? $data['connection_grid_operator_phone_number'] : null;
         $this->container['connection_grid_operator_email_address'] = isset($data['connection_grid_operator_email_address']) ? $data['connection_grid_operator_email_address'] : null;
@@ -557,6 +568,7 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
         $this->container['connection_contract_proposition_is_model_contract'] = isset($data['connection_contract_proposition_is_model_contract']) ? $data['connection_contract_proposition_is_model_contract'] : null;
         $this->container['connection_contract_proposition_pricing_type'] = isset($data['connection_contract_proposition_pricing_type']) ? $data['connection_contract_proposition_pricing_type'] : null;
         $this->container['connection_contract_proposition_is_market_price_proposition'] = isset($data['connection_contract_proposition_is_market_price_proposition']) ? $data['connection_contract_proposition_is_market_price_proposition'] : null;
+        $this->container['connection_contract_proposition_is_price_block_proposition'] = isset($data['connection_contract_proposition_is_price_block_proposition']) ? $data['connection_contract_proposition_is_price_block_proposition'] : null;
         $this->container['connection_contract_proposition_market_price_source'] = isset($data['connection_contract_proposition_market_price_source']) ? $data['connection_contract_proposition_market_price_source'] : null;
         $this->container['connection_contract_proposition_market_price_source_localized'] = isset($data['connection_contract_proposition_market_price_source_localized']) ? $data['connection_contract_proposition_market_price_source_localized'] : null;
         $this->container['connection_meelift_contract_proposition_description'] = isset($data['connection_meelift_contract_proposition_description']) ? $data['connection_meelift_contract_proposition_description'] : null;
@@ -938,6 +950,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setConnectionEan($connection_ean)
     {
         $this->container['connection_ean'] = $connection_ean;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_vat
+     *
+     * @return string
+     */
+    public function getConnectionVat()
+    {
+        return $this->container['connection_vat'];
+    }
+
+    /**
+     * Sets connection_vat
+     *
+     * @param string $connection_vat connection_vat
+     *
+     * @return $this
+     */
+    public function setConnectionVat($connection_vat)
+    {
+        $this->container['connection_vat'] = $connection_vat;
 
         return $this;
     }
@@ -1682,6 +1718,30 @@ class EcedoERPCRMInterfaceReportModelSettlementInvoiceLetterSettlementInvoiceLet
     public function setConnectionContractPropositionIsMarketPriceProposition($connection_contract_proposition_is_market_price_proposition)
     {
         $this->container['connection_contract_proposition_is_market_price_proposition'] = $connection_contract_proposition_is_market_price_proposition;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_contract_proposition_is_price_block_proposition
+     *
+     * @return bool
+     */
+    public function getConnectionContractPropositionIsPriceBlockProposition()
+    {
+        return $this->container['connection_contract_proposition_is_price_block_proposition'];
+    }
+
+    /**
+     * Sets connection_contract_proposition_is_price_block_proposition
+     *
+     * @param bool $connection_contract_proposition_is_price_block_proposition connection_contract_proposition_is_price_block_proposition
+     *
+     * @return $this
+     */
+    public function setConnectionContractPropositionIsPriceBlockProposition($connection_contract_proposition_is_price_block_proposition)
+    {
+        $this->container['connection_contract_proposition_is_price_block_proposition'] = $connection_contract_proposition_is_price_block_proposition;
 
         return $this;
     }

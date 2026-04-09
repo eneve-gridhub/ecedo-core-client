@@ -123,7 +123,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         'organization_productiemiddel_proposition_descriptionk__backing_field' => 'string',
         'organization_organization_property_preferred_contact_methodk__backing_field' => 'string',
         'company_labelk__backing_field' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto',
-        'resellerk__backing_field' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto'
+        'resellerk__backing_field' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto',
+        'organization_propertiesk__backing_field' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto'
     ];
 
     /**
@@ -198,7 +199,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         'organization_productiemiddel_proposition_descriptionk__backing_field' => null,
         'organization_organization_property_preferred_contact_methodk__backing_field' => null,
         'company_labelk__backing_field' => null,
-        'resellerk__backing_field' => null
+        'resellerk__backing_field' => null,
+        'organization_propertiesk__backing_field' => null
     ];
 
     /**
@@ -294,7 +296,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         'organization_productiemiddel_proposition_descriptionk__backing_field' => '&lt;Organization_Productiemiddel_Proposition_Description&gt;k__BackingField',
         'organization_organization_property_preferred_contact_methodk__backing_field' => '&lt;Organization_OrganizationProperty_PreferredContactMethod&gt;k__BackingField',
         'company_labelk__backing_field' => '&lt;CompanyLabel&gt;k__BackingField',
-        'resellerk__backing_field' => '&lt;Reseller&gt;k__BackingField'
+        'resellerk__backing_field' => '&lt;Reseller&gt;k__BackingField',
+        'organization_propertiesk__backing_field' => '&lt;OrganizationProperties&gt;k__BackingField'
     ];
 
     /**
@@ -369,7 +372,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         'organization_productiemiddel_proposition_descriptionk__backing_field' => 'setOrganizationProductiemiddelPropositionDescriptionkBackingField',
         'organization_organization_property_preferred_contact_methodk__backing_field' => 'setOrganizationOrganizationPropertyPreferredContactMethodkBackingField',
         'company_labelk__backing_field' => 'setCompanyLabelkBackingField',
-        'resellerk__backing_field' => 'setResellerkBackingField'
+        'resellerk__backing_field' => 'setResellerkBackingField',
+        'organization_propertiesk__backing_field' => 'setOrganizationPropertieskBackingField'
     ];
 
     /**
@@ -444,7 +448,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         'organization_productiemiddel_proposition_descriptionk__backing_field' => 'getOrganizationProductiemiddelPropositionDescriptionkBackingField',
         'organization_organization_property_preferred_contact_methodk__backing_field' => 'getOrganizationOrganizationPropertyPreferredContactMethodkBackingField',
         'company_labelk__backing_field' => 'getCompanyLabelkBackingField',
-        'resellerk__backing_field' => 'getResellerkBackingField'
+        'resellerk__backing_field' => 'getResellerkBackingField',
+        'organization_propertiesk__backing_field' => 'getOrganizationPropertieskBackingField'
     ];
 
     /**
@@ -574,6 +579,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         $this->container['organization_organization_property_preferred_contact_methodk__backing_field'] = isset($data['organization_organization_property_preferred_contact_methodk__backing_field']) ? $data['organization_organization_property_preferred_contact_methodk__backing_field'] : null;
         $this->container['company_labelk__backing_field'] = isset($data['company_labelk__backing_field']) ? $data['company_labelk__backing_field'] : null;
         $this->container['resellerk__backing_field'] = isset($data['resellerk__backing_field']) ? $data['resellerk__backing_field'] : null;
+        $this->container['organization_propertiesk__backing_field'] = isset($data['organization_propertiesk__backing_field']) ? $data['organization_propertiesk__backing_field'] : null;
     }
 
     /**
@@ -2204,6 +2210,30 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
     public function setResellerkBackingField($resellerk__backing_field)
     {
         $this->container['resellerk__backing_field'] = $resellerk__backing_field;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_propertiesk__backing_field
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto
+     */
+    public function getOrganizationPropertieskBackingField()
+    {
+        return $this->container['organization_propertiesk__backing_field'];
+    }
+
+    /**
+     * Sets organization_propertiesk__backing_field
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto $organization_propertiesk__backing_field organization_propertiesk__backing_field
+     *
+     * @return $this
+     */
+    public function setOrganizationPropertieskBackingField($organization_propertiesk__backing_field)
+    {
+        $this->container['organization_propertiesk__backing_field'] = $organization_propertiesk__backing_field;
 
         return $this;
     }

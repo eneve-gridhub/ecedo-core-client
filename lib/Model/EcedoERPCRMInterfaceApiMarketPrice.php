@@ -427,7 +427,7 @@ class EcedoERPCRMInterfaceApiMarketPrice implements ModelInterface, ArrayAccess
     /**
      * Sets price_unit
      *
-     * @param string $price_unit De eenheid van de marktprijs. De eenheid is afhankelijk van het type marktprijs: 'ApxDayAheadHour' zal 'MWh' zijn, 'ApxDayAheadQuarter ook 'MWh', en 'TtfDayAheadDay' zal 'M3' zijn.
+     * @param string $price_unit De eenheid van de marktprijs. De eenheid is afhankelijk van het type marktprijs: 'ApxDayAheadHour' zal 'MWh' zijn, 'ApxDayAheadQuarter' ook 'MWh', en 'TtfDayAheadDay' zal 'M3' zijn.
      *
      * @return $this
      */

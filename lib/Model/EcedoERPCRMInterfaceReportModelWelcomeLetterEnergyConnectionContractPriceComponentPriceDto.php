@@ -74,7 +74,9 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         'price_is_provisional' => 'bool',
         'price_range_begin' => 'int',
         'price_range_end' => 'int',
-        'price_range_description' => 'string'
+        'price_range_description' => 'string',
+        'price_price_block_id' => 'string',
+        'price_price_block_description' => 'string'
     ];
 
     /**
@@ -100,7 +102,9 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         'price_is_provisional' => null,
         'price_range_begin' => 'int32',
         'price_range_end' => 'int32',
-        'price_range_description' => null
+        'price_range_description' => null,
+        'price_price_block_id' => 'uuid',
+        'price_price_block_description' => null
     ];
 
     /**
@@ -147,7 +151,9 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         'price_is_provisional' => 'Price_IsProvisional',
         'price_range_begin' => 'Price_Range_Begin',
         'price_range_end' => 'Price_Range_End',
-        'price_range_description' => 'Price_Range_Description'
+        'price_range_description' => 'Price_Range_Description',
+        'price_price_block_id' => 'Price_PriceBlock_Id',
+        'price_price_block_description' => 'Price_PriceBlock_Description'
     ];
 
     /**
@@ -173,7 +179,9 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         'price_is_provisional' => 'setPriceIsProvisional',
         'price_range_begin' => 'setPriceRangeBegin',
         'price_range_end' => 'setPriceRangeEnd',
-        'price_range_description' => 'setPriceRangeDescription'
+        'price_range_description' => 'setPriceRangeDescription',
+        'price_price_block_id' => 'setPricePriceBlockId',
+        'price_price_block_description' => 'setPricePriceBlockDescription'
     ];
 
     /**
@@ -199,7 +207,9 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         'price_is_provisional' => 'getPriceIsProvisional',
         'price_range_begin' => 'getPriceRangeBegin',
         'price_range_end' => 'getPriceRangeEnd',
-        'price_range_description' => 'getPriceRangeDescription'
+        'price_range_description' => 'getPriceRangeDescription',
+        'price_price_block_id' => 'getPricePriceBlockId',
+        'price_price_block_description' => 'getPricePriceBlockDescription'
     ];
 
     /**
@@ -280,6 +290,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         $this->container['price_range_begin'] = isset($data['price_range_begin']) ? $data['price_range_begin'] : null;
         $this->container['price_range_end'] = isset($data['price_range_end']) ? $data['price_range_end'] : null;
         $this->container['price_range_description'] = isset($data['price_range_description']) ? $data['price_range_description'] : null;
+        $this->container['price_price_block_id'] = isset($data['price_price_block_id']) ? $data['price_price_block_id'] : null;
+        $this->container['price_price_block_description'] = isset($data['price_price_block_description']) ? $data['price_price_block_description'] : null;
     }
 
     /**
@@ -734,6 +746,54 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
     public function setPriceRangeDescription($price_range_description)
     {
         $this->container['price_range_description'] = $price_range_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_price_block_id
+     *
+     * @return string
+     */
+    public function getPricePriceBlockId()
+    {
+        return $this->container['price_price_block_id'];
+    }
+
+    /**
+     * Sets price_price_block_id
+     *
+     * @param string $price_price_block_id price_price_block_id
+     *
+     * @return $this
+     */
+    public function setPricePriceBlockId($price_price_block_id)
+    {
+        $this->container['price_price_block_id'] = $price_price_block_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_price_block_description
+     *
+     * @return string
+     */
+    public function getPricePriceBlockDescription()
+    {
+        return $this->container['price_price_block_description'];
+    }
+
+    /**
+     * Sets price_price_block_description
+     *
+     * @param string $price_price_block_description price_price_block_description
+     *
+     * @return $this
+     */
+    public function setPricePriceBlockDescription($price_price_block_description)
+    {
+        $this->container['price_price_block_description'] = $price_price_block_description;
 
         return $this;
     }

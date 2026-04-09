@@ -28,8 +28,6 @@
  */
 
 namespace Swagger\Client\Model;
-
-use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -40,7 +38,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelInterface, ArrayAccess
+class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection extends EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase 
 {
     const DISCRIMINATOR = null;
 
@@ -57,13 +55,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'ean' => 'string',
-        'grid_operator' => 'string',
-        'cap_tar_code_short' => 'string',
-        'cap_tar_code_localized' => 'string',
-        'market_segment' => 'string',
-        'advance_payment_amount' => 'double',
-        'calculated_year_amount' => 'double'
+        'advance_payment_amount' => 'double'
     ];
 
     /**
@@ -72,13 +64,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'ean' => null,
-        'grid_operator' => null,
-        'cap_tar_code_short' => null,
-        'cap_tar_code_localized' => null,
-        'market_segment' => null,
-        'advance_payment_amount' => 'double',
-        'calculated_year_amount' => 'double'
+        'advance_payment_amount' => 'double'
     ];
 
     /**
@@ -88,7 +74,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -98,7 +84,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -108,13 +94,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
      * @var string[]
      */
     protected static $attributeMap = [
-        'ean' => 'EAN',
-        'grid_operator' => 'GridOperator',
-        'cap_tar_code_short' => 'CapTarCodeShort',
-        'cap_tar_code_localized' => 'CapTarCodeLocalized',
-        'market_segment' => 'MarketSegment',
-        'advance_payment_amount' => 'AdvancePaymentAmount',
-        'calculated_year_amount' => 'CalculatedYearAmount'
+        'advance_payment_amount' => 'AdvancePaymentAmount'
     ];
 
     /**
@@ -123,13 +103,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
      * @var string[]
      */
     protected static $setters = [
-        'ean' => 'setEan',
-        'grid_operator' => 'setGridOperator',
-        'cap_tar_code_short' => 'setCapTarCodeShort',
-        'cap_tar_code_localized' => 'setCapTarCodeLocalized',
-        'market_segment' => 'setMarketSegment',
-        'advance_payment_amount' => 'setAdvancePaymentAmount',
-        'calculated_year_amount' => 'setCalculatedYearAmount'
+        'advance_payment_amount' => 'setAdvancePaymentAmount'
     ];
 
     /**
@@ -138,13 +112,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
      * @var string[]
      */
     protected static $getters = [
-        'ean' => 'getEan',
-        'grid_operator' => 'getGridOperator',
-        'cap_tar_code_short' => 'getCapTarCodeShort',
-        'cap_tar_code_localized' => 'getCapTarCodeLocalized',
-        'market_segment' => 'getMarketSegment',
-        'advance_payment_amount' => 'getAdvancePaymentAmount',
-        'calculated_year_amount' => 'getCalculatedYearAmount'
+        'advance_payment_amount' => 'getAdvancePaymentAmount'
     ];
 
     /**
@@ -155,7 +123,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -165,7 +133,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -175,7 +143,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -188,31 +156,10 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
         return self::$swaggerModelName;
     }
 
-    const MARKET_SEGMENT_ELECTRICITY = 'Electricity';
-    const MARKET_SEGMENT_GAS = 'Gas';
     
 
     
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getMarketSegmentAllowableValues()
-    {
-        return [
-            self::MARKET_SEGMENT_ELECTRICITY,
-            self::MARKET_SEGMENT_GAS,
-        ];
-    }
-    
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -222,13 +169,9 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
      */
     public function __construct(array $data = null)
     {
-        $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
-        $this->container['grid_operator'] = isset($data['grid_operator']) ? $data['grid_operator'] : null;
-        $this->container['cap_tar_code_short'] = isset($data['cap_tar_code_short']) ? $data['cap_tar_code_short'] : null;
-        $this->container['cap_tar_code_localized'] = isset($data['cap_tar_code_localized']) ? $data['cap_tar_code_localized'] : null;
-        $this->container['market_segment'] = isset($data['market_segment']) ? $data['market_segment'] : null;
+        parent::__construct($data);
+
         $this->container['advance_payment_amount'] = isset($data['advance_payment_amount']) ? $data['advance_payment_amount'] : null;
-        $this->container['calculated_year_amount'] = isset($data['calculated_year_amount']) ? $data['calculated_year_amount'] : null;
     }
 
     /**
@@ -238,15 +181,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getMarketSegmentAllowableValues();
-        if (!is_null($this->container['market_segment']) && !in_array($this->container['market_segment'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'market_segment', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -262,135 +197,6 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets ean
-     *
-     * @return string
-     */
-    public function getEan()
-    {
-        return $this->container['ean'];
-    }
-
-    /**
-     * Sets ean
-     *
-     * @param string $ean ean
-     *
-     * @return $this
-     */
-    public function setEan($ean)
-    {
-        $this->container['ean'] = $ean;
-
-        return $this;
-    }
-
-    /**
-     * Gets grid_operator
-     *
-     * @return string
-     */
-    public function getGridOperator()
-    {
-        return $this->container['grid_operator'];
-    }
-
-    /**
-     * Sets grid_operator
-     *
-     * @param string $grid_operator grid_operator
-     *
-     * @return $this
-     */
-    public function setGridOperator($grid_operator)
-    {
-        $this->container['grid_operator'] = $grid_operator;
-
-        return $this;
-    }
-
-    /**
-     * Gets cap_tar_code_short
-     *
-     * @return string
-     */
-    public function getCapTarCodeShort()
-    {
-        return $this->container['cap_tar_code_short'];
-    }
-
-    /**
-     * Sets cap_tar_code_short
-     *
-     * @param string $cap_tar_code_short cap_tar_code_short
-     *
-     * @return $this
-     */
-    public function setCapTarCodeShort($cap_tar_code_short)
-    {
-        $this->container['cap_tar_code_short'] = $cap_tar_code_short;
-
-        return $this;
-    }
-
-    /**
-     * Gets cap_tar_code_localized
-     *
-     * @return string
-     */
-    public function getCapTarCodeLocalized()
-    {
-        return $this->container['cap_tar_code_localized'];
-    }
-
-    /**
-     * Sets cap_tar_code_localized
-     *
-     * @param string $cap_tar_code_localized cap_tar_code_localized
-     *
-     * @return $this
-     */
-    public function setCapTarCodeLocalized($cap_tar_code_localized)
-    {
-        $this->container['cap_tar_code_localized'] = $cap_tar_code_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets market_segment
-     *
-     * @return string
-     */
-    public function getMarketSegment()
-    {
-        return $this->container['market_segment'];
-    }
-
-    /**
-     * Sets market_segment
-     *
-     * @param string $market_segment market_segment
-     *
-     * @return $this
-     */
-    public function setMarketSegment($market_segment)
-    {
-        $allowedValues = $this->getMarketSegmentAllowableValues();
-        if (!is_null($market_segment) && !in_array($market_segment, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'market_segment', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['market_segment'] = $market_segment;
-
-        return $this;
-    }
 
     /**
      * Gets advance_payment_amount
@@ -412,30 +218,6 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnection implements ModelI
     public function setAdvancePaymentAmount($advance_payment_amount)
     {
         $this->container['advance_payment_amount'] = $advance_payment_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets calculated_year_amount
-     *
-     * @return double
-     */
-    public function getCalculatedYearAmount()
-    {
-        return $this->container['calculated_year_amount'];
-    }
-
-    /**
-     * Sets calculated_year_amount
-     *
-     * @param double $calculated_year_amount calculated_year_amount
-     *
-     * @return $this
-     */
-    public function setCalculatedYearAmount($calculated_year_amount)
-    {
-        $this->container['calculated_year_amount'] = $calculated_year_amount;
 
         return $this;
     }

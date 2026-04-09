@@ -175,6 +175,13 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
     }
 
     /**
+     * Test attribute "connection_vat"
+     */
+    public function testPropertyConnectionVat()
+    {
+    }
+
+    /**
      * Test attribute "connection_grid_operator"
      */
     public function testPropertyConnectionGridOperator()
@@ -388,6 +395,13 @@ class EcedoERPCRMInterfaceReportModelChargeSessionInvoiceLetterChargeSessionInvo
      * Test attribute "connection_contract_proposition_is_market_price_proposition"
      */
     public function testPropertyConnectionContractPropositionIsMarketPriceProposition()
+    {
+    }
+
+    /**
+     * Test attribute "connection_contract_proposition_is_price_block_proposition"
+     */
+    public function testPropertyConnectionContractPropositionIsPriceBlockProposition()
     {
     }
 

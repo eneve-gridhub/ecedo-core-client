@@ -201,4 +201,18 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
     public function testPropertyPriceRangeDescription()
     {
     }
+
+    /**
+     * Test attribute "price_price_block_id"
+     */
+    public function testPropertyPricePriceBlockId()
+    {
+    }
+
+    /**
+     * Test attribute "price_price_block_description"
+     */
+    public function testPropertyPricePriceBlockDescription()
+    {
+    }
 }
