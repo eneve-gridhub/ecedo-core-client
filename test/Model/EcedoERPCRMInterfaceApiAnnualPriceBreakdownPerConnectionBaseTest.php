@@ -105,13 +105,6 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBaseTest extends \
     }
 
     /**
-     * Test attribute "is_large_consumer"
-     */
-    public function testPropertyIsLargeConsumer()
-    {
-    }
-
-    /**
      * Test attribute "market_segment"
      */
     public function testPropertyMarketSegment()
@@ -122,13 +115,6 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBaseTest extends \
      * Test attribute "calculated_year_amount"
      */
     public function testPropertyCalculatedYearAmount()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
     {
     }
 }

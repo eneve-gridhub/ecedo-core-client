@@ -61,8 +61,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPerConnection implements ModelInterfa
         'market_segment' => 'string',
         'amount' => 'double',
         'calculated_amount' => 'double',
-        'agreed_amount' => 'double',
-        'type' => 'string'
+        'agreed_amount' => 'double'
     ];
 
     /**
@@ -75,8 +74,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPerConnection implements ModelInterfa
         'market_segment' => null,
         'amount' => 'double',
         'calculated_amount' => 'double',
-        'agreed_amount' => 'double',
-        'type' => null
+        'agreed_amount' => 'double'
     ];
 
     /**
@@ -110,8 +108,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPerConnection implements ModelInterfa
         'market_segment' => 'MarketSegment',
         'amount' => 'Amount',
         'calculated_amount' => 'CalculatedAmount',
-        'agreed_amount' => 'AgreedAmount',
-        'type' => '$type'
+        'agreed_amount' => 'AgreedAmount'
     ];
 
     /**
@@ -124,8 +121,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPerConnection implements ModelInterfa
         'market_segment' => 'setMarketSegment',
         'amount' => 'setAmount',
         'calculated_amount' => 'setCalculatedAmount',
-        'agreed_amount' => 'setAgreedAmount',
-        'type' => 'setType'
+        'agreed_amount' => 'setAgreedAmount'
     ];
 
     /**
@@ -138,8 +134,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPerConnection implements ModelInterfa
         'market_segment' => 'getMarketSegment',
         'amount' => 'getAmount',
         'calculated_amount' => 'getCalculatedAmount',
-        'agreed_amount' => 'getAgreedAmount',
-        'type' => 'getType'
+        'agreed_amount' => 'getAgreedAmount'
     ];
 
     /**
@@ -222,7 +217,6 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPerConnection implements ModelInterfa
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['calculated_amount'] = isset($data['calculated_amount']) ? $data['calculated_amount'] : null;
         $this->container['agreed_amount'] = isset($data['agreed_amount']) ? $data['agreed_amount'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -386,30 +380,6 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPerConnection implements ModelInterfa
     public function setAgreedAmount($agreed_amount)
     {
         $this->container['agreed_amount'] = $agreed_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

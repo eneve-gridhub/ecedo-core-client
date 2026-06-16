@@ -152,11 +152,4 @@ class EcedoERPCRMInterfaceApiAdvancePaymentBaseTest extends \PHPUnit_Framework_T
     public function testPropertyCombinedAdvancePaymentRows()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

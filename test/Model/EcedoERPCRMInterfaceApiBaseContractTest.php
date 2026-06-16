@@ -208,18 +208,4 @@ class EcedoERPCRMInterfaceApiBaseContractTest extends \PHPUnit_Framework_TestCas
     public function testPropertyContractProperties()
     {
     }
-
-    /**
-     * Test attribute "entity_properties"
-     */
-    public function testPropertyEntityProperties()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

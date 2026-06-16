@@ -117,11 +117,4 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroupTest extends \PHPUnit_Framework
     public function testPropertyComment()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

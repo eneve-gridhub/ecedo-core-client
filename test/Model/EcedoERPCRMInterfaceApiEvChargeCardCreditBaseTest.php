@@ -110,11 +110,4 @@ class EcedoERPCRMInterfaceApiEvChargeCardCreditBaseTest extends \PHPUnit_Framewo
     public function testPropertyAcquiredReason()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

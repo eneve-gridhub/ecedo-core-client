@@ -131,11 +131,4 @@ class EcedoERPCRMInterfaceApiConnectionPropertyTest extends \PHPUnit_Framework_T
     public function testPropertyConnectionPropertySourceLocalized()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

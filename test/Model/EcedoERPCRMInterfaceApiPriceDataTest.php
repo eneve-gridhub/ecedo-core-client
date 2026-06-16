@@ -159,11 +159,4 @@ class EcedoERPCRMInterfaceApiPriceDataTest extends \PHPUnit_Framework_TestCase
     public function testPropertyAllowMissingCapTar()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

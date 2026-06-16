@@ -117,11 +117,4 @@ class EcedoERPCRMInterfaceApiAnnualStandardUsageTest extends \PHPUnit_Framework_
     public function testPropertyOffPeakUsageOdn()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

@@ -96,11 +96,4 @@ class EcedoERPCRMInterfaceApiEvChargeCardActivatePostDataTest extends \PHPUnit_F
     public function testPropertyRfid()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

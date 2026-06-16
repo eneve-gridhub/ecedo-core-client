@@ -75,11 +75,4 @@ class EcedoERPCRMInterfaceApiUsageCalculationRowTest extends \PHPUnit_Framework_
     public function testEcedoERPCRMInterfaceApiUsageCalculationRow()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

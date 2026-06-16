@@ -64,8 +64,7 @@ class EcedoERPCRMInterfaceApiBaseInvoiceRowPostData implements ModelInterface, A
         'price_unit' => 'string',
         'amount' => 'double',
         'vat_inclusive' => 'bool',
-        'custom_price_component_invoice_row_description' => 'string',
-        'type' => 'string'
+        'custom_price_component_invoice_row_description' => 'string'
     ];
 
     /**
@@ -81,8 +80,7 @@ class EcedoERPCRMInterfaceApiBaseInvoiceRowPostData implements ModelInterface, A
         'price_unit' => null,
         'amount' => 'double',
         'vat_inclusive' => null,
-        'custom_price_component_invoice_row_description' => null,
-        'type' => null
+        'custom_price_component_invoice_row_description' => null
     ];
 
     /**
@@ -119,8 +117,7 @@ class EcedoERPCRMInterfaceApiBaseInvoiceRowPostData implements ModelInterface, A
         'price_unit' => 'PriceUnit',
         'amount' => 'Amount',
         'vat_inclusive' => 'VatInclusive',
-        'custom_price_component_invoice_row_description' => 'CustomPriceComponentInvoiceRowDescription',
-        'type' => '$type'
+        'custom_price_component_invoice_row_description' => 'CustomPriceComponentInvoiceRowDescription'
     ];
 
     /**
@@ -136,8 +133,7 @@ class EcedoERPCRMInterfaceApiBaseInvoiceRowPostData implements ModelInterface, A
         'price_unit' => 'setPriceUnit',
         'amount' => 'setAmount',
         'vat_inclusive' => 'setVatInclusive',
-        'custom_price_component_invoice_row_description' => 'setCustomPriceComponentInvoiceRowDescription',
-        'type' => 'setType'
+        'custom_price_component_invoice_row_description' => 'setCustomPriceComponentInvoiceRowDescription'
     ];
 
     /**
@@ -153,8 +149,7 @@ class EcedoERPCRMInterfaceApiBaseInvoiceRowPostData implements ModelInterface, A
         'price_unit' => 'getPriceUnit',
         'amount' => 'getAmount',
         'vat_inclusive' => 'getVatInclusive',
-        'custom_price_component_invoice_row_description' => 'getCustomPriceComponentInvoiceRowDescription',
-        'type' => 'getType'
+        'custom_price_component_invoice_row_description' => 'getCustomPriceComponentInvoiceRowDescription'
     ];
 
     /**
@@ -264,7 +259,6 @@ class EcedoERPCRMInterfaceApiBaseInvoiceRowPostData implements ModelInterface, A
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['vat_inclusive'] = isset($data['vat_inclusive']) ? $data['vat_inclusive'] : null;
         $this->container['custom_price_component_invoice_row_description'] = isset($data['custom_price_component_invoice_row_description']) ? $data['custom_price_component_invoice_row_description'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -500,30 +494,6 @@ class EcedoERPCRMInterfaceApiBaseInvoiceRowPostData implements ModelInterface, A
     public function setCustomPriceComponentInvoiceRowDescription($custom_price_component_invoice_row_description)
     {
         $this->container['custom_price_component_invoice_row_description'] = $custom_price_component_invoice_row_description;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

@@ -110,11 +110,4 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPerConnectionTest extends \PHPUnit_Fr
     public function testPropertyAgreedAmount()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

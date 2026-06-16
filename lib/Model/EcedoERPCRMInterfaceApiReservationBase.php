@@ -68,8 +68,7 @@ class EcedoERPCRMInterfaceApiReservationBase implements ModelInterface, ArrayAcc
         'annual_consumption' => 'int',
         'annual_standard_usage' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAnnualStandardUsage',
         'connection_status' => 'string',
-        'connection_status_localized' => 'string',
-        'type' => 'string'
+        'connection_status_localized' => 'string'
     ];
 
     /**
@@ -89,8 +88,7 @@ class EcedoERPCRMInterfaceApiReservationBase implements ModelInterface, ArrayAcc
         'annual_consumption' => 'int32',
         'annual_standard_usage' => null,
         'connection_status' => null,
-        'connection_status_localized' => null,
-        'type' => null
+        'connection_status_localized' => null
     ];
 
     /**
@@ -131,8 +129,7 @@ class EcedoERPCRMInterfaceApiReservationBase implements ModelInterface, ArrayAcc
         'annual_consumption' => 'AnnualConsumption',
         'annual_standard_usage' => 'AnnualStandardUsage',
         'connection_status' => 'ConnectionStatus',
-        'connection_status_localized' => 'ConnectionStatusLocalized',
-        'type' => '$type'
+        'connection_status_localized' => 'ConnectionStatusLocalized'
     ];
 
     /**
@@ -152,8 +149,7 @@ class EcedoERPCRMInterfaceApiReservationBase implements ModelInterface, ArrayAcc
         'annual_consumption' => 'setAnnualConsumption',
         'annual_standard_usage' => 'setAnnualStandardUsage',
         'connection_status' => 'setConnectionStatus',
-        'connection_status_localized' => 'setConnectionStatusLocalized',
-        'type' => 'setType'
+        'connection_status_localized' => 'setConnectionStatusLocalized'
     ];
 
     /**
@@ -173,8 +169,7 @@ class EcedoERPCRMInterfaceApiReservationBase implements ModelInterface, ArrayAcc
         'annual_consumption' => 'getAnnualConsumption',
         'annual_standard_usage' => 'getAnnualStandardUsage',
         'connection_status' => 'getConnectionStatus',
-        'connection_status_localized' => 'getConnectionStatusLocalized',
-        'type' => 'getType'
+        'connection_status_localized' => 'getConnectionStatusLocalized'
     ];
 
     /**
@@ -249,7 +244,6 @@ class EcedoERPCRMInterfaceApiReservationBase implements ModelInterface, ArrayAcc
         $this->container['annual_standard_usage'] = isset($data['annual_standard_usage']) ? $data['annual_standard_usage'] : null;
         $this->container['connection_status'] = isset($data['connection_status']) ? $data['connection_status'] : null;
         $this->container['connection_status_localized'] = isset($data['connection_status_localized']) ? $data['connection_status_localized'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -564,30 +558,6 @@ class EcedoERPCRMInterfaceApiReservationBase implements ModelInterface, ArrayAcc
     public function setConnectionStatusLocalized($connection_status_localized)
     {
         $this->container['connection_status_localized'] = $connection_status_localized;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

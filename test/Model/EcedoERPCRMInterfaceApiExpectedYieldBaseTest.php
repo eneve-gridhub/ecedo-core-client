@@ -117,11 +117,4 @@ class EcedoERPCRMInterfaceApiExpectedYieldBaseTest extends \PHPUnit_Framework_Te
     public function testPropertyPropositionGroupDescription()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

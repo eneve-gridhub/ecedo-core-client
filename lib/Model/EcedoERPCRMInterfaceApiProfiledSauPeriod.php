@@ -58,8 +58,7 @@ class EcedoERPCRMInterfaceApiProfiledSauPeriod implements ModelInterface, ArrayA
       */
     protected static $swaggerTypes = [
         'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'type' => 'string'
+        'end_date' => '\DateTime'
     ];
 
     /**
@@ -69,8 +68,7 @@ class EcedoERPCRMInterfaceApiProfiledSauPeriod implements ModelInterface, ArrayA
       */
     protected static $swaggerFormats = [
         'start_date' => 'date',
-        'end_date' => 'date',
-        'type' => null
+        'end_date' => 'date'
     ];
 
     /**
@@ -101,8 +99,7 @@ class EcedoERPCRMInterfaceApiProfiledSauPeriod implements ModelInterface, ArrayA
      */
     protected static $attributeMap = [
         'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'type' => '$type'
+        'end_date' => 'EndDate'
     ];
 
     /**
@@ -112,8 +109,7 @@ class EcedoERPCRMInterfaceApiProfiledSauPeriod implements ModelInterface, ArrayA
      */
     protected static $setters = [
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'type' => 'setType'
+        'end_date' => 'setEndDate'
     ];
 
     /**
@@ -123,8 +119,7 @@ class EcedoERPCRMInterfaceApiProfiledSauPeriod implements ModelInterface, ArrayA
      */
     protected static $getters = [
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'type' => 'getType'
+        'end_date' => 'getEndDate'
     ];
 
     /**
@@ -189,7 +184,6 @@ class EcedoERPCRMInterfaceApiProfiledSauPeriod implements ModelInterface, ArrayA
     {
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -264,30 +258,6 @@ class EcedoERPCRMInterfaceApiProfiledSauPeriod implements ModelInterface, ArrayA
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

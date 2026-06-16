@@ -67,8 +67,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentBase implements ModelInterface, Array
         'end_date' => '\DateTime',
         'comment' => 'string',
         'advance_payment_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]',
-        'combined_advance_payment_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]',
-        'type' => 'string'
+        'combined_advance_payment_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]'
     ];
 
     /**
@@ -87,8 +86,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentBase implements ModelInterface, Array
         'end_date' => 'date',
         'comment' => null,
         'advance_payment_rows' => null,
-        'combined_advance_payment_rows' => null,
-        'type' => null
+        'combined_advance_payment_rows' => null
     ];
 
     /**
@@ -128,8 +126,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentBase implements ModelInterface, Array
         'end_date' => 'EndDate',
         'comment' => 'Comment',
         'advance_payment_rows' => 'AdvancePaymentRows',
-        'combined_advance_payment_rows' => 'CombinedAdvancePaymentRows',
-        'type' => '$type'
+        'combined_advance_payment_rows' => 'CombinedAdvancePaymentRows'
     ];
 
     /**
@@ -148,8 +145,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentBase implements ModelInterface, Array
         'end_date' => 'setEndDate',
         'comment' => 'setComment',
         'advance_payment_rows' => 'setAdvancePaymentRows',
-        'combined_advance_payment_rows' => 'setCombinedAdvancePaymentRows',
-        'type' => 'setType'
+        'combined_advance_payment_rows' => 'setCombinedAdvancePaymentRows'
     ];
 
     /**
@@ -168,8 +164,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentBase implements ModelInterface, Array
         'end_date' => 'getEndDate',
         'comment' => 'getComment',
         'advance_payment_rows' => 'getAdvancePaymentRows',
-        'combined_advance_payment_rows' => 'getCombinedAdvancePaymentRows',
-        'type' => 'getType'
+        'combined_advance_payment_rows' => 'getCombinedAdvancePaymentRows'
     ];
 
     /**
@@ -243,7 +238,6 @@ class EcedoERPCRMInterfaceApiAdvancePaymentBase implements ModelInterface, Array
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
         $this->container['advance_payment_rows'] = isset($data['advance_payment_rows']) ? $data['advance_payment_rows'] : null;
         $this->container['combined_advance_payment_rows'] = isset($data['combined_advance_payment_rows']) ? $data['combined_advance_payment_rows'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -534,30 +528,6 @@ class EcedoERPCRMInterfaceApiAdvancePaymentBase implements ModelInterface, Array
     public function setCombinedAdvancePaymentRows($combined_advance_payment_rows)
     {
         $this->container['combined_advance_payment_rows'] = $combined_advance_payment_rows;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

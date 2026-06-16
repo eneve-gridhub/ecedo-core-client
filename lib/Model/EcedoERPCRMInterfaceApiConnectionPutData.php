@@ -58,8 +58,7 @@ class EcedoERPCRMInterfaceApiConnectionPutData implements ModelInterface, ArrayA
       */
     protected static $swaggerTypes = [
         'description' => 'string',
-        'comment' => 'string',
-        'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[]'
+        'comment' => 'string'
     ];
 
     /**
@@ -69,8 +68,7 @@ class EcedoERPCRMInterfaceApiConnectionPutData implements ModelInterface, ArrayA
       */
     protected static $swaggerFormats = [
         'description' => null,
-        'comment' => null,
-        'entity_properties' => null
+        'comment' => null
     ];
 
     /**
@@ -101,8 +99,7 @@ class EcedoERPCRMInterfaceApiConnectionPutData implements ModelInterface, ArrayA
      */
     protected static $attributeMap = [
         'description' => 'Description',
-        'comment' => 'Comment',
-        'entity_properties' => 'EntityProperties'
+        'comment' => 'Comment'
     ];
 
     /**
@@ -112,8 +109,7 @@ class EcedoERPCRMInterfaceApiConnectionPutData implements ModelInterface, ArrayA
      */
     protected static $setters = [
         'description' => 'setDescription',
-        'comment' => 'setComment',
-        'entity_properties' => 'setEntityProperties'
+        'comment' => 'setComment'
     ];
 
     /**
@@ -123,8 +119,7 @@ class EcedoERPCRMInterfaceApiConnectionPutData implements ModelInterface, ArrayA
      */
     protected static $getters = [
         'description' => 'getDescription',
-        'comment' => 'getComment',
-        'entity_properties' => 'getEntityProperties'
+        'comment' => 'getComment'
     ];
 
     /**
@@ -189,7 +184,6 @@ class EcedoERPCRMInterfaceApiConnectionPutData implements ModelInterface, ArrayA
     {
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
-        $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
     }
 
     /**
@@ -260,30 +254,6 @@ class EcedoERPCRMInterfaceApiConnectionPutData implements ModelInterface, ArrayA
     public function setComment($comment)
     {
         $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets entity_properties
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[]
-     */
-    public function getEntityProperties()
-    {
-        return $this->container['entity_properties'];
-    }
-
-    /**
-     * Sets entity_properties
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[] $entity_properties entity_properties
-     *
-     * @return $this
-     */
-    public function setEntityProperties($entity_properties)
-    {
-        $this->container['entity_properties'] = $entity_properties;
 
         return $this;
     }

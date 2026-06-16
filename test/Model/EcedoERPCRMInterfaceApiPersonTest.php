@@ -145,11 +145,4 @@ class EcedoERPCRMInterfaceApiPersonTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTitle()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

@@ -62,8 +62,7 @@ class EcedoERPCRMInterfaceApiExpectedYieldBase implements ModelInterface, ArrayA
         'usage_in_workflow' => 'int',
         'count_in_workflow' => 'int',
         'proposition_reference' => 'string',
-        'proposition_group_description' => 'string',
-        'type' => 'string'
+        'proposition_group_description' => 'string'
     ];
 
     /**
@@ -77,8 +76,7 @@ class EcedoERPCRMInterfaceApiExpectedYieldBase implements ModelInterface, ArrayA
         'usage_in_workflow' => 'int32',
         'count_in_workflow' => 'int32',
         'proposition_reference' => null,
-        'proposition_group_description' => null,
-        'type' => null
+        'proposition_group_description' => null
     ];
 
     /**
@@ -113,8 +111,7 @@ class EcedoERPCRMInterfaceApiExpectedYieldBase implements ModelInterface, ArrayA
         'usage_in_workflow' => 'UsageInWorkflow',
         'count_in_workflow' => 'CountInWorkflow',
         'proposition_reference' => 'PropositionReference',
-        'proposition_group_description' => 'PropositionGroupDescription',
-        'type' => '$type'
+        'proposition_group_description' => 'PropositionGroupDescription'
     ];
 
     /**
@@ -128,8 +125,7 @@ class EcedoERPCRMInterfaceApiExpectedYieldBase implements ModelInterface, ArrayA
         'usage_in_workflow' => 'setUsageInWorkflow',
         'count_in_workflow' => 'setCountInWorkflow',
         'proposition_reference' => 'setPropositionReference',
-        'proposition_group_description' => 'setPropositionGroupDescription',
-        'type' => 'setType'
+        'proposition_group_description' => 'setPropositionGroupDescription'
     ];
 
     /**
@@ -143,8 +139,7 @@ class EcedoERPCRMInterfaceApiExpectedYieldBase implements ModelInterface, ArrayA
         'usage_in_workflow' => 'getUsageInWorkflow',
         'count_in_workflow' => 'getCountInWorkflow',
         'proposition_reference' => 'getPropositionReference',
-        'proposition_group_description' => 'getPropositionGroupDescription',
-        'type' => 'getType'
+        'proposition_group_description' => 'getPropositionGroupDescription'
     ];
 
     /**
@@ -213,7 +208,6 @@ class EcedoERPCRMInterfaceApiExpectedYieldBase implements ModelInterface, ArrayA
         $this->container['count_in_workflow'] = isset($data['count_in_workflow']) ? $data['count_in_workflow'] : null;
         $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
         $this->container['proposition_group_description'] = isset($data['proposition_group_description']) ? $data['proposition_group_description'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -384,30 +378,6 @@ class EcedoERPCRMInterfaceApiExpectedYieldBase implements ModelInterface, ArrayA
     public function setPropositionGroupDescription($proposition_group_description)
     {
         $this->container['proposition_group_description'] = $proposition_group_description;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

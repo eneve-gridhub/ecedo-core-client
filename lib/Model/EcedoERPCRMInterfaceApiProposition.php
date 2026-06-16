@@ -73,8 +73,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'market_price_source' => 'string',
         'market_price_source_localized' => 'string',
         'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[]',
-        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractProperty[]',
-        'type' => 'string'
+        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractProperty[]'
     ];
 
     /**
@@ -99,8 +98,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'market_price_source' => null,
         'market_price_source_localized' => null,
         'entity_properties' => null,
-        'contract_properties' => null,
-        'type' => null
+        'contract_properties' => null
     ];
 
     /**
@@ -146,8 +144,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'market_price_source' => 'MarketPriceSource',
         'market_price_source_localized' => 'MarketPriceSourceLocalized',
         'entity_properties' => 'EntityProperties',
-        'contract_properties' => 'ContractProperties',
-        'type' => '$type'
+        'contract_properties' => 'ContractProperties'
     ];
 
     /**
@@ -172,8 +169,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'market_price_source' => 'setMarketPriceSource',
         'market_price_source_localized' => 'setMarketPriceSourceLocalized',
         'entity_properties' => 'setEntityProperties',
-        'contract_properties' => 'setContractProperties',
-        'type' => 'setType'
+        'contract_properties' => 'setContractProperties'
     ];
 
     /**
@@ -198,8 +194,7 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         'market_price_source' => 'getMarketPriceSource',
         'market_price_source_localized' => 'getMarketPriceSourceLocalized',
         'entity_properties' => 'getEntityProperties',
-        'contract_properties' => 'getContractProperties',
-        'type' => 'getType'
+        'contract_properties' => 'getContractProperties'
     ];
 
     /**
@@ -320,7 +315,6 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
         $this->container['market_price_source_localized'] = isset($data['market_price_source_localized']) ? $data['market_price_source_localized'] : null;
         $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
         $this->container['contract_properties'] = isset($data['contract_properties']) ? $data['contract_properties'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -772,30 +766,6 @@ class EcedoERPCRMInterfaceApiProposition implements ModelInterface, ArrayAccess
     public function setContractProperties($contract_properties)
     {
         $this->container['contract_properties'] = $contract_properties;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

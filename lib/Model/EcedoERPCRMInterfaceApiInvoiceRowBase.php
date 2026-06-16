@@ -76,8 +76,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowBase implements ModelInterface, ArrayAcce
         'price' => 'double',
         'amount' => 'double',
         'vat_amount' => 'double',
-        'total_amount' => 'double',
-        'type' => 'string'
+        'total_amount' => 'double'
     ];
 
     /**
@@ -105,8 +104,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowBase implements ModelInterface, ArrayAcce
         'price' => 'double',
         'amount' => 'double',
         'vat_amount' => 'double',
-        'total_amount' => 'double',
-        'type' => null
+        'total_amount' => 'double'
     ];
 
     /**
@@ -155,8 +153,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowBase implements ModelInterface, ArrayAcce
         'price' => 'Price',
         'amount' => 'Amount',
         'vat_amount' => 'VatAmount',
-        'total_amount' => 'TotalAmount',
-        'type' => '$type'
+        'total_amount' => 'TotalAmount'
     ];
 
     /**
@@ -184,8 +181,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowBase implements ModelInterface, ArrayAcce
         'price' => 'setPrice',
         'amount' => 'setAmount',
         'vat_amount' => 'setVatAmount',
-        'total_amount' => 'setTotalAmount',
-        'type' => 'setType'
+        'total_amount' => 'setTotalAmount'
     ];
 
     /**
@@ -213,8 +209,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowBase implements ModelInterface, ArrayAcce
         'price' => 'getPrice',
         'amount' => 'getAmount',
         'vat_amount' => 'getVatAmount',
-        'total_amount' => 'getTotalAmount',
-        'type' => 'getType'
+        'total_amount' => 'getTotalAmount'
     ];
 
     /**
@@ -375,7 +370,6 @@ class EcedoERPCRMInterfaceApiInvoiceRowBase implements ModelInterface, ArrayAcce
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['vat_amount'] = isset($data['vat_amount']) ? $data['vat_amount'] : null;
         $this->container['total_amount'] = isset($data['total_amount']) ? $data['total_amount'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -916,30 +910,6 @@ class EcedoERPCRMInterfaceApiInvoiceRowBase implements ModelInterface, ArrayAcce
     public function setTotalAmount($total_amount)
     {
         $this->container['total_amount'] = $total_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

@@ -89,11 +89,4 @@ class EcedoERPCRMInterfaceApiContractPropertyPostDataTest extends \PHPUnit_Frame
     public function testPropertyContractPropertyValue()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

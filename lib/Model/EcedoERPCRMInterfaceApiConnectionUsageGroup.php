@@ -63,8 +63,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroup implements ModelInterface, Arr
         'connection_usage_group_type' => 'string',
         'connection_usage_group_type_localized' => 'string',
         'description' => 'string',
-        'comment' => 'string',
-        'type' => 'string'
+        'comment' => 'string'
     ];
 
     /**
@@ -79,8 +78,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroup implements ModelInterface, Arr
         'connection_usage_group_type' => null,
         'connection_usage_group_type_localized' => null,
         'description' => null,
-        'comment' => null,
-        'type' => null
+        'comment' => null
     ];
 
     /**
@@ -116,8 +114,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroup implements ModelInterface, Arr
         'connection_usage_group_type' => 'ConnectionUsageGroupType',
         'connection_usage_group_type_localized' => 'ConnectionUsageGroupTypeLocalized',
         'description' => 'Description',
-        'comment' => 'Comment',
-        'type' => '$type'
+        'comment' => 'Comment'
     ];
 
     /**
@@ -132,8 +129,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroup implements ModelInterface, Arr
         'connection_usage_group_type' => 'setConnectionUsageGroupType',
         'connection_usage_group_type_localized' => 'setConnectionUsageGroupTypeLocalized',
         'description' => 'setDescription',
-        'comment' => 'setComment',
-        'type' => 'setType'
+        'comment' => 'setComment'
     ];
 
     /**
@@ -148,8 +144,7 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroup implements ModelInterface, Arr
         'connection_usage_group_type' => 'getConnectionUsageGroupType',
         'connection_usage_group_type_localized' => 'getConnectionUsageGroupTypeLocalized',
         'description' => 'getDescription',
-        'comment' => 'getComment',
-        'type' => 'getType'
+        'comment' => 'getComment'
     ];
 
     /**
@@ -232,7 +227,6 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroup implements ModelInterface, Arr
         $this->container['connection_usage_group_type_localized'] = isset($data['connection_usage_group_type_localized']) ? $data['connection_usage_group_type_localized'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -444,30 +438,6 @@ class EcedoERPCRMInterfaceApiConnectionUsageGroup implements ModelInterface, Arr
     public function setComment($comment)
     {
         $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

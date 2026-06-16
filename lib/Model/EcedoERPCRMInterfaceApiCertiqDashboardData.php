@@ -66,8 +66,7 @@ class EcedoERPCRMInterfaceApiCertiqDashboardData implements ModelInterface, Arra
         'cnt_imported' => 'int',
         'cnt_incoming_transfers' => 'int',
         'cnt_outgoing_transfers' => 'int',
-        'cnt_total_valid' => 'int',
-        'type' => 'string'
+        'cnt_total_valid' => 'int'
     ];
 
     /**
@@ -85,8 +84,7 @@ class EcedoERPCRMInterfaceApiCertiqDashboardData implements ModelInterface, Arra
         'cnt_imported' => 'int32',
         'cnt_incoming_transfers' => 'int32',
         'cnt_outgoing_transfers' => 'int32',
-        'cnt_total_valid' => 'int32',
-        'type' => null
+        'cnt_total_valid' => 'int32'
     ];
 
     /**
@@ -125,8 +123,7 @@ class EcedoERPCRMInterfaceApiCertiqDashboardData implements ModelInterface, Arra
         'cnt_imported' => 'CntImported',
         'cnt_incoming_transfers' => 'CntIncomingTransfers',
         'cnt_outgoing_transfers' => 'CntOutgoingTransfers',
-        'cnt_total_valid' => 'CntTotalValid',
-        'type' => '$type'
+        'cnt_total_valid' => 'CntTotalValid'
     ];
 
     /**
@@ -144,8 +141,7 @@ class EcedoERPCRMInterfaceApiCertiqDashboardData implements ModelInterface, Arra
         'cnt_imported' => 'setCntImported',
         'cnt_incoming_transfers' => 'setCntIncomingTransfers',
         'cnt_outgoing_transfers' => 'setCntOutgoingTransfers',
-        'cnt_total_valid' => 'setCntTotalValid',
-        'type' => 'setType'
+        'cnt_total_valid' => 'setCntTotalValid'
     ];
 
     /**
@@ -163,8 +159,7 @@ class EcedoERPCRMInterfaceApiCertiqDashboardData implements ModelInterface, Arra
         'cnt_imported' => 'getCntImported',
         'cnt_incoming_transfers' => 'getCntIncomingTransfers',
         'cnt_outgoing_transfers' => 'getCntOutgoingTransfers',
-        'cnt_total_valid' => 'getCntTotalValid',
-        'type' => 'getType'
+        'cnt_total_valid' => 'getCntTotalValid'
     ];
 
     /**
@@ -237,7 +232,6 @@ class EcedoERPCRMInterfaceApiCertiqDashboardData implements ModelInterface, Arra
         $this->container['cnt_incoming_transfers'] = isset($data['cnt_incoming_transfers']) ? $data['cnt_incoming_transfers'] : null;
         $this->container['cnt_outgoing_transfers'] = isset($data['cnt_outgoing_transfers']) ? $data['cnt_outgoing_transfers'] : null;
         $this->container['cnt_total_valid'] = isset($data['cnt_total_valid']) ? $data['cnt_total_valid'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -504,30 +498,6 @@ class EcedoERPCRMInterfaceApiCertiqDashboardData implements ModelInterface, Arra
     public function setCntTotalValid($cnt_total_valid)
     {
         $this->container['cnt_total_valid'] = $cnt_total_valid;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

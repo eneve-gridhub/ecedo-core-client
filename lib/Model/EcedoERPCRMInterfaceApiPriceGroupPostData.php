@@ -58,8 +58,7 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
       */
     protected static $swaggerTypes = [
         'price_component_group' => 'string',
-        'prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPricePostData[]',
-        'type' => 'string'
+        'prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPricePostData[]'
     ];
 
     /**
@@ -69,8 +68,7 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
       */
     protected static $swaggerFormats = [
         'price_component_group' => null,
-        'prices' => null,
-        'type' => null
+        'prices' => null
     ];
 
     /**
@@ -101,8 +99,7 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
      */
     protected static $attributeMap = [
         'price_component_group' => 'PriceComponentGroup',
-        'prices' => 'Prices',
-        'type' => '$type'
+        'prices' => 'Prices'
     ];
 
     /**
@@ -112,8 +109,7 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
      */
     protected static $setters = [
         'price_component_group' => 'setPriceComponentGroup',
-        'prices' => 'setPrices',
-        'type' => 'setType'
+        'prices' => 'setPrices'
     ];
 
     /**
@@ -123,8 +119,7 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
      */
     protected static $getters = [
         'price_component_group' => 'getPriceComponentGroup',
-        'prices' => 'getPrices',
-        'type' => 'getType'
+        'prices' => 'getPrices'
     ];
 
     /**
@@ -260,7 +255,6 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
     {
         $this->container['price_component_group'] = isset($data['price_component_group']) ? $data['price_component_group'] : null;
         $this->container['prices'] = isset($data['prices']) ? $data['prices'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -352,30 +346,6 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
     public function setPrices($prices)
     {
         $this->container['prices'] = $prices;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

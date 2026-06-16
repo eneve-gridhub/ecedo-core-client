@@ -968,7 +968,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_high_odn
      *
-     * @param double $price_high_odn Price per kWh for electricity fed into the grid in the <b>High</b> (Normaal) tariff band (ODN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the high-tariff is not applicable for the metering configuration.<br />  ProductionFeePeak is added to this price if the connection has production fee
+     * @param double $price_high_odn Price per kWh for electricity fed into the grid in the <b>High</b> (Normaal) tariff band (ODN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the high-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -992,7 +992,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_low_odn
      *
-     * @param double $price_low_odn Price per kWh for electricity fed into the grid in the <b>Low</b> (Dal) tariff band (ODN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the low-tariff is not applicable for the metering configuration.<br />  ProductionFeeOffPeak is added to this price if the connection has production fee
+     * @param double $price_low_odn Price per kWh for electricity fed into the grid in the <b>Low</b> (Dal) tariff band (ODN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the low-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1016,7 +1016,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_single_odn
      *
-     * @param double $price_single_odn Price per kWh for electricity fed into the grid when a single (Enkel) tariff applies (ODN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the single-tariff is not applicable for the metering configuration.<br />  ProductionFeeBasePeak is added to this price if the connection has production fee
+     * @param double $price_single_odn Price per kWh for electricity fed into the grid when a single (Enkel) tariff applies (ODN), <strong>excluding VAT</strong> but <em>including</em> energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the single-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1256,7 +1256,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_high_odn_taxed
      *
-     * @param double $price_high_odn_taxed Price per kWh for feed-in during the <b>High</b> (Normaal) tariff band (ODN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the high-tariff is not applicable for the metering configuration.<br />  When applicable <b>Production Fee Peak</b> amounts are present on the periodic cost log, they are combined with the underlying high-tariff ODN price during mapping.<br />
+     * @param double $price_high_odn_taxed Price per kWh for feed-in during the <b>High</b> (Normaal) tariff band (ODN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the high-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1280,7 +1280,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_low_odn_taxed
      *
-     * @param double $price_low_odn_taxed Price per kWh for feed-in during the <b>Low</b> (Dal) tariff band (ODN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the low-tariff is not applicable for the metering configuration.<br />  When applicable <b>Production Fee Off-Peak</b> amounts are present on the periodic cost log, they are combined with the underlying low-tariff ODN price during mapping.<br />
+     * @param double $price_low_odn_taxed Price per kWh for feed-in during the <b>Low</b> (Dal) tariff band (ODN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the low-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */
@@ -1304,7 +1304,7 @@ class EcedoERPCRMInterfaceApiPeriodicCostEventLog implements ModelInterface, Arr
     /**
      * Sets price_single_odn_taxed
      *
-     * @param double $price_single_odn_taxed Price per kWh for feed-in when a <b>Single</b> (Enkel) tariff band applies (ODN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the single-tariff is not applicable for the metering configuration.<br />  When applicable <b>Production Fee Base</b> amounts are present on the periodic cost log, they are combined with the underlying single-tariff ODN price during mapping.<br />
+     * @param double $price_single_odn_taxed Price per kWh for feed-in when a <b>Single</b> (Enkel) tariff band applies (ODN) <strong>including VAT</strong>, energy tax (EB) and the sustainable energy surcharge (ODE).<br />  This value will be null when the connection is a gas connection or when the single-tariff is not applicable for the metering configuration.
      *
      * @return $this
      */

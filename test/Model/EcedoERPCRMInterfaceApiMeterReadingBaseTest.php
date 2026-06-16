@@ -124,11 +124,4 @@ class EcedoERPCRMInterfaceApiMeterReadingBaseTest extends \PHPUnit_Framework_Tes
     public function testPropertyComment()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

@@ -145,11 +145,4 @@ class EcedoERPCRMInterfaceApiInvoiceRowTotalsDtoTest extends \PHPUnit_Framework_
     public function testPropertyRowFactor()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

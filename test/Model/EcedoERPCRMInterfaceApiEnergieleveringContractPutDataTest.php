@@ -138,11 +138,4 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutDataTest extends \PHPUnit
     public function testPropertyContractProperties()
     {
     }
-
-    /**
-     * Test attribute "entity_properties"
-     */
-    public function testPropertyEntityProperties()
-    {
-    }
 }

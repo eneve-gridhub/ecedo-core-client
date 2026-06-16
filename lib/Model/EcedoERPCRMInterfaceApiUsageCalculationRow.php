@@ -57,7 +57,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string'
+        
     ];
 
     /**
@@ -66,7 +66,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null
+        
     ];
 
     /**
@@ -96,7 +96,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => '$type'
+        
     ];
 
     /**
@@ -105,7 +105,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType'
+        
     ];
 
     /**
@@ -114,7 +114,7 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType'
+        
     ];
 
     /**
@@ -177,7 +177,6 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -207,30 +206,6 @@ class EcedoERPCRMInterfaceApiUsageCalculationRow implements ModelInterface, Arra
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

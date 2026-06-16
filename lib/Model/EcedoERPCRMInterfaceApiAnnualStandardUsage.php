@@ -62,8 +62,7 @@ class EcedoERPCRMInterfaceApiAnnualStandardUsage implements ModelInterface, Arra
         'off_peak_usage' => 'int',
         'single_usage_odn' => 'int',
         'peak_usage_odn' => 'int',
-        'off_peak_usage_odn' => 'int',
-        'type' => 'string'
+        'off_peak_usage_odn' => 'int'
     ];
 
     /**
@@ -77,8 +76,7 @@ class EcedoERPCRMInterfaceApiAnnualStandardUsage implements ModelInterface, Arra
         'off_peak_usage' => 'int32',
         'single_usage_odn' => 'int32',
         'peak_usage_odn' => 'int32',
-        'off_peak_usage_odn' => 'int32',
-        'type' => null
+        'off_peak_usage_odn' => 'int32'
     ];
 
     /**
@@ -113,8 +111,7 @@ class EcedoERPCRMInterfaceApiAnnualStandardUsage implements ModelInterface, Arra
         'off_peak_usage' => 'OffPeakUsage',
         'single_usage_odn' => 'SingleUsageODN',
         'peak_usage_odn' => 'PeakUsageODN',
-        'off_peak_usage_odn' => 'OffPeakUsageODN',
-        'type' => '$type'
+        'off_peak_usage_odn' => 'OffPeakUsageODN'
     ];
 
     /**
@@ -128,8 +125,7 @@ class EcedoERPCRMInterfaceApiAnnualStandardUsage implements ModelInterface, Arra
         'off_peak_usage' => 'setOffPeakUsage',
         'single_usage_odn' => 'setSingleUsageOdn',
         'peak_usage_odn' => 'setPeakUsageOdn',
-        'off_peak_usage_odn' => 'setOffPeakUsageOdn',
-        'type' => 'setType'
+        'off_peak_usage_odn' => 'setOffPeakUsageOdn'
     ];
 
     /**
@@ -143,8 +139,7 @@ class EcedoERPCRMInterfaceApiAnnualStandardUsage implements ModelInterface, Arra
         'off_peak_usage' => 'getOffPeakUsage',
         'single_usage_odn' => 'getSingleUsageOdn',
         'peak_usage_odn' => 'getPeakUsageOdn',
-        'off_peak_usage_odn' => 'getOffPeakUsageOdn',
-        'type' => 'getType'
+        'off_peak_usage_odn' => 'getOffPeakUsageOdn'
     ];
 
     /**
@@ -213,7 +208,6 @@ class EcedoERPCRMInterfaceApiAnnualStandardUsage implements ModelInterface, Arra
         $this->container['single_usage_odn'] = isset($data['single_usage_odn']) ? $data['single_usage_odn'] : null;
         $this->container['peak_usage_odn'] = isset($data['peak_usage_odn']) ? $data['peak_usage_odn'] : null;
         $this->container['off_peak_usage_odn'] = isset($data['off_peak_usage_odn']) ? $data['off_peak_usage_odn'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -384,30 +378,6 @@ class EcedoERPCRMInterfaceApiAnnualStandardUsage implements ModelInterface, Arra
     public function setOffPeakUsageOdn($off_peak_usage_odn)
     {
         $this->container['off_peak_usage_odn'] = $off_peak_usage_odn;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

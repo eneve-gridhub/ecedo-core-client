@@ -103,11 +103,4 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownBaseTest extends \PHPUnit_Frame
     public function testPropertyCombinedYearRows()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

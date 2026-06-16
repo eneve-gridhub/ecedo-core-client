@@ -77,478 +77,478 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDtoTest extends \PHP
     }
 
     /**
-     * Test attribute "organization_login_is_available"
+     * Test attribute "organization_login_is_availablek__backing_field"
      */
-    public function testPropertyOrganizationLoginIsAvailable()
+    public function testPropertyOrganizationLoginIsAvailablekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_login_name"
+     * Test attribute "organization_login_namek__backing_field"
      */
-    public function testPropertyOrganizationLoginName()
+    public function testPropertyOrganizationLoginNamekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_login_password"
+     * Test attribute "organization_login_passwordk__backing_field"
      */
-    public function testPropertyOrganizationLoginPassword()
+    public function testPropertyOrganizationLoginPasswordkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_contracts_purchase_order_number"
+     * Test attribute "organization_contracts_purchase_order_numberk__backing_field"
      */
-    public function testPropertyOrganizationContractsPurchaseOrderNumber()
+    public function testPropertyOrganizationContractsPurchaseOrderNumberkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_document_type_is_extension"
+     * Test attribute "organization_document_type_is_extensionk__backing_field"
      */
-    public function testPropertyOrganizationDocumentTypeIsExtension()
+    public function testPropertyOrganizationDocumentTypeIsExtensionkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_connections"
+     * Test attribute "organization_connectionsk__backing_field"
      */
-    public function testPropertyOrganizationConnections()
+    public function testPropertyOrganizationConnectionskBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_new_advance_payment"
+     * Test attribute "organization_new_advance_paymentk__backing_field"
      */
-    public function testPropertyOrganizationNewAdvancePayment()
+    public function testPropertyOrganizationNewAdvancePaymentkBackingField()
     {
     }
 
     /**
-     * Test attribute "connection_price_component_prices"
+     * Test attribute "connection_price_component_pricesk__backing_field"
      */
-    public function testPropertyConnectionPriceComponentPrices()
+    public function testPropertyConnectionPriceComponentPriceskBackingField()
     {
     }
 
     /**
-     * Test attribute "company_label_id"
+     * Test attribute "company_label_idk__backing_field"
      */
-    public function testPropertyCompanyLabelId()
+    public function testPropertyCompanyLabelIdkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_id"
+     * Test attribute "organization_idk__backing_field"
      */
-    public function testPropertyOrganizationId()
+    public function testPropertyOrganizationIdkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_organization_sub_type"
+     * Test attribute "organization_organization_sub_typek__backing_field"
      */
-    public function testPropertyOrganizationOrganizationSubType()
+    public function testPropertyOrganizationOrganizationSubTypekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_category"
+     * Test attribute "organization_categoryk__backing_field"
      */
-    public function testPropertyOrganizationCategory()
+    public function testPropertyOrganizationCategorykBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_category_localized"
+     * Test attribute "organization_category_localizedk__backing_field"
      */
-    public function testPropertyOrganizationCategoryLocalized()
+    public function testPropertyOrganizationCategoryLocalizedkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_reference"
+     * Test attribute "organization_referencek__backing_field"
      */
-    public function testPropertyOrganizationReference()
+    public function testPropertyOrganizationReferencekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_client_reference"
+     * Test attribute "organization_client_referencek__backing_field"
      */
-    public function testPropertyOrganizationClientReference()
+    public function testPropertyOrganizationClientReferencekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_origin_reference"
+     * Test attribute "organization_origin_referencek__backing_field"
      */
-    public function testPropertyOrganizationOriginReference()
+    public function testPropertyOrganizationOriginReferencekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_correspondence_name"
+     * Test attribute "organization_correspondence_namek__backing_field"
      */
-    public function testPropertyOrganizationCorrespondenceName()
+    public function testPropertyOrganizationCorrespondenceNamekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_correspondence_phone_number"
+     * Test attribute "organization_correspondence_phone_numberk__backing_field"
      */
-    public function testPropertyOrganizationCorrespondencePhoneNumber()
+    public function testPropertyOrganizationCorrespondencePhoneNumberkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_email_address"
+     * Test attribute "organization_email_addressk__backing_field"
      */
-    public function testPropertyOrganizationEmailAddress()
+    public function testPropertyOrganizationEmailAddresskBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_e_invoice_address"
+     * Test attribute "organization_e_invoice_addressk__backing_field"
      */
-    public function testPropertyOrganizationEInvoiceAddress()
+    public function testPropertyOrganizationEInvoiceAddresskBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_kv_k_number"
+     * Test attribute "organization_kv_k_numberk__backing_field"
      */
-    public function testPropertyOrganizationKvKNumber()
+    public function testPropertyOrganizationKvKNumberkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_vat_number"
+     * Test attribute "organization_vat_numberk__backing_field"
      */
-    public function testPropertyOrganizationVatNumber()
+    public function testPropertyOrganizationVatNumberkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_is_business"
+     * Test attribute "organization_is_businessk__backing_field"
      */
-    public function testPropertyOrganizationIsBusiness()
+    public function testPropertyOrganizationIsBusinesskBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_is_intercompany"
+     * Test attribute "organization_is_intercompanyk__backing_field"
      */
-    public function testPropertyOrganizationIsIntercompany()
+    public function testPropertyOrganizationIsIntercompanykBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_group_name"
+     * Test attribute "organization_group_namek__backing_field"
      */
-    public function testPropertyOrganizationGroupName()
+    public function testPropertyOrganizationGroupNamekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_is_parent"
+     * Test attribute "organization_is_parentk__backing_field"
      */
-    public function testPropertyOrganizationIsParent()
+    public function testPropertyOrganizationIsParentkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_is_daughter"
+     * Test attribute "organization_is_daughterk__backing_field"
      */
-    public function testPropertyOrganizationIsDaughter()
+    public function testPropertyOrganizationIsDaughterkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_parent_reference"
+     * Test attribute "organization_parent_referencek__backing_field"
      */
-    public function testPropertyOrganizationParentReference()
+    public function testPropertyOrganizationParentReferencekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_has_reseller"
+     * Test attribute "organization_has_resellerk__backing_field"
      */
-    public function testPropertyOrganizationHasReseller()
+    public function testPropertyOrganizationHasResellerkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_gender_type"
+     * Test attribute "organization_person_gender_typek__backing_field"
      */
-    public function testPropertyOrganizationPersonGenderType()
+    public function testPropertyOrganizationPersonGenderTypekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_first_name"
+     * Test attribute "organization_person_first_namek__backing_field"
      */
-    public function testPropertyOrganizationPersonFirstName()
+    public function testPropertyOrganizationPersonFirstNamekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_initials"
+     * Test attribute "organization_person_initialsk__backing_field"
      */
-    public function testPropertyOrganizationPersonInitials()
+    public function testPropertyOrganizationPersonInitialskBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_infix"
+     * Test attribute "organization_person_infixk__backing_field"
      */
-    public function testPropertyOrganizationPersonInfix()
+    public function testPropertyOrganizationPersonInfixkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_last_name"
+     * Test attribute "organization_person_last_namek__backing_field"
      */
-    public function testPropertyOrganizationPersonLastName()
+    public function testPropertyOrganizationPersonLastNamekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_full_name"
+     * Test attribute "organization_person_full_namek__backing_field"
      */
-    public function testPropertyOrganizationPersonFullName()
+    public function testPropertyOrganizationPersonFullNamekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_salutation"
+     * Test attribute "organization_person_salutationk__backing_field"
      */
-    public function testPropertyOrganizationPersonSalutation()
+    public function testPropertyOrganizationPersonSalutationkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_salutation_addressed"
+     * Test attribute "organization_person_salutation_addressedk__backing_field"
      */
-    public function testPropertyOrganizationPersonSalutationAddressed()
+    public function testPropertyOrganizationPersonSalutationAddressedkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_salutation_addressed_upper_cased"
+     * Test attribute "organization_person_salutation_addressed_upper_casedk__backing_field"
      */
-    public function testPropertyOrganizationPersonSalutationAddressedUpperCased()
+    public function testPropertyOrganizationPersonSalutationAddressedUpperCasedkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_salutation_informal"
+     * Test attribute "organization_person_salutation_informalk__backing_field"
      */
-    public function testPropertyOrganizationPersonSalutationInformal()
+    public function testPropertyOrganizationPersonSalutationInformalkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_person_birth_date"
+     * Test attribute "organization_person_birth_datek__backing_field"
      */
-    public function testPropertyOrganizationPersonBirthDate()
+    public function testPropertyOrganizationPersonBirthDatekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_mailing_address_address_line1"
+     * Test attribute "organization_mailing_address_address_line1k__backing_field"
      */
-    public function testPropertyOrganizationMailingAddressAddressLine1()
+    public function testPropertyOrganizationMailingAddressAddressLine1kBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_mailing_address_address_line2"
+     * Test attribute "organization_mailing_address_address_line2k__backing_field"
      */
-    public function testPropertyOrganizationMailingAddressAddressLine2()
+    public function testPropertyOrganizationMailingAddressAddressLine2kBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_mailing_address_full_address"
+     * Test attribute "organization_mailing_address_full_addressk__backing_field"
      */
-    public function testPropertyOrganizationMailingAddressFullAddress()
+    public function testPropertyOrganizationMailingAddressFullAddresskBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_mailing_address_zip_code"
+     * Test attribute "organization_mailing_address_zip_codek__backing_field"
      */
-    public function testPropertyOrganizationMailingAddressZipCode()
+    public function testPropertyOrganizationMailingAddressZipCodekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_mailing_address_city"
+     * Test attribute "organization_mailing_address_cityk__backing_field"
      */
-    public function testPropertyOrganizationMailingAddressCity()
+    public function testPropertyOrganizationMailingAddressCitykBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_mailing_address_country_code"
+     * Test attribute "organization_mailing_address_country_codek__backing_field"
      */
-    public function testPropertyOrganizationMailingAddressCountryCode()
+    public function testPropertyOrganizationMailingAddressCountryCodekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_name"
+     * Test attribute "organization_debtor_namek__backing_field"
      */
-    public function testPropertyOrganizationDebtorName()
+    public function testPropertyOrganizationDebtorNamekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_bank_account_number"
+     * Test attribute "organization_debtor_bank_account_numberk__backing_field"
      */
-    public function testPropertyOrganizationDebtorBankAccountNumber()
+    public function testPropertyOrganizationDebtorBankAccountNumberkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_bank_account_number_short"
+     * Test attribute "organization_debtor_bank_account_number_shortk__backing_field"
      */
-    public function testPropertyOrganizationDebtorBankAccountNumberShort()
+    public function testPropertyOrganizationDebtorBankAccountNumberShortkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_bank_account_number_masked"
+     * Test attribute "organization_debtor_bank_account_number_maskedk__backing_field"
      */
-    public function testPropertyOrganizationDebtorBankAccountNumberMasked()
+    public function testPropertyOrganizationDebtorBankAccountNumberMaskedkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_payment_method_is_automatic_collection"
+     * Test attribute "organization_debtor_payment_method_is_automatic_collectionk__backing_field"
      */
-    public function testPropertyOrganizationDebtorPaymentMethodIsAutomaticCollection()
+    public function testPropertyOrganizationDebtorPaymentMethodIsAutomaticCollectionkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_payment_method_is_direct_pay"
+     * Test attribute "organization_debtor_payment_method_is_direct_payk__backing_field"
      */
-    public function testPropertyOrganizationDebtorPaymentMethodIsDirectPay()
+    public function testPropertyOrganizationDebtorPaymentMethodIsDirectPaykBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_payment_method_via_parent_organization"
+     * Test attribute "organization_debtor_payment_method_via_parent_organizationk__backing_field"
      */
-    public function testPropertyOrganizationDebtorPaymentMethodViaParentOrganization()
+    public function testPropertyOrganizationDebtorPaymentMethodViaParentOrganizationkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_payment_method_is_invoice"
+     * Test attribute "organization_debtor_payment_method_is_invoicek__backing_field"
      */
-    public function testPropertyOrganizationDebtorPaymentMethodIsInvoice()
+    public function testPropertyOrganizationDebtorPaymentMethodIsInvoicekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_mandate_type"
+     * Test attribute "organization_debtor_mandate_typek__backing_field"
      */
-    public function testPropertyOrganizationDebtorMandateType()
+    public function testPropertyOrganizationDebtorMandateTypekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_mandate_running_number"
+     * Test attribute "organization_debtor_mandate_running_numberk__backing_field"
      */
-    public function testPropertyOrganizationDebtorMandateRunningNumber()
+    public function testPropertyOrganizationDebtorMandateRunningNumberkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_payment_reference"
+     * Test attribute "organization_debtor_payment_referencek__backing_field"
      */
-    public function testPropertyOrganizationDebtorPaymentReference()
+    public function testPropertyOrganizationDebtorPaymentReferencekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_debtor_reference"
+     * Test attribute "organization_debtor_referencek__backing_field"
      */
-    public function testPropertyOrganizationDebtorReference()
+    public function testPropertyOrganizationDebtorReferencekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_representative_id"
+     * Test attribute "organization_representative_idk__backing_field"
      */
-    public function testPropertyOrganizationRepresentativeId()
+    public function testPropertyOrganizationRepresentativeIdkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_representative_correspondence_name"
+     * Test attribute "organization_representative_correspondence_namek__backing_field"
      */
-    public function testPropertyOrganizationRepresentativeCorrespondenceName()
+    public function testPropertyOrganizationRepresentativeCorrespondenceNamekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_representative_correspondence_phone_number"
+     * Test attribute "organization_representative_correspondence_phone_numberk__backing_field"
      */
-    public function testPropertyOrganizationRepresentativeCorrespondencePhoneNumber()
+    public function testPropertyOrganizationRepresentativeCorrespondencePhoneNumberkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_representative_correspondence_email_address"
+     * Test attribute "organization_representative_correspondence_email_addressk__backing_field"
      */
-    public function testPropertyOrganizationRepresentativeCorrespondenceEmailAddress()
+    public function testPropertyOrganizationRepresentativeCorrespondenceEmailAddresskBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_representative_correspondence_website"
+     * Test attribute "organization_representative_correspondence_websitek__backing_field"
      */
-    public function testPropertyOrganizationRepresentativeCorrespondenceWebsite()
+    public function testPropertyOrganizationRepresentativeCorrespondenceWebsitekBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_productiemiddel_proposition_description"
+     * Test attribute "organization_productiemiddel_proposition_descriptionk__backing_field"
      */
-    public function testPropertyOrganizationProductiemiddelPropositionDescription()
+    public function testPropertyOrganizationProductiemiddelPropositionDescriptionkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_organization_property_preferred_contact_method"
+     * Test attribute "organization_organization_property_preferred_contact_methodk__backing_field"
      */
-    public function testPropertyOrganizationOrganizationPropertyPreferredContactMethod()
+    public function testPropertyOrganizationOrganizationPropertyPreferredContactMethodkBackingField()
     {
     }
 
     /**
-     * Test attribute "company_label"
+     * Test attribute "company_labelk__backing_field"
      */
-    public function testPropertyCompanyLabel()
+    public function testPropertyCompanyLabelkBackingField()
     {
     }
 
     /**
-     * Test attribute "reseller"
+     * Test attribute "resellerk__backing_field"
      */
-    public function testPropertyReseller()
+    public function testPropertyResellerkBackingField()
     {
     }
 
     /**
-     * Test attribute "organization_properties"
+     * Test attribute "organization_propertiesk__backing_field"
      */
-    public function testPropertyOrganizationProperties()
+    public function testPropertyOrganizationPropertieskBackingField()
     {
     }
 }

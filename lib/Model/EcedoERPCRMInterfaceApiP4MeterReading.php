@@ -62,8 +62,7 @@ class EcedoERPCRMInterfaceApiP4MeterReading implements ModelInterface, ArrayAcce
         'measure_unit_localized' => 'string',
         'meter_number' => 'string',
         'ean' => 'string',
-        'source' => 'string',
-        'type' => 'string'
+        'source' => 'string'
     ];
 
     /**
@@ -77,8 +76,7 @@ class EcedoERPCRMInterfaceApiP4MeterReading implements ModelInterface, ArrayAcce
         'measure_unit_localized' => null,
         'meter_number' => null,
         'ean' => null,
-        'source' => null,
-        'type' => null
+        'source' => null
     ];
 
     /**
@@ -113,8 +111,7 @@ class EcedoERPCRMInterfaceApiP4MeterReading implements ModelInterface, ArrayAcce
         'measure_unit_localized' => 'MeasureUnitLocalized',
         'meter_number' => 'MeterNumber',
         'ean' => 'EAN',
-        'source' => 'Source',
-        'type' => '$type'
+        'source' => 'Source'
     ];
 
     /**
@@ -128,8 +125,7 @@ class EcedoERPCRMInterfaceApiP4MeterReading implements ModelInterface, ArrayAcce
         'measure_unit_localized' => 'setMeasureUnitLocalized',
         'meter_number' => 'setMeterNumber',
         'ean' => 'setEan',
-        'source' => 'setSource',
-        'type' => 'setType'
+        'source' => 'setSource'
     ];
 
     /**
@@ -143,8 +139,7 @@ class EcedoERPCRMInterfaceApiP4MeterReading implements ModelInterface, ArrayAcce
         'measure_unit_localized' => 'getMeasureUnitLocalized',
         'meter_number' => 'getMeterNumber',
         'ean' => 'getEan',
-        'source' => 'getSource',
-        'type' => 'getType'
+        'source' => 'getSource'
     ];
 
     /**
@@ -240,7 +235,6 @@ class EcedoERPCRMInterfaceApiP4MeterReading implements ModelInterface, ArrayAcce
         $this->container['meter_number'] = isset($data['meter_number']) ? $data['meter_number'] : null;
         $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -428,30 +422,6 @@ class EcedoERPCRMInterfaceApiP4MeterReading implements ModelInterface, ArrayAcce
             );
         }
         $this->container['source'] = $source;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

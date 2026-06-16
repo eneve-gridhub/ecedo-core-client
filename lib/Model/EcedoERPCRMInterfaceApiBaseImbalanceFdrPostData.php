@@ -66,8 +66,7 @@ class EcedoERPCRMInterfaceApiBaseImbalanceFdrPostData implements ModelInterface,
         'fp_zip' => 'string',
         'fp_city' => 'string',
         'fp_country' => 'string',
-        'fp_type' => 'string',
-        'type' => 'string'
+        'fp_type' => 'string'
     ];
 
     /**
@@ -85,8 +84,7 @@ class EcedoERPCRMInterfaceApiBaseImbalanceFdrPostData implements ModelInterface,
         'fp_zip' => null,
         'fp_city' => null,
         'fp_country' => null,
-        'fp_type' => null,
-        'type' => null
+        'fp_type' => null
     ];
 
     /**
@@ -125,8 +123,7 @@ class EcedoERPCRMInterfaceApiBaseImbalanceFdrPostData implements ModelInterface,
         'fp_zip' => 'FpZip',
         'fp_city' => 'FpCity',
         'fp_country' => 'FpCountry',
-        'fp_type' => 'FpType',
-        'type' => '$type'
+        'fp_type' => 'FpType'
     ];
 
     /**
@@ -144,8 +141,7 @@ class EcedoERPCRMInterfaceApiBaseImbalanceFdrPostData implements ModelInterface,
         'fp_zip' => 'setFpZip',
         'fp_city' => 'setFpCity',
         'fp_country' => 'setFpCountry',
-        'fp_type' => 'setFpType',
-        'type' => 'setType'
+        'fp_type' => 'setFpType'
     ];
 
     /**
@@ -163,8 +159,7 @@ class EcedoERPCRMInterfaceApiBaseImbalanceFdrPostData implements ModelInterface,
         'fp_zip' => 'getFpZip',
         'fp_city' => 'getFpCity',
         'fp_country' => 'getFpCountry',
-        'fp_type' => 'getFpType',
-        'type' => 'getType'
+        'fp_type' => 'getFpType'
     ];
 
     /**
@@ -237,7 +232,6 @@ class EcedoERPCRMInterfaceApiBaseImbalanceFdrPostData implements ModelInterface,
         $this->container['fp_city'] = isset($data['fp_city']) ? $data['fp_city'] : null;
         $this->container['fp_country'] = isset($data['fp_country']) ? $data['fp_country'] : null;
         $this->container['fp_type'] = isset($data['fp_type']) ? $data['fp_type'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -504,30 +498,6 @@ class EcedoERPCRMInterfaceApiBaseImbalanceFdrPostData implements ModelInterface,
     public function setFpType($fp_type)
     {
         $this->container['fp_type'] = $fp_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

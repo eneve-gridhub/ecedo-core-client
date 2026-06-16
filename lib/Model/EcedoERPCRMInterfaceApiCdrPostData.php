@@ -76,8 +76,7 @@ class EcedoERPCRMInterfaceApiCdrPostData implements ModelInterface, ArrayAccess
         'cpo_id' => 'string',
         'total_cost' => 'double',
         'add_energy_price' => 'bool',
-        'currency' => 'string',
-        'type' => 'string'
+        'currency' => 'string'
     ];
 
     /**
@@ -105,8 +104,7 @@ class EcedoERPCRMInterfaceApiCdrPostData implements ModelInterface, ArrayAccess
         'cpo_id' => null,
         'total_cost' => 'double',
         'add_energy_price' => null,
-        'currency' => null,
-        'type' => null
+        'currency' => null
     ];
 
     /**
@@ -155,8 +153,7 @@ class EcedoERPCRMInterfaceApiCdrPostData implements ModelInterface, ArrayAccess
         'cpo_id' => 'CpoId',
         'total_cost' => 'TotalCost',
         'add_energy_price' => 'AddEnergyPrice',
-        'currency' => 'Currency',
-        'type' => '$type'
+        'currency' => 'Currency'
     ];
 
     /**
@@ -184,8 +181,7 @@ class EcedoERPCRMInterfaceApiCdrPostData implements ModelInterface, ArrayAccess
         'cpo_id' => 'setCpoId',
         'total_cost' => 'setTotalCost',
         'add_energy_price' => 'setAddEnergyPrice',
-        'currency' => 'setCurrency',
-        'type' => 'setType'
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -213,8 +209,7 @@ class EcedoERPCRMInterfaceApiCdrPostData implements ModelInterface, ArrayAccess
         'cpo_id' => 'getCpoId',
         'total_cost' => 'getTotalCost',
         'add_energy_price' => 'getAddEnergyPrice',
-        'currency' => 'getCurrency',
-        'type' => 'getType'
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -297,7 +292,6 @@ class EcedoERPCRMInterfaceApiCdrPostData implements ModelInterface, ArrayAccess
         $this->container['total_cost'] = isset($data['total_cost']) ? $data['total_cost'] : null;
         $this->container['add_energy_price'] = isset($data['add_energy_price']) ? $data['add_energy_price'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -804,30 +798,6 @@ class EcedoERPCRMInterfaceApiCdrPostData implements ModelInterface, ArrayAccess
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

@@ -145,11 +145,4 @@ class EcedoERPCRMInterfaceApiBaseImbalanceFdrPostDataTest extends \PHPUnit_Frame
     public function testPropertyFpType()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

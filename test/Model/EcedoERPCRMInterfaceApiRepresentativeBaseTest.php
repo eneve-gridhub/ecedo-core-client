@@ -89,11 +89,4 @@ class EcedoERPCRMInterfaceApiRepresentativeBaseTest extends \PHPUnit_Framework_T
     public function testPropertyFullName()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

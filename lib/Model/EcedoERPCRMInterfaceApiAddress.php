@@ -65,8 +65,7 @@ class EcedoERPCRMInterfaceApiAddress implements ModelInterface, ArrayAccess
         'country' => 'string',
         'address_line1' => 'string',
         'address_line2' => 'string',
-        'full_address' => 'string',
-        'type' => 'string'
+        'full_address' => 'string'
     ];
 
     /**
@@ -83,8 +82,7 @@ class EcedoERPCRMInterfaceApiAddress implements ModelInterface, ArrayAccess
         'country' => null,
         'address_line1' => null,
         'address_line2' => null,
-        'full_address' => null,
-        'type' => null
+        'full_address' => null
     ];
 
     /**
@@ -122,8 +120,7 @@ class EcedoERPCRMInterfaceApiAddress implements ModelInterface, ArrayAccess
         'country' => 'Country',
         'address_line1' => 'AddressLine1',
         'address_line2' => 'AddressLine2',
-        'full_address' => 'FullAddress',
-        'type' => '$type'
+        'full_address' => 'FullAddress'
     ];
 
     /**
@@ -140,8 +137,7 @@ class EcedoERPCRMInterfaceApiAddress implements ModelInterface, ArrayAccess
         'country' => 'setCountry',
         'address_line1' => 'setAddressLine1',
         'address_line2' => 'setAddressLine2',
-        'full_address' => 'setFullAddress',
-        'type' => 'setType'
+        'full_address' => 'setFullAddress'
     ];
 
     /**
@@ -158,8 +154,7 @@ class EcedoERPCRMInterfaceApiAddress implements ModelInterface, ArrayAccess
         'country' => 'getCountry',
         'address_line1' => 'getAddressLine1',
         'address_line2' => 'getAddressLine2',
-        'full_address' => 'getFullAddress',
-        'type' => 'getType'
+        'full_address' => 'getFullAddress'
     ];
 
     /**
@@ -231,7 +226,6 @@ class EcedoERPCRMInterfaceApiAddress implements ModelInterface, ArrayAccess
         $this->container['address_line1'] = isset($data['address_line1']) ? $data['address_line1'] : null;
         $this->container['address_line2'] = isset($data['address_line2']) ? $data['address_line2'] : null;
         $this->container['full_address'] = isset($data['full_address']) ? $data['full_address'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -474,30 +468,6 @@ class EcedoERPCRMInterfaceApiAddress implements ModelInterface, ArrayAccess
     public function setFullAddress($full_address)
     {
         $this->container['full_address'] = $full_address;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

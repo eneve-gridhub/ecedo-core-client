@@ -166,11 +166,4 @@ class EcedoERPCRMInterfaceApiEvChargerPutDataTest extends \PHPUnit_Framework_Tes
     public function testPropertyLocation()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

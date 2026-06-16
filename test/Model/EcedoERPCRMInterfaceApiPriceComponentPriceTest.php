@@ -159,11 +159,4 @@ class EcedoERPCRMInterfaceApiPriceComponentPriceTest extends \PHPUnit_Framework_
     public function testPropertyPriceBlockDescription()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

@@ -1393,7 +1393,7 @@ class SysInvoicesApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return object
      */
     public function sysInvoicesDownloadRemitReport($organization_id, $invoice_id, $report_perspective, $report_type)
     {
@@ -1413,11 +1413,11 @@ class SysInvoicesApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function sysInvoicesDownloadRemitReportWithHttpInfo($organization_id, $invoice_id, $report_perspective, $report_type)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'object';
         $request = $this->sysInvoicesDownloadRemitReportRequest($organization_id, $invoice_id, $report_perspective, $report_type);
 
         try {
@@ -1469,7 +1469,7 @@ class SysInvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplFileObject',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1533,7 +1533,7 @@ class SysInvoicesApi
      */
     public function sysInvoicesDownloadRemitReportAsyncWithHttpInfo($organization_id, $invoice_id, $report_perspective, $report_type)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'object';
         $request = $this->sysInvoicesDownloadRemitReportRequest($organization_id, $invoice_id, $report_perspective, $report_type);
 
         return $this->client
@@ -1740,7 +1740,7 @@ class SysInvoicesApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return object
      */
     public function sysInvoicesDownloadSingleInvoice($invoice_id, $organization_id, $document_type = null)
     {
@@ -1759,7 +1759,7 @@ class SysInvoicesApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function sysInvoicesDownloadSingleInvoiceWithHttpInfo($invoice_id, $organization_id, $document_type = null)
     {
@@ -1815,7 +1815,7 @@ class SysInvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplFileObject',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1877,7 +1877,7 @@ class SysInvoicesApi
      */
     public function sysInvoicesDownloadSingleInvoiceAsyncWithHttpInfo($invoice_id, $organization_id, $document_type = null)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'object';
         $request = $this->sysInvoicesDownloadSingleInvoiceRequest($invoice_id, $organization_id, $document_type);
 
         return $this->client

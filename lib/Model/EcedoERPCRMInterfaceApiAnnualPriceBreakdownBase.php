@@ -60,8 +60,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownBase implements ModelInterface,
         'calculated_year_amount' => 'double',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
-        'combined_year_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]',
-        'type' => 'string'
+        'combined_year_rows' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePaymentRow[]'
     ];
 
     /**
@@ -73,8 +72,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownBase implements ModelInterface,
         'calculated_year_amount' => 'double',
         'start_date' => 'date',
         'end_date' => 'date',
-        'combined_year_rows' => null,
-        'type' => null
+        'combined_year_rows' => null
     ];
 
     /**
@@ -107,8 +105,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownBase implements ModelInterface,
         'calculated_year_amount' => 'CalculatedYearAmount',
         'start_date' => 'StartDate',
         'end_date' => 'EndDate',
-        'combined_year_rows' => 'CombinedYearRows',
-        'type' => '$type'
+        'combined_year_rows' => 'CombinedYearRows'
     ];
 
     /**
@@ -120,8 +117,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownBase implements ModelInterface,
         'calculated_year_amount' => 'setCalculatedYearAmount',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'combined_year_rows' => 'setCombinedYearRows',
-        'type' => 'setType'
+        'combined_year_rows' => 'setCombinedYearRows'
     ];
 
     /**
@@ -133,8 +129,7 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownBase implements ModelInterface,
         'calculated_year_amount' => 'getCalculatedYearAmount',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'combined_year_rows' => 'getCombinedYearRows',
-        'type' => 'getType'
+        'combined_year_rows' => 'getCombinedYearRows'
     ];
 
     /**
@@ -201,7 +196,6 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownBase implements ModelInterface,
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['combined_year_rows'] = isset($data['combined_year_rows']) ? $data['combined_year_rows'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -324,30 +318,6 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownBase implements ModelInterface,
     public function setCombinedYearRows($combined_year_rows)
     {
         $this->container['combined_year_rows'] = $combined_year_rows;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

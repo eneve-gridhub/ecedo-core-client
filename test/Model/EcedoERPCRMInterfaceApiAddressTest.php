@@ -138,11 +138,4 @@ class EcedoERPCRMInterfaceApiAddressTest extends \PHPUnit_Framework_TestCase
     public function testPropertyFullAddress()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

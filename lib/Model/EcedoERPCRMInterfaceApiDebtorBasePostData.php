@@ -69,8 +69,7 @@ class EcedoERPCRMInterfaceApiDebtorBasePostData implements ModelInterface, Array
         'payment_reference' => 'string',
         'preferred_invoice_day' => 'int',
         'mandate_type' => 'string',
-        'client_reference' => 'string',
-        'type' => 'string'
+        'client_reference' => 'string'
     ];
 
     /**
@@ -91,8 +90,7 @@ class EcedoERPCRMInterfaceApiDebtorBasePostData implements ModelInterface, Array
         'payment_reference' => null,
         'preferred_invoice_day' => 'int32',
         'mandate_type' => null,
-        'client_reference' => null,
-        'type' => null
+        'client_reference' => null
     ];
 
     /**
@@ -134,8 +132,7 @@ class EcedoERPCRMInterfaceApiDebtorBasePostData implements ModelInterface, Array
         'payment_reference' => 'PaymentReference',
         'preferred_invoice_day' => 'PreferredInvoiceDay',
         'mandate_type' => 'MandateType',
-        'client_reference' => 'ClientReference',
-        'type' => '$type'
+        'client_reference' => 'ClientReference'
     ];
 
     /**
@@ -156,8 +153,7 @@ class EcedoERPCRMInterfaceApiDebtorBasePostData implements ModelInterface, Array
         'payment_reference' => 'setPaymentReference',
         'preferred_invoice_day' => 'setPreferredInvoiceDay',
         'mandate_type' => 'setMandateType',
-        'client_reference' => 'setClientReference',
-        'type' => 'setType'
+        'client_reference' => 'setClientReference'
     ];
 
     /**
@@ -178,8 +174,7 @@ class EcedoERPCRMInterfaceApiDebtorBasePostData implements ModelInterface, Array
         'payment_reference' => 'getPaymentReference',
         'preferred_invoice_day' => 'getPreferredInvoiceDay',
         'mandate_type' => 'getMandateType',
-        'client_reference' => 'getClientReference',
-        'type' => 'getType'
+        'client_reference' => 'getClientReference'
     ];
 
     /**
@@ -306,7 +301,6 @@ class EcedoERPCRMInterfaceApiDebtorBasePostData implements ModelInterface, Array
         $this->container['preferred_invoice_day'] = isset($data['preferred_invoice_day']) ? $data['preferred_invoice_day'] : null;
         $this->container['mandate_type'] = isset($data['mandate_type']) ? $data['mandate_type'] : null;
         $this->container['client_reference'] = isset($data['client_reference']) ? $data['client_reference'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -696,30 +690,6 @@ class EcedoERPCRMInterfaceApiDebtorBasePostData implements ModelInterface, Array
     public function setClientReference($client_reference)
     {
         $this->container['client_reference'] = $client_reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

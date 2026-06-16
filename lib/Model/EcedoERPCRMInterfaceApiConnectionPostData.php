@@ -68,8 +68,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         'switch_type' => 'string',
         'contract' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractImportPostData',
         'is_residential' => 'bool',
-        'connection_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionPropertyPostData[]',
-        'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[]'
+        'connection_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionPropertyPostData[]'
     ];
 
     /**
@@ -89,8 +88,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         'switch_type' => null,
         'contract' => null,
         'is_residential' => null,
-        'connection_properties' => null,
-        'entity_properties' => null
+        'connection_properties' => null
     ];
 
     /**
@@ -131,8 +129,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         'switch_type' => 'SwitchType',
         'contract' => 'Contract',
         'is_residential' => 'IsResidential',
-        'connection_properties' => 'ConnectionProperties',
-        'entity_properties' => 'EntityProperties'
+        'connection_properties' => 'ConnectionProperties'
     ];
 
     /**
@@ -152,8 +149,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         'switch_type' => 'setSwitchType',
         'contract' => 'setContract',
         'is_residential' => 'setIsResidential',
-        'connection_properties' => 'setConnectionProperties',
-        'entity_properties' => 'setEntityProperties'
+        'connection_properties' => 'setConnectionProperties'
     ];
 
     /**
@@ -173,8 +169,7 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         'switch_type' => 'getSwitchType',
         'contract' => 'getContract',
         'is_residential' => 'getIsResidential',
-        'connection_properties' => 'getConnectionProperties',
-        'entity_properties' => 'getEntityProperties'
+        'connection_properties' => 'getConnectionProperties'
     ];
 
     /**
@@ -279,7 +274,6 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         $this->container['contract'] = isset($data['contract']) ? $data['contract'] : null;
         $this->container['is_residential'] = isset($data['is_residential']) ? $data['is_residential'] : null;
         $this->container['connection_properties'] = isset($data['connection_properties']) ? $data['connection_properties'] : null;
-        $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
     }
 
     /**
@@ -624,30 +618,6 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
     public function setConnectionProperties($connection_properties)
     {
         $this->container['connection_properties'] = $connection_properties;
-
-        return $this;
-    }
-
-    /**
-     * Gets entity_properties
-     *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[]
-     */
-    public function getEntityProperties()
-    {
-        return $this->container['entity_properties'];
-    }
-
-    /**
-     * Sets entity_properties
-     *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[] $entity_properties entity_properties
-     *
-     * @return $this
-     */
-    public function setEntityProperties($entity_properties)
-    {
-        $this->container['entity_properties'] = $entity_properties;
 
         return $this;
     }

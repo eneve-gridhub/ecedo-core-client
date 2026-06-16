@@ -152,11 +152,4 @@ class EcedoERPCRMInterfaceApiTelemetryApiDtoBaseTest extends \PHPUnit_Framework_
     public function testPropertySourceLocalized()
     {
     }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
 }

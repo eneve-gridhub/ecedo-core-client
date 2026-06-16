@@ -69,8 +69,7 @@ class EcedoERPCRMInterfaceApiEvChargerPutData implements ModelInterface, ArrayAc
         'connection_ean' => 'string',
         'has_card_reader' => 'bool',
         'has_plug_charge' => 'bool',
-        'location' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEvChargerLocationPutData',
-        'type' => 'string'
+        'location' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEvChargerLocationPutData'
     ];
 
     /**
@@ -91,8 +90,7 @@ class EcedoERPCRMInterfaceApiEvChargerPutData implements ModelInterface, ArrayAc
         'connection_ean' => null,
         'has_card_reader' => null,
         'has_plug_charge' => null,
-        'location' => null,
-        'type' => null
+        'location' => null
     ];
 
     /**
@@ -134,8 +132,7 @@ class EcedoERPCRMInterfaceApiEvChargerPutData implements ModelInterface, ArrayAc
         'connection_ean' => 'ConnectionEan',
         'has_card_reader' => 'HasCardReader',
         'has_plug_charge' => 'HasPlugCharge',
-        'location' => 'Location',
-        'type' => '$type'
+        'location' => 'Location'
     ];
 
     /**
@@ -156,8 +153,7 @@ class EcedoERPCRMInterfaceApiEvChargerPutData implements ModelInterface, ArrayAc
         'connection_ean' => 'setConnectionEan',
         'has_card_reader' => 'setHasCardReader',
         'has_plug_charge' => 'setHasPlugCharge',
-        'location' => 'setLocation',
-        'type' => 'setType'
+        'location' => 'setLocation'
     ];
 
     /**
@@ -178,8 +174,7 @@ class EcedoERPCRMInterfaceApiEvChargerPutData implements ModelInterface, ArrayAc
         'connection_ean' => 'getConnectionEan',
         'has_card_reader' => 'getHasCardReader',
         'has_plug_charge' => 'getHasPlugCharge',
-        'location' => 'getLocation',
-        'type' => 'getType'
+        'location' => 'getLocation'
     ];
 
     /**
@@ -385,7 +380,6 @@ class EcedoERPCRMInterfaceApiEvChargerPutData implements ModelInterface, ArrayAc
         $this->container['has_card_reader'] = isset($data['has_card_reader']) ? $data['has_card_reader'] : null;
         $this->container['has_plug_charge'] = isset($data['has_plug_charge']) ? $data['has_plug_charge'] : null;
         $this->container['location'] = isset($data['location']) ? $data['location'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -826,30 +820,6 @@ class EcedoERPCRMInterfaceApiEvChargerPutData implements ModelInterface, ArrayAc
     public function setLocation($location)
     {
         $this->container['location'] = $location;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }
