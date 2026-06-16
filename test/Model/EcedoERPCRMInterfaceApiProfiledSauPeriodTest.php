@@ -89,4 +89,11 @@ class EcedoERPCRMInterfaceApiProfiledSauPeriodTest extends \PHPUnit_Framework_Te
     public function testPropertyEndDate()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

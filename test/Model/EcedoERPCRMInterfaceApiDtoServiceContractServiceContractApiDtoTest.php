@@ -152,4 +152,11 @@ class EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDtoTest extends
     public function testPropertyClusterConnectionGroupId()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

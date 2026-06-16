@@ -61,8 +61,10 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase implements Mo
         'grid_operator' => 'string',
         'cap_tar_code_short' => 'string',
         'cap_tar_code_localized' => 'string',
+        'is_large_consumer' => 'bool',
         'market_segment' => 'string',
-        'calculated_year_amount' => 'double'
+        'calculated_year_amount' => 'double',
+        'type' => 'string'
     ];
 
     /**
@@ -75,8 +77,10 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase implements Mo
         'grid_operator' => null,
         'cap_tar_code_short' => null,
         'cap_tar_code_localized' => null,
+        'is_large_consumer' => null,
         'market_segment' => null,
-        'calculated_year_amount' => 'double'
+        'calculated_year_amount' => 'double',
+        'type' => null
     ];
 
     /**
@@ -110,8 +114,10 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase implements Mo
         'grid_operator' => 'GridOperator',
         'cap_tar_code_short' => 'CapTarCodeShort',
         'cap_tar_code_localized' => 'CapTarCodeLocalized',
+        'is_large_consumer' => 'IsLargeConsumer',
         'market_segment' => 'MarketSegment',
-        'calculated_year_amount' => 'CalculatedYearAmount'
+        'calculated_year_amount' => 'CalculatedYearAmount',
+        'type' => '$type'
     ];
 
     /**
@@ -124,8 +130,10 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase implements Mo
         'grid_operator' => 'setGridOperator',
         'cap_tar_code_short' => 'setCapTarCodeShort',
         'cap_tar_code_localized' => 'setCapTarCodeLocalized',
+        'is_large_consumer' => 'setIsLargeConsumer',
         'market_segment' => 'setMarketSegment',
-        'calculated_year_amount' => 'setCalculatedYearAmount'
+        'calculated_year_amount' => 'setCalculatedYearAmount',
+        'type' => 'setType'
     ];
 
     /**
@@ -138,8 +146,10 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase implements Mo
         'grid_operator' => 'getGridOperator',
         'cap_tar_code_short' => 'getCapTarCodeShort',
         'cap_tar_code_localized' => 'getCapTarCodeLocalized',
+        'is_large_consumer' => 'getIsLargeConsumer',
         'market_segment' => 'getMarketSegment',
-        'calculated_year_amount' => 'getCalculatedYearAmount'
+        'calculated_year_amount' => 'getCalculatedYearAmount',
+        'type' => 'getType'
     ];
 
     /**
@@ -221,8 +231,10 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase implements Mo
         $this->container['grid_operator'] = isset($data['grid_operator']) ? $data['grid_operator'] : null;
         $this->container['cap_tar_code_short'] = isset($data['cap_tar_code_short']) ? $data['cap_tar_code_short'] : null;
         $this->container['cap_tar_code_localized'] = isset($data['cap_tar_code_localized']) ? $data['cap_tar_code_localized'] : null;
+        $this->container['is_large_consumer'] = isset($data['is_large_consumer']) ? $data['is_large_consumer'] : null;
         $this->container['market_segment'] = isset($data['market_segment']) ? $data['market_segment'] : null;
         $this->container['calculated_year_amount'] = isset($data['calculated_year_amount']) ? $data['calculated_year_amount'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -358,6 +370,30 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase implements Mo
     }
 
     /**
+     * Gets is_large_consumer
+     *
+     * @return bool
+     */
+    public function getIsLargeConsumer()
+    {
+        return $this->container['is_large_consumer'];
+    }
+
+    /**
+     * Sets is_large_consumer
+     *
+     * @param bool $is_large_consumer is_large_consumer
+     *
+     * @return $this
+     */
+    public function setIsLargeConsumer($is_large_consumer)
+    {
+        $this->container['is_large_consumer'] = $is_large_consumer;
+
+        return $this;
+    }
+
+    /**
      * Gets market_segment
      *
      * @return string
@@ -410,6 +446,30 @@ class EcedoERPCRMInterfaceApiAnnualPriceBreakdownPerConnectionBase implements Mo
     public function setCalculatedYearAmount($calculated_year_amount)
     {
         $this->container['calculated_year_amount'] = $calculated_year_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

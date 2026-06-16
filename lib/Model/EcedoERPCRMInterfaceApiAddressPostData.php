@@ -62,7 +62,8 @@ class EcedoERPCRMInterfaceApiAddressPostData implements ModelInterface, ArrayAcc
         'addition' => 'string',
         'zip_code' => 'string',
         'city' => 'string',
-        'country' => 'string'
+        'country' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class EcedoERPCRMInterfaceApiAddressPostData implements ModelInterface, ArrayAcc
         'addition' => null,
         'zip_code' => null,
         'city' => null,
-        'country' => null
+        'country' => null,
+        'type' => null
     ];
 
     /**
@@ -111,7 +113,8 @@ class EcedoERPCRMInterfaceApiAddressPostData implements ModelInterface, ArrayAcc
         'addition' => 'Addition',
         'zip_code' => 'ZipCode',
         'city' => 'City',
-        'country' => 'Country'
+        'country' => 'Country',
+        'type' => '$type'
     ];
 
     /**
@@ -125,7 +128,8 @@ class EcedoERPCRMInterfaceApiAddressPostData implements ModelInterface, ArrayAcc
         'addition' => 'setAddition',
         'zip_code' => 'setZipCode',
         'city' => 'setCity',
-        'country' => 'setCountry'
+        'country' => 'setCountry',
+        'type' => 'setType'
     ];
 
     /**
@@ -139,7 +143,8 @@ class EcedoERPCRMInterfaceApiAddressPostData implements ModelInterface, ArrayAcc
         'addition' => 'getAddition',
         'zip_code' => 'getZipCode',
         'city' => 'getCity',
-        'country' => 'getCountry'
+        'country' => 'getCountry',
+        'type' => 'getType'
     ];
 
     /**
@@ -717,6 +722,7 @@ class EcedoERPCRMInterfaceApiAddressPostData implements ModelInterface, ArrayAcc
         $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -904,6 +910,30 @@ class EcedoERPCRMInterfaceApiAddressPostData implements ModelInterface, ArrayAcc
             );
         }
         $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

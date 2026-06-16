@@ -64,7 +64,8 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'connection_property_source' => 'string',
-        'connection_property_source_localized' => 'string'
+        'connection_property_source_localized' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -80,7 +81,8 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         'start_date' => 'date',
         'end_date' => 'date',
         'connection_property_source' => null,
-        'connection_property_source_localized' => null
+        'connection_property_source_localized' => null,
+        'type' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         'start_date' => 'StartDate',
         'end_date' => 'EndDate',
         'connection_property_source' => 'ConnectionPropertySource',
-        'connection_property_source_localized' => 'ConnectionPropertySourceLocalized'
+        'connection_property_source_localized' => 'ConnectionPropertySourceLocalized',
+        'type' => '$type'
     ];
 
     /**
@@ -133,7 +136,8 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'connection_property_source' => 'setConnectionPropertySource',
-        'connection_property_source_localized' => 'setConnectionPropertySourceLocalized'
+        'connection_property_source_localized' => 'setConnectionPropertySourceLocalized',
+        'type' => 'setType'
     ];
 
     /**
@@ -149,7 +153,8 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'connection_property_source' => 'getConnectionPropertySource',
-        'connection_property_source_localized' => 'getConnectionPropertySourceLocalized'
+        'connection_property_source_localized' => 'getConnectionPropertySourceLocalized',
+        'type' => 'getType'
     ];
 
     /**
@@ -241,6 +246,7 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['connection_property_source'] = isset($data['connection_property_source']) ? $data['connection_property_source'] : null;
         $this->container['connection_property_source_localized'] = isset($data['connection_property_source_localized']) ? $data['connection_property_source_localized'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -476,6 +482,30 @@ class EcedoERPCRMInterfaceApiConnectionProperty implements ModelInterface, Array
     public function setConnectionPropertySourceLocalized($connection_property_source_localized)
     {
         $this->container['connection_property_source_localized'] = $connection_property_source_localized;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

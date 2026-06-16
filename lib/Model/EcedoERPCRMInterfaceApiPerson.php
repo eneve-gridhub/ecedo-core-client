@@ -66,7 +66,8 @@ class EcedoERPCRMInterfaceApiPerson implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'birth_date' => '\DateTime',
         'full_name' => 'string',
-        'title' => 'string'
+        'title' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -84,7 +85,8 @@ class EcedoERPCRMInterfaceApiPerson implements ModelInterface, ArrayAccess
         'last_name' => null,
         'birth_date' => 'date',
         'full_name' => null,
-        'title' => null
+        'title' => null,
+        'type' => null
     ];
 
     /**
@@ -123,7 +125,8 @@ class EcedoERPCRMInterfaceApiPerson implements ModelInterface, ArrayAccess
         'last_name' => 'LastName',
         'birth_date' => 'BirthDate',
         'full_name' => 'FullName',
-        'title' => 'Title'
+        'title' => 'Title',
+        'type' => '$type'
     ];
 
     /**
@@ -141,7 +144,8 @@ class EcedoERPCRMInterfaceApiPerson implements ModelInterface, ArrayAccess
         'last_name' => 'setLastName',
         'birth_date' => 'setBirthDate',
         'full_name' => 'setFullName',
-        'title' => 'setTitle'
+        'title' => 'setTitle',
+        'type' => 'setType'
     ];
 
     /**
@@ -159,7 +163,8 @@ class EcedoERPCRMInterfaceApiPerson implements ModelInterface, ArrayAccess
         'last_name' => 'getLastName',
         'birth_date' => 'getBirthDate',
         'full_name' => 'getFullName',
-        'title' => 'getTitle'
+        'title' => 'getTitle',
+        'type' => 'getType'
     ];
 
     /**
@@ -232,6 +237,7 @@ class EcedoERPCRMInterfaceApiPerson implements ModelInterface, ArrayAccess
         $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
         $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -498,6 +504,30 @@ class EcedoERPCRMInterfaceApiPerson implements ModelInterface, ArrayAccess
     public function setTitle($title)
     {
         $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

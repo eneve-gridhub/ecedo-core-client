@@ -68,7 +68,8 @@ class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
         'meelift_proposition_reference' => 'string',
         'has_meelift' => 'bool',
         'has_reseller' => 'bool',
-        'allow_missing_cap_tar' => 'bool'
+        'allow_missing_cap_tar' => 'bool',
+        'type' => 'string'
     ];
 
     /**
@@ -88,7 +89,8 @@ class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
         'meelift_proposition_reference' => null,
         'has_meelift' => null,
         'has_reseller' => null,
-        'allow_missing_cap_tar' => null
+        'allow_missing_cap_tar' => null,
+        'type' => null
     ];
 
     /**
@@ -129,7 +131,8 @@ class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
         'meelift_proposition_reference' => 'MeeliftPropositionReference',
         'has_meelift' => 'HasMeelift',
         'has_reseller' => 'HasReseller',
-        'allow_missing_cap_tar' => 'AllowMissingCapTar'
+        'allow_missing_cap_tar' => 'AllowMissingCapTar',
+        'type' => '$type'
     ];
 
     /**
@@ -149,7 +152,8 @@ class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
         'meelift_proposition_reference' => 'setMeeliftPropositionReference',
         'has_meelift' => 'setHasMeelift',
         'has_reseller' => 'setHasReseller',
-        'allow_missing_cap_tar' => 'setAllowMissingCapTar'
+        'allow_missing_cap_tar' => 'setAllowMissingCapTar',
+        'type' => 'setType'
     ];
 
     /**
@@ -169,7 +173,8 @@ class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
         'meelift_proposition_reference' => 'getMeeliftPropositionReference',
         'has_meelift' => 'getHasMeelift',
         'has_reseller' => 'getHasReseller',
-        'allow_missing_cap_tar' => 'getAllowMissingCapTar'
+        'allow_missing_cap_tar' => 'getAllowMissingCapTar',
+        'type' => 'getType'
     ];
 
     /**
@@ -301,6 +306,7 @@ class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
         $this->container['has_meelift'] = isset($data['has_meelift']) ? $data['has_meelift'] : null;
         $this->container['has_reseller'] = isset($data['has_reseller']) ? $data['has_reseller'] : null;
         $this->container['allow_missing_cap_tar'] = isset($data['allow_missing_cap_tar']) ? $data['allow_missing_cap_tar'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -666,6 +672,30 @@ class EcedoERPCRMInterfaceApiPriceData implements ModelInterface, ArrayAccess
     public function setAllowMissingCapTar($allow_missing_cap_tar)
     {
         $this->container['allow_missing_cap_tar'] = $allow_missing_cap_tar;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

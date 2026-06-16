@@ -74,7 +74,8 @@ class EcedoERPCRMInterfaceApiOrganizationEvent implements ModelInterface, ArrayA
         'terminal_date' => '\DateTime',
         'deadline' => '\DateTime',
         'comment' => 'string',
-        'parent_organization_event' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiOrganizationEvent'
+        'parent_organization_event' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiOrganizationEvent',
+        'type' => 'string'
     ];
 
     /**
@@ -100,7 +101,8 @@ class EcedoERPCRMInterfaceApiOrganizationEvent implements ModelInterface, ArrayA
         'terminal_date' => 'date',
         'deadline' => 'date-time',
         'comment' => null,
-        'parent_organization_event' => null
+        'parent_organization_event' => null,
+        'type' => null
     ];
 
     /**
@@ -147,7 +149,8 @@ class EcedoERPCRMInterfaceApiOrganizationEvent implements ModelInterface, ArrayA
         'terminal_date' => 'TerminalDate',
         'deadline' => 'Deadline',
         'comment' => 'Comment',
-        'parent_organization_event' => 'ParentOrganizationEvent'
+        'parent_organization_event' => 'ParentOrganizationEvent',
+        'type' => '$type'
     ];
 
     /**
@@ -173,7 +176,8 @@ class EcedoERPCRMInterfaceApiOrganizationEvent implements ModelInterface, ArrayA
         'terminal_date' => 'setTerminalDate',
         'deadline' => 'setDeadline',
         'comment' => 'setComment',
-        'parent_organization_event' => 'setParentOrganizationEvent'
+        'parent_organization_event' => 'setParentOrganizationEvent',
+        'type' => 'setType'
     ];
 
     /**
@@ -199,7 +203,8 @@ class EcedoERPCRMInterfaceApiOrganizationEvent implements ModelInterface, ArrayA
         'terminal_date' => 'getTerminalDate',
         'deadline' => 'getDeadline',
         'comment' => 'getComment',
-        'parent_organization_event' => 'getParentOrganizationEvent'
+        'parent_organization_event' => 'getParentOrganizationEvent',
+        'type' => 'getType'
     ];
 
     /**
@@ -398,6 +403,7 @@ class EcedoERPCRMInterfaceApiOrganizationEvent implements ModelInterface, ArrayA
         $this->container['deadline'] = isset($data['deadline']) ? $data['deadline'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
         $this->container['parent_organization_event'] = isset($data['parent_organization_event']) ? $data['parent_organization_event'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -890,6 +896,30 @@ class EcedoERPCRMInterfaceApiOrganizationEvent implements ModelInterface, ArrayA
     public function setParentOrganizationEvent($parent_organization_event)
     {
         $this->container['parent_organization_event'] = $parent_organization_event;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

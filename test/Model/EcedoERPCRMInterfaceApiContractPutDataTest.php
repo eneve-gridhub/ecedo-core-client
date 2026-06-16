@@ -110,4 +110,11 @@ class EcedoERPCRMInterfaceApiContractPutDataTest extends \PHPUnit_Framework_Test
     public function testPropertyComment()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

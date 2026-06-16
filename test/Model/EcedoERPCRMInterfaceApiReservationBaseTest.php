@@ -159,4 +159,11 @@ class EcedoERPCRMInterfaceApiReservationBaseTest extends \PHPUnit_Framework_Test
     public function testPropertyConnectionStatusLocalized()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

@@ -215,4 +215,11 @@ class EcedoERPCRMInterfaceApiInvoiceRowBaseTest extends \PHPUnit_Framework_TestC
     public function testPropertyTotalAmount()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

@@ -68,7 +68,8 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         'range_begin' => 'int',
         'range_end' => 'int',
         'price_block_id' => 'string',
-        'price_block_description' => 'string'
+        'price_block_description' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -88,7 +89,8 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         'range_begin' => 'int32',
         'range_end' => 'int32',
         'price_block_id' => 'uuid',
-        'price_block_description' => null
+        'price_block_description' => null,
+        'type' => null
     ];
 
     /**
@@ -129,7 +131,8 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         'range_begin' => 'RangeBegin',
         'range_end' => 'RangeEnd',
         'price_block_id' => 'PriceBlockId',
-        'price_block_description' => 'PriceBlockDescription'
+        'price_block_description' => 'PriceBlockDescription',
+        'type' => '$type'
     ];
 
     /**
@@ -149,7 +152,8 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         'range_begin' => 'setRangeBegin',
         'range_end' => 'setRangeEnd',
         'price_block_id' => 'setPriceBlockId',
-        'price_block_description' => 'setPriceBlockDescription'
+        'price_block_description' => 'setPriceBlockDescription',
+        'type' => 'setType'
     ];
 
     /**
@@ -169,7 +173,8 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         'range_begin' => 'getRangeBegin',
         'range_end' => 'getRangeEnd',
         'price_block_id' => 'getPriceBlockId',
-        'price_block_description' => 'getPriceBlockDescription'
+        'price_block_description' => 'getPriceBlockDescription',
+        'type' => 'getType'
     ];
 
     /**
@@ -283,6 +288,7 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
         $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
         $this->container['price_block_id'] = isset($data['price_block_id']) ? $data['price_block_id'] : null;
         $this->container['price_block_description'] = isset($data['price_block_description']) ? $data['price_block_description'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -614,6 +620,30 @@ class EcedoERPCRMInterfaceApiPriceComponentPrice implements ModelInterface, Arra
     public function setPriceBlockDescription($price_block_description)
     {
         $this->container['price_block_description'] = $price_block_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

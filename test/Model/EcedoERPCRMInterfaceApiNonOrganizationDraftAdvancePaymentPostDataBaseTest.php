@@ -110,4 +110,18 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBaseTest 
     public function testPropertyCompanyLabelId()
     {
     }
+
+    /**
+     * Test attribute "combine_type"
+     */
+    public function testPropertyCombineType()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

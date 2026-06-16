@@ -77,7 +77,8 @@ class EcedoERPCRMInterfaceApiMeteringPoint implements ModelInterface, ArrayAcces
         'location_description' => 'string',
         'is_art' => 'bool',
         'bag' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeteringPointBAG',
-        'meter_number_tail' => 'string'
+        'meter_number_tail' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -106,7 +107,8 @@ class EcedoERPCRMInterfaceApiMeteringPoint implements ModelInterface, ArrayAcces
         'location_description' => null,
         'is_art' => null,
         'bag' => null,
-        'meter_number_tail' => null
+        'meter_number_tail' => null,
+        'type' => null
     ];
 
     /**
@@ -156,7 +158,8 @@ class EcedoERPCRMInterfaceApiMeteringPoint implements ModelInterface, ArrayAcces
         'location_description' => 'LocationDescription',
         'is_art' => 'IsART',
         'bag' => 'Bag',
-        'meter_number_tail' => 'MeterNumberTail'
+        'meter_number_tail' => 'MeterNumberTail',
+        'type' => '$type'
     ];
 
     /**
@@ -185,7 +188,8 @@ class EcedoERPCRMInterfaceApiMeteringPoint implements ModelInterface, ArrayAcces
         'location_description' => 'setLocationDescription',
         'is_art' => 'setIsArt',
         'bag' => 'setBag',
-        'meter_number_tail' => 'setMeterNumberTail'
+        'meter_number_tail' => 'setMeterNumberTail',
+        'type' => 'setType'
     ];
 
     /**
@@ -214,7 +218,8 @@ class EcedoERPCRMInterfaceApiMeteringPoint implements ModelInterface, ArrayAcces
         'location_description' => 'getLocationDescription',
         'is_art' => 'getIsArt',
         'bag' => 'getBag',
-        'meter_number_tail' => 'getMeterNumberTail'
+        'meter_number_tail' => 'getMeterNumberTail',
+        'type' => 'getType'
     ];
 
     /**
@@ -298,6 +303,7 @@ class EcedoERPCRMInterfaceApiMeteringPoint implements ModelInterface, ArrayAcces
         $this->container['is_art'] = isset($data['is_art']) ? $data['is_art'] : null;
         $this->container['bag'] = isset($data['bag']) ? $data['bag'] : null;
         $this->container['meter_number_tail'] = isset($data['meter_number_tail']) ? $data['meter_number_tail'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -828,6 +834,30 @@ class EcedoERPCRMInterfaceApiMeteringPoint implements ModelInterface, ArrayAcces
     public function setMeterNumberTail($meter_number_tail)
     {
         $this->container['meter_number_tail'] = $meter_number_tail;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

@@ -93,7 +93,7 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'contract' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContract',
         'meelift_contract' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeeliftContract',
         'advance_payment' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiAdvancePayment',
-        'meter' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiMeter',
+        'meter' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiExtendedMeter',
         'switch_type' => 'string',
         'switch_type_localized' => 'string',
         'has_single_usage' => 'bool',
@@ -102,7 +102,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'request_p4_interval_readings' => 'bool',
         'administrative_status_smart_meter' => 'string',
         'administrative_status_smart_meter_localized' => 'string',
-        'connection_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionProperty[]'
+        'connection_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiConnectionProperty[]',
+        'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[]'
     ];
 
     /**
@@ -156,7 +157,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'request_p4_interval_readings' => null,
         'administrative_status_smart_meter' => null,
         'administrative_status_smart_meter_localized' => null,
-        'connection_properties' => null
+        'connection_properties' => null,
+        'entity_properties' => null
     ];
 
     /**
@@ -231,7 +233,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'request_p4_interval_readings' => 'RequestP4IntervalReadings',
         'administrative_status_smart_meter' => 'AdministrativeStatusSmartMeter',
         'administrative_status_smart_meter_localized' => 'AdministrativeStatusSmartMeterLocalized',
-        'connection_properties' => 'ConnectionProperties'
+        'connection_properties' => 'ConnectionProperties',
+        'entity_properties' => 'EntityProperties'
     ];
 
     /**
@@ -285,7 +288,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'request_p4_interval_readings' => 'setRequestP4IntervalReadings',
         'administrative_status_smart_meter' => 'setAdministrativeStatusSmartMeter',
         'administrative_status_smart_meter_localized' => 'setAdministrativeStatusSmartMeterLocalized',
-        'connection_properties' => 'setConnectionProperties'
+        'connection_properties' => 'setConnectionProperties',
+        'entity_properties' => 'setEntityProperties'
     ];
 
     /**
@@ -339,7 +343,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         'request_p4_interval_readings' => 'getRequestP4IntervalReadings',
         'administrative_status_smart_meter' => 'getAdministrativeStatusSmartMeter',
         'administrative_status_smart_meter_localized' => 'getAdministrativeStatusSmartMeterLocalized',
-        'connection_properties' => 'getConnectionProperties'
+        'connection_properties' => 'getConnectionProperties',
+        'entity_properties' => 'getEntityProperties'
     ];
 
     /**
@@ -563,6 +568,7 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
         $this->container['administrative_status_smart_meter'] = isset($data['administrative_status_smart_meter']) ? $data['administrative_status_smart_meter'] : null;
         $this->container['administrative_status_smart_meter_localized'] = isset($data['administrative_status_smart_meter_localized']) ? $data['administrative_status_smart_meter_localized'] : null;
         $this->container['connection_properties'] = isset($data['connection_properties']) ? $data['connection_properties'] : null;
+        $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
     }
 
     /**
@@ -1557,7 +1563,7 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
     /**
      * Gets meter
      *
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeter
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiExtendedMeter
      */
     public function getMeter()
     {
@@ -1567,7 +1573,7 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
     /**
      * Sets meter
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiMeter $meter meter
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiExtendedMeter $meter meter
      *
      * @return $this
      */
@@ -1808,6 +1814,30 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
     public function setConnectionProperties($connection_properties)
     {
         $this->container['connection_properties'] = $connection_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_properties
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[]
+     */
+    public function getEntityProperties()
+    {
+        return $this->container['entity_properties'];
+    }
+
+    /**
+     * Sets entity_properties
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[] $entity_properties entity_properties
+     *
+     * @return $this
+     */
+    public function setEntityProperties($entity_properties)
+    {
+        $this->container['entity_properties'] = $entity_properties;
 
         return $this;
     }

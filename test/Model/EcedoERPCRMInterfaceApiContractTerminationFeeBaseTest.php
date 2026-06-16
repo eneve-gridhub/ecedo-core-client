@@ -138,4 +138,11 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBaseTest extends \PHPUnit_Fra
     public function testPropertyTerminationFeeType()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

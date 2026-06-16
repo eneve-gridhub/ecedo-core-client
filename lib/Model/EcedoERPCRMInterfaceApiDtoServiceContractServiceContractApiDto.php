@@ -67,7 +67,8 @@ class EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto implements 
         'status' => 'string',
         'status_localized' => 'string',
         'contract_id' => 'string',
-        'cluster_connection_group_id' => 'string'
+        'cluster_connection_group_id' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -86,7 +87,8 @@ class EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto implements 
         'status' => null,
         'status_localized' => null,
         'contract_id' => null,
-        'cluster_connection_group_id' => null
+        'cluster_connection_group_id' => null,
+        'type' => null
     ];
 
     /**
@@ -126,7 +128,8 @@ class EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto implements 
         'status' => 'Status',
         'status_localized' => 'StatusLocalized',
         'contract_id' => 'ContractId',
-        'cluster_connection_group_id' => 'ClusterConnectionGroupId'
+        'cluster_connection_group_id' => 'ClusterConnectionGroupId',
+        'type' => '$type'
     ];
 
     /**
@@ -145,7 +148,8 @@ class EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto implements 
         'status' => 'setStatus',
         'status_localized' => 'setStatusLocalized',
         'contract_id' => 'setContractId',
-        'cluster_connection_group_id' => 'setClusterConnectionGroupId'
+        'cluster_connection_group_id' => 'setClusterConnectionGroupId',
+        'type' => 'setType'
     ];
 
     /**
@@ -164,7 +168,8 @@ class EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto implements 
         'status' => 'getStatus',
         'status_localized' => 'getStatusLocalized',
         'contract_id' => 'getContractId',
-        'cluster_connection_group_id' => 'getClusterConnectionGroupId'
+        'cluster_connection_group_id' => 'getClusterConnectionGroupId',
+        'type' => 'getType'
     ];
 
     /**
@@ -284,6 +289,7 @@ class EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto implements 
         $this->container['status_localized'] = isset($data['status_localized']) ? $data['status_localized'] : null;
         $this->container['contract_id'] = isset($data['contract_id']) ? $data['contract_id'] : null;
         $this->container['cluster_connection_group_id'] = isset($data['cluster_connection_group_id']) ? $data['cluster_connection_group_id'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -608,6 +614,30 @@ class EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto implements 
     public function setClusterConnectionGroupId($cluster_connection_group_id)
     {
         $this->container['cluster_connection_group_id'] = $cluster_connection_group_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

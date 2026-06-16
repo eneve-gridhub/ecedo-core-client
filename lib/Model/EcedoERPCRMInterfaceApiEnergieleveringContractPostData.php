@@ -61,7 +61,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPostData extends EcedoERPCRM
         'channel' => 'string',
         'sales_reference' => 'string',
         'billing_items' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiBillingItemPostData[]',
-        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractPropertyPostData[]'
+        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractPropertyPostData[]',
+        'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[]'
     ];
 
     /**
@@ -76,7 +77,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPostData extends EcedoERPCRM
         'channel' => null,
         'sales_reference' => null,
         'billing_items' => null,
-        'contract_properties' => null
+        'contract_properties' => null,
+        'entity_properties' => null
     ];
 
     /**
@@ -112,7 +114,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPostData extends EcedoERPCRM
         'channel' => 'Channel',
         'sales_reference' => 'SalesReference',
         'billing_items' => 'BillingItems',
-        'contract_properties' => 'ContractProperties'
+        'contract_properties' => 'ContractProperties',
+        'entity_properties' => 'EntityProperties'
     ];
 
     /**
@@ -127,7 +130,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPostData extends EcedoERPCRM
         'channel' => 'setChannel',
         'sales_reference' => 'setSalesReference',
         'billing_items' => 'setBillingItems',
-        'contract_properties' => 'setContractProperties'
+        'contract_properties' => 'setContractProperties',
+        'entity_properties' => 'setEntityProperties'
     ];
 
     /**
@@ -142,7 +146,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPostData extends EcedoERPCRM
         'channel' => 'getChannel',
         'sales_reference' => 'getSalesReference',
         'billing_items' => 'getBillingItems',
-        'contract_properties' => 'getContractProperties'
+        'contract_properties' => 'getContractProperties',
+        'entity_properties' => 'getEntityProperties'
     ];
 
     /**
@@ -231,6 +236,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPostData extends EcedoERPCRM
         $this->container['sales_reference'] = isset($data['sales_reference']) ? $data['sales_reference'] : null;
         $this->container['billing_items'] = isset($data['billing_items']) ? $data['billing_items'] : null;
         $this->container['contract_properties'] = isset($data['contract_properties']) ? $data['contract_properties'] : null;
+        $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
     }
 
     /**
@@ -438,6 +444,30 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPostData extends EcedoERPCRM
     public function setContractProperties($contract_properties)
     {
         $this->container['contract_properties'] = $contract_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_properties
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[]
+     */
+    public function getEntityProperties()
+    {
+        return $this->container['entity_properties'];
+    }
+
+    /**
+     * Sets entity_properties
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[] $entity_properties entity_properties
+     *
+     * @return $this
+     */
+    public function setEntityProperties($entity_properties)
+    {
+        $this->container['entity_properties'] = $entity_properties;
 
         return $this;
     }

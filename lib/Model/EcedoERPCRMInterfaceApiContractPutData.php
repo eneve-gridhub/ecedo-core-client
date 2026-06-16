@@ -61,7 +61,8 @@ class EcedoERPCRMInterfaceApiContractPutData implements ModelInterface, ArrayAcc
         'end_date' => '\DateTime',
         'agreement_date' => '\DateTime',
         'proposition_reference' => 'string',
-        'comment' => 'string'
+        'comment' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class EcedoERPCRMInterfaceApiContractPutData implements ModelInterface, ArrayAcc
         'end_date' => 'date',
         'agreement_date' => 'date',
         'proposition_reference' => null,
-        'comment' => null
+        'comment' => null,
+        'type' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class EcedoERPCRMInterfaceApiContractPutData implements ModelInterface, ArrayAcc
         'end_date' => 'EndDate',
         'agreement_date' => 'AgreementDate',
         'proposition_reference' => 'PropositionReference',
-        'comment' => 'Comment'
+        'comment' => 'Comment',
+        'type' => '$type'
     ];
 
     /**
@@ -121,7 +124,8 @@ class EcedoERPCRMInterfaceApiContractPutData implements ModelInterface, ArrayAcc
         'end_date' => 'setEndDate',
         'agreement_date' => 'setAgreementDate',
         'proposition_reference' => 'setPropositionReference',
-        'comment' => 'setComment'
+        'comment' => 'setComment',
+        'type' => 'setType'
     ];
 
     /**
@@ -134,7 +138,8 @@ class EcedoERPCRMInterfaceApiContractPutData implements ModelInterface, ArrayAcc
         'end_date' => 'getEndDate',
         'agreement_date' => 'getAgreementDate',
         'proposition_reference' => 'getPropositionReference',
-        'comment' => 'getComment'
+        'comment' => 'getComment',
+        'type' => 'getType'
     ];
 
     /**
@@ -202,6 +207,7 @@ class EcedoERPCRMInterfaceApiContractPutData implements ModelInterface, ArrayAcc
         $this->container['agreement_date'] = isset($data['agreement_date']) ? $data['agreement_date'] : null;
         $this->container['proposition_reference'] = isset($data['proposition_reference']) ? $data['proposition_reference'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -348,6 +354,30 @@ class EcedoERPCRMInterfaceApiContractPutData implements ModelInterface, ArrayAcc
     public function setComment($comment)
     {
         $this->container['comment'] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

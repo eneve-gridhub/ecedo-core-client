@@ -75,7 +75,9 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         'comment' => 'string',
         'proposal_valid_until' => '\DateTime',
         'organization_id' => 'string',
-        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractProperty[]'
+        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractProperty[]',
+        'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[]',
+        'type' => 'string'
     ];
 
     /**
@@ -102,7 +104,9 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         'comment' => null,
         'proposal_valid_until' => 'date',
         'organization_id' => null,
-        'contract_properties' => null
+        'contract_properties' => null,
+        'entity_properties' => null,
+        'type' => null
     ];
 
     /**
@@ -150,7 +154,9 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         'comment' => 'Comment',
         'proposal_valid_until' => 'ProposalValidUntil',
         'organization_id' => 'OrganizationId',
-        'contract_properties' => 'ContractProperties'
+        'contract_properties' => 'ContractProperties',
+        'entity_properties' => 'EntityProperties',
+        'type' => '$type'
     ];
 
     /**
@@ -177,7 +183,9 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         'comment' => 'setComment',
         'proposal_valid_until' => 'setProposalValidUntil',
         'organization_id' => 'setOrganizationId',
-        'contract_properties' => 'setContractProperties'
+        'contract_properties' => 'setContractProperties',
+        'entity_properties' => 'setEntityProperties',
+        'type' => 'setType'
     ];
 
     /**
@@ -204,7 +212,9 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         'comment' => 'getComment',
         'proposal_valid_until' => 'getProposalValidUntil',
         'organization_id' => 'getOrganizationId',
-        'contract_properties' => 'getContractProperties'
+        'contract_properties' => 'getContractProperties',
+        'entity_properties' => 'getEntityProperties',
+        'type' => 'getType'
     ];
 
     /**
@@ -383,6 +393,8 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
         $this->container['proposal_valid_until'] = isset($data['proposal_valid_until']) ? $data['proposal_valid_until'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['contract_properties'] = isset($data['contract_properties']) ? $data['contract_properties'] : null;
+        $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -916,6 +928,54 @@ class EcedoERPCRMInterfaceApiBaseContract implements ModelInterface, ArrayAccess
     public function setContractProperties($contract_properties)
     {
         $this->container['contract_properties'] = $contract_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_properties
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[]
+     */
+    public function getEntityProperties()
+    {
+        return $this->container['entity_properties'];
+    }
+
+    /**
+     * Sets entity_properties
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityProperty[] $entity_properties entity_properties
+     *
+     * @return $this
+     */
+    public function setEntityProperties($entity_properties)
+    {
+        $this->container['entity_properties'] = $entity_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

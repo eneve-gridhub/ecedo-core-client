@@ -65,7 +65,8 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterfac
         'termination_fee_amount' => 'double',
         'termination_fee_vat_amount' => 'double',
         'termination_fee_total_amount' => 'double',
-        'termination_fee_type' => 'string'
+        'termination_fee_type' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -82,7 +83,8 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterfac
         'termination_fee_amount' => 'double',
         'termination_fee_vat_amount' => 'double',
         'termination_fee_total_amount' => 'double',
-        'termination_fee_type' => null
+        'termination_fee_type' => null,
+        'type' => null
     ];
 
     /**
@@ -120,7 +122,8 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterfac
         'termination_fee_amount' => 'TerminationFeeAmount',
         'termination_fee_vat_amount' => 'TerminationFeeVatAmount',
         'termination_fee_total_amount' => 'TerminationFeeTotalAmount',
-        'termination_fee_type' => 'TerminationFeeType'
+        'termination_fee_type' => 'TerminationFeeType',
+        'type' => '$type'
     ];
 
     /**
@@ -137,7 +140,8 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterfac
         'termination_fee_amount' => 'setTerminationFeeAmount',
         'termination_fee_vat_amount' => 'setTerminationFeeVatAmount',
         'termination_fee_total_amount' => 'setTerminationFeeTotalAmount',
-        'termination_fee_type' => 'setTerminationFeeType'
+        'termination_fee_type' => 'setTerminationFeeType',
+        'type' => 'setType'
     ];
 
     /**
@@ -154,7 +158,8 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterfac
         'termination_fee_amount' => 'getTerminationFeeAmount',
         'termination_fee_vat_amount' => 'getTerminationFeeVatAmount',
         'termination_fee_total_amount' => 'getTerminationFeeTotalAmount',
-        'termination_fee_type' => 'getTerminationFeeType'
+        'termination_fee_type' => 'getTerminationFeeType',
+        'type' => 'getType'
     ];
 
     /**
@@ -266,6 +271,7 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterfac
         $this->container['termination_fee_vat_amount'] = isset($data['termination_fee_vat_amount']) ? $data['termination_fee_vat_amount'] : null;
         $this->container['termination_fee_total_amount'] = isset($data['termination_fee_total_amount']) ? $data['termination_fee_total_amount'] : null;
         $this->container['termination_fee_type'] = isset($data['termination_fee_type']) ? $data['termination_fee_type'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -542,6 +548,30 @@ class EcedoERPCRMInterfaceApiContractTerminationFeeBase implements ModelInterfac
             );
         }
         $this->container['termination_fee_type'] = $termination_fee_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

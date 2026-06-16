@@ -63,7 +63,8 @@ class EcedoERPCRMInterfaceApiMeterReadingBase implements ModelInterface, ArrayAc
         'odnt2' => 'int',
         'ldnt1' => 'int',
         'ldnt2' => 'int',
-        'comment' => 'string'
+        'comment' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -78,7 +79,8 @@ class EcedoERPCRMInterfaceApiMeterReadingBase implements ModelInterface, ArrayAc
         'odnt2' => 'int32',
         'ldnt1' => 'int32',
         'ldnt2' => 'int32',
-        'comment' => null
+        'comment' => null,
+        'type' => null
     ];
 
     /**
@@ -114,7 +116,8 @@ class EcedoERPCRMInterfaceApiMeterReadingBase implements ModelInterface, ArrayAc
         'odnt2' => 'ODNT2',
         'ldnt1' => 'LDNT1',
         'ldnt2' => 'LDNT2',
-        'comment' => 'Comment'
+        'comment' => 'Comment',
+        'type' => '$type'
     ];
 
     /**
@@ -129,7 +132,8 @@ class EcedoERPCRMInterfaceApiMeterReadingBase implements ModelInterface, ArrayAc
         'odnt2' => 'setOdnt2',
         'ldnt1' => 'setLdnt1',
         'ldnt2' => 'setLdnt2',
-        'comment' => 'setComment'
+        'comment' => 'setComment',
+        'type' => 'setType'
     ];
 
     /**
@@ -144,7 +148,8 @@ class EcedoERPCRMInterfaceApiMeterReadingBase implements ModelInterface, ArrayAc
         'odnt2' => 'getOdnt2',
         'ldnt1' => 'getLdnt1',
         'ldnt2' => 'getLdnt2',
-        'comment' => 'getComment'
+        'comment' => 'getComment',
+        'type' => 'getType'
     ];
 
     /**
@@ -214,6 +219,7 @@ class EcedoERPCRMInterfaceApiMeterReadingBase implements ModelInterface, ArrayAc
         $this->container['ldnt1'] = isset($data['ldnt1']) ? $data['ldnt1'] : null;
         $this->container['ldnt2'] = isset($data['ldnt2']) ? $data['ldnt2'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -408,6 +414,30 @@ class EcedoERPCRMInterfaceApiMeterReadingBase implements ModelInterface, ArrayAc
     public function setComment($comment)
     {
         $this->container['comment'] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

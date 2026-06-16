@@ -131,4 +131,11 @@ class EcedoERPCRMInterfaceApiBaseInvoiceRowPostDataTest extends \PHPUnit_Framewo
     public function testPropertyCustomPriceComponentInvoiceRowDescription()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

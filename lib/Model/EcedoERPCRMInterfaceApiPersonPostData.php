@@ -63,7 +63,8 @@ class EcedoERPCRMInterfaceApiPersonPostData implements ModelInterface, ArrayAcce
         'infix' => 'string',
         'last_name' => 'string',
         'birth_date' => '\DateTime',
-        'title' => 'string'
+        'title' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -78,7 +79,8 @@ class EcedoERPCRMInterfaceApiPersonPostData implements ModelInterface, ArrayAcce
         'infix' => null,
         'last_name' => null,
         'birth_date' => 'date',
-        'title' => null
+        'title' => null,
+        'type' => null
     ];
 
     /**
@@ -114,7 +116,8 @@ class EcedoERPCRMInterfaceApiPersonPostData implements ModelInterface, ArrayAcce
         'infix' => 'Infix',
         'last_name' => 'LastName',
         'birth_date' => 'BirthDate',
-        'title' => 'Title'
+        'title' => 'Title',
+        'type' => '$type'
     ];
 
     /**
@@ -129,7 +132,8 @@ class EcedoERPCRMInterfaceApiPersonPostData implements ModelInterface, ArrayAcce
         'infix' => 'setInfix',
         'last_name' => 'setLastName',
         'birth_date' => 'setBirthDate',
-        'title' => 'setTitle'
+        'title' => 'setTitle',
+        'type' => 'setType'
     ];
 
     /**
@@ -144,7 +148,8 @@ class EcedoERPCRMInterfaceApiPersonPostData implements ModelInterface, ArrayAcce
         'infix' => 'getInfix',
         'last_name' => 'getLastName',
         'birth_date' => 'getBirthDate',
-        'title' => 'getTitle'
+        'title' => 'getTitle',
+        'type' => 'getType'
     ];
 
     /**
@@ -229,6 +234,7 @@ class EcedoERPCRMInterfaceApiPersonPostData implements ModelInterface, ArrayAcce
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -440,6 +446,30 @@ class EcedoERPCRMInterfaceApiPersonPostData implements ModelInterface, ArrayAcce
     public function setTitle($title)
     {
         $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

@@ -61,7 +61,9 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         'agreement_date' => '\DateTime',
         'month' => '\DateTime',
         'connections' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostConnectionData[]',
-        'company_label_id' => 'string'
+        'company_label_id' => 'string',
+        'combine_type' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -74,7 +76,9 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         'agreement_date' => 'date',
         'month' => 'date',
         'connections' => null,
-        'company_label_id' => 'uuid'
+        'company_label_id' => 'uuid',
+        'combine_type' => null,
+        'type' => null
     ];
 
     /**
@@ -108,7 +112,9 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         'agreement_date' => 'AgreementDate',
         'month' => 'Month',
         'connections' => 'Connections',
-        'company_label_id' => 'CompanyLabelId'
+        'company_label_id' => 'CompanyLabelId',
+        'combine_type' => 'CombineType',
+        'type' => '$type'
     ];
 
     /**
@@ -121,7 +127,9 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         'agreement_date' => 'setAgreementDate',
         'month' => 'setMonth',
         'connections' => 'setConnections',
-        'company_label_id' => 'setCompanyLabelId'
+        'company_label_id' => 'setCompanyLabelId',
+        'combine_type' => 'setCombineType',
+        'type' => 'setType'
     ];
 
     /**
@@ -134,7 +142,9 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         'agreement_date' => 'getAgreementDate',
         'month' => 'getMonth',
         'connections' => 'getConnections',
-        'company_label_id' => 'getCompanyLabelId'
+        'company_label_id' => 'getCompanyLabelId',
+        'combine_type' => 'getCombineType',
+        'type' => 'getType'
     ];
 
     /**
@@ -180,6 +190,8 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
 
     const ORGANIZATION_TYPE_BUSINESS = 'Business';
     const ORGANIZATION_TYPE_CONSUMER = 'Consumer';
+    const COMBINE_TYPE_MAXIMUM = 'Maximum';
+    const COMBINE_TYPE_COMBINE_GROUP = 'CombineGroup';
     
 
     
@@ -193,6 +205,19 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         return [
             self::ORGANIZATION_TYPE_BUSINESS,
             self::ORGANIZATION_TYPE_CONSUMER,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCombineTypeAllowableValues()
+    {
+        return [
+            self::COMBINE_TYPE_MAXIMUM,
+            self::COMBINE_TYPE_COMBINE_GROUP,
         ];
     }
     
@@ -217,6 +242,8 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         $this->container['month'] = isset($data['month']) ? $data['month'] : null;
         $this->container['connections'] = isset($data['connections']) ? $data['connections'] : null;
         $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
+        $this->container['combine_type'] = isset($data['combine_type']) ? $data['combine_type'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -236,6 +263,14 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
         if (!is_null($this->container['organization_type']) && !in_array($this->container['organization_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'organization_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getCombineTypeAllowableValues();
+        if (!is_null($this->container['combine_type']) && !in_array($this->container['combine_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'combine_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -380,6 +415,63 @@ class EcedoERPCRMInterfaceApiNonOrganizationDraftAdvancePaymentPostDataBase impl
     public function setCompanyLabelId($company_label_id)
     {
         $this->container['company_label_id'] = $company_label_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets combine_type
+     *
+     * @return string
+     */
+    public function getCombineType()
+    {
+        return $this->container['combine_type'];
+    }
+
+    /**
+     * Sets combine_type
+     *
+     * @param string $combine_type Optionele strategie voor het combineren van regels in de response. Alleen van toepassing op v1.1 annualpricebreakdown. Default `Maximum`. Met `CombineGroup` Wordt er gecombineerd volgens combine groups die zijn ingesteld bij de leverancier.
+     *
+     * @return $this
+     */
+    public function setCombineType($combine_type)
+    {
+        $allowedValues = $this->getCombineTypeAllowableValues();
+        if (!is_null($combine_type) && !in_array($combine_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'combine_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['combine_type'] = $combine_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

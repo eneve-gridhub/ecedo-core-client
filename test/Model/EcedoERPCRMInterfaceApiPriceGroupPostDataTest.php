@@ -89,4 +89,11 @@ class EcedoERPCRMInterfaceApiPriceGroupPostDataTest extends \PHPUnit_Framework_T
     public function testPropertyPrices()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

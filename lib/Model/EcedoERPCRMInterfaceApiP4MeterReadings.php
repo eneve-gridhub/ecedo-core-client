@@ -57,7 +57,8 @@ class EcedoERPCRMInterfaceApiP4MeterReadings implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'day_details' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiP4MeterReading[]'
+        'day_details' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiP4MeterReading[]',
+        'type' => 'string'
     ];
 
     /**
@@ -66,7 +67,8 @@ class EcedoERPCRMInterfaceApiP4MeterReadings implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'day_details' => null
+        'day_details' => null,
+        'type' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class EcedoERPCRMInterfaceApiP4MeterReadings implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'day_details' => 'DayDetails'
+        'day_details' => 'DayDetails',
+        'type' => '$type'
     ];
 
     /**
@@ -105,7 +108,8 @@ class EcedoERPCRMInterfaceApiP4MeterReadings implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'day_details' => 'setDayDetails'
+        'day_details' => 'setDayDetails',
+        'type' => 'setType'
     ];
 
     /**
@@ -114,7 +118,8 @@ class EcedoERPCRMInterfaceApiP4MeterReadings implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'day_details' => 'getDayDetails'
+        'day_details' => 'getDayDetails',
+        'type' => 'getType'
     ];
 
     /**
@@ -178,6 +183,7 @@ class EcedoERPCRMInterfaceApiP4MeterReadings implements ModelInterface, ArrayAcc
     public function __construct(array $data = null)
     {
         $this->container['day_details'] = isset($data['day_details']) ? $data['day_details'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -228,6 +234,30 @@ class EcedoERPCRMInterfaceApiP4MeterReadings implements ModelInterface, ArrayAcc
     public function setDayDetails($day_details)
     {
         $this->container['day_details'] = $day_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

@@ -66,7 +66,8 @@ class EcedoERPCRMInterfaceApiInvoiceRowTotalsDto implements ModelInterface, Arra
         'row_vat_percentage' => 'double',
         'row_price_unit_singular' => 'string',
         'row_has_factor' => 'bool',
-        'row_factor' => 'double'
+        'row_factor' => 'double',
+        'type' => 'string'
     ];
 
     /**
@@ -84,7 +85,8 @@ class EcedoERPCRMInterfaceApiInvoiceRowTotalsDto implements ModelInterface, Arra
         'row_vat_percentage' => 'double',
         'row_price_unit_singular' => null,
         'row_has_factor' => null,
-        'row_factor' => 'double'
+        'row_factor' => 'double',
+        'type' => null
     ];
 
     /**
@@ -123,7 +125,8 @@ class EcedoERPCRMInterfaceApiInvoiceRowTotalsDto implements ModelInterface, Arra
         'row_vat_percentage' => 'Row_VatPercentage',
         'row_price_unit_singular' => 'Row_PriceUnitSingular',
         'row_has_factor' => 'Row_HasFactor',
-        'row_factor' => 'Row_Factor'
+        'row_factor' => 'Row_Factor',
+        'type' => '$type'
     ];
 
     /**
@@ -141,7 +144,8 @@ class EcedoERPCRMInterfaceApiInvoiceRowTotalsDto implements ModelInterface, Arra
         'row_vat_percentage' => 'setRowVatPercentage',
         'row_price_unit_singular' => 'setRowPriceUnitSingular',
         'row_has_factor' => 'setRowHasFactor',
-        'row_factor' => 'setRowFactor'
+        'row_factor' => 'setRowFactor',
+        'type' => 'setType'
     ];
 
     /**
@@ -159,7 +163,8 @@ class EcedoERPCRMInterfaceApiInvoiceRowTotalsDto implements ModelInterface, Arra
         'row_vat_percentage' => 'getRowVatPercentage',
         'row_price_unit_singular' => 'getRowPriceUnitSingular',
         'row_has_factor' => 'getRowHasFactor',
-        'row_factor' => 'getRowFactor'
+        'row_factor' => 'getRowFactor',
+        'type' => 'getType'
     ];
 
     /**
@@ -232,6 +237,7 @@ class EcedoERPCRMInterfaceApiInvoiceRowTotalsDto implements ModelInterface, Arra
         $this->container['row_price_unit_singular'] = isset($data['row_price_unit_singular']) ? $data['row_price_unit_singular'] : null;
         $this->container['row_has_factor'] = isset($data['row_has_factor']) ? $data['row_has_factor'] : null;
         $this->container['row_factor'] = isset($data['row_factor']) ? $data['row_factor'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -498,6 +504,30 @@ class EcedoERPCRMInterfaceApiInvoiceRowTotalsDto implements ModelInterface, Arra
     public function setRowFactor($row_factor)
     {
         $this->container['row_factor'] = $row_factor;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

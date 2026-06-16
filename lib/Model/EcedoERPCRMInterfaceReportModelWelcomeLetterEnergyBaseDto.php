@@ -57,74 +57,74 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'organization_login_is_availablek__backing_field' => 'bool',
-        'organization_login_namek__backing_field' => 'string',
-        'organization_login_passwordk__backing_field' => 'string',
-        'organization_contracts_purchase_order_numberk__backing_field' => 'string',
-        'organization_document_type_is_extensionk__backing_field' => 'bool',
-        'organization_connectionsk__backing_field' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoConnection[]',
-        'organization_new_advance_paymentk__backing_field' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoNewAdvancePayment',
-        'connection_price_component_pricesk__backing_field' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceComponentPriceDto[]',
-        'company_label_idk__backing_field' => 'string',
-        'organization_idk__backing_field' => 'string',
-        'organization_organization_sub_typek__backing_field' => 'string',
-        'organization_categoryk__backing_field' => 'string',
-        'organization_category_localizedk__backing_field' => 'string',
-        'organization_referencek__backing_field' => 'string',
-        'organization_client_referencek__backing_field' => 'string',
-        'organization_origin_referencek__backing_field' => 'string',
-        'organization_correspondence_namek__backing_field' => 'string',
-        'organization_correspondence_phone_numberk__backing_field' => 'string',
-        'organization_email_addressk__backing_field' => 'string',
-        'organization_e_invoice_addressk__backing_field' => 'string',
-        'organization_kv_k_numberk__backing_field' => 'string',
-        'organization_vat_numberk__backing_field' => 'string',
-        'organization_is_businessk__backing_field' => 'bool',
-        'organization_is_intercompanyk__backing_field' => 'bool',
-        'organization_group_namek__backing_field' => 'string',
-        'organization_is_parentk__backing_field' => 'bool',
-        'organization_is_daughterk__backing_field' => 'bool',
-        'organization_parent_referencek__backing_field' => 'string',
-        'organization_has_resellerk__backing_field' => 'bool',
-        'organization_person_gender_typek__backing_field' => 'string',
-        'organization_person_first_namek__backing_field' => 'string',
-        'organization_person_initialsk__backing_field' => 'string',
-        'organization_person_infixk__backing_field' => 'string',
-        'organization_person_last_namek__backing_field' => 'string',
-        'organization_person_full_namek__backing_field' => 'string',
-        'organization_person_salutationk__backing_field' => 'string',
-        'organization_person_salutation_addressedk__backing_field' => 'string',
-        'organization_person_salutation_addressed_upper_casedk__backing_field' => 'string',
-        'organization_person_salutation_informalk__backing_field' => 'string',
-        'organization_person_birth_datek__backing_field' => '\DateTime',
-        'organization_mailing_address_address_line1k__backing_field' => 'string',
-        'organization_mailing_address_address_line2k__backing_field' => 'string',
-        'organization_mailing_address_full_addressk__backing_field' => 'string',
-        'organization_mailing_address_zip_codek__backing_field' => 'string',
-        'organization_mailing_address_cityk__backing_field' => 'string',
-        'organization_mailing_address_country_codek__backing_field' => 'string',
-        'organization_debtor_namek__backing_field' => 'string',
-        'organization_debtor_bank_account_numberk__backing_field' => 'string',
-        'organization_debtor_bank_account_number_shortk__backing_field' => 'string',
-        'organization_debtor_bank_account_number_maskedk__backing_field' => 'string',
-        'organization_debtor_payment_method_is_automatic_collectionk__backing_field' => 'bool',
-        'organization_debtor_payment_method_is_direct_payk__backing_field' => 'bool',
-        'organization_debtor_payment_method_via_parent_organizationk__backing_field' => 'bool',
-        'organization_debtor_payment_method_is_invoicek__backing_field' => 'bool',
-        'organization_debtor_mandate_typek__backing_field' => 'string',
-        'organization_debtor_mandate_running_numberk__backing_field' => 'int',
-        'organization_debtor_payment_referencek__backing_field' => 'string',
-        'organization_debtor_referencek__backing_field' => 'string',
-        'organization_representative_idk__backing_field' => 'string',
-        'organization_representative_correspondence_namek__backing_field' => 'string',
-        'organization_representative_correspondence_phone_numberk__backing_field' => 'string',
-        'organization_representative_correspondence_email_addressk__backing_field' => 'string',
-        'organization_representative_correspondence_websitek__backing_field' => 'string',
-        'organization_productiemiddel_proposition_descriptionk__backing_field' => 'string',
-        'organization_organization_property_preferred_contact_methodk__backing_field' => 'string',
-        'company_labelk__backing_field' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto',
-        'resellerk__backing_field' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto',
-        'organization_propertiesk__backing_field' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto'
+        'organization_login_is_available' => 'bool',
+        'organization_login_name' => 'string',
+        'organization_login_password' => 'string',
+        'organization_contracts_purchase_order_number' => 'string',
+        'organization_document_type_is_extension' => 'bool',
+        'organization_connections' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoConnection[]',
+        'organization_new_advance_payment' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoNewAdvancePayment',
+        'connection_price_component_prices' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceComponentPriceDto[]',
+        'company_label_id' => 'string',
+        'organization_id' => 'string',
+        'organization_organization_sub_type' => 'string',
+        'organization_category' => 'string',
+        'organization_category_localized' => 'string',
+        'organization_reference' => 'string',
+        'organization_client_reference' => 'string',
+        'organization_origin_reference' => 'string',
+        'organization_correspondence_name' => 'string',
+        'organization_correspondence_phone_number' => 'string',
+        'organization_email_address' => 'string',
+        'organization_e_invoice_address' => 'string',
+        'organization_kv_k_number' => 'string',
+        'organization_vat_number' => 'string',
+        'organization_is_business' => 'bool',
+        'organization_is_intercompany' => 'bool',
+        'organization_group_name' => 'string',
+        'organization_is_parent' => 'bool',
+        'organization_is_daughter' => 'bool',
+        'organization_parent_reference' => 'string',
+        'organization_has_reseller' => 'bool',
+        'organization_person_gender_type' => 'string',
+        'organization_person_first_name' => 'string',
+        'organization_person_initials' => 'string',
+        'organization_person_infix' => 'string',
+        'organization_person_last_name' => 'string',
+        'organization_person_full_name' => 'string',
+        'organization_person_salutation' => 'string',
+        'organization_person_salutation_addressed' => 'string',
+        'organization_person_salutation_addressed_upper_cased' => 'string',
+        'organization_person_salutation_informal' => 'string',
+        'organization_person_birth_date' => '\DateTime',
+        'organization_mailing_address_address_line1' => 'string',
+        'organization_mailing_address_address_line2' => 'string',
+        'organization_mailing_address_full_address' => 'string',
+        'organization_mailing_address_zip_code' => 'string',
+        'organization_mailing_address_city' => 'string',
+        'organization_mailing_address_country_code' => 'string',
+        'organization_debtor_name' => 'string',
+        'organization_debtor_bank_account_number' => 'string',
+        'organization_debtor_bank_account_number_short' => 'string',
+        'organization_debtor_bank_account_number_masked' => 'string',
+        'organization_debtor_payment_method_is_automatic_collection' => 'bool',
+        'organization_debtor_payment_method_is_direct_pay' => 'bool',
+        'organization_debtor_payment_method_via_parent_organization' => 'bool',
+        'organization_debtor_payment_method_is_invoice' => 'bool',
+        'organization_debtor_mandate_type' => 'string',
+        'organization_debtor_mandate_running_number' => 'int',
+        'organization_debtor_payment_reference' => 'string',
+        'organization_debtor_reference' => 'string',
+        'organization_representative_id' => 'string',
+        'organization_representative_correspondence_name' => 'string',
+        'organization_representative_correspondence_phone_number' => 'string',
+        'organization_representative_correspondence_email_address' => 'string',
+        'organization_representative_correspondence_website' => 'string',
+        'organization_productiemiddel_proposition_description' => 'string',
+        'organization_organization_property_preferred_contact_method' => 'string',
+        'company_label' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto',
+        'reseller' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto',
+        'organization_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto'
     ];
 
     /**
@@ -133,74 +133,74 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'organization_login_is_availablek__backing_field' => null,
-        'organization_login_namek__backing_field' => null,
-        'organization_login_passwordk__backing_field' => null,
-        'organization_contracts_purchase_order_numberk__backing_field' => null,
-        'organization_document_type_is_extensionk__backing_field' => null,
-        'organization_connectionsk__backing_field' => null,
-        'organization_new_advance_paymentk__backing_field' => null,
-        'connection_price_component_pricesk__backing_field' => null,
-        'company_label_idk__backing_field' => null,
-        'organization_idk__backing_field' => null,
-        'organization_organization_sub_typek__backing_field' => null,
-        'organization_categoryk__backing_field' => null,
-        'organization_category_localizedk__backing_field' => null,
-        'organization_referencek__backing_field' => null,
-        'organization_client_referencek__backing_field' => null,
-        'organization_origin_referencek__backing_field' => null,
-        'organization_correspondence_namek__backing_field' => null,
-        'organization_correspondence_phone_numberk__backing_field' => null,
-        'organization_email_addressk__backing_field' => null,
-        'organization_e_invoice_addressk__backing_field' => null,
-        'organization_kv_k_numberk__backing_field' => null,
-        'organization_vat_numberk__backing_field' => null,
-        'organization_is_businessk__backing_field' => null,
-        'organization_is_intercompanyk__backing_field' => null,
-        'organization_group_namek__backing_field' => null,
-        'organization_is_parentk__backing_field' => null,
-        'organization_is_daughterk__backing_field' => null,
-        'organization_parent_referencek__backing_field' => null,
-        'organization_has_resellerk__backing_field' => null,
-        'organization_person_gender_typek__backing_field' => null,
-        'organization_person_first_namek__backing_field' => null,
-        'organization_person_initialsk__backing_field' => null,
-        'organization_person_infixk__backing_field' => null,
-        'organization_person_last_namek__backing_field' => null,
-        'organization_person_full_namek__backing_field' => null,
-        'organization_person_salutationk__backing_field' => null,
-        'organization_person_salutation_addressedk__backing_field' => null,
-        'organization_person_salutation_addressed_upper_casedk__backing_field' => null,
-        'organization_person_salutation_informalk__backing_field' => null,
-        'organization_person_birth_datek__backing_field' => 'date',
-        'organization_mailing_address_address_line1k__backing_field' => null,
-        'organization_mailing_address_address_line2k__backing_field' => null,
-        'organization_mailing_address_full_addressk__backing_field' => null,
-        'organization_mailing_address_zip_codek__backing_field' => null,
-        'organization_mailing_address_cityk__backing_field' => null,
-        'organization_mailing_address_country_codek__backing_field' => null,
-        'organization_debtor_namek__backing_field' => null,
-        'organization_debtor_bank_account_numberk__backing_field' => null,
-        'organization_debtor_bank_account_number_shortk__backing_field' => null,
-        'organization_debtor_bank_account_number_maskedk__backing_field' => null,
-        'organization_debtor_payment_method_is_automatic_collectionk__backing_field' => null,
-        'organization_debtor_payment_method_is_direct_payk__backing_field' => null,
-        'organization_debtor_payment_method_via_parent_organizationk__backing_field' => null,
-        'organization_debtor_payment_method_is_invoicek__backing_field' => null,
-        'organization_debtor_mandate_typek__backing_field' => null,
-        'organization_debtor_mandate_running_numberk__backing_field' => 'int32',
-        'organization_debtor_payment_referencek__backing_field' => null,
-        'organization_debtor_referencek__backing_field' => null,
-        'organization_representative_idk__backing_field' => 'uuid',
-        'organization_representative_correspondence_namek__backing_field' => null,
-        'organization_representative_correspondence_phone_numberk__backing_field' => null,
-        'organization_representative_correspondence_email_addressk__backing_field' => null,
-        'organization_representative_correspondence_websitek__backing_field' => null,
-        'organization_productiemiddel_proposition_descriptionk__backing_field' => null,
-        'organization_organization_property_preferred_contact_methodk__backing_field' => null,
-        'company_labelk__backing_field' => null,
-        'resellerk__backing_field' => null,
-        'organization_propertiesk__backing_field' => null
+        'organization_login_is_available' => null,
+        'organization_login_name' => null,
+        'organization_login_password' => null,
+        'organization_contracts_purchase_order_number' => null,
+        'organization_document_type_is_extension' => null,
+        'organization_connections' => null,
+        'organization_new_advance_payment' => null,
+        'connection_price_component_prices' => null,
+        'company_label_id' => null,
+        'organization_id' => null,
+        'organization_organization_sub_type' => null,
+        'organization_category' => null,
+        'organization_category_localized' => null,
+        'organization_reference' => null,
+        'organization_client_reference' => null,
+        'organization_origin_reference' => null,
+        'organization_correspondence_name' => null,
+        'organization_correspondence_phone_number' => null,
+        'organization_email_address' => null,
+        'organization_e_invoice_address' => null,
+        'organization_kv_k_number' => null,
+        'organization_vat_number' => null,
+        'organization_is_business' => null,
+        'organization_is_intercompany' => null,
+        'organization_group_name' => null,
+        'organization_is_parent' => null,
+        'organization_is_daughter' => null,
+        'organization_parent_reference' => null,
+        'organization_has_reseller' => null,
+        'organization_person_gender_type' => null,
+        'organization_person_first_name' => null,
+        'organization_person_initials' => null,
+        'organization_person_infix' => null,
+        'organization_person_last_name' => null,
+        'organization_person_full_name' => null,
+        'organization_person_salutation' => null,
+        'organization_person_salutation_addressed' => null,
+        'organization_person_salutation_addressed_upper_cased' => null,
+        'organization_person_salutation_informal' => null,
+        'organization_person_birth_date' => 'date',
+        'organization_mailing_address_address_line1' => null,
+        'organization_mailing_address_address_line2' => null,
+        'organization_mailing_address_full_address' => null,
+        'organization_mailing_address_zip_code' => null,
+        'organization_mailing_address_city' => null,
+        'organization_mailing_address_country_code' => null,
+        'organization_debtor_name' => null,
+        'organization_debtor_bank_account_number' => null,
+        'organization_debtor_bank_account_number_short' => null,
+        'organization_debtor_bank_account_number_masked' => null,
+        'organization_debtor_payment_method_is_automatic_collection' => null,
+        'organization_debtor_payment_method_is_direct_pay' => null,
+        'organization_debtor_payment_method_via_parent_organization' => null,
+        'organization_debtor_payment_method_is_invoice' => null,
+        'organization_debtor_mandate_type' => null,
+        'organization_debtor_mandate_running_number' => 'int32',
+        'organization_debtor_payment_reference' => null,
+        'organization_debtor_reference' => null,
+        'organization_representative_id' => 'uuid',
+        'organization_representative_correspondence_name' => null,
+        'organization_representative_correspondence_phone_number' => null,
+        'organization_representative_correspondence_email_address' => null,
+        'organization_representative_correspondence_website' => null,
+        'organization_productiemiddel_proposition_description' => null,
+        'organization_organization_property_preferred_contact_method' => null,
+        'company_label' => null,
+        'reseller' => null,
+        'organization_properties' => null
     ];
 
     /**
@@ -230,74 +230,74 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
      * @var string[]
      */
     protected static $attributeMap = [
-        'organization_login_is_availablek__backing_field' => '&lt;Organization_Login_IsAvailable&gt;k__BackingField',
-        'organization_login_namek__backing_field' => '&lt;Organization_Login_Name&gt;k__BackingField',
-        'organization_login_passwordk__backing_field' => '&lt;Organization_Login_Password&gt;k__BackingField',
-        'organization_contracts_purchase_order_numberk__backing_field' => '&lt;Organization_Contracts_PurchaseOrderNumber&gt;k__BackingField',
-        'organization_document_type_is_extensionk__backing_field' => '&lt;Organization_DocumentType_IsExtension&gt;k__BackingField',
-        'organization_connectionsk__backing_field' => '&lt;Organization_Connections&gt;k__BackingField',
-        'organization_new_advance_paymentk__backing_field' => '&lt;Organization_NewAdvancePayment&gt;k__BackingField',
-        'connection_price_component_pricesk__backing_field' => '&lt;Connection_PriceComponentPrices&gt;k__BackingField',
-        'company_label_idk__backing_field' => '&lt;CompanyLabel_Id&gt;k__BackingField',
-        'organization_idk__backing_field' => '&lt;Organization_Id&gt;k__BackingField',
-        'organization_organization_sub_typek__backing_field' => '&lt;Organization_OrganizationSubType&gt;k__BackingField',
-        'organization_categoryk__backing_field' => '&lt;Organization_Category&gt;k__BackingField',
-        'organization_category_localizedk__backing_field' => '&lt;Organization_CategoryLocalized&gt;k__BackingField',
-        'organization_referencek__backing_field' => '&lt;Organization_Reference&gt;k__BackingField',
-        'organization_client_referencek__backing_field' => '&lt;Organization_ClientReference&gt;k__BackingField',
-        'organization_origin_referencek__backing_field' => '&lt;Organization_OriginReference&gt;k__BackingField',
-        'organization_correspondence_namek__backing_field' => '&lt;Organization_CorrespondenceName&gt;k__BackingField',
-        'organization_correspondence_phone_numberk__backing_field' => '&lt;Organization_CorrespondencePhoneNumber&gt;k__BackingField',
-        'organization_email_addressk__backing_field' => '&lt;Organization_EmailAddress&gt;k__BackingField',
-        'organization_e_invoice_addressk__backing_field' => '&lt;Organization_EInvoiceAddress&gt;k__BackingField',
-        'organization_kv_k_numberk__backing_field' => '&lt;Organization_KvKNumber&gt;k__BackingField',
-        'organization_vat_numberk__backing_field' => '&lt;Organization_VatNumber&gt;k__BackingField',
-        'organization_is_businessk__backing_field' => '&lt;Organization_IsBusiness&gt;k__BackingField',
-        'organization_is_intercompanyk__backing_field' => '&lt;Organization_IsIntercompany&gt;k__BackingField',
-        'organization_group_namek__backing_field' => '&lt;Organization_Group_Name&gt;k__BackingField',
-        'organization_is_parentk__backing_field' => '&lt;Organization_IsParent&gt;k__BackingField',
-        'organization_is_daughterk__backing_field' => '&lt;Organization_IsDaughter&gt;k__BackingField',
-        'organization_parent_referencek__backing_field' => '&lt;Organization_Parent_Reference&gt;k__BackingField',
-        'organization_has_resellerk__backing_field' => '&lt;Organization_HasReseller&gt;k__BackingField',
-        'organization_person_gender_typek__backing_field' => '&lt;Organization_Person_GenderType&gt;k__BackingField',
-        'organization_person_first_namek__backing_field' => '&lt;Organization_Person_FirstName&gt;k__BackingField',
-        'organization_person_initialsk__backing_field' => '&lt;Organization_Person_Initials&gt;k__BackingField',
-        'organization_person_infixk__backing_field' => '&lt;Organization_Person_Infix&gt;k__BackingField',
-        'organization_person_last_namek__backing_field' => '&lt;Organization_Person_LastName&gt;k__BackingField',
-        'organization_person_full_namek__backing_field' => '&lt;Organization_Person_FullName&gt;k__BackingField',
-        'organization_person_salutationk__backing_field' => '&lt;Organization_Person_Salutation&gt;k__BackingField',
-        'organization_person_salutation_addressedk__backing_field' => '&lt;Organization_Person_SalutationAddressed&gt;k__BackingField',
-        'organization_person_salutation_addressed_upper_casedk__backing_field' => '&lt;Organization_Person_SalutationAddressedUpperCased&gt;k__BackingField',
-        'organization_person_salutation_informalk__backing_field' => '&lt;Organization_Person_SalutationInformal&gt;k__BackingField',
-        'organization_person_birth_datek__backing_field' => '&lt;Organization_Person_BirthDate&gt;k__BackingField',
-        'organization_mailing_address_address_line1k__backing_field' => '&lt;Organization_MailingAddress_AddressLine1&gt;k__BackingField',
-        'organization_mailing_address_address_line2k__backing_field' => '&lt;Organization_MailingAddress_AddressLine2&gt;k__BackingField',
-        'organization_mailing_address_full_addressk__backing_field' => '&lt;Organization_MailingAddress_FullAddress&gt;k__BackingField',
-        'organization_mailing_address_zip_codek__backing_field' => '&lt;Organization_MailingAddress_ZipCode&gt;k__BackingField',
-        'organization_mailing_address_cityk__backing_field' => '&lt;Organization_MailingAddress_City&gt;k__BackingField',
-        'organization_mailing_address_country_codek__backing_field' => '&lt;Organization_MailingAddress_CountryCode&gt;k__BackingField',
-        'organization_debtor_namek__backing_field' => '&lt;Organization_Debtor_Name&gt;k__BackingField',
-        'organization_debtor_bank_account_numberk__backing_field' => '&lt;Organization_Debtor_BankAccountNumber&gt;k__BackingField',
-        'organization_debtor_bank_account_number_shortk__backing_field' => '&lt;Organization_Debtor_BankAccountNumberShort&gt;k__BackingField',
-        'organization_debtor_bank_account_number_maskedk__backing_field' => '&lt;Organization_Debtor_BankAccountNumberMasked&gt;k__BackingField',
-        'organization_debtor_payment_method_is_automatic_collectionk__backing_field' => '&lt;Organization_Debtor_PaymentMethod_IsAutomaticCollection&gt;k__BackingField',
-        'organization_debtor_payment_method_is_direct_payk__backing_field' => '&lt;Organization_Debtor_PaymentMethod_IsDirectPay&gt;k__BackingField',
-        'organization_debtor_payment_method_via_parent_organizationk__backing_field' => '&lt;Organization_Debtor_PaymentMethod_ViaParentOrganization&gt;k__BackingField',
-        'organization_debtor_payment_method_is_invoicek__backing_field' => '&lt;Organization_Debtor_PaymentMethod_IsInvoice&gt;k__BackingField',
-        'organization_debtor_mandate_typek__backing_field' => '&lt;Organization_Debtor_Mandate_Type&gt;k__BackingField',
-        'organization_debtor_mandate_running_numberk__backing_field' => '&lt;Organization_Debtor_Mandate_RunningNumber&gt;k__BackingField',
-        'organization_debtor_payment_referencek__backing_field' => '&lt;Organization_Debtor_PaymentReference&gt;k__BackingField',
-        'organization_debtor_referencek__backing_field' => '&lt;Organization_Debtor_Reference&gt;k__BackingField',
-        'organization_representative_idk__backing_field' => '&lt;Organization_Representative_Id&gt;k__BackingField',
-        'organization_representative_correspondence_namek__backing_field' => '&lt;Organization_Representative_Correspondence_Name&gt;k__BackingField',
-        'organization_representative_correspondence_phone_numberk__backing_field' => '&lt;Organization_Representative_Correspondence_PhoneNumber&gt;k__BackingField',
-        'organization_representative_correspondence_email_addressk__backing_field' => '&lt;Organization_Representative_Correspondence_EmailAddress&gt;k__BackingField',
-        'organization_representative_correspondence_websitek__backing_field' => '&lt;Organization_Representative_Correspondence_Website&gt;k__BackingField',
-        'organization_productiemiddel_proposition_descriptionk__backing_field' => '&lt;Organization_Productiemiddel_Proposition_Description&gt;k__BackingField',
-        'organization_organization_property_preferred_contact_methodk__backing_field' => '&lt;Organization_OrganizationProperty_PreferredContactMethod&gt;k__BackingField',
-        'company_labelk__backing_field' => '&lt;CompanyLabel&gt;k__BackingField',
-        'resellerk__backing_field' => '&lt;Reseller&gt;k__BackingField',
-        'organization_propertiesk__backing_field' => '&lt;OrganizationProperties&gt;k__BackingField'
+        'organization_login_is_available' => 'Organization_Login_IsAvailable',
+        'organization_login_name' => 'Organization_Login_Name',
+        'organization_login_password' => 'Organization_Login_Password',
+        'organization_contracts_purchase_order_number' => 'Organization_Contracts_PurchaseOrderNumber',
+        'organization_document_type_is_extension' => 'Organization_DocumentType_IsExtension',
+        'organization_connections' => 'Organization_Connections',
+        'organization_new_advance_payment' => 'Organization_NewAdvancePayment',
+        'connection_price_component_prices' => 'Connection_PriceComponentPrices',
+        'company_label_id' => 'CompanyLabel_Id',
+        'organization_id' => 'Organization_Id',
+        'organization_organization_sub_type' => 'Organization_OrganizationSubType',
+        'organization_category' => 'Organization_Category',
+        'organization_category_localized' => 'Organization_CategoryLocalized',
+        'organization_reference' => 'Organization_Reference',
+        'organization_client_reference' => 'Organization_ClientReference',
+        'organization_origin_reference' => 'Organization_OriginReference',
+        'organization_correspondence_name' => 'Organization_CorrespondenceName',
+        'organization_correspondence_phone_number' => 'Organization_CorrespondencePhoneNumber',
+        'organization_email_address' => 'Organization_EmailAddress',
+        'organization_e_invoice_address' => 'Organization_EInvoiceAddress',
+        'organization_kv_k_number' => 'Organization_KvKNumber',
+        'organization_vat_number' => 'Organization_VatNumber',
+        'organization_is_business' => 'Organization_IsBusiness',
+        'organization_is_intercompany' => 'Organization_IsIntercompany',
+        'organization_group_name' => 'Organization_Group_Name',
+        'organization_is_parent' => 'Organization_IsParent',
+        'organization_is_daughter' => 'Organization_IsDaughter',
+        'organization_parent_reference' => 'Organization_Parent_Reference',
+        'organization_has_reseller' => 'Organization_HasReseller',
+        'organization_person_gender_type' => 'Organization_Person_GenderType',
+        'organization_person_first_name' => 'Organization_Person_FirstName',
+        'organization_person_initials' => 'Organization_Person_Initials',
+        'organization_person_infix' => 'Organization_Person_Infix',
+        'organization_person_last_name' => 'Organization_Person_LastName',
+        'organization_person_full_name' => 'Organization_Person_FullName',
+        'organization_person_salutation' => 'Organization_Person_Salutation',
+        'organization_person_salutation_addressed' => 'Organization_Person_SalutationAddressed',
+        'organization_person_salutation_addressed_upper_cased' => 'Organization_Person_SalutationAddressedUpperCased',
+        'organization_person_salutation_informal' => 'Organization_Person_SalutationInformal',
+        'organization_person_birth_date' => 'Organization_Person_BirthDate',
+        'organization_mailing_address_address_line1' => 'Organization_MailingAddress_AddressLine1',
+        'organization_mailing_address_address_line2' => 'Organization_MailingAddress_AddressLine2',
+        'organization_mailing_address_full_address' => 'Organization_MailingAddress_FullAddress',
+        'organization_mailing_address_zip_code' => 'Organization_MailingAddress_ZipCode',
+        'organization_mailing_address_city' => 'Organization_MailingAddress_City',
+        'organization_mailing_address_country_code' => 'Organization_MailingAddress_CountryCode',
+        'organization_debtor_name' => 'Organization_Debtor_Name',
+        'organization_debtor_bank_account_number' => 'Organization_Debtor_BankAccountNumber',
+        'organization_debtor_bank_account_number_short' => 'Organization_Debtor_BankAccountNumberShort',
+        'organization_debtor_bank_account_number_masked' => 'Organization_Debtor_BankAccountNumberMasked',
+        'organization_debtor_payment_method_is_automatic_collection' => 'Organization_Debtor_PaymentMethod_IsAutomaticCollection',
+        'organization_debtor_payment_method_is_direct_pay' => 'Organization_Debtor_PaymentMethod_IsDirectPay',
+        'organization_debtor_payment_method_via_parent_organization' => 'Organization_Debtor_PaymentMethod_ViaParentOrganization',
+        'organization_debtor_payment_method_is_invoice' => 'Organization_Debtor_PaymentMethod_IsInvoice',
+        'organization_debtor_mandate_type' => 'Organization_Debtor_Mandate_Type',
+        'organization_debtor_mandate_running_number' => 'Organization_Debtor_Mandate_RunningNumber',
+        'organization_debtor_payment_reference' => 'Organization_Debtor_PaymentReference',
+        'organization_debtor_reference' => 'Organization_Debtor_Reference',
+        'organization_representative_id' => 'Organization_Representative_Id',
+        'organization_representative_correspondence_name' => 'Organization_Representative_Correspondence_Name',
+        'organization_representative_correspondence_phone_number' => 'Organization_Representative_Correspondence_PhoneNumber',
+        'organization_representative_correspondence_email_address' => 'Organization_Representative_Correspondence_EmailAddress',
+        'organization_representative_correspondence_website' => 'Organization_Representative_Correspondence_Website',
+        'organization_productiemiddel_proposition_description' => 'Organization_Productiemiddel_Proposition_Description',
+        'organization_organization_property_preferred_contact_method' => 'Organization_OrganizationProperty_PreferredContactMethod',
+        'company_label' => 'CompanyLabel',
+        'reseller' => 'Reseller',
+        'organization_properties' => 'OrganizationProperties'
     ];
 
     /**
@@ -306,74 +306,74 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
      * @var string[]
      */
     protected static $setters = [
-        'organization_login_is_availablek__backing_field' => 'setOrganizationLoginIsAvailablekBackingField',
-        'organization_login_namek__backing_field' => 'setOrganizationLoginNamekBackingField',
-        'organization_login_passwordk__backing_field' => 'setOrganizationLoginPasswordkBackingField',
-        'organization_contracts_purchase_order_numberk__backing_field' => 'setOrganizationContractsPurchaseOrderNumberkBackingField',
-        'organization_document_type_is_extensionk__backing_field' => 'setOrganizationDocumentTypeIsExtensionkBackingField',
-        'organization_connectionsk__backing_field' => 'setOrganizationConnectionskBackingField',
-        'organization_new_advance_paymentk__backing_field' => 'setOrganizationNewAdvancePaymentkBackingField',
-        'connection_price_component_pricesk__backing_field' => 'setConnectionPriceComponentPriceskBackingField',
-        'company_label_idk__backing_field' => 'setCompanyLabelIdkBackingField',
-        'organization_idk__backing_field' => 'setOrganizationIdkBackingField',
-        'organization_organization_sub_typek__backing_field' => 'setOrganizationOrganizationSubTypekBackingField',
-        'organization_categoryk__backing_field' => 'setOrganizationCategorykBackingField',
-        'organization_category_localizedk__backing_field' => 'setOrganizationCategoryLocalizedkBackingField',
-        'organization_referencek__backing_field' => 'setOrganizationReferencekBackingField',
-        'organization_client_referencek__backing_field' => 'setOrganizationClientReferencekBackingField',
-        'organization_origin_referencek__backing_field' => 'setOrganizationOriginReferencekBackingField',
-        'organization_correspondence_namek__backing_field' => 'setOrganizationCorrespondenceNamekBackingField',
-        'organization_correspondence_phone_numberk__backing_field' => 'setOrganizationCorrespondencePhoneNumberkBackingField',
-        'organization_email_addressk__backing_field' => 'setOrganizationEmailAddresskBackingField',
-        'organization_e_invoice_addressk__backing_field' => 'setOrganizationEInvoiceAddresskBackingField',
-        'organization_kv_k_numberk__backing_field' => 'setOrganizationKvKNumberkBackingField',
-        'organization_vat_numberk__backing_field' => 'setOrganizationVatNumberkBackingField',
-        'organization_is_businessk__backing_field' => 'setOrganizationIsBusinesskBackingField',
-        'organization_is_intercompanyk__backing_field' => 'setOrganizationIsIntercompanykBackingField',
-        'organization_group_namek__backing_field' => 'setOrganizationGroupNamekBackingField',
-        'organization_is_parentk__backing_field' => 'setOrganizationIsParentkBackingField',
-        'organization_is_daughterk__backing_field' => 'setOrganizationIsDaughterkBackingField',
-        'organization_parent_referencek__backing_field' => 'setOrganizationParentReferencekBackingField',
-        'organization_has_resellerk__backing_field' => 'setOrganizationHasResellerkBackingField',
-        'organization_person_gender_typek__backing_field' => 'setOrganizationPersonGenderTypekBackingField',
-        'organization_person_first_namek__backing_field' => 'setOrganizationPersonFirstNamekBackingField',
-        'organization_person_initialsk__backing_field' => 'setOrganizationPersonInitialskBackingField',
-        'organization_person_infixk__backing_field' => 'setOrganizationPersonInfixkBackingField',
-        'organization_person_last_namek__backing_field' => 'setOrganizationPersonLastNamekBackingField',
-        'organization_person_full_namek__backing_field' => 'setOrganizationPersonFullNamekBackingField',
-        'organization_person_salutationk__backing_field' => 'setOrganizationPersonSalutationkBackingField',
-        'organization_person_salutation_addressedk__backing_field' => 'setOrganizationPersonSalutationAddressedkBackingField',
-        'organization_person_salutation_addressed_upper_casedk__backing_field' => 'setOrganizationPersonSalutationAddressedUpperCasedkBackingField',
-        'organization_person_salutation_informalk__backing_field' => 'setOrganizationPersonSalutationInformalkBackingField',
-        'organization_person_birth_datek__backing_field' => 'setOrganizationPersonBirthDatekBackingField',
-        'organization_mailing_address_address_line1k__backing_field' => 'setOrganizationMailingAddressAddressLine1kBackingField',
-        'organization_mailing_address_address_line2k__backing_field' => 'setOrganizationMailingAddressAddressLine2kBackingField',
-        'organization_mailing_address_full_addressk__backing_field' => 'setOrganizationMailingAddressFullAddresskBackingField',
-        'organization_mailing_address_zip_codek__backing_field' => 'setOrganizationMailingAddressZipCodekBackingField',
-        'organization_mailing_address_cityk__backing_field' => 'setOrganizationMailingAddressCitykBackingField',
-        'organization_mailing_address_country_codek__backing_field' => 'setOrganizationMailingAddressCountryCodekBackingField',
-        'organization_debtor_namek__backing_field' => 'setOrganizationDebtorNamekBackingField',
-        'organization_debtor_bank_account_numberk__backing_field' => 'setOrganizationDebtorBankAccountNumberkBackingField',
-        'organization_debtor_bank_account_number_shortk__backing_field' => 'setOrganizationDebtorBankAccountNumberShortkBackingField',
-        'organization_debtor_bank_account_number_maskedk__backing_field' => 'setOrganizationDebtorBankAccountNumberMaskedkBackingField',
-        'organization_debtor_payment_method_is_automatic_collectionk__backing_field' => 'setOrganizationDebtorPaymentMethodIsAutomaticCollectionkBackingField',
-        'organization_debtor_payment_method_is_direct_payk__backing_field' => 'setOrganizationDebtorPaymentMethodIsDirectPaykBackingField',
-        'organization_debtor_payment_method_via_parent_organizationk__backing_field' => 'setOrganizationDebtorPaymentMethodViaParentOrganizationkBackingField',
-        'organization_debtor_payment_method_is_invoicek__backing_field' => 'setOrganizationDebtorPaymentMethodIsInvoicekBackingField',
-        'organization_debtor_mandate_typek__backing_field' => 'setOrganizationDebtorMandateTypekBackingField',
-        'organization_debtor_mandate_running_numberk__backing_field' => 'setOrganizationDebtorMandateRunningNumberkBackingField',
-        'organization_debtor_payment_referencek__backing_field' => 'setOrganizationDebtorPaymentReferencekBackingField',
-        'organization_debtor_referencek__backing_field' => 'setOrganizationDebtorReferencekBackingField',
-        'organization_representative_idk__backing_field' => 'setOrganizationRepresentativeIdkBackingField',
-        'organization_representative_correspondence_namek__backing_field' => 'setOrganizationRepresentativeCorrespondenceNamekBackingField',
-        'organization_representative_correspondence_phone_numberk__backing_field' => 'setOrganizationRepresentativeCorrespondencePhoneNumberkBackingField',
-        'organization_representative_correspondence_email_addressk__backing_field' => 'setOrganizationRepresentativeCorrespondenceEmailAddresskBackingField',
-        'organization_representative_correspondence_websitek__backing_field' => 'setOrganizationRepresentativeCorrespondenceWebsitekBackingField',
-        'organization_productiemiddel_proposition_descriptionk__backing_field' => 'setOrganizationProductiemiddelPropositionDescriptionkBackingField',
-        'organization_organization_property_preferred_contact_methodk__backing_field' => 'setOrganizationOrganizationPropertyPreferredContactMethodkBackingField',
-        'company_labelk__backing_field' => 'setCompanyLabelkBackingField',
-        'resellerk__backing_field' => 'setResellerkBackingField',
-        'organization_propertiesk__backing_field' => 'setOrganizationPropertieskBackingField'
+        'organization_login_is_available' => 'setOrganizationLoginIsAvailable',
+        'organization_login_name' => 'setOrganizationLoginName',
+        'organization_login_password' => 'setOrganizationLoginPassword',
+        'organization_contracts_purchase_order_number' => 'setOrganizationContractsPurchaseOrderNumber',
+        'organization_document_type_is_extension' => 'setOrganizationDocumentTypeIsExtension',
+        'organization_connections' => 'setOrganizationConnections',
+        'organization_new_advance_payment' => 'setOrganizationNewAdvancePayment',
+        'connection_price_component_prices' => 'setConnectionPriceComponentPrices',
+        'company_label_id' => 'setCompanyLabelId',
+        'organization_id' => 'setOrganizationId',
+        'organization_organization_sub_type' => 'setOrganizationOrganizationSubType',
+        'organization_category' => 'setOrganizationCategory',
+        'organization_category_localized' => 'setOrganizationCategoryLocalized',
+        'organization_reference' => 'setOrganizationReference',
+        'organization_client_reference' => 'setOrganizationClientReference',
+        'organization_origin_reference' => 'setOrganizationOriginReference',
+        'organization_correspondence_name' => 'setOrganizationCorrespondenceName',
+        'organization_correspondence_phone_number' => 'setOrganizationCorrespondencePhoneNumber',
+        'organization_email_address' => 'setOrganizationEmailAddress',
+        'organization_e_invoice_address' => 'setOrganizationEInvoiceAddress',
+        'organization_kv_k_number' => 'setOrganizationKvKNumber',
+        'organization_vat_number' => 'setOrganizationVatNumber',
+        'organization_is_business' => 'setOrganizationIsBusiness',
+        'organization_is_intercompany' => 'setOrganizationIsIntercompany',
+        'organization_group_name' => 'setOrganizationGroupName',
+        'organization_is_parent' => 'setOrganizationIsParent',
+        'organization_is_daughter' => 'setOrganizationIsDaughter',
+        'organization_parent_reference' => 'setOrganizationParentReference',
+        'organization_has_reseller' => 'setOrganizationHasReseller',
+        'organization_person_gender_type' => 'setOrganizationPersonGenderType',
+        'organization_person_first_name' => 'setOrganizationPersonFirstName',
+        'organization_person_initials' => 'setOrganizationPersonInitials',
+        'organization_person_infix' => 'setOrganizationPersonInfix',
+        'organization_person_last_name' => 'setOrganizationPersonLastName',
+        'organization_person_full_name' => 'setOrganizationPersonFullName',
+        'organization_person_salutation' => 'setOrganizationPersonSalutation',
+        'organization_person_salutation_addressed' => 'setOrganizationPersonSalutationAddressed',
+        'organization_person_salutation_addressed_upper_cased' => 'setOrganizationPersonSalutationAddressedUpperCased',
+        'organization_person_salutation_informal' => 'setOrganizationPersonSalutationInformal',
+        'organization_person_birth_date' => 'setOrganizationPersonBirthDate',
+        'organization_mailing_address_address_line1' => 'setOrganizationMailingAddressAddressLine1',
+        'organization_mailing_address_address_line2' => 'setOrganizationMailingAddressAddressLine2',
+        'organization_mailing_address_full_address' => 'setOrganizationMailingAddressFullAddress',
+        'organization_mailing_address_zip_code' => 'setOrganizationMailingAddressZipCode',
+        'organization_mailing_address_city' => 'setOrganizationMailingAddressCity',
+        'organization_mailing_address_country_code' => 'setOrganizationMailingAddressCountryCode',
+        'organization_debtor_name' => 'setOrganizationDebtorName',
+        'organization_debtor_bank_account_number' => 'setOrganizationDebtorBankAccountNumber',
+        'organization_debtor_bank_account_number_short' => 'setOrganizationDebtorBankAccountNumberShort',
+        'organization_debtor_bank_account_number_masked' => 'setOrganizationDebtorBankAccountNumberMasked',
+        'organization_debtor_payment_method_is_automatic_collection' => 'setOrganizationDebtorPaymentMethodIsAutomaticCollection',
+        'organization_debtor_payment_method_is_direct_pay' => 'setOrganizationDebtorPaymentMethodIsDirectPay',
+        'organization_debtor_payment_method_via_parent_organization' => 'setOrganizationDebtorPaymentMethodViaParentOrganization',
+        'organization_debtor_payment_method_is_invoice' => 'setOrganizationDebtorPaymentMethodIsInvoice',
+        'organization_debtor_mandate_type' => 'setOrganizationDebtorMandateType',
+        'organization_debtor_mandate_running_number' => 'setOrganizationDebtorMandateRunningNumber',
+        'organization_debtor_payment_reference' => 'setOrganizationDebtorPaymentReference',
+        'organization_debtor_reference' => 'setOrganizationDebtorReference',
+        'organization_representative_id' => 'setOrganizationRepresentativeId',
+        'organization_representative_correspondence_name' => 'setOrganizationRepresentativeCorrespondenceName',
+        'organization_representative_correspondence_phone_number' => 'setOrganizationRepresentativeCorrespondencePhoneNumber',
+        'organization_representative_correspondence_email_address' => 'setOrganizationRepresentativeCorrespondenceEmailAddress',
+        'organization_representative_correspondence_website' => 'setOrganizationRepresentativeCorrespondenceWebsite',
+        'organization_productiemiddel_proposition_description' => 'setOrganizationProductiemiddelPropositionDescription',
+        'organization_organization_property_preferred_contact_method' => 'setOrganizationOrganizationPropertyPreferredContactMethod',
+        'company_label' => 'setCompanyLabel',
+        'reseller' => 'setReseller',
+        'organization_properties' => 'setOrganizationProperties'
     ];
 
     /**
@@ -382,74 +382,74 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
      * @var string[]
      */
     protected static $getters = [
-        'organization_login_is_availablek__backing_field' => 'getOrganizationLoginIsAvailablekBackingField',
-        'organization_login_namek__backing_field' => 'getOrganizationLoginNamekBackingField',
-        'organization_login_passwordk__backing_field' => 'getOrganizationLoginPasswordkBackingField',
-        'organization_contracts_purchase_order_numberk__backing_field' => 'getOrganizationContractsPurchaseOrderNumberkBackingField',
-        'organization_document_type_is_extensionk__backing_field' => 'getOrganizationDocumentTypeIsExtensionkBackingField',
-        'organization_connectionsk__backing_field' => 'getOrganizationConnectionskBackingField',
-        'organization_new_advance_paymentk__backing_field' => 'getOrganizationNewAdvancePaymentkBackingField',
-        'connection_price_component_pricesk__backing_field' => 'getConnectionPriceComponentPriceskBackingField',
-        'company_label_idk__backing_field' => 'getCompanyLabelIdkBackingField',
-        'organization_idk__backing_field' => 'getOrganizationIdkBackingField',
-        'organization_organization_sub_typek__backing_field' => 'getOrganizationOrganizationSubTypekBackingField',
-        'organization_categoryk__backing_field' => 'getOrganizationCategorykBackingField',
-        'organization_category_localizedk__backing_field' => 'getOrganizationCategoryLocalizedkBackingField',
-        'organization_referencek__backing_field' => 'getOrganizationReferencekBackingField',
-        'organization_client_referencek__backing_field' => 'getOrganizationClientReferencekBackingField',
-        'organization_origin_referencek__backing_field' => 'getOrganizationOriginReferencekBackingField',
-        'organization_correspondence_namek__backing_field' => 'getOrganizationCorrespondenceNamekBackingField',
-        'organization_correspondence_phone_numberk__backing_field' => 'getOrganizationCorrespondencePhoneNumberkBackingField',
-        'organization_email_addressk__backing_field' => 'getOrganizationEmailAddresskBackingField',
-        'organization_e_invoice_addressk__backing_field' => 'getOrganizationEInvoiceAddresskBackingField',
-        'organization_kv_k_numberk__backing_field' => 'getOrganizationKvKNumberkBackingField',
-        'organization_vat_numberk__backing_field' => 'getOrganizationVatNumberkBackingField',
-        'organization_is_businessk__backing_field' => 'getOrganizationIsBusinesskBackingField',
-        'organization_is_intercompanyk__backing_field' => 'getOrganizationIsIntercompanykBackingField',
-        'organization_group_namek__backing_field' => 'getOrganizationGroupNamekBackingField',
-        'organization_is_parentk__backing_field' => 'getOrganizationIsParentkBackingField',
-        'organization_is_daughterk__backing_field' => 'getOrganizationIsDaughterkBackingField',
-        'organization_parent_referencek__backing_field' => 'getOrganizationParentReferencekBackingField',
-        'organization_has_resellerk__backing_field' => 'getOrganizationHasResellerkBackingField',
-        'organization_person_gender_typek__backing_field' => 'getOrganizationPersonGenderTypekBackingField',
-        'organization_person_first_namek__backing_field' => 'getOrganizationPersonFirstNamekBackingField',
-        'organization_person_initialsk__backing_field' => 'getOrganizationPersonInitialskBackingField',
-        'organization_person_infixk__backing_field' => 'getOrganizationPersonInfixkBackingField',
-        'organization_person_last_namek__backing_field' => 'getOrganizationPersonLastNamekBackingField',
-        'organization_person_full_namek__backing_field' => 'getOrganizationPersonFullNamekBackingField',
-        'organization_person_salutationk__backing_field' => 'getOrganizationPersonSalutationkBackingField',
-        'organization_person_salutation_addressedk__backing_field' => 'getOrganizationPersonSalutationAddressedkBackingField',
-        'organization_person_salutation_addressed_upper_casedk__backing_field' => 'getOrganizationPersonSalutationAddressedUpperCasedkBackingField',
-        'organization_person_salutation_informalk__backing_field' => 'getOrganizationPersonSalutationInformalkBackingField',
-        'organization_person_birth_datek__backing_field' => 'getOrganizationPersonBirthDatekBackingField',
-        'organization_mailing_address_address_line1k__backing_field' => 'getOrganizationMailingAddressAddressLine1kBackingField',
-        'organization_mailing_address_address_line2k__backing_field' => 'getOrganizationMailingAddressAddressLine2kBackingField',
-        'organization_mailing_address_full_addressk__backing_field' => 'getOrganizationMailingAddressFullAddresskBackingField',
-        'organization_mailing_address_zip_codek__backing_field' => 'getOrganizationMailingAddressZipCodekBackingField',
-        'organization_mailing_address_cityk__backing_field' => 'getOrganizationMailingAddressCitykBackingField',
-        'organization_mailing_address_country_codek__backing_field' => 'getOrganizationMailingAddressCountryCodekBackingField',
-        'organization_debtor_namek__backing_field' => 'getOrganizationDebtorNamekBackingField',
-        'organization_debtor_bank_account_numberk__backing_field' => 'getOrganizationDebtorBankAccountNumberkBackingField',
-        'organization_debtor_bank_account_number_shortk__backing_field' => 'getOrganizationDebtorBankAccountNumberShortkBackingField',
-        'organization_debtor_bank_account_number_maskedk__backing_field' => 'getOrganizationDebtorBankAccountNumberMaskedkBackingField',
-        'organization_debtor_payment_method_is_automatic_collectionk__backing_field' => 'getOrganizationDebtorPaymentMethodIsAutomaticCollectionkBackingField',
-        'organization_debtor_payment_method_is_direct_payk__backing_field' => 'getOrganizationDebtorPaymentMethodIsDirectPaykBackingField',
-        'organization_debtor_payment_method_via_parent_organizationk__backing_field' => 'getOrganizationDebtorPaymentMethodViaParentOrganizationkBackingField',
-        'organization_debtor_payment_method_is_invoicek__backing_field' => 'getOrganizationDebtorPaymentMethodIsInvoicekBackingField',
-        'organization_debtor_mandate_typek__backing_field' => 'getOrganizationDebtorMandateTypekBackingField',
-        'organization_debtor_mandate_running_numberk__backing_field' => 'getOrganizationDebtorMandateRunningNumberkBackingField',
-        'organization_debtor_payment_referencek__backing_field' => 'getOrganizationDebtorPaymentReferencekBackingField',
-        'organization_debtor_referencek__backing_field' => 'getOrganizationDebtorReferencekBackingField',
-        'organization_representative_idk__backing_field' => 'getOrganizationRepresentativeIdkBackingField',
-        'organization_representative_correspondence_namek__backing_field' => 'getOrganizationRepresentativeCorrespondenceNamekBackingField',
-        'organization_representative_correspondence_phone_numberk__backing_field' => 'getOrganizationRepresentativeCorrespondencePhoneNumberkBackingField',
-        'organization_representative_correspondence_email_addressk__backing_field' => 'getOrganizationRepresentativeCorrespondenceEmailAddresskBackingField',
-        'organization_representative_correspondence_websitek__backing_field' => 'getOrganizationRepresentativeCorrespondenceWebsitekBackingField',
-        'organization_productiemiddel_proposition_descriptionk__backing_field' => 'getOrganizationProductiemiddelPropositionDescriptionkBackingField',
-        'organization_organization_property_preferred_contact_methodk__backing_field' => 'getOrganizationOrganizationPropertyPreferredContactMethodkBackingField',
-        'company_labelk__backing_field' => 'getCompanyLabelkBackingField',
-        'resellerk__backing_field' => 'getResellerkBackingField',
-        'organization_propertiesk__backing_field' => 'getOrganizationPropertieskBackingField'
+        'organization_login_is_available' => 'getOrganizationLoginIsAvailable',
+        'organization_login_name' => 'getOrganizationLoginName',
+        'organization_login_password' => 'getOrganizationLoginPassword',
+        'organization_contracts_purchase_order_number' => 'getOrganizationContractsPurchaseOrderNumber',
+        'organization_document_type_is_extension' => 'getOrganizationDocumentTypeIsExtension',
+        'organization_connections' => 'getOrganizationConnections',
+        'organization_new_advance_payment' => 'getOrganizationNewAdvancePayment',
+        'connection_price_component_prices' => 'getConnectionPriceComponentPrices',
+        'company_label_id' => 'getCompanyLabelId',
+        'organization_id' => 'getOrganizationId',
+        'organization_organization_sub_type' => 'getOrganizationOrganizationSubType',
+        'organization_category' => 'getOrganizationCategory',
+        'organization_category_localized' => 'getOrganizationCategoryLocalized',
+        'organization_reference' => 'getOrganizationReference',
+        'organization_client_reference' => 'getOrganizationClientReference',
+        'organization_origin_reference' => 'getOrganizationOriginReference',
+        'organization_correspondence_name' => 'getOrganizationCorrespondenceName',
+        'organization_correspondence_phone_number' => 'getOrganizationCorrespondencePhoneNumber',
+        'organization_email_address' => 'getOrganizationEmailAddress',
+        'organization_e_invoice_address' => 'getOrganizationEInvoiceAddress',
+        'organization_kv_k_number' => 'getOrganizationKvKNumber',
+        'organization_vat_number' => 'getOrganizationVatNumber',
+        'organization_is_business' => 'getOrganizationIsBusiness',
+        'organization_is_intercompany' => 'getOrganizationIsIntercompany',
+        'organization_group_name' => 'getOrganizationGroupName',
+        'organization_is_parent' => 'getOrganizationIsParent',
+        'organization_is_daughter' => 'getOrganizationIsDaughter',
+        'organization_parent_reference' => 'getOrganizationParentReference',
+        'organization_has_reseller' => 'getOrganizationHasReseller',
+        'organization_person_gender_type' => 'getOrganizationPersonGenderType',
+        'organization_person_first_name' => 'getOrganizationPersonFirstName',
+        'organization_person_initials' => 'getOrganizationPersonInitials',
+        'organization_person_infix' => 'getOrganizationPersonInfix',
+        'organization_person_last_name' => 'getOrganizationPersonLastName',
+        'organization_person_full_name' => 'getOrganizationPersonFullName',
+        'organization_person_salutation' => 'getOrganizationPersonSalutation',
+        'organization_person_salutation_addressed' => 'getOrganizationPersonSalutationAddressed',
+        'organization_person_salutation_addressed_upper_cased' => 'getOrganizationPersonSalutationAddressedUpperCased',
+        'organization_person_salutation_informal' => 'getOrganizationPersonSalutationInformal',
+        'organization_person_birth_date' => 'getOrganizationPersonBirthDate',
+        'organization_mailing_address_address_line1' => 'getOrganizationMailingAddressAddressLine1',
+        'organization_mailing_address_address_line2' => 'getOrganizationMailingAddressAddressLine2',
+        'organization_mailing_address_full_address' => 'getOrganizationMailingAddressFullAddress',
+        'organization_mailing_address_zip_code' => 'getOrganizationMailingAddressZipCode',
+        'organization_mailing_address_city' => 'getOrganizationMailingAddressCity',
+        'organization_mailing_address_country_code' => 'getOrganizationMailingAddressCountryCode',
+        'organization_debtor_name' => 'getOrganizationDebtorName',
+        'organization_debtor_bank_account_number' => 'getOrganizationDebtorBankAccountNumber',
+        'organization_debtor_bank_account_number_short' => 'getOrganizationDebtorBankAccountNumberShort',
+        'organization_debtor_bank_account_number_masked' => 'getOrganizationDebtorBankAccountNumberMasked',
+        'organization_debtor_payment_method_is_automatic_collection' => 'getOrganizationDebtorPaymentMethodIsAutomaticCollection',
+        'organization_debtor_payment_method_is_direct_pay' => 'getOrganizationDebtorPaymentMethodIsDirectPay',
+        'organization_debtor_payment_method_via_parent_organization' => 'getOrganizationDebtorPaymentMethodViaParentOrganization',
+        'organization_debtor_payment_method_is_invoice' => 'getOrganizationDebtorPaymentMethodIsInvoice',
+        'organization_debtor_mandate_type' => 'getOrganizationDebtorMandateType',
+        'organization_debtor_mandate_running_number' => 'getOrganizationDebtorMandateRunningNumber',
+        'organization_debtor_payment_reference' => 'getOrganizationDebtorPaymentReference',
+        'organization_debtor_reference' => 'getOrganizationDebtorReference',
+        'organization_representative_id' => 'getOrganizationRepresentativeId',
+        'organization_representative_correspondence_name' => 'getOrganizationRepresentativeCorrespondenceName',
+        'organization_representative_correspondence_phone_number' => 'getOrganizationRepresentativeCorrespondencePhoneNumber',
+        'organization_representative_correspondence_email_address' => 'getOrganizationRepresentativeCorrespondenceEmailAddress',
+        'organization_representative_correspondence_website' => 'getOrganizationRepresentativeCorrespondenceWebsite',
+        'organization_productiemiddel_proposition_description' => 'getOrganizationProductiemiddelPropositionDescription',
+        'organization_organization_property_preferred_contact_method' => 'getOrganizationOrganizationPropertyPreferredContactMethod',
+        'company_label' => 'getCompanyLabel',
+        'reseller' => 'getReseller',
+        'organization_properties' => 'getOrganizationProperties'
     ];
 
     /**
@@ -512,74 +512,74 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
      */
     public function __construct(array $data = null)
     {
-        $this->container['organization_login_is_availablek__backing_field'] = isset($data['organization_login_is_availablek__backing_field']) ? $data['organization_login_is_availablek__backing_field'] : null;
-        $this->container['organization_login_namek__backing_field'] = isset($data['organization_login_namek__backing_field']) ? $data['organization_login_namek__backing_field'] : null;
-        $this->container['organization_login_passwordk__backing_field'] = isset($data['organization_login_passwordk__backing_field']) ? $data['organization_login_passwordk__backing_field'] : null;
-        $this->container['organization_contracts_purchase_order_numberk__backing_field'] = isset($data['organization_contracts_purchase_order_numberk__backing_field']) ? $data['organization_contracts_purchase_order_numberk__backing_field'] : null;
-        $this->container['organization_document_type_is_extensionk__backing_field'] = isset($data['organization_document_type_is_extensionk__backing_field']) ? $data['organization_document_type_is_extensionk__backing_field'] : null;
-        $this->container['organization_connectionsk__backing_field'] = isset($data['organization_connectionsk__backing_field']) ? $data['organization_connectionsk__backing_field'] : null;
-        $this->container['organization_new_advance_paymentk__backing_field'] = isset($data['organization_new_advance_paymentk__backing_field']) ? $data['organization_new_advance_paymentk__backing_field'] : null;
-        $this->container['connection_price_component_pricesk__backing_field'] = isset($data['connection_price_component_pricesk__backing_field']) ? $data['connection_price_component_pricesk__backing_field'] : null;
-        $this->container['company_label_idk__backing_field'] = isset($data['company_label_idk__backing_field']) ? $data['company_label_idk__backing_field'] : null;
-        $this->container['organization_idk__backing_field'] = isset($data['organization_idk__backing_field']) ? $data['organization_idk__backing_field'] : null;
-        $this->container['organization_organization_sub_typek__backing_field'] = isset($data['organization_organization_sub_typek__backing_field']) ? $data['organization_organization_sub_typek__backing_field'] : null;
-        $this->container['organization_categoryk__backing_field'] = isset($data['organization_categoryk__backing_field']) ? $data['organization_categoryk__backing_field'] : null;
-        $this->container['organization_category_localizedk__backing_field'] = isset($data['organization_category_localizedk__backing_field']) ? $data['organization_category_localizedk__backing_field'] : null;
-        $this->container['organization_referencek__backing_field'] = isset($data['organization_referencek__backing_field']) ? $data['organization_referencek__backing_field'] : null;
-        $this->container['organization_client_referencek__backing_field'] = isset($data['organization_client_referencek__backing_field']) ? $data['organization_client_referencek__backing_field'] : null;
-        $this->container['organization_origin_referencek__backing_field'] = isset($data['organization_origin_referencek__backing_field']) ? $data['organization_origin_referencek__backing_field'] : null;
-        $this->container['organization_correspondence_namek__backing_field'] = isset($data['organization_correspondence_namek__backing_field']) ? $data['organization_correspondence_namek__backing_field'] : null;
-        $this->container['organization_correspondence_phone_numberk__backing_field'] = isset($data['organization_correspondence_phone_numberk__backing_field']) ? $data['organization_correspondence_phone_numberk__backing_field'] : null;
-        $this->container['organization_email_addressk__backing_field'] = isset($data['organization_email_addressk__backing_field']) ? $data['organization_email_addressk__backing_field'] : null;
-        $this->container['organization_e_invoice_addressk__backing_field'] = isset($data['organization_e_invoice_addressk__backing_field']) ? $data['organization_e_invoice_addressk__backing_field'] : null;
-        $this->container['organization_kv_k_numberk__backing_field'] = isset($data['organization_kv_k_numberk__backing_field']) ? $data['organization_kv_k_numberk__backing_field'] : null;
-        $this->container['organization_vat_numberk__backing_field'] = isset($data['organization_vat_numberk__backing_field']) ? $data['organization_vat_numberk__backing_field'] : null;
-        $this->container['organization_is_businessk__backing_field'] = isset($data['organization_is_businessk__backing_field']) ? $data['organization_is_businessk__backing_field'] : null;
-        $this->container['organization_is_intercompanyk__backing_field'] = isset($data['organization_is_intercompanyk__backing_field']) ? $data['organization_is_intercompanyk__backing_field'] : null;
-        $this->container['organization_group_namek__backing_field'] = isset($data['organization_group_namek__backing_field']) ? $data['organization_group_namek__backing_field'] : null;
-        $this->container['organization_is_parentk__backing_field'] = isset($data['organization_is_parentk__backing_field']) ? $data['organization_is_parentk__backing_field'] : null;
-        $this->container['organization_is_daughterk__backing_field'] = isset($data['organization_is_daughterk__backing_field']) ? $data['organization_is_daughterk__backing_field'] : null;
-        $this->container['organization_parent_referencek__backing_field'] = isset($data['organization_parent_referencek__backing_field']) ? $data['organization_parent_referencek__backing_field'] : null;
-        $this->container['organization_has_resellerk__backing_field'] = isset($data['organization_has_resellerk__backing_field']) ? $data['organization_has_resellerk__backing_field'] : null;
-        $this->container['organization_person_gender_typek__backing_field'] = isset($data['organization_person_gender_typek__backing_field']) ? $data['organization_person_gender_typek__backing_field'] : null;
-        $this->container['organization_person_first_namek__backing_field'] = isset($data['organization_person_first_namek__backing_field']) ? $data['organization_person_first_namek__backing_field'] : null;
-        $this->container['organization_person_initialsk__backing_field'] = isset($data['organization_person_initialsk__backing_field']) ? $data['organization_person_initialsk__backing_field'] : null;
-        $this->container['organization_person_infixk__backing_field'] = isset($data['organization_person_infixk__backing_field']) ? $data['organization_person_infixk__backing_field'] : null;
-        $this->container['organization_person_last_namek__backing_field'] = isset($data['organization_person_last_namek__backing_field']) ? $data['organization_person_last_namek__backing_field'] : null;
-        $this->container['organization_person_full_namek__backing_field'] = isset($data['organization_person_full_namek__backing_field']) ? $data['organization_person_full_namek__backing_field'] : null;
-        $this->container['organization_person_salutationk__backing_field'] = isset($data['organization_person_salutationk__backing_field']) ? $data['organization_person_salutationk__backing_field'] : null;
-        $this->container['organization_person_salutation_addressedk__backing_field'] = isset($data['organization_person_salutation_addressedk__backing_field']) ? $data['organization_person_salutation_addressedk__backing_field'] : null;
-        $this->container['organization_person_salutation_addressed_upper_casedk__backing_field'] = isset($data['organization_person_salutation_addressed_upper_casedk__backing_field']) ? $data['organization_person_salutation_addressed_upper_casedk__backing_field'] : null;
-        $this->container['organization_person_salutation_informalk__backing_field'] = isset($data['organization_person_salutation_informalk__backing_field']) ? $data['organization_person_salutation_informalk__backing_field'] : null;
-        $this->container['organization_person_birth_datek__backing_field'] = isset($data['organization_person_birth_datek__backing_field']) ? $data['organization_person_birth_datek__backing_field'] : null;
-        $this->container['organization_mailing_address_address_line1k__backing_field'] = isset($data['organization_mailing_address_address_line1k__backing_field']) ? $data['organization_mailing_address_address_line1k__backing_field'] : null;
-        $this->container['organization_mailing_address_address_line2k__backing_field'] = isset($data['organization_mailing_address_address_line2k__backing_field']) ? $data['organization_mailing_address_address_line2k__backing_field'] : null;
-        $this->container['organization_mailing_address_full_addressk__backing_field'] = isset($data['organization_mailing_address_full_addressk__backing_field']) ? $data['organization_mailing_address_full_addressk__backing_field'] : null;
-        $this->container['organization_mailing_address_zip_codek__backing_field'] = isset($data['organization_mailing_address_zip_codek__backing_field']) ? $data['organization_mailing_address_zip_codek__backing_field'] : null;
-        $this->container['organization_mailing_address_cityk__backing_field'] = isset($data['organization_mailing_address_cityk__backing_field']) ? $data['organization_mailing_address_cityk__backing_field'] : null;
-        $this->container['organization_mailing_address_country_codek__backing_field'] = isset($data['organization_mailing_address_country_codek__backing_field']) ? $data['organization_mailing_address_country_codek__backing_field'] : null;
-        $this->container['organization_debtor_namek__backing_field'] = isset($data['organization_debtor_namek__backing_field']) ? $data['organization_debtor_namek__backing_field'] : null;
-        $this->container['organization_debtor_bank_account_numberk__backing_field'] = isset($data['organization_debtor_bank_account_numberk__backing_field']) ? $data['organization_debtor_bank_account_numberk__backing_field'] : null;
-        $this->container['organization_debtor_bank_account_number_shortk__backing_field'] = isset($data['organization_debtor_bank_account_number_shortk__backing_field']) ? $data['organization_debtor_bank_account_number_shortk__backing_field'] : null;
-        $this->container['organization_debtor_bank_account_number_maskedk__backing_field'] = isset($data['organization_debtor_bank_account_number_maskedk__backing_field']) ? $data['organization_debtor_bank_account_number_maskedk__backing_field'] : null;
-        $this->container['organization_debtor_payment_method_is_automatic_collectionk__backing_field'] = isset($data['organization_debtor_payment_method_is_automatic_collectionk__backing_field']) ? $data['organization_debtor_payment_method_is_automatic_collectionk__backing_field'] : null;
-        $this->container['organization_debtor_payment_method_is_direct_payk__backing_field'] = isset($data['organization_debtor_payment_method_is_direct_payk__backing_field']) ? $data['organization_debtor_payment_method_is_direct_payk__backing_field'] : null;
-        $this->container['organization_debtor_payment_method_via_parent_organizationk__backing_field'] = isset($data['organization_debtor_payment_method_via_parent_organizationk__backing_field']) ? $data['organization_debtor_payment_method_via_parent_organizationk__backing_field'] : null;
-        $this->container['organization_debtor_payment_method_is_invoicek__backing_field'] = isset($data['organization_debtor_payment_method_is_invoicek__backing_field']) ? $data['organization_debtor_payment_method_is_invoicek__backing_field'] : null;
-        $this->container['organization_debtor_mandate_typek__backing_field'] = isset($data['organization_debtor_mandate_typek__backing_field']) ? $data['organization_debtor_mandate_typek__backing_field'] : null;
-        $this->container['organization_debtor_mandate_running_numberk__backing_field'] = isset($data['organization_debtor_mandate_running_numberk__backing_field']) ? $data['organization_debtor_mandate_running_numberk__backing_field'] : null;
-        $this->container['organization_debtor_payment_referencek__backing_field'] = isset($data['organization_debtor_payment_referencek__backing_field']) ? $data['organization_debtor_payment_referencek__backing_field'] : null;
-        $this->container['organization_debtor_referencek__backing_field'] = isset($data['organization_debtor_referencek__backing_field']) ? $data['organization_debtor_referencek__backing_field'] : null;
-        $this->container['organization_representative_idk__backing_field'] = isset($data['organization_representative_idk__backing_field']) ? $data['organization_representative_idk__backing_field'] : null;
-        $this->container['organization_representative_correspondence_namek__backing_field'] = isset($data['organization_representative_correspondence_namek__backing_field']) ? $data['organization_representative_correspondence_namek__backing_field'] : null;
-        $this->container['organization_representative_correspondence_phone_numberk__backing_field'] = isset($data['organization_representative_correspondence_phone_numberk__backing_field']) ? $data['organization_representative_correspondence_phone_numberk__backing_field'] : null;
-        $this->container['organization_representative_correspondence_email_addressk__backing_field'] = isset($data['organization_representative_correspondence_email_addressk__backing_field']) ? $data['organization_representative_correspondence_email_addressk__backing_field'] : null;
-        $this->container['organization_representative_correspondence_websitek__backing_field'] = isset($data['organization_representative_correspondence_websitek__backing_field']) ? $data['organization_representative_correspondence_websitek__backing_field'] : null;
-        $this->container['organization_productiemiddel_proposition_descriptionk__backing_field'] = isset($data['organization_productiemiddel_proposition_descriptionk__backing_field']) ? $data['organization_productiemiddel_proposition_descriptionk__backing_field'] : null;
-        $this->container['organization_organization_property_preferred_contact_methodk__backing_field'] = isset($data['organization_organization_property_preferred_contact_methodk__backing_field']) ? $data['organization_organization_property_preferred_contact_methodk__backing_field'] : null;
-        $this->container['company_labelk__backing_field'] = isset($data['company_labelk__backing_field']) ? $data['company_labelk__backing_field'] : null;
-        $this->container['resellerk__backing_field'] = isset($data['resellerk__backing_field']) ? $data['resellerk__backing_field'] : null;
-        $this->container['organization_propertiesk__backing_field'] = isset($data['organization_propertiesk__backing_field']) ? $data['organization_propertiesk__backing_field'] : null;
+        $this->container['organization_login_is_available'] = isset($data['organization_login_is_available']) ? $data['organization_login_is_available'] : null;
+        $this->container['organization_login_name'] = isset($data['organization_login_name']) ? $data['organization_login_name'] : null;
+        $this->container['organization_login_password'] = isset($data['organization_login_password']) ? $data['organization_login_password'] : null;
+        $this->container['organization_contracts_purchase_order_number'] = isset($data['organization_contracts_purchase_order_number']) ? $data['organization_contracts_purchase_order_number'] : null;
+        $this->container['organization_document_type_is_extension'] = isset($data['organization_document_type_is_extension']) ? $data['organization_document_type_is_extension'] : null;
+        $this->container['organization_connections'] = isset($data['organization_connections']) ? $data['organization_connections'] : null;
+        $this->container['organization_new_advance_payment'] = isset($data['organization_new_advance_payment']) ? $data['organization_new_advance_payment'] : null;
+        $this->container['connection_price_component_prices'] = isset($data['connection_price_component_prices']) ? $data['connection_price_component_prices'] : null;
+        $this->container['company_label_id'] = isset($data['company_label_id']) ? $data['company_label_id'] : null;
+        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
+        $this->container['organization_organization_sub_type'] = isset($data['organization_organization_sub_type']) ? $data['organization_organization_sub_type'] : null;
+        $this->container['organization_category'] = isset($data['organization_category']) ? $data['organization_category'] : null;
+        $this->container['organization_category_localized'] = isset($data['organization_category_localized']) ? $data['organization_category_localized'] : null;
+        $this->container['organization_reference'] = isset($data['organization_reference']) ? $data['organization_reference'] : null;
+        $this->container['organization_client_reference'] = isset($data['organization_client_reference']) ? $data['organization_client_reference'] : null;
+        $this->container['organization_origin_reference'] = isset($data['organization_origin_reference']) ? $data['organization_origin_reference'] : null;
+        $this->container['organization_correspondence_name'] = isset($data['organization_correspondence_name']) ? $data['organization_correspondence_name'] : null;
+        $this->container['organization_correspondence_phone_number'] = isset($data['organization_correspondence_phone_number']) ? $data['organization_correspondence_phone_number'] : null;
+        $this->container['organization_email_address'] = isset($data['organization_email_address']) ? $data['organization_email_address'] : null;
+        $this->container['organization_e_invoice_address'] = isset($data['organization_e_invoice_address']) ? $data['organization_e_invoice_address'] : null;
+        $this->container['organization_kv_k_number'] = isset($data['organization_kv_k_number']) ? $data['organization_kv_k_number'] : null;
+        $this->container['organization_vat_number'] = isset($data['organization_vat_number']) ? $data['organization_vat_number'] : null;
+        $this->container['organization_is_business'] = isset($data['organization_is_business']) ? $data['organization_is_business'] : null;
+        $this->container['organization_is_intercompany'] = isset($data['organization_is_intercompany']) ? $data['organization_is_intercompany'] : null;
+        $this->container['organization_group_name'] = isset($data['organization_group_name']) ? $data['organization_group_name'] : null;
+        $this->container['organization_is_parent'] = isset($data['organization_is_parent']) ? $data['organization_is_parent'] : null;
+        $this->container['organization_is_daughter'] = isset($data['organization_is_daughter']) ? $data['organization_is_daughter'] : null;
+        $this->container['organization_parent_reference'] = isset($data['organization_parent_reference']) ? $data['organization_parent_reference'] : null;
+        $this->container['organization_has_reseller'] = isset($data['organization_has_reseller']) ? $data['organization_has_reseller'] : null;
+        $this->container['organization_person_gender_type'] = isset($data['organization_person_gender_type']) ? $data['organization_person_gender_type'] : null;
+        $this->container['organization_person_first_name'] = isset($data['organization_person_first_name']) ? $data['organization_person_first_name'] : null;
+        $this->container['organization_person_initials'] = isset($data['organization_person_initials']) ? $data['organization_person_initials'] : null;
+        $this->container['organization_person_infix'] = isset($data['organization_person_infix']) ? $data['organization_person_infix'] : null;
+        $this->container['organization_person_last_name'] = isset($data['organization_person_last_name']) ? $data['organization_person_last_name'] : null;
+        $this->container['organization_person_full_name'] = isset($data['organization_person_full_name']) ? $data['organization_person_full_name'] : null;
+        $this->container['organization_person_salutation'] = isset($data['organization_person_salutation']) ? $data['organization_person_salutation'] : null;
+        $this->container['organization_person_salutation_addressed'] = isset($data['organization_person_salutation_addressed']) ? $data['organization_person_salutation_addressed'] : null;
+        $this->container['organization_person_salutation_addressed_upper_cased'] = isset($data['organization_person_salutation_addressed_upper_cased']) ? $data['organization_person_salutation_addressed_upper_cased'] : null;
+        $this->container['organization_person_salutation_informal'] = isset($data['organization_person_salutation_informal']) ? $data['organization_person_salutation_informal'] : null;
+        $this->container['organization_person_birth_date'] = isset($data['organization_person_birth_date']) ? $data['organization_person_birth_date'] : null;
+        $this->container['organization_mailing_address_address_line1'] = isset($data['organization_mailing_address_address_line1']) ? $data['organization_mailing_address_address_line1'] : null;
+        $this->container['organization_mailing_address_address_line2'] = isset($data['organization_mailing_address_address_line2']) ? $data['organization_mailing_address_address_line2'] : null;
+        $this->container['organization_mailing_address_full_address'] = isset($data['organization_mailing_address_full_address']) ? $data['organization_mailing_address_full_address'] : null;
+        $this->container['organization_mailing_address_zip_code'] = isset($data['organization_mailing_address_zip_code']) ? $data['organization_mailing_address_zip_code'] : null;
+        $this->container['organization_mailing_address_city'] = isset($data['organization_mailing_address_city']) ? $data['organization_mailing_address_city'] : null;
+        $this->container['organization_mailing_address_country_code'] = isset($data['organization_mailing_address_country_code']) ? $data['organization_mailing_address_country_code'] : null;
+        $this->container['organization_debtor_name'] = isset($data['organization_debtor_name']) ? $data['organization_debtor_name'] : null;
+        $this->container['organization_debtor_bank_account_number'] = isset($data['organization_debtor_bank_account_number']) ? $data['organization_debtor_bank_account_number'] : null;
+        $this->container['organization_debtor_bank_account_number_short'] = isset($data['organization_debtor_bank_account_number_short']) ? $data['organization_debtor_bank_account_number_short'] : null;
+        $this->container['organization_debtor_bank_account_number_masked'] = isset($data['organization_debtor_bank_account_number_masked']) ? $data['organization_debtor_bank_account_number_masked'] : null;
+        $this->container['organization_debtor_payment_method_is_automatic_collection'] = isset($data['organization_debtor_payment_method_is_automatic_collection']) ? $data['organization_debtor_payment_method_is_automatic_collection'] : null;
+        $this->container['organization_debtor_payment_method_is_direct_pay'] = isset($data['organization_debtor_payment_method_is_direct_pay']) ? $data['organization_debtor_payment_method_is_direct_pay'] : null;
+        $this->container['organization_debtor_payment_method_via_parent_organization'] = isset($data['organization_debtor_payment_method_via_parent_organization']) ? $data['organization_debtor_payment_method_via_parent_organization'] : null;
+        $this->container['organization_debtor_payment_method_is_invoice'] = isset($data['organization_debtor_payment_method_is_invoice']) ? $data['organization_debtor_payment_method_is_invoice'] : null;
+        $this->container['organization_debtor_mandate_type'] = isset($data['organization_debtor_mandate_type']) ? $data['organization_debtor_mandate_type'] : null;
+        $this->container['organization_debtor_mandate_running_number'] = isset($data['organization_debtor_mandate_running_number']) ? $data['organization_debtor_mandate_running_number'] : null;
+        $this->container['organization_debtor_payment_reference'] = isset($data['organization_debtor_payment_reference']) ? $data['organization_debtor_payment_reference'] : null;
+        $this->container['organization_debtor_reference'] = isset($data['organization_debtor_reference']) ? $data['organization_debtor_reference'] : null;
+        $this->container['organization_representative_id'] = isset($data['organization_representative_id']) ? $data['organization_representative_id'] : null;
+        $this->container['organization_representative_correspondence_name'] = isset($data['organization_representative_correspondence_name']) ? $data['organization_representative_correspondence_name'] : null;
+        $this->container['organization_representative_correspondence_phone_number'] = isset($data['organization_representative_correspondence_phone_number']) ? $data['organization_representative_correspondence_phone_number'] : null;
+        $this->container['organization_representative_correspondence_email_address'] = isset($data['organization_representative_correspondence_email_address']) ? $data['organization_representative_correspondence_email_address'] : null;
+        $this->container['organization_representative_correspondence_website'] = isset($data['organization_representative_correspondence_website']) ? $data['organization_representative_correspondence_website'] : null;
+        $this->container['organization_productiemiddel_proposition_description'] = isset($data['organization_productiemiddel_proposition_description']) ? $data['organization_productiemiddel_proposition_description'] : null;
+        $this->container['organization_organization_property_preferred_contact_method'] = isset($data['organization_organization_property_preferred_contact_method']) ? $data['organization_organization_property_preferred_contact_method'] : null;
+        $this->container['company_label'] = isset($data['company_label']) ? $data['company_label'] : null;
+        $this->container['reseller'] = isset($data['reseller']) ? $data['reseller'] : null;
+        $this->container['organization_properties'] = isset($data['organization_properties']) ? $data['organization_properties'] : null;
     }
 
     /**
@@ -607,1633 +607,1633 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
 
 
     /**
-     * Gets organization_login_is_availablek__backing_field
+     * Gets organization_login_is_available
      *
      * @return bool
      */
-    public function getOrganizationLoginIsAvailablekBackingField()
+    public function getOrganizationLoginIsAvailable()
     {
-        return $this->container['organization_login_is_availablek__backing_field'];
+        return $this->container['organization_login_is_available'];
     }
 
     /**
-     * Sets organization_login_is_availablek__backing_field
+     * Sets organization_login_is_available
      *
-     * @param bool $organization_login_is_availablek__backing_field organization_login_is_availablek__backing_field
+     * @param bool $organization_login_is_available organization_login_is_available
      *
      * @return $this
      */
-    public function setOrganizationLoginIsAvailablekBackingField($organization_login_is_availablek__backing_field)
+    public function setOrganizationLoginIsAvailable($organization_login_is_available)
     {
-        $this->container['organization_login_is_availablek__backing_field'] = $organization_login_is_availablek__backing_field;
+        $this->container['organization_login_is_available'] = $organization_login_is_available;
 
         return $this;
     }
 
     /**
-     * Gets organization_login_namek__backing_field
+     * Gets organization_login_name
      *
      * @return string
      */
-    public function getOrganizationLoginNamekBackingField()
+    public function getOrganizationLoginName()
     {
-        return $this->container['organization_login_namek__backing_field'];
+        return $this->container['organization_login_name'];
     }
 
     /**
-     * Sets organization_login_namek__backing_field
+     * Sets organization_login_name
      *
-     * @param string $organization_login_namek__backing_field organization_login_namek__backing_field
+     * @param string $organization_login_name organization_login_name
      *
      * @return $this
      */
-    public function setOrganizationLoginNamekBackingField($organization_login_namek__backing_field)
+    public function setOrganizationLoginName($organization_login_name)
     {
-        $this->container['organization_login_namek__backing_field'] = $organization_login_namek__backing_field;
+        $this->container['organization_login_name'] = $organization_login_name;
 
         return $this;
     }
 
     /**
-     * Gets organization_login_passwordk__backing_field
+     * Gets organization_login_password
      *
      * @return string
      */
-    public function getOrganizationLoginPasswordkBackingField()
+    public function getOrganizationLoginPassword()
     {
-        return $this->container['organization_login_passwordk__backing_field'];
+        return $this->container['organization_login_password'];
     }
 
     /**
-     * Sets organization_login_passwordk__backing_field
+     * Sets organization_login_password
      *
-     * @param string $organization_login_passwordk__backing_field organization_login_passwordk__backing_field
+     * @param string $organization_login_password organization_login_password
      *
      * @return $this
      */
-    public function setOrganizationLoginPasswordkBackingField($organization_login_passwordk__backing_field)
+    public function setOrganizationLoginPassword($organization_login_password)
     {
-        $this->container['organization_login_passwordk__backing_field'] = $organization_login_passwordk__backing_field;
+        $this->container['organization_login_password'] = $organization_login_password;
 
         return $this;
     }
 
     /**
-     * Gets organization_contracts_purchase_order_numberk__backing_field
+     * Gets organization_contracts_purchase_order_number
      *
      * @return string
      */
-    public function getOrganizationContractsPurchaseOrderNumberkBackingField()
+    public function getOrganizationContractsPurchaseOrderNumber()
     {
-        return $this->container['organization_contracts_purchase_order_numberk__backing_field'];
+        return $this->container['organization_contracts_purchase_order_number'];
     }
 
     /**
-     * Sets organization_contracts_purchase_order_numberk__backing_field
+     * Sets organization_contracts_purchase_order_number
      *
-     * @param string $organization_contracts_purchase_order_numberk__backing_field organization_contracts_purchase_order_numberk__backing_field
+     * @param string $organization_contracts_purchase_order_number organization_contracts_purchase_order_number
      *
      * @return $this
      */
-    public function setOrganizationContractsPurchaseOrderNumberkBackingField($organization_contracts_purchase_order_numberk__backing_field)
+    public function setOrganizationContractsPurchaseOrderNumber($organization_contracts_purchase_order_number)
     {
-        $this->container['organization_contracts_purchase_order_numberk__backing_field'] = $organization_contracts_purchase_order_numberk__backing_field;
+        $this->container['organization_contracts_purchase_order_number'] = $organization_contracts_purchase_order_number;
 
         return $this;
     }
 
     /**
-     * Gets organization_document_type_is_extensionk__backing_field
+     * Gets organization_document_type_is_extension
      *
      * @return bool
      */
-    public function getOrganizationDocumentTypeIsExtensionkBackingField()
+    public function getOrganizationDocumentTypeIsExtension()
     {
-        return $this->container['organization_document_type_is_extensionk__backing_field'];
+        return $this->container['organization_document_type_is_extension'];
     }
 
     /**
-     * Sets organization_document_type_is_extensionk__backing_field
+     * Sets organization_document_type_is_extension
      *
-     * @param bool $organization_document_type_is_extensionk__backing_field organization_document_type_is_extensionk__backing_field
+     * @param bool $organization_document_type_is_extension organization_document_type_is_extension
      *
      * @return $this
      */
-    public function setOrganizationDocumentTypeIsExtensionkBackingField($organization_document_type_is_extensionk__backing_field)
+    public function setOrganizationDocumentTypeIsExtension($organization_document_type_is_extension)
     {
-        $this->container['organization_document_type_is_extensionk__backing_field'] = $organization_document_type_is_extensionk__backing_field;
+        $this->container['organization_document_type_is_extension'] = $organization_document_type_is_extension;
 
         return $this;
     }
 
     /**
-     * Gets organization_connectionsk__backing_field
+     * Gets organization_connections
      *
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoConnection[]
      */
-    public function getOrganizationConnectionskBackingField()
+    public function getOrganizationConnections()
     {
-        return $this->container['organization_connectionsk__backing_field'];
+        return $this->container['organization_connections'];
     }
 
     /**
-     * Sets organization_connectionsk__backing_field
+     * Sets organization_connections
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoConnection[] $organization_connectionsk__backing_field organization_connectionsk__backing_field
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoConnection[] $organization_connections organization_connections
      *
      * @return $this
      */
-    public function setOrganizationConnectionskBackingField($organization_connectionsk__backing_field)
+    public function setOrganizationConnections($organization_connections)
     {
-        $this->container['organization_connectionsk__backing_field'] = $organization_connectionsk__backing_field;
+        $this->container['organization_connections'] = $organization_connections;
 
         return $this;
     }
 
     /**
-     * Gets organization_new_advance_paymentk__backing_field
+     * Gets organization_new_advance_payment
      *
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoNewAdvancePayment
      */
-    public function getOrganizationNewAdvancePaymentkBackingField()
+    public function getOrganizationNewAdvancePayment()
     {
-        return $this->container['organization_new_advance_paymentk__backing_field'];
+        return $this->container['organization_new_advance_payment'];
     }
 
     /**
-     * Sets organization_new_advance_paymentk__backing_field
+     * Sets organization_new_advance_payment
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoNewAdvancePayment $organization_new_advance_paymentk__backing_field organization_new_advance_paymentk__backing_field
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyWelcomeLetterEnergyDtoNewAdvancePayment $organization_new_advance_payment organization_new_advance_payment
      *
      * @return $this
      */
-    public function setOrganizationNewAdvancePaymentkBackingField($organization_new_advance_paymentk__backing_field)
+    public function setOrganizationNewAdvancePayment($organization_new_advance_payment)
     {
-        $this->container['organization_new_advance_paymentk__backing_field'] = $organization_new_advance_paymentk__backing_field;
+        $this->container['organization_new_advance_payment'] = $organization_new_advance_payment;
 
         return $this;
     }
 
     /**
-     * Gets connection_price_component_pricesk__backing_field
+     * Gets connection_price_component_prices
      *
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceComponentPriceDto[]
      */
-    public function getConnectionPriceComponentPriceskBackingField()
+    public function getConnectionPriceComponentPrices()
     {
-        return $this->container['connection_price_component_pricesk__backing_field'];
+        return $this->container['connection_price_component_prices'];
     }
 
     /**
-     * Sets connection_price_component_pricesk__backing_field
+     * Sets connection_price_component_prices
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceComponentPriceDto[] $connection_price_component_pricesk__backing_field connection_price_component_pricesk__backing_field
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceComponentPriceDto[] $connection_price_component_prices connection_price_component_prices
      *
      * @return $this
      */
-    public function setConnectionPriceComponentPriceskBackingField($connection_price_component_pricesk__backing_field)
+    public function setConnectionPriceComponentPrices($connection_price_component_prices)
     {
-        $this->container['connection_price_component_pricesk__backing_field'] = $connection_price_component_pricesk__backing_field;
+        $this->container['connection_price_component_prices'] = $connection_price_component_prices;
 
         return $this;
     }
 
     /**
-     * Gets company_label_idk__backing_field
+     * Gets company_label_id
      *
      * @return string
      */
-    public function getCompanyLabelIdkBackingField()
+    public function getCompanyLabelId()
     {
-        return $this->container['company_label_idk__backing_field'];
+        return $this->container['company_label_id'];
     }
 
     /**
-     * Sets company_label_idk__backing_field
+     * Sets company_label_id
      *
-     * @param string $company_label_idk__backing_field company_label_idk__backing_field
+     * @param string $company_label_id company_label_id
      *
      * @return $this
      */
-    public function setCompanyLabelIdkBackingField($company_label_idk__backing_field)
+    public function setCompanyLabelId($company_label_id)
     {
-        $this->container['company_label_idk__backing_field'] = $company_label_idk__backing_field;
+        $this->container['company_label_id'] = $company_label_id;
 
         return $this;
     }
 
     /**
-     * Gets organization_idk__backing_field
+     * Gets organization_id
      *
      * @return string
      */
-    public function getOrganizationIdkBackingField()
+    public function getOrganizationId()
     {
-        return $this->container['organization_idk__backing_field'];
+        return $this->container['organization_id'];
     }
 
     /**
-     * Sets organization_idk__backing_field
+     * Sets organization_id
      *
-     * @param string $organization_idk__backing_field organization_idk__backing_field
+     * @param string $organization_id organization_id
      *
      * @return $this
      */
-    public function setOrganizationIdkBackingField($organization_idk__backing_field)
+    public function setOrganizationId($organization_id)
     {
-        $this->container['organization_idk__backing_field'] = $organization_idk__backing_field;
+        $this->container['organization_id'] = $organization_id;
 
         return $this;
     }
 
     /**
-     * Gets organization_organization_sub_typek__backing_field
+     * Gets organization_organization_sub_type
      *
      * @return string
      */
-    public function getOrganizationOrganizationSubTypekBackingField()
+    public function getOrganizationOrganizationSubType()
     {
-        return $this->container['organization_organization_sub_typek__backing_field'];
+        return $this->container['organization_organization_sub_type'];
     }
 
     /**
-     * Sets organization_organization_sub_typek__backing_field
+     * Sets organization_organization_sub_type
      *
-     * @param string $organization_organization_sub_typek__backing_field organization_organization_sub_typek__backing_field
+     * @param string $organization_organization_sub_type organization_organization_sub_type
      *
      * @return $this
      */
-    public function setOrganizationOrganizationSubTypekBackingField($organization_organization_sub_typek__backing_field)
+    public function setOrganizationOrganizationSubType($organization_organization_sub_type)
     {
-        $this->container['organization_organization_sub_typek__backing_field'] = $organization_organization_sub_typek__backing_field;
+        $this->container['organization_organization_sub_type'] = $organization_organization_sub_type;
 
         return $this;
     }
 
     /**
-     * Gets organization_categoryk__backing_field
+     * Gets organization_category
      *
      * @return string
      */
-    public function getOrganizationCategorykBackingField()
+    public function getOrganizationCategory()
     {
-        return $this->container['organization_categoryk__backing_field'];
+        return $this->container['organization_category'];
     }
 
     /**
-     * Sets organization_categoryk__backing_field
+     * Sets organization_category
      *
-     * @param string $organization_categoryk__backing_field organization_categoryk__backing_field
+     * @param string $organization_category organization_category
      *
      * @return $this
      */
-    public function setOrganizationCategorykBackingField($organization_categoryk__backing_field)
+    public function setOrganizationCategory($organization_category)
     {
-        $this->container['organization_categoryk__backing_field'] = $organization_categoryk__backing_field;
+        $this->container['organization_category'] = $organization_category;
 
         return $this;
     }
 
     /**
-     * Gets organization_category_localizedk__backing_field
+     * Gets organization_category_localized
      *
      * @return string
      */
-    public function getOrganizationCategoryLocalizedkBackingField()
+    public function getOrganizationCategoryLocalized()
     {
-        return $this->container['organization_category_localizedk__backing_field'];
+        return $this->container['organization_category_localized'];
     }
 
     /**
-     * Sets organization_category_localizedk__backing_field
+     * Sets organization_category_localized
      *
-     * @param string $organization_category_localizedk__backing_field organization_category_localizedk__backing_field
+     * @param string $organization_category_localized organization_category_localized
      *
      * @return $this
      */
-    public function setOrganizationCategoryLocalizedkBackingField($organization_category_localizedk__backing_field)
+    public function setOrganizationCategoryLocalized($organization_category_localized)
     {
-        $this->container['organization_category_localizedk__backing_field'] = $organization_category_localizedk__backing_field;
+        $this->container['organization_category_localized'] = $organization_category_localized;
 
         return $this;
     }
 
     /**
-     * Gets organization_referencek__backing_field
+     * Gets organization_reference
      *
      * @return string
      */
-    public function getOrganizationReferencekBackingField()
+    public function getOrganizationReference()
     {
-        return $this->container['organization_referencek__backing_field'];
+        return $this->container['organization_reference'];
     }
 
     /**
-     * Sets organization_referencek__backing_field
+     * Sets organization_reference
      *
-     * @param string $organization_referencek__backing_field organization_referencek__backing_field
+     * @param string $organization_reference organization_reference
      *
      * @return $this
      */
-    public function setOrganizationReferencekBackingField($organization_referencek__backing_field)
+    public function setOrganizationReference($organization_reference)
     {
-        $this->container['organization_referencek__backing_field'] = $organization_referencek__backing_field;
+        $this->container['organization_reference'] = $organization_reference;
 
         return $this;
     }
 
     /**
-     * Gets organization_client_referencek__backing_field
+     * Gets organization_client_reference
      *
      * @return string
      */
-    public function getOrganizationClientReferencekBackingField()
+    public function getOrganizationClientReference()
     {
-        return $this->container['organization_client_referencek__backing_field'];
+        return $this->container['organization_client_reference'];
     }
 
     /**
-     * Sets organization_client_referencek__backing_field
+     * Sets organization_client_reference
      *
-     * @param string $organization_client_referencek__backing_field organization_client_referencek__backing_field
+     * @param string $organization_client_reference organization_client_reference
      *
      * @return $this
      */
-    public function setOrganizationClientReferencekBackingField($organization_client_referencek__backing_field)
+    public function setOrganizationClientReference($organization_client_reference)
     {
-        $this->container['organization_client_referencek__backing_field'] = $organization_client_referencek__backing_field;
+        $this->container['organization_client_reference'] = $organization_client_reference;
 
         return $this;
     }
 
     /**
-     * Gets organization_origin_referencek__backing_field
+     * Gets organization_origin_reference
      *
      * @return string
      */
-    public function getOrganizationOriginReferencekBackingField()
+    public function getOrganizationOriginReference()
     {
-        return $this->container['organization_origin_referencek__backing_field'];
+        return $this->container['organization_origin_reference'];
     }
 
     /**
-     * Sets organization_origin_referencek__backing_field
+     * Sets organization_origin_reference
      *
-     * @param string $organization_origin_referencek__backing_field organization_origin_referencek__backing_field
+     * @param string $organization_origin_reference organization_origin_reference
      *
      * @return $this
      */
-    public function setOrganizationOriginReferencekBackingField($organization_origin_referencek__backing_field)
+    public function setOrganizationOriginReference($organization_origin_reference)
     {
-        $this->container['organization_origin_referencek__backing_field'] = $organization_origin_referencek__backing_field;
+        $this->container['organization_origin_reference'] = $organization_origin_reference;
 
         return $this;
     }
 
     /**
-     * Gets organization_correspondence_namek__backing_field
+     * Gets organization_correspondence_name
      *
      * @return string
      */
-    public function getOrganizationCorrespondenceNamekBackingField()
+    public function getOrganizationCorrespondenceName()
     {
-        return $this->container['organization_correspondence_namek__backing_field'];
+        return $this->container['organization_correspondence_name'];
     }
 
     /**
-     * Sets organization_correspondence_namek__backing_field
+     * Sets organization_correspondence_name
      *
-     * @param string $organization_correspondence_namek__backing_field organization_correspondence_namek__backing_field
+     * @param string $organization_correspondence_name organization_correspondence_name
      *
      * @return $this
      */
-    public function setOrganizationCorrespondenceNamekBackingField($organization_correspondence_namek__backing_field)
+    public function setOrganizationCorrespondenceName($organization_correspondence_name)
     {
-        $this->container['organization_correspondence_namek__backing_field'] = $organization_correspondence_namek__backing_field;
+        $this->container['organization_correspondence_name'] = $organization_correspondence_name;
 
         return $this;
     }
 
     /**
-     * Gets organization_correspondence_phone_numberk__backing_field
+     * Gets organization_correspondence_phone_number
      *
      * @return string
      */
-    public function getOrganizationCorrespondencePhoneNumberkBackingField()
+    public function getOrganizationCorrespondencePhoneNumber()
     {
-        return $this->container['organization_correspondence_phone_numberk__backing_field'];
+        return $this->container['organization_correspondence_phone_number'];
     }
 
     /**
-     * Sets organization_correspondence_phone_numberk__backing_field
+     * Sets organization_correspondence_phone_number
      *
-     * @param string $organization_correspondence_phone_numberk__backing_field organization_correspondence_phone_numberk__backing_field
+     * @param string $organization_correspondence_phone_number organization_correspondence_phone_number
      *
      * @return $this
      */
-    public function setOrganizationCorrespondencePhoneNumberkBackingField($organization_correspondence_phone_numberk__backing_field)
+    public function setOrganizationCorrespondencePhoneNumber($organization_correspondence_phone_number)
     {
-        $this->container['organization_correspondence_phone_numberk__backing_field'] = $organization_correspondence_phone_numberk__backing_field;
+        $this->container['organization_correspondence_phone_number'] = $organization_correspondence_phone_number;
 
         return $this;
     }
 
     /**
-     * Gets organization_email_addressk__backing_field
+     * Gets organization_email_address
      *
      * @return string
      */
-    public function getOrganizationEmailAddresskBackingField()
+    public function getOrganizationEmailAddress()
     {
-        return $this->container['organization_email_addressk__backing_field'];
+        return $this->container['organization_email_address'];
     }
 
     /**
-     * Sets organization_email_addressk__backing_field
+     * Sets organization_email_address
      *
-     * @param string $organization_email_addressk__backing_field organization_email_addressk__backing_field
+     * @param string $organization_email_address organization_email_address
      *
      * @return $this
      */
-    public function setOrganizationEmailAddresskBackingField($organization_email_addressk__backing_field)
+    public function setOrganizationEmailAddress($organization_email_address)
     {
-        $this->container['organization_email_addressk__backing_field'] = $organization_email_addressk__backing_field;
+        $this->container['organization_email_address'] = $organization_email_address;
 
         return $this;
     }
 
     /**
-     * Gets organization_e_invoice_addressk__backing_field
+     * Gets organization_e_invoice_address
      *
      * @return string
      */
-    public function getOrganizationEInvoiceAddresskBackingField()
+    public function getOrganizationEInvoiceAddress()
     {
-        return $this->container['organization_e_invoice_addressk__backing_field'];
+        return $this->container['organization_e_invoice_address'];
     }
 
     /**
-     * Sets organization_e_invoice_addressk__backing_field
+     * Sets organization_e_invoice_address
      *
-     * @param string $organization_e_invoice_addressk__backing_field organization_e_invoice_addressk__backing_field
+     * @param string $organization_e_invoice_address organization_e_invoice_address
      *
      * @return $this
      */
-    public function setOrganizationEInvoiceAddresskBackingField($organization_e_invoice_addressk__backing_field)
+    public function setOrganizationEInvoiceAddress($organization_e_invoice_address)
     {
-        $this->container['organization_e_invoice_addressk__backing_field'] = $organization_e_invoice_addressk__backing_field;
+        $this->container['organization_e_invoice_address'] = $organization_e_invoice_address;
 
         return $this;
     }
 
     /**
-     * Gets organization_kv_k_numberk__backing_field
+     * Gets organization_kv_k_number
      *
      * @return string
      */
-    public function getOrganizationKvKNumberkBackingField()
+    public function getOrganizationKvKNumber()
     {
-        return $this->container['organization_kv_k_numberk__backing_field'];
+        return $this->container['organization_kv_k_number'];
     }
 
     /**
-     * Sets organization_kv_k_numberk__backing_field
+     * Sets organization_kv_k_number
      *
-     * @param string $organization_kv_k_numberk__backing_field organization_kv_k_numberk__backing_field
+     * @param string $organization_kv_k_number organization_kv_k_number
      *
      * @return $this
      */
-    public function setOrganizationKvKNumberkBackingField($organization_kv_k_numberk__backing_field)
+    public function setOrganizationKvKNumber($organization_kv_k_number)
     {
-        $this->container['organization_kv_k_numberk__backing_field'] = $organization_kv_k_numberk__backing_field;
+        $this->container['organization_kv_k_number'] = $organization_kv_k_number;
 
         return $this;
     }
 
     /**
-     * Gets organization_vat_numberk__backing_field
+     * Gets organization_vat_number
      *
      * @return string
      */
-    public function getOrganizationVatNumberkBackingField()
+    public function getOrganizationVatNumber()
     {
-        return $this->container['organization_vat_numberk__backing_field'];
+        return $this->container['organization_vat_number'];
     }
 
     /**
-     * Sets organization_vat_numberk__backing_field
+     * Sets organization_vat_number
      *
-     * @param string $organization_vat_numberk__backing_field organization_vat_numberk__backing_field
+     * @param string $organization_vat_number organization_vat_number
      *
      * @return $this
      */
-    public function setOrganizationVatNumberkBackingField($organization_vat_numberk__backing_field)
+    public function setOrganizationVatNumber($organization_vat_number)
     {
-        $this->container['organization_vat_numberk__backing_field'] = $organization_vat_numberk__backing_field;
+        $this->container['organization_vat_number'] = $organization_vat_number;
 
         return $this;
     }
 
     /**
-     * Gets organization_is_businessk__backing_field
+     * Gets organization_is_business
      *
      * @return bool
      */
-    public function getOrganizationIsBusinesskBackingField()
+    public function getOrganizationIsBusiness()
     {
-        return $this->container['organization_is_businessk__backing_field'];
+        return $this->container['organization_is_business'];
     }
 
     /**
-     * Sets organization_is_businessk__backing_field
+     * Sets organization_is_business
      *
-     * @param bool $organization_is_businessk__backing_field organization_is_businessk__backing_field
+     * @param bool $organization_is_business organization_is_business
      *
      * @return $this
      */
-    public function setOrganizationIsBusinesskBackingField($organization_is_businessk__backing_field)
+    public function setOrganizationIsBusiness($organization_is_business)
     {
-        $this->container['organization_is_businessk__backing_field'] = $organization_is_businessk__backing_field;
+        $this->container['organization_is_business'] = $organization_is_business;
 
         return $this;
     }
 
     /**
-     * Gets organization_is_intercompanyk__backing_field
+     * Gets organization_is_intercompany
      *
      * @return bool
      */
-    public function getOrganizationIsIntercompanykBackingField()
+    public function getOrganizationIsIntercompany()
     {
-        return $this->container['organization_is_intercompanyk__backing_field'];
+        return $this->container['organization_is_intercompany'];
     }
 
     /**
-     * Sets organization_is_intercompanyk__backing_field
+     * Sets organization_is_intercompany
      *
-     * @param bool $organization_is_intercompanyk__backing_field organization_is_intercompanyk__backing_field
+     * @param bool $organization_is_intercompany organization_is_intercompany
      *
      * @return $this
      */
-    public function setOrganizationIsIntercompanykBackingField($organization_is_intercompanyk__backing_field)
+    public function setOrganizationIsIntercompany($organization_is_intercompany)
     {
-        $this->container['organization_is_intercompanyk__backing_field'] = $organization_is_intercompanyk__backing_field;
+        $this->container['organization_is_intercompany'] = $organization_is_intercompany;
 
         return $this;
     }
 
     /**
-     * Gets organization_group_namek__backing_field
+     * Gets organization_group_name
      *
      * @return string
      */
-    public function getOrganizationGroupNamekBackingField()
+    public function getOrganizationGroupName()
     {
-        return $this->container['organization_group_namek__backing_field'];
+        return $this->container['organization_group_name'];
     }
 
     /**
-     * Sets organization_group_namek__backing_field
+     * Sets organization_group_name
      *
-     * @param string $organization_group_namek__backing_field organization_group_namek__backing_field
+     * @param string $organization_group_name organization_group_name
      *
      * @return $this
      */
-    public function setOrganizationGroupNamekBackingField($organization_group_namek__backing_field)
+    public function setOrganizationGroupName($organization_group_name)
     {
-        $this->container['organization_group_namek__backing_field'] = $organization_group_namek__backing_field;
+        $this->container['organization_group_name'] = $organization_group_name;
 
         return $this;
     }
 
     /**
-     * Gets organization_is_parentk__backing_field
+     * Gets organization_is_parent
      *
      * @return bool
      */
-    public function getOrganizationIsParentkBackingField()
+    public function getOrganizationIsParent()
     {
-        return $this->container['organization_is_parentk__backing_field'];
+        return $this->container['organization_is_parent'];
     }
 
     /**
-     * Sets organization_is_parentk__backing_field
+     * Sets organization_is_parent
      *
-     * @param bool $organization_is_parentk__backing_field organization_is_parentk__backing_field
+     * @param bool $organization_is_parent organization_is_parent
      *
      * @return $this
      */
-    public function setOrganizationIsParentkBackingField($organization_is_parentk__backing_field)
+    public function setOrganizationIsParent($organization_is_parent)
     {
-        $this->container['organization_is_parentk__backing_field'] = $organization_is_parentk__backing_field;
+        $this->container['organization_is_parent'] = $organization_is_parent;
 
         return $this;
     }
 
     /**
-     * Gets organization_is_daughterk__backing_field
+     * Gets organization_is_daughter
      *
      * @return bool
      */
-    public function getOrganizationIsDaughterkBackingField()
+    public function getOrganizationIsDaughter()
     {
-        return $this->container['organization_is_daughterk__backing_field'];
+        return $this->container['organization_is_daughter'];
     }
 
     /**
-     * Sets organization_is_daughterk__backing_field
+     * Sets organization_is_daughter
      *
-     * @param bool $organization_is_daughterk__backing_field organization_is_daughterk__backing_field
+     * @param bool $organization_is_daughter organization_is_daughter
      *
      * @return $this
      */
-    public function setOrganizationIsDaughterkBackingField($organization_is_daughterk__backing_field)
+    public function setOrganizationIsDaughter($organization_is_daughter)
     {
-        $this->container['organization_is_daughterk__backing_field'] = $organization_is_daughterk__backing_field;
+        $this->container['organization_is_daughter'] = $organization_is_daughter;
 
         return $this;
     }
 
     /**
-     * Gets organization_parent_referencek__backing_field
+     * Gets organization_parent_reference
      *
      * @return string
      */
-    public function getOrganizationParentReferencekBackingField()
+    public function getOrganizationParentReference()
     {
-        return $this->container['organization_parent_referencek__backing_field'];
+        return $this->container['organization_parent_reference'];
     }
 
     /**
-     * Sets organization_parent_referencek__backing_field
+     * Sets organization_parent_reference
      *
-     * @param string $organization_parent_referencek__backing_field organization_parent_referencek__backing_field
+     * @param string $organization_parent_reference organization_parent_reference
      *
      * @return $this
      */
-    public function setOrganizationParentReferencekBackingField($organization_parent_referencek__backing_field)
+    public function setOrganizationParentReference($organization_parent_reference)
     {
-        $this->container['organization_parent_referencek__backing_field'] = $organization_parent_referencek__backing_field;
+        $this->container['organization_parent_reference'] = $organization_parent_reference;
 
         return $this;
     }
 
     /**
-     * Gets organization_has_resellerk__backing_field
+     * Gets organization_has_reseller
      *
      * @return bool
      */
-    public function getOrganizationHasResellerkBackingField()
+    public function getOrganizationHasReseller()
     {
-        return $this->container['organization_has_resellerk__backing_field'];
+        return $this->container['organization_has_reseller'];
     }
 
     /**
-     * Sets organization_has_resellerk__backing_field
+     * Sets organization_has_reseller
      *
-     * @param bool $organization_has_resellerk__backing_field organization_has_resellerk__backing_field
+     * @param bool $organization_has_reseller organization_has_reseller
      *
      * @return $this
      */
-    public function setOrganizationHasResellerkBackingField($organization_has_resellerk__backing_field)
+    public function setOrganizationHasReseller($organization_has_reseller)
     {
-        $this->container['organization_has_resellerk__backing_field'] = $organization_has_resellerk__backing_field;
+        $this->container['organization_has_reseller'] = $organization_has_reseller;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_gender_typek__backing_field
+     * Gets organization_person_gender_type
      *
      * @return string
      */
-    public function getOrganizationPersonGenderTypekBackingField()
+    public function getOrganizationPersonGenderType()
     {
-        return $this->container['organization_person_gender_typek__backing_field'];
+        return $this->container['organization_person_gender_type'];
     }
 
     /**
-     * Sets organization_person_gender_typek__backing_field
+     * Sets organization_person_gender_type
      *
-     * @param string $organization_person_gender_typek__backing_field organization_person_gender_typek__backing_field
+     * @param string $organization_person_gender_type organization_person_gender_type
      *
      * @return $this
      */
-    public function setOrganizationPersonGenderTypekBackingField($organization_person_gender_typek__backing_field)
+    public function setOrganizationPersonGenderType($organization_person_gender_type)
     {
-        $this->container['organization_person_gender_typek__backing_field'] = $organization_person_gender_typek__backing_field;
+        $this->container['organization_person_gender_type'] = $organization_person_gender_type;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_first_namek__backing_field
+     * Gets organization_person_first_name
      *
      * @return string
      */
-    public function getOrganizationPersonFirstNamekBackingField()
+    public function getOrganizationPersonFirstName()
     {
-        return $this->container['organization_person_first_namek__backing_field'];
+        return $this->container['organization_person_first_name'];
     }
 
     /**
-     * Sets organization_person_first_namek__backing_field
+     * Sets organization_person_first_name
      *
-     * @param string $organization_person_first_namek__backing_field organization_person_first_namek__backing_field
+     * @param string $organization_person_first_name organization_person_first_name
      *
      * @return $this
      */
-    public function setOrganizationPersonFirstNamekBackingField($organization_person_first_namek__backing_field)
+    public function setOrganizationPersonFirstName($organization_person_first_name)
     {
-        $this->container['organization_person_first_namek__backing_field'] = $organization_person_first_namek__backing_field;
+        $this->container['organization_person_first_name'] = $organization_person_first_name;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_initialsk__backing_field
+     * Gets organization_person_initials
      *
      * @return string
      */
-    public function getOrganizationPersonInitialskBackingField()
+    public function getOrganizationPersonInitials()
     {
-        return $this->container['organization_person_initialsk__backing_field'];
+        return $this->container['organization_person_initials'];
     }
 
     /**
-     * Sets organization_person_initialsk__backing_field
+     * Sets organization_person_initials
      *
-     * @param string $organization_person_initialsk__backing_field organization_person_initialsk__backing_field
+     * @param string $organization_person_initials organization_person_initials
      *
      * @return $this
      */
-    public function setOrganizationPersonInitialskBackingField($organization_person_initialsk__backing_field)
+    public function setOrganizationPersonInitials($organization_person_initials)
     {
-        $this->container['organization_person_initialsk__backing_field'] = $organization_person_initialsk__backing_field;
+        $this->container['organization_person_initials'] = $organization_person_initials;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_infixk__backing_field
+     * Gets organization_person_infix
      *
      * @return string
      */
-    public function getOrganizationPersonInfixkBackingField()
+    public function getOrganizationPersonInfix()
     {
-        return $this->container['organization_person_infixk__backing_field'];
+        return $this->container['organization_person_infix'];
     }
 
     /**
-     * Sets organization_person_infixk__backing_field
+     * Sets organization_person_infix
      *
-     * @param string $organization_person_infixk__backing_field organization_person_infixk__backing_field
+     * @param string $organization_person_infix organization_person_infix
      *
      * @return $this
      */
-    public function setOrganizationPersonInfixkBackingField($organization_person_infixk__backing_field)
+    public function setOrganizationPersonInfix($organization_person_infix)
     {
-        $this->container['organization_person_infixk__backing_field'] = $organization_person_infixk__backing_field;
+        $this->container['organization_person_infix'] = $organization_person_infix;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_last_namek__backing_field
+     * Gets organization_person_last_name
      *
      * @return string
      */
-    public function getOrganizationPersonLastNamekBackingField()
+    public function getOrganizationPersonLastName()
     {
-        return $this->container['organization_person_last_namek__backing_field'];
+        return $this->container['organization_person_last_name'];
     }
 
     /**
-     * Sets organization_person_last_namek__backing_field
+     * Sets organization_person_last_name
      *
-     * @param string $organization_person_last_namek__backing_field organization_person_last_namek__backing_field
+     * @param string $organization_person_last_name organization_person_last_name
      *
      * @return $this
      */
-    public function setOrganizationPersonLastNamekBackingField($organization_person_last_namek__backing_field)
+    public function setOrganizationPersonLastName($organization_person_last_name)
     {
-        $this->container['organization_person_last_namek__backing_field'] = $organization_person_last_namek__backing_field;
+        $this->container['organization_person_last_name'] = $organization_person_last_name;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_full_namek__backing_field
+     * Gets organization_person_full_name
      *
      * @return string
      */
-    public function getOrganizationPersonFullNamekBackingField()
+    public function getOrganizationPersonFullName()
     {
-        return $this->container['organization_person_full_namek__backing_field'];
+        return $this->container['organization_person_full_name'];
     }
 
     /**
-     * Sets organization_person_full_namek__backing_field
+     * Sets organization_person_full_name
      *
-     * @param string $organization_person_full_namek__backing_field organization_person_full_namek__backing_field
+     * @param string $organization_person_full_name organization_person_full_name
      *
      * @return $this
      */
-    public function setOrganizationPersonFullNamekBackingField($organization_person_full_namek__backing_field)
+    public function setOrganizationPersonFullName($organization_person_full_name)
     {
-        $this->container['organization_person_full_namek__backing_field'] = $organization_person_full_namek__backing_field;
+        $this->container['organization_person_full_name'] = $organization_person_full_name;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_salutationk__backing_field
+     * Gets organization_person_salutation
      *
      * @return string
      */
-    public function getOrganizationPersonSalutationkBackingField()
+    public function getOrganizationPersonSalutation()
     {
-        return $this->container['organization_person_salutationk__backing_field'];
+        return $this->container['organization_person_salutation'];
     }
 
     /**
-     * Sets organization_person_salutationk__backing_field
+     * Sets organization_person_salutation
      *
-     * @param string $organization_person_salutationk__backing_field organization_person_salutationk__backing_field
+     * @param string $organization_person_salutation organization_person_salutation
      *
      * @return $this
      */
-    public function setOrganizationPersonSalutationkBackingField($organization_person_salutationk__backing_field)
+    public function setOrganizationPersonSalutation($organization_person_salutation)
     {
-        $this->container['organization_person_salutationk__backing_field'] = $organization_person_salutationk__backing_field;
+        $this->container['organization_person_salutation'] = $organization_person_salutation;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_salutation_addressedk__backing_field
+     * Gets organization_person_salutation_addressed
      *
      * @return string
      */
-    public function getOrganizationPersonSalutationAddressedkBackingField()
+    public function getOrganizationPersonSalutationAddressed()
     {
-        return $this->container['organization_person_salutation_addressedk__backing_field'];
+        return $this->container['organization_person_salutation_addressed'];
     }
 
     /**
-     * Sets organization_person_salutation_addressedk__backing_field
+     * Sets organization_person_salutation_addressed
      *
-     * @param string $organization_person_salutation_addressedk__backing_field organization_person_salutation_addressedk__backing_field
+     * @param string $organization_person_salutation_addressed organization_person_salutation_addressed
      *
      * @return $this
      */
-    public function setOrganizationPersonSalutationAddressedkBackingField($organization_person_salutation_addressedk__backing_field)
+    public function setOrganizationPersonSalutationAddressed($organization_person_salutation_addressed)
     {
-        $this->container['organization_person_salutation_addressedk__backing_field'] = $organization_person_salutation_addressedk__backing_field;
+        $this->container['organization_person_salutation_addressed'] = $organization_person_salutation_addressed;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_salutation_addressed_upper_casedk__backing_field
+     * Gets organization_person_salutation_addressed_upper_cased
      *
      * @return string
      */
-    public function getOrganizationPersonSalutationAddressedUpperCasedkBackingField()
+    public function getOrganizationPersonSalutationAddressedUpperCased()
     {
-        return $this->container['organization_person_salutation_addressed_upper_casedk__backing_field'];
+        return $this->container['organization_person_salutation_addressed_upper_cased'];
     }
 
     /**
-     * Sets organization_person_salutation_addressed_upper_casedk__backing_field
+     * Sets organization_person_salutation_addressed_upper_cased
      *
-     * @param string $organization_person_salutation_addressed_upper_casedk__backing_field organization_person_salutation_addressed_upper_casedk__backing_field
+     * @param string $organization_person_salutation_addressed_upper_cased organization_person_salutation_addressed_upper_cased
      *
      * @return $this
      */
-    public function setOrganizationPersonSalutationAddressedUpperCasedkBackingField($organization_person_salutation_addressed_upper_casedk__backing_field)
+    public function setOrganizationPersonSalutationAddressedUpperCased($organization_person_salutation_addressed_upper_cased)
     {
-        $this->container['organization_person_salutation_addressed_upper_casedk__backing_field'] = $organization_person_salutation_addressed_upper_casedk__backing_field;
+        $this->container['organization_person_salutation_addressed_upper_cased'] = $organization_person_salutation_addressed_upper_cased;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_salutation_informalk__backing_field
+     * Gets organization_person_salutation_informal
      *
      * @return string
      */
-    public function getOrganizationPersonSalutationInformalkBackingField()
+    public function getOrganizationPersonSalutationInformal()
     {
-        return $this->container['organization_person_salutation_informalk__backing_field'];
+        return $this->container['organization_person_salutation_informal'];
     }
 
     /**
-     * Sets organization_person_salutation_informalk__backing_field
+     * Sets organization_person_salutation_informal
      *
-     * @param string $organization_person_salutation_informalk__backing_field organization_person_salutation_informalk__backing_field
+     * @param string $organization_person_salutation_informal organization_person_salutation_informal
      *
      * @return $this
      */
-    public function setOrganizationPersonSalutationInformalkBackingField($organization_person_salutation_informalk__backing_field)
+    public function setOrganizationPersonSalutationInformal($organization_person_salutation_informal)
     {
-        $this->container['organization_person_salutation_informalk__backing_field'] = $organization_person_salutation_informalk__backing_field;
+        $this->container['organization_person_salutation_informal'] = $organization_person_salutation_informal;
 
         return $this;
     }
 
     /**
-     * Gets organization_person_birth_datek__backing_field
+     * Gets organization_person_birth_date
      *
      * @return \DateTime
      */
-    public function getOrganizationPersonBirthDatekBackingField()
+    public function getOrganizationPersonBirthDate()
     {
-        return $this->container['organization_person_birth_datek__backing_field'];
+        return $this->container['organization_person_birth_date'];
     }
 
     /**
-     * Sets organization_person_birth_datek__backing_field
+     * Sets organization_person_birth_date
      *
-     * @param \DateTime $organization_person_birth_datek__backing_field organization_person_birth_datek__backing_field
+     * @param \DateTime $organization_person_birth_date organization_person_birth_date
      *
      * @return $this
      */
-    public function setOrganizationPersonBirthDatekBackingField($organization_person_birth_datek__backing_field)
+    public function setOrganizationPersonBirthDate($organization_person_birth_date)
     {
-        $this->container['organization_person_birth_datek__backing_field'] = $organization_person_birth_datek__backing_field;
+        $this->container['organization_person_birth_date'] = $organization_person_birth_date;
 
         return $this;
     }
 
     /**
-     * Gets organization_mailing_address_address_line1k__backing_field
+     * Gets organization_mailing_address_address_line1
      *
      * @return string
      */
-    public function getOrganizationMailingAddressAddressLine1kBackingField()
+    public function getOrganizationMailingAddressAddressLine1()
     {
-        return $this->container['organization_mailing_address_address_line1k__backing_field'];
+        return $this->container['organization_mailing_address_address_line1'];
     }
 
     /**
-     * Sets organization_mailing_address_address_line1k__backing_field
+     * Sets organization_mailing_address_address_line1
      *
-     * @param string $organization_mailing_address_address_line1k__backing_field organization_mailing_address_address_line1k__backing_field
+     * @param string $organization_mailing_address_address_line1 organization_mailing_address_address_line1
      *
      * @return $this
      */
-    public function setOrganizationMailingAddressAddressLine1kBackingField($organization_mailing_address_address_line1k__backing_field)
+    public function setOrganizationMailingAddressAddressLine1($organization_mailing_address_address_line1)
     {
-        $this->container['organization_mailing_address_address_line1k__backing_field'] = $organization_mailing_address_address_line1k__backing_field;
+        $this->container['organization_mailing_address_address_line1'] = $organization_mailing_address_address_line1;
 
         return $this;
     }
 
     /**
-     * Gets organization_mailing_address_address_line2k__backing_field
+     * Gets organization_mailing_address_address_line2
      *
      * @return string
      */
-    public function getOrganizationMailingAddressAddressLine2kBackingField()
+    public function getOrganizationMailingAddressAddressLine2()
     {
-        return $this->container['organization_mailing_address_address_line2k__backing_field'];
+        return $this->container['organization_mailing_address_address_line2'];
     }
 
     /**
-     * Sets organization_mailing_address_address_line2k__backing_field
+     * Sets organization_mailing_address_address_line2
      *
-     * @param string $organization_mailing_address_address_line2k__backing_field organization_mailing_address_address_line2k__backing_field
+     * @param string $organization_mailing_address_address_line2 organization_mailing_address_address_line2
      *
      * @return $this
      */
-    public function setOrganizationMailingAddressAddressLine2kBackingField($organization_mailing_address_address_line2k__backing_field)
+    public function setOrganizationMailingAddressAddressLine2($organization_mailing_address_address_line2)
     {
-        $this->container['organization_mailing_address_address_line2k__backing_field'] = $organization_mailing_address_address_line2k__backing_field;
+        $this->container['organization_mailing_address_address_line2'] = $organization_mailing_address_address_line2;
 
         return $this;
     }
 
     /**
-     * Gets organization_mailing_address_full_addressk__backing_field
+     * Gets organization_mailing_address_full_address
      *
      * @return string
      */
-    public function getOrganizationMailingAddressFullAddresskBackingField()
+    public function getOrganizationMailingAddressFullAddress()
     {
-        return $this->container['organization_mailing_address_full_addressk__backing_field'];
+        return $this->container['organization_mailing_address_full_address'];
     }
 
     /**
-     * Sets organization_mailing_address_full_addressk__backing_field
+     * Sets organization_mailing_address_full_address
      *
-     * @param string $organization_mailing_address_full_addressk__backing_field organization_mailing_address_full_addressk__backing_field
+     * @param string $organization_mailing_address_full_address organization_mailing_address_full_address
      *
      * @return $this
      */
-    public function setOrganizationMailingAddressFullAddresskBackingField($organization_mailing_address_full_addressk__backing_field)
+    public function setOrganizationMailingAddressFullAddress($organization_mailing_address_full_address)
     {
-        $this->container['organization_mailing_address_full_addressk__backing_field'] = $organization_mailing_address_full_addressk__backing_field;
+        $this->container['organization_mailing_address_full_address'] = $organization_mailing_address_full_address;
 
         return $this;
     }
 
     /**
-     * Gets organization_mailing_address_zip_codek__backing_field
+     * Gets organization_mailing_address_zip_code
      *
      * @return string
      */
-    public function getOrganizationMailingAddressZipCodekBackingField()
+    public function getOrganizationMailingAddressZipCode()
     {
-        return $this->container['organization_mailing_address_zip_codek__backing_field'];
+        return $this->container['organization_mailing_address_zip_code'];
     }
 
     /**
-     * Sets organization_mailing_address_zip_codek__backing_field
+     * Sets organization_mailing_address_zip_code
      *
-     * @param string $organization_mailing_address_zip_codek__backing_field organization_mailing_address_zip_codek__backing_field
+     * @param string $organization_mailing_address_zip_code organization_mailing_address_zip_code
      *
      * @return $this
      */
-    public function setOrganizationMailingAddressZipCodekBackingField($organization_mailing_address_zip_codek__backing_field)
+    public function setOrganizationMailingAddressZipCode($organization_mailing_address_zip_code)
     {
-        $this->container['organization_mailing_address_zip_codek__backing_field'] = $organization_mailing_address_zip_codek__backing_field;
+        $this->container['organization_mailing_address_zip_code'] = $organization_mailing_address_zip_code;
 
         return $this;
     }
 
     /**
-     * Gets organization_mailing_address_cityk__backing_field
+     * Gets organization_mailing_address_city
      *
      * @return string
      */
-    public function getOrganizationMailingAddressCitykBackingField()
+    public function getOrganizationMailingAddressCity()
     {
-        return $this->container['organization_mailing_address_cityk__backing_field'];
+        return $this->container['organization_mailing_address_city'];
     }
 
     /**
-     * Sets organization_mailing_address_cityk__backing_field
+     * Sets organization_mailing_address_city
      *
-     * @param string $organization_mailing_address_cityk__backing_field organization_mailing_address_cityk__backing_field
+     * @param string $organization_mailing_address_city organization_mailing_address_city
      *
      * @return $this
      */
-    public function setOrganizationMailingAddressCitykBackingField($organization_mailing_address_cityk__backing_field)
+    public function setOrganizationMailingAddressCity($organization_mailing_address_city)
     {
-        $this->container['organization_mailing_address_cityk__backing_field'] = $organization_mailing_address_cityk__backing_field;
+        $this->container['organization_mailing_address_city'] = $organization_mailing_address_city;
 
         return $this;
     }
 
     /**
-     * Gets organization_mailing_address_country_codek__backing_field
+     * Gets organization_mailing_address_country_code
      *
      * @return string
      */
-    public function getOrganizationMailingAddressCountryCodekBackingField()
+    public function getOrganizationMailingAddressCountryCode()
     {
-        return $this->container['organization_mailing_address_country_codek__backing_field'];
+        return $this->container['organization_mailing_address_country_code'];
     }
 
     /**
-     * Sets organization_mailing_address_country_codek__backing_field
+     * Sets organization_mailing_address_country_code
      *
-     * @param string $organization_mailing_address_country_codek__backing_field organization_mailing_address_country_codek__backing_field
+     * @param string $organization_mailing_address_country_code organization_mailing_address_country_code
      *
      * @return $this
      */
-    public function setOrganizationMailingAddressCountryCodekBackingField($organization_mailing_address_country_codek__backing_field)
+    public function setOrganizationMailingAddressCountryCode($organization_mailing_address_country_code)
     {
-        $this->container['organization_mailing_address_country_codek__backing_field'] = $organization_mailing_address_country_codek__backing_field;
+        $this->container['organization_mailing_address_country_code'] = $organization_mailing_address_country_code;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_namek__backing_field
+     * Gets organization_debtor_name
      *
      * @return string
      */
-    public function getOrganizationDebtorNamekBackingField()
+    public function getOrganizationDebtorName()
     {
-        return $this->container['organization_debtor_namek__backing_field'];
+        return $this->container['organization_debtor_name'];
     }
 
     /**
-     * Sets organization_debtor_namek__backing_field
+     * Sets organization_debtor_name
      *
-     * @param string $organization_debtor_namek__backing_field organization_debtor_namek__backing_field
+     * @param string $organization_debtor_name organization_debtor_name
      *
      * @return $this
      */
-    public function setOrganizationDebtorNamekBackingField($organization_debtor_namek__backing_field)
+    public function setOrganizationDebtorName($organization_debtor_name)
     {
-        $this->container['organization_debtor_namek__backing_field'] = $organization_debtor_namek__backing_field;
+        $this->container['organization_debtor_name'] = $organization_debtor_name;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_bank_account_numberk__backing_field
+     * Gets organization_debtor_bank_account_number
      *
      * @return string
      */
-    public function getOrganizationDebtorBankAccountNumberkBackingField()
+    public function getOrganizationDebtorBankAccountNumber()
     {
-        return $this->container['organization_debtor_bank_account_numberk__backing_field'];
+        return $this->container['organization_debtor_bank_account_number'];
     }
 
     /**
-     * Sets organization_debtor_bank_account_numberk__backing_field
+     * Sets organization_debtor_bank_account_number
      *
-     * @param string $organization_debtor_bank_account_numberk__backing_field organization_debtor_bank_account_numberk__backing_field
+     * @param string $organization_debtor_bank_account_number organization_debtor_bank_account_number
      *
      * @return $this
      */
-    public function setOrganizationDebtorBankAccountNumberkBackingField($organization_debtor_bank_account_numberk__backing_field)
+    public function setOrganizationDebtorBankAccountNumber($organization_debtor_bank_account_number)
     {
-        $this->container['organization_debtor_bank_account_numberk__backing_field'] = $organization_debtor_bank_account_numberk__backing_field;
+        $this->container['organization_debtor_bank_account_number'] = $organization_debtor_bank_account_number;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_bank_account_number_shortk__backing_field
+     * Gets organization_debtor_bank_account_number_short
      *
      * @return string
      */
-    public function getOrganizationDebtorBankAccountNumberShortkBackingField()
+    public function getOrganizationDebtorBankAccountNumberShort()
     {
-        return $this->container['organization_debtor_bank_account_number_shortk__backing_field'];
+        return $this->container['organization_debtor_bank_account_number_short'];
     }
 
     /**
-     * Sets organization_debtor_bank_account_number_shortk__backing_field
+     * Sets organization_debtor_bank_account_number_short
      *
-     * @param string $organization_debtor_bank_account_number_shortk__backing_field organization_debtor_bank_account_number_shortk__backing_field
+     * @param string $organization_debtor_bank_account_number_short organization_debtor_bank_account_number_short
      *
      * @return $this
      */
-    public function setOrganizationDebtorBankAccountNumberShortkBackingField($organization_debtor_bank_account_number_shortk__backing_field)
+    public function setOrganizationDebtorBankAccountNumberShort($organization_debtor_bank_account_number_short)
     {
-        $this->container['organization_debtor_bank_account_number_shortk__backing_field'] = $organization_debtor_bank_account_number_shortk__backing_field;
+        $this->container['organization_debtor_bank_account_number_short'] = $organization_debtor_bank_account_number_short;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_bank_account_number_maskedk__backing_field
+     * Gets organization_debtor_bank_account_number_masked
      *
      * @return string
      */
-    public function getOrganizationDebtorBankAccountNumberMaskedkBackingField()
+    public function getOrganizationDebtorBankAccountNumberMasked()
     {
-        return $this->container['organization_debtor_bank_account_number_maskedk__backing_field'];
+        return $this->container['organization_debtor_bank_account_number_masked'];
     }
 
     /**
-     * Sets organization_debtor_bank_account_number_maskedk__backing_field
+     * Sets organization_debtor_bank_account_number_masked
      *
-     * @param string $organization_debtor_bank_account_number_maskedk__backing_field organization_debtor_bank_account_number_maskedk__backing_field
+     * @param string $organization_debtor_bank_account_number_masked organization_debtor_bank_account_number_masked
      *
      * @return $this
      */
-    public function setOrganizationDebtorBankAccountNumberMaskedkBackingField($organization_debtor_bank_account_number_maskedk__backing_field)
+    public function setOrganizationDebtorBankAccountNumberMasked($organization_debtor_bank_account_number_masked)
     {
-        $this->container['organization_debtor_bank_account_number_maskedk__backing_field'] = $organization_debtor_bank_account_number_maskedk__backing_field;
+        $this->container['organization_debtor_bank_account_number_masked'] = $organization_debtor_bank_account_number_masked;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_payment_method_is_automatic_collectionk__backing_field
+     * Gets organization_debtor_payment_method_is_automatic_collection
      *
      * @return bool
      */
-    public function getOrganizationDebtorPaymentMethodIsAutomaticCollectionkBackingField()
+    public function getOrganizationDebtorPaymentMethodIsAutomaticCollection()
     {
-        return $this->container['organization_debtor_payment_method_is_automatic_collectionk__backing_field'];
+        return $this->container['organization_debtor_payment_method_is_automatic_collection'];
     }
 
     /**
-     * Sets organization_debtor_payment_method_is_automatic_collectionk__backing_field
+     * Sets organization_debtor_payment_method_is_automatic_collection
      *
-     * @param bool $organization_debtor_payment_method_is_automatic_collectionk__backing_field organization_debtor_payment_method_is_automatic_collectionk__backing_field
+     * @param bool $organization_debtor_payment_method_is_automatic_collection organization_debtor_payment_method_is_automatic_collection
      *
      * @return $this
      */
-    public function setOrganizationDebtorPaymentMethodIsAutomaticCollectionkBackingField($organization_debtor_payment_method_is_automatic_collectionk__backing_field)
+    public function setOrganizationDebtorPaymentMethodIsAutomaticCollection($organization_debtor_payment_method_is_automatic_collection)
     {
-        $this->container['organization_debtor_payment_method_is_automatic_collectionk__backing_field'] = $organization_debtor_payment_method_is_automatic_collectionk__backing_field;
+        $this->container['organization_debtor_payment_method_is_automatic_collection'] = $organization_debtor_payment_method_is_automatic_collection;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_payment_method_is_direct_payk__backing_field
+     * Gets organization_debtor_payment_method_is_direct_pay
      *
      * @return bool
      */
-    public function getOrganizationDebtorPaymentMethodIsDirectPaykBackingField()
+    public function getOrganizationDebtorPaymentMethodIsDirectPay()
     {
-        return $this->container['organization_debtor_payment_method_is_direct_payk__backing_field'];
+        return $this->container['organization_debtor_payment_method_is_direct_pay'];
     }
 
     /**
-     * Sets organization_debtor_payment_method_is_direct_payk__backing_field
+     * Sets organization_debtor_payment_method_is_direct_pay
      *
-     * @param bool $organization_debtor_payment_method_is_direct_payk__backing_field organization_debtor_payment_method_is_direct_payk__backing_field
+     * @param bool $organization_debtor_payment_method_is_direct_pay organization_debtor_payment_method_is_direct_pay
      *
      * @return $this
      */
-    public function setOrganizationDebtorPaymentMethodIsDirectPaykBackingField($organization_debtor_payment_method_is_direct_payk__backing_field)
+    public function setOrganizationDebtorPaymentMethodIsDirectPay($organization_debtor_payment_method_is_direct_pay)
     {
-        $this->container['organization_debtor_payment_method_is_direct_payk__backing_field'] = $organization_debtor_payment_method_is_direct_payk__backing_field;
+        $this->container['organization_debtor_payment_method_is_direct_pay'] = $organization_debtor_payment_method_is_direct_pay;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_payment_method_via_parent_organizationk__backing_field
+     * Gets organization_debtor_payment_method_via_parent_organization
      *
      * @return bool
      */
-    public function getOrganizationDebtorPaymentMethodViaParentOrganizationkBackingField()
+    public function getOrganizationDebtorPaymentMethodViaParentOrganization()
     {
-        return $this->container['organization_debtor_payment_method_via_parent_organizationk__backing_field'];
+        return $this->container['organization_debtor_payment_method_via_parent_organization'];
     }
 
     /**
-     * Sets organization_debtor_payment_method_via_parent_organizationk__backing_field
+     * Sets organization_debtor_payment_method_via_parent_organization
      *
-     * @param bool $organization_debtor_payment_method_via_parent_organizationk__backing_field organization_debtor_payment_method_via_parent_organizationk__backing_field
+     * @param bool $organization_debtor_payment_method_via_parent_organization organization_debtor_payment_method_via_parent_organization
      *
      * @return $this
      */
-    public function setOrganizationDebtorPaymentMethodViaParentOrganizationkBackingField($organization_debtor_payment_method_via_parent_organizationk__backing_field)
+    public function setOrganizationDebtorPaymentMethodViaParentOrganization($organization_debtor_payment_method_via_parent_organization)
     {
-        $this->container['organization_debtor_payment_method_via_parent_organizationk__backing_field'] = $organization_debtor_payment_method_via_parent_organizationk__backing_field;
+        $this->container['organization_debtor_payment_method_via_parent_organization'] = $organization_debtor_payment_method_via_parent_organization;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_payment_method_is_invoicek__backing_field
+     * Gets organization_debtor_payment_method_is_invoice
      *
      * @return bool
      */
-    public function getOrganizationDebtorPaymentMethodIsInvoicekBackingField()
+    public function getOrganizationDebtorPaymentMethodIsInvoice()
     {
-        return $this->container['organization_debtor_payment_method_is_invoicek__backing_field'];
+        return $this->container['organization_debtor_payment_method_is_invoice'];
     }
 
     /**
-     * Sets organization_debtor_payment_method_is_invoicek__backing_field
+     * Sets organization_debtor_payment_method_is_invoice
      *
-     * @param bool $organization_debtor_payment_method_is_invoicek__backing_field organization_debtor_payment_method_is_invoicek__backing_field
+     * @param bool $organization_debtor_payment_method_is_invoice organization_debtor_payment_method_is_invoice
      *
      * @return $this
      */
-    public function setOrganizationDebtorPaymentMethodIsInvoicekBackingField($organization_debtor_payment_method_is_invoicek__backing_field)
+    public function setOrganizationDebtorPaymentMethodIsInvoice($organization_debtor_payment_method_is_invoice)
     {
-        $this->container['organization_debtor_payment_method_is_invoicek__backing_field'] = $organization_debtor_payment_method_is_invoicek__backing_field;
+        $this->container['organization_debtor_payment_method_is_invoice'] = $organization_debtor_payment_method_is_invoice;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_mandate_typek__backing_field
+     * Gets organization_debtor_mandate_type
      *
      * @return string
      */
-    public function getOrganizationDebtorMandateTypekBackingField()
+    public function getOrganizationDebtorMandateType()
     {
-        return $this->container['organization_debtor_mandate_typek__backing_field'];
+        return $this->container['organization_debtor_mandate_type'];
     }
 
     /**
-     * Sets organization_debtor_mandate_typek__backing_field
+     * Sets organization_debtor_mandate_type
      *
-     * @param string $organization_debtor_mandate_typek__backing_field organization_debtor_mandate_typek__backing_field
+     * @param string $organization_debtor_mandate_type organization_debtor_mandate_type
      *
      * @return $this
      */
-    public function setOrganizationDebtorMandateTypekBackingField($organization_debtor_mandate_typek__backing_field)
+    public function setOrganizationDebtorMandateType($organization_debtor_mandate_type)
     {
-        $this->container['organization_debtor_mandate_typek__backing_field'] = $organization_debtor_mandate_typek__backing_field;
+        $this->container['organization_debtor_mandate_type'] = $organization_debtor_mandate_type;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_mandate_running_numberk__backing_field
+     * Gets organization_debtor_mandate_running_number
      *
      * @return int
      */
-    public function getOrganizationDebtorMandateRunningNumberkBackingField()
+    public function getOrganizationDebtorMandateRunningNumber()
     {
-        return $this->container['organization_debtor_mandate_running_numberk__backing_field'];
+        return $this->container['organization_debtor_mandate_running_number'];
     }
 
     /**
-     * Sets organization_debtor_mandate_running_numberk__backing_field
+     * Sets organization_debtor_mandate_running_number
      *
-     * @param int $organization_debtor_mandate_running_numberk__backing_field organization_debtor_mandate_running_numberk__backing_field
+     * @param int $organization_debtor_mandate_running_number organization_debtor_mandate_running_number
      *
      * @return $this
      */
-    public function setOrganizationDebtorMandateRunningNumberkBackingField($organization_debtor_mandate_running_numberk__backing_field)
+    public function setOrganizationDebtorMandateRunningNumber($organization_debtor_mandate_running_number)
     {
-        $this->container['organization_debtor_mandate_running_numberk__backing_field'] = $organization_debtor_mandate_running_numberk__backing_field;
+        $this->container['organization_debtor_mandate_running_number'] = $organization_debtor_mandate_running_number;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_payment_referencek__backing_field
+     * Gets organization_debtor_payment_reference
      *
      * @return string
      */
-    public function getOrganizationDebtorPaymentReferencekBackingField()
+    public function getOrganizationDebtorPaymentReference()
     {
-        return $this->container['organization_debtor_payment_referencek__backing_field'];
+        return $this->container['organization_debtor_payment_reference'];
     }
 
     /**
-     * Sets organization_debtor_payment_referencek__backing_field
+     * Sets organization_debtor_payment_reference
      *
-     * @param string $organization_debtor_payment_referencek__backing_field organization_debtor_payment_referencek__backing_field
+     * @param string $organization_debtor_payment_reference organization_debtor_payment_reference
      *
      * @return $this
      */
-    public function setOrganizationDebtorPaymentReferencekBackingField($organization_debtor_payment_referencek__backing_field)
+    public function setOrganizationDebtorPaymentReference($organization_debtor_payment_reference)
     {
-        $this->container['organization_debtor_payment_referencek__backing_field'] = $organization_debtor_payment_referencek__backing_field;
+        $this->container['organization_debtor_payment_reference'] = $organization_debtor_payment_reference;
 
         return $this;
     }
 
     /**
-     * Gets organization_debtor_referencek__backing_field
+     * Gets organization_debtor_reference
      *
      * @return string
      */
-    public function getOrganizationDebtorReferencekBackingField()
+    public function getOrganizationDebtorReference()
     {
-        return $this->container['organization_debtor_referencek__backing_field'];
+        return $this->container['organization_debtor_reference'];
     }
 
     /**
-     * Sets organization_debtor_referencek__backing_field
+     * Sets organization_debtor_reference
      *
-     * @param string $organization_debtor_referencek__backing_field organization_debtor_referencek__backing_field
+     * @param string $organization_debtor_reference organization_debtor_reference
      *
      * @return $this
      */
-    public function setOrganizationDebtorReferencekBackingField($organization_debtor_referencek__backing_field)
+    public function setOrganizationDebtorReference($organization_debtor_reference)
     {
-        $this->container['organization_debtor_referencek__backing_field'] = $organization_debtor_referencek__backing_field;
+        $this->container['organization_debtor_reference'] = $organization_debtor_reference;
 
         return $this;
     }
 
     /**
-     * Gets organization_representative_idk__backing_field
+     * Gets organization_representative_id
      *
      * @return string
      */
-    public function getOrganizationRepresentativeIdkBackingField()
+    public function getOrganizationRepresentativeId()
     {
-        return $this->container['organization_representative_idk__backing_field'];
+        return $this->container['organization_representative_id'];
     }
 
     /**
-     * Sets organization_representative_idk__backing_field
+     * Sets organization_representative_id
      *
-     * @param string $organization_representative_idk__backing_field organization_representative_idk__backing_field
+     * @param string $organization_representative_id organization_representative_id
      *
      * @return $this
      */
-    public function setOrganizationRepresentativeIdkBackingField($organization_representative_idk__backing_field)
+    public function setOrganizationRepresentativeId($organization_representative_id)
     {
-        $this->container['organization_representative_idk__backing_field'] = $organization_representative_idk__backing_field;
+        $this->container['organization_representative_id'] = $organization_representative_id;
 
         return $this;
     }
 
     /**
-     * Gets organization_representative_correspondence_namek__backing_field
+     * Gets organization_representative_correspondence_name
      *
      * @return string
      */
-    public function getOrganizationRepresentativeCorrespondenceNamekBackingField()
+    public function getOrganizationRepresentativeCorrespondenceName()
     {
-        return $this->container['organization_representative_correspondence_namek__backing_field'];
+        return $this->container['organization_representative_correspondence_name'];
     }
 
     /**
-     * Sets organization_representative_correspondence_namek__backing_field
+     * Sets organization_representative_correspondence_name
      *
-     * @param string $organization_representative_correspondence_namek__backing_field organization_representative_correspondence_namek__backing_field
+     * @param string $organization_representative_correspondence_name organization_representative_correspondence_name
      *
      * @return $this
      */
-    public function setOrganizationRepresentativeCorrespondenceNamekBackingField($organization_representative_correspondence_namek__backing_field)
+    public function setOrganizationRepresentativeCorrespondenceName($organization_representative_correspondence_name)
     {
-        $this->container['organization_representative_correspondence_namek__backing_field'] = $organization_representative_correspondence_namek__backing_field;
+        $this->container['organization_representative_correspondence_name'] = $organization_representative_correspondence_name;
 
         return $this;
     }
 
     /**
-     * Gets organization_representative_correspondence_phone_numberk__backing_field
+     * Gets organization_representative_correspondence_phone_number
      *
      * @return string
      */
-    public function getOrganizationRepresentativeCorrespondencePhoneNumberkBackingField()
+    public function getOrganizationRepresentativeCorrespondencePhoneNumber()
     {
-        return $this->container['organization_representative_correspondence_phone_numberk__backing_field'];
+        return $this->container['organization_representative_correspondence_phone_number'];
     }
 
     /**
-     * Sets organization_representative_correspondence_phone_numberk__backing_field
+     * Sets organization_representative_correspondence_phone_number
      *
-     * @param string $organization_representative_correspondence_phone_numberk__backing_field organization_representative_correspondence_phone_numberk__backing_field
+     * @param string $organization_representative_correspondence_phone_number organization_representative_correspondence_phone_number
      *
      * @return $this
      */
-    public function setOrganizationRepresentativeCorrespondencePhoneNumberkBackingField($organization_representative_correspondence_phone_numberk__backing_field)
+    public function setOrganizationRepresentativeCorrespondencePhoneNumber($organization_representative_correspondence_phone_number)
     {
-        $this->container['organization_representative_correspondence_phone_numberk__backing_field'] = $organization_representative_correspondence_phone_numberk__backing_field;
+        $this->container['organization_representative_correspondence_phone_number'] = $organization_representative_correspondence_phone_number;
 
         return $this;
     }
 
     /**
-     * Gets organization_representative_correspondence_email_addressk__backing_field
+     * Gets organization_representative_correspondence_email_address
      *
      * @return string
      */
-    public function getOrganizationRepresentativeCorrespondenceEmailAddresskBackingField()
+    public function getOrganizationRepresentativeCorrespondenceEmailAddress()
     {
-        return $this->container['organization_representative_correspondence_email_addressk__backing_field'];
+        return $this->container['organization_representative_correspondence_email_address'];
     }
 
     /**
-     * Sets organization_representative_correspondence_email_addressk__backing_field
+     * Sets organization_representative_correspondence_email_address
      *
-     * @param string $organization_representative_correspondence_email_addressk__backing_field organization_representative_correspondence_email_addressk__backing_field
+     * @param string $organization_representative_correspondence_email_address organization_representative_correspondence_email_address
      *
      * @return $this
      */
-    public function setOrganizationRepresentativeCorrespondenceEmailAddresskBackingField($organization_representative_correspondence_email_addressk__backing_field)
+    public function setOrganizationRepresentativeCorrespondenceEmailAddress($organization_representative_correspondence_email_address)
     {
-        $this->container['organization_representative_correspondence_email_addressk__backing_field'] = $organization_representative_correspondence_email_addressk__backing_field;
+        $this->container['organization_representative_correspondence_email_address'] = $organization_representative_correspondence_email_address;
 
         return $this;
     }
 
     /**
-     * Gets organization_representative_correspondence_websitek__backing_field
+     * Gets organization_representative_correspondence_website
      *
      * @return string
      */
-    public function getOrganizationRepresentativeCorrespondenceWebsitekBackingField()
+    public function getOrganizationRepresentativeCorrespondenceWebsite()
     {
-        return $this->container['organization_representative_correspondence_websitek__backing_field'];
+        return $this->container['organization_representative_correspondence_website'];
     }
 
     /**
-     * Sets organization_representative_correspondence_websitek__backing_field
+     * Sets organization_representative_correspondence_website
      *
-     * @param string $organization_representative_correspondence_websitek__backing_field organization_representative_correspondence_websitek__backing_field
+     * @param string $organization_representative_correspondence_website organization_representative_correspondence_website
      *
      * @return $this
      */
-    public function setOrganizationRepresentativeCorrespondenceWebsitekBackingField($organization_representative_correspondence_websitek__backing_field)
+    public function setOrganizationRepresentativeCorrespondenceWebsite($organization_representative_correspondence_website)
     {
-        $this->container['organization_representative_correspondence_websitek__backing_field'] = $organization_representative_correspondence_websitek__backing_field;
+        $this->container['organization_representative_correspondence_website'] = $organization_representative_correspondence_website;
 
         return $this;
     }
 
     /**
-     * Gets organization_productiemiddel_proposition_descriptionk__backing_field
+     * Gets organization_productiemiddel_proposition_description
      *
      * @return string
      */
-    public function getOrganizationProductiemiddelPropositionDescriptionkBackingField()
+    public function getOrganizationProductiemiddelPropositionDescription()
     {
-        return $this->container['organization_productiemiddel_proposition_descriptionk__backing_field'];
+        return $this->container['organization_productiemiddel_proposition_description'];
     }
 
     /**
-     * Sets organization_productiemiddel_proposition_descriptionk__backing_field
+     * Sets organization_productiemiddel_proposition_description
      *
-     * @param string $organization_productiemiddel_proposition_descriptionk__backing_field organization_productiemiddel_proposition_descriptionk__backing_field
+     * @param string $organization_productiemiddel_proposition_description organization_productiemiddel_proposition_description
      *
      * @return $this
      */
-    public function setOrganizationProductiemiddelPropositionDescriptionkBackingField($organization_productiemiddel_proposition_descriptionk__backing_field)
+    public function setOrganizationProductiemiddelPropositionDescription($organization_productiemiddel_proposition_description)
     {
-        $this->container['organization_productiemiddel_proposition_descriptionk__backing_field'] = $organization_productiemiddel_proposition_descriptionk__backing_field;
+        $this->container['organization_productiemiddel_proposition_description'] = $organization_productiemiddel_proposition_description;
 
         return $this;
     }
 
     /**
-     * Gets organization_organization_property_preferred_contact_methodk__backing_field
+     * Gets organization_organization_property_preferred_contact_method
      *
      * @return string
      */
-    public function getOrganizationOrganizationPropertyPreferredContactMethodkBackingField()
+    public function getOrganizationOrganizationPropertyPreferredContactMethod()
     {
-        return $this->container['organization_organization_property_preferred_contact_methodk__backing_field'];
+        return $this->container['organization_organization_property_preferred_contact_method'];
     }
 
     /**
-     * Sets organization_organization_property_preferred_contact_methodk__backing_field
+     * Sets organization_organization_property_preferred_contact_method
      *
-     * @param string $organization_organization_property_preferred_contact_methodk__backing_field organization_organization_property_preferred_contact_methodk__backing_field
+     * @param string $organization_organization_property_preferred_contact_method organization_organization_property_preferred_contact_method
      *
      * @return $this
      */
-    public function setOrganizationOrganizationPropertyPreferredContactMethodkBackingField($organization_organization_property_preferred_contact_methodk__backing_field)
+    public function setOrganizationOrganizationPropertyPreferredContactMethod($organization_organization_property_preferred_contact_method)
     {
-        $this->container['organization_organization_property_preferred_contact_methodk__backing_field'] = $organization_organization_property_preferred_contact_methodk__backing_field;
+        $this->container['organization_organization_property_preferred_contact_method'] = $organization_organization_property_preferred_contact_method;
 
         return $this;
     }
 
     /**
-     * Gets company_labelk__backing_field
+     * Gets company_label
      *
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto
      */
-    public function getCompanyLabelkBackingField()
+    public function getCompanyLabel()
     {
-        return $this->container['company_labelk__backing_field'];
+        return $this->container['company_label'];
     }
 
     /**
-     * Sets company_labelk__backing_field
+     * Sets company_label
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto $company_labelk__backing_field company_labelk__backing_field
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto $company_label company_label
      *
      * @return $this
      */
-    public function setCompanyLabelkBackingField($company_labelk__backing_field)
+    public function setCompanyLabel($company_label)
     {
-        $this->container['company_labelk__backing_field'] = $company_labelk__backing_field;
+        $this->container['company_label'] = $company_label;
 
         return $this;
     }
 
     /**
-     * Gets resellerk__backing_field
+     * Gets reseller
      *
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto
      */
-    public function getResellerkBackingField()
+    public function getReseller()
     {
-        return $this->container['resellerk__backing_field'];
+        return $this->container['reseller'];
     }
 
     /**
-     * Sets resellerk__backing_field
+     * Sets reseller
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto $resellerk__backing_field resellerk__backing_field
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto $reseller reseller
      *
      * @return $this
      */
-    public function setResellerkBackingField($resellerk__backing_field)
+    public function setReseller($reseller)
     {
-        $this->container['resellerk__backing_field'] = $resellerk__backing_field;
+        $this->container['reseller'] = $reseller;
 
         return $this;
     }
 
     /**
-     * Gets organization_propertiesk__backing_field
+     * Gets organization_properties
      *
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto
      */
-    public function getOrganizationPropertieskBackingField()
+    public function getOrganizationProperties()
     {
-        return $this->container['organization_propertiesk__backing_field'];
+        return $this->container['organization_properties'];
     }
 
     /**
-     * Sets organization_propertiesk__backing_field
+     * Sets organization_properties
      *
-     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto $organization_propertiesk__backing_field organization_propertiesk__backing_field
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto $organization_properties organization_properties
      *
      * @return $this
      */
-    public function setOrganizationPropertieskBackingField($organization_propertiesk__backing_field)
+    public function setOrganizationProperties($organization_properties)
     {
-        $this->container['organization_propertiesk__backing_field'] = $organization_propertiesk__backing_field;
+        $this->container['organization_properties'] = $organization_properties;
 
         return $this;
     }

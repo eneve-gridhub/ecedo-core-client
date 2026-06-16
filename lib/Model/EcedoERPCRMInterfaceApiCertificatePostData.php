@@ -62,7 +62,8 @@ class EcedoERPCRMInterfaceApiCertificatePostData implements ModelInterface, Arra
         'certificate_type' => 'string',
         'reference' => 'string',
         'start_date_time' => '\DateTime',
-        'end_date_time' => '\DateTime'
+        'end_date_time' => '\DateTime',
+        'type' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class EcedoERPCRMInterfaceApiCertificatePostData implements ModelInterface, Arra
         'certificate_type' => null,
         'reference' => null,
         'start_date_time' => 'date-time',
-        'end_date_time' => 'date-time'
+        'end_date_time' => 'date-time',
+        'type' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class EcedoERPCRMInterfaceApiCertificatePostData implements ModelInterface, Arra
         'certificate_type' => 'CertificateType',
         'reference' => 'Reference',
         'start_date_time' => 'StartDateTime',
-        'end_date_time' => 'EndDateTime'
+        'end_date_time' => 'EndDateTime',
+        'type' => '$type'
     ];
 
     /**
@@ -122,7 +125,8 @@ class EcedoERPCRMInterfaceApiCertificatePostData implements ModelInterface, Arra
         'certificate_type' => 'setCertificateType',
         'reference' => 'setReference',
         'start_date_time' => 'setStartDateTime',
-        'end_date_time' => 'setEndDateTime'
+        'end_date_time' => 'setEndDateTime',
+        'type' => 'setType'
     ];
 
     /**
@@ -135,7 +139,8 @@ class EcedoERPCRMInterfaceApiCertificatePostData implements ModelInterface, Arra
         'certificate_type' => 'getCertificateType',
         'reference' => 'getReference',
         'start_date_time' => 'getStartDateTime',
-        'end_date_time' => 'getEndDateTime'
+        'end_date_time' => 'getEndDateTime',
+        'type' => 'getType'
     ];
 
     /**
@@ -220,6 +225,7 @@ class EcedoERPCRMInterfaceApiCertificatePostData implements ModelInterface, Arra
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
         $this->container['start_date_time'] = isset($data['start_date_time']) ? $data['start_date_time'] : null;
         $this->container['end_date_time'] = isset($data['end_date_time']) ? $data['end_date_time'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -383,6 +389,30 @@ class EcedoERPCRMInterfaceApiCertificatePostData implements ModelInterface, Arra
     public function setEndDateTime($end_date_time)
     {
         $this->container['end_date_time'] = $end_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

@@ -110,4 +110,11 @@ class EcedoERPCRMInterfaceApiCertificatePostDataTest extends \PHPUnit_Framework_
     public function testPropertyEndDateTime()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

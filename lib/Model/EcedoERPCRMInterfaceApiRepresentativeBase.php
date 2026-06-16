@@ -58,7 +58,8 @@ class EcedoERPCRMInterfaceApiRepresentativeBase implements ModelInterface, Array
       */
     protected static $swaggerTypes = [
         'representative_id' => 'string',
-        'full_name' => 'string'
+        'full_name' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class EcedoERPCRMInterfaceApiRepresentativeBase implements ModelInterface, Array
       */
     protected static $swaggerFormats = [
         'representative_id' => null,
-        'full_name' => null
+        'full_name' => null,
+        'type' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class EcedoERPCRMInterfaceApiRepresentativeBase implements ModelInterface, Array
      */
     protected static $attributeMap = [
         'representative_id' => 'RepresentativeId',
-        'full_name' => 'FullName'
+        'full_name' => 'FullName',
+        'type' => '$type'
     ];
 
     /**
@@ -109,7 +112,8 @@ class EcedoERPCRMInterfaceApiRepresentativeBase implements ModelInterface, Array
      */
     protected static $setters = [
         'representative_id' => 'setRepresentativeId',
-        'full_name' => 'setFullName'
+        'full_name' => 'setFullName',
+        'type' => 'setType'
     ];
 
     /**
@@ -119,7 +123,8 @@ class EcedoERPCRMInterfaceApiRepresentativeBase implements ModelInterface, Array
      */
     protected static $getters = [
         'representative_id' => 'getRepresentativeId',
-        'full_name' => 'getFullName'
+        'full_name' => 'getFullName',
+        'type' => 'getType'
     ];
 
     /**
@@ -184,6 +189,7 @@ class EcedoERPCRMInterfaceApiRepresentativeBase implements ModelInterface, Array
     {
         $this->container['representative_id'] = isset($data['representative_id']) ? $data['representative_id'] : null;
         $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -258,6 +264,30 @@ class EcedoERPCRMInterfaceApiRepresentativeBase implements ModelInterface, Array
     public function setFullName($full_name)
     {
         $this->container['full_name'] = $full_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

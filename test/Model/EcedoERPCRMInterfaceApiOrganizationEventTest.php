@@ -201,4 +201,11 @@ class EcedoERPCRMInterfaceApiOrganizationEventTest extends \PHPUnit_Framework_Te
     public function testPropertyParentOrganizationEvent()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

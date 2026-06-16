@@ -58,7 +58,8 @@ class EcedoERPCRMInterfaceApiContractPropertyPostData implements ModelInterface,
       */
     protected static $swaggerTypes = [
         'contract_property_type' => 'string',
-        'contract_property_value' => 'string'
+        'contract_property_value' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class EcedoERPCRMInterfaceApiContractPropertyPostData implements ModelInterface,
       */
     protected static $swaggerFormats = [
         'contract_property_type' => null,
-        'contract_property_value' => null
+        'contract_property_value' => null,
+        'type' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class EcedoERPCRMInterfaceApiContractPropertyPostData implements ModelInterface,
      */
     protected static $attributeMap = [
         'contract_property_type' => 'ContractPropertyType',
-        'contract_property_value' => 'ContractPropertyValue'
+        'contract_property_value' => 'ContractPropertyValue',
+        'type' => '$type'
     ];
 
     /**
@@ -109,7 +112,8 @@ class EcedoERPCRMInterfaceApiContractPropertyPostData implements ModelInterface,
      */
     protected static $setters = [
         'contract_property_type' => 'setContractPropertyType',
-        'contract_property_value' => 'setContractPropertyValue'
+        'contract_property_value' => 'setContractPropertyValue',
+        'type' => 'setType'
     ];
 
     /**
@@ -119,7 +123,8 @@ class EcedoERPCRMInterfaceApiContractPropertyPostData implements ModelInterface,
      */
     protected static $getters = [
         'contract_property_type' => 'getContractPropertyType',
-        'contract_property_value' => 'getContractPropertyValue'
+        'contract_property_value' => 'getContractPropertyValue',
+        'type' => 'getType'
     ];
 
     /**
@@ -275,6 +280,7 @@ class EcedoERPCRMInterfaceApiContractPropertyPostData implements ModelInterface,
     {
         $this->container['contract_property_type'] = isset($data['contract_property_type']) ? $data['contract_property_type'] : null;
         $this->container['contract_property_value'] = isset($data['contract_property_value']) ? $data['contract_property_value'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -366,6 +372,30 @@ class EcedoERPCRMInterfaceApiContractPropertyPostData implements ModelInterface,
     public function setContractPropertyValue($contract_property_value)
     {
         $this->container['contract_property_value'] = $contract_property_value;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

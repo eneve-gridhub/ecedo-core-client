@@ -117,4 +117,11 @@ class EcedoERPCRMInterfaceApiAddressPostDataTest extends \PHPUnit_Framework_Test
     public function testPropertyCountry()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

@@ -59,7 +59,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardActivatePostData implements ModelInterf
     protected static $swaggerTypes = [
         'card_number' => 'string',
         'card_label' => 'string',
-        'rfid' => 'string'
+        'rfid' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardActivatePostData implements ModelInterf
     protected static $swaggerFormats = [
         'card_number' => null,
         'card_label' => null,
-        'rfid' => null
+        'rfid' => null,
+        'type' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardActivatePostData implements ModelInterf
     protected static $attributeMap = [
         'card_number' => 'CardNumber',
         'card_label' => 'CardLabel',
-        'rfid' => 'Rfid'
+        'rfid' => 'Rfid',
+        'type' => '$type'
     ];
 
     /**
@@ -113,7 +116,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardActivatePostData implements ModelInterf
     protected static $setters = [
         'card_number' => 'setCardNumber',
         'card_label' => 'setCardLabel',
-        'rfid' => 'setRfid'
+        'rfid' => 'setRfid',
+        'type' => 'setType'
     ];
 
     /**
@@ -124,7 +128,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardActivatePostData implements ModelInterf
     protected static $getters = [
         'card_number' => 'getCardNumber',
         'card_label' => 'getCardLabel',
-        'rfid' => 'getRfid'
+        'rfid' => 'getRfid',
+        'type' => 'getType'
     ];
 
     /**
@@ -190,6 +195,7 @@ class EcedoERPCRMInterfaceApiEvChargeCardActivatePostData implements ModelInterf
         $this->container['card_number'] = isset($data['card_number']) ? $data['card_number'] : null;
         $this->container['card_label'] = isset($data['card_label']) ? $data['card_label'] : null;
         $this->container['rfid'] = isset($data['rfid']) ? $data['rfid'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -288,6 +294,30 @@ class EcedoERPCRMInterfaceApiEvChargeCardActivatePostData implements ModelInterf
     public function setRfid($rfid)
     {
         $this->container['rfid'] = $rfid;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

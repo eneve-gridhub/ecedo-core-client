@@ -67,7 +67,8 @@ class EcedoERPCRMInterfaceApiTelemetryApiDtoBase implements ModelInterface, Arra
         'version' => 'int',
         'revision' => 'int',
         'source' => 'string',
-        'source_localized' => 'string'
+        'source_localized' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -86,7 +87,8 @@ class EcedoERPCRMInterfaceApiTelemetryApiDtoBase implements ModelInterface, Arra
         'version' => 'int32',
         'revision' => 'int32',
         'source' => null,
-        'source_localized' => null
+        'source_localized' => null,
+        'type' => null
     ];
 
     /**
@@ -126,7 +128,8 @@ class EcedoERPCRMInterfaceApiTelemetryApiDtoBase implements ModelInterface, Arra
         'version' => 'Version',
         'revision' => 'Revision',
         'source' => 'Source',
-        'source_localized' => 'SourceLocalized'
+        'source_localized' => 'SourceLocalized',
+        'type' => '$type'
     ];
 
     /**
@@ -145,7 +148,8 @@ class EcedoERPCRMInterfaceApiTelemetryApiDtoBase implements ModelInterface, Arra
         'version' => 'setVersion',
         'revision' => 'setRevision',
         'source' => 'setSource',
-        'source_localized' => 'setSourceLocalized'
+        'source_localized' => 'setSourceLocalized',
+        'type' => 'setType'
     ];
 
     /**
@@ -164,7 +168,8 @@ class EcedoERPCRMInterfaceApiTelemetryApiDtoBase implements ModelInterface, Arra
         'version' => 'getVersion',
         'revision' => 'getRevision',
         'source' => 'getSource',
-        'source_localized' => 'getSourceLocalized'
+        'source_localized' => 'getSourceLocalized',
+        'type' => 'getType'
     ];
 
     /**
@@ -280,6 +285,7 @@ class EcedoERPCRMInterfaceApiTelemetryApiDtoBase implements ModelInterface, Arra
         $this->container['revision'] = isset($data['revision']) ? $data['revision'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['source_localized'] = isset($data['source_localized']) ? $data['source_localized'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -604,6 +610,30 @@ class EcedoERPCRMInterfaceApiTelemetryApiDtoBase implements ModelInterface, Arra
     public function setSourceLocalized($source_localized)
     {
         $this->container['source_localized'] = $source_localized;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

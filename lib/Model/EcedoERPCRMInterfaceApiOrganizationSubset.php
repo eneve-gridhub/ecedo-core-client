@@ -71,7 +71,8 @@ class EcedoERPCRMInterfaceApiOrganizationSubset implements ModelInterface, Array
         'mobile_number' => 'string',
         'fax_number' => 'string',
         'email' => 'string',
-        'person' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPerson'
+        'person' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiPerson',
+        'type' => 'string'
     ];
 
     /**
@@ -94,7 +95,8 @@ class EcedoERPCRMInterfaceApiOrganizationSubset implements ModelInterface, Array
         'mobile_number' => null,
         'fax_number' => null,
         'email' => null,
-        'person' => null
+        'person' => null,
+        'type' => null
     ];
 
     /**
@@ -138,7 +140,8 @@ class EcedoERPCRMInterfaceApiOrganizationSubset implements ModelInterface, Array
         'mobile_number' => 'MobileNumber',
         'fax_number' => 'FaxNumber',
         'email' => 'Email',
-        'person' => 'Person'
+        'person' => 'Person',
+        'type' => '$type'
     ];
 
     /**
@@ -161,7 +164,8 @@ class EcedoERPCRMInterfaceApiOrganizationSubset implements ModelInterface, Array
         'mobile_number' => 'setMobileNumber',
         'fax_number' => 'setFaxNumber',
         'email' => 'setEmail',
-        'person' => 'setPerson'
+        'person' => 'setPerson',
+        'type' => 'setType'
     ];
 
     /**
@@ -184,7 +188,8 @@ class EcedoERPCRMInterfaceApiOrganizationSubset implements ModelInterface, Array
         'mobile_number' => 'getMobileNumber',
         'fax_number' => 'getFaxNumber',
         'email' => 'getEmail',
-        'person' => 'getPerson'
+        'person' => 'getPerson',
+        'type' => 'getType'
     ];
 
     /**
@@ -304,6 +309,7 @@ class EcedoERPCRMInterfaceApiOrganizationSubset implements ModelInterface, Array
         $this->container['fax_number'] = isset($data['fax_number']) ? $data['fax_number'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['person'] = isset($data['person']) ? $data['person'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -724,6 +730,30 @@ class EcedoERPCRMInterfaceApiOrganizationSubset implements ModelInterface, Array
     public function setPerson($person)
     {
         $this->container['person'] = $person;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

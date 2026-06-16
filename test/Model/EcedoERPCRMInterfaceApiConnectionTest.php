@@ -397,4 +397,11 @@ class EcedoERPCRMInterfaceApiConnectionTest extends \PHPUnit_Framework_TestCase
     public function testPropertyConnectionProperties()
     {
     }
+
+    /**
+     * Test attribute "entity_properties"
+     */
+    public function testPropertyEntityProperties()
+    {
+    }
 }

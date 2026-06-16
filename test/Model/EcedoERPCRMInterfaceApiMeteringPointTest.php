@@ -222,4 +222,11 @@ class EcedoERPCRMInterfaceApiMeteringPointTest extends \PHPUnit_Framework_TestCa
     public function testPropertyMeterNumberTail()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

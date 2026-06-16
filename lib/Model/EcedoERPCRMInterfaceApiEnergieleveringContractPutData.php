@@ -63,7 +63,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData extends EcedoERPCRMI
         'sales_reference' => 'string',
         'status' => 'string',
         'cancellation_reason' => 'string',
-        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractPropertyPostData[]'
+        'contract_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiContractPropertyPostData[]',
+        'entity_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[]'
     ];
 
     /**
@@ -80,7 +81,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData extends EcedoERPCRMI
         'sales_reference' => null,
         'status' => null,
         'cancellation_reason' => null,
-        'contract_properties' => null
+        'contract_properties' => null,
+        'entity_properties' => null
     ];
 
     /**
@@ -118,7 +120,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData extends EcedoERPCRMI
         'sales_reference' => 'SalesReference',
         'status' => 'Status',
         'cancellation_reason' => 'CancellationReason',
-        'contract_properties' => 'ContractProperties'
+        'contract_properties' => 'ContractProperties',
+        'entity_properties' => 'EntityProperties'
     ];
 
     /**
@@ -135,7 +138,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData extends EcedoERPCRMI
         'sales_reference' => 'setSalesReference',
         'status' => 'setStatus',
         'cancellation_reason' => 'setCancellationReason',
-        'contract_properties' => 'setContractProperties'
+        'contract_properties' => 'setContractProperties',
+        'entity_properties' => 'setEntityProperties'
     ];
 
     /**
@@ -152,7 +156,8 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData extends EcedoERPCRMI
         'sales_reference' => 'getSalesReference',
         'status' => 'getStatus',
         'cancellation_reason' => 'getCancellationReason',
-        'contract_properties' => 'getContractProperties'
+        'contract_properties' => 'getContractProperties',
+        'entity_properties' => 'getEntityProperties'
     ];
 
     /**
@@ -268,6 +273,7 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData extends EcedoERPCRMI
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['cancellation_reason'] = isset($data['cancellation_reason']) ? $data['cancellation_reason'] : null;
         $this->container['contract_properties'] = isset($data['contract_properties']) ? $data['contract_properties'] : null;
+        $this->container['entity_properties'] = isset($data['entity_properties']) ? $data['entity_properties'] : null;
     }
 
     /**
@@ -540,6 +546,30 @@ class EcedoERPCRMInterfaceApiEnergieleveringContractPutData extends EcedoERPCRMI
     public function setContractProperties($contract_properties)
     {
         $this->container['contract_properties'] = $contract_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_properties
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[]
+     */
+    public function getEntityProperties()
+    {
+        return $this->container['entity_properties'];
+    }
+
+    /**
+     * Sets entity_properties
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceApiEntityPropertyPostData[] $entity_properties Optionele parameter (default null). Deze lijst kan gebruikt worden om de waarden van generieke kenmerken aan te passen of om bestaande generieke kenmerken weg te halen.
+     *
+     * @return $this
+     */
+    public function setEntityProperties($entity_properties)
+    {
+        $this->container['entity_properties'] = $entity_properties;
 
         return $this;
     }

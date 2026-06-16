@@ -61,7 +61,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardCreditBase implements ModelInterface, A
         'start_date' => '\DateTime',
         'unit' => 'string',
         'comment' => 'string',
-        'acquired_reason' => 'string'
+        'acquired_reason' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardCreditBase implements ModelInterface, A
         'start_date' => 'date',
         'unit' => null,
         'comment' => null,
-        'acquired_reason' => null
+        'acquired_reason' => null,
+        'type' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardCreditBase implements ModelInterface, A
         'start_date' => 'StartDate',
         'unit' => 'Unit',
         'comment' => 'Comment',
-        'acquired_reason' => 'AcquiredReason'
+        'acquired_reason' => 'AcquiredReason',
+        'type' => '$type'
     ];
 
     /**
@@ -121,7 +124,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardCreditBase implements ModelInterface, A
         'start_date' => 'setStartDate',
         'unit' => 'setUnit',
         'comment' => 'setComment',
-        'acquired_reason' => 'setAcquiredReason'
+        'acquired_reason' => 'setAcquiredReason',
+        'type' => 'setType'
     ];
 
     /**
@@ -134,7 +138,8 @@ class EcedoERPCRMInterfaceApiEvChargeCardCreditBase implements ModelInterface, A
         'start_date' => 'getStartDate',
         'unit' => 'getUnit',
         'comment' => 'getComment',
-        'acquired_reason' => 'getAcquiredReason'
+        'acquired_reason' => 'getAcquiredReason',
+        'type' => 'getType'
     ];
 
     /**
@@ -221,6 +226,7 @@ class EcedoERPCRMInterfaceApiEvChargeCardCreditBase implements ModelInterface, A
         $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
         $this->container['acquired_reason'] = isset($data['acquired_reason']) ? $data['acquired_reason'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('$type', self::$attributeMap, true);
@@ -384,6 +390,30 @@ class EcedoERPCRMInterfaceApiEvChargeCardCreditBase implements ModelInterface, A
     public function setAcquiredReason($acquired_reason)
     {
         $this->container['acquired_reason'] = $acquired_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

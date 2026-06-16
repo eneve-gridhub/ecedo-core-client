@@ -145,4 +145,11 @@ class EcedoERPCRMInterfaceApiCertiqDashboardDataTest extends \PHPUnit_Framework_
     public function testPropertyCntTotalValid()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }
