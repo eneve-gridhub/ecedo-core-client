@@ -471,15 +471,6 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
      */
     public function setContractPropertyType($contract_property_type)
     {
-        $allowedValues = $this->getContractPropertyTypeAllowableValues();
-        if (!is_null($contract_property_type) && !in_array($contract_property_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'contract_property_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['contract_property_type'] = $contract_property_type;
 
         return $this;
