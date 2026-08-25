@@ -76,7 +76,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         'price_range_end' => 'int',
         'price_range_description' => 'string',
         'price_price_block_id' => 'string',
-        'price_price_block_description' => 'string'
+        'price_price_block_description' => 'string',
+        'price_index' => 'int'
     ];
 
     /**
@@ -104,7 +105,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         'price_range_end' => 'int32',
         'price_range_description' => null,
         'price_price_block_id' => 'uuid',
-        'price_price_block_description' => null
+        'price_price_block_description' => null,
+        'price_index' => 'int32'
     ];
 
     /**
@@ -153,7 +155,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         'price_range_end' => 'Price_Range_End',
         'price_range_description' => 'Price_Range_Description',
         'price_price_block_id' => 'Price_PriceBlock_Id',
-        'price_price_block_description' => 'Price_PriceBlock_Description'
+        'price_price_block_description' => 'Price_PriceBlock_Description',
+        'price_index' => 'Price_Index'
     ];
 
     /**
@@ -181,7 +184,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         'price_range_end' => 'setPriceRangeEnd',
         'price_range_description' => 'setPriceRangeDescription',
         'price_price_block_id' => 'setPricePriceBlockId',
-        'price_price_block_description' => 'setPricePriceBlockDescription'
+        'price_price_block_description' => 'setPricePriceBlockDescription',
+        'price_index' => 'setPriceIndex'
     ];
 
     /**
@@ -209,7 +213,8 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         'price_range_end' => 'getPriceRangeEnd',
         'price_range_description' => 'getPriceRangeDescription',
         'price_price_block_id' => 'getPricePriceBlockId',
-        'price_price_block_description' => 'getPricePriceBlockDescription'
+        'price_price_block_description' => 'getPricePriceBlockDescription',
+        'price_index' => 'getPriceIndex'
     ];
 
     /**
@@ -292,6 +297,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
         $this->container['price_range_description'] = isset($data['price_range_description']) ? $data['price_range_description'] : null;
         $this->container['price_price_block_id'] = isset($data['price_price_block_id']) ? $data['price_price_block_id'] : null;
         $this->container['price_price_block_description'] = isset($data['price_price_block_description']) ? $data['price_price_block_description'] : null;
+        $this->container['price_index'] = isset($data['price_index']) ? $data['price_index'] : null;
     }
 
     /**
@@ -794,6 +800,30 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyConnectionContractPriceC
     public function setPricePriceBlockDescription($price_price_block_description)
     {
         $this->container['price_price_block_description'] = $price_price_block_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_index
+     *
+     * @return int
+     */
+    public function getPriceIndex()
+    {
+        return $this->container['price_index'];
+    }
+
+    /**
+     * Sets price_index
+     *
+     * @param int $price_index This is used to determine the order of price components in the RDLC  The index is added because otherwise a lot of complexity would be needed in the RDLC to determine the order
+     *
+     * @return $this
+     */
+    public function setPriceIndex($price_index)
+    {
+        $this->container['price_index'] = $price_index;
 
         return $this;
     }

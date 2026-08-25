@@ -208,6 +208,7 @@ class EcedoERPCRMInterfaceApiContractPropertyPostData implements ModelInterface,
     const CONTRACT_PROPERTY_TYPE_NO_TERMINATION_FEE_PERIOD = 'NoTerminationFeePeriod';
     const CONTRACT_PROPERTY_TYPE_PRICE_BLOCK_GROUP = 'PriceBlockGroup';
     const CONTRACT_PROPERTY_TYPE_KLIK_PRODUCT = 'KlikProduct';
+    const CONTRACT_PROPERTY_TYPE_CONTRACTED_VOLUME_LDN = 'ContractedVolumeLdn';
     
 
     
@@ -259,6 +260,7 @@ class EcedoERPCRMInterfaceApiContractPropertyPostData implements ModelInterface,
             self::CONTRACT_PROPERTY_TYPE_NO_TERMINATION_FEE_PERIOD,
             self::CONTRACT_PROPERTY_TYPE_PRICE_BLOCK_GROUP,
             self::CONTRACT_PROPERTY_TYPE_KLIK_PRODUCT,
+            self::CONTRACT_PROPERTY_TYPE_CONTRACTED_VOLUME_LDN,
         ];
     }
     

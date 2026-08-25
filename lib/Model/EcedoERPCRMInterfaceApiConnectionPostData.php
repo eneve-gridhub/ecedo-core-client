@@ -218,8 +218,8 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
         return self::$swaggerModelName;
     }
 
-    const MARKET_SEGMENT_ELECTRICITY = 'Electricity';
     const MARKET_SEGMENT_GAS = 'Gas';
+    const MARKET_SEGMENT_ELECTRICITY = 'Electricity';
     const SWITCH_TYPE__SWITCH = 'Switch';
     const SWITCH_TYPE_MOVE_IN = 'MoveIn';
     
@@ -233,8 +233,8 @@ class EcedoERPCRMInterfaceApiConnectionPostData implements ModelInterface, Array
     public function getMarketSegmentAllowableValues()
     {
         return [
-            self::MARKET_SEGMENT_ELECTRICITY,
             self::MARKET_SEGMENT_GAS,
+            self::MARKET_SEGMENT_ELECTRICITY,
         ];
     }
     

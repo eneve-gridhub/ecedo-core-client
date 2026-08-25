@@ -48,6 +48,8 @@ composer install
 ./vendor/bin/phpunit
 ```
 
+**Note:** Running tests requires PHP 7.2 or later, while the runtime library supports PHP 5.5 and later.
+
 ## Getting Started
 
 Please follow the [installation procedure](#installation--usage) and then run the following:
@@ -125,6 +127,7 @@ Class | Method | HTTP request | Description
 *SysCertificatesApi* | [**sysCertificatesGetCertificates**](docs/Api/SysCertificatesApi.md#syscertificatesgetcertificates) | **GET** /sysapi/v1.0/certificates/{certificateGroup}/{certificateType} | Haal alle certificaten op die voldoen aan de gegeven parameters.
 *SysCertificatesApi* | [**sysCertificatesPostPrivateCertificate**](docs/Api/SysCertificatesApi.md#syscertificatespostprivatecertificate) | **POST** /sysapi/v1.0/certificates/private | Voeg een nieuw privaat certificaat toe.
 *SysCertificatesApi* | [**sysCertificatesPostPublicCertificate**](docs/Api/SysCertificatesApi.md#syscertificatespostpubliccertificate) | **POST** /sysapi/v1.0/certificates/public | Voeg een nieuw publiek certificaat toe.
+*SysClickDealApi* | [**sysClickDealPost**](docs/Api/SysClickDealApi.md#sysclickdealpost) | **POST** /sysapi/v1.0/deals/click | Register a click deal.
 *SysCommandsApi* | [**sysCommandsSendCommand**](docs/Api/SysCommandsApi.md#syscommandssendcommand) | **POST** /sysapi/v1.0/sendCommand | 
 *SysCompanyLabelsApi* | [**sysCompanyLabelsGet**](docs/Api/SysCompanyLabelsApi.md#syscompanylabelsget) | **GET** /sysapi/v1.0/companylabels | Get all company labels
 *SysConnectionGroupApi* | [**sysConnectionGroupGet**](docs/Api/SysConnectionGroupApi.md#sysconnectiongroupget) | **GET** /sysapi/v1.0/organizations/{organizationId}/connectiongroups | 
@@ -437,6 +440,11 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiCertiqStatisticsPerEan](docs/Model/EcedoERPCRMInterfaceApiCertiqStatisticsPerEan.md)
  - [EcedoERPCRMInterfaceApiChangeAllocationMethodPostData](docs/Model/EcedoERPCRMInterfaceApiChangeAllocationMethodPostData.md)
  - [EcedoERPCRMInterfaceApiChargeSessionInvoiceLetter](docs/Model/EcedoERPCRMInterfaceApiChargeSessionInvoiceLetter.md)
+ - [EcedoERPCRMInterfaceApiClickDealFixationPeriodPostData](docs/Model/EcedoERPCRMInterfaceApiClickDealFixationPeriodPostData.md)
+ - [EcedoERPCRMInterfaceApiClickDealPostData](docs/Model/EcedoERPCRMInterfaceApiClickDealPostData.md)
+ - [EcedoERPCRMInterfaceApiClickDealPricePostData](docs/Model/EcedoERPCRMInterfaceApiClickDealPricePostData.md)
+ - [EcedoERPCRMInterfaceApiClickDealVolumePeriodPostData](docs/Model/EcedoERPCRMInterfaceApiClickDealVolumePeriodPostData.md)
+ - [EcedoERPCRMInterfaceApiClickDealVolumePostData](docs/Model/EcedoERPCRMInterfaceApiClickDealVolumePostData.md)
  - [EcedoERPCRMInterfaceApiCombinedPriceComponentPrice](docs/Model/EcedoERPCRMInterfaceApiCombinedPriceComponentPrice.md)
  - [EcedoERPCRMInterfaceApiCombinedPricesResult](docs/Model/EcedoERPCRMInterfaceApiCombinedPricesResult.md)
  - [EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow](docs/Model/EcedoERPCRMInterfaceApiCompactInvoiceUsageCalculationRow.md)
@@ -806,6 +814,7 @@ Class | Method | HTTP request | Description
  - [EcedoERPUIWebControllersSysApiSysDashboardControllerDashboardDto](docs/Model/EcedoERPUIWebControllersSysApiSysDashboardControllerDashboardDto.md)
  - [EcedoInfrastructureReportingReportImage](docs/Model/EcedoInfrastructureReportingReportImage.md)
  - [EcedoInfrastructureTypesEan](docs/Model/EcedoInfrastructureTypesEan.md)
+ - [SystemWebHttpResultsOkResult](docs/Model/SystemWebHttpResultsOkResult.md)
 
 
 ## Documentation For Authorization

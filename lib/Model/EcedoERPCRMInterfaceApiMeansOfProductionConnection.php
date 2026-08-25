@@ -76,7 +76,7 @@ class EcedoERPCRMInterfaceApiMeansOfProductionConnection implements ModelInterfa
     protected static $swaggerFormats = [
         'means_of_production_connection_id' => null,
         'means_of_production_id' => null,
-        'balance_responsible_market_party_id' => null,
+        'balance_responsible_market_party_id' => 'uuid',
         'ean' => null,
         'expected_year_production' => 'int32',
         'start_date' => 'date',

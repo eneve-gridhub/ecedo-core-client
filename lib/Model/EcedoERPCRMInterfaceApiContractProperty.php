@@ -192,15 +192,14 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
     const CONTRACT_PROPERTY_SOURCE_PROPOSITION = 'Proposition';
     const CONTRACT_PROPERTY_SOURCE_COMPANY_LABEL = 'CompanyLabel';
     const CONTRACT_PROPERTY_TYPE_ACTION_DISCOUNT_MOMENT = 'ActionDiscountMoment';
+    const CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE = 'ElectricityPowerType';
     const CONTRACT_PROPERTY_TYPE_DEPOSIT_SETTLE_MOMENT = 'DepositSettleMoment';
     const CONTRACT_PROPERTY_TYPE_CHANNEL = 'Channel';
+    const CONTRACT_PROPERTY_TYPE_SALES_REFERENCE = 'SalesReference';
+    const CONTRACT_PROPERTY_TYPE_FIXED_ODN_PRICE = 'FixedODNPrice';
     const CONTRACT_PROPERTY_TYPE_HAS_TERMINATION_FEE = 'HasTerminationFee';
     const CONTRACT_PROPERTY_TYPE_SETTLEMENT_INVOICE_FREQUENCY = 'SettlementInvoiceFrequency';
     const CONTRACT_PROPERTY_TYPE_HAS_ADVANCE_PAYMENT_CALCULATION = 'HasAdvancePaymentCalculation';
-    const CONTRACT_PROPERTY_TYPE_ADVANCE_PAYMENT_SCHEME = 'AdvancePaymentScheme';
-    const CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE = 'ElectricityPowerType';
-    const CONTRACT_PROPERTY_TYPE_SALES_REFERENCE = 'SalesReference';
-    const CONTRACT_PROPERTY_TYPE_FIXED_ODN_PRICE = 'FixedODNPrice';
     const CONTRACT_PROPERTY_TYPE_SOLAR_SETTLEMENT_TO_COOPERATION = 'SolarSettlementToCooperation';
     const CONTRACT_PROPERTY_TYPE_HAS_MEMBERSHIP_FEE_LOCAL_ENERGY = 'HasMembershipFeeLocalEnergy';
     const CONTRACT_PROPERTY_TYPE_RESELLER = 'Reseller';
@@ -215,6 +214,7 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
     const CONTRACT_PROPERTY_TYPE_MAX_ODN_LIMIT_TARIFF = 'MaxODNLimitTariff';
     const CONTRACT_PROPERTY_TYPE_GAS_GREENING_OPTION = 'GasGreeningOption';
     const CONTRACT_PROPERTY_TYPE_ELECTRICITY_GREENING_OPTION = 'ElectricityGreeningOption';
+    const CONTRACT_PROPERTY_TYPE_ADVANCE_PAYMENT_SCHEME = 'AdvancePaymentScheme';
     const CONTRACT_PROPERTY_TYPE_NOTICE_PERIOD = 'NoticePeriod';
     const CONTRACT_PROPERTY_TYPE_PURCHASE_ORDER_NUMBER = 'PurchaseOrderNumber';
     const CONTRACT_PROPERTY_TYPE_CURTAILMENT_PROFIT_DISTRIBUTION_KEY = 'CurtailmentProfitDistributionKey';
@@ -231,6 +231,7 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
     const CONTRACT_PROPERTY_TYPE_NO_TERMINATION_FEE_PERIOD = 'NoTerminationFeePeriod';
     const CONTRACT_PROPERTY_TYPE_PRICE_BLOCK_GROUP = 'PriceBlockGroup';
     const CONTRACT_PROPERTY_TYPE_KLIK_PRODUCT = 'KlikProduct';
+    const CONTRACT_PROPERTY_TYPE_CONTRACTED_VOLUME_LDN = 'ContractedVolumeLdn';
     const CONTRACT_PROPERTY_VALUE_TYPE_GUID = 'Guid';
     const CONTRACT_PROPERTY_VALUE_TYPE_STRING = 'String';
     const CONTRACT_PROPERTY_VALUE_TYPE_INTEGER = 'Integer';
@@ -263,15 +264,14 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
     {
         return [
             self::CONTRACT_PROPERTY_TYPE_ACTION_DISCOUNT_MOMENT,
+            self::CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE,
             self::CONTRACT_PROPERTY_TYPE_DEPOSIT_SETTLE_MOMENT,
             self::CONTRACT_PROPERTY_TYPE_CHANNEL,
+            self::CONTRACT_PROPERTY_TYPE_SALES_REFERENCE,
+            self::CONTRACT_PROPERTY_TYPE_FIXED_ODN_PRICE,
             self::CONTRACT_PROPERTY_TYPE_HAS_TERMINATION_FEE,
             self::CONTRACT_PROPERTY_TYPE_SETTLEMENT_INVOICE_FREQUENCY,
             self::CONTRACT_PROPERTY_TYPE_HAS_ADVANCE_PAYMENT_CALCULATION,
-            self::CONTRACT_PROPERTY_TYPE_ADVANCE_PAYMENT_SCHEME,
-            self::CONTRACT_PROPERTY_TYPE_ELECTRICITY_POWER_TYPE,
-            self::CONTRACT_PROPERTY_TYPE_SALES_REFERENCE,
-            self::CONTRACT_PROPERTY_TYPE_FIXED_ODN_PRICE,
             self::CONTRACT_PROPERTY_TYPE_SOLAR_SETTLEMENT_TO_COOPERATION,
             self::CONTRACT_PROPERTY_TYPE_HAS_MEMBERSHIP_FEE_LOCAL_ENERGY,
             self::CONTRACT_PROPERTY_TYPE_RESELLER,
@@ -286,6 +286,7 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
             self::CONTRACT_PROPERTY_TYPE_MAX_ODN_LIMIT_TARIFF,
             self::CONTRACT_PROPERTY_TYPE_GAS_GREENING_OPTION,
             self::CONTRACT_PROPERTY_TYPE_ELECTRICITY_GREENING_OPTION,
+            self::CONTRACT_PROPERTY_TYPE_ADVANCE_PAYMENT_SCHEME,
             self::CONTRACT_PROPERTY_TYPE_NOTICE_PERIOD,
             self::CONTRACT_PROPERTY_TYPE_PURCHASE_ORDER_NUMBER,
             self::CONTRACT_PROPERTY_TYPE_CURTAILMENT_PROFIT_DISTRIBUTION_KEY,
@@ -302,6 +303,7 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
             self::CONTRACT_PROPERTY_TYPE_NO_TERMINATION_FEE_PERIOD,
             self::CONTRACT_PROPERTY_TYPE_PRICE_BLOCK_GROUP,
             self::CONTRACT_PROPERTY_TYPE_KLIK_PRODUCT,
+            self::CONTRACT_PROPERTY_TYPE_CONTRACTED_VOLUME_LDN,
         ];
     }
     
@@ -471,6 +473,15 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
      */
     public function setContractPropertyType($contract_property_type)
     {
+        $allowedValues = $this->getContractPropertyTypeAllowableValues();
+        if (!is_null($contract_property_type) && !in_array($contract_property_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'contract_property_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['contract_property_type'] = $contract_property_type;
 
         return $this;

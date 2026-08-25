@@ -1398,7 +1398,7 @@ class SysInvoiceDataSetsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDto
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationDto
      */
     public function sysInvoiceDataSetsGetForCustom($organization_id, $invoice_id)
     {
@@ -1416,11 +1416,11 @@ class SysInvoiceDataSetsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDto, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function sysInvoiceDataSetsGetForCustomWithHttpInfo($organization_id, $invoice_id)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDto';
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationDto';
         $request = $this->sysInvoiceDataSetsGetForCustomRequest($organization_id, $invoice_id);
 
         try {
@@ -1472,7 +1472,7 @@ class SysInvoiceDataSetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDto',
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1532,7 +1532,7 @@ class SysInvoiceDataSetsApi
      */
     public function sysInvoiceDataSetsGetForCustomAsyncWithHttpInfo($organization_id, $invoice_id)
     {
-        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelPurchaseInvoiceLetterPurchaseInvoiceLetterDto';
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationDto';
         $request = $this->sysInvoiceDataSetsGetForCustomRequest($organization_id, $invoice_id);
 
         return $this->client
