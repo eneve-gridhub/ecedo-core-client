@@ -185,6 +185,7 @@ class EcedoERPCRMInterfaceApiDebtorPostData extends EcedoERPCRMInterfaceApiDebto
     const ADVANCE_PAYMENT_SCHEDULE_TYPE_FLEXIBLE = 'Flexible';
     const ADVANCE_PAYMENT_SCHEDULE_TYPE_IN_MONTH = 'InMonth';
     const ADVANCE_PAYMENT_SCHEDULE_TYPE_BEFORE_MONTH = 'BeforeMonth';
+    const ADVANCE_PAYMENT_SCHEDULE_TYPE_AFTER_MONTH = 'AfterMonth';
     
 
     
@@ -227,6 +228,7 @@ class EcedoERPCRMInterfaceApiDebtorPostData extends EcedoERPCRMInterfaceApiDebto
             self::ADVANCE_PAYMENT_SCHEDULE_TYPE_FLEXIBLE,
             self::ADVANCE_PAYMENT_SCHEDULE_TYPE_IN_MONTH,
             self::ADVANCE_PAYMENT_SCHEDULE_TYPE_BEFORE_MONTH,
+            self::ADVANCE_PAYMENT_SCHEDULE_TYPE_AFTER_MONTH,
         ];
     }
     

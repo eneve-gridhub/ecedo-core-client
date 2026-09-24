@@ -80,4 +80,14 @@ class SysMetersApiTest extends \PHPUnit\Framework\TestCase
     public function testSysMetersGet()
     {
     }
+
+    /**
+     * Test case for sysMetersGetIncidents
+     *
+     * Opvragen van storingsinformatie voor slimme meters (TS055).
+     *
+     */
+    public function testSysMetersGetIncidents()
+    {
+    }
 }

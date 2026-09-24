@@ -122,6 +122,16 @@ class SysAdvancePaymentsApiTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test case for sysAdvancePaymentsGetMostRecent_0
+     *
+     * Haal het meest recente voorschot op.
+     *
+     */
+    public function testSysAdvancePaymentsGetMostRecent0()
+    {
+    }
+
+    /**
      * Test case for sysAdvancePaymentsPost
      *
      * Nieuw voorschot aanmaken.

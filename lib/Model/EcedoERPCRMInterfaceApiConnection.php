@@ -394,8 +394,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
     const STATUS_APPLICATION_CANCELLED = 'ApplicationCancelled';
     const STATUS_LOSS = 'Loss';
     const STATUS_MOVE = 'Move';
-    const MARKET_SEGMENT_GAS = 'Gas';
     const MARKET_SEGMENT_ELECTRICITY = 'Electricity';
+    const MARKET_SEGMENT_GAS = 'Gas';
     const USAGE_TYPE_SMALL_CONSUMER = 'SmallConsumer';
     const USAGE_TYPE_LARGE_CONSUMER = 'LargeConsumer';
     const TYPE_OF_SUPPLY_LEVERING = 'Levering';
@@ -435,8 +435,8 @@ class EcedoERPCRMInterfaceApiConnection implements ModelInterface, ArrayAccess
     public function getMarketSegmentAllowableValues()
     {
         return [
-            self::MARKET_SEGMENT_GAS,
             self::MARKET_SEGMENT_ELECTRICITY,
+            self::MARKET_SEGMENT_GAS,
         ];
     }
     

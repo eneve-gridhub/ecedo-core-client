@@ -89,7 +89,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://innova-test.ecedo.com*
+All URIs are relative to *https://demo.ecedo.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -98,6 +98,7 @@ Class | Method | HTTP request | Description
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsGetByAdvancePaymentId**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsgetbyadvancepaymentid) | **GET** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{advancePaymentId} | Haal specifiek voorschot op
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsGetByOrganizationId**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsgetbyorganizationid) | **GET** /sysapi/v1.0/organizations/{organizationId}/advancepayments | Haal voorschotten van een specifieke klant op
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsGetMostRecent**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsgetmostrecent) | **GET** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{clusterReference}/mostrecent | Haal het meest recente voorschot op
+*SysAdvancePaymentsApi* | [**sysAdvancePaymentsGetMostRecent_0**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsgetmostrecent_0) | **GET** /sysapi/v1.0/organizations/{organizationId}/advancepayments/mostrecent | Haal het meest recente voorschot op
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsPost**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentspost) | **POST** /sysapi/v1.0/organizations/{organizationId}/advancepayments | Nieuw voorschot aanmaken
 *SysAdvancePaymentsApi* | [**sysAdvancePaymentsPut**](docs/Api/SysAdvancePaymentsApi.md#sysadvancepaymentsput) | **PUT** /sysapi/v1.0/organizations/{organizationId}/advancepayments/{advancePaymentId} | Voorschot wijzigen
 *SysAnnualStandardUsagesApi* | [**sysAnnualStandardUsagesDeleteExpectedAnnualStandardUsage**](docs/Api/SysAnnualStandardUsagesApi.md#sysannualstandardusagesdeleteexpectedannualstandardusage) | **DELETE** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/expectedannualstandardusages | Verwijderen verwacht jaarverbruik
@@ -289,6 +290,7 @@ Class | Method | HTTP request | Description
 *SysMeteringPointsApi* | [**sysMeteringPointsGet**](docs/Api/SysMeteringPointsApi.md#sysmeteringpointsget) | **GET** /sysapi/v1.0/meteringpoints/{ean} | Opvragen van aansluitingdetails uit het C-AR
 *SysMeteringPointsApi* | [**sysMeteringPointsSearch**](docs/Api/SysMeteringPointsApi.md#sysmeteringpointssearch) | **GET** /sysapi/v1.0/meteringpoints/search | Zoeken van aansluitingen in het C-AR
 *SysMetersApi* | [**sysMetersGet**](docs/Api/SysMetersApi.md#sysmetersget) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/meters | Haal alle meters op van een aansluiting
+*SysMetersApi* | [**sysMetersGetIncidents**](docs/Api/SysMetersApi.md#sysmetersgetincidents) | **GET** /sysapi/v1.0/organizations/{organizationId}/connections/{connectionId}/meterIncidents | Opvragen van storingsinformatie voor slimme meters (TS055)
 *SysOpenMeasurementDataApi* | [**sysOpenMeasurementDataGet**](docs/Api/SysOpenMeasurementDataApi.md#sysopenmeasurementdataget) | **GET** /sysapi/v1.0/OpenMeasurementData/{ean} | 
 *SysOrganizationEventApi* | [**sysOrganizationEventGetEnergyApplicationEvents**](docs/Api/SysOrganizationEventApi.md#sysorganizationeventgetenergyapplicationevents) | **GET** /sysapi/v1.0/organizations/{organizationId}/energyapplicationevents | Opvragen van EnergyApplication events voor een klant
 *SysOrganizationEventApi* | [**sysOrganizationEventGetFirstPossibleEventDate**](docs/Api/SysOrganizationEventApi.md#sysorganizationeventgetfirstpossibleeventdate) | **GET** /sysapi/v1.0/events/minimumeventdate | Bepaal eerst mogelijke eventdatum op basis van een gewenste eventdatum
@@ -316,6 +318,9 @@ Class | Method | HTTP request | Description
 *SysPersonsApi* | [**sysPersonsGetFullPersonsByInvoice**](docs/Api/SysPersonsApi.md#syspersonsgetfullpersonsbyinvoice) | **GET** /sysapi/v1.0/organizations/{organizationId}/persons/byInvoice/{invoiceId} | Vraagt de contactpersonen op die bij een factuur horen.
 *SysPersonsApi* | [**sysPersonsPostFullPerson**](docs/Api/SysPersonsApi.md#syspersonspostfullperson) | **POST** /sysapi/v1.0/organizations/{organizationId}/persons | Voegt een nieuw contactpersoon toe bij een organisatie.
 *SysPersonsApi* | [**sysPersonsUpdateFullPerson**](docs/Api/SysPersonsApi.md#syspersonsupdatefullperson) | **PUT** /sysapi/v1.0/organizations/{organizationId}/persons/{personId} | Wijzigt een bestaande contactpersoon.
+*SysPriceBlocksApi* | [**sysPriceBlocksGetPriceBlock**](docs/Api/SysPriceBlocksApi.md#syspriceblocksgetpriceblock) | **GET** /sysapi/v1.0/priceblocks/{priceBlockId} | Haalt een specifiek prijsblok op
+*SysPriceBlocksApi* | [**sysPriceBlocksGetPriceBlockGroup**](docs/Api/SysPriceBlocksApi.md#syspriceblocksgetpriceblockgroup) | **GET** /sysapi/v1.0/priceblockgroups/{priceBlockGroupId} | Haalt een specifieke prijsblokgroep op
+*SysPriceBlocksApi* | [**sysPriceBlocksGetPriceBlockGroups**](docs/Api/SysPriceBlocksApi.md#syspriceblocksgetpriceblockgroups) | **GET** /sysapi/v1.0/priceblockgroups | Haalt prijsblokgroepen op
 *SysPricesApi* | [**sysPricesGetByConnection**](docs/Api/SysPricesApi.md#syspricesgetbyconnection) | **GET** /sysapi/v1.0/prices/energielevering/connections/{connectionId} | Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting.
 *SysPricesApi* | [**sysPricesGetByContract**](docs/Api/SysPricesApi.md#syspricesgetbycontract) | **GET** /sysapi/v1.0/prices/energielevering/contracts/{contractId} | Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de aansluiting horend bij het contract.
 *SysPricesApi* | [**sysPricesGetByPropositionId**](docs/Api/SysPricesApi.md#syspricesgetbypropositionid) | **GET** /sysapi/v1.0/prices/energielevering/propositions/{propositionId} | Ophalen van de gecombineerde prijzen geldig op de meegegeven dag voor de propositie.
@@ -513,6 +518,9 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiDraftBillingItem](docs/Model/EcedoERPCRMInterfaceApiDraftBillingItem.md)
  - [EcedoERPCRMInterfaceApiDraftBillingItemsForConnection](docs/Model/EcedoERPCRMInterfaceApiDraftBillingItemsForConnection.md)
  - [EcedoERPCRMInterfaceApiDtoBillingItemGroupBillingItemGroup](docs/Model/EcedoERPCRMInterfaceApiDtoBillingItemGroupBillingItemGroup.md)
+ - [EcedoERPCRMInterfaceApiDtoPriceBlockPriceBlock](docs/Model/EcedoERPCRMInterfaceApiDtoPriceBlockPriceBlock.md)
+ - [EcedoERPCRMInterfaceApiDtoPriceBlockPriceBlockGroup](docs/Model/EcedoERPCRMInterfaceApiDtoPriceBlockPriceBlockGroup.md)
+ - [EcedoERPCRMInterfaceApiDtoPriceBlockPriceBlockTimeSpan](docs/Model/EcedoERPCRMInterfaceApiDtoPriceBlockPriceBlockTimeSpan.md)
  - [EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto](docs/Model/EcedoERPCRMInterfaceApiDtoServiceContractEvChargerServiceContractApiDto.md)
  - [EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto](docs/Model/EcedoERPCRMInterfaceApiDtoServiceContractMeansOfProductionConnectionServiceContractApiDto.md)
  - [EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto](docs/Model/EcedoERPCRMInterfaceApiDtoServiceContractServiceContractApiDto.md)
@@ -619,6 +627,11 @@ Class | Method | HTTP request | Description
  - [EcedoERPCRMInterfaceApiMeeliftContract](docs/Model/EcedoERPCRMInterfaceApiMeeliftContract.md)
  - [EcedoERPCRMInterfaceApiMeeliftProposition](docs/Model/EcedoERPCRMInterfaceApiMeeliftProposition.md)
  - [EcedoERPCRMInterfaceApiMeter](docs/Model/EcedoERPCRMInterfaceApiMeter.md)
+ - [EcedoERPCRMInterfaceApiMeterIncident](docs/Model/EcedoERPCRMInterfaceApiMeterIncident.md)
+ - [EcedoERPCRMInterfaceApiMeterIncidentAccountingPoint](docs/Model/EcedoERPCRMInterfaceApiMeterIncidentAccountingPoint.md)
+ - [EcedoERPCRMInterfaceApiMeterIncidentActivityRecord](docs/Model/EcedoERPCRMInterfaceApiMeterIncidentActivityRecord.md)
+ - [EcedoERPCRMInterfaceApiMeterIncidentCollection](docs/Model/EcedoERPCRMInterfaceApiMeterIncidentCollection.md)
+ - [EcedoERPCRMInterfaceApiMeterIncidentMeter](docs/Model/EcedoERPCRMInterfaceApiMeterIncidentMeter.md)
  - [EcedoERPCRMInterfaceApiMeterReading](docs/Model/EcedoERPCRMInterfaceApiMeterReading.md)
  - [EcedoERPCRMInterfaceApiMeterReadingBase](docs/Model/EcedoERPCRMInterfaceApiMeterReadingBase.md)
  - [EcedoERPCRMInterfaceApiMeterReadingByEventIdPostData](docs/Model/EcedoERPCRMInterfaceApiMeterReadingByEventIdPostData.md)

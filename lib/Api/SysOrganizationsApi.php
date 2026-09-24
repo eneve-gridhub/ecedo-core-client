@@ -1859,14 +1859,15 @@ class SysOrganizationsApi
      * @param  string $connection_ean Optionele parameter waarmee gezocht kan worden naar EANs. Dit is een like-search die alleen wordt uitgevoerd wanneer de parameter includeConnections de waarde true heeft (optional)
      * @param  string $organization_name Optionele parameter waarmee gezocht kan worden naar een specifieke klantnaam. Dit is een like-search (optional)
      * @param  string $company_label_id De labelId van de klant (optional)
+     * @param  string $bank_account_number Het bankrekeningnummer van de klant (exacte match) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiOrganizationSearchResult
      */
-    public function sysOrganizationsSearch($organization_reference = null, $organization_address_number = null, $organization_address_addition = null, $organization_address_zip_code = null, $organization_email_address = null, $organization_phone_number = null, $organization_group_id = null, $organization_type = null, $organization_sub_type = null, $kvk_number = null, $parent_organization_id = null, $is_parent_organization = null, $include_connections = null, $reseller_id = null, $connection_ean = null, $organization_name = null, $company_label_id = null)
+    public function sysOrganizationsSearch($organization_reference = null, $organization_address_number = null, $organization_address_addition = null, $organization_address_zip_code = null, $organization_email_address = null, $organization_phone_number = null, $organization_group_id = null, $organization_type = null, $organization_sub_type = null, $kvk_number = null, $parent_organization_id = null, $is_parent_organization = null, $include_connections = null, $reseller_id = null, $connection_ean = null, $organization_name = null, $company_label_id = null, $bank_account_number = null)
     {
-        list($response) = $this->sysOrganizationsSearchWithHttpInfo($organization_reference, $organization_address_number, $organization_address_addition, $organization_address_zip_code, $organization_email_address, $organization_phone_number, $organization_group_id, $organization_type, $organization_sub_type, $kvk_number, $parent_organization_id, $is_parent_organization, $include_connections, $reseller_id, $connection_ean, $organization_name, $company_label_id);
+        list($response) = $this->sysOrganizationsSearchWithHttpInfo($organization_reference, $organization_address_number, $organization_address_addition, $organization_address_zip_code, $organization_email_address, $organization_phone_number, $organization_group_id, $organization_type, $organization_sub_type, $kvk_number, $parent_organization_id, $is_parent_organization, $include_connections, $reseller_id, $connection_ean, $organization_name, $company_label_id, $bank_account_number);
         return $response;
     }
 
@@ -1892,15 +1893,16 @@ class SysOrganizationsApi
      * @param  string $connection_ean Optionele parameter waarmee gezocht kan worden naar EANs. Dit is een like-search die alleen wordt uitgevoerd wanneer de parameter includeConnections de waarde true heeft (optional)
      * @param  string $organization_name Optionele parameter waarmee gezocht kan worden naar een specifieke klantnaam. Dit is een like-search (optional)
      * @param  string $company_label_id De labelId van de klant (optional)
+     * @param  string $bank_account_number Het bankrekeningnummer van de klant (exacte match) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiOrganizationSearchResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysOrganizationsSearchWithHttpInfo($organization_reference = null, $organization_address_number = null, $organization_address_addition = null, $organization_address_zip_code = null, $organization_email_address = null, $organization_phone_number = null, $organization_group_id = null, $organization_type = null, $organization_sub_type = null, $kvk_number = null, $parent_organization_id = null, $is_parent_organization = null, $include_connections = null, $reseller_id = null, $connection_ean = null, $organization_name = null, $company_label_id = null)
+    public function sysOrganizationsSearchWithHttpInfo($organization_reference = null, $organization_address_number = null, $organization_address_addition = null, $organization_address_zip_code = null, $organization_email_address = null, $organization_phone_number = null, $organization_group_id = null, $organization_type = null, $organization_sub_type = null, $kvk_number = null, $parent_organization_id = null, $is_parent_organization = null, $include_connections = null, $reseller_id = null, $connection_ean = null, $organization_name = null, $company_label_id = null, $bank_account_number = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiOrganizationSearchResult';
-        $request = $this->sysOrganizationsSearchRequest($organization_reference, $organization_address_number, $organization_address_addition, $organization_address_zip_code, $organization_email_address, $organization_phone_number, $organization_group_id, $organization_type, $organization_sub_type, $kvk_number, $parent_organization_id, $is_parent_organization, $include_connections, $reseller_id, $connection_ean, $organization_name, $company_label_id);
+        $request = $this->sysOrganizationsSearchRequest($organization_reference, $organization_address_number, $organization_address_addition, $organization_address_zip_code, $organization_email_address, $organization_phone_number, $organization_group_id, $organization_type, $organization_sub_type, $kvk_number, $parent_organization_id, $is_parent_organization, $include_connections, $reseller_id, $connection_ean, $organization_name, $company_label_id, $bank_account_number);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1999,13 +2001,14 @@ class SysOrganizationsApi
      * @param  string $connection_ean Optionele parameter waarmee gezocht kan worden naar EANs. Dit is een like-search die alleen wordt uitgevoerd wanneer de parameter includeConnections de waarde true heeft (optional)
      * @param  string $organization_name Optionele parameter waarmee gezocht kan worden naar een specifieke klantnaam. Dit is een like-search (optional)
      * @param  string $company_label_id De labelId van de klant (optional)
+     * @param  string $bank_account_number Het bankrekeningnummer van de klant (exacte match) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysOrganizationsSearchAsync($organization_reference = null, $organization_address_number = null, $organization_address_addition = null, $organization_address_zip_code = null, $organization_email_address = null, $organization_phone_number = null, $organization_group_id = null, $organization_type = null, $organization_sub_type = null, $kvk_number = null, $parent_organization_id = null, $is_parent_organization = null, $include_connections = null, $reseller_id = null, $connection_ean = null, $organization_name = null, $company_label_id = null)
+    public function sysOrganizationsSearchAsync($organization_reference = null, $organization_address_number = null, $organization_address_addition = null, $organization_address_zip_code = null, $organization_email_address = null, $organization_phone_number = null, $organization_group_id = null, $organization_type = null, $organization_sub_type = null, $kvk_number = null, $parent_organization_id = null, $is_parent_organization = null, $include_connections = null, $reseller_id = null, $connection_ean = null, $organization_name = null, $company_label_id = null, $bank_account_number = null)
     {
-        return $this->sysOrganizationsSearchAsyncWithHttpInfo($organization_reference, $organization_address_number, $organization_address_addition, $organization_address_zip_code, $organization_email_address, $organization_phone_number, $organization_group_id, $organization_type, $organization_sub_type, $kvk_number, $parent_organization_id, $is_parent_organization, $include_connections, $reseller_id, $connection_ean, $organization_name, $company_label_id)
+        return $this->sysOrganizationsSearchAsyncWithHttpInfo($organization_reference, $organization_address_number, $organization_address_addition, $organization_address_zip_code, $organization_email_address, $organization_phone_number, $organization_group_id, $organization_type, $organization_sub_type, $kvk_number, $parent_organization_id, $is_parent_organization, $include_connections, $reseller_id, $connection_ean, $organization_name, $company_label_id, $bank_account_number)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2035,14 +2038,15 @@ class SysOrganizationsApi
      * @param  string $connection_ean Optionele parameter waarmee gezocht kan worden naar EANs. Dit is een like-search die alleen wordt uitgevoerd wanneer de parameter includeConnections de waarde true heeft (optional)
      * @param  string $organization_name Optionele parameter waarmee gezocht kan worden naar een specifieke klantnaam. Dit is een like-search (optional)
      * @param  string $company_label_id De labelId van de klant (optional)
+     * @param  string $bank_account_number Het bankrekeningnummer van de klant (exacte match) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysOrganizationsSearchAsyncWithHttpInfo($organization_reference = null, $organization_address_number = null, $organization_address_addition = null, $organization_address_zip_code = null, $organization_email_address = null, $organization_phone_number = null, $organization_group_id = null, $organization_type = null, $organization_sub_type = null, $kvk_number = null, $parent_organization_id = null, $is_parent_organization = null, $include_connections = null, $reseller_id = null, $connection_ean = null, $organization_name = null, $company_label_id = null)
+    public function sysOrganizationsSearchAsyncWithHttpInfo($organization_reference = null, $organization_address_number = null, $organization_address_addition = null, $organization_address_zip_code = null, $organization_email_address = null, $organization_phone_number = null, $organization_group_id = null, $organization_type = null, $organization_sub_type = null, $kvk_number = null, $parent_organization_id = null, $is_parent_organization = null, $include_connections = null, $reseller_id = null, $connection_ean = null, $organization_name = null, $company_label_id = null, $bank_account_number = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiOrganizationSearchResult';
-        $request = $this->sysOrganizationsSearchRequest($organization_reference, $organization_address_number, $organization_address_addition, $organization_address_zip_code, $organization_email_address, $organization_phone_number, $organization_group_id, $organization_type, $organization_sub_type, $kvk_number, $parent_organization_id, $is_parent_organization, $include_connections, $reseller_id, $connection_ean, $organization_name, $company_label_id);
+        $request = $this->sysOrganizationsSearchRequest($organization_reference, $organization_address_number, $organization_address_addition, $organization_address_zip_code, $organization_email_address, $organization_phone_number, $organization_group_id, $organization_type, $organization_sub_type, $kvk_number, $parent_organization_id, $is_parent_organization, $include_connections, $reseller_id, $connection_ean, $organization_name, $company_label_id, $bank_account_number);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2101,11 +2105,12 @@ class SysOrganizationsApi
      * @param  string $connection_ean Optionele parameter waarmee gezocht kan worden naar EANs. Dit is een like-search die alleen wordt uitgevoerd wanneer de parameter includeConnections de waarde true heeft (optional)
      * @param  string $organization_name Optionele parameter waarmee gezocht kan worden naar een specifieke klantnaam. Dit is een like-search (optional)
      * @param  string $company_label_id De labelId van de klant (optional)
+     * @param  string $bank_account_number Het bankrekeningnummer van de klant (exacte match) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysOrganizationsSearchRequest($organization_reference = null, $organization_address_number = null, $organization_address_addition = null, $organization_address_zip_code = null, $organization_email_address = null, $organization_phone_number = null, $organization_group_id = null, $organization_type = null, $organization_sub_type = null, $kvk_number = null, $parent_organization_id = null, $is_parent_organization = null, $include_connections = null, $reseller_id = null, $connection_ean = null, $organization_name = null, $company_label_id = null)
+    protected function sysOrganizationsSearchRequest($organization_reference = null, $organization_address_number = null, $organization_address_addition = null, $organization_address_zip_code = null, $organization_email_address = null, $organization_phone_number = null, $organization_group_id = null, $organization_type = null, $organization_sub_type = null, $kvk_number = null, $parent_organization_id = null, $is_parent_organization = null, $include_connections = null, $reseller_id = null, $connection_ean = null, $organization_name = null, $company_label_id = null, $bank_account_number = null)
     {
 
         $resourcePath = '/sysapi/v1.0/organizations/search';
@@ -2182,6 +2187,10 @@ class SysOrganizationsApi
         // query params
         if ($company_label_id !== null) {
             $queryParams['companyLabelId'] = ObjectSerializer::toQueryValue($company_label_id);
+        }
+        // query params
+        if ($bank_account_number !== null) {
+            $queryParams['bankAccountNumber'] = ObjectSerializer::toQueryValue($bank_account_number);
         }
 
 

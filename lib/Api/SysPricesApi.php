@@ -764,14 +764,15 @@ class SysPricesApi
      * @param  bool $has_reseller Optioneel; Hiermee kan worden aangegeven dat de prijzen incl. de reseller tarieven moeten worden teruggegeven. Ook als er geen Reseller property is vastgelegd bij de propositie. (optional)
      * @param  bool $allow_missing_cap_tar Default ‘false’; Als true dan mag de captar code ontbreken en/of de netwerkkosten. De rest van de prijzen worden dan wel opgeleverd. Als false dan zal de call uitvallen als er geen captar code is en/of de netwerkkosten ontbreken. (optional)
      * @param  string $combine_type Default ‘CombineGroup’; Geeft aan op welke manier de prijzen gegroepeerd moeten worden. (optional)
+     * @param  string $type_of_supply Default ‘Levering’; Geeft bij voorlopige marktprijzen aan of de AMI (‘Combi’) of AZI (‘Levering’) prijs gebruikt wordt. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiCombinedPricesResult
      */
-    public function sysPricesGetByPropositionId($proposition_id, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_id = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null)
+    public function sysPricesGetByPropositionId($proposition_id, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_id = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null, $type_of_supply = null)
     {
-        list($response) = $this->sysPricesGetByPropositionIdWithHttpInfo($proposition_id, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_id, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type);
+        list($response) = $this->sysPricesGetByPropositionIdWithHttpInfo($proposition_id, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_id, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type, $type_of_supply);
         return $response;
     }
 
@@ -796,15 +797,16 @@ class SysPricesApi
      * @param  bool $has_reseller Optioneel; Hiermee kan worden aangegeven dat de prijzen incl. de reseller tarieven moeten worden teruggegeven. Ook als er geen Reseller property is vastgelegd bij de propositie. (optional)
      * @param  bool $allow_missing_cap_tar Default ‘false’; Als true dan mag de captar code ontbreken en/of de netwerkkosten. De rest van de prijzen worden dan wel opgeleverd. Als false dan zal de call uitvallen als er geen captar code is en/of de netwerkkosten ontbreken. (optional)
      * @param  string $combine_type Default ‘CombineGroup’; Geeft aan op welke manier de prijzen gegroepeerd moeten worden. (optional)
+     * @param  string $type_of_supply Default ‘Levering’; Geeft bij voorlopige marktprijzen aan of de AMI (‘Combi’) of AZI (‘Levering’) prijs gebruikt wordt. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiCombinedPricesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysPricesGetByPropositionIdWithHttpInfo($proposition_id, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_id = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null)
+    public function sysPricesGetByPropositionIdWithHttpInfo($proposition_id, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_id = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null, $type_of_supply = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCombinedPricesResult';
-        $request = $this->sysPricesGetByPropositionIdRequest($proposition_id, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_id, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type);
+        $request = $this->sysPricesGetByPropositionIdRequest($proposition_id, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_id, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type, $type_of_supply);
 
         try {
             $options = $this->createHttpClientOption();
@@ -902,13 +904,14 @@ class SysPricesApi
      * @param  bool $has_reseller Optioneel; Hiermee kan worden aangegeven dat de prijzen incl. de reseller tarieven moeten worden teruggegeven. Ook als er geen Reseller property is vastgelegd bij de propositie. (optional)
      * @param  bool $allow_missing_cap_tar Default ‘false’; Als true dan mag de captar code ontbreken en/of de netwerkkosten. De rest van de prijzen worden dan wel opgeleverd. Als false dan zal de call uitvallen als er geen captar code is en/of de netwerkkosten ontbreken. (optional)
      * @param  string $combine_type Default ‘CombineGroup’; Geeft aan op welke manier de prijzen gegroepeerd moeten worden. (optional)
+     * @param  string $type_of_supply Default ‘Levering’; Geeft bij voorlopige marktprijzen aan of de AMI (‘Combi’) of AZI (‘Levering’) prijs gebruikt wordt. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysPricesGetByPropositionIdAsync($proposition_id, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_id = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null)
+    public function sysPricesGetByPropositionIdAsync($proposition_id, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_id = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null, $type_of_supply = null)
     {
-        return $this->sysPricesGetByPropositionIdAsyncWithHttpInfo($proposition_id, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_id, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type)
+        return $this->sysPricesGetByPropositionIdAsyncWithHttpInfo($proposition_id, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_id, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type, $type_of_supply)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -937,14 +940,15 @@ class SysPricesApi
      * @param  bool $has_reseller Optioneel; Hiermee kan worden aangegeven dat de prijzen incl. de reseller tarieven moeten worden teruggegeven. Ook als er geen Reseller property is vastgelegd bij de propositie. (optional)
      * @param  bool $allow_missing_cap_tar Default ‘false’; Als true dan mag de captar code ontbreken en/of de netwerkkosten. De rest van de prijzen worden dan wel opgeleverd. Als false dan zal de call uitvallen als er geen captar code is en/of de netwerkkosten ontbreken. (optional)
      * @param  string $combine_type Default ‘CombineGroup’; Geeft aan op welke manier de prijzen gegroepeerd moeten worden. (optional)
+     * @param  string $type_of_supply Default ‘Levering’; Geeft bij voorlopige marktprijzen aan of de AMI (‘Combi’) of AZI (‘Levering’) prijs gebruikt wordt. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysPricesGetByPropositionIdAsyncWithHttpInfo($proposition_id, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_id = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null)
+    public function sysPricesGetByPropositionIdAsyncWithHttpInfo($proposition_id, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_id = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null, $type_of_supply = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCombinedPricesResult';
-        $request = $this->sysPricesGetByPropositionIdRequest($proposition_id, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_id, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type);
+        $request = $this->sysPricesGetByPropositionIdRequest($proposition_id, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_id, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type, $type_of_supply);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1002,11 +1006,12 @@ class SysPricesApi
      * @param  bool $has_reseller Optioneel; Hiermee kan worden aangegeven dat de prijzen incl. de reseller tarieven moeten worden teruggegeven. Ook als er geen Reseller property is vastgelegd bij de propositie. (optional)
      * @param  bool $allow_missing_cap_tar Default ‘false’; Als true dan mag de captar code ontbreken en/of de netwerkkosten. De rest van de prijzen worden dan wel opgeleverd. Als false dan zal de call uitvallen als er geen captar code is en/of de netwerkkosten ontbreken. (optional)
      * @param  string $combine_type Default ‘CombineGroup’; Geeft aan op welke manier de prijzen gegroepeerd moeten worden. (optional)
+     * @param  string $type_of_supply Default ‘Levering’; Geeft bij voorlopige marktprijzen aan of de AMI (‘Combi’) of AZI (‘Levering’) prijs gebruikt wordt. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysPricesGetByPropositionIdRequest($proposition_id, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_id = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null)
+    protected function sysPricesGetByPropositionIdRequest($proposition_id, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_id = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null, $type_of_supply = null)
     {
         // verify the required parameter 'proposition_id' is set
         if ($proposition_id === null || (is_array($proposition_id) && count($proposition_id) === 0)) {
@@ -1087,6 +1092,10 @@ class SysPricesApi
         // query params
         if ($combine_type !== null) {
             $queryParams['combineType'] = ObjectSerializer::toQueryValue($combine_type);
+        }
+        // query params
+        if ($type_of_supply !== null) {
+            $queryParams['typeOfSupply'] = ObjectSerializer::toQueryValue($type_of_supply);
         }
 
         // path params
@@ -1200,14 +1209,15 @@ class SysPricesApi
      * @param  bool $has_reseller Optioneel; Hiermee kan worden aangegeven dat de prijzen incl. de reseller tarieven moeten worden teruggegeven. Ook als er geen Reseller property is vastgelegd bij de propositie. (optional)
      * @param  bool $allow_missing_cap_tar Default ‘false’; Als true dan mag de captar code ontbreken en/of de netwerkkosten. De rest van de prijzen worden dan wel opgeleverd. Als false dan zal de call uitvallen als er geen captar code is en/of de netwerkkosten ontbreken. (optional)
      * @param  string $combine_type Default ‘CombineGroup’; Geeft aan op welke manier de prijzen gegroepeerd moeten worden. (optional)
+     * @param  string $type_of_supply Default ‘Levering’; Geeft bij voorlopige marktprijzen aan of de AMI (‘Combi’) of AZI (‘Levering’) prijs gebruikt wordt. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiCombinedPricesResult
      */
-    public function sysPricesGetByPropositionReference($proposition_reference, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_reference = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null)
+    public function sysPricesGetByPropositionReference($proposition_reference, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_reference = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null, $type_of_supply = null)
     {
-        list($response) = $this->sysPricesGetByPropositionReferenceWithHttpInfo($proposition_reference, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_reference, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type);
+        list($response) = $this->sysPricesGetByPropositionReferenceWithHttpInfo($proposition_reference, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_reference, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type, $type_of_supply);
         return $response;
     }
 
@@ -1232,15 +1242,16 @@ class SysPricesApi
      * @param  bool $has_reseller Optioneel; Hiermee kan worden aangegeven dat de prijzen incl. de reseller tarieven moeten worden teruggegeven. Ook als er geen Reseller property is vastgelegd bij de propositie. (optional)
      * @param  bool $allow_missing_cap_tar Default ‘false’; Als true dan mag de captar code ontbreken en/of de netwerkkosten. De rest van de prijzen worden dan wel opgeleverd. Als false dan zal de call uitvallen als er geen captar code is en/of de netwerkkosten ontbreken. (optional)
      * @param  string $combine_type Default ‘CombineGroup’; Geeft aan op welke manier de prijzen gegroepeerd moeten worden. (optional)
+     * @param  string $type_of_supply Default ‘Levering’; Geeft bij voorlopige marktprijzen aan of de AMI (‘Combi’) of AZI (‘Levering’) prijs gebruikt wordt. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiCombinedPricesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sysPricesGetByPropositionReferenceWithHttpInfo($proposition_reference, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_reference = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null)
+    public function sysPricesGetByPropositionReferenceWithHttpInfo($proposition_reference, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_reference = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null, $type_of_supply = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCombinedPricesResult';
-        $request = $this->sysPricesGetByPropositionReferenceRequest($proposition_reference, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_reference, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type);
+        $request = $this->sysPricesGetByPropositionReferenceRequest($proposition_reference, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_reference, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type, $type_of_supply);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1338,13 +1349,14 @@ class SysPricesApi
      * @param  bool $has_reseller Optioneel; Hiermee kan worden aangegeven dat de prijzen incl. de reseller tarieven moeten worden teruggegeven. Ook als er geen Reseller property is vastgelegd bij de propositie. (optional)
      * @param  bool $allow_missing_cap_tar Default ‘false’; Als true dan mag de captar code ontbreken en/of de netwerkkosten. De rest van de prijzen worden dan wel opgeleverd. Als false dan zal de call uitvallen als er geen captar code is en/of de netwerkkosten ontbreken. (optional)
      * @param  string $combine_type Default ‘CombineGroup’; Geeft aan op welke manier de prijzen gegroepeerd moeten worden. (optional)
+     * @param  string $type_of_supply Default ‘Levering’; Geeft bij voorlopige marktprijzen aan of de AMI (‘Combi’) of AZI (‘Levering’) prijs gebruikt wordt. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysPricesGetByPropositionReferenceAsync($proposition_reference, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_reference = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null)
+    public function sysPricesGetByPropositionReferenceAsync($proposition_reference, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_reference = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null, $type_of_supply = null)
     {
-        return $this->sysPricesGetByPropositionReferenceAsyncWithHttpInfo($proposition_reference, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_reference, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type)
+        return $this->sysPricesGetByPropositionReferenceAsyncWithHttpInfo($proposition_reference, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_reference, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type, $type_of_supply)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1373,14 +1385,15 @@ class SysPricesApi
      * @param  bool $has_reseller Optioneel; Hiermee kan worden aangegeven dat de prijzen incl. de reseller tarieven moeten worden teruggegeven. Ook als er geen Reseller property is vastgelegd bij de propositie. (optional)
      * @param  bool $allow_missing_cap_tar Default ‘false’; Als true dan mag de captar code ontbreken en/of de netwerkkosten. De rest van de prijzen worden dan wel opgeleverd. Als false dan zal de call uitvallen als er geen captar code is en/of de netwerkkosten ontbreken. (optional)
      * @param  string $combine_type Default ‘CombineGroup’; Geeft aan op welke manier de prijzen gegroepeerd moeten worden. (optional)
+     * @param  string $type_of_supply Default ‘Levering’; Geeft bij voorlopige marktprijzen aan of de AMI (‘Combi’) of AZI (‘Levering’) prijs gebruikt wordt. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sysPricesGetByPropositionReferenceAsyncWithHttpInfo($proposition_reference, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_reference = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null)
+    public function sysPricesGetByPropositionReferenceAsyncWithHttpInfo($proposition_reference, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_reference = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null, $type_of_supply = null)
     {
         $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiCombinedPricesResult';
-        $request = $this->sysPricesGetByPropositionReferenceRequest($proposition_reference, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_reference, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type);
+        $request = $this->sysPricesGetByPropositionReferenceRequest($proposition_reference, $price_date, $grid_operator_ean, $location_type, $is_residential, $electricity_profile, $gas_profile, $electricity_cap_tar_code, $gas_cap_tar_code, $grid_area_ean, $gos_region, $meelift_proposition_reference, $organization_type, $has_reseller, $allow_missing_cap_tar, $combine_type, $type_of_supply);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1438,11 +1451,12 @@ class SysPricesApi
      * @param  bool $has_reseller Optioneel; Hiermee kan worden aangegeven dat de prijzen incl. de reseller tarieven moeten worden teruggegeven. Ook als er geen Reseller property is vastgelegd bij de propositie. (optional)
      * @param  bool $allow_missing_cap_tar Default ‘false’; Als true dan mag de captar code ontbreken en/of de netwerkkosten. De rest van de prijzen worden dan wel opgeleverd. Als false dan zal de call uitvallen als er geen captar code is en/of de netwerkkosten ontbreken. (optional)
      * @param  string $combine_type Default ‘CombineGroup’; Geeft aan op welke manier de prijzen gegroepeerd moeten worden. (optional)
+     * @param  string $type_of_supply Default ‘Levering’; Geeft bij voorlopige marktprijzen aan of de AMI (‘Combi’) of AZI (‘Levering’) prijs gebruikt wordt. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sysPricesGetByPropositionReferenceRequest($proposition_reference, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_reference = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null)
+    protected function sysPricesGetByPropositionReferenceRequest($proposition_reference, $price_date, $grid_operator_ean = null, $location_type = null, $is_residential = null, $electricity_profile = null, $gas_profile = null, $electricity_cap_tar_code = null, $gas_cap_tar_code = null, $grid_area_ean = null, $gos_region = null, $meelift_proposition_reference = null, $organization_type = null, $has_reseller = null, $allow_missing_cap_tar = null, $combine_type = null, $type_of_supply = null)
     {
         // verify the required parameter 'proposition_reference' is set
         if ($proposition_reference === null || (is_array($proposition_reference) && count($proposition_reference) === 0)) {
@@ -1523,6 +1537,10 @@ class SysPricesApi
         // query params
         if ($combine_type !== null) {
             $queryParams['combineType'] = ObjectSerializer::toQueryValue($combine_type);
+        }
+        // query params
+        if ($type_of_supply !== null) {
+            $queryParams['typeOfSupply'] = ObjectSerializer::toQueryValue($type_of_supply);
         }
 
         // path params
