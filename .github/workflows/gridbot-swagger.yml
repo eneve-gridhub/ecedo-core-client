@@ -1,0 +1,115 @@
+# This action is only executed on explicit trigger coming from Gridbot server
+# Context - https://eneve.atlassian.net/browse/GH-732
+
+name: Gridbot swagger client
+run-name: "Gridbot swagger ${{ inputs.branch }} [${{ inputs.correlation_id }}]"
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: New version branch, e.g. v190.01
+        required: true
+        type: string
+      base_branch:
+        description: Branch to start from, e.g. v187.04
+        required: true
+        type: string
+      spec_ref:
+        description: Throwaway ref that holds swagger.json
+        required: true
+        type: string
+      spec_sha:
+        description: Commit that the spec ref must point at
+        required: true
+        type: string
+      correlation_id:
+        description: Lets Gridbot find this run
+        required: true
+        type: string
+      requester_name:
+        description: Teams user who confirmed (co-author)
+        required: true
+        type: string
+      requester_email:
+        description: Teams user e-mail (co-author)
+        required: true
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: gridbot-swagger-${{ inputs.branch }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write # create the version branch, delete the throwaway ref
+    env:
+      CODEGEN_VERSION: "2.4.41" # swagger-codegen v2 only; v3 produces different code
+    steps:
+      # Actions are pinned to commit SHAs (the tag is kept as a comment). To update one, look up
+      # the new tag's commit with: gh api repos/<owner>/<action>/commits/<tag> --jq .sha
+      - name: Check out ecedo-core-client
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: repo
+
+      - name: Check out Gridbot (rules and runner script)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: ${{ vars.GRIDBOT_REPOSITORY }}
+          ref: ${{ vars.GRIDBOT_REF }} # a tag or commit SHA, not a moving branch
+          token: ${{ secrets.GRIDBOT_READ_TOKEN }}
+          path: gridbot
+          persist-credentials: false
+
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+
+      - name: Download swagger-codegen ${{ env.CODEGEN_VERSION }}
+        env:
+          CODEGEN_SHA256: ${{ vars.CODEGEN_SHA256 }}
+        run: |
+          set -euo pipefail
+          if [ -z "$CODEGEN_SHA256" ]; then
+            echo "::error::Repository variable CODEGEN_SHA256 is not set"
+            exit 1
+          fi
+          jar="$RUNNER_TEMP/swagger-codegen-cli.jar"
+          curl -fsSL --retry 3 -o "$jar" \
+            "https://repo1.maven.org/maven2/io/swagger/swagger-codegen-cli/${CODEGEN_VERSION}/swagger-codegen-cli-${CODEGEN_VERSION}.jar"
+          echo "$CODEGEN_SHA256  $jar" | sha256sum --check --strict
+
+      - name: Regenerate the client and push the branch
+        env:
+          # Inputs go through the environment and are validated by the script; they are never
+          # pasted into a shell command.
+          BRANCH: ${{ inputs.branch }}
+          BASE_BRANCH: ${{ inputs.base_branch }}
+          SPEC_REF: ${{ inputs.spec_ref }}
+          SPEC_SHA: ${{ inputs.spec_sha }}
+          REQUESTER_NAME: ${{ inputs.requester_name }}
+          REQUESTER_EMAIL: ${{ inputs.requester_email }}
+          GRIDBOT_GIT_EMAIL: ${{ vars.GRIDBOT_GIT_EMAIL }}
+          PYTHONPATH: gridbot/src
+        run: python -m gridbot.ecedo_swagger.pipeline repo "$RUNNER_TEMP/swagger-codegen-cli.jar"
+
+      - name: Remove the throwaway spec ref
+        if: always()
+        working-directory: repo
+        env:
+          SPEC_REF: ${{ inputs.spec_ref }}
+        run: |
+          case "$SPEC_REF" in
+            gridbot-tmp/spec-*) git push origin --delete "$SPEC_REF" || true ;;
+          esac
