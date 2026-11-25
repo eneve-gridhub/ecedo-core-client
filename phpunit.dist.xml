@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="./vendor/autoload.php"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         stopOnFailure="false">
+         colors="true">
     <testsuites>
-        <testsuite>
+        <testsuite name="Ecedo Core Client">
             <directory>./test/Api</directory>
             <directory>./test/Model</directory>
         </testsuite>
     </testsuites>
 
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
+    <source>
+        <include>
             <directory suffix=".php">./lib/Api</directory>
             <directory suffix=".php">./lib/Model</directory>
-        </whitelist>
-    </filter>
+        </include>
+    </source>
 </phpunit>

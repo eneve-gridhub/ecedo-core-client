@@ -1,7 +1,8 @@
 <?php
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config())
     ->setUsingCache(true)
+    ->setRiskyAllowed(true)
     ->setRules([
         '@PSR2' => true,
         'ordered_imports' => true,
@@ -11,7 +12,10 @@ return PhpCsFixer\Config::create()
         'strict_param' => true,
         'no_trailing_whitespace' => false,
         'no_trailing_whitespace_in_comment' => false,
-        'braces' => false,
+        'braces_position' => false,
+        'control_structure_braces' => false,
+        'control_structure_continuation_position' => false,
+        'statement_indentation' => false,
         'single_blank_line_at_eof' => false,
         'blank_line_after_namespace' => false,
     ])

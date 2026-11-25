@@ -102,7 +102,7 @@ jobs:
           REQUESTER_EMAIL: ${{ inputs.requester_email }}
           GRIDBOT_GIT_EMAIL: ${{ vars.GRIDBOT_GIT_EMAIL }}
           PYTHONPATH: gridbot/src
-        run: python -m gridbot.ecedo_swagger.pipeline repo "$RUNNER_TEMP/swagger-codegen-cli.jar"
+        run: python repo/.github/scripts/generate-client.py repo "$RUNNER_TEMP/swagger-codegen-cli.jar"
 
       - name: Remove the throwaway spec ref
         if: always()

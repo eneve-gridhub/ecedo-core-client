@@ -1,10 +1,6 @@
 language: php
-sudo: false
+dist: noble
 php:
-    - 5.4
-    - 5.5
-    - 5.6
-    - 7.0
-    - hhvm
-before_install: "composer install"
+    - '8.3'
+install: "composer install --no-interaction"
 script: "vendor/bin/phpunit"
