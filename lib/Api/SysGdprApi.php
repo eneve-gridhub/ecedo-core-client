@@ -461,6 +461,14 @@ class SysGdprApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -481,14 +489,6 @@ class SysGdprApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
