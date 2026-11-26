@@ -164,6 +164,7 @@ class EcedoERPCRMInterfaceApiClickDealVolumePostData implements ModelInterface, 
     }
 
     const UNIT_K_WH = 'kWh';
+    const UNIT_M3 = 'm3';
     
 
     
@@ -176,6 +177,7 @@ class EcedoERPCRMInterfaceApiClickDealVolumePostData implements ModelInterface, 
     {
         return [
             self::UNIT_K_WH,
+            self::UNIT_M3,
         ];
     }
     

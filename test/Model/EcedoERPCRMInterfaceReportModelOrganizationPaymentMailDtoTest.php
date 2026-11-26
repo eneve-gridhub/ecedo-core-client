@@ -38,34 +38,34 @@ namespace Swagger\Client;
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceReportModelOrganizationPaymentMailDtoTest extends \PHPUnit\Framework\TestCase
+class EcedoERPCRMInterfaceReportModelOrganizationPaymentMailDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
      * Setup before running any test case
      */
-    public static function setUpBeforeClass(): void
+    public static function setUpBeforeClass()
     {
     }
 
     /**
      * Setup before running each test case
      */
-    public function setUp(): void
+    public function setUp()
     {
     }
 
     /**
      * Clean up after running each test case
      */
-    public function tearDown(): void
+    public function tearDown()
     {
     }
 
     /**
      * Clean up after running all test cases
      */
-    public static function tearDownAfterClass(): void
+    public static function tearDownAfterClass()
     {
     }
 
@@ -493,6 +493,13 @@ class EcedoERPCRMInterfaceReportModelOrganizationPaymentMailDtoTest extends \PHP
      * Test attribute "reseller"
      */
     public function testPropertyReseller()
+    {
+    }
+
+    /**
+     * Test attribute "price_blocks"
+     */
+    public function testPropertyPriceBlocks()
     {
     }
 

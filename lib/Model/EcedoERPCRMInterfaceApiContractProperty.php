@@ -217,7 +217,6 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
     const CONTRACT_PROPERTY_TYPE_ADVANCE_PAYMENT_SCHEME = 'AdvancePaymentScheme';
     const CONTRACT_PROPERTY_TYPE_NOTICE_PERIOD = 'NoticePeriod';
     const CONTRACT_PROPERTY_TYPE_PURCHASE_ORDER_NUMBER = 'PurchaseOrderNumber';
-    const CONTRACT_PROPERTY_TYPE_CURTAILMENT_PROFIT_DISTRIBUTION_KEY = 'CurtailmentProfitDistributionKey';
     const CONTRACT_PROPERTY_TYPE_RENEWAL_DATE = 'RenewalDate';
     const CONTRACT_PROPERTY_TYPE_HAS_ROLLING_DEPOSIT = 'HasRollingDeposit';
     const CONTRACT_PROPERTY_TYPE_HAS_TARIFF_CHANGE_METER_READINGS = 'HasTariffChangeMeterReadings';
@@ -233,6 +232,7 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
     const CONTRACT_PROPERTY_TYPE_KLIK_PRODUCT = 'KlikProduct';
     const CONTRACT_PROPERTY_TYPE_CONTRACTED_VOLUME_LDN = 'ContractedVolumeLdn';
     const CONTRACT_PROPERTY_TYPE_CONTRACTED_VOLUME_BANDWIDTH = 'ContractedVolumeBandwidth';
+    const CONTRACT_PROPERTY_TYPE_SEPARATE_ODN_LDN_INVOICING = 'SeparateOdnLdnInvoicing';
     const CONTRACT_PROPERTY_VALUE_TYPE_GUID = 'Guid';
     const CONTRACT_PROPERTY_VALUE_TYPE_STRING = 'String';
     const CONTRACT_PROPERTY_VALUE_TYPE_INTEGER = 'Integer';
@@ -290,7 +290,6 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
             self::CONTRACT_PROPERTY_TYPE_ADVANCE_PAYMENT_SCHEME,
             self::CONTRACT_PROPERTY_TYPE_NOTICE_PERIOD,
             self::CONTRACT_PROPERTY_TYPE_PURCHASE_ORDER_NUMBER,
-            self::CONTRACT_PROPERTY_TYPE_CURTAILMENT_PROFIT_DISTRIBUTION_KEY,
             self::CONTRACT_PROPERTY_TYPE_RENEWAL_DATE,
             self::CONTRACT_PROPERTY_TYPE_HAS_ROLLING_DEPOSIT,
             self::CONTRACT_PROPERTY_TYPE_HAS_TARIFF_CHANGE_METER_READINGS,
@@ -306,6 +305,7 @@ class EcedoERPCRMInterfaceApiContractProperty implements ModelInterface, ArrayAc
             self::CONTRACT_PROPERTY_TYPE_KLIK_PRODUCT,
             self::CONTRACT_PROPERTY_TYPE_CONTRACTED_VOLUME_LDN,
             self::CONTRACT_PROPERTY_TYPE_CONTRACTED_VOLUME_BANDWIDTH,
+            self::CONTRACT_PROPERTY_TYPE_SEPARATE_ODN_LDN_INVOICING,
         ];
     }
     

@@ -40,34 +40,34 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SysProfilesApiTest extends \PHPUnit\Framework\TestCase
+class SysProfilesApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
      * Setup before running any test cases
      */
-    public static function setUpBeforeClass(): void
+    public static function setUpBeforeClass()
     {
     }
 
     /**
      * Setup before running each test case
      */
-    public function setUp(): void
+    public function setUp()
     {
     }
 
     /**
      * Clean up after running each test case
      */
-    public function tearDown(): void
+    public function tearDown()
     {
     }
 
     /**
      * Clean up after running all test cases
      */
-    public static function tearDownAfterClass(): void
+    public static function tearDownAfterClass()
     {
     }
 
@@ -108,6 +108,16 @@ class SysProfilesApiTest extends \PHPUnit\Framework\TestCase
      *
      */
     public function testSysProfilesGetCustomProfile()
+    {
+    }
+
+    /**
+     * Test case for sysProfilesGetProfileFractionsSummedPerMonth
+     *
+     * Haal de som van de peak en offpeak profielfracties per maand op op basis van profieleigenschappen..
+     *
+     */
+    public function testSysProfilesGetProfileFractionsSummedPerMonth()
     {
     }
 }

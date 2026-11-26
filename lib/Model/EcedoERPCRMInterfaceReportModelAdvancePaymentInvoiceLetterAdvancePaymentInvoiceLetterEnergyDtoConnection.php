@@ -104,6 +104,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_proposition_pricing_type' => 'string',
         'connection_contract_proposition_is_market_price_proposition' => 'bool',
         'connection_contract_proposition_is_price_block_proposition' => 'bool',
+        'connection_contract_proposition_price_block_group_price_block_group_id' => 'string',
+        'connection_contract_proposition_price_block_group_price_block_group_description' => 'string',
         'connection_contract_proposition_market_price_source' => 'string',
         'connection_contract_proposition_market_price_source_localized' => 'string',
         'connection_meelift_contract_proposition_description' => 'string',
@@ -182,6 +184,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_proposition_pricing_type' => null,
         'connection_contract_proposition_is_market_price_proposition' => null,
         'connection_contract_proposition_is_price_block_proposition' => null,
+        'connection_contract_proposition_price_block_group_price_block_group_id' => 'uuid',
+        'connection_contract_proposition_price_block_group_price_block_group_description' => null,
         'connection_contract_proposition_market_price_source' => null,
         'connection_contract_proposition_market_price_source_localized' => null,
         'connection_meelift_contract_proposition_description' => null,
@@ -281,6 +285,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_proposition_pricing_type' => 'Connection_Contract_Proposition_PricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'Connection_Contract_Proposition_IsMarketPriceProposition',
         'connection_contract_proposition_is_price_block_proposition' => 'Connection_Contract_Proposition_IsPriceBlockProposition',
+        'connection_contract_proposition_price_block_group_price_block_group_id' => 'Connection_Contract_Proposition_PriceBlockGroup_PriceBlockGroupId',
+        'connection_contract_proposition_price_block_group_price_block_group_description' => 'Connection_Contract_Proposition_PriceBlockGroup_PriceBlockGroupDescription',
         'connection_contract_proposition_market_price_source' => 'Connection_Contract_Proposition_MarketPriceSource',
         'connection_contract_proposition_market_price_source_localized' => 'Connection_Contract_Proposition_MarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'Connection_MeeliftContract_Proposition_Description',
@@ -359,6 +365,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_proposition_pricing_type' => 'setConnectionContractPropositionPricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'setConnectionContractPropositionIsMarketPriceProposition',
         'connection_contract_proposition_is_price_block_proposition' => 'setConnectionContractPropositionIsPriceBlockProposition',
+        'connection_contract_proposition_price_block_group_price_block_group_id' => 'setConnectionContractPropositionPriceBlockGroupPriceBlockGroupId',
+        'connection_contract_proposition_price_block_group_price_block_group_description' => 'setConnectionContractPropositionPriceBlockGroupPriceBlockGroupDescription',
         'connection_contract_proposition_market_price_source' => 'setConnectionContractPropositionMarketPriceSource',
         'connection_contract_proposition_market_price_source_localized' => 'setConnectionContractPropositionMarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'setConnectionMeeliftContractPropositionDescription',
@@ -437,6 +445,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         'connection_contract_proposition_pricing_type' => 'getConnectionContractPropositionPricingType',
         'connection_contract_proposition_is_market_price_proposition' => 'getConnectionContractPropositionIsMarketPriceProposition',
         'connection_contract_proposition_is_price_block_proposition' => 'getConnectionContractPropositionIsPriceBlockProposition',
+        'connection_contract_proposition_price_block_group_price_block_group_id' => 'getConnectionContractPropositionPriceBlockGroupPriceBlockGroupId',
+        'connection_contract_proposition_price_block_group_price_block_group_description' => 'getConnectionContractPropositionPriceBlockGroupPriceBlockGroupDescription',
         'connection_contract_proposition_market_price_source' => 'getConnectionContractPropositionMarketPriceSource',
         'connection_contract_proposition_market_price_source_localized' => 'getConnectionContractPropositionMarketPriceSourceLocalized',
         'connection_meelift_contract_proposition_description' => 'getConnectionMeeliftContractPropositionDescription',
@@ -569,6 +579,8 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
         $this->container['connection_contract_proposition_pricing_type'] = isset($data['connection_contract_proposition_pricing_type']) ? $data['connection_contract_proposition_pricing_type'] : null;
         $this->container['connection_contract_proposition_is_market_price_proposition'] = isset($data['connection_contract_proposition_is_market_price_proposition']) ? $data['connection_contract_proposition_is_market_price_proposition'] : null;
         $this->container['connection_contract_proposition_is_price_block_proposition'] = isset($data['connection_contract_proposition_is_price_block_proposition']) ? $data['connection_contract_proposition_is_price_block_proposition'] : null;
+        $this->container['connection_contract_proposition_price_block_group_price_block_group_id'] = isset($data['connection_contract_proposition_price_block_group_price_block_group_id']) ? $data['connection_contract_proposition_price_block_group_price_block_group_id'] : null;
+        $this->container['connection_contract_proposition_price_block_group_price_block_group_description'] = isset($data['connection_contract_proposition_price_block_group_price_block_group_description']) ? $data['connection_contract_proposition_price_block_group_price_block_group_description'] : null;
         $this->container['connection_contract_proposition_market_price_source'] = isset($data['connection_contract_proposition_market_price_source']) ? $data['connection_contract_proposition_market_price_source'] : null;
         $this->container['connection_contract_proposition_market_price_source_localized'] = isset($data['connection_contract_proposition_market_price_source_localized']) ? $data['connection_contract_proposition_market_price_source_localized'] : null;
         $this->container['connection_meelift_contract_proposition_description'] = isset($data['connection_meelift_contract_proposition_description']) ? $data['connection_meelift_contract_proposition_description'] : null;
@@ -1742,6 +1754,54 @@ class EcedoERPCRMInterfaceReportModelAdvancePaymentInvoiceLetterAdvancePaymentIn
     public function setConnectionContractPropositionIsPriceBlockProposition($connection_contract_proposition_is_price_block_proposition)
     {
         $this->container['connection_contract_proposition_is_price_block_proposition'] = $connection_contract_proposition_is_price_block_proposition;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_contract_proposition_price_block_group_price_block_group_id
+     *
+     * @return string
+     */
+    public function getConnectionContractPropositionPriceBlockGroupPriceBlockGroupId()
+    {
+        return $this->container['connection_contract_proposition_price_block_group_price_block_group_id'];
+    }
+
+    /**
+     * Sets connection_contract_proposition_price_block_group_price_block_group_id
+     *
+     * @param string $connection_contract_proposition_price_block_group_price_block_group_id connection_contract_proposition_price_block_group_price_block_group_id
+     *
+     * @return $this
+     */
+    public function setConnectionContractPropositionPriceBlockGroupPriceBlockGroupId($connection_contract_proposition_price_block_group_price_block_group_id)
+    {
+        $this->container['connection_contract_proposition_price_block_group_price_block_group_id'] = $connection_contract_proposition_price_block_group_price_block_group_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_contract_proposition_price_block_group_price_block_group_description
+     *
+     * @return string
+     */
+    public function getConnectionContractPropositionPriceBlockGroupPriceBlockGroupDescription()
+    {
+        return $this->container['connection_contract_proposition_price_block_group_price_block_group_description'];
+    }
+
+    /**
+     * Sets connection_contract_proposition_price_block_group_price_block_group_description
+     *
+     * @param string $connection_contract_proposition_price_block_group_price_block_group_description connection_contract_proposition_price_block_group_price_block_group_description
+     *
+     * @return $this
+     */
+    public function setConnectionContractPropositionPriceBlockGroupPriceBlockGroupDescription($connection_contract_proposition_price_block_group_price_block_group_description)
+    {
+        $this->container['connection_contract_proposition_price_block_group_price_block_group_description'] = $connection_contract_proposition_price_block_group_price_block_group_description;
 
         return $this;
     }

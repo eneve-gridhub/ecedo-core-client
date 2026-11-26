@@ -124,6 +124,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         'organization_organization_property_preferred_contact_method' => 'string',
         'company_label' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelCompanyLabelDto',
         'reseller' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationResellerDto',
+        'price_blocks' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelPriceBlockDto[]',
         'organization_properties' => '\Swagger\Client\Model\EcedoERPCRMInterfaceReportModelOrganizationEntityPropertiesDto'
     ];
 
@@ -200,6 +201,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         'organization_organization_property_preferred_contact_method' => null,
         'company_label' => null,
         'reseller' => null,
+        'price_blocks' => null,
         'organization_properties' => null
     ];
 
@@ -297,6 +299,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         'organization_organization_property_preferred_contact_method' => 'Organization_OrganizationProperty_PreferredContactMethod',
         'company_label' => 'CompanyLabel',
         'reseller' => 'Reseller',
+        'price_blocks' => 'PriceBlocks',
         'organization_properties' => 'OrganizationProperties'
     ];
 
@@ -373,6 +376,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         'organization_organization_property_preferred_contact_method' => 'setOrganizationOrganizationPropertyPreferredContactMethod',
         'company_label' => 'setCompanyLabel',
         'reseller' => 'setReseller',
+        'price_blocks' => 'setPriceBlocks',
         'organization_properties' => 'setOrganizationProperties'
     ];
 
@@ -449,6 +453,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         'organization_organization_property_preferred_contact_method' => 'getOrganizationOrganizationPropertyPreferredContactMethod',
         'company_label' => 'getCompanyLabel',
         'reseller' => 'getReseller',
+        'price_blocks' => 'getPriceBlocks',
         'organization_properties' => 'getOrganizationProperties'
     ];
 
@@ -579,6 +584,7 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
         $this->container['organization_organization_property_preferred_contact_method'] = isset($data['organization_organization_property_preferred_contact_method']) ? $data['organization_organization_property_preferred_contact_method'] : null;
         $this->container['company_label'] = isset($data['company_label']) ? $data['company_label'] : null;
         $this->container['reseller'] = isset($data['reseller']) ? $data['reseller'] : null;
+        $this->container['price_blocks'] = isset($data['price_blocks']) ? $data['price_blocks'] : null;
         $this->container['organization_properties'] = isset($data['organization_properties']) ? $data['organization_properties'] : null;
     }
 
@@ -2210,6 +2216,30 @@ class EcedoERPCRMInterfaceReportModelWelcomeLetterEnergyBaseDto implements Model
     public function setReseller($reseller)
     {
         $this->container['reseller'] = $reseller;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_blocks
+     *
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelPriceBlockDto[]
+     */
+    public function getPriceBlocks()
+    {
+        return $this->container['price_blocks'];
+    }
+
+    /**
+     * Sets price_blocks
+     *
+     * @param \Swagger\Client\Model\EcedoERPCRMInterfaceReportModelPriceBlockDto[] $price_blocks price_blocks
+     *
+     * @return $this
+     */
+    public function setPriceBlocks($price_blocks)
+    {
+        $this->container['price_blocks'] = $price_blocks;
 
         return $this;
     }

@@ -484,7 +484,7 @@ class EcedoERPCRMInterfaceApiAdvancePaymentPostData implements ModelInterface, A
     /**
      * Sets delete_future_unused_advance_payments
      *
-     * @param bool $delete_future_unused_advance_payments Optioneel veld waarmee aangegeven kan worden dat nog niet gefactureerde toekomstige voorschotten verwijderd moeten worden.
+     * @param bool $delete_future_unused_advance_payments Default false. Optioneel veld waarmee aangegeven kan worden dat bestaande toekomstige voorschotten van hetzelfde cluster verwijderd moeten worden vanaf de maand na StartDate, zodat het nieuwe voorschot kan worden aangemaakt en daarna niet wordt overschreven door een eerder aangemaakt voorschot.<br />  Als dit veld niet wordt meegegeven, is de waarde false.  Niet alle voorschotten kunnen worden verwijderd. Dit is alleen mogelijk bij voorschotten waarvoor nog geen voorschotfactuur is aangemaakt, of waarvoor alle voorschotfacturen zijn gecrediteerd. Ook voorgestelde voorschotten kunnen niet verwijderd worden.
      *
      * @return $this
      */

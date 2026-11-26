@@ -163,8 +163,23 @@ class EcedoERPCRMInterfaceApiClickDealPricePostData implements ModelInterface, A
         return self::$swaggerModelName;
     }
 
+    const UNIT_K_WH = 'kWh';
+    const UNIT_M3 = 'm3';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getUnitAllowableValues()
+    {
+        return [
+            self::UNIT_K_WH,
+            self::UNIT_M3,
+        ];
+    }
     
 
     /**
@@ -198,6 +213,14 @@ class EcedoERPCRMInterfaceApiClickDealPricePostData implements ModelInterface, A
         if ($this->container['unit'] === null) {
             $invalidProperties[] = "'unit' can't be null";
         }
+        $allowedValues = $this->getUnitAllowableValues();
+        if (!is_null($this->container['unit']) && !in_array($this->container['unit'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'unit', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -226,12 +249,21 @@ class EcedoERPCRMInterfaceApiClickDealPricePostData implements ModelInterface, A
     /**
      * Sets unit
      *
-     * @param string $unit Must be \"kWh\".
+     * @param string $unit unit
      *
      * @return $this
      */
     public function setUnit($unit)
     {
+        $allowedValues = $this->getUnitAllowableValues();
+        if (!in_array($unit, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'unit', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['unit'] = $unit;
 
         return $this;

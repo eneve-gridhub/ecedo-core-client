@@ -38,34 +38,34 @@ namespace Swagger\Client;
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EcedoERPCRMInterfaceReportModelReducedConnectionDtoTest extends \PHPUnit\Framework\TestCase
+class EcedoERPCRMInterfaceReportModelReducedConnectionDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
      * Setup before running any test case
      */
-    public static function setUpBeforeClass(): void
+    public static function setUpBeforeClass()
     {
     }
 
     /**
      * Setup before running each test case
      */
-    public function setUp(): void
+    public function setUp()
     {
     }
 
     /**
      * Clean up after running each test case
      */
-    public function tearDown(): void
+    public function tearDown()
     {
     }
 
     /**
      * Clean up after running all test cases
      */
-    public static function tearDownAfterClass(): void
+    public static function tearDownAfterClass()
     {
     }
 
@@ -332,6 +332,20 @@ class EcedoERPCRMInterfaceReportModelReducedConnectionDtoTest extends \PHPUnit\F
      * Test attribute "connection_contract_proposition_is_price_block_proposition"
      */
     public function testPropertyConnectionContractPropositionIsPriceBlockProposition()
+    {
+    }
+
+    /**
+     * Test attribute "connection_contract_proposition_price_block_group_price_block_group_id"
+     */
+    public function testPropertyConnectionContractPropositionPriceBlockGroupPriceBlockGroupId()
+    {
+    }
+
+    /**
+     * Test attribute "connection_contract_proposition_price_block_group_price_block_group_description"
+     */
+    public function testPropertyConnectionContractPropositionPriceBlockGroupPriceBlockGroupDescription()
     {
     }
 

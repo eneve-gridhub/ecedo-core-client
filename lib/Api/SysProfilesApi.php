@@ -1267,6 +1267,366 @@ class SysProfilesApi
     }
 
     /**
+     * Operation sysProfilesGetProfileFractionsSummedPerMonth
+     *
+     * Haal de som van de peak en offpeak profielfracties per maand op op basis van profieleigenschappen.
+     *
+     * @param  \DateTime $start_date Moet de eerste van de maand zijn (required)
+     * @param  \DateTime $end_date Moet de eerste dag van de maand zijn en later dan startDate (required)
+     * @param  string $profile_type  (required)
+     * @param  string $fraction_type  (required)
+     * @param  string $usage_type  (required)
+     * @param  string $grid_area_ean Optionele EAN van de netbeheerder van een lokale profiel (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\EcedoERPCRMInterfaceApiProfileFractionSum[]
+     */
+    public function sysProfilesGetProfileFractionsSummedPerMonth($start_date, $end_date, $profile_type, $fraction_type, $usage_type, $grid_area_ean = null)
+    {
+        list($response) = $this->sysProfilesGetProfileFractionsSummedPerMonthWithHttpInfo($start_date, $end_date, $profile_type, $fraction_type, $usage_type, $grid_area_ean);
+        return $response;
+    }
+
+    /**
+     * Operation sysProfilesGetProfileFractionsSummedPerMonthWithHttpInfo
+     *
+     * Haal de som van de peak en offpeak profielfracties per maand op op basis van profieleigenschappen.
+     *
+     * @param  \DateTime $start_date Moet de eerste van de maand zijn (required)
+     * @param  \DateTime $end_date Moet de eerste dag van de maand zijn en later dan startDate (required)
+     * @param  string $profile_type  (required)
+     * @param  string $fraction_type  (required)
+     * @param  string $usage_type  (required)
+     * @param  string $grid_area_ean Optionele EAN van de netbeheerder van een lokale profiel (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\EcedoERPCRMInterfaceApiProfileFractionSum[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sysProfilesGetProfileFractionsSummedPerMonthWithHttpInfo($start_date, $end_date, $profile_type, $fraction_type, $usage_type, $grid_area_ean = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProfileFractionSum[]';
+        $request = $this->sysProfilesGetProfileFractionsSummedPerMonthRequest($start_date, $end_date, $profile_type, $fraction_type, $usage_type, $grid_area_ean);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProfileFractionSum[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sysProfilesGetProfileFractionsSummedPerMonthAsync
+     *
+     * Haal de som van de peak en offpeak profielfracties per maand op op basis van profieleigenschappen.
+     *
+     * @param  \DateTime $start_date Moet de eerste van de maand zijn (required)
+     * @param  \DateTime $end_date Moet de eerste dag van de maand zijn en later dan startDate (required)
+     * @param  string $profile_type  (required)
+     * @param  string $fraction_type  (required)
+     * @param  string $usage_type  (required)
+     * @param  string $grid_area_ean Optionele EAN van de netbeheerder van een lokale profiel (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysProfilesGetProfileFractionsSummedPerMonthAsync($start_date, $end_date, $profile_type, $fraction_type, $usage_type, $grid_area_ean = null)
+    {
+        return $this->sysProfilesGetProfileFractionsSummedPerMonthAsyncWithHttpInfo($start_date, $end_date, $profile_type, $fraction_type, $usage_type, $grid_area_ean)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sysProfilesGetProfileFractionsSummedPerMonthAsyncWithHttpInfo
+     *
+     * Haal de som van de peak en offpeak profielfracties per maand op op basis van profieleigenschappen.
+     *
+     * @param  \DateTime $start_date Moet de eerste van de maand zijn (required)
+     * @param  \DateTime $end_date Moet de eerste dag van de maand zijn en later dan startDate (required)
+     * @param  string $profile_type  (required)
+     * @param  string $fraction_type  (required)
+     * @param  string $usage_type  (required)
+     * @param  string $grid_area_ean Optionele EAN van de netbeheerder van een lokale profiel (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sysProfilesGetProfileFractionsSummedPerMonthAsyncWithHttpInfo($start_date, $end_date, $profile_type, $fraction_type, $usage_type, $grid_area_ean = null)
+    {
+        $returnType = '\Swagger\Client\Model\EcedoERPCRMInterfaceApiProfileFractionSum[]';
+        $request = $this->sysProfilesGetProfileFractionsSummedPerMonthRequest($start_date, $end_date, $profile_type, $fraction_type, $usage_type, $grid_area_ean);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sysProfilesGetProfileFractionsSummedPerMonth'
+     *
+     * @param  \DateTime $start_date Moet de eerste van de maand zijn (required)
+     * @param  \DateTime $end_date Moet de eerste dag van de maand zijn en later dan startDate (required)
+     * @param  string $profile_type  (required)
+     * @param  string $fraction_type  (required)
+     * @param  string $usage_type  (required)
+     * @param  string $grid_area_ean Optionele EAN van de netbeheerder van een lokale profiel (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function sysProfilesGetProfileFractionsSummedPerMonthRequest($start_date, $end_date, $profile_type, $fraction_type, $usage_type, $grid_area_ean = null)
+    {
+        // verify the required parameter 'start_date' is set
+        if ($start_date === null || (is_array($start_date) && count($start_date) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $start_date when calling sysProfilesGetProfileFractionsSummedPerMonth'
+            );
+        }
+        // verify the required parameter 'end_date' is set
+        if ($end_date === null || (is_array($end_date) && count($end_date) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $end_date when calling sysProfilesGetProfileFractionsSummedPerMonth'
+            );
+        }
+        // verify the required parameter 'profile_type' is set
+        if ($profile_type === null || (is_array($profile_type) && count($profile_type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $profile_type when calling sysProfilesGetProfileFractionsSummedPerMonth'
+            );
+        }
+        // verify the required parameter 'fraction_type' is set
+        if ($fraction_type === null || (is_array($fraction_type) && count($fraction_type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $fraction_type when calling sysProfilesGetProfileFractionsSummedPerMonth'
+            );
+        }
+        // verify the required parameter 'usage_type' is set
+        if ($usage_type === null || (is_array($usage_type) && count($usage_type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $usage_type when calling sysProfilesGetProfileFractionsSummedPerMonth'
+            );
+        }
+
+        $resourcePath = '/sysapi/v1.0/profilefractions/electricity/groupedByMonth';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($start_date !== null) {
+            $queryParams['startDate'] = ObjectSerializer::toQueryValue($start_date);
+        }
+        // query params
+        if ($end_date !== null) {
+            $queryParams['endDate'] = ObjectSerializer::toQueryValue($end_date);
+        }
+        // query params
+        if ($profile_type !== null) {
+            $queryParams['profileType'] = ObjectSerializer::toQueryValue($profile_type);
+        }
+        // query params
+        if ($fraction_type !== null) {
+            $queryParams['fractionType'] = ObjectSerializer::toQueryValue($fraction_type);
+        }
+        // query params
+        if ($usage_type !== null) {
+            $queryParams['usageType'] = ObjectSerializer::toQueryValue($usage_type);
+        }
+        // query params
+        if ($grid_area_ean !== null) {
+            $queryParams['gridAreaEAN'] = ObjectSerializer::toQueryValue($grid_area_ean);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Ocp-Apim-Subscription-Key');
+        if ($apiKey !== null) {
+            $headers['Ocp-Apim-Subscription-Key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Create http client option
      *
      * @throws \RuntimeException on file opening failure

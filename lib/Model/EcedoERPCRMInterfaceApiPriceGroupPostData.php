@@ -196,7 +196,6 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
     const PRICE_COMPONENT_GROUP_EV_CHARGING = 'EvCharging';
     const PRICE_COMPONENT_GROUP_RECONCILIATION = 'Reconciliation';
     const PRICE_COMPONENT_GROUP_CERTIFICATE_SALE = 'CertificateSale';
-    const PRICE_COMPONENT_GROUP_CURTAILMENT = 'Curtailment';
     const PRICE_COMPONENT_GROUP_TERUGLEVERING_EXCESS = 'TerugleveringExcess';
     
 
@@ -237,7 +236,6 @@ class EcedoERPCRMInterfaceApiPriceGroupPostData implements ModelInterface, Array
             self::PRICE_COMPONENT_GROUP_EV_CHARGING,
             self::PRICE_COMPONENT_GROUP_RECONCILIATION,
             self::PRICE_COMPONENT_GROUP_CERTIFICATE_SALE,
-            self::PRICE_COMPONENT_GROUP_CURTAILMENT,
             self::PRICE_COMPONENT_GROUP_TERUGLEVERING_EXCESS,
         ];
     }
