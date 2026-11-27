@@ -49,7 +49,11 @@ jobs:
     permissions:
       contents: write # create the version branch, delete the throwaway ref
     env:
-      CODEGEN_VERSION: "2.4.41" # swagger-codegen v2 only; v3 produces different code
+      # swagger-codegen v2 only; v3 produces different code. 2.4.52 matches the manual releases
+      # since v183.06 (2.4.51+ writes the PHPUnit 9 test style, 2.4.53+ changes lib/).
+      # Version and checksum change together, in one reviewed commit.
+      CODEGEN_VERSION: "2.4.52"
+      CODEGEN_SHA256: "f0cc2a0c63fa0365760749063935697faeb2386cd409ed5b14e3bf97e181ae66"
     steps:
       # Actions are pinned to commit SHAs (the tag is kept as a comment). To update one, look up
       # the new tag's commit with: gh api repos/<owner>/<action>/commits/<tag> --jq .sha
@@ -77,14 +81,8 @@ jobs:
           python-version: "3.12"
 
       - name: Download swagger-codegen ${{ env.CODEGEN_VERSION }}
-        env:
-          CODEGEN_SHA256: ${{ vars.CODEGEN_SHA256 }}
         run: |
           set -euo pipefail
-          if [ -z "$CODEGEN_SHA256" ]; then
-            echo "::error::Repository variable CODEGEN_SHA256 is not set"
-            exit 1
-          fi
           jar="$RUNNER_TEMP/swagger-codegen-cli.jar"
           curl -fsSL --retry 3 -o "$jar" \
             "https://repo1.maven.org/maven2/io/swagger/swagger-codegen-cli/${CODEGEN_VERSION}/swagger-codegen-cli-${CODEGEN_VERSION}.jar"
