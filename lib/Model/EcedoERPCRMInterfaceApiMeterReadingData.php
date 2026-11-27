@@ -186,11 +186,11 @@ class EcedoERPCRMInterfaceApiMeterReadingData extends EcedoERPCRMInterfaceApiMet
         return self::$swaggerModelName;
     }
 
-    const READING_METHOD_CALCULATED_READING = 'CalculatedReading';
     const READING_METHOD_PHYSICAL_READING_BALANCE_SUPPLIER = 'PhysicalReadingBalanceSupplier';
     const READING_METHOD_ESTIMATED_OR_CALULATED_READING_BALANCE_SUPPLIER = 'EstimatedOrCalulatedReadingBalanceSupplier';
     const READING_METHOD_PHYSICAL_READING = 'PhysicalReading';
     const READING_METHOD_SMART_METER_READING = 'SmartMeterReading';
+    const READING_METHOD_CALCULATED_READING = 'CalculatedReading';
     const READING_METHOD_ESTIMATED_READING = 'EstimatedReading';
     const READING_METHOD_BEST_GUESS_READING = 'BestGuessReading';
     const READING_METHOD_AGREED_READING = 'AgreedReading';
@@ -229,11 +229,11 @@ class EcedoERPCRMInterfaceApiMeterReadingData extends EcedoERPCRMInterfaceApiMet
     public function getReadingMethodAllowableValues()
     {
         return [
-            self::READING_METHOD_CALCULATED_READING,
             self::READING_METHOD_PHYSICAL_READING_BALANCE_SUPPLIER,
             self::READING_METHOD_ESTIMATED_OR_CALULATED_READING_BALANCE_SUPPLIER,
             self::READING_METHOD_PHYSICAL_READING,
             self::READING_METHOD_SMART_METER_READING,
+            self::READING_METHOD_CALCULATED_READING,
             self::READING_METHOD_ESTIMATED_READING,
             self::READING_METHOD_BEST_GUESS_READING,
             self::READING_METHOD_AGREED_READING,

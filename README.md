@@ -204,7 +204,7 @@ Class | Method | HTTP request | Description
 *SysFlowsApi* | [**sysFlowsAcceptProposedAdvancePayment**](docs/Api/SysFlowsApi.md#sysflowsacceptproposedadvancepayment) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/accept | 
 *SysFlowsApi* | [**sysFlowsAdvancePaymentInvoiceFlowModificationFinished**](docs/Api/SysFlowsApi.md#sysflowsadvancepaymentinvoiceflowmodificationfinished) | **POST** /sysapi/v1.0/flows/advancepaymentinvoiceflow/modificationfinished | AdvancePayment factuur stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
 *SysFlowsApi* | [**sysFlowsCancelAdvancePaymentInvoiceFlow**](docs/Api/SysFlowsApi.md#sysflowscanceladvancepaymentinvoiceflow) | **POST** /sysapi/v1.0/flows/advancepaymentinvoiceflow/cancel | Annuleren van voorschotfactuurflows
-*SysFlowsApi* | [**sysFlowsCancelApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowscancelapplicationflow) | **POST** /sysapi/v1.0/flows/application/cancel | Aanmeldflow beëindigen
+*SysFlowsApi* | [**sysFlowsCancelApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowscancelapplicationflow) | **POST** /sysapi/v1.0/flows/application/cancel | Aanmeldflow beëindigen
 *SysFlowsApi* | [**sysFlowsCancelCoolingDownPeriodApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowscancelcoolingdownperiodapplicationflow) | **POST** /sysapi/v1.0/flows/application/cancelcoolingdownperiod | 
 *SysFlowsApi* | [**sysFlowsCancelMoveFlow**](docs/Api/SysFlowsApi.md#sysflowscancelmoveflow) | **POST** /sysapi/v1.0/flows/move/cancel | Verhuisflow afbreken
 *SysFlowsApi* | [**sysFlowsCancelPurchaseFlow**](docs/Api/SysFlowsApi.md#sysflowscancelpurchaseflow) | **POST** /sysapi/v1.0/flows/productpurchase/cancel | &#39;Overige facturen&#39; flow afbreken
@@ -222,7 +222,7 @@ Class | Method | HTTP request | Description
 *SysFlowsApi* | [**sysFlowsSendSwitchOut**](docs/Api/SysFlowsApi.md#sysflowssendswitchout) | **POST** /sysapi/v1.0/flows/switchout/sendswitchout | Uitswitch flow starten
 *SysFlowsApi* | [**sysFlowsSettlementInvoiceFlowModificationFinished**](docs/Api/SysFlowsApi.md#sysflowssettlementinvoiceflowmodificationfinished) | **POST** /sysapi/v1.0/flows/settlementinvoiceflow/modificationfinished | Settlement factuur stap &#39;Wacht op aanpassingen&#39; gereed melden voor {InvoiceId}
 *SysFlowsApi* | [**sysFlowsStartAdvancePaymentCalculationFlow**](docs/Api/SysFlowsApi.md#sysflowsstartadvancepaymentcalculationflow) | **POST** /sysapi/v1.0/flows/advancepaymentcalculation/start | 
-*SysFlowsApi* | [**sysFlowsStartApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowsstartapplicationflow) | **POST** /sysapi/v1.0/flows/application/start | Aanmeldflow starten
+*SysFlowsApi* | [**sysFlowsStartApplicationFlow**](docs/Api/SysFlowsApi.md#sysflowsstartapplicationflow) | **POST** /sysapi/v1.0/flows/application/start | Aanmeldflow starten
 *SysFlowsApi* | [**sysFlowsStartEnergyPVSwitchFlow**](docs/Api/SysFlowsApi.md#sysflowsstartenergypvswitchflow) | **POST** /sysapi/v1.0/flows/pvswitch/start | Start PV switchflow
 *SysFlowsApi* | [**sysFlowsStartProductPurchaseFlow**](docs/Api/SysFlowsApi.md#sysflowsstartproductpurchaseflow) | **POST** /sysapi/v1.0/flows/productpurchase/start | Product purchase event starten voor organizationId en clusterReference  toegestane waarde voor eventType: DepositSettlement
 *SysFlowsApi* | [**sysFlowsStartSettlementFlowForProduct**](docs/Api/SysFlowsApi.md#sysflowsstartsettlementflowforproduct) | **POST** /sysapi/v1.0/flows/product/startsettlement | Starten van de afrekening flow voor een product

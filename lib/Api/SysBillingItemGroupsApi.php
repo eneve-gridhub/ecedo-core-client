@@ -151,6 +151,14 @@ class SysBillingItemGroupsApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -163,14 +171,6 @@ class SysBillingItemGroupsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1102,6 +1102,14 @@ class SysBillingItemGroupsApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1114,14 +1122,6 @@ class SysBillingItemGroupsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1382,6 +1382,14 @@ class SysBillingItemGroupsApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1394,14 +1402,6 @@ class SysBillingItemGroupsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage401',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\EcedoERPCRMInterfaceApiErrorMessage404',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
